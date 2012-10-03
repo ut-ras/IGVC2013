@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
+  <block name="Test_Button_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Y1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="X1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="VDAC8_3" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="VDAC8_3_VDAC8_PM_ACT_CFG" address="0x400043A8" bitWidth="8" desc="VDAC8_PM_ACT_CFG" />
+    <register name="VDAC8_3_VDAC8_PM_STBY_CFG" address="0x400043B8" bitWidth="8" desc="VDAC8_PM_STBY_CFG" />
+    <register name="VDAC8_3_VDAC8_TR" address="0x4000460A" bitWidth="8" desc="VDAC8_TR" />
+    <register name="VDAC8_3_VDAC8_CR0" address="0x40005828" bitWidth="8" desc="VDAC8_CR0" />
+    <register name="VDAC8_3_VDAC8_CR1" address="0x40005829" bitWidth="8" desc="VDAC8_CR1" />
+    <register name="VDAC8_3_VDAC8_D" address="0x40005B82" bitWidth="8" desc="VDAC8_D" />
+  </block>
+  <block name="Test_Button_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Button_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Button_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Err_LED_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="X0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Center" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Servo1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="SDA_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="SCL_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Err_LED_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="VDAC8_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="VDAC8_1_VDAC8_PM_ACT_CFG" address="0x400043A8" bitWidth="8" desc="VDAC8_PM_ACT_CFG" />
+    <register name="VDAC8_1_VDAC8_PM_STBY_CFG" address="0x400043B8" bitWidth="8" desc="VDAC8_PM_STBY_CFG" />
+    <register name="VDAC8_1_VDAC8_TR" address="0x4000460B" bitWidth="8" desc="VDAC8_TR" />
+    <register name="VDAC8_1_VDAC8_CR0" address="0x4000582C" bitWidth="8" desc="VDAC8_CR0" />
+    <register name="VDAC8_1_VDAC8_CR1" address="0x4000582D" bitWidth="8" desc="VDAC8_CR1" />
+    <register name="VDAC8_1_VDAC8_D" address="0x40005B83" bitWidth="8" desc="VDAC8_D" />
+  </block>
+  <block name="VDAC8_2" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="viDAC8" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="VDAC8_2_VDAC8_PM_ACT_CFG" address="0x400043A8" bitWidth="8" desc="VDAC8_PM_ACT_CFG" />
+    <register name="VDAC8_2_VDAC8_PM_STBY_CFG" address="0x400043B8" bitWidth="8" desc="VDAC8_PM_STBY_CFG" />
+    <register name="VDAC8_2_VDAC8_TR" address="0x40004609" bitWidth="8" desc="VDAC8_TR" />
+    <register name="VDAC8_2_VDAC8_CR0" address="0x40005824" bitWidth="8" desc="VDAC8_CR0" />
+    <register name="VDAC8_2_VDAC8_CR1" address="0x40005825" bitWidth="8" desc="VDAC8_CR1" />
+    <register name="VDAC8_2_VDAC8_D" address="0x40005B81" bitWidth="8" desc="VDAC8_D" />
+  </block>
+  <block name="Y0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Servo0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Servo" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="FFKillMux" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="vmTC" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="PWMUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="vmCompare" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="vmIRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  </block>
+  <block name="I2C" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="VirtualMux_SCL" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="bI2C_UDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_SDA" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="or_udb" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_CLOCK" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="or_ff" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Bufoe_SCL" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Bufoe_SDA" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_IRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="OneTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="I2C_IRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="I2C_DATA" address="0x40006408" bitWidth="8" desc="Data">
+      <field name="data" from="7" to="0" access="RW" resetVal="" desc="This register provides read/write access to the Shift register." />
+    </register>
+    <register name="I2C_CSR" address="0x40006468" bitWidth="7" desc="Status Register">
+      <field name="interrupt" from="7" to="7" access="R" resetVal="" desc="Interrupt bit" />
+      <field name="lost_arb" from="6" to="6" access="R" resetVal="" desc="" />
+      <field name="stop_status" from="5" to="5" access="RW" resetVal="" desc="" />
+      <field name="bus_busy" from="4" to="4" access="R" resetVal="" desc="" />
+      <field name="address" from="3" to="3" access="R" resetVal="" desc="" />
+      <field name="master_mode" from="2" to="2" access="R" resetVal="" desc="" />
+      <field name="lrb" from="1" to="1" access="R" resetVal="" desc="" />
+      <field name="byte_complete" from="0" to="0" access="R" resetVal="" desc="" />
+    </register>
+    <register name="I2C_INT_MASK" address="0x40006488" bitWidth="8" desc="Interrupt Mask" />
+    <register name="I2C_CFG" address="0x40006579" bitWidth="8" desc="Configuration Register">
+      <field name="start_gen" from="7" to="7" access="RW" resetVal="" desc="" />
+      <field name="stop_gen" from="6" to="6" access="RW" resetVal="" desc="" />
+      <field name="restart_gen" from="5" to="5" access="RW" resetVal="" desc="" />
+      <field name="ack" from="4" to="4" access="RW" resetVal="" desc="" />
+      <field name="hw_addr_en" from="3" to="3" access="RW" resetVal="" desc="" />
+      <field name="transmit" from="2" to="2" access="RW" resetVal="" desc="" />
+      <field name="master_en" from="1" to="1" access="RW" resetVal="" desc="" />
+    </register>
+  </block>
+  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+</blockRegMap>

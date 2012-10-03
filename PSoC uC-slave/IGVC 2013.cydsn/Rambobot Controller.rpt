@@ -1,0 +1,4528 @@
+Loading plugins phase: Elapsed time ==> 0s.309ms
+Initializing data phase: Elapsed time ==> 6s.045ms
+<CYPRESSTAG name="CyDsfit arguments...">
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\Rambobot Controller.cyprj -d CY8C5568AXI-060 -s C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\Generated_Source\PSoC5 -w 0 -- -yv2 -w 0 -v3 -ygs -q10 -o2 -.fftcfgtype=LE</CYPRESSTAG>
+<CYPRESSTAG name="Design elaboration results...">
+</CYPRESSTAG>
+Elaboration phase: Elapsed time ==> 6s.729ms
+<CYPRESSTAG name="HDL generation results...">
+</CYPRESSTAG>
+HDL generation phase: Elapsed time ==> 0s.181ms
+<CYPRESSTAG name="Synthesis results...">
+
+     | | | | | | |
+   _________________
+  -|               |-
+  -|               |-
+  -|               |-
+  -|    CYPRESS    |-
+  -|               |-
+  -|               |-   Warp Verilog Synthesis Compiler: Version 6.3 IR 41
+  -|               |-   Copyright (C) 1991-2001 Cypress Semiconductor
+   |_______________|
+     | | | | | | |
+
+======================================================================
+Compiling:  Rambobot Controller.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -w 0 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\Rambobot Controller.cyprj -dcpsoc3 Rambobot Controller.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  Rambobot Controller.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -w 0 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\Rambobot Controller.cyprj -dcpsoc3 Rambobot Controller.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  Rambobot Controller.v
+Program  :   vlogfe
+Options  :    -yv2 -w 0 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\Rambobot Controller.cyprj -dcpsoc3 -verilog Rambobot Controller.v
+======================================================================
+
+vlogfe V6.3 IR 41:  Verilog parser
+Tue Sep 25 00:30:04 2012
+
+
+======================================================================
+Compiling:  Rambobot Controller.v
+Program  :   vpp
+Options  :    -yv2 -q10 Rambobot Controller.v
+======================================================================
+
+vpp V6.3 IR 41:  Verilog Pre-Processor
+Tue Sep 25 00:30:04 2012
+
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\..\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\bI2C_v3_1\bI2C_v3_1.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v2_10\B_PWM_v2_10.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\cypress.v'
+
+vpp:  No errors.
+
+Library 'work' => directory 'lcpsoc3'
+General_symbol_table
+General_symbol_table
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Using control file 'Rambobot Controller.ctl'.
+C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\..\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\bI2C_v3_1\bI2C_v3_1.v (line 838, col 120):  Note: Substituting module 'cmp_vv_vv' for '/='.
+C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\..\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\bI2C_v3_1\bI2C_v3_1.v (line 917, col 46):  Note: Substituting module 'cmp_vv_vv' for '='.
+C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v2_10\B_PWM_v2_10.v (line 685, col 42):  Note: Substituting module 'sub_vi_vv' for '-'.
+C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v2_10\B_PWM_v2_10.v (line 705, col 46):  Note: Substituting module 'add_vi_vv' for '+'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+
+vlogfe:  No errors.
+
+
+======================================================================
+Compiling:  Rambobot Controller.v
+Program  :   tovif
+Options  :    -yv2 -w 0 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\Rambobot Controller.cyprj -dcpsoc3 -verilog Rambobot Controller.v
+======================================================================
+
+tovif V6.3 IR 41:  High-level synthesis
+Tue Sep 25 00:30:05 2012
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\codegentemp\Rambobot Controller.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\codegentemp\Rambobot Controller.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\bI2C_v3_1\bI2C_v3_1.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v2_10\B_PWM_v2_10.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mcompare.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
+
+tovif:  No errors.
+
+
+======================================================================
+Compiling:  Rambobot Controller.v
+Program  :   topld
+Options  :    -yv2 -w 0 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\Rambobot Controller.cyprj -dcpsoc3 -verilog Rambobot Controller.v
+======================================================================
+
+topld V6.3 IR 41:  Synthesis and optimization
+Tue Sep 25 00:30:08 2012
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\codegentemp\Rambobot Controller.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\codegentemp\Rambobot Controller.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\bI2C_v3_1\bI2C_v3_1.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v2_10\B_PWM_v2_10.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\common\stdlogic\mcompare.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+
+----------------------------------------------------------
+Detecting unused logic.
+----------------------------------------------------------
+    User names
+	\I2C:bI2C_UDB:ctrl_hw_addr_en\
+	\I2C:bI2C_UDB:scl_went_high\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:albi_1\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:agbi_1\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:lt_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:gt_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:lti_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:gti_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:albi_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:agbi_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:xeq\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:xlt\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:xlte\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:xgt\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:xgte\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:lt\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:eq\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:gt\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:gte\
+	\I2C:bI2C_UDB:genblk6:MODULE_1:lte\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:albi_1\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:agbi_1\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:lt_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:gt_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:lti_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:gti_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:albi_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:agbi_0\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:xneq\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:xlt\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:xlte\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:xgt\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:xgte\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:lt\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:gt\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:gte\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:lte\
+	\I2C:bI2C_UDB:genblk6:MODULE_2:neq\
+	Net_47
+	\I2C:Net_847\
+	Net_48
+	\I2C:Net_875\
+	\Servo:Net_101\
+	\Servo:PWMUDB:ctrl_cmpmode2_2\
+	\Servo:PWMUDB:ctrl_cmpmode2_1\
+	\Servo:PWMUDB:ctrl_cmpmode2_0\
+	\Servo:PWMUDB:ctrl_cmpmode1_2\
+	\Servo:PWMUDB:ctrl_cmpmode1_1\
+	\Servo:PWMUDB:ctrl_cmpmode1_0\
+	\Servo:PWMUDB:capt_rising\
+	\Servo:PWMUDB:capt_falling\
+	\Servo:PWMUDB:trig_rise\
+	\Servo:PWMUDB:trig_fall\
+	\Servo:PWMUDB:sc_kill\
+	\Servo:PWMUDB:km_run\
+	\Servo:PWMUDB:min_kill\
+	\Servo:PWMUDB:km_tc\
+	\Servo:PWMUDB:db_tc\
+	\Servo:PWMUDB:dith_sel\
+	\Servo:Net_96\
+	\Servo:PWMUDB:MODULE_3:b_31\
+	\Servo:PWMUDB:MODULE_3:b_30\
+	\Servo:PWMUDB:MODULE_3:b_29\
+	\Servo:PWMUDB:MODULE_3:b_28\
+	\Servo:PWMUDB:MODULE_3:b_27\
+	\Servo:PWMUDB:MODULE_3:b_26\
+	\Servo:PWMUDB:MODULE_3:b_25\
+	\Servo:PWMUDB:MODULE_3:b_24\
+	\Servo:PWMUDB:MODULE_3:b_23\
+	\Servo:PWMUDB:MODULE_3:b_22\
+	\Servo:PWMUDB:MODULE_3:b_21\
+	\Servo:PWMUDB:MODULE_3:b_20\
+	\Servo:PWMUDB:MODULE_3:b_19\
+	\Servo:PWMUDB:MODULE_3:b_18\
+	\Servo:PWMUDB:MODULE_3:b_17\
+	\Servo:PWMUDB:MODULE_3:b_16\
+	\Servo:PWMUDB:MODULE_3:b_15\
+	\Servo:PWMUDB:MODULE_3:b_14\
+	\Servo:PWMUDB:MODULE_3:b_13\
+	\Servo:PWMUDB:MODULE_3:b_12\
+	\Servo:PWMUDB:MODULE_3:b_11\
+	\Servo:PWMUDB:MODULE_3:b_10\
+	\Servo:PWMUDB:MODULE_3:b_9\
+	\Servo:PWMUDB:MODULE_3:b_8\
+	\Servo:PWMUDB:MODULE_3:b_7\
+	\Servo:PWMUDB:MODULE_3:b_6\
+	\Servo:PWMUDB:MODULE_3:b_5\
+	\Servo:PWMUDB:MODULE_3:b_4\
+	\Servo:PWMUDB:MODULE_3:b_3\
+	\Servo:PWMUDB:MODULE_3:b_2\
+	\Servo:PWMUDB:MODULE_3:b_1\
+	\Servo:PWMUDB:MODULE_3:b_0\
+	\Servo:PWMUDB:MODULE_3:g2:a0:a_31\
+	\Servo:PWMUDB:MODULE_3:g2:a0:a_30\
+	\Servo:PWMUDB:MODULE_3:g2:a0:a_29\
+	\Servo:PWMUDB:MODULE_3:g2:a0:a_28\
+	\Servo:PWMUDB:MODULE_3:g2:a0:a_27\
+	\Servo:PWMUDB:MODULE_3:g2:a0:a_26\
+	\Servo:PWMUDB:MODULE_3:g2:a0:a_25\
+	\Servo:PWMUDB:MODULE_3:g2:a0:a_24\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_31\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_30\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_29\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_28\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_27\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_26\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_25\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_24\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_23\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_22\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_21\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_20\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_19\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_18\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_17\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_16\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_15\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_14\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_13\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_12\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_11\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_10\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_9\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_8\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_7\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_6\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_5\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_4\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_3\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_2\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_1\
+	\Servo:PWMUDB:MODULE_3:g2:a0:b_0\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_31\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_30\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_29\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_28\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_27\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_26\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_25\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_24\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_23\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_22\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_21\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_20\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_19\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_18\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_17\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_16\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_15\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_14\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_13\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_12\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_11\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_10\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_9\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_8\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_7\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_6\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_5\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_4\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_3\
+	\Servo:PWMUDB:MODULE_3:g2:a0:s_2\
+	\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_31\
+	\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_30\
+	\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_29\
+	\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_28\
+	\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_27\
+	\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_26\
+	\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_25\
+	Net_131
+	Net_125
+	Net_124
+	\Servo:Net_113\
+	\Servo:Net_107\
+	\Servo:Net_114\
+
+    Synthesized names
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_31\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_30\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_29\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_28\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_27\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_26\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_25\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_24\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_23\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_22\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_21\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_20\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_19\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_18\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_17\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_16\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_15\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_14\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_13\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_12\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_11\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_10\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_9\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_8\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_7\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_6\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_5\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_4\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_3\
+	\Servo:PWMUDB:add_vi_vv_MODGEN_3_2\
+
+Deleted 175 User equations/components.
+Deleted 30 Synthesized equations/components.
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Aliasing \VDAC8_1:Net_81\ to \VDAC8_1:Net_83\
+Aliasing \VDAC8_1:Net_82\ to \VDAC8_1:Net_83\
+Aliasing zero to \VDAC8_1:Net_83\
+Aliasing \VDAC8_2:Net_83\ to \VDAC8_1:Net_83\
+Aliasing \VDAC8_2:Net_81\ to \VDAC8_1:Net_83\
+Aliasing \VDAC8_2:Net_82\ to \VDAC8_1:Net_83\
+Aliasing tmpOE__SDA_1_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing tmpOE__SCL_1_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing \I2C:Net_747\ to tmpOE__Err_LED_1_net_0
+Aliasing \I2C:Net_748\ to tmpOE__Err_LED_1_net_0
+Aliasing one to tmpOE__Err_LED_1_net_0
+Aliasing \I2C:bI2C_UDB:status_6\ to \VDAC8_1:Net_83\
+Aliasing \I2C:bI2C_UDB:cs_addr_shifter_2\ to \VDAC8_1:Net_83\
+Aliasing \I2C:bI2C_UDB:cs_addr_clkgen_2\ to \VDAC8_1:Net_83\
+Aliasing \I2C:bI2C_UDB:bus_busy\ to \VDAC8_1:Net_83\
+Aliasing \I2C:bI2C_UDB:lost_arb\ to \VDAC8_1:Net_83\
+Aliasing \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:newa_0\ to \I2C:sda_x_wire\
+Aliasing \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:aeqb_0\ to tmpOE__Err_LED_1_net_0
+Aliasing \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:newa_0\ to \I2C:scl_x_wire\
+Aliasing \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:aeqb_0\ to tmpOE__Err_LED_1_net_0
+Aliasing \Servo:PWMUDB:hwCapture\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:trig_out\ to tmpOE__Err_LED_1_net_0
+Aliasing \Servo:PWMUDB:runmode_enable\\R\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:runmode_enable\\S\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:ltch_kill_reg\\R\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:ltch_kill_reg\\S\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:min_kill_reg\\R\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:min_kill_reg\\S\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:final_kill\ to tmpOE__Err_LED_1_net_0
+Aliasing \Servo:PWMUDB:dith_count_1\\R\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:dith_count_1\\S\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:dith_count_0\\R\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:dith_count_0\\S\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:pwm_temp\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:status_6\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:status_4\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:cmp1_status_reg\\R\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:cmp1_status_reg\\S\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:cmp2_status_reg\\R\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:cmp2_status_reg\\S\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:final_kill_reg\\R\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:final_kill_reg\\S\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:cs_addr_2\ to \Servo:PWMUDB:status_2\
+Aliasing \Servo:PWMUDB:cs_addr_0\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_23\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_22\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_21\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_20\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_19\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_18\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_17\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_16\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_15\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_14\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_13\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_12\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_11\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_10\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_9\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_8\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_7\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_6\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_5\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_4\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_3\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:a_2\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:b_0\ to tmpOE__Err_LED_1_net_0
+Aliasing tmpOE__Y0_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing tmpOE__Servo0_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing tmpOE__Servo1_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing \VDAC8_3:Net_83\ to \VDAC8_1:Net_83\
+Aliasing \VDAC8_3:Net_81\ to \VDAC8_1:Net_83\
+Aliasing \VDAC8_3:Net_82\ to \VDAC8_1:Net_83\
+Aliasing tmpOE__Test_Button_1_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing tmpOE__X1_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing tmpOE__Test_Button_2_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing tmpOE__Y1_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing tmpOE__X0_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing tmpOE__Center_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing tmpOE__Err_LED_2_net_0 to tmpOE__Err_LED_1_net_0
+Aliasing \I2C:bI2C_UDB:scl_in_reg\\D\ to \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:newb_0\
+Aliasing \I2C:bI2C_UDB:sda_in_last_reg\\D\ to \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:newb_0\
+Aliasing \Servo:PWMUDB:tc_reg_i\\D\ to \Servo:PWMUDB:status_2\
+Aliasing \Servo:PWMUDB:prevCapture\\D\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:trig_last\\D\ to \VDAC8_1:Net_83\
+Aliasing \Servo:PWMUDB:ltch_kill_reg\\D\ to tmpOE__Err_LED_1_net_0
+Aliasing \Servo:PWMUDB:min_kill_reg\\D\ to tmpOE__Err_LED_1_net_0
+Removing Lhs of wire \VDAC8_1:Net_81\[2] = \VDAC8_1:Net_83\[1]
+Removing Lhs of wire \VDAC8_1:Net_82\[3] = \VDAC8_1:Net_83\[1]
+Removing Rhs of wire zero[4] = \VDAC8_1:Net_83\[1]
+Removing Lhs of wire \VDAC8_2:Net_83\[9] = zero[4]
+Removing Lhs of wire \VDAC8_2:Net_81\[10] = zero[4]
+Removing Lhs of wire \VDAC8_2:Net_82\[11] = zero[4]
+Removing Lhs of wire tmpOE__SDA_1_net_0[22] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire tmpOE__SCL_1_net_0[28] = tmpOE__Err_LED_1_net_0[16]
+Removing Rhs of wire \I2C:sda_x_wire\[34] = \I2C:Net_643_4\[46]
+Removing Rhs of wire \I2C:sda_x_wire\[34] = \I2C:bI2C_UDB:m_sda_out_reg\[258]
+Removing Lhs of wire \I2C:tmpOE__Bufoe_SDA_net_0\[35] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \I2C:Net_747\[37] = tmpOE__Err_LED_1_net_0[16]
+Removing Rhs of wire \I2C:scl_x_wire\[39] = \I2C:Net_643_3\[47]
+Removing Rhs of wire \I2C:scl_x_wire\[39] = \I2C:bI2C_UDB:m_scl_out_reg\[257]
+Removing Lhs of wire \I2C:tmpOE__Bufoe_SCL_net_0\[40] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \I2C:Net_748\[42] = tmpOE__Err_LED_1_net_0[16]
+Removing Rhs of wire \I2C:Net_697\[44] = \I2C:Net_643_5\[45]
+Removing Rhs of wire \I2C:Net_697\[44] = \I2C:bI2C_UDB:sts_irq\[69]
+Removing Rhs of wire \I2C:Net_767\[49] = \I2C:Net_872\[262]
+Removing Lhs of wire one[50] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \I2C:bI2C_UDB:status_6\[62] = zero[4]
+Removing Rhs of wire \I2C:bI2C_UDB:status_5\[63] = \I2C:bI2C_UDB:stop_detect\[157]
+Removing Rhs of wire \I2C:bI2C_UDB:status_3\[65] = \I2C:bI2C_UDB:m_address_reg\[163]
+Removing Rhs of wire \I2C:bI2C_UDB:status_2\[66] = \I2C:bI2C_UDB:master_mode_reg\[164]
+Removing Rhs of wire \I2C:bI2C_UDB:status_1\[67] = \I2C:bI2C_UDB:m_lrb_reg\[165]
+Removing Rhs of wire \I2C:bI2C_UDB:status_0\[68] = \I2C:bI2C_UDB:m_byte_complete_reg\[166]
+Removing Lhs of wire \I2C:bI2C_UDB:cs_addr_shifter_2\[71] = zero[4]
+Removing Rhs of wire \I2C:bI2C_UDB:cs_addr_shifter_1\[72] = \I2C:bI2C_UDB:m_load_dummy\[184]
+Removing Rhs of wire \I2C:bI2C_UDB:cs_addr_shifter_0\[73] = \I2C:bI2C_UDB:m_shift_en\[196]
+Removing Lhs of wire \I2C:bI2C_UDB:cs_addr_clkgen_2\[108] = zero[4]
+Removing Rhs of wire \I2C:bI2C_UDB:cs_addr_clkgen_0\[110] = \I2C:bI2C_UDB:clkgen_en\[195]
+Removing Lhs of wire \I2C:bI2C_UDB:ctrl_start_gen\[149] = \I2C:bI2C_UDB:control_reg_7\[143]
+Removing Lhs of wire \I2C:bI2C_UDB:ctrl_stop_gen\[150] = \I2C:bI2C_UDB:control_reg_6\[144]
+Removing Lhs of wire \I2C:bI2C_UDB:ctrl_restart_gen\[151] = \I2C:bI2C_UDB:control_reg_5\[145]
+Removing Lhs of wire \I2C:bI2C_UDB:ctrl_nack\[152] = \I2C:bI2C_UDB:control_reg_4\[146]
+Removing Lhs of wire \I2C:bI2C_UDB:ctrl_transmit\[154] = \I2C:bI2C_UDB:control_reg_2\[148]
+Removing Lhs of wire \I2C:bI2C_UDB:ctrl_master_en\[155] = \I2C:bI2C_UDB:control_1\[59]
+Removing Lhs of wire \I2C:bI2C_UDB:ctrl_slave_en\[156] = \I2C:bI2C_UDB:control_0\[60]
+Removing Rhs of wire \I2C:bI2C_UDB:m_reset\[177] = \I2C:bI2C_UDB:master_rst_reg\[260]
+Removing Lhs of wire \I2C:bI2C_UDB:bus_busy\[179] = zero[4]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:cmp_vv_vv_MODGEN_1\[187] = \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:xneq\[217]
+Removing Lhs of wire \I2C:bI2C_UDB:lost_arb\[189] = zero[4]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:cmp_vv_vv_MODGEN_2\[194] = \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:xeq\[246]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:newa_0\[197] = \I2C:sda_x_wire\[34]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:newb_0\[198] = \I2C:bI2C_UDB:sda_in_reg\[74]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:dataa_0\[199] = \I2C:sda_x_wire\[34]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:datab_0\[200] = \I2C:bI2C_UDB:sda_in_reg\[74]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:a_0\[201] = \I2C:sda_x_wire\[34]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:b_0\[202] = \I2C:bI2C_UDB:sda_in_reg\[74]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:aeqb_0\[204] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:eq_0\[205] = \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:xnor_array_0\[203]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:eqi_0\[206] = \I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:xnor_array_0\[203]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:newa_0\[227] = \I2C:scl_x_wire\[39]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:newb_0\[228] = \I2C:Net_854\[41]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:dataa_0\[229] = \I2C:scl_x_wire\[39]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:datab_0\[230] = \I2C:Net_854\[41]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:a_0\[231] = \I2C:scl_x_wire\[39]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:b_0\[232] = \I2C:Net_854\[41]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:aeqb_0\[234] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:eq_0\[235] = \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:xnor_array_0\[233]
+Removing Lhs of wire \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:eqi_0\[236] = \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:xnor_array_0\[233]
+Removing Rhs of wire \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:xeq\[246] = \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:aeqb_1\[237]
+Removing Rhs of wire \Servo:PWMUDB:ctrl_enable\[281] = \Servo:PWMUDB:control_7\[282]
+Removing Lhs of wire \Servo:PWMUDB:hwCapture\[294] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:hwEnable\[295] = \Servo:PWMUDB:ctrl_enable\[281]
+Removing Lhs of wire \Servo:PWMUDB:trig_out\[299] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \Servo:PWMUDB:runmode_enable\\R\[301] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:runmode_enable\\S\[302] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:final_enable\[303] = \Servo:PWMUDB:runmode_enable\[300]
+Removing Lhs of wire \Servo:PWMUDB:ltch_kill_reg\\R\[307] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:ltch_kill_reg\\S\[308] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:min_kill_reg\\R\[310] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:min_kill_reg\\S\[311] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:final_kill\[314] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \Servo:PWMUDB:add_vi_vv_MODGEN_3_1\[318] = \Servo:PWMUDB:MODULE_3:g2:a0:s_1\[604]
+Removing Lhs of wire \Servo:PWMUDB:add_vi_vv_MODGEN_3_0\[320] = \Servo:PWMUDB:MODULE_3:g2:a0:s_0\[605]
+Removing Lhs of wire \Servo:PWMUDB:dith_count_1\\R\[321] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:dith_count_1\\S\[322] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:dith_count_0\\R\[323] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:dith_count_0\\S\[324] = zero[4]
+Removing Rhs of wire \Servo:PWMUDB:compare1\[326] = \Servo:PWMUDB:cmp1_less\[327]
+Removing Rhs of wire \Servo:PWMUDB:compare2\[328] = \Servo:PWMUDB:cmp2_less\[329]
+Removing Lhs of wire \Servo:PWMUDB:pwm_temp\[332] = zero[4]
+Removing Rhs of wire Net_112[340] = \Servo:PWMUDB:pwm1_reg_i\[338]
+Removing Rhs of wire Net_113[341] = \Servo:PWMUDB:pwm2_reg_i\[339]
+Removing Lhs of wire \Servo:PWMUDB:status_6\[342] = zero[4]
+Removing Rhs of wire \Servo:PWMUDB:status_0\[343] = \Servo:PWMUDB:cmp1_status_reg\[344]
+Removing Rhs of wire \Servo:PWMUDB:status_1\[345] = \Servo:PWMUDB:cmp2_status_reg\[346]
+Removing Lhs of wire \Servo:PWMUDB:status_2\[347] = \Servo:PWMUDB:tc_i\[273]
+Removing Rhs of wire \Servo:PWMUDB:status_3\[348] = \Servo:PWMUDB:fifo_full\[349]
+Removing Lhs of wire \Servo:PWMUDB:status_4\[350] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:cmp1_status_reg\\R\[355] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:cmp1_status_reg\\S\[356] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:cmp2_status_reg\\R\[357] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:cmp2_status_reg\\S\[358] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:final_kill_reg\\R\[359] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:final_kill_reg\\S\[360] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:cs_addr_2\[365] = \Servo:PWMUDB:tc_i\[273]
+Removing Lhs of wire \Servo:PWMUDB:cs_addr_1\[366] = \Servo:PWMUDB:runmode_enable\[300]
+Removing Lhs of wire \Servo:PWMUDB:cs_addr_0\[367] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_23\[486] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_22\[487] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_21\[488] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_20\[489] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_19\[490] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_18\[491] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_17\[492] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_16\[493] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_15\[494] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_14\[495] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_13\[496] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_12\[497] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_11\[498] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_10\[499] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_9\[500] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_8\[501] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_7\[502] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_6\[503] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_5\[504] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_4\[505] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_3\[506] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_2\[507] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_1\[508] = \Servo:PWMUDB:MODIN1_1\[509]
+Removing Lhs of wire \Servo:PWMUDB:MODIN1_1\[509] = \Servo:PWMUDB:dith_count_1\[317]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:a_0\[510] = \Servo:PWMUDB:MODIN1_0\[511]
+Removing Lhs of wire \Servo:PWMUDB:MODIN1_0\[511] = \Servo:PWMUDB:dith_count_0\[319]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_0\[643] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:b_0\[644] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire tmpOE__Y0_net_0[652] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire tmpOE__Servo0_net_0[658] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire tmpOE__Servo1_net_0[664] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \VDAC8_3:Net_83\[670] = zero[4]
+Removing Lhs of wire \VDAC8_3:Net_81\[671] = zero[4]
+Removing Lhs of wire \VDAC8_3:Net_82\[672] = zero[4]
+Removing Lhs of wire tmpOE__Test_Button_1_net_0[677] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire tmpOE__X1_net_0[683] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire tmpOE__Test_Button_2_net_0[689] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire tmpOE__Y1_net_0[695] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire tmpOE__X0_net_0[701] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire tmpOE__Center_net_0[707] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire tmpOE__Err_LED_2_net_0[713] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \I2C:bI2C_UDB:sda_in_reg\\D\[720] = \I2C:Net_855\[36]
+Removing Lhs of wire \I2C:bI2C_UDB:control_reg_7\\D\[721] = \I2C:bI2C_UDB:control_7\[53]
+Removing Lhs of wire \I2C:bI2C_UDB:control_reg_6\\D\[722] = \I2C:bI2C_UDB:control_6\[54]
+Removing Lhs of wire \I2C:bI2C_UDB:control_reg_5\\D\[723] = \I2C:bI2C_UDB:control_5\[55]
+Removing Lhs of wire \I2C:bI2C_UDB:control_reg_4\\D\[724] = \I2C:bI2C_UDB:control_4\[56]
+Removing Lhs of wire \I2C:bI2C_UDB:control_reg_3\\D\[725] = \I2C:bI2C_UDB:control_3\[57]
+Removing Lhs of wire \I2C:bI2C_UDB:control_reg_2\\D\[726] = \I2C:bI2C_UDB:control_2\[58]
+Removing Lhs of wire \I2C:bI2C_UDB:scl_in_reg\\D\[736] = \I2C:Net_854\[41]
+Removing Lhs of wire \I2C:bI2C_UDB:scl_in_last_reg\\D\[737] = \I2C:bI2C_UDB:scl_in_reg\[167]
+Removing Lhs of wire \I2C:bI2C_UDB:scl_in_last2_reg\\D\[738] = \I2C:bI2C_UDB:scl_in_last_reg\[168]
+Removing Lhs of wire \I2C:bI2C_UDB:sda_in_last_reg\\D\[739] = \I2C:bI2C_UDB:sda_in_reg\[74]
+Removing Lhs of wire \I2C:bI2C_UDB:sda_in_last2_reg\\D\[740] = \I2C:bI2C_UDB:sda_in_last_reg\[170]
+Removing Lhs of wire \I2C:bI2C_UDB:clk_eq_reg\\D\[747] = \I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:xeq\[246]
+Removing Lhs of wire \Servo:PWMUDB:tc_reg_i\\D\[752] = \Servo:PWMUDB:tc_i\[273]
+Removing Lhs of wire \Servo:PWMUDB:prevCapture\\D\[753] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:trig_last\\D\[754] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:ltch_kill_reg\\D\[757] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \Servo:PWMUDB:min_kill_reg\\D\[758] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \Servo:PWMUDB:pwm_reg_i\\D\[761] = \Servo:PWMUDB:pwm_i\[333]
+Removing Lhs of wire \Servo:PWMUDB:pwm1_reg_i\\D\[762] = \Servo:PWMUDB:pwm1_i\[336]
+Removing Lhs of wire \Servo:PWMUDB:pwm2_reg_i\\D\[763] = \Servo:PWMUDB:pwm2_i\[337]
+Removing Lhs of wire \Servo:PWMUDB:cmp1_status_reg\\D\[764] = \Servo:PWMUDB:cmp1_status\[353]
+Removing Lhs of wire \Servo:PWMUDB:cmp2_status_reg\\D\[765] = \Servo:PWMUDB:cmp2_status\[354]
+Removing Lhs of wire \Servo:PWMUDB:final_kill_reg\\D\[766] = tmpOE__Err_LED_1_net_0[16]
+Removing Lhs of wire \Servo:PWMUDB:prevCompare1\\D\[767] = \Servo:PWMUDB:cmp1\[330]
+Removing Lhs of wire \Servo:PWMUDB:prevCompare2\\D\[768] = \Servo:PWMUDB:cmp2\[331]
+
+------------------------------------------------------
+Aliased 0 equations, 167 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Substituting virtuals - pass 1:
+
+Note:  Expanding virtual equation for 'zero' (cost = 0):
+zero <=  ('0') ;
+
+Note:  Expanding virtual equation for 'tmpOE__Err_LED_1_net_0' (cost = 0):
+tmpOE__Err_LED_1_net_0 <=  ('1') ;
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:sda_went_high\' (cost = 1):
+\I2C:bI2C_UDB:sda_went_high\ <= ((not \I2C:bI2C_UDB:sda_in_last2_reg\ and \I2C:bI2C_UDB:sda_in_last_reg\));
+
+Note:  Virtual signal \I2C:bI2C_UDB:cs_addr_shifter_1\ with ( cost: 108 or cost_inv: 3)  > 90 or with size: 5 > 102 has been made a (soft) node.
+\I2C:bI2C_UDB:cs_addr_shifter_1\ <= ((not \I2C:bI2C_UDB:tx_reg_empty\ and \I2C:bI2C_UDB:m_state_0\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
+	OR (not \I2C:bI2C_UDB:tx_reg_empty\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
+	OR (not \I2C:bI2C_UDB:tx_reg_empty\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
+	OR (not \I2C:bI2C_UDB:tx_reg_empty\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
+	OR (not \I2C:bI2C_UDB:tx_reg_empty\ and \I2C:bI2C_UDB:m_state_4\ and \I2C:bI2C_UDB:clkgen_tc1_reg\));
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:txdata\' (cost = 54):
+\I2C:bI2C_UDB:txdata\ <= ((not \I2C:bI2C_UDB:m_state_4\ and \I2C:bI2C_UDB:m_state_3\));
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:rxdata\' (cost = 2):
+\I2C:bI2C_UDB:rxdata\ <= ((not \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:m_state_4\));
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:sda_went_low\' (cost = 1):
+\I2C:bI2C_UDB:sda_went_low\ <= ((not \I2C:bI2C_UDB:sda_in_last_reg\ and \I2C:bI2C_UDB:sda_in_last2_reg\));
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:scl_went_low\' (cost = 4):
+\I2C:bI2C_UDB:scl_went_low\ <= ((not \I2C:bI2C_UDB:scl_in_reg\ and \I2C:bI2C_UDB:scl_in_last_reg\));
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:start_detect\' (cost = 2):
+\I2C:bI2C_UDB:start_detect\ <= ((not \I2C:bI2C_UDB:sda_in_last_reg\ and \I2C:bI2C_UDB:scl_in_reg\ and \I2C:bI2C_UDB:scl_in_last_reg\ and \I2C:bI2C_UDB:scl_in_last2_reg\ and \I2C:bI2C_UDB:sda_in_last2_reg\));
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:stalled\' (cost = 16):
+\I2C:bI2C_UDB:stalled\ <= ((not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\));
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:xnor_array_0\' (cost = 2):
+\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:xnor_array_0\ <= ((not \I2C:sda_x_wire\ and not \I2C:bI2C_UDB:sda_in_reg\)
+	OR (\I2C:sda_x_wire\ and \I2C:bI2C_UDB:sda_in_reg\));
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:aeqb_1\' (cost = 2):
+\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:gx:u0:aeqb_1\ <= ((not \I2C:sda_x_wire\ and not \I2C:bI2C_UDB:sda_in_reg\)
+	OR (\I2C:sda_x_wire\ and \I2C:bI2C_UDB:sda_in_reg\));
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:xnor_array_0\' (cost = 2):
+\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:gx:u0:xnor_array_0\ <= ((not \I2C:scl_x_wire\ and not \I2C:Net_854\)
+	OR (\I2C:scl_x_wire\ and \I2C:Net_854\));
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:cmp1\' (cost = 0):
+\Servo:PWMUDB:cmp1\ <= (\Servo:PWMUDB:compare1\);
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:cmp2\' (cost = 0):
+\Servo:PWMUDB:cmp2\ <= (\Servo:PWMUDB:compare2\);
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_1\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_1\ <= (\Servo:PWMUDB:dith_count_0\);
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:s_0\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:s_0\ <= (not \Servo:PWMUDB:dith_count_0\);
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_17\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_17\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_9\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_9\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_2\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_2\ <= ((\Servo:PWMUDB:dith_count_1\ and \Servo:PWMUDB:dith_count_0\));
+
+
+Substituting virtuals - pass 2:
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:status_5\' (cost = 10):
+\I2C:bI2C_UDB:status_5\ <= ((not \I2C:bI2C_UDB:sda_in_last2_reg\ and \I2C:bI2C_UDB:scl_in_reg\ and \I2C:bI2C_UDB:scl_in_last_reg\ and \I2C:bI2C_UDB:scl_in_last2_reg\ and \I2C:bI2C_UDB:sda_in_last_reg\));
+
+Note:  Virtual signal \I2C:bI2C_UDB:cnt_reset\ with ( cost: 330 or cost_inv: 6)  > 90 or with size: 4 > 102 has been made a (soft) node.
+\I2C:bI2C_UDB:cnt_reset\ <= ((not \I2C:bI2C_UDB:scl_in_reg\ and not \I2C:bI2C_UDB:clkgen_tc1_reg\ and \I2C:scl_x_wire\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:m_state_0\ and \I2C:bI2C_UDB:scl_in_last_reg\)
+	OR (not \I2C:bI2C_UDB:scl_in_reg\ and not \I2C:bI2C_UDB:clkgen_tc1_reg\ and \I2C:scl_x_wire\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:scl_in_last_reg\)
+	OR (not \I2C:bI2C_UDB:scl_in_reg\ and not \I2C:bI2C_UDB:clkgen_tc1_reg\ and \I2C:scl_x_wire\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:scl_in_last_reg\)
+	OR (not \I2C:bI2C_UDB:scl_in_reg\ and not \I2C:bI2C_UDB:clkgen_tc1_reg\ and \I2C:scl_x_wire\ and \I2C:bI2C_UDB:m_state_4\ and \I2C:bI2C_UDB:scl_in_last_reg\));
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:xneq\' (cost = 8):
+\I2C:bI2C_UDB:genblk6:MODULE_1:g1:a0:xneq\ <= ((not \I2C:bI2C_UDB:sda_in_reg\ and \I2C:sda_x_wire\)
+	OR (not \I2C:sda_x_wire\ and \I2C:bI2C_UDB:sda_in_reg\));
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:s_1\' (cost = 2):
+\Servo:PWMUDB:MODULE_3:g2:a0:s_1\ <= ((not \Servo:PWMUDB:dith_count_0\ and \Servo:PWMUDB:dith_count_1\)
+	OR (not \Servo:PWMUDB:dith_count_1\ and \Servo:PWMUDB:dith_count_0\));
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_18\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_18\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_10\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_10\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_3\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_3\ <=  ('0') ;
+
+
+Substituting virtuals - pass 3:
+
+Note:  Expanding virtual equation for '\I2C:bI2C_UDB:contention\' (cost = 8):
+\I2C:bI2C_UDB:contention\ <= ((not \I2C:bI2C_UDB:sda_in_reg\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and \I2C:sda_x_wire\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:cnt_reset\)
+	OR (not \I2C:sda_x_wire\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and \I2C:bI2C_UDB:sda_in_reg\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:cnt_reset\)
+	OR (not \I2C:bI2C_UDB:sda_in_reg\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and \I2C:sda_x_wire\ and \I2C:bI2C_UDB:clkgen_tc\ and \I2C:bI2C_UDB:m_state_3\)
+	OR (not \I2C:sda_x_wire\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and \I2C:bI2C_UDB:sda_in_reg\ and \I2C:bI2C_UDB:clkgen_tc\ and \I2C:bI2C_UDB:m_state_3\)
+	OR (not \I2C:bI2C_UDB:sda_in_reg\ and not \I2C:bI2C_UDB:m_state_4\ and \I2C:sda_x_wire\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:cnt_reset\)
+	OR (not \I2C:sda_x_wire\ and not \I2C:bI2C_UDB:m_state_4\ and \I2C:bI2C_UDB:sda_in_reg\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:cnt_reset\)
+	OR (not \I2C:bI2C_UDB:sda_in_reg\ and not \I2C:bI2C_UDB:m_state_4\ and \I2C:sda_x_wire\ and \I2C:bI2C_UDB:clkgen_tc\ and \I2C:bI2C_UDB:m_state_3\)
+	OR (not \I2C:sda_x_wire\ and not \I2C:bI2C_UDB:m_state_4\ and \I2C:bI2C_UDB:sda_in_reg\ and \I2C:bI2C_UDB:clkgen_tc\ and \I2C:bI2C_UDB:m_state_3\));
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_19\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_19\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_11\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_11\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_4\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_4\ <=  ('0') ;
+
+
+Substituting virtuals - pass 4:
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_20\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_20\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_12\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_12\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_5\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_5\ <=  ('0') ;
+
+
+Substituting virtuals - pass 5:
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_21\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_21\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_13\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_13\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_6\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_6\ <=  ('0') ;
+
+
+Substituting virtuals - pass 6:
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_22\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_22\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_14\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_14\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_7\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_7\ <=  ('0') ;
+
+
+Substituting virtuals - pass 7:
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_23\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_23\ <=  ('0') ;
+
+Note:  Expanding virtual equation for '\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_15\' (cost = 0):
+\Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_15\ <=  ('0') ;
+
+
+Substituting virtuals - pass 8:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 40 signals.
+	Turned 2 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Aliasing \Servo:PWMUDB:pwm_i\ to zero
+Aliasing \Servo:PWMUDB:final_capture\ to zero
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:b_24\ to zero
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:b_16\ to zero
+Aliasing \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:b_8\ to zero
+Aliasing \I2C:bI2C_UDB:lost_arb2_reg\\D\ to zero
+Removing Lhs of wire \Servo:PWMUDB:pwm_i\[333] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:final_capture\[368] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:b_24\[614] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:b_16\[624] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:b_8\[634] = zero[4]
+Removing Lhs of wire \I2C:bI2C_UDB:lost_arb2_reg\\D\[743] = zero[4]
+Removing Lhs of wire \Servo:PWMUDB:runmode_enable\\D\[755] = \Servo:PWMUDB:ctrl_enable\[281]
+
+------------------------------------------------------
+Aliased 0 equations, 7 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Eliminating unused logic - pass 1:
+
+
+Eliminating unused logic - pass 2:
+
+
+Substituting virtuals - pass 1:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 0 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+topld:  No errors.
+
+CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp
+Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\warp\bin/warp.exe
+Warp Arguments : -yv2 -w 0 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\Rambobot Controller.cyprj" -dcpsoc3 "Rambobot Controller.v" -verilog
+</CYPRESSTAG>
+Warp synthesis phase: Elapsed time ==> 6s.879ms
+<CYPRESSTAG name="Fitter results...">
+<CYPRESSTAG name="Fitter startup details...">
+cyp3fit: V2.0.0.828, Family: PSoC3, Started at: Tuesday, 25 September 2012 00:30:11
+Options: -yv2 -w 0 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Frank\Documents\PSoC Creator\Rambobot Controller\Rambobot Controller.cydsn\Rambobot Controller.cyprj -d CY8C5568AXI-060 Rambobot Controller.v -verilog
+</CYPRESSTAG>
+<CYPRESSTAG name="Design parsing">
+Design parsing phase: Elapsed time ==> 0s.059ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Tech mapping">
+<CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
+    Removed wire end \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_16\ kept zero
+    Removed wire end \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_24\ kept zero
+    Removed wire end \Servo:PWMUDB:MODULE_3:g2:a0:g1:z1:s0:g1:u0:c_8\ kept zero
+    Converted constant MacroCell: \I2C:bI2C_UDB:lost_arb2_reg\ from registered to combinatorial
+    Converted constant MacroCell: \Servo:PWMUDB:prevCapture\ from registered to combinatorial
+    Converted constant MacroCell: \Servo:PWMUDB:pwm_reg_i\ from registered to combinatorial
+    Converted constant MacroCell: \Servo:PWMUDB:trig_last\ from registered to combinatorial
+
+Removing unused cells resulting from optimization
+    Removed unused cell/equation '\I2C:bI2C_UDB:contention1_reg\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:control_reg_3\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:slave_rst_reg\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:ltch_kill_reg\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:min_kill_reg\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:prevCapture\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:pwm_reg_i\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:sc_kill_tmp\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:tc_reg_i\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:trig_last\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:contention1_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:slave_rst_reg\\D\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:sc_kill_tmp\\D\:macrocell'
+Done removing unused cells.
+<CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
+    Digital Clock 0: Automatic-assigning  clock 'Clock_1'. Fanout=1, Signal=Net_67
+    Digital Clock 1: Automatic-assigning  clock 'I2C_IntClock'. Fanout=1, Signal=\I2C:Net_767\
+</CYPRESSTAG>
+<CYPRESSTAG name="UDB Clock/Enable Remapping Results">
+    UDB Clk/Enable \I2C:bI2C_UDB:ClkSync0\: with output requested to be synchronous
+        ClockIn: I2C_IntClock was determined to be a global clock that is synchronous to BUS_CLK
+        EnableIn: Constant 1 was determined to be synchronous to ClockIn
+        ClockOut: I2C_IntClock, EnableOut: Constant 1
+    UDB Clk/Enable \Servo:PWMUDB:clock_enable_block\: with output requested to be synchronous
+        ClockIn: Clock_1 was determined to be a global clock that is synchronous to BUS_CLK
+        EnableIn: Constant 1 was determined to be synchronous to ClockIn
+        ClockOut: Clock_1, EnableOut: Constant 1
+</CYPRESSTAG>
+
+Removing unused cells resulting from optimization
+    Removed unused cell/equation '\I2C:bI2C_UDB:bus_busy_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:clkgen_tc1_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:clkgen_tc2_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:genblk6:MODULE_2:g1:a0:xeq\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:lost_arb2_reg\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:lost_arb_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:m_address_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:m_byte_complete_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:m_lrb_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:m_scl_out_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:m_sda_out_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:m_state_0\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:m_state_1\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:m_state_2\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:m_state_3\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:m_state_4\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:master_mode_reg\\D\:macrocell'
+    Removed unused cell/equation '\I2C:bI2C_UDB:master_rst_reg\\D\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:cmp1_status\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:cmp2_status\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:dith_count_0\\D\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:dith_count_1\\D\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:pwm1_i\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:pwm2_i\:macrocell'
+    Removed unused cell/equation '__ZERO__:macrocell'
+Done removing unused cells.
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Duplicate Macrocell detection">
+
+Removing unused cells resulting from optimization
+    Removed unused cell/equation '\Servo:PWMUDB:dith_count_1\:macrocell'
+    Removed unused cell/equation '\Servo:PWMUDB:dith_count_0\:macrocell'
+Done removing unused cells.
+</CYPRESSTAG>
+<CYPRESSTAG name="Design Equations" icon="FILE_RPT_EQUATION">
+
+------------------------------------------------------------
+Design Equations
+------------------------------------------------------------
+    <CYPRESSTAG name="Pin listing">
+
+    ------------------------------------------------------------
+    Pin listing
+    ------------------------------------------------------------
+
+    Pin : Name = Center(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: ANALOG
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            analog_term => Net_157 ,
+            pad => Center(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Err_LED_1(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pad => Err_LED_1(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Err_LED_2(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pad => Err_LED_2(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = SCL_1(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: SYNC
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: OPEN_DRAIN_LO
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: True
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            fb => \I2C:Net_854\ ,
+            input => \I2C:scl_x_wire\ ,
+            pad => SCL_1(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = SDA_1(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: SYNC
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: OPEN_DRAIN_LO
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: True
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            fb => \I2C:Net_855\ ,
+            input => \I2C:sda_x_wire\ ,
+            pad => SDA_1(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Servo0(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_112 ,
+            pad => Servo0(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Servo1(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_113 ,
+            pad => Servo1(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Test_Button_1(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: SYNC
+            Out Sync Option: AUTO
+            Interrupt generated: True
+            Interrupt mode: RISING
+            Drive mode: RES_PULL_DOWN
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: True
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pad => Test_Button_1(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Test_Button_2(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: SYNC
+            Out Sync Option: AUTO
+            Interrupt generated: True
+            Interrupt mode: RISING
+            Drive mode: RES_PULL_DOWN
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: True
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pad => Test_Button_2(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = X0(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: ANALOG
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            analog_term => Net_175 ,
+            pad => X0(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = X1(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: ANALOG
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            analog_term => Net_175 ,
+            pad => X1(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Y0(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: ANALOG
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            analog_term => Net_178 ,
+            pad => Y0(0)_PAD );
+        Properties:
+        {
+        }
+
+    Pin : Name = Y1(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: ANALOG
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            analog_term => Net_178 ,
+            pad => Y1(0)_PAD );
+        Properties:
+        {
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Macrocell listing" icon="FILE_RPT_EQUATION">
+
+    ------------------------------------------------------------
+    Macrocell listing
+    ------------------------------------------------------------
+
+    MacroCell: Name=Net_112, Mode=(D-Register)
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:ctrl_enable\ * \Servo:PWMUDB:compare1\
+        );
+        Output = Net_112 (fanout=1)
+
+    MacroCell: Name=Net_113, Mode=(D-Register)
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:ctrl_enable\ * \Servo:PWMUDB:compare2\
+        );
+        Output = Net_113 (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:bus_busy_reg\, Mode=(T-Register)
+        Total # of inputs        : 7
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              \I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              \I2C:bI2C_UDB:scl_in_last2_reg\ * 
+              !\I2C:bI2C_UDB:sda_in_last_reg\ * 
+              \I2C:bI2C_UDB:sda_in_last2_reg\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:bus_busy_reg\
+            + \I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              \I2C:bI2C_UDB:scl_in_last2_reg\ * 
+              \I2C:bI2C_UDB:sda_in_last_reg\ * 
+              !\I2C:bI2C_UDB:sda_in_last2_reg\ * \I2C:bI2C_UDB:bus_busy_reg\
+            + \I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:bus_busy_reg\
+        );
+        Output = \I2C:bI2C_UDB:bus_busy_reg\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:clk_eq_reg\, Mode=(D-Register)
+        Total # of inputs        : 2
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !\I2C:scl_x_wire\ * !\I2C:Net_854\
+            + \I2C:scl_x_wire\ * \I2C:Net_854\
+        );
+        Output = \I2C:bI2C_UDB:clk_eq_reg\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:clkgen_tc1_reg\, Mode=(D-Register)
+        Total # of inputs        : 3
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\I2C:bI2C_UDB:clkgen_tc\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:cnt_reset\
+        );
+        Output = \I2C:bI2C_UDB:clkgen_tc1_reg\ (fanout=12)
+
+    MacroCell: Name=\I2C:bI2C_UDB:clkgen_tc2_reg\, Mode=(D-Register)
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\I2C:bI2C_UDB:m_reset\ * !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:clkgen_tc2_reg\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:cnt_reset\, Mode=(Combinatorial)
+        Total # of inputs        : 9
+        Total # of product terms : 4
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              \I2C:scl_x_wire\ * \I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:scl_x_wire\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:scl_x_wire\ * \I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:scl_x_wire\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:scl_in_reg\ * 
+              \I2C:bI2C_UDB:scl_in_last_reg\ * !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:cnt_reset\ (fanout=4)
+        Properties               : 
+        {
+            soft = 1
+        }
+
+    MacroCell: Name=\I2C:bI2C_UDB:control_reg_2\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:control_2\
+        );
+        Output = \I2C:bI2C_UDB:control_reg_2\ (fanout=2)
+
+    MacroCell: Name=\I2C:bI2C_UDB:control_reg_4\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:control_4\
+        );
+        Output = \I2C:bI2C_UDB:control_reg_4\ (fanout=4)
+
+    MacroCell: Name=\I2C:bI2C_UDB:control_reg_5\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:control_5\
+        );
+        Output = \I2C:bI2C_UDB:control_reg_5\ (fanout=4)
+
+    MacroCell: Name=\I2C:bI2C_UDB:control_reg_6\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:control_6\
+        );
+        Output = \I2C:bI2C_UDB:control_reg_6\ (fanout=4)
+
+    MacroCell: Name=\I2C:bI2C_UDB:control_reg_7\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:control_7\
+        );
+        Output = \I2C:bI2C_UDB:control_reg_7\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:cs_addr_clkgen_0\, Mode=(Combinatorial)
+        Total # of inputs        : 7
+        Total # of product terms : 2
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        !(
+              \I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\
+            + !\I2C:bI2C_UDB:clk_eq_reg\
+        );
+        Output = \I2C:bI2C_UDB:cs_addr_clkgen_0\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:cs_addr_clkgen_1\, Mode=(Combinatorial)
+        Total # of inputs        : 2
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\I2C:bI2C_UDB:clkgen_tc\ * !\I2C:bI2C_UDB:cnt_reset\
+        );
+        Output = \I2C:bI2C_UDB:cs_addr_clkgen_1\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:cs_addr_shifter_0\, Mode=(Combinatorial)
+        Total # of inputs        : 4
+        Total # of product terms : 3
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        !(
+              !\I2C:bI2C_UDB:clkgen_tc\ * !\I2C:bI2C_UDB:cnt_reset\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\
+            + \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\
+        );
+        Output = \I2C:bI2C_UDB:cs_addr_shifter_0\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:cs_addr_shifter_1\, Mode=(Combinatorial)
+        Total # of inputs        : 7
+        Total # of product terms : 3
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        !(
+              \I2C:bI2C_UDB:tx_reg_empty\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\
+            + !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:cs_addr_shifter_1\ (fanout=4)
+        Properties               : 
+        {
+            soft = 1
+        }
+
+    MacroCell: Name=\I2C:bI2C_UDB:lost_arb_reg\, Mode=(D-Register)
+        Total # of inputs        : 3
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\I2C:bI2C_UDB:cs_addr_shifter_1\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:lost_arb_reg\
+        );
+        Output = \I2C:bI2C_UDB:lost_arb_reg\ (fanout=6)
+
+    MacroCell: Name=\I2C:bI2C_UDB:m_reset\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\I2C:bI2C_UDB:control_1\
+        );
+        Output = \I2C:bI2C_UDB:m_reset\ (fanout=18)
+
+    MacroCell: Name=\I2C:bI2C_UDB:m_state_0\, Mode=(D-Register)
+        Total # of inputs        : 9
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        (
+              !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_0_split\
+        );
+        Output = \I2C:bI2C_UDB:m_state_0\ (fanout=16)
+
+    MacroCell: Name=\I2C:bI2C_UDB:m_state_0_split\, Mode=(Combinatorial)
+        Total # of inputs        : 12
+        Total # of product terms : 8
+            Clock Enable: True
+        Main Equation            : 8 pterms
+        (
+              \I2C:bI2C_UDB:control_reg_7\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:control_reg_6\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:lost_arb_reg\
+            + !\I2C:bI2C_UDB:control_reg_5\ * \I2C:bI2C_UDB:control_reg_4\ * 
+              \I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:m_state_0_split\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:m_state_1\, Mode=(D-Register)
+        Total # of inputs        : 8
+        Total # of product terms : 8
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 8 pterms
+        (
+              \I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:m_state_1\ (fanout=17)
+
+    MacroCell: Name=\I2C:bI2C_UDB:m_state_2\, Mode=(T-Register)
+        Total # of inputs        : 6
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_2_split\
+        );
+        Output = \I2C:bI2C_UDB:m_state_2\ (fanout=18)
+
+    MacroCell: Name=\I2C:bI2C_UDB:m_state_2_split\, Mode=(Combinatorial)
+        Total # of inputs        : 12
+        Total # of product terms : 8
+            Clock Enable: True
+        Main Equation            : 8 pterms
+        (
+              !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:control_reg_6\ * 
+              !\I2C:bI2C_UDB:control_reg_5\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\ * \I2C:bI2C_UDB:lost_arb_reg\
+            + \I2C:bI2C_UDB:control_reg_4\ * \I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:m_state_2_split\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:m_state_3\, Mode=(D-Register)
+        Total # of inputs        : 12
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        (
+              !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:control_reg_6\ * 
+              !\I2C:bI2C_UDB:control_reg_5\ * \I2C:bI2C_UDB:control_reg_2\ * 
+              !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\ * !\I2C:bI2C_UDB:lost_arb_reg\
+            + !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\ * !\I2C:bI2C_UDB:lost_arb_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:m_state_3\ (fanout=18)
+
+    MacroCell: Name=\I2C:bI2C_UDB:m_state_4\, Mode=(D-Register)
+        Total # of inputs        : 7
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !\I2C:bI2C_UDB:control_reg_4\ * \I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_4_split\
+        );
+        Output = \I2C:bI2C_UDB:m_state_4\ (fanout=19)
+
+    MacroCell: Name=\I2C:bI2C_UDB:m_state_4_split\, Mode=(Combinatorial)
+        Total # of inputs        : 12
+        Total # of product terms : 7
+            Clock Enable: True
+        Main Equation            : 7 pterms
+        (
+              !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:control_reg_6\ * 
+              !\I2C:bI2C_UDB:control_reg_5\ * !\I2C:bI2C_UDB:control_reg_2\ * 
+              !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\ * 
+              !\I2C:bI2C_UDB:lost_arb_reg\
+            + !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\ * !\I2C:bI2C_UDB:lost_arb_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:m_state_4_split\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:scl_in_last2_reg\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:scl_in_last_reg\
+        );
+        Output = \I2C:bI2C_UDB:scl_in_last2_reg\ (fanout=2)
+
+    MacroCell: Name=\I2C:bI2C_UDB:scl_in_last_reg\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:scl_in_reg\
+        );
+        Output = \I2C:bI2C_UDB:scl_in_last_reg\ (fanout=4)
+
+    MacroCell: Name=\I2C:bI2C_UDB:scl_in_reg\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:Net_854\
+        );
+        Output = \I2C:bI2C_UDB:scl_in_reg\ (fanout=4)
+
+    MacroCell: Name=\I2C:bI2C_UDB:sda_in_last2_reg\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:sda_in_last_reg\
+        );
+        Output = \I2C:bI2C_UDB:sda_in_last2_reg\ (fanout=2)
+
+    MacroCell: Name=\I2C:bI2C_UDB:sda_in_last_reg\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:sda_in_reg\
+        );
+        Output = \I2C:bI2C_UDB:sda_in_last_reg\ (fanout=3)
+
+    MacroCell: Name=\I2C:bI2C_UDB:sda_in_reg\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:Net_855\
+        );
+        Output = \I2C:bI2C_UDB:sda_in_reg\ (fanout=2)
+
+    MacroCell: Name=\I2C:bI2C_UDB:status_0\, Mode=(D-Register)
+        Total # of inputs        : 7
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              \I2C:bI2C_UDB:status_0\ * !\I2C:bI2C_UDB:cs_addr_shifter_1\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:cs_addr_shifter_1\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_reset\
+        );
+        Output = \I2C:bI2C_UDB:status_0\ (fanout=2)
+
+    MacroCell: Name=\I2C:bI2C_UDB:status_1\, Mode=(T-Register)
+        Total # of inputs        : 9
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              !\I2C:Net_855\ * \I2C:bI2C_UDB:status_1\ * 
+              \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:Net_855\ * !\I2C:bI2C_UDB:status_1\ * 
+              \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:status_1\ * \I2C:bI2C_UDB:m_reset\
+        );
+        Output = \I2C:bI2C_UDB:status_1\ (fanout=2)
+
+    MacroCell: Name=\I2C:bI2C_UDB:status_2\, Mode=(T-Register)
+        Total # of inputs        : 7
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\I2C:bI2C_UDB:status_2\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:status_2\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\
+            + \I2C:bI2C_UDB:status_2\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\
+            + \I2C:bI2C_UDB:status_2\ * \I2C:bI2C_UDB:m_reset\
+        );
+        Output = \I2C:bI2C_UDB:status_2\ (fanout=2)
+
+    MacroCell: Name=\I2C:bI2C_UDB:status_3\, Mode=(T-Register)
+        Total # of inputs        : 8
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\I2C:bI2C_UDB:status_3\ * !\I2C:bI2C_UDB:cs_addr_shifter_1\ * 
+              !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:status_3\ * \I2C:bI2C_UDB:cs_addr_shifter_1\
+            + \I2C:bI2C_UDB:status_3\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\
+            + \I2C:bI2C_UDB:status_3\ * \I2C:bI2C_UDB:m_reset\
+        );
+        Output = \I2C:bI2C_UDB:status_3\ (fanout=2)
+
+    MacroCell: Name=\I2C:bI2C_UDB:status_4\, Mode=(Combinatorial)
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\
+        );
+        Output = \I2C:bI2C_UDB:status_4\ (fanout=1)
+
+    MacroCell: Name=\I2C:bI2C_UDB:status_5\, Mode=(Combinatorial)
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              \I2C:bI2C_UDB:scl_in_last2_reg\ * 
+              \I2C:bI2C_UDB:sda_in_last_reg\ * 
+              !\I2C:bI2C_UDB:sda_in_last2_reg\
+        );
+        Output = \I2C:bI2C_UDB:status_5\ (fanout=1)
+
+    MacroCell: Name=\I2C:scl_x_wire\, Mode=(D-Register)
+        Total # of inputs        : 9
+        Total # of product terms : 6
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 6 pterms
+        !(
+              !\I2C:bI2C_UDB:clkgen_cl1\ * \I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:clkgen_cl1\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:clkgen_cl1\ * \I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_reset\ * !\I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:clkgen_cl1\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:cnt_reset\
+        );
+        Output = \I2C:scl_x_wire\ (fanout=3)
+
+    MacroCell: Name=\I2C:sda_x_wire\, Mode=(D-Register)
+        Total # of inputs        : 11
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        !(
+              !\I2C:sda_x_wire\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:clkgen_tc2_reg\
+            + !\I2C:bI2C_UDB:shift_data_out\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:lost_arb_reg\ * \I2C:bI2C_UDB:clkgen_tc2_reg\
+            + !\I2C:bI2C_UDB:control_reg_4\ * \I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * !\I2C:bI2C_UDB:lost_arb_reg\ * 
+              \I2C:bI2C_UDB:clkgen_tc2_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc2_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc2_reg\
+        );
+        Output = \I2C:sda_x_wire\ (fanout=2)
+
+    MacroCell: Name=\Servo:PWMUDB:final_kill_reg\, Mode=(D-Register)
+        Total # of inputs        : 0
+        Total # of product terms : 0
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 0 pterms
+        !(
+            0
+        );
+        Output = \Servo:PWMUDB:final_kill_reg\ (fanout=1)
+
+    MacroCell: Name=\Servo:PWMUDB:prevCompare1\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:compare1\
+        );
+        Output = \Servo:PWMUDB:prevCompare1\ (fanout=1)
+
+    MacroCell: Name=\Servo:PWMUDB:prevCompare2\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:compare2\
+        );
+        Output = \Servo:PWMUDB:prevCompare2\ (fanout=1)
+
+    MacroCell: Name=\Servo:PWMUDB:runmode_enable\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:ctrl_enable\
+        );
+        Output = \Servo:PWMUDB:runmode_enable\ (fanout=2)
+
+    MacroCell: Name=\Servo:PWMUDB:status_0\, Mode=(D-Register)
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:compare1\ * !\Servo:PWMUDB:prevCompare1\
+        );
+        Output = \Servo:PWMUDB:status_0\ (fanout=1)
+
+    MacroCell: Name=\Servo:PWMUDB:status_1\, Mode=(D-Register)
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:compare2\ * !\Servo:PWMUDB:prevCompare2\
+        );
+        Output = \Servo:PWMUDB:status_1\ (fanout=1)
+
+    MacroCell: Name=\Servo:PWMUDB:status_5\, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\Servo:PWMUDB:final_kill_reg\
+        );
+        Output = \Servo:PWMUDB:status_5\ (fanout=1)
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Datapath listing">
+
+    ------------------------------------------------------------
+    Datapath listing
+    ------------------------------------------------------------
+
+    datapathcell: Name =\I2C:bI2C_UDB:Master:ClkGen:u0\
+        PORT MAP (
+            clock => \I2C:Net_767\ ,
+            cs_addr_1 => \I2C:bI2C_UDB:cs_addr_clkgen_1\ ,
+            cs_addr_0 => \I2C:bI2C_UDB:cs_addr_clkgen_0\ ,
+            z0_comb => \I2C:bI2C_UDB:clkgen_tc\ ,
+            cl1_comb => \I2C:bI2C_UDB:clkgen_cl1\ );
+        Properties:
+        {
+            a0_init = "00000000"
+            a1_init = "00000000"
+            ce0_sync = 1
+            ce1_sync = 1
+            cl0_sync = 1
+            cl1_sync = 1
+            cmsb_sync = 1
+            co_msb_sync = 1
+            cy_dpconfig = "0100100000000000010010000100000001001000100000000100100010000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111111111111101000000100001000000000011100000001000000001000"
+            d0_init = "00001111"
+            d1_init = "00001000"
+            f0_blk_sync = 1
+            f0_bus_sync = 1
+            f1_blk_sync = 1
+            f1_bus_sync = 1
+            ff0_sync = 1
+            ff1_sync = 1
+            ov_msb_sync = 1
+            so_sync = 1
+            z0_sync = 1
+            z1_sync = 1
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+
+    datapathcell: Name =\I2C:bI2C_UDB:Shifter:u0\
+        PORT MAP (
+            clock => \I2C:Net_767\ ,
+            cs_addr_1 => \I2C:bI2C_UDB:cs_addr_shifter_1\ ,
+            cs_addr_0 => \I2C:bI2C_UDB:cs_addr_shifter_0\ ,
+            route_si => \I2C:bI2C_UDB:sda_in_reg\ ,
+            so_comb => \I2C:bI2C_UDB:shift_data_out\ ,
+            f1_blk_stat_comb => \I2C:bI2C_UDB:tx_reg_empty\ );
+        Properties:
+        {
+            a0_init = "00000000"
+            a1_init = "00000000"
+            ce0_sync = 1
+            ce1_sync = 1
+            cl0_sync = 1
+            cl1_sync = 1
+            cmsb_sync = 1
+            co_msb_sync = 1
+            cy_dpconfig = "0000100100000000000010010100000000001001001100000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111101111111101000000100001000000000011100000000000000001100"
+            d0_init = "00000100"
+            d1_init = "00000000"
+            f0_blk_sync = 1
+            f0_bus_sync = 1
+            f1_blk_sync = 1
+            f1_bus_sync = 1
+            ff0_sync = 1
+            ff1_sync = 1
+            ov_msb_sync = 1
+            so_sync = 1
+            z0_sync = 1
+            z1_sync = 1
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+
+    datapathcell: Name =\Servo:PWMUDB:sP16:pwmdp:u0\
+        PORT MAP (
+            clock => Net_67 ,
+            cs_addr_2 => \Servo:PWMUDB:tc_i\ ,
+            cs_addr_1 => \Servo:PWMUDB:runmode_enable\ ,
+            chain_out => \Servo:PWMUDB:sP16:pwmdp:carry\ );
+        Properties:
+        {
+            a0_init = "00000000"
+            a1_init = "00000000"
+            ce0_sync = 1
+            ce1_sync = 1
+            cl0_sync = 1
+            cl1_sync = 1
+            cmsb_sync = 1
+            co_msb_sync = 1
+            cy_dpconfig = "0000000001000000000000001100000001000000010000000000000011000000000000001100000000000000110000000000000011000000000000001100000011111111000000001111111111111111101000000000000000000100000000000000000000011000"
+            d0_init = "00000000"
+            d1_init = "00000000"
+            f0_blk_sync = 1
+            f0_bus_sync = 1
+            f1_blk_sync = 1
+            f1_bus_sync = 1
+            ff0_sync = 1
+            ff1_sync = 1
+            ov_msb_sync = 1
+            so_sync = 1
+            z0_sync = 1
+            z1_sync = 1
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+        Next in chain : \Servo:PWMUDB:sP16:pwmdp:u1\
+
+    datapathcell: Name =\Servo:PWMUDB:sP16:pwmdp:u1\
+        PORT MAP (
+            clock => Net_67 ,
+            cs_addr_2 => \Servo:PWMUDB:tc_i\ ,
+            cs_addr_1 => \Servo:PWMUDB:runmode_enable\ ,
+            cl0_comb => \Servo:PWMUDB:compare1\ ,
+            z0_comb => \Servo:PWMUDB:tc_i\ ,
+            cl1_comb => \Servo:PWMUDB:compare2\ ,
+            f1_blk_stat_comb => \Servo:PWMUDB:status_3\ ,
+            chain_in => \Servo:PWMUDB:sP16:pwmdp:carry\ );
+        Properties:
+        {
+            a0_init = "00000000"
+            a1_init = "00000000"
+            ce0_sync = 1
+            ce1_sync = 1
+            cl0_sync = 1
+            cl1_sync = 1
+            cmsb_sync = 1
+            co_msb_sync = 1
+            cy_dpconfig = "0000000001000000000000001100000001000000010000000000000011000000000000001100000000000000110000000000000011000000000000001100000011111111000000001111111111111111101011110000000000000100000011110000000000011000"
+            d0_init = "00000000"
+            d1_init = "00000000"
+            f0_blk_sync = 1
+            f0_bus_sync = 1
+            f1_blk_sync = 1
+            f1_bus_sync = 1
+            ff0_sync = 1
+            ff1_sync = 1
+            ov_msb_sync = 1
+            so_sync = 1
+            z0_sync = 1
+            z1_sync = 1
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+        Previous in chain : \Servo:PWMUDB:sP16:pwmdp:u0\
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Status register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="StatusI register listing">
+
+    ------------------------------------------------------------
+    StatusI register listing
+    ------------------------------------------------------------
+
+    statusicell: Name =\I2C:bI2C_UDB:StsReg\
+        PORT MAP (
+            clock => \I2C:Net_767\ ,
+            status_5 => \I2C:bI2C_UDB:status_5\ ,
+            status_4 => \I2C:bI2C_UDB:status_4\ ,
+            status_3 => \I2C:bI2C_UDB:status_3\ ,
+            status_2 => \I2C:bI2C_UDB:status_2\ ,
+            status_1 => \I2C:bI2C_UDB:status_1\ ,
+            status_0 => \I2C:bI2C_UDB:status_0\ ,
+            interrupt => \I2C:Net_697\ );
+        Properties:
+        {
+            cy_force_order = 1
+            cy_int_mask = "0000000"
+            cy_md_select = "0100000"
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+
+    statusicell: Name =\Servo:PWMUDB:sSTSReg:nrstSts:stsreg\
+        PORT MAP (
+            clock => Net_67 ,
+            status_5 => \Servo:PWMUDB:status_5\ ,
+            status_3 => \Servo:PWMUDB:status_3\ ,
+            status_2 => \Servo:PWMUDB:tc_i\ ,
+            status_1 => \Servo:PWMUDB:status_1\ ,
+            status_0 => \Servo:PWMUDB:status_0\ );
+        Properties:
+        {
+            cy_force_order = 1
+            cy_int_mask = "1111111"
+            cy_md_select = "0100111"
+        }
+        Clock Polarity: Active High
+        Clock Enable: True
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Sync listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Control register listing">
+
+    ------------------------------------------------------------
+    Control register listing
+    ------------------------------------------------------------
+
+    controlcell: Name =\I2C:bI2C_UDB:AsyncCtl:CtrlReg\
+        PORT MAP (
+            control_7 => \I2C:bI2C_UDB:control_7\ ,
+            control_6 => \I2C:bI2C_UDB:control_6\ ,
+            control_5 => \I2C:bI2C_UDB:control_5\ ,
+            control_4 => \I2C:bI2C_UDB:control_4\ ,
+            control_3 => \I2C:bI2C_UDB:control_3\ ,
+            control_2 => \I2C:bI2C_UDB:control_2\ ,
+            control_1 => \I2C:bI2C_UDB:control_1\ ,
+            control_0 => \I2C:bI2C_UDB:control_0\ );
+        Properties:
+        {
+            cy_ctrl_mode_0 = "00000000"
+            cy_ctrl_mode_1 = "00000000"
+            cy_ext_reset = 0
+            cy_force_order = 1
+            cy_init_value = "00000000"
+        }
+        Clock Enable: True
+
+    controlcell: Name =\Servo:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\
+        PORT MAP (
+            control_7 => \Servo:PWMUDB:ctrl_enable\ ,
+            control_6 => \Servo:PWMUDB:control_6\ ,
+            control_5 => \Servo:PWMUDB:control_5\ ,
+            control_4 => \Servo:PWMUDB:control_4\ ,
+            control_3 => \Servo:PWMUDB:control_3\ ,
+            control_2 => \Servo:PWMUDB:control_2\ ,
+            control_1 => \Servo:PWMUDB:control_1\ ,
+            control_0 => \Servo:PWMUDB:control_0\ );
+        Properties:
+        {
+            cy_ctrl_mode_0 = "00000000"
+            cy_ctrl_mode_1 = "00000000"
+            cy_ext_reset = 0
+            cy_force_order = 1
+            cy_init_value = "00000000"
+        }
+        Clock Enable: True
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Count7 listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="DRQ listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Interrupt listing">
+
+    ------------------------------------------------------------
+    Interrupt listing
+    ------------------------------------------------------------
+
+    interrupt: Name =Button_1
+        PORT MAP (
+            interrupt => Net_256 );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =Button_2
+        PORT MAP (
+            interrupt => Net_259 );
+        Properties:
+        {
+            int_type = "10"
+        }
+
+    interrupt: Name =\I2C:I2C_IRQ\
+        PORT MAP (
+            interrupt => \I2C:Net_697\ );
+        Properties:
+        {
+            int_type = "00"
+        }
+    </CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Technology mapping summary" expanded>
+
+------------------------------------------------------------
+Technology mapping summary
+------------------------------------------------------------
+
+                Resource Type : Used : Free :  Max :  % Used
+============================================================
+Digital domain clock dividers :    2 :    6 :    8 :  25.00%
+ Analog domain clock dividers :    0 :    4 :    4 :   0.00%
+                         Pins :   16 :   54 :   70 :  22.86%
+                   Macrocells :   47 :  145 :  192 :  24.48%
+                Unique Pterms :  111 :  273 :  384 :  28.91%
+                 Total Pterms :  113 :      :      : 
+               Datapath Cells :    4 :   20 :   24 :  16.67%
+                 Status Cells :    2 :   22 :   24 :   8.33%
+         Control/Count7 Cells :    2 :   22 :   24 :   8.33%
+                   Sync Cells :    0 :   88 :   88 :   0.00%
+                         Drqs :    0 :   24 :   24 :   0.00%
+                   Interrupts :    3 :   29 :   32 :   9.38%
+             DSM Fixed Blocks :    0 :    1 :    1 :   0.00%
+           VIDAC Fixed Blocks :    3 :    1 :    4 :  75.00%
+              SC Fixed Blocks :    0 :    4 :    4 :   0.00%
+      Comparator Fixed Blocks :    0 :    4 :    4 :   0.00%
+           Opamp Fixed Blocks :    0 :    4 :    4 :   0.00%
+             CapSense Buffers :    0 :    2 :    2 :   0.00%
+             CAN Fixed Blocks :    0 :    1 :    1 :   0.00%
+       Decimator Fixed Blocks :    0 :    1 :    1 :   0.00%
+             I2C Fixed Blocks :    0 :    1 :    1 :   0.00%
+           Timer Fixed Blocks :    0 :    4 :    4 :   0.00%
+             DFB Fixed Blocks :    0 :    1 :    1 :   0.00%
+             USB Fixed Blocks :    0 :    1 :    1 :   0.00%
+             LCD Fixed Blocks :    0 :    1 :    1 :   0.00%
+            EMIF Fixed Blocks :    0 :    1 :    1 :   0.00%
+             LPF Fixed Blocks :    0 :    2 :    2 :   0.00%
+             SAR Fixed Blocks :    0 :    2 :    2 :   0.00%
+</CYPRESSTAG>
+Technology Mapping: Elapsed time ==> 0s.366ms
+Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
+Tech mapping phase: Elapsed time ==> 0s.798ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Placement">
+Initial Analog Placement Results:
+IO_7@[IOP=(5)][IoId=(7)]: Center(0) (fixed)
+IO_2@[IOP=(6)][IoId=(2)]: Err_LED_1(0) (fixed)
+IO_3@[IOP=(6)][IoId=(3)]: Err_LED_2(0) (fixed)
+IO_1@[IOP=(4)][IoId=(1)]: SCL_1(0) (fixed)
+IO_0@[IOP=(4)][IoId=(0)]: SDA_1(0) (fixed)
+IO_4@[IOP=(5)][IoId=(4)]: Servo0(0) (fixed)
+IO_5@[IOP=(5)][IoId=(5)]: Servo1(0) (fixed)
+IO_1@[IOP=(6)][IoId=(1)]: Test_Button_1(0) (fixed)
+IO_5@[IOP=(15)][IoId=(5)]: Test_Button_2(0) (fixed)
+IO_3@[IOP=(5)][IoId=(3)]: X0(0) (fixed)
+IO_2@[IOP=(5)][IoId=(2)]: X1(0) (fixed)
+IO_0@[IOP=(5)][IoId=(0)]: Y0(0) (fixed)
+IO_1@[IOP=(5)][IoId=(1)]: Y1(0) (fixed)
+VIDAC[2]@[FFB(VIDAC,2)]: \VDAC8_1:viDAC8\
+VIDAC[3]@[FFB(VIDAC,3)]: \VDAC8_2:viDAC8\
+VIDAC[0]@[FFB(VIDAC,0)]: \VDAC8_3:viDAC8\
+Log: apr.M0058: The analog placement iterative improvement is 28% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 68% done. (App=cydsfit)
+Analog Placement Results:
+IO_7@[IOP=(5)][IoId=(7)]: Center(0) (fixed)
+IO_2@[IOP=(6)][IoId=(2)]: Err_LED_1(0) (fixed)
+IO_3@[IOP=(6)][IoId=(3)]: Err_LED_2(0) (fixed)
+IO_1@[IOP=(4)][IoId=(1)]: SCL_1(0) (fixed)
+IO_0@[IOP=(4)][IoId=(0)]: SDA_1(0) (fixed)
+IO_4@[IOP=(5)][IoId=(4)]: Servo0(0) (fixed)
+IO_5@[IOP=(5)][IoId=(5)]: Servo1(0) (fixed)
+IO_1@[IOP=(6)][IoId=(1)]: Test_Button_1(0) (fixed)
+IO_5@[IOP=(15)][IoId=(5)]: Test_Button_2(0) (fixed)
+IO_3@[IOP=(5)][IoId=(3)]: X0(0) (fixed)
+IO_2@[IOP=(5)][IoId=(2)]: X1(0) (fixed)
+IO_0@[IOP=(5)][IoId=(0)]: Y0(0) (fixed)
+IO_1@[IOP=(5)][IoId=(1)]: Y1(0) (fixed)
+VIDAC[3]@[FFB(VIDAC,3)]: \VDAC8_1:viDAC8\
+VIDAC[1]@[FFB(VIDAC,1)]: \VDAC8_2:viDAC8\
+VIDAC[2]@[FFB(VIDAC,2)]: \VDAC8_3:viDAC8\
+
+Analog Placement phase: Elapsed time ==> 4s.851ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Routing">
+Log: apr.M0017: ============ VeraRouter Improve 1 OverUse=1 ============ (App=cydsfit)
+============ VeraRouter Final Answer Routes ============
+Connect Signal: Net_157 => (GPIO P5[7] (407)) (VIDAC Vout 2 (590)) 
+Route#1569: 
+  (VIDAC Vout 2 (590)) [v2 Wire [706]] 
+    (v2 Sw__2a (619)) [v2 Sw__2b [230]] (v2 Sw__2c (620)##) [AGL[5] [538]] 
+    (DSM+ Sw__1c (529)##) [DSM+ Sw__1b [194]] (DSM+ Sw__1a (528)) [dsm0+ Wire [695]] 
+    (DSM+ Sw__9a (544)) [DSM+ Sw__9b [202]] (DSM+ Sw__9c (545)##) [AGL[3] [656]] 
+    (AGL2AGR[3] Sw__0a (486)) [AGL2AGR[3] Sw__0b [179]] (AGL2AGR[3] Sw__0c (487)##) [AGR[3] [676]] 
+    (GPIO P5[7] Sw__1c (411)##) [GPIO P5[7] Sw__1b [147]] (GPIO P5[7] Sw__1a (410)) [GPIO P5[7] Wire [680]] 
+    (GPIO P5[7] (407)) 
+Connect Signal: Net_175 => (GPIO P5[3] (387)) (GPIO P5[2] (382)) (VIDAC Vout 3 (592)) 
+Route#1570: 
+  (VIDAC Vout 3 (592)) [v3 Wire [708]] 
+    (v3 Sw__0a (651)) [v3 Sw__0b [246]] (v3 Sw__0c (652)##) [amuxbusR [589]] 
+    (GPIO P5[2] Sw__0c (384)##) [GPIO P5[2] Sw__0b [136]] (GPIO P5[2] Sw__0a (383)) [GPIO P5[2] Wire [673]] 
+    (GPIO P5[2] (382)) 
+  (v3 Sw__0c (652)##) [amuxbusR [589]] 
+    (GPIO P5[3] Sw__0c (389)##) [GPIO P5[3] Sw__0b [138]] (GPIO P5[3] Sw__0a (388)) [GPIO P5[3] Wire [675]] 
+    (GPIO P5[3] (387)) 
+Connect Signal: Net_178 => (GPIO P5[0] (372)) (GPIO P5[1] (377)) (VIDAC Vout 1 (591)) 
+Route#1565: 
+  (VIDAC Vout 1 (591)) [v1 Wire [707]] 
+    (v1 Sw__3a (639)) [v1 Sw__3b [240]] (v1 Sw__3c (640)##) [AGR[0] [670]] 
+    (GPIO P5[0] Sw__1c (376)##) [GPIO P5[0] Sw__1b [133]] (GPIO P5[0] Sw__1a (375)) [GPIO P5[0] Wire [669]] 
+    (GPIO P5[0] (372)) 
+  (VIDAC Vout 1 (591)) [v1 Wire [707]] 
+    (v1 Sw__4a (641)) [v1 Sw__4b [241]] (v1 Sw__4c (642)##) [AGR[1] [672]] 
+    (GPIO P5[1] Sw__1c (381)##) [GPIO P5[1] Sw__1b [135]] (GPIO P5[1] Sw__1a (380)) [GPIO P5[1] Wire [671]] 
+    (GPIO P5[1] (377)) 
+Connect Signal: \VDAC8_1:Net_77\ => (VIDAC Iout 3 (596)) 
+Route#1566: 
+  (VIDAC Iout 3 (596)) 
+Connect Signal: \VDAC8_2:Net_77\ => (VIDAC Iout 1 (595)) 
+Route#1567: 
+  (VIDAC Iout 1 (595)) 
+Connect Signal: \VDAC8_3:Net_77\ => (VIDAC Iout 2 (594)) 
+Route#1568: 
+  (VIDAC Iout 2 (594)) 
+Analog Routing phase: Elapsed time ==> 2s.243ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Placement">
+<CYPRESSTAG name="PLD Packing">
+<CYPRESSTAG name="PLD Packing Summary" expanded>
+
+------------------------------------------------------------
+PLD Packing Summary
+------------------------------------------------------------
+            Resource Type : Used : Free :  Max :  % Used
+    ====================================================
+                     PLDs :   17 :   31 :   48 :  35.42%
+
+<CYPRESSTAG name="PLD Statistics">
+
+        PLD Resource Type :     Average/LAB
+    =======================================
+                   Inputs :            8.82
+                   Pterms :            6.53
+               Macrocells :            2.76
+</CYPRESSTAG>
+<CYPRESSTAG name="Packed PLD Contents">
+Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
+</CYPRESSTAG>
+PLD Packing: Elapsed time ==> 0s.006ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Partitioning">
+<CYPRESSTAG name="Initial Partitioning Summary">
+Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+<CYPRESSTAG name="Final Partitioning Summary">
+Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+Partitioning: Elapsed time ==> 0s.159ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Simulated Annealing">
+Annealing: Elapsed time ==> 0s.586ms
+<CYPRESSTAG name="Simulated Annealing Results">
+The seed used for moves was 114161200.
+Inital cost was 627, final cost is 384 (38.76% improvement).</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Final Placement Summary">
+
+------------------------------------------------------------
+Final Placement Summary
+------------------------------------------------------------
+
+       Resource Type :      Count : Avg Inputs : Avg Outputs
+    ========================================================
+                 UDB :         10 :      13.50 :       4.70
+<CYPRESSTAG name="Final Placement Details">
+<CYPRESSTAG name="Component Details">
+
+------------------------------------------------------------
+Component Placement Details
+------------------------------------------------------------
+UDB [UDB=(0,0)] is empty.
+UDB [UDB=(0,1)] contents:
+LAB@[UDB=(0,1)][LB=0] #macrocells=2, #inputs=12, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:m_state_0_split\, Mode=(Combinatorial) @ [UDB=(0,1)][LB=0][MC=0]
+        Total # of inputs        : 12
+        Total # of product terms : 8
+            Clock Enable: True
+        Main Equation            : 8 pterms
+        (
+              \I2C:bI2C_UDB:control_reg_7\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:control_reg_6\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:lost_arb_reg\
+            + !\I2C:bI2C_UDB:control_reg_5\ * \I2C:bI2C_UDB:control_reg_4\ * 
+              \I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:m_state_0_split\ (fanout=1)
+
+    [McSlotId=1]:     MacroCell: Name=\Servo:PWMUDB:final_kill_reg\, Mode=(D-Register) @ [UDB=(0,1)][LB=0][MC=1]
+        Total # of inputs        : 0
+        Total # of product terms : 0
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 0 pterms
+        !(
+            0
+        );
+        Output = \Servo:PWMUDB:final_kill_reg\ (fanout=1)
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(0,1)][LB=1] #macrocells=4, #inputs=4, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:control_reg_5\, Mode=(D-Register) @ [UDB=(0,1)][LB=1][MC=0]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:control_5\
+        );
+        Output = \I2C:bI2C_UDB:control_reg_5\ (fanout=4)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:control_reg_6\, Mode=(D-Register) @ [UDB=(0,1)][LB=1][MC=1]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:control_6\
+        );
+        Output = \I2C:bI2C_UDB:control_reg_6\ (fanout=4)
+
+    [McSlotId=2]:     MacroCell: Name=\I2C:bI2C_UDB:control_reg_7\, Mode=(D-Register) @ [UDB=(0,1)][LB=1][MC=2]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:control_7\
+        );
+        Output = \I2C:bI2C_UDB:control_reg_7\ (fanout=1)
+
+    [McSlotId=3]:     MacroCell: Name=\I2C:bI2C_UDB:m_reset\, Mode=(D-Register) @ [UDB=(0,1)][LB=1][MC=3]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\I2C:bI2C_UDB:control_1\
+        );
+        Output = \I2C:bI2C_UDB:m_reset\ (fanout=18)
+}
+
+controlcell: Name =\I2C:bI2C_UDB:AsyncCtl:CtrlReg\
+    PORT MAP (
+        control_7 => \I2C:bI2C_UDB:control_7\ ,
+        control_6 => \I2C:bI2C_UDB:control_6\ ,
+        control_5 => \I2C:bI2C_UDB:control_5\ ,
+        control_4 => \I2C:bI2C_UDB:control_4\ ,
+        control_3 => \I2C:bI2C_UDB:control_3\ ,
+        control_2 => \I2C:bI2C_UDB:control_2\ ,
+        control_1 => \I2C:bI2C_UDB:control_1\ ,
+        control_0 => \I2C:bI2C_UDB:control_0\ );
+    Properties:
+    {
+        cy_ctrl_mode_0 = "00000000"
+        cy_ctrl_mode_1 = "00000000"
+        cy_ext_reset = 0
+        cy_force_order = 1
+        cy_init_value = "00000000"
+    }
+    Clock Enable: True
+
+UDB [UDB=(0,2)] contents:
+LAB@[UDB=(0,2)][LB=0] #macrocells=2, #inputs=11, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:m_state_0\, Mode=(D-Register) @ [UDB=(0,2)][LB=0][MC=0]
+        Total # of inputs        : 9
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        (
+              !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_0_split\
+        );
+        Output = \I2C:bI2C_UDB:m_state_0\ (fanout=16)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:status_1\, Mode=(T-Register) @ [UDB=(0,2)][LB=0][MC=1]
+        Total # of inputs        : 9
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              !\I2C:Net_855\ * \I2C:bI2C_UDB:status_1\ * 
+              \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:Net_855\ * !\I2C:bI2C_UDB:status_1\ * 
+              \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:status_1\ * \I2C:bI2C_UDB:m_reset\
+        );
+        Output = \I2C:bI2C_UDB:status_1\ (fanout=2)
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(0,2)][LB=1] #macrocells=4, #inputs=4, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:scl_in_last_reg\, Mode=(D-Register) @ [UDB=(0,2)][LB=1][MC=0]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:scl_in_reg\
+        );
+        Output = \I2C:bI2C_UDB:scl_in_last_reg\ (fanout=4)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:sda_in_last2_reg\, Mode=(D-Register) @ [UDB=(0,2)][LB=1][MC=1]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:sda_in_last_reg\
+        );
+        Output = \I2C:bI2C_UDB:sda_in_last2_reg\ (fanout=2)
+
+    [McSlotId=2]:     MacroCell: Name=\I2C:bI2C_UDB:sda_in_last_reg\, Mode=(D-Register) @ [UDB=(0,2)][LB=1][MC=2]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:sda_in_reg\
+        );
+        Output = \I2C:bI2C_UDB:sda_in_last_reg\ (fanout=3)
+
+    [McSlotId=3]:     MacroCell: Name=\I2C:bI2C_UDB:sda_in_reg\, Mode=(D-Register) @ [UDB=(0,2)][LB=1][MC=3]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:Net_855\
+        );
+        Output = \I2C:bI2C_UDB:sda_in_reg\ (fanout=2)
+}
+
+UDB [UDB=(0,3)] contents:
+LAB@[UDB=(0,3)][LB=0] #macrocells=2, #inputs=12, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:m_state_4_split\, Mode=(Combinatorial) @ [UDB=(0,3)][LB=0][MC=0]
+        Total # of inputs        : 12
+        Total # of product terms : 7
+            Clock Enable: True
+        Main Equation            : 7 pterms
+        (
+              !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:control_reg_6\ * 
+              !\I2C:bI2C_UDB:control_reg_5\ * !\I2C:bI2C_UDB:control_reg_2\ * 
+              !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\ * 
+              !\I2C:bI2C_UDB:lost_arb_reg\
+            + !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\ * !\I2C:bI2C_UDB:lost_arb_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:m_state_4_split\ (fanout=1)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:clkgen_tc2_reg\, Mode=(D-Register) @ [UDB=(0,3)][LB=0][MC=1]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\I2C:bI2C_UDB:m_reset\ * !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:clkgen_tc2_reg\ (fanout=1)
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(0,3)][LB=1] #macrocells=4, #inputs=4, #pterms=5
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:clk_eq_reg\, Mode=(D-Register) @ [UDB=(0,3)][LB=1][MC=0]
+        Total # of inputs        : 2
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !\I2C:scl_x_wire\ * !\I2C:Net_854\
+            + \I2C:scl_x_wire\ * \I2C:Net_854\
+        );
+        Output = \I2C:bI2C_UDB:clk_eq_reg\ (fanout=1)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:scl_in_reg\, Mode=(D-Register) @ [UDB=(0,3)][LB=1][MC=1]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:Net_854\
+        );
+        Output = \I2C:bI2C_UDB:scl_in_reg\ (fanout=4)
+
+    [McSlotId=2]:     MacroCell: Name=\I2C:bI2C_UDB:control_reg_2\, Mode=(D-Register) @ [UDB=(0,3)][LB=1][MC=2]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:control_2\
+        );
+        Output = \I2C:bI2C_UDB:control_reg_2\ (fanout=2)
+
+    [McSlotId=3]:     MacroCell: Name=\I2C:bI2C_UDB:control_reg_4\, Mode=(D-Register) @ [UDB=(0,3)][LB=1][MC=3]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:control_4\
+        );
+        Output = \I2C:bI2C_UDB:control_reg_4\ (fanout=4)
+}
+
+UDB [UDB=(0,4)] is empty.
+UDB [UDB=(0,5)] is empty.
+UDB [UDB=(1,0)] is empty.
+UDB [UDB=(1,1)] contents:
+LAB@[UDB=(1,1)][LB=0] #macrocells=1, #inputs=12, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:m_state_2_split\, Mode=(Combinatorial) @ [UDB=(1,1)][LB=0][MC=0]
+        Total # of inputs        : 12
+        Total # of product terms : 8
+            Clock Enable: True
+        Main Equation            : 8 pterms
+        (
+              !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:control_reg_6\ * 
+              !\I2C:bI2C_UDB:control_reg_5\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\ * \I2C:bI2C_UDB:lost_arb_reg\
+            + \I2C:bI2C_UDB:control_reg_4\ * \I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:m_state_2_split\ (fanout=1)
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+UDB [UDB=(1,2)] contents:
+LAB@[UDB=(1,2)][LB=0] #macrocells=3, #inputs=12, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:m_state_3\, Mode=(D-Register) @ [UDB=(1,2)][LB=0][MC=0]
+        Total # of inputs        : 12
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        (
+              !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:control_reg_6\ * 
+              !\I2C:bI2C_UDB:control_reg_5\ * \I2C:bI2C_UDB:control_reg_2\ * 
+              !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\ * !\I2C:bI2C_UDB:lost_arb_reg\
+            + !\I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\ * !\I2C:bI2C_UDB:lost_arb_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:m_state_3\ (fanout=18)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:cs_addr_shifter_1\, Mode=(Combinatorial) @ [UDB=(1,2)][LB=0][MC=1]
+        Total # of inputs        : 7
+        Total # of product terms : 3
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        !(
+              \I2C:bI2C_UDB:tx_reg_empty\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\
+            + !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:cs_addr_shifter_1\ (fanout=4)
+        Properties               : 
+        {
+            soft = 1
+        }
+
+    [McSlotId=2]:     MacroCell: Name=\I2C:bI2C_UDB:status_4\, Mode=(Combinatorial) @ [UDB=(1,2)][LB=0][MC=2]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\
+        );
+        Output = \I2C:bI2C_UDB:status_4\ (fanout=1)
+
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(1,2)][LB=1] #macrocells=4, #inputs=12, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:bus_busy_reg\, Mode=(T-Register) @ [UDB=(1,2)][LB=1][MC=0]
+        Total # of inputs        : 7
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              \I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              \I2C:bI2C_UDB:scl_in_last2_reg\ * 
+              !\I2C:bI2C_UDB:sda_in_last_reg\ * 
+              \I2C:bI2C_UDB:sda_in_last2_reg\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:bus_busy_reg\
+            + \I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              \I2C:bI2C_UDB:scl_in_last2_reg\ * 
+              \I2C:bI2C_UDB:sda_in_last_reg\ * 
+              !\I2C:bI2C_UDB:sda_in_last2_reg\ * \I2C:bI2C_UDB:bus_busy_reg\
+            + \I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:bus_busy_reg\
+        );
+        Output = \I2C:bI2C_UDB:bus_busy_reg\ (fanout=1)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:status_5\, Mode=(Combinatorial) @ [UDB=(1,2)][LB=1][MC=1]
+        Total # of inputs        : 5
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              \I2C:bI2C_UDB:scl_in_last2_reg\ * 
+              \I2C:bI2C_UDB:sda_in_last_reg\ * 
+              !\I2C:bI2C_UDB:sda_in_last2_reg\
+        );
+        Output = \I2C:bI2C_UDB:status_5\ (fanout=1)
+
+    [McSlotId=2]:     MacroCell: Name=\I2C:bI2C_UDB:m_state_2\, Mode=(T-Register) @ [UDB=(1,2)][LB=1][MC=2]
+        Total # of inputs        : 6
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        (
+              \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_2_split\
+        );
+        Output = \I2C:bI2C_UDB:m_state_2\ (fanout=18)
+
+    [McSlotId=3]:     MacroCell: Name=\I2C:bI2C_UDB:scl_in_last2_reg\, Mode=(D-Register) @ [UDB=(1,2)][LB=1][MC=3]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \I2C:bI2C_UDB:scl_in_last_reg\
+        );
+        Output = \I2C:bI2C_UDB:scl_in_last2_reg\ (fanout=2)
+}
+
+datapathcell: Name =\I2C:bI2C_UDB:Shifter:u0\
+    PORT MAP (
+        clock => \I2C:Net_767\ ,
+        cs_addr_1 => \I2C:bI2C_UDB:cs_addr_shifter_1\ ,
+        cs_addr_0 => \I2C:bI2C_UDB:cs_addr_shifter_0\ ,
+        route_si => \I2C:bI2C_UDB:sda_in_reg\ ,
+        so_comb => \I2C:bI2C_UDB:shift_data_out\ ,
+        f1_blk_stat_comb => \I2C:bI2C_UDB:tx_reg_empty\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "0000100100000000000010010100000000001001001100000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111101111111101000000100001000000000011100000000000000001100"
+        d0_init = "00000100"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+statusicell: Name =\I2C:bI2C_UDB:StsReg\
+    PORT MAP (
+        clock => \I2C:Net_767\ ,
+        status_5 => \I2C:bI2C_UDB:status_5\ ,
+        status_4 => \I2C:bI2C_UDB:status_4\ ,
+        status_3 => \I2C:bI2C_UDB:status_3\ ,
+        status_2 => \I2C:bI2C_UDB:status_2\ ,
+        status_1 => \I2C:bI2C_UDB:status_1\ ,
+        status_0 => \I2C:bI2C_UDB:status_0\ ,
+        interrupt => \I2C:Net_697\ );
+    Properties:
+    {
+        cy_force_order = 1
+        cy_int_mask = "0000000"
+        cy_md_select = "0100000"
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(1,3)] contents:
+LAB@[UDB=(1,3)][LB=0] #macrocells=2, #inputs=12, #pterms=7
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:sda_x_wire\, Mode=(D-Register) @ [UDB=(1,3)][LB=0][MC=0]
+        Total # of inputs        : 11
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 5 pterms
+        !(
+              !\I2C:sda_x_wire\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:clkgen_tc2_reg\
+            + !\I2C:bI2C_UDB:shift_data_out\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:lost_arb_reg\ * \I2C:bI2C_UDB:clkgen_tc2_reg\
+            + !\I2C:bI2C_UDB:control_reg_4\ * \I2C:bI2C_UDB:m_state_4\ * 
+              \I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * !\I2C:bI2C_UDB:lost_arb_reg\ * 
+              \I2C:bI2C_UDB:clkgen_tc2_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc2_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc2_reg\
+        );
+        Output = \I2C:sda_x_wire\ (fanout=2)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:m_state_4\, Mode=(D-Register) @ [UDB=(1,3)][LB=0][MC=1]
+        Total # of inputs        : 7
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              !\I2C:bI2C_UDB:control_reg_4\ * \I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_4_split\
+        );
+        Output = \I2C:bI2C_UDB:m_state_4\ (fanout=19)
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(1,3)][LB=1] #macrocells=2, #inputs=11, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:status_2\, Mode=(T-Register) @ [UDB=(1,3)][LB=1][MC=0]
+        Total # of inputs        : 7
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\I2C:bI2C_UDB:status_2\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:status_2\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\
+            + \I2C:bI2C_UDB:status_2\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\
+            + \I2C:bI2C_UDB:status_2\ * \I2C:bI2C_UDB:m_reset\
+        );
+        Output = \I2C:bI2C_UDB:status_2\ (fanout=2)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:cnt_reset\, Mode=(Combinatorial) @ [UDB=(1,3)][LB=1][MC=1]
+        Total # of inputs        : 9
+        Total # of product terms : 4
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              \I2C:scl_x_wire\ * \I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:scl_x_wire\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:scl_x_wire\ * \I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:scl_in_reg\ * \I2C:bI2C_UDB:scl_in_last_reg\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:scl_x_wire\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:scl_in_reg\ * 
+              \I2C:bI2C_UDB:scl_in_last_reg\ * !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:cnt_reset\ (fanout=4)
+        Properties               : 
+        {
+            soft = 1
+        }
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+UDB [UDB=(1,4)] is empty.
+UDB [UDB=(1,5)] is empty.
+UDB [UDB=(2,0)] is empty.
+UDB [UDB=(2,1)] contents:
+LAB@[UDB=(2,1)][LB=0] #macrocells=1, #inputs=8, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:m_state_1\, Mode=(D-Register) @ [UDB=(2,1)][LB=0][MC=0]
+        Total # of inputs        : 8
+        Total # of product terms : 8
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 8 pterms
+        (
+              \I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_state_2\ * !\I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + \I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:clkgen_tc1_reg\
+        );
+        Output = \I2C:bI2C_UDB:m_state_1\ (fanout=17)
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+LAB@[UDB=(2,1)][LB=1] #macrocells=4, #inputs=7, #pterms=5
+{
+    [McSlotId=0]:     MacroCell: Name=\Servo:PWMUDB:status_0\, Mode=(D-Register) @ [UDB=(2,1)][LB=1][MC=0]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:compare1\ * !\Servo:PWMUDB:prevCompare1\
+        );
+        Output = \Servo:PWMUDB:status_0\ (fanout=1)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:cs_addr_clkgen_1\, Mode=(Combinatorial) @ [UDB=(2,1)][LB=1][MC=1]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\I2C:bI2C_UDB:clkgen_tc\ * !\I2C:bI2C_UDB:cnt_reset\
+        );
+        Output = \I2C:bI2C_UDB:cs_addr_clkgen_1\ (fanout=1)
+
+    [McSlotId=2]:     MacroCell: Name=\I2C:bI2C_UDB:cs_addr_shifter_0\, Mode=(Combinatorial) @ [UDB=(2,1)][LB=1][MC=2]
+        Total # of inputs        : 4
+        Total # of product terms : 3
+            Clock Enable: True
+        Main Equation            : 3 pterms
+        !(
+              !\I2C:bI2C_UDB:clkgen_tc\ * !\I2C:bI2C_UDB:cnt_reset\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\
+            + \I2C:bI2C_UDB:m_state_4\ * \I2C:bI2C_UDB:m_state_3\
+        );
+        Output = \I2C:bI2C_UDB:cs_addr_shifter_0\ (fanout=1)
+
+    [McSlotId=3]:     MacroCell: Name=\Servo:PWMUDB:runmode_enable\, Mode=(D-Register) @ [UDB=(2,1)][LB=1][MC=3]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:ctrl_enable\
+        );
+        Output = \Servo:PWMUDB:runmode_enable\ (fanout=2)
+}
+
+datapathcell: Name =\Servo:PWMUDB:sP16:pwmdp:u1\
+    PORT MAP (
+        clock => Net_67 ,
+        cs_addr_2 => \Servo:PWMUDB:tc_i\ ,
+        cs_addr_1 => \Servo:PWMUDB:runmode_enable\ ,
+        cl0_comb => \Servo:PWMUDB:compare1\ ,
+        z0_comb => \Servo:PWMUDB:tc_i\ ,
+        cl1_comb => \Servo:PWMUDB:compare2\ ,
+        f1_blk_stat_comb => \Servo:PWMUDB:status_3\ ,
+        chain_in => \Servo:PWMUDB:sP16:pwmdp:carry\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "0000000001000000000000001100000001000000010000000000000011000000000000001100000000000000110000000000000011000000000000001100000011111111000000001111111111111111101011110000000000000100000011110000000000011000"
+        d0_init = "00000000"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+    Previous in chain : \Servo:PWMUDB:sP16:pwmdp:u0\
+
+controlcell: Name =\Servo:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\
+    PORT MAP (
+        control_7 => \Servo:PWMUDB:ctrl_enable\ ,
+        control_6 => \Servo:PWMUDB:control_6\ ,
+        control_5 => \Servo:PWMUDB:control_5\ ,
+        control_4 => \Servo:PWMUDB:control_4\ ,
+        control_3 => \Servo:PWMUDB:control_3\ ,
+        control_2 => \Servo:PWMUDB:control_2\ ,
+        control_1 => \Servo:PWMUDB:control_1\ ,
+        control_0 => \Servo:PWMUDB:control_0\ );
+    Properties:
+    {
+        cy_ctrl_mode_0 = "00000000"
+        cy_ctrl_mode_1 = "00000000"
+        cy_ext_reset = 0
+        cy_force_order = 1
+        cy_init_value = "00000000"
+    }
+    Clock Enable: True
+
+UDB [UDB=(2,2)] contents:
+LAB@[UDB=(2,2)][LB=1] #macrocells=4, #inputs=12, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:bI2C_UDB:status_3\, Mode=(T-Register) @ [UDB=(2,2)][LB=1][MC=0]
+        Total # of inputs        : 8
+        Total # of product terms : 4
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 4 pterms
+        (
+              !\I2C:bI2C_UDB:status_3\ * !\I2C:bI2C_UDB:cs_addr_shifter_1\ * 
+              !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\
+            + \I2C:bI2C_UDB:status_3\ * \I2C:bI2C_UDB:cs_addr_shifter_1\
+            + \I2C:bI2C_UDB:status_3\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\
+            + \I2C:bI2C_UDB:status_3\ * \I2C:bI2C_UDB:m_reset\
+        );
+        Output = \I2C:bI2C_UDB:status_3\ (fanout=2)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:status_0\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=1]
+        Total # of inputs        : 7
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        (
+              \I2C:bI2C_UDB:status_0\ * !\I2C:bI2C_UDB:cs_addr_shifter_1\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:cs_addr_shifter_1\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * \I2C:bI2C_UDB:m_state_2\ * 
+              \I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_reset\
+        );
+        Output = \I2C:bI2C_UDB:status_0\ (fanout=2)
+
+    [McSlotId=2]:     MacroCell: Name=\I2C:bI2C_UDB:lost_arb_reg\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=2]
+        Total # of inputs        : 3
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\I2C:bI2C_UDB:cs_addr_shifter_1\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:lost_arb_reg\
+        );
+        Output = \I2C:bI2C_UDB:lost_arb_reg\ (fanout=6)
+
+    [McSlotId=3]:     MacroCell: Name=\I2C:bI2C_UDB:clkgen_tc1_reg\, Mode=(D-Register) @ [UDB=(2,2)][LB=1][MC=3]
+        Total # of inputs        : 3
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        !(
+              !\I2C:bI2C_UDB:clkgen_tc\ * !\I2C:bI2C_UDB:m_reset\ * 
+              !\I2C:bI2C_UDB:cnt_reset\
+        );
+        Output = \I2C:bI2C_UDB:clkgen_tc1_reg\ (fanout=12)
+}
+
+UDB [UDB=(2,3)] contents:
+LAB@[UDB=(2,3)][LB=1] #macrocells=2, #inputs=11, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\I2C:scl_x_wire\, Mode=(D-Register) @ [UDB=(2,3)][LB=1][MC=0]
+        Total # of inputs        : 9
+        Total # of product terms : 6
+        List of special equations: 
+            Clock  = (\I2C:Net_767\) => Global
+            Clock Enable: True
+        Main Equation            : 6 pterms
+        !(
+              !\I2C:bI2C_UDB:clkgen_cl1\ * \I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:clkgen_cl1\ * \I2C:bI2C_UDB:m_state_3\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:clkgen_cl1\ * \I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_reset\ * !\I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:clkgen_cl1\ * \I2C:bI2C_UDB:m_state_1\ * 
+              \I2C:bI2C_UDB:m_state_0\ * !\I2C:bI2C_UDB:m_reset\ * 
+              \I2C:bI2C_UDB:clkgen_tc1_reg\
+            + !\I2C:bI2C_UDB:m_state_4\ * !\I2C:bI2C_UDB:m_state_3\ * 
+              \I2C:bI2C_UDB:m_state_2\ * \I2C:bI2C_UDB:m_state_1\ * 
+              !\I2C:bI2C_UDB:m_reset\
+            + !\I2C:bI2C_UDB:m_reset\ * \I2C:bI2C_UDB:cnt_reset\
+        );
+        Output = \I2C:scl_x_wire\ (fanout=3)
+
+    [McSlotId=1]:     MacroCell: Name=\I2C:bI2C_UDB:cs_addr_clkgen_0\, Mode=(Combinatorial) @ [UDB=(2,3)][LB=1][MC=1]
+        Total # of inputs        : 7
+        Total # of product terms : 2
+            Clock Enable: True
+        Main Equation            : 2 pterms
+        !(
+              \I2C:bI2C_UDB:tx_reg_empty\ * !\I2C:bI2C_UDB:m_state_4\ * 
+              !\I2C:bI2C_UDB:m_state_3\ * !\I2C:bI2C_UDB:m_state_2\ * 
+              !\I2C:bI2C_UDB:m_state_1\ * !\I2C:bI2C_UDB:m_state_0\
+            + !\I2C:bI2C_UDB:clk_eq_reg\
+        );
+        Output = \I2C:bI2C_UDB:cs_addr_clkgen_0\ (fanout=1)
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+datapathcell: Name =\I2C:bI2C_UDB:Master:ClkGen:u0\
+    PORT MAP (
+        clock => \I2C:Net_767\ ,
+        cs_addr_1 => \I2C:bI2C_UDB:cs_addr_clkgen_1\ ,
+        cs_addr_0 => \I2C:bI2C_UDB:cs_addr_clkgen_0\ ,
+        z0_comb => \I2C:bI2C_UDB:clkgen_tc\ ,
+        cl1_comb => \I2C:bI2C_UDB:clkgen_cl1\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "0100100000000000010010000100000001001000100000000100100010000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111111111111101000000100001000000000011100000001000000001000"
+        d0_init = "00001111"
+        d1_init = "00001000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(2,4)] is empty.
+UDB [UDB=(2,5)] is empty.
+UDB [UDB=(3,0)] is empty.
+UDB [UDB=(3,1)] contents:
+LAB@[UDB=(3,1)][LB=0] #macrocells=4, #inputs=3, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=Net_112, Mode=(D-Register) @ [UDB=(3,1)][LB=0][MC=0]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:ctrl_enable\ * \Servo:PWMUDB:compare1\
+        );
+        Output = Net_112 (fanout=1)
+
+    [McSlotId=1]:     MacroCell: Name=Net_113, Mode=(D-Register) @ [UDB=(3,1)][LB=0][MC=1]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:ctrl_enable\ * \Servo:PWMUDB:compare2\
+        );
+        Output = Net_113 (fanout=1)
+
+    [McSlotId=2]:     MacroCell: Name=\Servo:PWMUDB:prevCompare1\, Mode=(D-Register) @ [UDB=(3,1)][LB=0][MC=2]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:compare1\
+        );
+        Output = \Servo:PWMUDB:prevCompare1\ (fanout=1)
+
+    [McSlotId=3]:     MacroCell: Name=\Servo:PWMUDB:prevCompare2\, Mode=(D-Register) @ [UDB=(3,1)][LB=0][MC=3]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:compare2\
+        );
+        Output = \Servo:PWMUDB:prevCompare2\ (fanout=1)
+}
+
+LAB@[UDB=(3,1)][LB=1] #macrocells=2, #inputs=3, #pterms=2
+{
+    [McSlotId=0]:     MacroCell: Name=\Servo:PWMUDB:status_1\, Mode=(D-Register) @ [UDB=(3,1)][LB=1][MC=0]
+        Total # of inputs        : 2
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (Net_67) => Global
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              \Servo:PWMUDB:compare2\ * !\Servo:PWMUDB:prevCompare2\
+        );
+        Output = \Servo:PWMUDB:status_1\ (fanout=1)
+
+    [McSlotId=1]:     MacroCell: Name=\Servo:PWMUDB:status_5\, Mode=(Combinatorial) @ [UDB=(3,1)][LB=1][MC=1]
+        Total # of inputs        : 1
+        Total # of product terms : 1
+            Clock Enable: True
+        Main Equation            : 1 pterm
+        (
+              !\Servo:PWMUDB:final_kill_reg\
+        );
+        Output = \Servo:PWMUDB:status_5\ (fanout=1)
+
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+datapathcell: Name =\Servo:PWMUDB:sP16:pwmdp:u0\
+    PORT MAP (
+        clock => Net_67 ,
+        cs_addr_2 => \Servo:PWMUDB:tc_i\ ,
+        cs_addr_1 => \Servo:PWMUDB:runmode_enable\ ,
+        chain_out => \Servo:PWMUDB:sP16:pwmdp:carry\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "0000000001000000000000001100000001000000010000000000000011000000000000001100000000000000110000000000000011000000000000001100000011111111000000001111111111111111101000000000000000000100000000000000000000011000"
+        d0_init = "00000000"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+    Next in chain : \Servo:PWMUDB:sP16:pwmdp:u1\
+
+statusicell: Name =\Servo:PWMUDB:sSTSReg:nrstSts:stsreg\
+    PORT MAP (
+        clock => Net_67 ,
+        status_5 => \Servo:PWMUDB:status_5\ ,
+        status_3 => \Servo:PWMUDB:status_3\ ,
+        status_2 => \Servo:PWMUDB:tc_i\ ,
+        status_1 => \Servo:PWMUDB:status_1\ ,
+        status_0 => \Servo:PWMUDB:status_0\ );
+    Properties:
+    {
+        cy_force_order = 1
+        cy_int_mask = "1111111"
+        cy_md_select = "0100111"
+    }
+    Clock Polarity: Active High
+    Clock Enable: True
+
+UDB [UDB=(3,2)] is empty.
+UDB [UDB=(3,3)] is empty.
+UDB [UDB=(3,4)] is empty.
+UDB [UDB=(3,5)] is empty.
+Intr hod @ [IntrHod=(0)]: 
+  Intr@ [IntrHod=(0)][IntrId=(10)] 
+    interrupt: Name =Button_1
+        PORT MAP (
+            interrupt => Net_256 );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrHod=(0)][IntrId=(12)] 
+    interrupt: Name =Button_2
+        PORT MAP (
+            interrupt => Net_259 );
+        Properties:
+        {
+            int_type = "10"
+        }
+  Intr@ [IntrHod=(0)][IntrId=(20)] 
+    interrupt: Name =\I2C:I2C_IRQ\
+        PORT MAP (
+            interrupt => \I2C:Net_697\ );
+        Properties:
+        {
+            int_type = "00"
+        }
+Drq hod @ [DrqHod=(0)]: empty
+Port 0 is empty
+Port 1 is empty
+Port 2 is empty
+Port 3 is empty
+Port 4 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = SDA_1(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: SYNC
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: OPEN_DRAIN_LO
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: True
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        fb => \I2C:Net_855\ ,
+        input => \I2C:sda_x_wire\ ,
+        pad => SDA_1(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=1]: 
+Pin : Name = SCL_1(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: SYNC
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: OPEN_DRAIN_LO
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: True
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        fb => \I2C:Net_854\ ,
+        input => \I2C:scl_x_wire\ ,
+        pad => SCL_1(0)_PAD );
+    Properties:
+    {
+    }
+
+Port 5 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = Y0(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: ANALOG
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        analog_term => Net_178 ,
+        pad => Y0(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=1]: 
+Pin : Name = Y1(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: ANALOG
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        analog_term => Net_178 ,
+        pad => Y1(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=2]: 
+Pin : Name = X1(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: ANALOG
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        analog_term => Net_175 ,
+        pad => X1(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=3]: 
+Pin : Name = X0(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: ANALOG
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        analog_term => Net_175 ,
+        pad => X0(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=4]: 
+Pin : Name = Servo0(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_112 ,
+        pad => Servo0(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=5]: 
+Pin : Name = Servo1(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_113 ,
+        pad => Servo1(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=7]: 
+Pin : Name = Center(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: ANALOG
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        analog_term => Net_157 ,
+        pad => Center(0)_PAD );
+    Properties:
+    {
+    }
+
+Port 6 generates interrupt for logical port:
+    logicalport: Name =Test_Button_1
+        PORT MAP (
+            interrupt => Net_256 );
+        Properties:
+        {
+            drive_mode = "011"
+            ibuf_enabled = "1"
+            id = "1425177d-0d0e-4468-8bcc-e638e5509a9b"
+            init_dr_st = "0"
+            input_sync = "1"
+            intr_mode = "01"
+            io_voltage = ""
+            layout_mode = "CONTIGUOUS"
+            oe_conn = "0"
+            output_conn = "0"
+            output_sync = "0"
+            pin_aliases = ""
+            pin_mode = "I"
+            por_state = 4
+            port_alias_group = ""
+            port_alias_required = 0
+            sio_group_cnt = 0
+            sio_hifreq = ""
+            sio_hyst = "0"
+            sio_ibuf = "00000000"
+            sio_info = "00"
+            sio_obuf = "00000000"
+            sio_refsel = "00000000"
+            sio_vtrip = "00000000"
+            slew_rate = "0"
+            spanning = 0
+            sw_only = 0
+            use_annotation = "0"
+            vtrip = "00"
+            width = 1
+        }
+    and contains the following IO cells:
+[IoId=1]: 
+Pin : Name = Test_Button_1(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: SYNC
+        Out Sync Option: AUTO
+        Interrupt generated: True
+        Interrupt mode: RISING
+        Drive mode: RES_PULL_DOWN
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: True
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pad => Test_Button_1(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=2]: 
+Pin : Name = Err_LED_1(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pad => Err_LED_1(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=3]: 
+Pin : Name = Err_LED_2(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pad => Err_LED_2(0)_PAD );
+    Properties:
+    {
+    }
+
+Port 12 is empty
+Port 15 generates interrupt for logical port:
+    logicalport: Name =Test_Button_2
+        PORT MAP (
+            interrupt => Net_259 );
+        Properties:
+        {
+            drive_mode = "011"
+            ibuf_enabled = "1"
+            id = "fd40b9dd-a246-4b9b-9e1b-e686dcd67216"
+            init_dr_st = "0"
+            input_sync = "1"
+            intr_mode = "01"
+            io_voltage = ""
+            layout_mode = "CONTIGUOUS"
+            oe_conn = "0"
+            output_conn = "0"
+            output_sync = "0"
+            pin_aliases = ""
+            pin_mode = "I"
+            por_state = 4
+            port_alias_group = ""
+            port_alias_required = 0
+            sio_group_cnt = 0
+            sio_hifreq = ""
+            sio_hyst = "0"
+            sio_ibuf = "00000000"
+            sio_info = "00"
+            sio_obuf = "00000000"
+            sio_refsel = "00000000"
+            sio_vtrip = "00000000"
+            slew_rate = "0"
+            spanning = 0
+            sw_only = 0
+            use_annotation = "0"
+            vtrip = "00"
+            width = 1
+        }
+    and contains the following IO cells:
+[IoId=5]: 
+Pin : Name = Test_Button_2(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: SYNC
+        Out Sync Option: AUTO
+        Interrupt generated: True
+        Interrupt mode: RISING
+        Drive mode: RES_PULL_DOWN
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: True
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pad => Test_Button_2(0)_PAD );
+    Properties:
+    {
+    }
+
+Fixed Function block hod @ [FFB(CAN,0)]: empty
+Fixed Function block hod @ [FFB(Cache,0)]: empty
+Fixed Function block hod @ [FFB(CapSense,0)]: empty
+Fixed Function block hod @ [FFB(Clock,0)]: 
+    Clock Block @ [FFB(Clock,0)]: 
+    clockblockcell: Name =ClockBlock
+        PORT MAP (
+            clk_bus_glb => ClockBlock_BUS_CLK ,
+            clk_bus => ClockBlock_BUS_CLK_local ,
+            clk_sync => ClockBlock_MASTER_CLK ,
+            clk_32k_xtal => ClockBlock_XTAL 32kHz ,
+            xtal => ClockBlock_XTAL ,
+            ilo => ClockBlock_ILO ,
+            clk_100k => ClockBlock_100k ,
+            clk_1k => ClockBlock_1k ,
+            clk_32k => ClockBlock_32k ,
+            pllout => ClockBlock_PLL_OUT ,
+            imo => ClockBlock_IMO ,
+            dclk_glb_0 => Net_67 ,
+            dclk_0 => Net_67_local ,
+            dclk_glb_1 => \I2C:Net_767\ ,
+            dclk_1 => \I2C:Net_767_local\ );
+Fixed Function block hod @ [FFB(Comparator,0)]: empty
+Fixed Function block hod @ [FFB(DFB,0)]: empty
+Fixed Function block hod @ [FFB(DSM,0)]: empty
+Fixed Function block hod @ [FFB(Decimator,0)]: empty
+Fixed Function block hod @ [FFB(EMIF,0)]: empty
+Fixed Function block hod @ [FFB(I2C,0)]: empty
+Fixed Function block hod @ [FFB(LCD,0)]: empty
+Fixed Function block hod @ [FFB(LVD,0)]: empty
+Fixed Function block hod @ [FFB(PM,0)]: empty
+Fixed Function block hod @ [FFB(SC,0)]: empty
+Fixed Function block hod @ [FFB(SPC,0)]: empty
+Fixed Function block hod @ [FFB(Timer,0)]: empty
+Fixed Function block hod @ [FFB(USB,0)]: empty
+Fixed Function block hod @ [FFB(VIDAC,0)]: 
+    VIDAC Block @ [FFB(VIDAC,1)]: 
+    vidaccell: Name =\VDAC8_2:viDAC8\
+        PORT MAP (
+            vout => Net_178 ,
+            iout => \VDAC8_2:Net_77\ );
+        Properties:
+        {
+            cy_registers = ""
+            is_all_if_any = 0
+            reg_data = 0
+        }
+    VIDAC Block @ [FFB(VIDAC,2)]: 
+    vidaccell: Name =\VDAC8_3:viDAC8\
+        PORT MAP (
+            vout => Net_157 ,
+            iout => \VDAC8_3:Net_77\ );
+        Properties:
+        {
+            cy_registers = ""
+            is_all_if_any = 0
+            reg_data = 0
+        }
+    VIDAC Block @ [FFB(VIDAC,3)]: 
+    vidaccell: Name =\VDAC8_1:viDAC8\
+        PORT MAP (
+            vout => Net_175 ,
+            iout => \VDAC8_1:Net_77\ );
+        Properties:
+        {
+            cy_registers = ""
+            is_all_if_any = 0
+            reg_data = 0
+        }
+Fixed Function block hod @ [FFB(Abuf,0)]: empty
+Fixed Function block hod @ [FFB(CsAbuf,0)]: empty
+Fixed Function block hod @ [FFB(Vref,0)]: empty
+Fixed Function block hod @ [FFB(LPF,0)]: empty
+Fixed Function block hod @ [FFB(SAR,0)]: empty
+Fixed Function block hod @ [FFB(TimingFault,0)]: empty
+</CYPRESSTAG>
+<CYPRESSTAG name="Port Configuration Details">
+
+------------------------------------------------------------
+Port Configuration report
+------------------------------------------------------------
+     |     |       | Interrupt |                  |                  | 
+Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connections
+-----+-----+-------+-----------+------------------+------------------+----------------------------------------
+   4 |   0 |     * |      NONE |    OPEN_DRAIN_LO |         SDA_1(0) | FB(\I2C:Net_855\), In(\I2C:sda_x_wire\)
+     |   1 |     * |      NONE |    OPEN_DRAIN_LO |         SCL_1(0) | FB(\I2C:Net_854\), In(\I2C:scl_x_wire\)
+-----+-----+-------+-----------+------------------+------------------+----------------------------------------
+   5 |   0 |     * |      NONE |      HI_Z_ANALOG |            Y0(0) | Analog(Net_178)
+     |   1 |     * |      NONE |      HI_Z_ANALOG |            Y1(0) | Analog(Net_178)
+     |   2 |     * |      NONE |      HI_Z_ANALOG |            X1(0) | Analog(Net_175)
+     |   3 |     * |      NONE |      HI_Z_ANALOG |            X0(0) | Analog(Net_175)
+     |   4 |     * |      NONE |         CMOS_OUT |        Servo0(0) | In(Net_112)
+     |   5 |     * |      NONE |         CMOS_OUT |        Servo1(0) | In(Net_113)
+     |   7 |     * |      NONE |      HI_Z_ANALOG |        Center(0) | Analog(Net_157)
+-----+-----+-------+-----------+------------------+------------------+----------------------------------------
+   6 |   1 |     * |    RISING |    RES_PULL_DOWN | Test_Button_1(0) | 
+     |   2 |     * |      NONE |         CMOS_OUT |     Err_LED_1(0) | 
+     |   3 |     * |      NONE |         CMOS_OUT |     Err_LED_2(0) | 
+-----+-----+-------+-----------+------------------+------------------+----------------------------------------
+  15 |   5 |     * |    RISING |    RES_PULL_DOWN | Test_Button_2(0) | 
+--------------------------------------------------------------------------------------------------------------
+</CYPRESSTAG>
+</CYPRESSTAG>
+</CYPRESSTAG>
+Digital component placer commit/Report: Elapsed time ==> 0s.009ms
+Digital Placement phase: Elapsed time ==> 0s.939ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Routing">
+Routing successful.
+Digital Routing phase: Elapsed time ==> 9s.192ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream and API generation">
+Bitstream and API generation phase: Elapsed time ==> 0s.557ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream verification">
+Bitstream verification phase: Elapsed time ==> 0s.205ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Static timing analysis">
+Timing report is in Rambobot Controller_timing.html
+Static timing analysis phase: Elapsed time ==> 1s.039ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Data reporting">
+Data reporting phase: Elapsed time ==> 0s.001ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Database update...">
+Design database save phase: Elapsed time ==> 0s.860ms
+</CYPRESSTAG>
+cydsfit: Elapsed time ==> 20s.791ms
+</CYPRESSTAG>
+Fitter phase: Elapsed time ==> 20s.957ms
+API generation phase: Elapsed time ==> 1s.497ms
+Dependency generation phase: Elapsed time ==> 0s.046ms
+Cleanup phase: Elapsed time ==> 0s.003ms
