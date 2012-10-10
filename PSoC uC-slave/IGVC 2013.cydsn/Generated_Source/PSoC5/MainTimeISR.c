@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Button_1.c  
+* File Name: MainTimeISR.c  
 * Version 1.50
 *
 *  Description:
@@ -19,13 +19,13 @@
 #include <CYDEVICE.H>
 #include <CYDEVICE_TRM.H>
 #include <CYLIB.H>
-#include <Button_1.H>
+#include <MainTimeISR.H>
 
 
 /*******************************************************************************
 *  Place your includes, defines and code here 
 ********************************************************************************/
-/* `#START Button_1_intc` */
+/* `#START MainTimeISR_intc` */
 
 /* `#END` */
 
@@ -40,7 +40,7 @@
 CY_ISR_PROTO(IntDefaultHandler);
 
 /*******************************************************************************
-* Function Name: Button_1_Start
+* Function Name: MainTimeISR_Start
 ********************************************************************************
 * Summary:
 *  Set up the interrupt and enable it.
@@ -53,23 +53,23 @@ CY_ISR_PROTO(IntDefaultHandler);
 *   void.
 *
 *******************************************************************************/
-void Button_1_Start(void)
+void MainTimeISR_Start(void)
 {
     /* For all we know the interrupt is active. */
-    Button_1_Disable();
+    MainTimeISR_Disable();
 
-    /* Set the ISR to point to the Button_1 Interrupt. */
-    Button_1_SetVector(Button_1_Interrupt);
+    /* Set the ISR to point to the MainTimeISR Interrupt. */
+    MainTimeISR_SetVector(MainTimeISR_Interrupt);
 
     /* Set the priority. */
-    Button_1_SetPriority(Button_1_INTC_PRIOR_NUMBER);
+    MainTimeISR_SetPriority(MainTimeISR_INTC_PRIOR_NUMBER);
 
     /* Enable it. */
-    Button_1_Enable();
+    MainTimeISR_Enable();
 }
 
 /*******************************************************************************
-* Function Name: Button_1_StartEx
+* Function Name: MainTimeISR_StartEx
 ********************************************************************************
 * Summary:
 *  Set up the interrupt and enable it.
@@ -82,23 +82,23 @@ void Button_1_Start(void)
 *   void.
 *
 *******************************************************************************/
-void Button_1_StartEx(cyisraddress address)
+void MainTimeISR_StartEx(cyisraddress address)
 {
     /* For all we know the interrupt is active. */
-    Button_1_Disable();
+    MainTimeISR_Disable();
 
-    /* Set the ISR to point to the Button_1 Interrupt. */
-    Button_1_SetVector(address);
+    /* Set the ISR to point to the MainTimeISR Interrupt. */
+    MainTimeISR_SetVector(address);
 
     /* Set the priority. */
-    Button_1_SetPriority(Button_1_INTC_PRIOR_NUMBER);
+    MainTimeISR_SetPriority(MainTimeISR_INTC_PRIOR_NUMBER);
 
     /* Enable it. */
-    Button_1_Enable();
+    MainTimeISR_Enable();
 }
 
 /*******************************************************************************
-* Function Name: Button_1_Stop
+* Function Name: MainTimeISR_Stop
 ********************************************************************************
 * Summary:
 *   Disables and removes the interrupt.
@@ -110,20 +110,20 @@ void Button_1_StartEx(cyisraddress address)
 *   void.
 *
 *******************************************************************************/
-void Button_1_Stop(void) 
+void MainTimeISR_Stop(void) 
 {
     /* Disable this interrupt. */
-    Button_1_Disable();
+    MainTimeISR_Disable();
 
     /* Set the ISR to point to the passive one. */
-    Button_1_SetVector(IntDefaultHandler);
+    MainTimeISR_SetVector(IntDefaultHandler);
 }
 
 /*******************************************************************************
-* Function Name: Button_1_Interrupt
+* Function Name: MainTimeISR_Interrupt
 ********************************************************************************
 * Summary:
-*   The default Interrupt Service Routine for Button_1.
+*   The default Interrupt Service Routine for MainTimeISR.
 *
 *   Add custom code between the coments to keep the next version of this file
 *   from over writting your code.
@@ -137,21 +137,21 @@ void Button_1_Stop(void)
 *   void.
 *
 *******************************************************************************/
-CY_ISR(Button_1_Interrupt)
+CY_ISR(MainTimeISR_Interrupt)
 {
     /*  Place your Interrupt code here. */
-    /* `#START Button_1_Interrupt` */
+    /* `#START MainTimeISR_Interrupt` */
 
     /* `#END` */
 }
 
 /*******************************************************************************
-* Function Name: Button_1_SetVector
+* Function Name: MainTimeISR_SetVector
 ********************************************************************************
 * Summary:
-*   Change the ISR vector for the Interrupt. Note calling Button_1_Start
+*   Change the ISR vector for the Interrupt. Note calling MainTimeISR_Start
 *   will override any effect this method would have had. To set the vector before
-*   the component has been started use Button_1_StartEx instead.
+*   the component has been started use MainTimeISR_StartEx instead.
 *
 *
 * Parameters:
@@ -163,17 +163,17 @@ CY_ISR(Button_1_Interrupt)
 *
 *
 *******************************************************************************/
-void Button_1_SetVector(cyisraddress address) 
+void MainTimeISR_SetVector(cyisraddress address) 
 {
     cyisraddress * ramVectorTable;
 
     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
 
-    ramVectorTable[CYINT_IRQ_BASE + Button_1__INTC_NUMBER] = address;
+    ramVectorTable[CYINT_IRQ_BASE + MainTimeISR__INTC_NUMBER] = address;
 }
 
 /*******************************************************************************
-* Function Name: Button_1_GetVector
+* Function Name: MainTimeISR_GetVector
 ********************************************************************************
 * Summary:
 *   Gets the "address" of the current ISR vector for the Interrupt.
@@ -188,23 +188,23 @@ void Button_1_SetVector(cyisraddress address)
 *
 *
 *******************************************************************************/
-cyisraddress Button_1_GetVector(void) 
+cyisraddress MainTimeISR_GetVector(void) 
 {
     cyisraddress * ramVectorTable;
 
     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
 
-    return ramVectorTable[CYINT_IRQ_BASE + Button_1__INTC_NUMBER];
+    return ramVectorTable[CYINT_IRQ_BASE + MainTimeISR__INTC_NUMBER];
 }
 
 /*******************************************************************************
-* Function Name: Button_1_SetPriority
+* Function Name: MainTimeISR_SetPriority
 ********************************************************************************
 * Summary:
-*   Sets the Priority of the Interrupt. Note calling Button_1_Start
-*   or Button_1_StartEx will override any effect this method would have had. 
-*	This method should only be called after Button_1_Start or 
-*	Button_1_StartEx has been called. To set the initial
+*   Sets the Priority of the Interrupt. Note calling MainTimeISR_Start
+*   or MainTimeISR_StartEx will override any effect this method would have had. 
+*	This method should only be called after MainTimeISR_Start or 
+*	MainTimeISR_StartEx has been called. To set the initial
 *	priority for the component use the cydwr file in the tool.
 *
 *
@@ -217,13 +217,13 @@ cyisraddress Button_1_GetVector(void)
 *
 *
 *******************************************************************************/
-void Button_1_SetPriority(uint8 priority) 
+void MainTimeISR_SetPriority(uint8 priority) 
 {
-    *Button_1_INTC_PRIOR = priority << 5;
+    *MainTimeISR_INTC_PRIOR = priority << 5;
 }
 
 /*******************************************************************************
-* Function Name: Button_1_GetPriority
+* Function Name: MainTimeISR_GetPriority
 ********************************************************************************
 * Summary:
 *   Gets the Priority of the Interrupt.
@@ -238,18 +238,18 @@ void Button_1_SetPriority(uint8 priority)
 *
 *
 *******************************************************************************/
-uint8 Button_1_GetPriority(void) 
+uint8 MainTimeISR_GetPriority(void) 
 {
     uint8 priority;
 
 
-    priority = *Button_1_INTC_PRIOR >> 5;
+    priority = *MainTimeISR_INTC_PRIOR >> 5;
 
     return priority;
 }
 
 /*******************************************************************************
-* Function Name: Button_1_Enable
+* Function Name: MainTimeISR_Enable
 ********************************************************************************
 * Summary:
 *   Enables the interrupt.
@@ -264,14 +264,14 @@ uint8 Button_1_GetPriority(void)
 *
 *
 *******************************************************************************/
-void Button_1_Enable(void) 
+void MainTimeISR_Enable(void) 
 {
     /* Enable the general interrupt. */
-    *Button_1_INTC_SET_EN = Button_1__INTC_MASK;
+    *MainTimeISR_INTC_SET_EN = MainTimeISR__INTC_MASK;
 }
 
 /*******************************************************************************
-* Function Name: Button_1_GetState
+* Function Name: MainTimeISR_GetState
 ********************************************************************************
 * Summary:
 *   Gets the state (enabled, disabled) of the Interrupt.
@@ -286,14 +286,14 @@ void Button_1_Enable(void)
 *
 *
 *******************************************************************************/
-uint8 Button_1_GetState(void) 
+uint8 MainTimeISR_GetState(void) 
 {
     /* Get the state of the general interrupt. */
-    return (*Button_1_INTC_SET_EN & Button_1__INTC_MASK) ? 1:0;
+    return (*MainTimeISR_INTC_SET_EN & MainTimeISR__INTC_MASK) ? 1:0;
 }
 
 /*******************************************************************************
-* Function Name: Button_1_Disable
+* Function Name: MainTimeISR_Disable
 ********************************************************************************
 * Summary:
 *   Disables the Interrupt.
@@ -308,14 +308,14 @@ uint8 Button_1_GetState(void)
 *
 *
 *******************************************************************************/
-void Button_1_Disable(void) 
+void MainTimeISR_Disable(void) 
 {
     /* Disable the general interrupt. */
-    *Button_1_INTC_CLR_EN = Button_1__INTC_MASK;
+    *MainTimeISR_INTC_CLR_EN = MainTimeISR__INTC_MASK;
 }
 
 /*******************************************************************************
-* Function Name: Button_1_SetPending
+* Function Name: MainTimeISR_SetPending
 ********************************************************************************
 * Summary:
 *   Causes the Interrupt to enter the pending state, a software method of
@@ -331,13 +331,13 @@ void Button_1_Disable(void)
 *
 *
 *******************************************************************************/
-void Button_1_SetPending(void) 
+void MainTimeISR_SetPending(void) 
 {
-    *Button_1_INTC_SET_PD = Button_1__INTC_MASK;
+    *MainTimeISR_INTC_SET_PD = MainTimeISR__INTC_MASK;
 }
 
 /*******************************************************************************
-* Function Name: Button_1_ClearPending
+* Function Name: MainTimeISR_ClearPending
 ********************************************************************************
 * Summary:
 *   Clears a pending interrupt.
@@ -351,7 +351,7 @@ void Button_1_SetPending(void)
 *
 *
 *******************************************************************************/
-void Button_1_ClearPending(void) 
+void MainTimeISR_ClearPending(void) 
 {
-    *Button_1_INTC_CLR_PD = Button_1__INTC_MASK;
+    *MainTimeISR_INTC_CLR_PD = MainTimeISR__INTC_MASK;
 }

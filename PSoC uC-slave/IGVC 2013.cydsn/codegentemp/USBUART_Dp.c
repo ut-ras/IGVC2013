@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Test_Button_1.c  
+* File Name: USBUART_Dp.c  
 * Version 1.60
 *
 * Description:
@@ -15,15 +15,15 @@
 ********************************************************************************/
 
 #include "cytypes.h"
-#include "Test_Button_1.h"
+#include "USBUART_Dp.h"
 
 /* APIs are not generated for P15[7:6] */
 #if !(CYDEV_CHIP_FAMILY_USED == CYDEV_CHIP_FAMILY_PSOC5 &&\
      CYDEV_CHIP_REVISION_USED == CYDEV_CHIP_REVISION_5A_PRODUCTION &&\
-	 Test_Button_1__PORT == 15 && (Test_Button_1__MASK & 0xC0))
+	 USBUART_Dp__PORT == 15 && (USBUART_Dp__MASK & 0xC0))
 
 /*******************************************************************************
-* Function Name: Test_Button_1_Write
+* Function Name: USBUART_Dp_Write
 ********************************************************************************
 * Summary:
 *  Assign a new value to the digital port's data output register.  
@@ -35,15 +35,15 @@
 *  void 
 *  
 *******************************************************************************/
-void Test_Button_1_Write(uint8 value) 
+void USBUART_Dp_Write(uint8 value) 
 {
-    uint8 staticBits = Test_Button_1_DR & ~Test_Button_1_MASK;
-    Test_Button_1_DR = staticBits | ((value << Test_Button_1_SHIFT) & Test_Button_1_MASK);
+    uint8 staticBits = USBUART_Dp_DR & ~USBUART_Dp_MASK;
+    USBUART_Dp_DR = staticBits | ((value << USBUART_Dp_SHIFT) & USBUART_Dp_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Test_Button_1_SetDriveMode
+* Function Name: USBUART_Dp_SetDriveMode
 ********************************************************************************
 * Summary:
 *  Change the drive mode on the pins of the port.
@@ -55,14 +55,14 @@ void Test_Button_1_Write(uint8 value)
 *  void
 *
 *******************************************************************************/
-void Test_Button_1_SetDriveMode(uint8 mode) 
+void USBUART_Dp_SetDriveMode(uint8 mode) 
 {
-	CyPins_SetPinDriveMode(Test_Button_1_0, mode);
+	CyPins_SetPinDriveMode(USBUART_Dp_0, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: Test_Button_1_Read
+* Function Name: USBUART_Dp_Read
 ********************************************************************************
 * Summary:
 *  Read the current value on the pins of the Digital Port in right justified 
@@ -75,17 +75,17 @@ void Test_Button_1_SetDriveMode(uint8 mode)
 *  Returns the current value of the Digital Port as a right justified number
 *  
 * Note:
-*  Macro Test_Button_1_ReadPS calls this function. 
+*  Macro USBUART_Dp_ReadPS calls this function. 
 *  
 *******************************************************************************/
-uint8 Test_Button_1_Read(void) 
+uint8 USBUART_Dp_Read(void) 
 {
-    return (Test_Button_1_PS & Test_Button_1_MASK) >> Test_Button_1_SHIFT;
+    return (USBUART_Dp_PS & USBUART_Dp_MASK) >> USBUART_Dp_SHIFT;
 }
 
 
 /*******************************************************************************
-* Function Name: Test_Button_1_ReadDataReg
+* Function Name: USBUART_Dp_ReadDataReg
 ********************************************************************************
 * Summary:
 *  Read the current value assigned to a Digital Port's data output register
@@ -97,17 +97,17 @@ uint8 Test_Button_1_Read(void)
 *  Returns the current value assigned to the Digital Port's data output register
 *  
 *******************************************************************************/
-uint8 Test_Button_1_ReadDataReg(void) 
+uint8 USBUART_Dp_ReadDataReg(void) 
 {
-    return (Test_Button_1_DR & Test_Button_1_MASK) >> Test_Button_1_SHIFT;
+    return (USBUART_Dp_DR & USBUART_Dp_MASK) >> USBUART_Dp_SHIFT;
 }
 
 
 /* If Interrupts Are Enabled for this Pins component */ 
-#if defined(Test_Button_1_INTSTAT) 
+#if defined(USBUART_Dp_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: Test_Button_1_ClearInterrupt
+    * Function Name: USBUART_Dp_ClearInterrupt
     ********************************************************************************
     * Summary:
     *  Clears any active interrupts attached to port and returns the value of the 
@@ -120,9 +120,9 @@ uint8 Test_Button_1_ReadDataReg(void)
     *  Returns the value of the interrupt status register
     *  
     *******************************************************************************/
-    uint8 Test_Button_1_ClearInterrupt(void) 
+    uint8 USBUART_Dp_ClearInterrupt(void) 
     {
-        return (Test_Button_1_INTSTAT & Test_Button_1_MASK) >> Test_Button_1_SHIFT;
+        return (USBUART_Dp_INTSTAT & USBUART_Dp_MASK) >> USBUART_Dp_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

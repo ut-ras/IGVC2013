@@ -1,5 +1,5 @@
 -- Project:   IGVC 2013
--- Generated: 10/02/2012 19:05:19
+-- Generated: 10/08/2012 12:06:00
 -- 
 
 ENTITY \IGVC 2013\ IS
@@ -9,9 +9,7 @@ ENTITY \IGVC 2013\ IS
         SCL_1(0)_PAD : INOUT std_ulogic;
         SDA_1(0)_PAD : INOUT std_ulogic;
         Servo0(0)_PAD : OUT std_ulogic;
-        Servo1(0)_PAD : OUT std_ulogic;
-        Test_Button_1(0)_PAD : IN std_ulogic;
-        Test_Button_2(0)_PAD : IN std_ulogic);
+        Servo1(0)_PAD : OUT std_ulogic);
 END \IGVC 2013\;
 
 ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
@@ -28,8 +26,8 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     SIGNAL \ClockBlock_XTAL 32kHz\ : bit;
     SIGNAL Net_112 : bit;
     SIGNAL Net_113 : bit;
-    SIGNAL Net_256 : bit;
-    SIGNAL Net_259 : bit;
+    SIGNAL Net_282 : bit;
+    SIGNAL Net_284 : bit;
     SIGNAL Net_67 : bit;
     ATTRIBUTE global_signal OF Net_67 : SIGNAL IS true;
     SIGNAL Net_67_local : bit;
@@ -38,7 +36,9 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     ATTRIBUTE global_signal OF \I2C:Net_767\ : SIGNAL IS true;
     SIGNAL \I2C:Net_767_local\ : bit;
     SIGNAL \I2C:Net_854\ : bit;
+    SIGNAL \I2C:Net_854_SYNCOUT\ : bit;
     SIGNAL \I2C:Net_855\ : bit;
+    SIGNAL \I2C:Net_855_SYNCOUT\ : bit;
     SIGNAL \I2C:bI2C_UDB:bus_busy_reg\ : bit;
     SIGNAL \I2C:bI2C_UDB:clk_eq_reg\ : bit;
     SIGNAL \I2C:bI2C_UDB:clkgen_cl1\ : bit;
@@ -91,6 +91,8 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     SIGNAL \I2C:bI2C_UDB:tx_reg_empty\ : bit;
     SIGNAL \I2C:scl_x_wire\ : bit;
     SIGNAL \I2C:sda_x_wire\ : bit;
+    SIGNAL \MainTimer:Net_261\ : bit;
+    SIGNAL \MainTimer:Net_57\ : bit;
     SIGNAL \Servo:PWMUDB:compare1\ : bit;
     SIGNAL \Servo:PWMUDB:compare2\ : bit;
     SIGNAL \Servo:PWMUDB:control_0\ : bit;
@@ -110,6 +112,28 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     SIGNAL \Servo:PWMUDB:status_3\ : bit;
     SIGNAL \Servo:PWMUDB:status_5\ : bit;
     SIGNAL \Servo:PWMUDB:tc_i\ : bit;
+    SIGNAL \USBUART:Net_623\ : bit;
+    SIGNAL \USBUART:Net_79\ : bit;
+    SIGNAL \USBUART:Net_81\ : bit;
+    SIGNAL \USBUART:Net_824\ : bit;
+    SIGNAL \USBUART:Net_95\ : bit;
+    SIGNAL \USBUART:dma_req_0\ : bit;
+    SIGNAL \USBUART:dma_req_1\ : bit;
+    SIGNAL \USBUART:dma_req_2\ : bit;
+    SIGNAL \USBUART:dma_req_3\ : bit;
+    SIGNAL \USBUART:dma_req_4\ : bit;
+    SIGNAL \USBUART:dma_req_5\ : bit;
+    SIGNAL \USBUART:dma_req_6\ : bit;
+    SIGNAL \USBUART:dma_req_7\ : bit;
+    SIGNAL \USBUART:ept_int_0\ : bit;
+    SIGNAL \USBUART:ept_int_1\ : bit;
+    SIGNAL \USBUART:ept_int_2\ : bit;
+    SIGNAL \USBUART:ept_int_3\ : bit;
+    SIGNAL \USBUART:ept_int_4\ : bit;
+    SIGNAL \USBUART:ept_int_5\ : bit;
+    SIGNAL \USBUART:ept_int_6\ : bit;
+    SIGNAL \USBUART:ept_int_7\ : bit;
+    SIGNAL \USBUART:ept_int_8\ : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
@@ -131,8 +155,6 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.cfbo__sig\ : bit;
     SIGNAL \Servo:PWMUDB:sP16:pwmdp:u1.sor__sig\ : bit;
     SIGNAL \Servo:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\ : bit;
-    ATTRIBUTE Location OF Button_1 : LABEL IS "[IntrHod=(0)][IntrId=(10)]";
-    ATTRIBUTE Location OF Button_2 : LABEL IS "[IntrHod=(0)][IntrId=(12)]";
     ATTRIBUTE lib_model OF Center(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF Center(0) : LABEL IS "P5[7]";
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
@@ -140,142 +162,156 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     ATTRIBUTE Location OF Err_LED_1(0) : LABEL IS "P6[2]";
     ATTRIBUTE lib_model OF Err_LED_2(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF Err_LED_2(0) : LABEL IS "P6[3]";
+    ATTRIBUTE Location OF MainTimeISR : LABEL IS "[IntrHod=(0)][IntrId=(17)]";
     ATTRIBUTE lib_model OF Net_112 : LABEL IS "macrocell1";
-    ATTRIBUTE Location OF Net_112 : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF Net_112 : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF Net_113 : LABEL IS "macrocell2";
-    ATTRIBUTE Location OF Net_113 : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF Net_113 : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF SCL_1(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF SCL_1(0) : LABEL IS "P4[1]";
+    ATTRIBUTE Location OF SCL_1(0)_SYNC : LABEL IS "U(1,4)";
     ATTRIBUTE lib_model OF SDA_1(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF SDA_1(0) : LABEL IS "P4[0]";
+    ATTRIBUTE Location OF SDA_1(0)_SYNC : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF Servo0(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF Servo0(0) : LABEL IS "P5[4]";
     ATTRIBUTE lib_model OF Servo1(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF Servo1(0) : LABEL IS "P5[5]";
-    ATTRIBUTE Location OF Test_Button_1 : LABEL IS "F(PICU,6)";
-    ATTRIBUTE lib_model OF Test_Button_1(0) : LABEL IS "iocell8";
-    ATTRIBUTE Location OF Test_Button_1(0) : LABEL IS "P6[1]";
-    ATTRIBUTE Location OF Test_Button_2 : LABEL IS "F(PICU,8)";
-    ATTRIBUTE lib_model OF Test_Button_2(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF Test_Button_2(0) : LABEL IS "P15[5]";
-    ATTRIBUTE lib_model OF X0(0) : LABEL IS "iocell10";
+    ATTRIBUTE lib_model OF X0(0) : LABEL IS "iocell8";
     ATTRIBUTE Location OF X0(0) : LABEL IS "P5[3]";
-    ATTRIBUTE lib_model OF X1(0) : LABEL IS "iocell11";
+    ATTRIBUTE lib_model OF X1(0) : LABEL IS "iocell9";
     ATTRIBUTE Location OF X1(0) : LABEL IS "P5[2]";
-    ATTRIBUTE lib_model OF Y0(0) : LABEL IS "iocell12";
+    ATTRIBUTE lib_model OF Y0(0) : LABEL IS "iocell10";
     ATTRIBUTE Location OF Y0(0) : LABEL IS "P5[0]";
-    ATTRIBUTE lib_model OF Y1(0) : LABEL IS "iocell13";
+    ATTRIBUTE lib_model OF Y1(0) : LABEL IS "iocell11";
     ATTRIBUTE Location OF Y1(0) : LABEL IS "P5[1]";
-    ATTRIBUTE Location OF \I2C:I2C_IRQ\ : LABEL IS "[IntrHod=(0)][IntrId=(20)]";
+    ATTRIBUTE Location OF \I2C:I2C_IRQ\ : LABEL IS "[IntrHod=(0)][IntrId=(5)]";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:AsyncCtl:CtrlReg\ : LABEL IS "controlcell1";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:AsyncCtl:CtrlReg\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:AsyncCtl:CtrlReg\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:Master:ClkGen:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:Master:ClkGen:u0\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:Master:ClkGen:u0\ : LABEL IS "U(3,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:Shifter:u0\ : LABEL IS "datapathcell2";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:Shifter:u0\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:Shifter:u0\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:StsReg\ : LABEL IS "statusicell1";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:StsReg\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:StsReg\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:bus_busy_reg\ : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:bus_busy_reg\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:bus_busy_reg\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:clk_eq_reg\ : LABEL IS "macrocell4";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:clk_eq_reg\ : LABEL IS "U(0,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:clk_eq_reg\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:clkgen_tc1_reg\ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:clkgen_tc1_reg\ : LABEL IS "U(2,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:clkgen_tc1_reg\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:clkgen_tc2_reg\ : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:clkgen_tc2_reg\ : LABEL IS "U(0,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:clkgen_tc2_reg\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cnt_reset\ : LABEL IS "macrocell7";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:cnt_reset\ : LABEL IS "U(1,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:cnt_reset\ : LABEL IS "U(3,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_2\ : LABEL IS "macrocell8";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_2\ : LABEL IS "U(0,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_2\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_4\ : LABEL IS "macrocell9";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_4\ : LABEL IS "U(0,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_4\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_5\ : LABEL IS "macrocell10";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_5\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_5\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_6\ : LABEL IS "macrocell11";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_6\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_6\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_7\ : LABEL IS "macrocell12";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_7\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_7\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_clkgen_0\ : LABEL IS "macrocell13";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_clkgen_0\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_clkgen_0\ : LABEL IS "U(3,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_clkgen_1\ : LABEL IS "macrocell14";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_clkgen_1\ : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_clkgen_1\ : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_shifter_0\ : LABEL IS "macrocell15";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_shifter_0\ : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_shifter_0\ : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_shifter_1\ : LABEL IS "macrocell16";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_shifter_1\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_shifter_1\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:lost_arb_reg\ : LABEL IS "macrocell17";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:lost_arb_reg\ : LABEL IS "U(2,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:lost_arb_reg\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_reset\ : LABEL IS "macrocell18";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_reset\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_reset\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_0\ : LABEL IS "macrocell19";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_0\ : LABEL IS "U(0,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_0\ : LABEL IS "U(1,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_0_split\ : LABEL IS "macrocell20";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_0_split\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_0_split\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_1\ : LABEL IS "macrocell21";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_1\ : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_1\ : LABEL IS "U(1,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_2\ : LABEL IS "macrocell22";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_2\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_2\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_2_split\ : LABEL IS "macrocell23";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_2_split\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_2_split\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_3\ : LABEL IS "macrocell24";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_3\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_3\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_4\ : LABEL IS "macrocell25";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_4\ : LABEL IS "U(1,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_4\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_4_split\ : LABEL IS "macrocell26";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_4_split\ : LABEL IS "U(0,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_4_split\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:scl_in_last2_reg\ : LABEL IS "macrocell27";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_last2_reg\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_last2_reg\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:scl_in_last_reg\ : LABEL IS "macrocell28";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_last_reg\ : LABEL IS "U(0,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_last_reg\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:scl_in_reg\ : LABEL IS "macrocell29";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_reg\ : LABEL IS "U(0,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_reg\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:sda_in_last2_reg\ : LABEL IS "macrocell30";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_last2_reg\ : LABEL IS "U(0,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_last2_reg\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:sda_in_last_reg\ : LABEL IS "macrocell31";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_last_reg\ : LABEL IS "U(0,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_last_reg\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:sda_in_reg\ : LABEL IS "macrocell32";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_reg\ : LABEL IS "U(0,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_reg\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_0\ : LABEL IS "macrocell33";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_0\ : LABEL IS "U(2,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_0\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_1\ : LABEL IS "macrocell34";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_1\ : LABEL IS "U(0,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_1\ : LABEL IS "U(1,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_2\ : LABEL IS "macrocell35";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_2\ : LABEL IS "U(1,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_2\ : LABEL IS "U(3,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_3\ : LABEL IS "macrocell36";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_3\ : LABEL IS "U(2,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_3\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_4\ : LABEL IS "macrocell37";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_4\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_4\ : LABEL IS "U(2,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_5\ : LABEL IS "macrocell38";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_5\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_5\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \I2C:scl_x_wire\ : LABEL IS "macrocell39";
-    ATTRIBUTE Location OF \I2C:scl_x_wire\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \I2C:scl_x_wire\ : LABEL IS "U(3,5)";
     ATTRIBUTE lib_model OF \I2C:sda_x_wire\ : LABEL IS "macrocell40";
-    ATTRIBUTE Location OF \I2C:sda_x_wire\ : LABEL IS "U(1,3)";
+    ATTRIBUTE Location OF \I2C:sda_x_wire\ : LABEL IS "U(3,3)";
+    ATTRIBUTE Location OF \MainTimer:TimerHW\ : LABEL IS "F(Timer,0)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:final_kill_reg\ : LABEL IS "macrocell41";
-    ATTRIBUTE Location OF \Servo:PWMUDB:final_kill_reg\ : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:final_kill_reg\ : LABEL IS "U(2,3)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:prevCompare1\ : LABEL IS "macrocell42";
-    ATTRIBUTE Location OF \Servo:PWMUDB:prevCompare1\ : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:prevCompare1\ : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:prevCompare2\ : LABEL IS "macrocell43";
-    ATTRIBUTE Location OF \Servo:PWMUDB:prevCompare2\ : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:prevCompare2\ : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:runmode_enable\ : LABEL IS "macrocell44";
-    ATTRIBUTE Location OF \Servo:PWMUDB:runmode_enable\ : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:runmode_enable\ : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell2";
-    ATTRIBUTE Location OF \Servo:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "datapathcell3";
-    ATTRIBUTE Location OF \Servo:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "datapathcell4";
-    ATTRIBUTE Location OF \Servo:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell2";
-    ATTRIBUTE Location OF \Servo:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:status_0\ : LABEL IS "macrocell45";
-    ATTRIBUTE Location OF \Servo:PWMUDB:status_0\ : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:status_0\ : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:status_1\ : LABEL IS "macrocell46";
-    ATTRIBUTE Location OF \Servo:PWMUDB:status_1\ : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:status_1\ : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF \Servo:PWMUDB:status_5\ : LABEL IS "macrocell47";
-    ATTRIBUTE Location OF \Servo:PWMUDB:status_5\ : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF \Servo:PWMUDB:status_5\ : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF \USBUART:Dm(0)\ : LABEL IS "iocell12";
+    ATTRIBUTE Location OF \USBUART:Dm(0)\ : LABEL IS "P15[7]";
+    ATTRIBUTE lib_model OF \USBUART:Dp(0)\ : LABEL IS "iocell13";
+    ATTRIBUTE Location OF \USBUART:Dp(0)\ : LABEL IS "P15[6]";
+    ATTRIBUTE Location OF \USBUART:Dp\ : LABEL IS "F(PICU,8)";
+    ATTRIBUTE Location OF \USBUART:USB\ : LABEL IS "F(USB,0)";
+    ATTRIBUTE Location OF \USBUART:arb_int\ : LABEL IS "[IntrHod=(0)][IntrId=(22)]";
+    ATTRIBUTE Location OF \USBUART:bus_reset\ : LABEL IS "[IntrHod=(0)][IntrId=(30)]";
+    ATTRIBUTE Location OF \USBUART:dp_int\ : LABEL IS "[IntrHod=(0)][IntrId=(12)]";
+    ATTRIBUTE Location OF \USBUART:ep_0\ : LABEL IS "[IntrHod=(0)][IntrId=(31)]";
+    ATTRIBUTE Location OF \USBUART:ep_1\ : LABEL IS "[IntrHod=(0)][IntrId=(28)]";
+    ATTRIBUTE Location OF \USBUART:ep_2\ : LABEL IS "[IntrHod=(0)][IntrId=(26)]";
+    ATTRIBUTE Location OF \USBUART:ep_3\ : LABEL IS "[IntrHod=(0)][IntrId=(27)]";
+    ATTRIBUTE Location OF \USBUART:sof_int\ : LABEL IS "[IntrHod=(0)][IntrId=(0)]";
     ATTRIBUTE Location OF \VDAC8_1:viDAC8\ : LABEL IS "F(VIDAC,3)";
     ATTRIBUTE Location OF \VDAC8_2:viDAC8\ : LABEL IS "F(VIDAC,1)";
     ATTRIBUTE Location OF \VDAC8_3:viDAC8\ : LABEL IS "F(VIDAC,2)";
+    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell48";
+    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(2,4)";
     COMPONENT abufcell
     END COMPONENT;
     COMPONENT boostcell
@@ -929,20 +965,6 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     END COMPONENT;
 BEGIN
 
-    Button_1:interrupt
-        GENERIC MAP(
-            int_type => "10")
-        PORT MAP(
-            interrupt => Net_256,
-            clock => ClockBlock_BUS_CLK);
-
-    Button_2:interrupt
-        GENERIC MAP(
-            int_type => "10")
-        PORT MAP(
-            interrupt => Net_259,
-            clock => ClockBlock_BUS_CLK);
-
     Center:logicalport
         GENERIC MAP(
             drive_mode => "000",
@@ -1076,6 +1098,13 @@ BEGIN
             oe => open,
             pad_in => Err_LED_2(0)_PAD);
 
+    MainTimeISR:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => Net_282,
+            clock => ClockBlock_BUS_CLK);
+
     Net_112:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1)")
@@ -1133,7 +1162,12 @@ BEGIN
             fb => \I2C:Net_854\,
             pin_input => \I2C:scl_x_wire\,
             pad_out => SCL_1(0)_PAD,
-            pad_in => SCL_1(0)_PAD,
+            pad_in => SCL_1(0)_PAD);
+
+    SCL_1(0)_SYNC:synccell
+        PORT MAP(
+            in => \I2C:Net_854\,
+            out => \I2C:Net_854_SYNCOUT\,
             clock => ClockBlock_BUS_CLK);
 
     SDA_1:logicalport
@@ -1175,7 +1209,12 @@ BEGIN
             fb => \I2C:Net_855\,
             pin_input => \I2C:sda_x_wire\,
             pad_out => SDA_1(0)_PAD,
-            pad_in => SDA_1(0)_PAD,
+            pad_in => SDA_1(0)_PAD);
+
+    SDA_1(0)_SYNC:synccell
+        PORT MAP(
+            in => \I2C:Net_855\,
+            out => \I2C:Net_855_SYNCOUT\,
             clock => ClockBlock_BUS_CLK);
 
     Servo0:logicalport
@@ -1257,88 +1296,6 @@ BEGIN
             pin_input => Net_113,
             pad_out => Servo1(0)_PAD,
             pad_in => Servo1(0)_PAD);
-
-    Test_Button_1:logicalport
-        GENERIC MAP(
-            drive_mode => "011",
-            ibuf_enabled => "1",
-            id => "1425177d-0d0e-4468-8bcc-e638e5509a9b",
-            init_dr_st => "0",
-            input_sync => "1",
-            intr_mode => "01",
-            io_voltage => "",
-            layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            output_conn => "0",
-            output_sync => "0",
-            pin_aliases => "",
-            pin_mode => "I",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "",
-            sio_hyst => "0",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 0,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "00",
-            width => 1)
-        PORT MAP(
-            interrupt => Net_256);
-
-    Test_Button_1(0):iocell
-        PORT MAP(
-            oe => open,
-            pad_in => Test_Button_1(0)_PAD,
-            clock => ClockBlock_BUS_CLK);
-
-    Test_Button_2:logicalport
-        GENERIC MAP(
-            drive_mode => "011",
-            ibuf_enabled => "1",
-            id => "fd40b9dd-a246-4b9b-9e1b-e686dcd67216",
-            init_dr_st => "0",
-            input_sync => "1",
-            intr_mode => "01",
-            io_voltage => "",
-            layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            output_conn => "0",
-            output_sync => "0",
-            pin_aliases => "",
-            pin_mode => "I",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "",
-            sio_hyst => "0",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 0,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "00",
-            width => 1)
-        PORT MAP(
-            interrupt => Net_259);
-
-    Test_Button_2(0):iocell
-        PORT MAP(
-            oe => open,
-            pad_in => Test_Button_2(0)_PAD,
-            clock => ClockBlock_BUS_CLK);
 
     X0:logicalport
         GENERIC MAP(
@@ -1613,7 +1570,7 @@ BEGIN
             q => \I2C:bI2C_UDB:clk_eq_reg\,
             clock_0 => \I2C:Net_767\,
             main_0 => \I2C:scl_x_wire\,
-            main_1 => \I2C:Net_854\);
+            main_1 => \I2C:Net_854_SYNCOUT\);
 
     \I2C:bI2C_UDB:clkgen_tc1_reg\:macrocell
         GENERIC MAP(
@@ -1905,7 +1862,7 @@ BEGIN
             eqn_main => "(main_0)")
         PORT MAP(
             q => \I2C:bI2C_UDB:scl_in_reg\,
-            main_0 => \I2C:Net_854\,
+            main_0 => \I2C:Net_854_SYNCOUT\,
             clock_0 => \I2C:Net_767\);
 
     \I2C:bI2C_UDB:sda_in_last2_reg\:macrocell
@@ -1929,7 +1886,7 @@ BEGIN
             eqn_main => "(main_0)")
         PORT MAP(
             q => \I2C:bI2C_UDB:sda_in_reg\,
-            main_0 => \I2C:Net_855\,
+            main_0 => \I2C:Net_855_SYNCOUT\,
             clock_0 => \I2C:Net_767\);
 
     \I2C:bI2C_UDB:status_0\:macrocell
@@ -1948,19 +1905,19 @@ BEGIN
 
     \I2C:bI2C_UDB:status_1\:macrocell
         GENERIC MAP(
-            eqn_main => "(!main_0 * main_1 * main_2 * main_3 * !main_4 * !main_5 * main_6 * main_8) + (main_0 * !main_1 * main_2 * main_3 * !main_4 * !main_5 * main_6 * !main_7 * main_8) + (main_1 * main_7)")
+            eqn_main => "(!main_0 * main_1 * main_2 * !main_3 * !main_4 * main_5 * !main_6 * main_7 * main_8) + (main_0 * main_1 * main_2 * !main_3 * !main_4 * main_5 * main_7 * !main_8) + (main_0 * main_6)")
         PORT MAP(
             q => \I2C:bI2C_UDB:status_1\,
             clock_0 => \I2C:Net_767\,
-            main_0 => \I2C:Net_855\,
-            main_1 => \I2C:bI2C_UDB:status_1\,
-            main_2 => \I2C:bI2C_UDB:m_state_4\,
-            main_3 => \I2C:bI2C_UDB:m_state_3\,
-            main_4 => \I2C:bI2C_UDB:m_state_2\,
-            main_5 => \I2C:bI2C_UDB:m_state_1\,
-            main_6 => \I2C:bI2C_UDB:m_state_0\,
-            main_7 => \I2C:bI2C_UDB:m_reset\,
-            main_8 => \I2C:bI2C_UDB:clkgen_tc1_reg\);
+            main_0 => \I2C:bI2C_UDB:status_1\,
+            main_1 => \I2C:bI2C_UDB:m_state_4\,
+            main_2 => \I2C:bI2C_UDB:m_state_3\,
+            main_3 => \I2C:bI2C_UDB:m_state_2\,
+            main_4 => \I2C:bI2C_UDB:m_state_1\,
+            main_5 => \I2C:bI2C_UDB:m_state_0\,
+            main_6 => \I2C:bI2C_UDB:m_reset\,
+            main_7 => \I2C:bI2C_UDB:clkgen_tc1_reg\,
+            main_8 => \I2C:Net_855_SYNCOUT\);
 
     \I2C:bI2C_UDB:status_2\:macrocell
         GENERIC MAP(
@@ -2046,6 +2003,19 @@ BEGIN
             main_8 => \I2C:bI2C_UDB:m_reset\,
             main_9 => \I2C:bI2C_UDB:lost_arb_reg\,
             main_10 => \I2C:bI2C_UDB:clkgen_tc2_reg\);
+
+    \MainTimer:TimerHW\:timercell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            clock => ClockBlock_BUS_CLK,
+            kill => open,
+            enable => __ONE__,
+            capture => open,
+            timer_reset => open,
+            tc => Net_282,
+            cmp => \MainTimer:Net_261\,
+            irq => \MainTimer:Net_57\);
 
     \Servo:PWMUDB:final_kill_reg\:macrocell
         GENERIC MAP(
@@ -2224,6 +2194,166 @@ BEGIN
             q => \Servo:PWMUDB:status_5\,
             main_0 => \Servo:PWMUDB:final_kill_reg\);
 
+    \USBUART:Dm(0)\:iocell
+        PORT MAP(
+            oe => open);
+
+    \USBUART:Dm\:logicalport
+        GENERIC MAP(
+            drive_mode => "000",
+            ibuf_enabled => "0",
+            id => "2b269b96-47a4-4e9a-937e-76d4080bb211/8b77a6c4-10a0-4390-971c-672353e2a49c",
+            init_dr_st => "0",
+            input_sync => "1",
+            intr_mode => "00",
+            io_voltage => "",
+            layout_mode => "NONCONTIGUOUS",
+            oe_conn => "0",
+            output_conn => "0",
+            output_sync => "0",
+            pin_aliases => "",
+            pin_mode => "A",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "0",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 1,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1);
+
+    \USBUART:Dp(0)\:iocell
+        PORT MAP(
+            oe => open,
+            clock => ClockBlock_BUS_CLK);
+
+    \USBUART:Dp\:logicalport
+        GENERIC MAP(
+            drive_mode => "000",
+            ibuf_enabled => "0",
+            id => "2b269b96-47a4-4e9a-937e-76d4080bb211/618a72fc-5ddd-4df5-958f-a3d55102db42",
+            init_dr_st => "0",
+            input_sync => "1",
+            intr_mode => "10",
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            output_conn => "0",
+            output_sync => "0",
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "0",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1)
+        PORT MAP(
+            interrupt => \USBUART:Net_623\);
+
+    \USBUART:USB\:usbcell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            sof_int => Net_284,
+            arb_int => \USBUART:Net_79\,
+            usb_int => \USBUART:Net_81\,
+            ept_int_8 => \USBUART:ept_int_8\,
+            ept_int_7 => \USBUART:ept_int_7\,
+            ept_int_6 => \USBUART:ept_int_6\,
+            ept_int_5 => \USBUART:ept_int_5\,
+            ept_int_4 => \USBUART:ept_int_4\,
+            ept_int_3 => \USBUART:ept_int_3\,
+            ept_int_2 => \USBUART:ept_int_2\,
+            ept_int_1 => \USBUART:ept_int_1\,
+            ept_int_0 => \USBUART:ept_int_0\,
+            ord_int => \USBUART:Net_95\,
+            dma_req_7 => \USBUART:dma_req_7\,
+            dma_req_6 => \USBUART:dma_req_6\,
+            dma_req_5 => \USBUART:dma_req_5\,
+            dma_req_4 => \USBUART:dma_req_4\,
+            dma_req_3 => \USBUART:dma_req_3\,
+            dma_req_2 => \USBUART:dma_req_2\,
+            dma_req_1 => \USBUART:dma_req_1\,
+            dma_req_0 => \USBUART:dma_req_0\,
+            dma_termin => \USBUART:Net_824\);
+
+    \USBUART:arb_int\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \USBUART:Net_79\,
+            clock => ClockBlock_BUS_CLK);
+
+    \USBUART:bus_reset\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \USBUART:Net_81\,
+            clock => ClockBlock_BUS_CLK);
+
+    \USBUART:dp_int\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \USBUART:Net_623\,
+            clock => ClockBlock_BUS_CLK);
+
+    \USBUART:ep_0\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \USBUART:ept_int_0\,
+            clock => ClockBlock_BUS_CLK);
+
+    \USBUART:ep_1\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \USBUART:ept_int_1\,
+            clock => ClockBlock_BUS_CLK);
+
+    \USBUART:ep_2\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \USBUART:ept_int_2\,
+            clock => ClockBlock_BUS_CLK);
+
+    \USBUART:ep_3\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \USBUART:ept_int_3\,
+            clock => ClockBlock_BUS_CLK);
+
+    \USBUART:sof_int\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => Net_284,
+            clock => ClockBlock_BUS_CLK);
+
     \VDAC8_1:viDAC8\:vidaccell
         GENERIC MAP(
             cy_registers => "",
@@ -2253,5 +2383,11 @@ BEGIN
             reset => open,
             idir => open,
             ioff => open);
+
+    __ONE__:macrocell
+        GENERIC MAP(
+            eqn_main => "1'b0")
+        PORT MAP(
+            q => __ONE__);
 
 END __DEFAULT__;

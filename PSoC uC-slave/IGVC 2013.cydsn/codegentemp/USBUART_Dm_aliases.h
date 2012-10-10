@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Test_Button_2.h  
+* File Name: USBUART_Dm.h  
 * Version 1.60
 *
 * Description:
@@ -14,8 +14,8 @@
 * the software package with which this file was provided.
 ********************************************************************************/
 
-#if !defined(CY_PINS_Test_Button_2_ALIASES_H) /* Pins Test_Button_2_ALIASES_H */
-#define CY_PINS_Test_Button_2_ALIASES_H
+#if !defined(CY_PINS_USBUART_Dm_ALIASES_H) /* Pins USBUART_Dm_ALIASES_H */
+#define CY_PINS_USBUART_Dm_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -23,8 +23,8 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define Test_Button_2_0		Test_Button_2__0__PC
+#define USBUART_Dm_0		USBUART_Dm__0__PC
 
-#endif /* End Pins Test_Button_2_ALIASES_H */
+#endif /* End Pins USBUART_Dm_ALIASES_H */
 
 /* [] END OF FILE */

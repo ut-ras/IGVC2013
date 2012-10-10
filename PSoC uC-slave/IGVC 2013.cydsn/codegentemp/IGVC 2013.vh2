@@ -2,7 +2,7 @@
 --	Conversion of IGVC 2013.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Oct 02 19:05:09 2012
+--	Mon Oct 08 12:05:50 2012
 --
 
 USE cypress.cypress.all;
@@ -778,21 +778,13 @@ SIGNAL \VDAC8_3:Net_81\ : bit;
 SIGNAL \VDAC8_3:Net_82\ : bit;
 TERMINAL Net_157 : bit;
 TERMINAL \VDAC8_3:Net_77\ : bit;
-SIGNAL tmpOE__Test_Button_1_net_0 : bit;
-SIGNAL tmpFB_0__Test_Button_1_net_0 : bit;
-SIGNAL tmpIO_0__Test_Button_1_net_0 : bit;
-TERMINAL tmpSIOVREF__Test_Button_1_net_0 : bit;
-SIGNAL Net_256 : bit;
+SIGNAL Net_282 : bit;
 SIGNAL tmpOE__X1_net_0 : bit;
 SIGNAL tmpFB_0__X1_net_0 : bit;
 SIGNAL tmpIO_0__X1_net_0 : bit;
 TERMINAL tmpSIOVREF__X1_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__X1_net_0 : bit;
-SIGNAL tmpOE__Test_Button_2_net_0 : bit;
-SIGNAL tmpFB_0__Test_Button_2_net_0 : bit;
-SIGNAL tmpIO_0__Test_Button_2_net_0 : bit;
-TERMINAL tmpSIOVREF__Test_Button_2_net_0 : bit;
-SIGNAL Net_259 : bit;
+SIGNAL Net_268 : bit;
 SIGNAL tmpOE__Y1_net_0 : bit;
 SIGNAL tmpFB_0__Y1_net_0 : bit;
 SIGNAL tmpIO_0__Y1_net_0 : bit;
@@ -813,6 +805,48 @@ SIGNAL tmpFB_0__Err_LED_2_net_0 : bit;
 SIGNAL tmpIO_0__Err_LED_2_net_0 : bit;
 TERMINAL tmpSIOVREF__Err_LED_2_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__Err_LED_2_net_0 : bit;
+SIGNAL Net_10 : bit;
+SIGNAL \MainTimer:Net_260\ : bit;
+SIGNAL \MainTimer:Net_266\ : bit;
+SIGNAL \MainTimer:Net_51\ : bit;
+SIGNAL \MainTimer:Net_261\ : bit;
+SIGNAL \MainTimer:Net_57\ : bit;
+SIGNAL Net_277 : bit;
+SIGNAL \MainTimer:Net_102\ : bit;
+TERMINAL \USBUART:Net_990\ : bit;
+TERMINAL \USBUART:Net_597\ : bit;
+SIGNAL Net_284 : bit;
+SIGNAL \USBUART:Net_79\ : bit;
+SIGNAL \USBUART:Net_81\ : bit;
+SIGNAL \USBUART:ept_int_8\ : bit;
+SIGNAL \USBUART:ept_int_7\ : bit;
+SIGNAL \USBUART:ept_int_6\ : bit;
+SIGNAL \USBUART:ept_int_5\ : bit;
+SIGNAL \USBUART:ept_int_4\ : bit;
+SIGNAL \USBUART:ept_int_3\ : bit;
+SIGNAL \USBUART:ept_int_2\ : bit;
+SIGNAL \USBUART:ept_int_1\ : bit;
+SIGNAL \USBUART:ept_int_0\ : bit;
+SIGNAL \USBUART:Net_95\ : bit;
+SIGNAL \USBUART:dma_req_7\ : bit;
+SIGNAL \USBUART:dma_req_6\ : bit;
+SIGNAL \USBUART:dma_req_5\ : bit;
+SIGNAL \USBUART:dma_req_4\ : bit;
+SIGNAL \USBUART:dma_req_3\ : bit;
+SIGNAL \USBUART:dma_req_2\ : bit;
+SIGNAL \USBUART:dma_req_1\ : bit;
+SIGNAL \USBUART:dma_req_0\ : bit;
+SIGNAL \USBUART:Net_824\ : bit;
+SIGNAL \USBUART:tmpOE__Dm_net_0\ : bit;
+SIGNAL \USBUART:tmpFB_0__Dm_net_0\ : bit;
+SIGNAL \USBUART:tmpIO_0__Dm_net_0\ : bit;
+TERMINAL \USBUART:tmpSIOVREF__Dm_net_0\ : bit;
+SIGNAL \USBUART:tmpINTERRUPT_0__Dm_net_0\ : bit;
+SIGNAL \USBUART:tmpOE__Dp_net_0\ : bit;
+SIGNAL \USBUART:tmpFB_0__Dp_net_0\ : bit;
+SIGNAL \USBUART:tmpIO_0__Dp_net_0\ : bit;
+TERMINAL \USBUART:tmpSIOVREF__Dp_net_0\ : bit;
+SIGNAL \USBUART:Net_623\ : bit;
 SIGNAL \I2C:bI2C_UDB:sda_in_reg\\D\ : bit;
 SIGNAL \I2C:bI2C_UDB:control_reg_7\\D\ : bit;
 SIGNAL \I2C:bI2C_UDB:control_reg_6\\D\ : bit;
@@ -916,8 +950,8 @@ tmpOE__Err_LED_1_net_0 <=  ('1') ;
 \I2C:bI2C_UDB:m_state_0\\D\ <= ((not \I2C:bI2C_UDB:control_reg_5\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and not \I2C:bI2C_UDB:lost_arb2_reg\ and \I2C:bI2C_UDB:control_reg_4\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:control_reg_7\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
-	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:tx_reg_empty\ and not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
+	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and not \I2C:bI2C_UDB:lost_arb_reg\ and \I2C:bI2C_UDB:control_reg_6\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:m_state_0\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:tx_reg_empty\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:m_state_0\)
 	OR (not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_4\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:m_state_0\)
@@ -1763,45 +1797,9 @@ Servo1:cy_psoc3_pins_v1_10
 		iout=>\VDAC8_3:Net_77\);
 \VDAC8_3:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
 	PORT MAP(noconnect=>\VDAC8_3:Net_77\);
-Test_Button_1:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"1425177d-0d0e-4468-8bcc-e638e5509a9b",
-		drive_mode=>"011",
-		ibuf_enabled=>"1",
-		init_dr_st=>"0",
-		input_sync=>"1",
-		intr_mode=>"01",
-		io_voltage=>"",
-		layout_mode=>"CONTIGUOUS",
-		output_conn=>"0",
-		output_sync=>"0",
-		oe_conn=>"0",
-		pin_aliases=>"",
-		pin_mode=>"I",
-		por_state=>4,
-		sio_group_cnt=>0,
-		sio_hifreq=>"",
-		sio_hyst=>"0",
-		sio_ibuf=>"00000000",
-		sio_info=>"00",
-		sio_obuf=>"00000000",
-		sio_refsel=>"00000000",
-		sio_vtrip=>"00000000",
-		slew_rate=>"0",
-		spanning=>'0',
-		sw_only=>'0',
-		vtrip=>"00",
-		width=>1,
-		port_alias_required=>'0',
-		port_alias_group=>"",
-		use_annotation=>"0")
-	PORT MAP(oe=>(tmpOE__Err_LED_1_net_0),
-		y=>(zero),
-		fb=>(tmpFB_0__Test_Button_1_net_0),
-		analog=>(open),
-		io=>(tmpIO_0__Test_Button_1_net_0),
-		siovref=>(tmpSIOVREF__Test_Button_1_net_0),
-		annotation=>(open),
-		interrupt=>Net_256);
+MainTimeISR:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>Net_282);
 X1:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"021b69ac-040e-4aad-9b7a-e7db39fb174e",
 		drive_mode=>"000",
@@ -1841,45 +1839,6 @@ X1:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__X1_net_0),
 		annotation=>(open),
 		interrupt=>tmpINTERRUPT_0__X1_net_0);
-Test_Button_2:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"fd40b9dd-a246-4b9b-9e1b-e686dcd67216",
-		drive_mode=>"011",
-		ibuf_enabled=>"1",
-		init_dr_st=>"0",
-		input_sync=>"1",
-		intr_mode=>"01",
-		io_voltage=>"",
-		layout_mode=>"CONTIGUOUS",
-		output_conn=>"0",
-		output_sync=>"0",
-		oe_conn=>"0",
-		pin_aliases=>"",
-		pin_mode=>"I",
-		por_state=>4,
-		sio_group_cnt=>0,
-		sio_hifreq=>"",
-		sio_hyst=>"0",
-		sio_ibuf=>"00000000",
-		sio_info=>"00",
-		sio_obuf=>"00000000",
-		sio_refsel=>"00000000",
-		sio_vtrip=>"00000000",
-		slew_rate=>"0",
-		spanning=>'0',
-		sw_only=>'0',
-		vtrip=>"00",
-		width=>1,
-		port_alias_required=>'0',
-		port_alias_group=>"",
-		use_annotation=>"0")
-	PORT MAP(oe=>(tmpOE__Err_LED_1_net_0),
-		y=>(zero),
-		fb=>(tmpFB_0__Test_Button_2_net_0),
-		analog=>(open),
-		io=>(tmpIO_0__Test_Button_2_net_0),
-		siovref=>(tmpSIOVREF__Test_Button_2_net_0),
-		annotation=>(open),
-		interrupt=>Net_259);
 Y1:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"63aaa2ba-0ae7-4777-8853-6a058bcf6a6e",
 		drive_mode=>"000",
@@ -2036,12 +1995,142 @@ Err_LED_2:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__Err_LED_2_net_0),
 		annotation=>(open),
 		interrupt=>tmpINTERRUPT_0__Err_LED_2_net_0);
-Button_1:cy_isr_v1_0
+\MainTimer:TimerHW\:cy_psoc3_timer_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(clock=>Net_10,
+		kill=>zero,
+		enable=>tmpOE__Err_LED_1_net_0,
+		capture=>zero,
+		timer_reset=>zero,
+		tc=>Net_282,
+		compare=>\MainTimer:Net_261\,
+		interrupt=>\MainTimer:Net_57\);
+timer_clock:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"c0fb34bd-1044-4931-9788-16b01ce89812",
+		source_clock_id=>"75C2148C-3656-4d8a-846D-0CAE99AB6FF7",
+		divisor=>0,
+		period=>"0",
+		is_direct=>'1',
+		is_digital=>'1')
+	PORT MAP(clock_out=>Net_10,
+		dig_domain_out=>open);
+\USBUART:USB\:cy_psoc3_usb_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(dp=>\USBUART:Net_990\,
+		dm=>\USBUART:Net_597\,
+		sof_int=>Net_284,
+		arb_int=>\USBUART:Net_79\,
+		usb_int=>\USBUART:Net_81\,
+		ept_int=>(\USBUART:ept_int_8\, \USBUART:ept_int_7\, \USBUART:ept_int_6\, \USBUART:ept_int_5\,
+			\USBUART:ept_int_4\, \USBUART:ept_int_3\, \USBUART:ept_int_2\, \USBUART:ept_int_1\,
+			\USBUART:ept_int_0\),
+		ord_int=>\USBUART:Net_95\,
+		dma_req=>(\USBUART:dma_req_7\, \USBUART:dma_req_6\, \USBUART:dma_req_5\, \USBUART:dma_req_4\,
+			\USBUART:dma_req_3\, \USBUART:dma_req_2\, \USBUART:dma_req_1\, \USBUART:dma_req_0\),
+		dma_termin=>\USBUART:Net_824\);
+\USBUART:sof_int\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>Net_256);
-Button_2:cy_isr_v1_0
+	PORT MAP(int_signal=>Net_284);
+\USBUART:arb_int\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
-	PORT MAP(int_signal=>Net_259);
+	PORT MAP(int_signal=>\USBUART:Net_79\);
+\USBUART:bus_reset\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:Net_81\);
+\USBUART:ep_0\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:ept_int_0\);
+\USBUART:ep_1\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:ept_int_1\);
+\USBUART:ep_2\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:ept_int_2\);
+\USBUART:ep_3\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:ept_int_3\);
+\USBUART:Dm\:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"2b269b96-47a4-4e9a-937e-76d4080bb211/8b77a6c4-10a0-4390-971c-672353e2a49c",
+		drive_mode=>"000",
+		ibuf_enabled=>"0",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		intr_mode=>"00",
+		io_voltage=>"",
+		layout_mode=>"NONCONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		oe_conn=>"0",
+		pin_aliases=>"",
+		pin_mode=>"A",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"0",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'1',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0")
+	PORT MAP(oe=>(tmpOE__Err_LED_1_net_0),
+		y=>(zero),
+		fb=>(\USBUART:tmpFB_0__Dm_net_0\),
+		analog=>\USBUART:Net_597\,
+		io=>(\USBUART:tmpIO_0__Dm_net_0\),
+		siovref=>(\USBUART:tmpSIOVREF__Dm_net_0\),
+		annotation=>(open),
+		interrupt=>\USBUART:tmpINTERRUPT_0__Dm_net_0\);
+\USBUART:Dp\:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"2b269b96-47a4-4e9a-937e-76d4080bb211/618a72fc-5ddd-4df5-958f-a3d55102db42",
+		drive_mode=>"000",
+		ibuf_enabled=>"0",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		intr_mode=>"10",
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		oe_conn=>"0",
+		pin_aliases=>"",
+		pin_mode=>"I",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"0",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0")
+	PORT MAP(oe=>(tmpOE__Err_LED_1_net_0),
+		y=>(zero),
+		fb=>(\USBUART:tmpFB_0__Dp_net_0\),
+		analog=>\USBUART:Net_990\,
+		io=>(\USBUART:tmpIO_0__Dp_net_0\),
+		siovref=>(\USBUART:tmpSIOVREF__Dp_net_0\),
+		annotation=>(open),
+		interrupt=>\USBUART:Net_623\);
+\USBUART:dp_int\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>\USBUART:Net_623\);
 \I2C:bI2C_UDB:sda_in_reg\:cy_dff
 	PORT MAP(d=>\I2C:Net_855\,
 		clk=>\I2C:bI2C_UDB:op_clk\,
