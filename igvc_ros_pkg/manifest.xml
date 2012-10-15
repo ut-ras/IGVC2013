@@ -1,0 +1,17 @@
+<package>
+  <description brief="igvc_ros_pkg">
+
+     igvc_ros_pkg
+
+  </description>
+  <author>Lt. Commander Data</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/igvc_ros_pkg</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+
+</package>
+
+
