@@ -26,6 +26,7 @@
 <v>IGVC 2013\IGVC 2013\Header Files\servo.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\time.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\uart.h</v>
+<v>IGVC 2013\IGVC 2013\Header Files\uartComSlave.h</v>
 <v>IGVC 2013\IGVC 2013\Source Files</v>
 <v>IGVC 2013\IGVC 2013\Source Files\joystick.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\main.c</v>
@@ -77,6 +78,13 @@
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\I2C\I2C_BOOT.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\I2C\I2C_INT.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\I2C\I2C_PM.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimeISR</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimeISR\MainTimeISR.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimeISR\MainTimeISR.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer\MainTimer.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer\MainTimer.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer\MainTimer_PM.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\SCL_1</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\SCL_1\SCL_1.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\SCL_1\SCL_1.h</v>
@@ -155,18 +163,8 @@
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cyfittergnu.inc</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cyfitterrv.inc</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\project.h</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimeISR</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimeISR\MainTimeISR.c</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimeISR\MainTimeISR.h</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer\MainTimer.c</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer\MainTimer.h</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer\MainTimer_PM.c</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>IGVC 2013</v>
-<v>IGVC 2013\IGVC 2013</v>
-<v>IGVC 2013\IGVC 2013\TopDesign.cysch</v>
 <v>IGVC 2013\IGVC 2013\IGVC 2013.cydwr</v>
 <v>IGVC 2013\IGVC 2013\Header Files</v>
 <v>IGVC 2013\IGVC 2013\Header Files\device.h</v>
@@ -196,6 +194,9 @@
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\core_cm3.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="IGVC 2013">
@@ -268,6 +269,10 @@
 <name v=".\IGVC 2013.cydsn\time.c" />
 <name v=".\IGVC 2013.cydsn\time.h" />
 <name v=".\IGVC 2013.cydsn\servo.c" />
+<name v=".\IGVC 2013.cydsn\uartComSlave.c" />
+<name v=".\IGVC 2013.cydsn\uartComSlave.h" />
+<name v=".\igvc 2013.cydsn\generated_source\psoc5\USBUART.c" />
+<name v=".\igvc 2013.cydsn\generated_source\psoc5\USBUART_drv.c" />
 </OpenDocs>
 <config v="" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

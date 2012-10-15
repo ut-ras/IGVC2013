@@ -18,11 +18,24 @@
 
 void main()
 {
+	int i = 0;
+	uint16 j = 0;
 	CyGlobalIntEnable;
 	InitializeUART();
+	uint8 str[100];
+	
+	for(;;){
+		UARTprintf("\r\nTest: %d %d %d\r\n", i , i+1, i+2);
+		i++;
+		UARTprintf("Input>");
+		j = UARTgets(str);
+		UARTprintf("Length: %d\r\n", j);
+		UARTprintf("Your input: %s \r\n", str);
+		
+		//CyDelay(1000);
+	}
 	
 	
-	for(;;);
 }
 
 /* [] END OF FILE */
