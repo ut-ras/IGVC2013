@@ -1,4 +1,4 @@
-# Install script for directory: /home/ras/ros-pkg/igvc2011/enterpras_common/microcontroller_interface
+# Install script for directory: /home/ras/IGVC2013/uC-interface-2011
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/ras/ros-pkg/igvc2011/enterpras_common/microcontroller_interface/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/ras/IGVC2013/uC-interface-2011/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/ras/ros-pkg/igvc2011/enterpras_common/microcontroller_interface/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/ras/IGVC2013/uC-interface-2011/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

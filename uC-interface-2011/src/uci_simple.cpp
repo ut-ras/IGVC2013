@@ -80,9 +80,16 @@ uci_simple::uci_simple() :
 
 void uci_simple::callback(const geometry_msgs::TwistConstPtr &vel_cmd) {
 	ROS_DEBUG_STREAM(*vel_cmd);
+	
+	//int lin = static_cast<int> (vel_cmd->linear.x);
+	//int ang = static_cast<int> (vel_cmd->angular.z);
+	
+	int x = static_cast<int> (vel_cmd->linear.x * 127);
+	int y = static_cast<int> (vel_cmd->angular.z * -127);
 
-	serial_stream_ << "S" << static_cast<int> (vel_cmd->linear.x) << "\n";
-	serial_stream_ << "A" << static_cast<int> (vel_cmd->angular.z) << "\n";
+	//>SVXA:[voltage]\r
+	serial_stream_ << ">SVXA:" << x << "\r";
+	serial_stream_ << ">SVYA:" << y << "\r";
 }
 
 bool uci_simple::readAndPublishTelemetry() {
