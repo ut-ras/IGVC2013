@@ -17,6 +17,9 @@ uint32 GetTime(void);
 int GetHour(void);
 int GetMin(void);
 int GetSec(void);
+void MainTimeISRHandler(void);
+void ResetWatchdog(void);
+void InitializeWatchdog(void);
 void InitializeTime(void);
 
 //[] END OF FILE

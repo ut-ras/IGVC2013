@@ -15,7 +15,8 @@
 int fgetc (FILE * f);
 int ferror(FILE * f);
 uint8 UARTgetchar(void);
-uint16 UARTgets(uint8 * str);
+void UARTgetMessage(char * str);
+uint16 UARTgets(char * str, int bufferSize);
 int UARTprintf(const char * ch, ... );
 void UARTputc(const char ch);
 void InitializeUART(void);

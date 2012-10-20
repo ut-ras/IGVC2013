@@ -268,11 +268,10 @@
 <name v=".\IGVC 2013.cydsn\untitled01.c" />
 <name v=".\IGVC 2013.cydsn\time.c" />
 <name v=".\IGVC 2013.cydsn\time.h" />
-<name v=".\IGVC 2013.cydsn\servo.c" />
 <name v=".\IGVC 2013.cydsn\uartComSlave.c" />
 <name v=".\IGVC 2013.cydsn\uartComSlave.h" />
-<name v=".\igvc 2013.cydsn\generated_source\psoc5\USBUART.c" />
-<name v=".\igvc 2013.cydsn\generated_source\psoc5\USBUART_drv.c" />
+<name v=".\IGVC 2013.cydsn\joystick.c" />
+<name v=".\IGVC 2013.cydsn\joystick.h" />
 </OpenDocs>
 <config v="" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -35,19 +35,32 @@ uint8 UARTgetchar(void){
 //echos the input
 //terminates on CR or LF
 //returns size of string
-uint16 UARTgets(uint8 * str){
+uint16 UARTgets(char * str, int bufferSize){
 	uint16 i = 0;
-	uint8 buffer;
+	uint16 size;
 	do{
 		while(USBUART_DataIsReady() == 0);
-		USBUART_GetData(&buffer , 1);
-		str[i++]= buffer;
-		UARTputc(buffer); //echo
-	}while((buffer != '\n') && (buffer != '\r'));
+		size = USBUART_GetCount();
+		if(size+i > bufferSize){
+			str[i]=0;
+			UARTprintf("gets: Buffer not big enough. Size: %d Input: %s\r\n", size, str);
+			return i;
+		}
+		USBUART_GetData(&(str[i]),size);
+		i+=size;
+		if(size == 1)UARTputc(str[i-1]); //echo if single char
+	}while((str[i-1] != '\n') && (str[i-1] != '\r'));
 	str[--i] = 0; //null terminate, remove the CR/LF
-	while(USBUART_CDCIsReady()==0);
-	USBUART_PutCRLF(); //print CRLF
+	//UARTprintf("gets: LF or CR found at end of message. Size: %d Input: %s\r\n", size, str);
+	//while(USBUART_CDCIsReady()==0);
+	//USBUART_PutCRLF(); //print CRLF
 	return i;
+}
+
+void UARTgetMessage(char * str){
+	while(USBUART_DataIsReady() == 0);
+	USBUART_GetAll(str);
+	//UARTprintf("%c",6);//return ACK
 }
 
 
