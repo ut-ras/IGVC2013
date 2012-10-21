@@ -10,6 +10,9 @@
  * ========================================
 */
 
+
+void JoystickXOut(uint8 x);
+void JoystickYOut(uint8 y);
 void JoystickOut(uint8 x, uint8 y);
 void JoystickInit(void);
 

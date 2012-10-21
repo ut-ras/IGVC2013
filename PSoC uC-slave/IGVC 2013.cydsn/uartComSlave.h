@@ -11,6 +11,8 @@
 */
 
 
-
+void handleCommMessage(void);
+void InitalizeUCSlave(void);
+void RunUCSlave(void);
 
 //[] END OF FILE
