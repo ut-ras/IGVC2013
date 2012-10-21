@@ -15,11 +15,19 @@
 
 // Input 0-255
 // DAC out range 78 (1.25V) to 234 (3.75V)
+void JoystickXOut(uint8 x){
+	unsigned short xOut = ((((unsigned short) x) * 156) / 256) + 78;
+	VDAC8_1_SetValue(xOut);
+}
+void JoystickYOut(uint8 y){
+	unsigned short yOut = ((((unsigned short) y) * 156) / 256) + 78;
+	VDAC8_2_SetValue(yOut);
+}
 void JoystickOut(uint8 x, uint8 y){ 
 	unsigned short xOut = ((((unsigned short) x) * 156) / 256) + 78;
 	unsigned short yOut = ((((unsigned short) y) * 156) / 256) + 78;
-	VDAC8_1_SetValue(yOut);
-	VDAC8_2_SetValue(xOut);
+	VDAC8_1_SetValue(xOut);
+	VDAC8_2_SetValue(yOut);
 }
 
 void JoystickInit(void){

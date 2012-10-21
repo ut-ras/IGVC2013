@@ -42,6 +42,7 @@ void RunNunchuck(void){
 	unsigned short wiichuck[7];	
 	Err_LED_1_Write(0);
 	Err_LED_2_Write(0);
+	JoystickInit();
 	I2C_Start();
 	InitNunchuck();
     for(;;)
