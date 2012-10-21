@@ -1,0 +1,77 @@
+10
+
+dir
+1632
+http://svn.code.sf.net/p/bosch-ros-pkg/code/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/amtec/src
+http://svn.code.sf.net/p/bosch-ros-pkg/code
+
+
+
+2011-05-04T20:22:19.881399Z
+630
+pitzer
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+2f5dae86-743c-430d-921f-7dbcfe3428eb
+
+libamtec
+dir
+
+test_amtec
+dir
+
+amtec
+dir
+
+sweep_amtec
+dir
+
+CMakeLists.txt
+file
+
+
+
+
+2012-10-19T22:53:05.927225Z
+f54e637fc4cd782c8095192477e0025b
+2009-12-16T01:22:18.884822Z
+80
+duhadway-bosch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+114
+
+amtec_node
+dir
+

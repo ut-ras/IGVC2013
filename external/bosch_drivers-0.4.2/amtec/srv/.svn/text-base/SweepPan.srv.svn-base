@@ -1,0 +1,3 @@
+float64 sweep_amplitude         # pan sweep amplitude in radians 
+float64 sweep_period            # pan sweep period in ms
+---

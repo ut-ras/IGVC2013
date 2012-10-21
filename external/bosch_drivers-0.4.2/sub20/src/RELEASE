@@ -1,0 +1,95 @@
+TODO:
+=====
+- Check situation when read size gets out of synch with device. Library 
+begins to read previous messages.
+
+022:
+- bug: Dereferencing list variable after 
+	Libusb_free_device_list( list, 1 );
+
+021
+---
+- Edge functions
+
+020
+---
+- I2C_DISABLE
+
+019
+---
+- SPI with Extended Slave Select control
+
+018
+---
+- IR Support
+- MDIO2
+
+017
+---
+- FIFO_READ_FULL flag in sub_fifo_config
+- GPIOB
+
+016
+---
+- Bit-bang I2C
+
+015
+---
+- Device features cache
+- Long packet support in SPI
+
+014
+---
+- Fixed SS treatment for sub_spi_transfer. (Only SS0 was working correct)
+
+013
+---
+
+012
+---
+- MDIO
+
+011
+---
+- SPI SDIO
+
+010
+---
+- PWM
+
+009
+---
+- ADC_1_1V, ADC_GND
+- I2C config
+
+008
+---
+- Fixed ADC result interpretation for MUX=30,31
+
+007
+---
+- ADC Support
+
+006
+---
+- Fast PWM support
+- FIFO_CLEAR flag
+
+005
+---
+- sub_fifo_config
+
+004
+---
+- Fixed device enumeration procedure
+
+003
+---
+- Return SE_NSUPPORTED for SUB_UNKNOWN tag in responce
+- RS functions
+
+0.1.12.2
+--------
+- Use __VER__ instead of dll.nano
+- sub_lcd_write
+

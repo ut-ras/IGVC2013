@@ -1,0 +1,93 @@
+--- lib/libsub.c	2011-06-17 16:49:45.422932875 -0700
++++ lib/libsub.c	2011-06-17 16:32:49.171316460 -0700
+@@ -70,9 +70,11 @@
+ 	};
+ }sub_pack;
+ 
+-/* SUB Device Cash */
++/* SUB Device Cache */
+ typedef struct
+ {
++        uint8_t      bus;
++        uint8_t      address;
+ 	sub_handle	handle;
+ 	int			version;
+ 
+@@ -98,7 +100,7 @@
+ 
+ #define SUB_F_CPU	16000000
+ 				   
+-
++#define SUB_DEV_CACHE_SIZE 16
+ /*
+ *-----------------------------------------------------------------------------
+ * Global Variables
+@@ -117,7 +119,7 @@
+ static int  init_required=1;
+ #endif
+ 
+-sub_dev_cache_entry sub_dev_cache[255];
++sub_dev_cache_entry sub_dev_cache[SUB_DEV_CACHE_SIZE];
+ 
+ 
+ /*
+@@ -180,7 +182,7 @@
+ static int sub_dev_cache_lookup( sub_handle hndl )
+ {
+ 	int		i;
+-	for( i=0; i<255; i++ )
++	for( i=0; i<SUB_DEV_CACHE_SIZE; i++ )
+ 	{
+ 		if( sub_dev_cache[i].handle == hndl )
+ 			return i;
+@@ -358,6 +360,32 @@
+ }
+ 
+ /*
++* Check if SUB device is already open
++* Return 1 if open, 0 otherwise
++*/
++int sub_is_open( sub_device dev, sub_handle hndl )
++{
++  int i = 0;
++
++  hndl = NULL;
++
++  if( !dev )
++  {
++    return 0;
++  }
++
++  for( i = 0; i < SUB_DEV_CACHE_SIZE; i++ )
++  {
++    if( sub_dev_cache[i].bus == libusb_get_bus_number(dev) && sub_dev_cache[i].address == libusb_get_device_address(dev) )
++    {
++      hndl = sub_dev_cache[i].handle;
++      return 1;
++    }
++  }
++  return 0;
++}
++  
++/*
+ * Open SUB device
+ */
+ sub_handle sub_open( sub_device dev )
+@@ -431,6 +458,8 @@
+ 
+ 	/* Update cache */
+ 	i = sub_dev_cache_lookup( 0 );
++	sub_dev_cache[i].bus = libusb_get_bus_number(dev);
++       sub_dev_cache[i].bus = libusb_get_device_address(dev);
+ 	sub_dev_cache[i].handle = handle;
+ 
+ 	return handle;
+@@ -469,6 +498,8 @@
+ 	
+ 	/* Update cache */
+ 	i = sub_dev_cache_lookup( 0 );
++	sub_dev_cache[i].bus = libusb_get_bus_number(dev);
++       sub_dev_cache[i].bus = libusb_get_device_address(dev);
+ 	sub_dev_cache[i].handle = handle;
+ 	
+ 	return handle;

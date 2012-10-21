@@ -1,0 +1,5 @@
+<launch>
+  <param name="/smi540/rate_Hz" value="20.0" type="double" />
+  <param name="/smi540/sub20serial" value="064E" type="str" />
+  <node name="smi540_cluster" pkg="smi540" type="smi540" output="screen" />
+</launch>

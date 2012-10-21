@@ -1,0 +1,16 @@
+<package>
+  <description brief="android_app_receiver">
+
+     android_app_receiver
+
+  </description>
+  <author>Lt. Commander Data</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/android_app_receiver</url>
+  <depend package="rospy"/>
+  <depend package="std_msgs"/>
+
+</package>
+
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/amtec/include
+END
+amtec_settings.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/amtec/include/amtec_settings.h
+END
+amtec_commands.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/amtec/include/amtec_commands.h
+END
+amtec_conversion.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/amtec/include/amtec_conversion.h
+END
+amtec_io.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/amtec/include/amtec_io.h
+END
+amtec_base.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/amtec/include/amtec_base.h
+END

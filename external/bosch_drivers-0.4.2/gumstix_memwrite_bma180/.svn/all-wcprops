@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/gumstix_memwrite_bma180
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/gumstix_memwrite_bma180/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/gumstix_memwrite_bma180/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/gumstix_memwrite_bma180/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/gumstix_memwrite_bma180/Makefile
+END

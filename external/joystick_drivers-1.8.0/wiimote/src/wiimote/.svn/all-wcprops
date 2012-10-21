@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/src/wiimote
+END
+wiistate.py
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/src/wiimote/wiistate.py
+END
+wiiutils.py
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/src/wiimote/wiiutils.py
+END
+wiimoteConstants.py
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/src/wiimote/wiimoteConstants.py
+END
+pstat.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/src/wiimote/pstat.py
+END
+WIIMote.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/src/wiimote/WIIMote.py
+END
+stats.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/src/wiimote/stats.py
+END
+wiimoteExceptions.py
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/src/wiimote/wiimoteExceptions.py
+END
+wiimoteTests.py
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/src/wiimote/wiimoteTests.py
+END

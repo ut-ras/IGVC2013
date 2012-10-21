@@ -1,0 +1,12 @@
+<package>
+  <description brief="driver for Schunk(formerly Amtec) pan-tilt unit">A driver for the Schunk(formerly Amtec) pan-tilt unit. Provides a library, ROS wrapper, test program and ROS node for sweeping the unit. </description>
+  <author>Charles DuHadway, Benjamin Pitzer (Maintained by Benjamin Pitzer)</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="tf"/>  
+  <export>
+    <cpp cflags="-I${prefix}/msg/cpp -I${prefix}/srv/cpp" />
+  </export>
+</package>

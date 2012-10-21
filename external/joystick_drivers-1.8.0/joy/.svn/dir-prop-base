@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 42
+.build_version
+.rosgcov_files
+bin
+joy
+src
+
+K 13
+svn:mergeinfo
+V 183
+/pkg/branches/gazebo-branch-merge/drivers/input/joy:15683-15684,15739-15794,15797-15820,15822-15839,15852-15870,15983-16008,16010-16016,16129-16141,16145-16169,16245-16262,16274-16334
+END

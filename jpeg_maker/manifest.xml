@@ -1,0 +1,17 @@
+<package>
+  <description brief="jpeg_maker">
+
+     jpeg_maker
+
+  </description>
+  <author>Lt. Commander Data</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/jpeg_maker</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+
+</package>
+
+

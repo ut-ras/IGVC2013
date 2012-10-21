@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/msg
+END
+State.msg
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/msg/State.msg
+END
+TimedSwitch.msg
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/msg/TimedSwitch.msg
+END
+IrSourceInfo.msg
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/msg/IrSourceInfo.msg
+END

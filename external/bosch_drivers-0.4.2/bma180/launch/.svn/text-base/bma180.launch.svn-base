@@ -1,0 +1,14 @@
+<launch>
+  <param name="/bma180/max_acc_g" value="2" type="double" />
+  <param name="/bma180/bandwidth_Hz" value="300" type="double" />
+  <param name="/bma180/rate_Hz" value="50.0" type="double" />
+  <param name="/bma180/calibrate" value="false" type="boolean" />
+  <param name="/bma180/sub20serial" value="0651" type="str" />
+    	
+  <!-- a basic listener node -->
+  <!-- also use output="screen" -->
+  <!-- launch-prefix="xterm -e" -->
+   
+  <node name="bma180_cluster" pkg="bma180" type="bma180" output="screen" />
+
+</launch>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/wiimote/Makefile
+END

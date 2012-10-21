@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/photo/src/libphoto
+END
+photo_config.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/photo/src/libphoto/photo_config.cpp
+END
+photo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/photo/src/libphoto/photo.cpp
+END
+photo_image.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/photo/src/libphoto/photo_image.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/photo/src/libphoto/CMakeLists.txt
+END
+photo_capture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/photo/src/libphoto/photo_capture.cpp
+END

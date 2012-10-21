@@ -1,0 +1,19 @@
+--- lib/libsub.c	2010-08-23 06:55:06.000000000 -0700
++++ lib/libsub.c	2010-12-07 10:00:15.275440839 -080
+@@ -36,13 +36,13 @@
+ #endif	/*MSC_VER*/
+ 
+ #ifdef LIBUSB_1_0
+- #include <libusb.h>
++ #include <libusb-1.0/libusb.h>
+ #else
+  #include "../libusb/libusb-win32-src/src/usb.h"
+ #endif 
+ #include "libsub.h"
+-#include <subcfg.h>
+-#include <sub_if.h>
++#include "subcfg.h"
++#include "sub_if.h"
+ 
+ /* shared memory definitions*/
+ #if defined(_MSC_VER) && _MSC_VER > 8000

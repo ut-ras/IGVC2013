@@ -1,0 +1,15 @@
+<package>
+  <description brief="hacktx_demo">
+
+     hacktx_demo
+
+  </description>
+  <author>Lt. Commander Data</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hacktx_demo</url>
+  <depend package="roscpp"/>
+
+</package>
+
+

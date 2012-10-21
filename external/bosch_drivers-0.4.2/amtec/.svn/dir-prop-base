@@ -1,0 +1,17 @@
+K 10
+svn:ignore
+V 92
+bin
+lib
+build
+.build_version
+.rosgcov_files
+cpp
+oct
+lisp
+.project
+.cproject
+msg_gen
+srv_gen
+
+END

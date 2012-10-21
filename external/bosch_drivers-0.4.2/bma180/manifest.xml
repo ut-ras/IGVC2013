@@ -1,0 +1,15 @@
+<package>
+  <description brief="bma180">
+
+     This package contains drivers for Bosch BMA180 accelerometers. The BMA180 is a 3 axis sensor with configurable sensitivity ranges and event interrupts. As of 2/2012, the driver requires that the devices be connected to the host computer with a Sub20 interface device.
+
+  </description>
+  <author>Lukas Marti, Nikhil Deshpande, Philip Roan (Maintained by Philip Roan)</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/bma180</url>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="sub20"/>
+  
+</package>

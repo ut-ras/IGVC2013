@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/spacenav_node
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/spacenav_node/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/spacenav_node/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/spacenav_node/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ros-pkg/!svn/ver/39067/stacks/joystick_drivers/tags/joystick_drivers-1.8.0/spacenav_node/Makefile
+END

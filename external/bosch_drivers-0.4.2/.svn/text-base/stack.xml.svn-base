@@ -1,0 +1,18 @@
+<stack>
+  <description brief="Collection of hardware drivers.">
+
+     A collection of hardware drivers in use at Bosch RTC.
+
+  </description>
+  <author>Benjamin Pitzer, Philip Roan (Maintained by Philip Roan)</author>
+  <license>BSD,LGPL</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/bosch_drivers</url>
+  <depend stack="common_msgs" /> <!-- sensor_msgs -->
+  <depend stack="diagnostics" /> <!-- self_test -->
+  <depend stack="geometry" /> <!-- tf -->
+  <depend stack="image_common" /> <!-- image_transport -->
+  <depend stack="ros" /> <!-- std_msgs, roscpp -->
+  <depend stack="vision_opencv" /> <!-- opencv2 -->
+
+</stack>

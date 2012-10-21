@@ -1,0 +1,16 @@
+<package>
+  <description brief="phone_talker2">
+
+     phone_talker2
+
+  </description>
+  <author>Lt. Commander Data</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/phone_talker2</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+
+</package>
+
+

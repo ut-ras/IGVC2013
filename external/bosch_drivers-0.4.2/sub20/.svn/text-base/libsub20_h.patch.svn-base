@@ -1,0 +1,10 @@
+--- lib/libsub.h	2011-01-18 06:11:23.000000000 -0800
++++ lib/libsub.h	2011-06-17 16:32:52.590648968 -0700
+@@ -331,6 +331,7 @@
+ 
+ sub_device sub_find_devices( sub_device first );
+ sub_handle sub_open( sub_device dev );
++  int sub_is_open( sub_device dev, sub_handle hndl );
+ int sub_close( sub_handle hndl );
+ const struct sub_version* sub_get_version( sub_handle hndl );
+ const struct sub_cfg_vpd* sub_get_cfg_vpd( sub_handle hndl );

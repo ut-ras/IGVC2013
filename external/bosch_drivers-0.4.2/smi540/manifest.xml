@@ -1,0 +1,15 @@
+<package>
+  <description brief="smi540">
+
+     smi540
+
+  </description>
+  <author>Lukas Marti, Nikhil Deshpande (Maintained by Philip Roan)</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/smi540</url>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="sub20"/>
+
+</package>

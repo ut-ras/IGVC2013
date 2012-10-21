@@ -1,0 +1,17 @@
+<package>
+  <description brief="gumstix_memread_bma180">
+
+     gumstix_memread_bma180
+
+  </description>
+  <author>Nikhil Deshpande (Maintained by Philip Roan)</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gumstix_memread_bma180</url>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="gumstix_memwrite_bma180"/>
+
+</package>
+
+

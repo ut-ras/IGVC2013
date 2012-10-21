@@ -1,0 +1,5 @@
+---
+float64 position_pan             # pan position
+float64 position_tilt            # tilt position
+float64 velocity_pan             # pan velocity
+float64 velocity_tilt            # tilt velocity

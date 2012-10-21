@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 63
+
+bin
+build
+lib
+.build_version
+.project
+.pydevproject
+.settings
+
+END

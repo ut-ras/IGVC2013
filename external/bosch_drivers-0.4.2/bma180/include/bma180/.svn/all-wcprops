@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/bma180/include/bma180
+END
+bma180s.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/bma180/include/bma180/bma180s.h
+END
+bma180_calibrate.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/bma180/include/bma180/bma180_calibrate.h
+END
+bma180.h
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/p/bosch-ros-pkg/code/!svn/ver/1303/tags/stacks/bosch_drivers/bosch_drivers-0.4.2/bma180/include/bma180/bma180.h
+END

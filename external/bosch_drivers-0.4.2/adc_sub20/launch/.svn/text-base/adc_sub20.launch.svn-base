@@ -1,0 +1,30 @@
+<launch>
+	<!-- 
+		Set the parameter ADC_MUX_CONFIG using the Mux codes given in the sub20 user manual. 
+		
+		The Mux Codes are: ADC_S0, ADC_S1, ADC_S2, ADC_S3, ADC_S4, ADC_S5, ADC_S6, ADC_S7, 
+		ADC_D10_10X, ADC_D10_200X, ADC_D32_10X, ADC_D32_200X,	ADC_D01, ADC_D21, ADC_D31, ADC_D41, ADC_D51,
+		ADC_D61, ADC_D71, ADC_D02, ADC_D12, ADC_D32, ADC_D42, ADC_D52,
+		ADC_1_1V, ADC_GND
+		
+		Example:
+			If using Channel 0 as Single-ended, Channels 1 and 2 as Differential, and 
+			looking to measure internal 1.1V and Analog Ground Voltage, use the following::
+		
+			ADC_MUX_CONFIG - value="ADC_S0|ADC_D12|ADC_1_1V|ADC_GND|" 	
+		
+		Be careful with whitespaces in the string! There are no whitespaces. Always include the "|" character at the end 
+		of the string.  
+		
+		Voltage Reference: for Vcc - bVRef=false, for Internal 2.5V - bVref=true
+	-->	 
+  	<param name="/adc_sub20/ADC_MUX_CONFIG" value="ADC_S0|ADC_S7|" type="str" />
+  	<param name="/adc_sub20/rate_Hz" value="1.0" type="double" />
+  	<param name="/adc_sub20/VoltRef" value="3.3" type="double" />	
+  
+    <!-- a basic listener node -->
+  	<!-- also use output="screen" -->
+  	<!-- launch-prefix="xterm -e" --> 
+  	<node name="adc_sub20" pkg="adc_sub20" type="adc_sub20" output="screen" />
+
+</launch>

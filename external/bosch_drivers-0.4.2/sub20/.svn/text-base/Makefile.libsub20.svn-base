@@ -1,0 +1,22 @@
+all: sub20
+
+TARBALL_VERSION = 110319
+TARBALL         = build/SUB-20-snap-$(TARBALL_VERSION).tgz
+TARBALL_URL     = http://www.xdimax.net/download/SUB-20-snap-$(TARBALL_VERSION).tgz
+MD5SUM_FILE     = libsub20.md5sum
+UNPACK_CMD      = tar xzf
+SOURCE_DIR      = build/SUB-20-snap-$(TARBALL_VERSION)
+TARBALL_PATCH   = libsub20.patch libsub20_h.patch libsub20_c.patch
+
+include $(shell rospack find mk)/download_unpack_build.mk
+
+sub20: $(SOURCE_DIR)/unpacked Makefile
+	echo "Copying $(SOURCE_DIR)/lib to src..."
+	mkdir -p src/
+	cp -a -r $(SOURCE_DIR)/lib/* src/
+
+clean:
+	rm -rf $(SOURCE_DIR)
+	
+wipe: clean
+	rm -rf build

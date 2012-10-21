@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ros-pkg/!svn/ver/39313/stacks/laser_drivers/tags/laser_drivers-1.6.0/sicktoolbox_wrapper/ros/sicklms
+END
+sicklms.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/ros-pkg/!svn/ver/39313/stacks/laser_drivers/tags/laser_drivers-1.6.0/sicktoolbox_wrapper/ros/sicklms/sicklms.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/ros-pkg/!svn/ver/39313/stacks/laser_drivers/tags/laser_drivers-1.6.0/sicktoolbox_wrapper/ros/sicklms/CMakeLists.txt
+END
