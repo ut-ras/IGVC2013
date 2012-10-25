@@ -2,15 +2,14 @@
 <head>
 <script src="main.js"></script>
 </head>
-<body>
-<p>hi!</p>
-<div id="image_parent">
-    <img src="http://198.213.194.143:8080/stream?topic=/usb_cam0/image_raw" alt="looks like mjpeg server isn't connected properly!" id="image" height="480" width="640"/>
-</div>
-</br></br>
-<button type="submit" onClick="handleClick(0)">Forward</button></br>
-<button type="submit" onClick="handleClick(1)">Back</button></br>
-<button type="submit" onClick="handleClick(2)">Left</button></br>
-<button type="submit" onClick="handleClick(3)">Right</button></br>
+<body style="text-align:center; min-width:720px;">
+    <h1>IGVC Robot Web Portal</h1>
+    <h3>use the buttons below or click the image and hit w/a/s/d to move the robot</h3>
+    <img onkeydown=keypressed(event) tabindex=1 src="http://198.213.194.143:8080/stream?topic=/usb_cam0/image_raw" alt="looks like mjpeg server isn't connected properly!" id="image" height="480" width="640"/>
+    <br/> 
+    <button type="submit" onClick="handleClick(0)">Forward</button>
+    <button type="submit" onClick="handleClick(1)">Back</button>
+    <button type="submit" onClick="handleClick(2)">Left</button>
+    <button type="submit" onClick="handleClick(3)">Right</button>
 </body>
 <html>
