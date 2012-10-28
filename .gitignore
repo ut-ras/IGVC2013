@@ -176,3 +176,10 @@ pip-log.txt
 #############
 
 *.jpeg
+
+
+#############
+## Files that constantly change
+############
+
+pythonsimpleserver/hokuyo.txt

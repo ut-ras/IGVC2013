@@ -2,14 +2,15 @@
 <head>
 <script src="main.js"></script>
 </head>
-<body style="text-align:center; min-width:720px;">
-    <h1>IGVC Robot Web Portal</h1>
-    <h3>use the buttons below or click the image and hit w/a/s/d to move the robot</h3>
-    <img onkeydown=keypressed(event) tabindex=1 src="http://198.213.194.143:8080/stream?topic=/usb_cam0/image_raw" alt="looks like mjpeg server isn't connected properly!" id="image" height="480" width="640"/>
+<body onkeydown=keypressed(event) style="text-align:center">
+    <h1>Doloras Web Portal</h1>
+    <h3>use the buttons below or hit w/a/s/d to move the robot</h3>
+    <img src="http://198.213.231.48:8080/stream?topic=/usb_cam0/image_raw" alt="looks like mjpeg server isn't connected properly!" id="image" height="480" width="640"/>
+    <canvas style="background:lightGray;" id="canvas" width=500 height=500></canvas>
     <br/> 
-    <button type="submit" onClick="handleClick(0)">Forward</button>
-    <button type="submit" onClick="handleClick(1)">Back</button>
-    <button type="submit" onClick="handleClick(2)">Left</button>
-    <button type="submit" onClick="handleClick(3)">Right</button>
+    <button type="submit" onClick="sendCommand('forward')">Forward</button>
+    <button type="submit" onClick="sendCommand('backward')">Back</button>
+    <button type="submit" onClick="sendCommand('left')">Left</button>
+    <button type="submit" onClick="sendCommand('right')">Right</button>
 </body>
 <html>
