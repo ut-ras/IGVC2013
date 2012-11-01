@@ -16,27 +16,34 @@
 #include <joystick.h>
 #include <time.h>
 #include <uart.h>
+#include <velctrl.h>
+#include <encoder.h>
+
 
 #define CODE_START					1
 #define CODE_LENGTH					4
 #define DATA_START					6
 #define SVXA 'S'^'V'^'X'^'A'
 #define SVYA 'S'^'V'^'Y'^'A'
+#define SVLX 'S'^'V'^'L'^'X'
+#define SVAZ 'S'^'V'^'A'^'Z'
 #define SATURATE(in,min,max) (min > in) ? min : ( (max < in) ? max : in)
+
+extern uint8 VelCtrlRunning;
 
 uint8 isValidMessage(const char * ch){
 	if(ch[0] == '>') return 1;
 	else return 0;
 }
+
 #define COMM_BUFFER_SIZE 80
-void handleCommMessage(void)
-{
+void handleCommMessage(void){
 	char buffer[COMM_BUFFER_SIZE];
 	unsigned char function_code = 0;
 	long i;
 	buffer[64]=0;
 	buffer[79]=0;
-	UARTgets(buffer, COMM_BUFFER_SIZE);
+	UARTgets((uint8*)buffer, COMM_BUFFER_SIZE);
 	//UARTgetMessage(buffer);
 	
 	//UARTprintf("MESSAGE GET!!%s\r\n", buffer);
@@ -51,14 +58,24 @@ void handleCommMessage(void)
 		switch(function_code)
 		{
 			case SVXA: JoystickXOut(SATURATE(atoi(&buffer[DATA_START]),0,255));
-					   UARTprintf("GOOD MESSAGE- SVXA: %s\r\n", buffer);
+					   //UARTprintf("GOOD MESSAGE- SVXA: %s\r\n", buffer);
+					   VelCtrlRunning = 0;
 					   ResetWatchdog(); //we got a valid message, so they are still talking to us
 					   break;
 			case SVYA: JoystickYOut(SATURATE(atoi(&buffer[DATA_START]),0,255));
-					   UARTprintf("GOOD MESSAGE- SVYA: %s\r\n", buffer);
+					   //UARTprintf("GOOD MESSAGE- SVYA: %s\r\n", buffer);
+					   VelCtrlRunning = 0;
 					   ResetWatchdog(); //we got a valid message, so they are still talking to us
 					   break;
-			default :  UARTprintf("UNRECOGNIZED MESSAGE: %s\r\n", buffer);
+			case SVLX: UpdateLinearX(atoi(&buffer[DATA_START]));
+					   ResetWatchdog();
+					   VelCtrlRunning = 1;
+					   break;
+			case SVAZ: UpdateAngularZ(atoi(&buffer[DATA_START]));
+					   VelCtrlRunning = 1;
+					   ResetWatchdog();
+					   break;
+			default:   UARTprintf("UNRECOGNIZED MESSAGE: %s\r\n", buffer);
 					   break;
 		}
 	}
@@ -68,11 +85,17 @@ void handleCommMessage(void)
 	}
 }
 
+void sendCommMessage(void){
+	UARTprintf("(: ENCL %d ENCR %d VELV %d VELW %d TIME %d%.3d :)\r\n", GetLeftEncoder(), GetRightEncoder(), GetV(), GetW(), GetTime(), GetMS());
+}
+
 void InitializeUCSlave(void){
 	JoystickInit();
-	InitializeTime();
 	InitializeWatchdog();
+	InitializeVelocityControl();
 	InitializeUART();
+	InitializeTime();
+	Err_LED_1_Write(1);
 }
 
 void RunUCSlave(void){

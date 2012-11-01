@@ -35,7 +35,7 @@ uint8 UARTgetchar(void){
 //echos the input
 //terminates on CR or LF
 //returns size of string
-uint16 UARTgets(char * str, int bufferSize){
+uint16 UARTgets(uint8 * str, int bufferSize){
 	uint16 i = 0;
 	uint16 size;
 	do{
@@ -57,7 +57,7 @@ uint16 UARTgets(char * str, int bufferSize){
 	return i;
 }
 
-void UARTgetMessage(char * str){
+void UARTgetMessage(uint8 * str){
 	while(USBUART_DataIsReady() == 0);
 	USBUART_GetAll(str);
 	//UARTprintf("%c",6);//return ACK

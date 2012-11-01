@@ -13,6 +13,7 @@
 void SetClock(int hr, int min, int sec, int milli);
 void SetTime(uint32 t);
 void SetMS(uint16 m);
+uint16 GetMS(void);
 uint32 GetTime(void);
 int GetHour(void);
 int GetMin(void);

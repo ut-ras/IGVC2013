@@ -1,6 +1,6 @@
 // ======================================================================
 // IGVC 2013.v generated from TopDesign.cysch
-// 10/08/2012 at 12:05
+// 10/31/2012 at 23:48
 // ======================================================================
 
 /* -- WARNING: The following section of defines are deprecated and will be removed in a future release -- */
@@ -672,9 +672,459 @@ module USBFS_v2_12_6 (sof);
 
 endmodule
 
+// Component: B_Counter_v2_0
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Counter_v2_0"
+`include "$CYPRESS_DIR\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Counter_v2_0\B_Counter_v2_0.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Counter_v2_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Counter_v2_0\B_Counter_v2_0.v"
+`endif
+
+// Counter_v2_0(CaptureMode=0, CaptureModeSoftware=0, ClockMode=1, CompareMode=0, CompareModeSoftware=0, CompareStatusEdgeSense=true, CompareValue=32768, ControlRegRemoved=0, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, EnableMode=0, FixedFunction=false, FixedFunctionUsed=0, InitCounterValue=32768, InterruptOnCapture=false, InterruptOnCompare=false, InterruptOnOverUnderFlow=false, InterruptOnTC=false, Period=32768, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, ReloadOnCapture=false, ReloadOnCompare=false, ReloadOnOverUnder=true, ReloadOnReset=true, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, UseInterrupt=true, VerilogSectionReplacementString=sC16, CY_COMPONENT_NAME=Counter_v2_0, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Cnt16, CY_INSTANCE_SHORT_NAME=Cnt16, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Left_Encoder_Cnt16, )
+module Counter_v2_0_7 (clock, comp, tc, reset, interrupt, enable, capture, upCnt, downCnt, up_ndown, count);
+    input   clock;
+    output  comp;
+    output  tc;
+    input   reset;
+    output  interrupt;
+    input   enable;
+    input   capture;
+    input   upCnt;
+    input   downCnt;
+    input   up_ndown;
+    input   count;
+
+    parameter CaptureMode = 0;
+    parameter ClockMode = 1;
+    parameter CompareMode = 0;
+    parameter CompareStatusEdgeSense = 1;
+    parameter EnableMode = 0;
+    parameter ReloadOnCapture = 0;
+    parameter ReloadOnCompare = 0;
+    parameter ReloadOnOverUnder = 1;
+    parameter ReloadOnReset = 1;
+    parameter Resolution = 16;
+    parameter RunMode = 0;
+    parameter UseInterrupt = 1;
+
+    wire  Net_54;
+    wire  Net_102;
+    wire  Net_95;
+    wire  Net_82;
+    wire  Net_91;
+    wire  Net_89;
+    wire  Net_49;
+    wire  Net_48;
+    wire  Net_42;
+    wire  Net_43;
+
+	// int_vm (cy_virtualmux_v1_0)
+	assign interrupt = Net_43;
+
+	// TC_vm (cy_virtualmux_v1_0)
+	assign tc = Net_49;
+
+    ZeroTerminal ZeroTerminal_1 (
+        .z(Net_82));
+
+	// VirtualMux_1 (cy_virtualmux_v1_0)
+	assign Net_89 = up_ndown;
+
+    ZeroTerminal ZeroTerminal_2 (
+        .z(Net_95));
+
+	// vmEnableMode (cy_virtualmux_v1_0)
+	assign Net_91 = enable;
+
+    OneTerminal OneTerminal_1 (
+        .o(Net_102));
+
+    B_Counter_v2_0 CounterUDB (
+        .reset(reset),
+        .tc_out(Net_49),
+        .cmp_out(comp),
+        .clock(clock),
+        .irq_out(Net_43),
+        .up_ndown(Net_89),
+        .upcnt(upCnt),
+        .dwncnt(downCnt),
+        .enable(enable),
+        .capture(capture),
+        .count(count));
+    defparam CounterUDB.CaptureMode = 0;
+    defparam CounterUDB.ClockMode = 1;
+    defparam CounterUDB.CompareMode = 0;
+    defparam CounterUDB.CompareStatusEdgeSense = 1;
+    defparam CounterUDB.EnableMode = 0;
+    defparam CounterUDB.ReloadOnCapture = 0;
+    defparam CounterUDB.ReloadOnCompare = 0;
+    defparam CounterUDB.ReloadOnOverUnder = 1;
+    defparam CounterUDB.ReloadOnReset = 1;
+    defparam CounterUDB.Resolution = 16;
+    defparam CounterUDB.RunMode = 0;
+    defparam CounterUDB.UseInterrupt = 1;
+
+
+
+endmodule
+
+// Component: bQuadDec_v2_0
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\bQuadDec_v2_0"
+`include "$CYPRESS_DIR\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\bQuadDec_v2_0\bQuadDec_v2_0.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\bQuadDec_v2_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\bQuadDec_v2_0\bQuadDec_v2_0.v"
+`endif
+
+// Component: not_v1_0
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0"
+`include "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v"
+`endif
+
+// Component: and_v1_0
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0"
+`include "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\and_v1_0\and_v1_0.v"
+`endif
+
+// QuadDec_v2_0(Counter8bit=false, CounterResolution=4, CounterSize=32, CounterSizeReplacementString=int32, CounterSizeReplacementStringUnsigned=uint16, UsingGlitchFiltering=true, UsingIndexInput=false, CY_COMPONENT_NAME=QuadDec_v2_0, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Left_Encoder, CY_INSTANCE_SHORT_NAME=Left_Encoder, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Left_Encoder, )
+module QuadDec_v2_0_8 (quad_A, quad_B, index, clock, interrupt);
+    input   quad_A;
+    input   quad_B;
+    input   index;
+    input   clock;
+    output  interrupt;
+
+    parameter CounterResolution = 4;
+    parameter UsingGlitchFiltering = 1;
+    parameter UsingIndexInput = 0;
+
+    wire  Net_1127;
+    wire  Net_1129;
+    wire  Net_1243;
+    wire  Net_1130;
+    wire  Net_1131;
+    wire  Net_1132;
+    wire  Net_1121;
+    wire  Net_1123;
+    wire  Net_1241;
+    wire  Net_1124;
+    wire  Net_1125;
+    wire  Net_1126;
+    wire  Net_1203;
+    wire  Net_1260;
+    wire  Net_1232;
+    wire  Net_1229;
+    wire  Net_1251;
+    wire  Net_283;
+    wire  Net_1210;
+    wire  Net_611;
+    wire  Net_1151;
+    wire  Net_1248;
+    wire  Net_530;
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		isr
+		 (.int_signal(interrupt));
+
+
+    Counter_v2_0_7 Cnt16 (
+        .reset(Net_1260),
+        .tc(Net_1210),
+        .comp(Net_1127),
+        .clock(clock),
+        .interrupt(Net_1129),
+        .enable(1'b0),
+        .capture(1'b0),
+        .upCnt(1'b0),
+        .downCnt(1'b0),
+        .up_ndown(Net_1251),
+        .count(Net_1203));
+    defparam Cnt16.CaptureMode = 0;
+    defparam Cnt16.ClockMode = 1;
+    defparam Cnt16.CompareMode = 0;
+    defparam Cnt16.CompareStatusEdgeSense = 1;
+    defparam Cnt16.EnableMode = 0;
+    defparam Cnt16.ReloadOnCapture = 0;
+    defparam Cnt16.ReloadOnCompare = 0;
+    defparam Cnt16.ReloadOnOverUnder = 1;
+    defparam Cnt16.ReloadOnReset = 1;
+    defparam Cnt16.Resolution = 16;
+    defparam Cnt16.RunMode = 0;
+    defparam Cnt16.UseInterrupt = 1;
+
+	// VirtualMux_3 (cy_virtualmux_v1_0)
+	assign Net_1248 = Net_1210;
+
+    bQuadDec_v2_0 bQuadDec (
+        .quad_A(quad_A),
+        .quad_B(quad_B),
+        .index(Net_1232),
+        .clock(clock),
+        .dir(Net_1251),
+        .reset(Net_1260),
+        .enable(Net_1203),
+        .overflow(Net_530),
+        .underflow(Net_611),
+        .interrupt(interrupt));
+    defparam bQuadDec.CounterResolution = 4;
+    defparam bQuadDec.UsingGlitchFiltering = 1;
+    defparam bQuadDec.UsingIndexInput = 0;
+
+
+    assign Net_1151 = ~Net_1251;
+
+
+    assign Net_530 = Net_1251 & Net_1248;
+
+
+    assign Net_611 = Net_1151 & Net_1248;
+
+	// VirtualMux_1 (cy_virtualmux_v1_0)
+	assign Net_1232 = Net_1229;
+
+    OneTerminal OneTerminal_1 (
+        .o(Net_1229));
+
+
+
+endmodule
+
+// Counter_v2_0(CaptureMode=0, CaptureModeSoftware=0, ClockMode=1, CompareMode=0, CompareModeSoftware=0, CompareStatusEdgeSense=true, CompareValue=32768, ControlRegRemoved=0, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, EnableMode=0, FixedFunction=false, FixedFunctionUsed=0, InitCounterValue=32768, InterruptOnCapture=false, InterruptOnCompare=false, InterruptOnOverUnderFlow=false, InterruptOnTC=false, Period=32768, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, ReloadOnCapture=false, ReloadOnCompare=false, ReloadOnOverUnder=true, ReloadOnReset=true, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, UseInterrupt=true, VerilogSectionReplacementString=sC16, CY_COMPONENT_NAME=Counter_v2_0, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Right_Encoder:Cnt16, CY_INSTANCE_SHORT_NAME=Cnt16, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Right_Encoder_Cnt16, )
+module Counter_v2_0_9 (clock, comp, tc, reset, interrupt, enable, capture, upCnt, downCnt, up_ndown, count);
+    input   clock;
+    output  comp;
+    output  tc;
+    input   reset;
+    output  interrupt;
+    input   enable;
+    input   capture;
+    input   upCnt;
+    input   downCnt;
+    input   up_ndown;
+    input   count;
+
+    parameter CaptureMode = 0;
+    parameter ClockMode = 1;
+    parameter CompareMode = 0;
+    parameter CompareStatusEdgeSense = 1;
+    parameter EnableMode = 0;
+    parameter ReloadOnCapture = 0;
+    parameter ReloadOnCompare = 0;
+    parameter ReloadOnOverUnder = 1;
+    parameter ReloadOnReset = 1;
+    parameter Resolution = 16;
+    parameter RunMode = 0;
+    parameter UseInterrupt = 1;
+
+    wire  Net_54;
+    wire  Net_102;
+    wire  Net_95;
+    wire  Net_82;
+    wire  Net_91;
+    wire  Net_89;
+    wire  Net_49;
+    wire  Net_48;
+    wire  Net_42;
+    wire  Net_43;
+
+	// int_vm (cy_virtualmux_v1_0)
+	assign interrupt = Net_43;
+
+	// TC_vm (cy_virtualmux_v1_0)
+	assign tc = Net_49;
+
+    ZeroTerminal ZeroTerminal_1 (
+        .z(Net_82));
+
+	// VirtualMux_1 (cy_virtualmux_v1_0)
+	assign Net_89 = up_ndown;
+
+    ZeroTerminal ZeroTerminal_2 (
+        .z(Net_95));
+
+	// vmEnableMode (cy_virtualmux_v1_0)
+	assign Net_91 = enable;
+
+    OneTerminal OneTerminal_1 (
+        .o(Net_102));
+
+    B_Counter_v2_0 CounterUDB (
+        .reset(reset),
+        .tc_out(Net_49),
+        .cmp_out(comp),
+        .clock(clock),
+        .irq_out(Net_43),
+        .up_ndown(Net_89),
+        .upcnt(upCnt),
+        .dwncnt(downCnt),
+        .enable(enable),
+        .capture(capture),
+        .count(count));
+    defparam CounterUDB.CaptureMode = 0;
+    defparam CounterUDB.ClockMode = 1;
+    defparam CounterUDB.CompareMode = 0;
+    defparam CounterUDB.CompareStatusEdgeSense = 1;
+    defparam CounterUDB.EnableMode = 0;
+    defparam CounterUDB.ReloadOnCapture = 0;
+    defparam CounterUDB.ReloadOnCompare = 0;
+    defparam CounterUDB.ReloadOnOverUnder = 1;
+    defparam CounterUDB.ReloadOnReset = 1;
+    defparam CounterUDB.Resolution = 16;
+    defparam CounterUDB.RunMode = 0;
+    defparam CounterUDB.UseInterrupt = 1;
+
+
+
+endmodule
+
+// QuadDec_v2_0(Counter8bit=false, CounterResolution=4, CounterSize=32, CounterSizeReplacementString=int32, CounterSizeReplacementStringUnsigned=uint16, UsingGlitchFiltering=true, UsingIndexInput=false, CY_COMPONENT_NAME=QuadDec_v2_0, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Right_Encoder, CY_INSTANCE_SHORT_NAME=Right_Encoder, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Right_Encoder, )
+module QuadDec_v2_0_10 (quad_A, quad_B, index, clock, interrupt);
+    input   quad_A;
+    input   quad_B;
+    input   index;
+    input   clock;
+    output  interrupt;
+
+    parameter CounterResolution = 4;
+    parameter UsingGlitchFiltering = 1;
+    parameter UsingIndexInput = 0;
+
+    wire  Net_1127;
+    wire  Net_1129;
+    wire  Net_1243;
+    wire  Net_1130;
+    wire  Net_1131;
+    wire  Net_1132;
+    wire  Net_1121;
+    wire  Net_1123;
+    wire  Net_1241;
+    wire  Net_1124;
+    wire  Net_1125;
+    wire  Net_1126;
+    wire  Net_1203;
+    wire  Net_1260;
+    wire  Net_1232;
+    wire  Net_1229;
+    wire  Net_1251;
+    wire  Net_283;
+    wire  Net_1210;
+    wire  Net_611;
+    wire  Net_1151;
+    wire  Net_1248;
+    wire  Net_530;
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		isr
+		 (.int_signal(interrupt));
+
+
+    Counter_v2_0_9 Cnt16 (
+        .reset(Net_1260),
+        .tc(Net_1210),
+        .comp(Net_1127),
+        .clock(clock),
+        .interrupt(Net_1129),
+        .enable(1'b0),
+        .capture(1'b0),
+        .upCnt(1'b0),
+        .downCnt(1'b0),
+        .up_ndown(Net_1251),
+        .count(Net_1203));
+    defparam Cnt16.CaptureMode = 0;
+    defparam Cnt16.ClockMode = 1;
+    defparam Cnt16.CompareMode = 0;
+    defparam Cnt16.CompareStatusEdgeSense = 1;
+    defparam Cnt16.EnableMode = 0;
+    defparam Cnt16.ReloadOnCapture = 0;
+    defparam Cnt16.ReloadOnCompare = 0;
+    defparam Cnt16.ReloadOnOverUnder = 1;
+    defparam Cnt16.ReloadOnReset = 1;
+    defparam Cnt16.Resolution = 16;
+    defparam Cnt16.RunMode = 0;
+    defparam Cnt16.UseInterrupt = 1;
+
+	// VirtualMux_3 (cy_virtualmux_v1_0)
+	assign Net_1248 = Net_1210;
+
+    bQuadDec_v2_0 bQuadDec (
+        .quad_A(quad_A),
+        .quad_B(quad_B),
+        .index(Net_1232),
+        .clock(clock),
+        .dir(Net_1251),
+        .reset(Net_1260),
+        .enable(Net_1203),
+        .overflow(Net_530),
+        .underflow(Net_611),
+        .interrupt(interrupt));
+    defparam bQuadDec.CounterResolution = 4;
+    defparam bQuadDec.UsingGlitchFiltering = 1;
+    defparam bQuadDec.UsingIndexInput = 0;
+
+
+    assign Net_1151 = ~Net_1251;
+
+
+    assign Net_530 = Net_1251 & Net_1248;
+
+
+    assign Net_611 = Net_1151 & Net_1248;
+
+	// VirtualMux_1 (cy_virtualmux_v1_0)
+	assign Net_1232 = Net_1229;
+
+    OneTerminal OneTerminal_1 (
+        .o(Net_1229));
+
+
+
+endmodule
+
 // top
 module top ;
 
+    wire  Net_349;
+    wire  Net_325;
+    wire  Net_330;
+    wire  Net_324;
+    wire  Net_348;
+    wire  Net_318;
+    wire  Net_317;
+    wire  Net_306;
+    wire  Net_339;
+    wire  Net_305;
+    wire  Net_296;
+    wire  Net_295;
     wire  Net_284;
     wire  Net_276;
     wire  Net_281;
@@ -875,7 +1325,7 @@ module top ;
 		  .period("0"),
 		  .is_direct(0),
 		  .is_digital(1))
-		Clock_1
+		PWM_Clock
 		 (.clock_out(Net_67));
 
 
@@ -1294,6 +1744,148 @@ module top ;
 
     USBFS_v2_12_6 USBUART (
         .sof(Net_284));
+
+    QuadDec_v2_0_8 Left_Encoder (
+        .quad_A(Net_295),
+        .quad_B(Net_296),
+        .index(1'b0),
+        .clock(Net_339),
+        .interrupt(Net_306));
+    defparam Left_Encoder.CounterResolution = 4;
+    defparam Left_Encoder.UsingGlitchFiltering = 1;
+    defparam Left_Encoder.UsingIndexInput = 0;
+
+	wire [1:0] tmpOE__Left_Encoder_Pins_net;
+	wire [1:0] tmpIO_1__Left_Encoder_Pins_net;
+	wire [0:0] tmpINTERRUPT_0__Left_Encoder_Pins_net;
+	electrical [0:0] tmpSIOVREF__Left_Encoder_Pins_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("1425177d-0d0e-4468-8bcc-e638e5509a9b"),
+		  .drive_mode(6'b001_001),
+		  .ibuf_enabled(2'b1_1),
+		  .init_dr_st(2'b0_0),
+		  .input_sync(2'b1_1),
+		  .intr_mode(4'b00_00),
+		  .io_voltage(", "),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(2'b0_0),
+		  .output_conn(2'b0_0),
+		  .output_sync(2'b0_0),
+		  .pin_aliases(","),
+		  .pin_mode("II"),
+		  .por_state(4),
+		  .use_annotation(2'b0_0),
+		  .sio_group_cnt(0),
+		  .sio_hyst(2'b0_0),
+		  .sio_ibuf(""),
+		  .sio_info(4'b00_00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .slew_rate(2'b0_0),
+		  .spanning(0),
+		  .vtrip(4'b00_00),
+		  .width(2))
+		Left_Encoder_Pins
+		 (.oe(tmpOE__Left_Encoder_Pins_net),
+		  .y({2'b0}),
+		  .fb({Net_296, Net_295}),
+		  .io({tmpIO_1__Left_Encoder_Pins_net[1:0]}),
+		  .siovref(tmpSIOVREF__Left_Encoder_Pins_net),
+		  .interrupt({tmpINTERRUPT_0__Left_Encoder_Pins_net[0:0]}));
+
+	assign tmpOE__Left_Encoder_Pins_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{2'b11} : {2'b11};
+
+	wire [1:0] tmpOE__Right_Encoder_Pins_net;
+	wire [1:0] tmpIO_1__Right_Encoder_Pins_net;
+	wire [0:0] tmpINTERRUPT_0__Right_Encoder_Pins_net;
+	electrical [0:0] tmpSIOVREF__Right_Encoder_Pins_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("8a2e489a-a6a3-4e0d-866e-fb83e6ec4dda"),
+		  .drive_mode(6'b001_001),
+		  .ibuf_enabled(2'b1_1),
+		  .init_dr_st(2'b0_0),
+		  .input_sync(2'b1_1),
+		  .intr_mode(4'b00_00),
+		  .io_voltage(", "),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(2'b0_0),
+		  .output_conn(2'b0_0),
+		  .output_sync(2'b0_0),
+		  .pin_aliases(","),
+		  .pin_mode("II"),
+		  .por_state(4),
+		  .use_annotation(2'b0_0),
+		  .sio_group_cnt(0),
+		  .sio_hyst(2'b0_0),
+		  .sio_ibuf(""),
+		  .sio_info(4'b00_00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .slew_rate(2'b0_0),
+		  .spanning(0),
+		  .vtrip(4'b00_00),
+		  .width(2))
+		Right_Encoder_Pins
+		 (.oe(tmpOE__Right_Encoder_Pins_net),
+		  .y({2'b0}),
+		  .fb({Net_318, Net_317}),
+		  .io({tmpIO_1__Right_Encoder_Pins_net[1:0]}),
+		  .siovref(tmpSIOVREF__Right_Encoder_Pins_net),
+		  .interrupt({tmpINTERRUPT_0__Right_Encoder_Pins_net[0:0]}));
+
+	assign tmpOE__Right_Encoder_Pins_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{2'b11} : {2'b11};
+
+
+	cy_clock_v1_0
+		#(.id("02e14363-997d-4613-b215-32b800775455"),
+		  .source_clock_id(""),
+		  .divisor(0),
+		  .period("166666666.666667"),
+		  .is_direct(0),
+		  .is_digital(1))
+		Clock_1
+		 (.clock_out(Net_339));
+
+
+    QuadDec_v2_0_10 Right_Encoder (
+        .quad_A(Net_317),
+        .quad_B(Net_318),
+        .index(1'b0),
+        .clock(Net_330),
+        .interrupt(Net_325));
+    defparam Right_Encoder.CounterResolution = 4;
+    defparam Right_Encoder.UsingGlitchFiltering = 1;
+    defparam Right_Encoder.UsingIndexInput = 0;
+
+
+	cy_clock_v1_0
+		#(.id("4281b364-d6d4-4477-a8fc-d7a3e7f670e4"),
+		  .source_clock_id(""),
+		  .divisor(0),
+		  .period("166666666.666667"),
+		  .is_direct(0),
+		  .is_digital(1))
+		Clock_2
+		 (.clock_out(Net_330));
+
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		Left_Encoder_Interrupt
+		 (.int_signal(Net_306));
+
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		Right_Encoder_Interrupt
+		 (.int_signal(Net_325));
+
 
 
 
