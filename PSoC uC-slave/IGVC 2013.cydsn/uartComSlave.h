@@ -12,6 +12,7 @@
 
 
 void handleCommMessage(void);
+void sendCommMessage(void);
 void InitalizeUCSlave(void);
 void RunUCSlave(void);
 

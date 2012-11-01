@@ -16,6 +16,7 @@
 #include <uart.h>
 #include <time.h>
 #include <uartComSlave.h>
+#include <encoder.h>
 
 void main()
 {

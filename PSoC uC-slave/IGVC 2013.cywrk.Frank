@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="IGVC 2013\IGVC 2013\Header Files">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="IGVC 2013\IGVC 2013\Header Files\time.h">
 <ExpandedNodeIds>
 <v>IGVC 2013</v>
 <v>IGVC 2013\IGVC 2013</v>
@@ -21,13 +21,16 @@
 <v>IGVC 2013\IGVC 2013\IGVC 2013.cydwr</v>
 <v>IGVC 2013\IGVC 2013\Header Files</v>
 <v>IGVC 2013\IGVC 2013\Header Files\device.h</v>
+<v>IGVC 2013\IGVC 2013\Header Files\encoder.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\joystick.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\nunchuck.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\servo.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\time.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\uart.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\uartComSlave.h</v>
+<v>IGVC 2013\IGVC 2013\Header Files\velctrl.h</v>
 <v>IGVC 2013\IGVC 2013\Source Files</v>
+<v>IGVC 2013\IGVC 2013\Source Files\encoder.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\joystick.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\main.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\nunchuck.c</v>
@@ -35,14 +38,10 @@
 <v>IGVC 2013\IGVC 2013\Source Files\time.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\uart.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\uartComSlave.c</v>
+<v>IGVC 2013\IGVC 2013\Source Files\velctrl.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Center</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Center\Center_aliases.h</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
@@ -78,6 +77,25 @@
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\I2C\I2C_BOOT.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\I2C\I2C_INT.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\I2C\I2C_PM.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder\Left_Encoder.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder\Left_Encoder.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder\Left_Encoder_INT.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder\Left_Encoder_PM.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Cnt16</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Cnt16\Left_Encoder_Cnt16.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Cnt16\Left_Encoder_Cnt16.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Cnt16\Left_Encoder_Cnt16_PM.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Interrupt</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Interrupt\Left_Encoder_Interrupt.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Interrupt\Left_Encoder_Interrupt.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_isr</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_isr\Left_Encoder_isr.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_isr\Left_Encoder_isr.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Pins</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Pins\Left_Encoder_Pins.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Pins\Left_Encoder_Pins.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Left_Encoder_Pins\Left_Encoder_Pins_aliases.h</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimeISR</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimeISR\MainTimeISR.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimeISR\MainTimeISR.h</v>
@@ -85,6 +103,28 @@
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer\MainTimer.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer\MainTimer.h</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\MainTimer\MainTimer_PM.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\PWM_Clock</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\PWM_Clock\PWM_Clock.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\PWM_Clock\PWM_Clock.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder\Right_Encoder.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder\Right_Encoder.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder\Right_Encoder_INT.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder\Right_Encoder_PM.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Cnt16</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Cnt16\Right_Encoder_Cnt16.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Cnt16\Right_Encoder_Cnt16.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Cnt16\Right_Encoder_Cnt16_PM.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Interrupt</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Interrupt\Right_Encoder_Interrupt.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Interrupt\Right_Encoder_Interrupt.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_isr</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_isr\Right_Encoder_isr.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_isr\Right_Encoder_isr.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Pins</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Pins\Right_Encoder_Pins.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Pins\Right_Encoder_Pins.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Right_Encoder_Pins\Right_Encoder_Pins_aliases.h</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\SCL_1</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\SCL_1\SCL_1.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\SCL_1\SCL_1.h</v>
@@ -163,17 +203,30 @@
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cyfittergnu.inc</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cyfitterrv.inc</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\project.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_2</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_2\Clock_2.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_2\Clock_2.h</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>IGVC 2013</v>
+<v>IGVC 2013\IGVC 2013</v>
+<v>IGVC 2013\IGVC 2013\TopDesign.cysch</v>
 <v>IGVC 2013\IGVC 2013\IGVC 2013.cydwr</v>
 <v>IGVC 2013\IGVC 2013\Header Files</v>
 <v>IGVC 2013\IGVC 2013\Header Files\device.h</v>
+<v>IGVC 2013\IGVC 2013\Header Files\encoder.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\joystick.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\nunchuck.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\servo.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\time.h</v>
 <v>IGVC 2013\IGVC 2013\Header Files\uart.h</v>
+<v>IGVC 2013\IGVC 2013\Header Files\uartComSlave.h</v>
+<v>IGVC 2013\IGVC 2013\Header Files\velctrl.h</v>
 <v>IGVC 2013\IGVC 2013\Source Files</v>
+<v>IGVC 2013\IGVC 2013\Source Files\encoder.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\joystick.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\main.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\nunchuck.c</v>
@@ -181,22 +234,14 @@
 <v>IGVC 2013\IGVC 2013\Source Files\time.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\uart.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\uartComSlave.c</v>
+<v>IGVC 2013\IGVC 2013\Source Files\velctrl.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Center</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Center\Center_aliases.h</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\core_cm3.c</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
-<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Err_LED_1</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Err_LED_1\Err_LED_1.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Err_LED_1\Err_LED_1.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="IGVC 2013">
@@ -262,16 +307,16 @@
 <name v=".\IGVC 2013.cydsn\main.c" />
 <name v=".\IGVC 2013.cydsn\untitled01.c" />
 <name v=".\IGVC 2013.cydsn\header01.h" />
-<name v=".\IGVC 2013.cydsn\uart.h" />
-<name v=".\IGVC 2013.cydsn\uart.c" />
-<name v=".\IGVC 2013.cydsn\nunchuck.c" />
 <name v=".\IGVC 2013.cydsn\untitled01.c" />
+<name v=".\IGVC 2013.cydsn\encoder.c" />
+<name v=".\IGVC 2013.cydsn\encoder.h" />
+<name v=".\IGVC 2013.cydsn\velctrl.c" />
+<name v=".\IGVC 2013.cydsn\velctrl.h" />
 <name v=".\IGVC 2013.cydsn\time.c" />
-<name v=".\IGVC 2013.cydsn\time.h" />
 <name v=".\IGVC 2013.cydsn\uartComSlave.c" />
 <name v=".\IGVC 2013.cydsn\uartComSlave.h" />
+<name v=".\IGVC 2013.cydsn\time.h" />
 <name v=".\IGVC 2013.cydsn\joystick.c" />
-<name v=".\IGVC 2013.cydsn\joystick.h" />
 </OpenDocs>
 <config v="" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
