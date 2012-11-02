@@ -1,55 +1,0 @@
-10
-
-dir
-3064
-http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/meshnet
-http://brown-ros-pkg.googlecode.com/svn
-
-
-
-2010-07-09T22:31:31.218971Z
-775
-chriscrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0d49d21e-669f-11de-873c-fb8c264d332a
-
-mesh_teleop2_client
-dir
-
-ar_map_navigate_bumpers_dijkstra
-dir
-
-coordination_client
-dir
-
-mesh_teleop2
-dir
-
-ar_map_navigate_bumpers_explore
-dir
-
-batman_mesh_info
-dir
-
-ar_map_navigate_bumpers
-dir
-
-leader_follower_v1
-dir
-
-coordination_server
-dir
-

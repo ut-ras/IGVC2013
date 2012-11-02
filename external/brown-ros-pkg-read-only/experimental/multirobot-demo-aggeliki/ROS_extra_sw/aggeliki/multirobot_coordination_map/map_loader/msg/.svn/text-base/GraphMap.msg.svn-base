@@ -1,3 +1,0 @@
-Node[] nodes
-Edge[] edges
-

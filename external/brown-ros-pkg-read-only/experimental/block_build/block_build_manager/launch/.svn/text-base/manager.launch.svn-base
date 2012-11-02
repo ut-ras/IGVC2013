@@ -1,3 +1,0 @@
-<launch>
-  <node name="object_manager" pkg="object_manager" type="run_objmanager" respawn="false" output="screen" /> 
-</launch>

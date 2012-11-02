@@ -1,9 +1,0 @@
-#goal
-int8 x
-int8 y
-int8 z
----
-#result definition
-bool result
----
-#feedback

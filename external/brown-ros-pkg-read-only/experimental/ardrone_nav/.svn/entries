@@ -1,37 +1,0 @@
-10
-
-dir
-3064
-http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/ardrone_nav
-http://brown-ros-pkg.googlecode.com/svn
-
-
-
-2012-01-12T09:45:11.985937Z
-1827
-akarjun@gmail.com
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-0d49d21e-669f-11de-873c-fb8c264d332a
-
-ardrone_lclzr
-dir
-
-ardrone_planner
-dir
-
-ardrone_cntrlr
-dir
-

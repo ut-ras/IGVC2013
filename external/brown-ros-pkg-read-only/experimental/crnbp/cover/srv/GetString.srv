@@ -1,4 +1,0 @@
-# Sends a request for a string.  String in, string out.
-string input
----
-string output

@@ -1,3 +1,0 @@
-<launch>
-  <node name="cc1" pkg="coverage_potentfield_nomap" type="coverage_potentfield_nomap" output="screen"/>
-</launch>

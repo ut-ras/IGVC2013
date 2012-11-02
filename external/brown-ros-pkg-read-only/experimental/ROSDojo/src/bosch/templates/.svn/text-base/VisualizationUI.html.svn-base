@@ -1,4 +1,0 @@
-<div width=100% class="middlepanel">
-  <div width=40% dojoAttachPoint="controlAttach"></div>
-  <div width=50% dojoAttachPoint="visualizationAttach"></div>
-</div>

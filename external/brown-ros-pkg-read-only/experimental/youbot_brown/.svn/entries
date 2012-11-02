@@ -1,40 +1,0 @@
-10
-
-dir
-3064
-http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/youbot_brown
-http://brown-ros-pkg.googlecode.com/svn
-
-
-
-2012-07-19T20:39:41.897022Z
-2919
-akarjun@gmail.com
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-0d49d21e-669f-11de-873c-fb8c264d332a
-
-youbot_arm_navigation
-dir
-
-youbot_manip
-dir
-
-youbot_arm_kinematics
-dir
-
-youbot_imarker
-dir
-

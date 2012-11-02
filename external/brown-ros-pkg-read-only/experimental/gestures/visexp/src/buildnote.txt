@@ -1,2 +1,0 @@
-g++ -static `pkg-config --static --libs opencv` -c ges.cpp -o ges.o
-ar rcs my_library.a file1.o file2.o

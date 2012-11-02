@@ -1,141 +1,0 @@
-10
-
-dir
-3064
-http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/pr2develop
-http://brown-ros-pkg.googlecode.com/svn
-
-
-
-2010-07-20T16:17:08.995449Z
-778
-jesse.butterfield
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-0d49d21e-669f-11de-873c-fb8c264d332a
-
-nao2pr2
-dir
-
-pr2_joy_control
-dir
-
-pr2_camera_tele
-dir
-
-pr2_drinkserving
-dir
-
-head_gripper
-dir
-
-brownrossim_patch.py
-file
-
-
-
-
-2012-11-02T02:52:47.229120Z
-70d7026bd92ca6f7de5b260aafc17e18
-2010-05-17T21:27:21.469533Z
-589
-sosentos
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3144
-
-kinematics_tutorials
-dir
-
-simple_trajectory
-dir
-
-adding_objects
-dir
-
-NaoJoyControl
-dir
-
-pr2_tuckarm_brown
-dir
-
-BrownJoyControlBase
-dir
-
-object_reach
-dir
-
-pr2_keyboard_teleoperator
-dir
-
-texture_mapping
-dir
-
-joint_states_listener
-dir
-
-ar.launch
-file
-
-
-
-
-2012-11-02T02:52:47.229120Z
-a702205cbeb12bc5f7b59dcd5d077905
-2010-04-08T02:37:39.114584Z
-504
-sosentos
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-851
-
