@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1610/trunk/experimental/crnbp/perfesser/launch
+END
+location.launch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1610/trunk/experimental/crnbp/perfesser/launch/location.launch
+END
+simple.launch
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1427/trunk/experimental/crnbp/perfesser/launch/simple.launch
+END
+odom_only.launch
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1472/trunk/experimental/crnbp/perfesser/launch/odom_only.launch
+END
+maps.launch
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1395/trunk/experimental/crnbp/perfesser/launch/maps.launch
+END
+model.launch
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1404/trunk/experimental/crnbp/perfesser/launch/model.launch
+END

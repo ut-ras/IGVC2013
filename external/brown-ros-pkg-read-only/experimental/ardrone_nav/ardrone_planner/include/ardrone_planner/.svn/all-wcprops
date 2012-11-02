@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_planner/include/ardrone_planner
+END
+navfn_ros.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_planner/include/ardrone_planner/navfn_ros.h
+END
+potarr_point.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_planner/include/ardrone_planner/potarr_point.h
+END
+navwin.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_planner/include/ardrone_planner/navwin.h
+END
+navfn.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_planner/include/ardrone_planner/navfn.h
+END

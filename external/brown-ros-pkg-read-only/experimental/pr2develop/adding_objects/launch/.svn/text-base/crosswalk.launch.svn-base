@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="crosswalk"      textfile="$(find gazebo_worlds)/objects/crosswalk.model" />
+
+  <!-- push urdf to factory and spawn robot in gazebo -->
+  <node name="spawn_crosswalk" pkg="gazebo_tools" type="gazebo_model" args="-p crosswalk -x 1 -y -0.22 -z .57 spawn crosswalk" respawn="false" output="screen" />
+
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="tray"      textfile="$(find gazebo_worlds)/objects/tray.model" />
+
+  <!-- push urdf to factory and spawn robot in gazebo -->
+  <node name="spawn_tray" pkg="gazebo_tools" type="gazebo_model" args="-p tray -x 1 -y -0.22 -z .57 spawn tray" respawn="false" output="screen" />
+
+</launch>

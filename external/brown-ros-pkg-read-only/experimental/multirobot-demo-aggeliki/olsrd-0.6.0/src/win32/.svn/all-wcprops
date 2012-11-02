@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32
+END
+kernel_routes.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32/kernel_routes.c
+END
+log.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32/log.c
+END
+compat.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32/compat.c
+END
+ifnet.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32/ifnet.c
+END
+net.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32/net.c
+END
+unistd.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32/unistd.h
+END
+dlfcn.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32/dlfcn.h
+END
+misc.c
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32/misc.c
+END
+dummy.c
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32/dummy.c
+END
+apm.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/src/win32/apm.c
+END

@@ -1,0 +1,11 @@
+<launch>
+  <node name="wiimote"
+  	pkg="wiimote"
+  	type="wiimote_node.py" />
+
+  <node name="wiimote_twist"
+  	pkg="wiimote_twist"
+  	type="wiimote_twist.py" />
+
+</launch>
+

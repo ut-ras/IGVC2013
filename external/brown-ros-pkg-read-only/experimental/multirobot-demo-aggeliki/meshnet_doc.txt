@@ -1,0 +1,76 @@
+Assume Ubuntu installation (Our installation: Ubuntu Remix 9.10 karmic).
+
+Procedure:
+[1] Create Mobile Ad-Hoc Network among the robots
+
+(a) Configure wireless interface of each robot (modify /etc/network/interfaces file):
+Example /etc/network/interfaces file (assuming name of wireless interface is wlan0):
+
+auto lo 
+iface lo inet loopback
+
+auto wlan0                           #configure wireless interface
+iface wlan0 inet static              #static IP
+wireless-mode ad-hoc                 #ad-hoc network
+wireless-ap 00:60:1D:01:23:45        #all robots in the network should have the same access point address (no real meaning for access point in an ad-hoc network though)
+wireless-essid rlab_mesh_test        #name of the network
+address 192.168.0.2                  #IP address of node
+netmask 255.255.255.0                #subnet mask
+
+
+(b) Activate wireless interface by typing:
+- sudo /etc/init.d/network-manager stop      #stop the network manager utility (preparation for customized configuration of the wlan0)
+- sudo ifdown wlan0                          #bring the wlan0 interface down (cancel out any existing configurations for wlan0)
+- sudo ifup wlan0                            #bring wlan0 up again (the configuration options from /etc/network/interfaces will be applied)
+
+** At this point you should be able to use the ping command from one robot to the other
+
+[2] Run OLSR (www.olsr.org) mesh networking protocol for transparency in robot communication (automatic identification of nodes entering/leaving the network, communication among nodes just using TCP)
+- sudo olsrd -w wlan0 -d 1
+
+** Currently we use olsrd-0.6.0. Install OLSR based on the olsr.org instructions. You will also need to make the olsrd-txtinfo.so.0.1 plugin that is inside "OLSRD_DIR"/lib/txtinfo before running olsrd:
+- sudo make
+- sudo make install
+
+** Steps [1](b) and [2] are included in the wifi_net_setup file.
+
+[3] Install the boxturtle version of ROS (http://www.ros.org/wiki/boxturtle/Installation/Ubuntu/Deb). Additional nodes from brown-ros-pkg (http://code.google.com/p/brown-ros-pkg/) and isr-ros-pkg may be needed. Then, run the ROS nodes you need.
+
+** Look at the directory with the extra ROS code. The ./aggeliki/multirobot_coordination/coverage_controller_nomap and ./aggeliki/multirobot_coordination/coverage_potentfield_nomap packages are the main ones and in the .launch files inside them you will see all the other nodes the coverage controller depends on (+ foreign_relay).
+
+ROS nodes that may be necessary: 
+- irobot_create_2_1: ROS driver for an iCreate
+- position_tracker: tracks the current position of the robot
+- gscam: Gstreamer-based webcam driver for ROS
+- ar_recog: recognition of ARTags and calculation of their location/transformation in image spcae
+- ar_localizer: updates the position reported from position_tracker based on localization information coming from ARTags
+* Both for position_tracker and ar_localizer I'm using intermediate versions of the code (not the latest ones) that are compatible with boxturtle and the netbook camera.
+
+- foreign_relay: sends (relays) a topic from one master to another one
+- wifi_comm (highly based on the code from isr-ros-package, but modified it for our case): contains nodes for discovering robots being added/removed from the network and transfers topics to different robots (using foreign_relay)
+
+multirobot_coordination folder:
+- step_navigator_nomap: direct navigation to a goal position
+- bumper_localizer_nomap: recover from bumping to obstacles or other robots
+- coverage_controller_nomap: multi robot coordination controller (for position based coverage - see AAMAS'11 paper)
+- coverage_potentfield_nomap: multi robot coordination controller (for wifi and position based coverage - see AAMAS'11 paper) -- comment out line 61 of coverage_potentfield_nomap.cpp for the static robot
+
+multirobot_coordination_map folder:
+- map_loader: loads a line-based and graph-based map of the environment from the predefined input files
+- path_generator: generates a path from a starting position to a goal position
+- path_navigator: navigates through a path from start to end
+- step_navigator: direct navigation to a goal position
+- bumper_localizer: recover from bumping to obstacles or other robots
+- coverage_controller: multi robot coordination controller (for position based coverage - see AAMAS'11 paper)
+- coverage_potentfield: multi robot coordination controller 
+- rest of code: mainly intermediate code that was used for debugging or is now included in the abovementioned ROS nodes
+
+* In order for foreign_relay to work properly, the receiver node should be included in the /etc/hosts file of the sender node.
+
+** (Optional) In my .bashrc file I also added the following lines (see ROS.org and brown-ros-pkg/gscam documentation):
+source /opt/ros/boxturtle/setup.sh
+export GSCAM_CONFIG="v4l2src device=/dev/video0 ! videoscale ! video/x-raw-rgb,width=160,height=120 ! ffmpegcolorspace ! identity name=ros ! fakesink"
+
+
+
+

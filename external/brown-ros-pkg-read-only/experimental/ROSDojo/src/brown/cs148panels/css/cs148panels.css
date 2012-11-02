@@ -1,0 +1,28 @@
+.cs148 .content {
+	padding: 0;
+	margin: 0;
+	padding-top: 5px;
+	width: 100%;
+	padding-bottom: 8px;
+}
+
+.cs148 .clear {
+	clear: both;
+}
+
+.instructions .instructionstitle {
+	font-size: 28px;
+}
+
+.instructions .subheading {
+	font-size: 20px;
+}
+
+.connection {
+	padding-top: 20px !important;
+	padding-left: 10px !important;
+}
+
+.connection .connectioninstructionstop {
+	padding-bottom: 20px;
+}

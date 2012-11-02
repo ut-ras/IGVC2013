@@ -1,0 +1,57 @@
+<!-- This project came out from Brown MIT PR2 NLU Hackathon collaboration -->
+
+- files to modify before hand -
+
+1. cluster_bounding_box_finder_server.py in object_manipulator has a bug.
+  fix line 74:
+    return FindClusterBoundingBoxResponse(...)    
+      -> return FindClusterBoudingBox2Response(...)
+
+2. self_filter.launch in block_build_manager
+  it needs to listen to appropriate kinect topic 
+  modify line 15:
+    <remap from="cloud_in" to="/kinect_head/camera/rgb/points"/ >
+
+  if you like to modify line 16:
+    <remap from="cloud_out" to="/kinect_head/camera/rgb/object_modeling_points_filtered" />
+    
+  you also should modify tabletop_segmentation.launch in tabletop_segmentor line:3
+    <arg name="tabletop_segmentation_points_in" default="/kinect_head/camera/rgb/object_modeling_points_filtered"/>
+
+
+- files to run -
+<!-- in Robot -->
+
+// Kinect configuration is different in every PR2
+roslaunch kinect_launch kinect.launch 
+
+
+roslaunch block_build_manager manager_pre.launch 
+ - it prepares arm navigation and tabletop detection for object manager
+
+// object manager
+// for pickup 
+// for putdown
+roslaunch block_build_manager manager.launch
+ - it launches object_manager, grab_block, and block_placer
+
+<!-- in remote -->
+rosrun block_build_manager BuildManager.py
+
+<!-- to get connected to SLU -->
+rosrun rosbridge rosbridge.py 
+rosrun slu_manager rosbridge_client.py
+rosrun slu_manager slu_manager.py 
+
+
+<!-- for testing with out SLU -->
+rosrun block_build_manager pick_place.py [object_list_index] x y
+  - pick up object_list[index] and putdown on (x,y) 
+
+rosrun block_build_manager pickup_block.py [object_list_index]
+rosrun block_build_manager place_block.py x y
+
+
+<!-- To initialize robot box -->
+while BuildManater.py is running
+rosrun block_build_manager init_robot.py

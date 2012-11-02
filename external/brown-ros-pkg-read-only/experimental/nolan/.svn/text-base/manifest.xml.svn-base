@@ -1,0 +1,17 @@
+<package>
+  <description brief="nolan">
+Simple PID based follower. Follows ARTags. Actuates on /cmd_vel at speeds appropriate to a small robot.
+  </description>
+
+  <author>Graylin Trevor Jay</author>
+  <email>tjay@cs.brown.edu</email>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+
+  <depend package="rospy"/>
+  <depend package="ar_recog"/>
+  <depend package="geometry_msgs"/>
+
+</package>
+
+

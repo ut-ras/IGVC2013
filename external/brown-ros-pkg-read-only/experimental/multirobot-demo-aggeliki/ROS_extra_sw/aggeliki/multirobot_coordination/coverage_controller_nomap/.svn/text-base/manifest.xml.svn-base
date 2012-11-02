@@ -1,0 +1,17 @@
+<package>
+  <description brief="coverage_controller_nomap">
+
+     coverage_controller_nomap
+
+  </description>
+  <author>syndrome</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/coverage_controller_nomap</url>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="wifi_comm"/>
+
+</package>
+
+

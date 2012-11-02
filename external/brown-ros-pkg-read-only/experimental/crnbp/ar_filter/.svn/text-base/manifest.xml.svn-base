@@ -1,0 +1,19 @@
+<package>
+  <description brief="ar_filter">
+    The ar_filter works with the perfesser node to provide location estimates
+    based on observations of AR tags at known locations.
+  </description>
+  <author>Tom Sgouros</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ar_filter</url>
+  <depend package="rospy"/>
+  <depend package="nav_msgs"/>
+  <depend package="perfesser"/>
+  <depend package="ar_recog"/>
+  <!-- testing dependencies -->
+  <depend package="tgraph"/>
+
+</package>
+
+

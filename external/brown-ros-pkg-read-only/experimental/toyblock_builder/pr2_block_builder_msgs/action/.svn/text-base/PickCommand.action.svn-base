@@ -1,0 +1,7 @@
+#goal
+int8                    number
+---
+#result definition
+bool result
+---
+#feedback

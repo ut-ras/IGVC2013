@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <!--<param name="robot_description" command="$(find xacro)/xacro.py '$(find youbot_manip)/robots/youbot_with_kinect/yk.urdf.xacro'"/>-->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find rail_youbot_description)/robots/rail_youbot.urdf.xacro'" />
+</launch>

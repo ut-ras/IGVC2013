@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_controller_nomap
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_controller_nomap/manifest.xml
+END
+coverage_controller_nomap_part1.launch
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_controller_nomap/coverage_controller_nomap_part1.launch
+END
+coverage_controller_nomap_all.launch
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_controller_nomap/coverage_controller_nomap_all.launch
+END
+coverage_controller_nomap_part2.launch
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_controller_nomap/coverage_controller_nomap_part2.launch
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_controller_nomap/mainpage.dox
+END
+coverage_controller_nomap_part3.launch
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_controller_nomap/coverage_controller_nomap_part3.launch
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_controller_nomap/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_controller_nomap/Makefile
+END

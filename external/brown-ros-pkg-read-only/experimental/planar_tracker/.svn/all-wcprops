@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/965/trunk/experimental/planar_tracker
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/843/trunk/experimental/planar_tracker/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/843/trunk/experimental/planar_tracker/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/843/trunk/experimental/planar_tracker/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/965/trunk/experimental/planar_tracker/Makefile
+END

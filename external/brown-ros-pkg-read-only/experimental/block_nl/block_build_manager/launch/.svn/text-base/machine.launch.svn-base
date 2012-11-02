@@ -1,0 +1,4 @@
+<launch>
+  <machine name="robot" address="kuma" />
+  <machine name="remote" address="localhost"/>
+</launch>

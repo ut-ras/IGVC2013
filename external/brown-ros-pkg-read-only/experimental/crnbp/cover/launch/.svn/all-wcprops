@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1688/trunk/experimental/crnbp/cover/launch
+END
+coverffl.launch
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1602/trunk/experimental/crnbp/cover/launch/coverffl.launch
+END
+coverffl_few.launch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1612/trunk/experimental/crnbp/cover/launch/coverffl_few.launch
+END
+subcover.launch
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1658/trunk/experimental/crnbp/cover/launch/subcover.launch
+END
+cover.launch
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1688/trunk/experimental/crnbp/cover/launch/cover.launch
+END
+cover2d.launch
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1590/trunk/experimental/crnbp/cover/launch/cover2d.launch
+END
+cover2d_few.launch
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1646/trunk/experimental/crnbp/cover/launch/cover2d_few.launch
+END

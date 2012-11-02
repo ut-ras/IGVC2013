@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/535/trunk/experimental/pr2develop/nao2pr2
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/524/trunk/experimental/pr2develop/nao2pr2/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/524/trunk/experimental/pr2develop/nao2pr2/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/524/trunk/experimental/pr2develop/nao2pr2/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/524/trunk/experimental/pr2develop/nao2pr2/Makefile
+END

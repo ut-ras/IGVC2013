@@ -1,0 +1,29 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\b tgraph exists for testing purposes.
+
+<!-- 
+These are some graphics routines I found useful to use for
+testing.  Note that they are used solely because the installation of
+python matplotlib is so difficult and the results unreliable on a mac.
+That's all.  
+-->
+
+
+\section codeapi Code API
+
+<!--
+Provide links to specific auto-generated API documentation within your
+package that is of particular interest to a reader. Doxygen will
+document pretty much every part of your code, so do your best here to
+point the reader to the actual API.
+
+If your codebase is fairly large or has different sets of APIs, you
+should use the doxygen 'group' tag to keep these APIs together. For
+example, the roscpp documentation has 'libros' group.
+-->
+
+
+*/

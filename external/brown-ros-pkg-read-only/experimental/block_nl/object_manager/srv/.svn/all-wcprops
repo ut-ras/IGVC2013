@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2259/trunk/experimental/block_nl/object_manager/srv
+END
+UpdateObject.srv
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2259/trunk/experimental/block_nl/object_manager/srv/UpdateObject.srv
+END
+RequestObjectList.srv
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2259/trunk/experimental/block_nl/object_manager/srv/RequestObjectList.srv
+END
+RequestTable.srv
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2259/trunk/experimental/block_nl/object_manager/srv/RequestTable.srv
+END

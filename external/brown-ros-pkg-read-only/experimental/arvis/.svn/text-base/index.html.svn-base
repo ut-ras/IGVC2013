@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>ARTags</title>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.0.0/build/cssreset/reset-context-min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cvs.khronos.org/svn/repos/registry/trunk/public/webgl/sdk/demos/webkit/resources/CanvasMatrix.js"></script>
+  <script type="text/javascript" src="https://cvs.khronos.org/svn/repos/registry/trunk/public/webgl/sdk/demos/webkit/resources/utils3d.js"></script>
+
+<script id="vshader" type="x-shader/x-vertex">
+attribute vec2 vPosition;
+attribute vec2 tPosition;
+
+varying vec2 texPos;
+
+void main() {
+	texPos = tPosition;
+	gl_Position = vec4(vPosition.x, vPosition.y, 0.0, 1.0);
+}
+</script>
+
+<script id="fshader" type="x-shader/x-fragment">
+uniform sampler2D sampler2d;
+uniform float alpha;
+
+varying vec2 texPos;
+
+void main() {
+	gl_FragColor = texture2D(sampler2d,texPos) * vec4(1.0,1.0,1.0,alpha);
+}
+</script>
+
+
+<script type="text/javascript">
+	var count = 0;
+  	function log(msg) {
+		count += 1;
+		$("#smpStatusContent").html($("#smpStatusContent").html() + 
+			(($("#smpStatusContent").html() == "") ? "" : "<br/>")  
+			+ count + ": " + msg);
+	}
+
+	function clearLog() {
+		$("#smpStatusContent").html('');
+	}
+
+	var gl;
+
+	var width;
+	var height;
+	
+	var buffers = [];
+
+	var indices;
+
+	function setScreen(w,h) {
+		width = w;
+		height = h;
+	}
+
+	function drawTag(p, cf, id) {
+		for (var i =0; i < p.length; i++) {
+			if (i % 2 == 0) {
+				p[i] /= width / 2;
+				p[i] -= 1;
+			} else {
+				p[i] /= height / 2;
+				p[i] = 1 - p[i];
+			}
+		}
+
+		id *= 1/12;
+
+		half = (1/12)/2;
+		section = (1/12);
+
+		var vertices = new WebGLFloatArray(
+			[
+				p[0], p[1], id, 0,
+				(p[0]+p[2])/2,(p[1]+p[3])/2, half + id, 0,
+				p[2], p[3], section + id, 0,
+				(p[0]+p[6])/2,(p[1]+p[7])/2, id, .5,
+				(p[0]+p[2]+p[4]+p[6])/4, (p[1]+p[3]+p[5]+p[7])/4, half + id, .5,
+				(p[2]+p[4])/2,(p[3]+p[5])/2, section + id, .5,
+				p[6], p[7], id, 1,
+				(p[4]+p[6])/2,(p[5]+p[7])/2, half + id, 1,
+				p[4], p[5], section + id, 1,
+			]
+		);
+		gl.bindBuffer(gl.ARRAY_BUFFER, buffers[0]);
+		gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.DYNAMIC_DRAW);
+		gl.uniform1f(gl.getUniformLocation(gl.program, "alpha"), cf);
+		gl.drawElements(gl.TRIANGLE_STRIP, indices.length, gl.UNSIGNED_BYTE, 0);
+	}
+
+	var tags = [[640,480,0]];
+
+	function drawLoop() {
+		tags = eval(report());
+		gl.clear(gl.COLOR_BUFFER_BIT); //2D
+		setScreen(tags[0][0], tags[0][1]);
+		for (var i = 1; i <= tags[0][2]; i++) {
+			var tag = tags[i];
+			drawTag([tag[0], tag[1], tag[2], tag[3], tag[4], tag[5], tag[6], tag[7]], tag[8], tag[9]);
+		}
+		gl.flush();
+	}
+
+	var connect = function(host, post) {};
+	var report = function() {};
+
+  	$(function() {
+		window.console = function() {};
+		window.console.log = log;
+		log("******start logging******");
+
+		var applet = $("#javaBlobs")[0];
+
+		connect = function(host, port) {
+			applet.connect(host,port);
+		}
+
+		report = function() {
+			return applet.report();
+		}
+
+		gl = initWebGL("arCanvas","vshader","fshader",["vPosition","tPosition"],[1,1,1,1],0);
+		log("gl: " + gl);	
+
+		gl.viewport(0,0,$("#arCanvas").width(),$("#arCanvas").height());
+		log("viewport set");
+
+		gl.disable(gl.DEPTH_TEST);
+		log("depth test disabled (2D mode)");
+
+		gl.enable(gl.TEXTURE_2D);
+		log("textures enabled");
+
+		gl.enable(gl.CULL_FACE);
+		log("culling enabled");
+
+		indices = new WebGLUnsignedByteArray(
+			[0,3,1,4,2,5,5,3,3,6,4,7,5,8]
+		);
+		log(indices.length + "indices defined");
+
+		buffers[0] = gl.createBuffer();
+		buffers[1] = gl.createBuffer();
+		log("buffers allocated");
+
+		gl.enableVertexAttribArray(0);
+		log("vPosition enabled");
+
+		gl.enableVertexAttribArray(1);
+		log("tPosition enabled");
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, buffers[0]);
+		log("buffer 0 bound");
+
+		gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 4*gl.sizeInBytes(gl.FLOAT), 0);
+		log("vertex attribute linked");
+
+		gl.vertexAttribPointer(1, 2, gl.FLOAT, false, 4*gl.sizeInBytes(gl.FLOAT), 2*gl.sizeInBytes(gl.FLOAT));
+		log("texture attribute linked");
+
+		gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffers[1]);
+		log("buffer 1 bound");
+
+		gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, indices, gl.STATIC_DRAW);
+		log("indices data loaded");
+
+		gl.uniform1i(gl.getUniformLocation(gl.program, "sampler2d"), 0);
+		log("set texture uniform");
+
+		var texture = gl.createTexture();
+		texture.image = new Image();
+		texture.image.onload = function() {
+			gl.bindTexture(gl.TEXTURE_2D, texture);
+			log('binding texture 0');
+
+			gl.texImage2D(gl.TEXTURE_2D, 0, texture.image);
+			log('loading texture image data');
+
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+			log("setting mag filter to linear");
+			gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+			log("setting min filter to linear");
+
+			setInterval(drawLoop, 15);
+
+		};
+
+		texture.image.src = "patts.png";
+
+	});
+</script>
+
+<style>
+canvas {
+	border: solid 2px black;
+}
+
+#smpStatus {
+	-moz-column-width: 350px;
+	-webkit-column-width: 350px;
+}
+
+#canvasContainter {
+	position: relative;
+	width: 640px; 
+	height: 480px;
+	margin-bottom: 20px;
+}
+</style>
+
+</head>
+<body>
+  <center>
+    <form name ="form_connect" id="form_connect" action="#">
+      IP Address: <input type="text" name="ip" id="txt_ip">
+      Port: <input type="text" name="port" id="txt_port">
+      <input type="button" name="button_connect" value="Connect" onclick="connect(txt_ip.value, parseInt(txt_port.value))">
+      </form>
+    <br/>
+    <div id="canvasContainter">
+      <canvas id="arCanvas" width="640" height="480"></canvas>
+      </div>
+    </center>
+   <div id="smpStatus"><div id="smpStatusContent"></div></div>
+
+	<object id="javaBlobs" type="application/x-java-applet" width="1" height="1">
+		<param name="code" value="Blobs.class"></param>
+		<param name="type" value="application/x-java-applet"></param>
+		<param name="mayscript" value="true">
+		<param name="scriptable" value="true"></param>
+	</object>
+
+</body>
+</html>

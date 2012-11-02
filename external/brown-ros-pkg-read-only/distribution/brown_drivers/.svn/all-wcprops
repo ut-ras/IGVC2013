@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/1818/trunk/distribution/brown_drivers
+END
+stack.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1758/trunk/distribution/brown_drivers/stack.xml
+END
+rosdep.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1240/trunk/distribution/brown_drivers/rosdep.yaml
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1818/trunk/distribution/brown_drivers/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1109/trunk/distribution/brown_drivers/Makefile
+END

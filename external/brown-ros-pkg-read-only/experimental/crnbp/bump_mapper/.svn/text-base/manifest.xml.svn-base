@@ -1,0 +1,19 @@
+<package>
+  <description brief="bump_mapper">
+    Listens for a bump, then publishes an estimate of the obstacle's location
+    that caused it.
+
+    Not tested much as of 12/1/11.
+  </description>
+  <author>Tom Sgouros</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/bump_mapper</url>
+  <depend package="rospy"/>
+  <depend package="perfesser"/>
+  <depend package="geometry_msgs"/>
+  <depend package="irobot_create_2_1a"/>
+
+</package>
+
+

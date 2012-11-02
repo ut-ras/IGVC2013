@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/756/trunk/experimental/meshnet/mesh_teleop2_client
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/756/trunk/experimental/meshnet/mesh_teleop2_client/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/756/trunk/experimental/meshnet/mesh_teleop2_client/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/756/trunk/experimental/meshnet/mesh_teleop2_client/CMakeLists.txt
+END

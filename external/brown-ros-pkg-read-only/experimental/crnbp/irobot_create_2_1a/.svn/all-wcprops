@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1606/trunk/experimental/crnbp/irobot_create_2_1a
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/Makefile
+END

@@ -1,0 +1,14 @@
+<package>
+  <description brief="om_msgs">
+
+     om_msgs is the set of messages used for overhead_map.
+
+  </description>
+  <author>Brian Thomas</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/om_msgs</url>
+
+</package>
+
+

@@ -1,0 +1,19 @@
+<package>
+  <description brief="ROSProcessingjs">
+
+     ROSProcessingjs
+
+  </description>
+  <author>Jihoon</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ROSProcessingjs</url>
+  <depend package="rospy"/>
+  <depend package="rosbridge"/>
+  <depend package="irobot_create_2_1"/>
+  <depend package="gscam"/>
+  <depend package="mjpeg_server"/>
+
+</package>
+
+

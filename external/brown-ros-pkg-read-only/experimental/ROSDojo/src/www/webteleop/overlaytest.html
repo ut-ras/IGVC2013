@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Web Teleoperation</title>
+<script src="../../dojo17/dojo/dojo.js.uncompressed.js"></script>
+<style type="text/css">
+	.main {
+		width: 100%; 
+		height: 100%; 
+	}
+</style>
+<script>
+   	function init() {
+      dojo.registerModulePath("rosdojo", "../../brown/rosdojo");
+      dojo.registerModulePath("roswidgets", "../../brown/roswidgets");
+      dojo.registerModulePath("mobile","../../brown/mobile");
+      dojo.require("mobile.OverlayCamera");
+      dojo.require("dojo.parser");
+      
+      var main = dojo.byId("body");
+      main.style.height = (window.innerHeight-1)+"px";
+      main.style.width = (window.innerWidth-1)+"px";
+      main.style.overflow = "hidden";
+      
+  	  dojo.parser.parse();
+   	}
+   	dojo.ready(init);
+   </script>
+</head>
+<body style="margin: 0" id="body">
+	<div class="main" dojoType="mobile.OverlayCamera"></div>
+</body>
+</html>

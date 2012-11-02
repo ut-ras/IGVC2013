@@ -1,0 +1,12 @@
+<div>
+  <p>Current Node List </p>
+  <div dojoAttachPoint="layoutAttach"></div>
+  <div class="buttons" dojoAttachPoint="buttonsAttach">
+  <div class="avails" dojoAttachPoint="availAttach"></div>
+    <button dojoAttachPoint="addAttach"></button>
+    <button dojoAttachPoint="globalOptionAttach"> </button>
+  </div>
+  <center>
+    <button dojoAttachPoint="closeButtonAttach"></button>
+  </center>
+</div>

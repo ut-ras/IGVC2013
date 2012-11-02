@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Brown Robotics Demos</title>
+<!-- load Dojo and the default dojo theme, claro -->
+<link rel="stylesheet" href="dojo17/dijit/themes/claro/claro.css" />
+<link rel="stylesheet" href="www/demos/index.css" />
+<script src="dojo17/dojo/dojo.js.uncompressed.js"></script>
+<script>
+    function init() {
+        dojo.registerModulePath("misc", "../../brown/misc");
+        dojo.require("misc.App");
+        dojo.parser.parse();
+    }
+    dojo.ready(init);
+</script>
+</head>
+<body class="claro">
+    <div class="pagetitle">
+        <a href="http://www.brown-robotics.org"><img src="http://www.brown-robotics.org/wp/robotics/banner.png"></a>
+    </div>
+	<div class="main">
+    <div data-dojo-type="misc.App" data-dojo-props="
+		title: 'ROS WebTools',
+    	img: 'www/demos/img/webtools.png', 
+		link: 'www/webtools',
+		wiki: 'http://code.google.com/p/brown-ros-pkg/wiki/ROSWebTools'
+	"></div><div data-dojo-type="misc.App" data-dojo-props="
+		title: 'Ride Graph',
+    	img: 'www/demos/img/ride.png', 
+		link: 'www/ride',
+		wiki: 'http://code.google.com/p/brown-ros-pkg/wiki/RIDE'
+	"></div><div data-dojo-type="misc.App" data-dojo-props="
+    	title: 'ARDrone Web Teleop',
+    	img: 'www/demos/img/ardrone_web.png', 
+		link: 'www/webteleop/ardrone.html',
+        wiki: 'http://code.google.com/p/brown-ros-pkg/wiki/ardrone'
+	"></div><div data-dojo-type="misc.App" data-dojo-props="
+    	title: 'ARDrone Touch Teleop',
+    	img: 'www/demos/img/ardrone_ipad.png', 
+		link: 'www/mobile/ardrone.html',
+        wiki: 'http://code.google.com/p/brown-ros-pkg/wiki/ardrone'
+	"></div><div data-dojo-type="misc.App" data-dojo-props="
+    	title: 'PR2 Castle Builder',
+    	img: 'www/demos/img/castlebuilder.png',
+        link: 'www/hackathons/blocks.html',
+        page: 'http://brown-robotics.org/wp/projects/hackathons/castlebuilder/',
+        wiki: 'http://code.google.com/p/brown-ros-pkg/wiki/castlebuilder'
+    "></div><div data-dojo-type="misc.App" data-dojo-props="
+		title: 'Youbot Web Teleop',
+    	img: 'www/demos/img/youbot.png', 
+		link: 'www/webteleop/youbot.html',
+		wiki: 'http://code.google.com/p/brown-ros-pkg/wiki/youbot'
+	"></div>
+	</div>
+</body>
+</html>

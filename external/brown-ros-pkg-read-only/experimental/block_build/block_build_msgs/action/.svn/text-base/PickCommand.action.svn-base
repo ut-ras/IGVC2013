@@ -1,0 +1,8 @@
+#goal
+int8                    number
+object_manager/Object   object
+---
+#result definition
+bool result
+---
+#feedback

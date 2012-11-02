@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/1040/trunk/experimental/wiimote_twist
+END
+wiimote_twist.launch
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/972/trunk/experimental/wiimote_twist/wiimote_twist.launch
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/972/trunk/experimental/wiimote_twist/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/972/trunk/experimental/wiimote_twist/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/972/trunk/experimental/wiimote_twist/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/972/trunk/experimental/wiimote_twist/Makefile
+END

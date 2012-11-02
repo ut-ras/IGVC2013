@@ -1,0 +1,17 @@
+<package>
+  <description brief="omclock">
+
+    clock for overhead_map
+
+  </description>
+  <author>Brian Thomas</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/omclock</url>
+  <depend package="rospy" />
+  <!-- below for msgs -->
+  <depend package="om_msgs"/>
+
+</package>
+
+

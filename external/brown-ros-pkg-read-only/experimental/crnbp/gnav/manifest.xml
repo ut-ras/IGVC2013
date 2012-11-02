@@ -1,0 +1,25 @@
+<package>
+  <description brief="gsnav">
+
+     gsnav
+
+  </description>
+  <author>Tom</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/gnav</url>
+  <depend package="rospy"/>
+  <depend package="roslib"/>
+  <depend package="geometry_msgs"/>
+  <depend package="irobot_create_2_1a"/>
+  <depend package="perfesser"/>
+  <depend package="ar_filter"/>
+  <!-- testing dependencies -->
+  <depend package="tgraph"/>
+  <depend package="position_tracker"/>
+  <depend package="planar_tracker"/>
+  <depend package="ar_filter"/>
+
+</package>
+
+

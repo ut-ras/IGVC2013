@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ROS WebTools Testbed</title>
+<!-- load Dojo and the default dojo theme, claro -->
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="../../dojo17/dijit/themes/claro/claro.css" />
+<link rel="stylesheet" href="../../brown/roswidgets/css/roswidgets.css" />
+<script src="../../dojo17/dojo/dojo.js.uncompressed.js"></script>
+<script src="../../brown/roswidgets/lib/GraphBox.js"></script>
+<script>
+   	function resizeTabcontainer() {
+        var tabsheight = (window.innerHeight - dojo.byId("top").offsetHeight-15);
+        if (tabsheight < 500) { tabsheight = 500; }
+        dojo.style(dojo.byId("maintabcontainer"), "height", tabsheight+"px");
+        dijit.byId("maintabcontainer").resize();
+   	}
+   	function init() {
+   		console.log("Initializing page");
+   		
+   		// Register rosdojo and the web tools widgets
+        dojo.registerModulePath("rosdojo", "../../brown/rosdojo");
+        dojo.registerModulePath("webtools", "../../brown/webtools");
+        dojo.registerModulePath("roswidgets", "../../brown/roswidgets");
+        dojo.registerModulePath("cs148widgets", "../../brown/cs148widgets");
+        
+        // Load the rosdojo and webtools widgets
+        dojo.require("webtools.Graph");
+        dojo.require("webtools.Topics");
+        dojo.require("webtools.Services");
+        dojo.require("webtools.Cameras");
+        dojo.require("webtools.Programming");
+        dojo.require("roswidgets.ConnectionPanel");
+        
+        // Load the dojo widgets for the main page
+        dojo.require("dijit.layout.TabContainer");
+        dojo.require("dijit.layout.ContentPane");
+        
+        // Parse the page
+   		dojo.parser.parse();  
+        
+        // Start up the tabs
+        resizeTabcontainer();
+        dojo.connect(window, "resize", resizeTabcontainer);
+   	}
+   	dojo.ready(init);
+   </script>
+</head>
+<body class="claro webtools" style="font: 14px Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;">
+	<div id="top">
+		<div class="header">
+			<div class="banner"><img src="banner.png" style="width: 475px; height: 85px;"></div>
+			<div class="title">ROS WebTools Testbed</div>
+		</div>
+		<div data-dojo-type="roswidgets.ConnectionPanel" id="connectionpanel">
+			<script type="dojo/connect" data-dojo-event="startup">
+			// This shows a tooltip when the connection panel starts up
+
+			var connectButton = this.connectButton;
+
+			showExpandedInstructions = function() { 
+				var message = "This page requires the <span class='commandfont'>rosbridge</span> and <span class='commandfont'>rosapi</span> ROS nodes.<br><br>";
+				message += "To check out, make, and run <span class='commandfont'>rosbridge</span> and <span class='commandfont'>rosapi</span>, perform the following commands in a ros-accessible folder:<br>";
+				message += "<span class='commandfont'>svn checkout https://brown-ros-pkg.googlecode.com/svn/trunk/experimental/rosbridge rosbridge</span><br>";
+				message += "<span class='commandfont'>svn checkout https://brown-ros-pkg.googlecode.com/svn/trunk/experimental/rosapi rosapi</span><br>";
+				message += "<span class='commandfont'>cmake rosapi</span><br>";
+				message += "<span class='commandfont'>rosmake rosapi</span><br>";
+				message += "<span class='commandfont'>rosrun rosbridge rosbridge.py</span><br>";
+				message += "<span class='commandfont'>rosrun rosapi rosapi.py</span><br><br>";
+				message += "Check out <a target='_newtab' href='http://www.rosbridge.org'>rosbridge.org</a> and ";
+				message += "the <a target='_newtab' href='http://www.ros.org/wiki/rosbridge'>ROS Wiki</a> for more information about rosbridge.";    
+
+        		dijit.showTooltip(message, connectButton.domNode, [ "after", "above", "below", "before" ], false, "");   
+			};
+
+        	var message = "This page can connect to a <span class='commandfont'>rosbridge</span> node running in any ROS system!<br><br>";
+			message += "Click <a href='javascript:showExpandedInstructions()'>here</a> to get <span class='commandfont'>rosbridge</span>.";
+			
+        	dijit.showTooltip(message, this.connectButton.domNode, [ "after", "above", "below", "before" ], false, "");    
+
+    	</script>
+		</div>
+	</div>
+	<div data-dojo-type="dijit.layout.TabContainer" class="tabs" id="maintabcontainer">
+		<script type="dojo/connect" data-dojo-event="startup"> this.resize(); </script>
+		<div data-dojo-type="webtools.Topics"></div>
+		<div data-dojo-type="webtools.Services"></div>
+		<div data-dojo-type="webtools.Cameras"></div>
+		<div data-dojo-type="webtools.Graph"></div>
+		<div data-dojo-type="webtools.Programming"></div>
+		<div data-dojo-type="dijit.layout.ContentPane" title="Messages" style="display: none">
+			This page was left intentionally blank
+		</div>
+	</div>
+	
+</body>
+</html>

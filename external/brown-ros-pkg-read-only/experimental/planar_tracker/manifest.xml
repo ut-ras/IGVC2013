@@ -1,0 +1,18 @@
+<package>
+  <description brief="planar_tracker">
+
+     planar_tracker
+
+  </description>
+  <author>Christopher Crick</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/planar_tracker</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="ar_recog"/>
+  <depend package="opencv2"/>
+
+</package>
+
+

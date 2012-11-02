@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1864/trunk/experimental/ROSProcessingjs_backend/launch
+END
+base.launch
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1864/trunk/experimental/ROSProcessingjs_backend/launch/base.launch
+END
+machine.launch
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1864/trunk/experimental/ROSProcessingjs_backend/launch/machine.launch
+END
+robot.launch
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1864/trunk/experimental/ROSProcessingjs_backend/launch/robot.launch
+END

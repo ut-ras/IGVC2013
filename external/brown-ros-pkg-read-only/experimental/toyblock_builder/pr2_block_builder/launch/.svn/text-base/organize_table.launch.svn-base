@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find pr2_tabletop_manipulation_launch)/launch/pr2_tabletop_manipulation.launch" />
+  <node name="grab_block" pkg="pr2_block_builder" type="grab_block" output="screen" />
+  <node name="toy_builder" pkg="pr2_block_builder" type="build.py" output="screen" />
+  <node name="block_placer" pkg="pr2_block_placer" type="block_placer" output="screen" />
+  <node name="reset_blocks" pkg="pr2_block_builder" type="reset_blocks.py" output="screen" />
+</launch>

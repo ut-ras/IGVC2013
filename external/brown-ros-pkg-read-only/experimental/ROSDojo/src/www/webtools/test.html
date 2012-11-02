@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ROSDojo</title>
+<!-- load Dojo and the default dojo theme, claro -->
+<link rel="stylesheet" href="../../dojo17/dijit/themes/claro/claro.css" />
+<script src="../../dojo17/dojo/dojo.js.uncompressed.js"></script>
+<script>
+   	function init() {
+   		console.log("Initializing page");
+        dojo.registerModulePath("rosdojo", "../../brown/rosdojo");
+        dojo.registerModulePath("roswidgets", "../../brown/roswidgets");
+        dojo.require("roswidgets.ConnectionPanel");
+        dojo.require("roswidgets.TopicTree");
+        dojo.require("roswidgets.ServiceTree");
+        dojo.require("roswidgets.TopicDetails");
+        dojo.require("roswidgets.MessageEditor");
+   		dojo.parser.parse();
+   	}
+   	dojo.ready(init);
+   </script>
+</head>
+<body class="claro">
+	<h1 id="greeting">ROSDojo Test Page</h1>
+	<div style="position: absolute; left: 50px; top: 200px; width: 500px;">
+		<div data-dojo-type="roswidgets.ConnectionPanel"></div>
+	</div>
+	<div style="position: absolute; left: 600px; top: 50px; width: 500px;">
+		<div data-dojo-type="roswidgets.MessageEditor"></div>
+	</div>
+	<div style="position: absolute; left: 1000px; top: 100px; ">
+		<div data-dojo-type="roswidgets.TopicTree"></div>
+		<div data-dojo-type="roswidgets.ServiceTree"></div>
+	</div>
+	<div style="position: absolute; left: 600px; top: 400px; width: 400px;">
+		<div data-dojo-type="roswidgets.TopicDetails"
+			data-dojo-props="topic: '/jon', type: 'std_msgs/String'"></div>
+	</div>
+</body>
+</html>

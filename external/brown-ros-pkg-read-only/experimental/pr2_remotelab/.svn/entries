@@ -1,0 +1,80 @@
+10
+
+dir
+3064
+http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/pr2_remotelab
+http://brown-ros-pkg.googlecode.com/svn
+
+
+
+2011-02-15T16:18:24.502820Z
+1016
+sosentos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0d49d21e-669f-11de-873c-fb8c264d332a
+
+authentication
+dir
+
+laser.launch
+file
+
+
+
+
+2012-11-02T02:55:20.829126Z
+00eaba45e29e287cdef2e87decd47a33
+2010-08-25T23:54:28.833775Z
+857
+sosentos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+161
+
+link_position
+dir
+
+ik_control
+dir
+
+tf_test
+dir
+
+reduced_joint_state_publisher
+dir
+
+mockup
+dir
+

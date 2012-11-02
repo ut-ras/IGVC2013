@@ -1,0 +1,29 @@
+<!-- Use this launch file to start location guessing routines on a single node.
+     The inputs include odometry and ar_recog. -->
+<launch>
+
+  <!-- Create driver -->
+  <node name="model_create" pkg="model_create" type="model_create.py" />
+
+  <!-- Map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find map_filter)/maps/fourth_floor_map.yaml"/>
+
+  <param name="/guesser/position/npoints" value="200"/>
+  <param name="/guesser/position/wait_time" value="1.0"/>
+  <param name="/guesser/position/ar_filter/file_name" 
+	 value="$(find ar_filter)/bin/ar_tag_locations.txt"/>
+  <!--<node name="ar_filter" pkg="ar_filter" type="ar_filter.py"/> -->
+
+  <!-- *****************************  Start odometry-relevant processes. -->
+  <node name="odom_filter" pkg="odom_filter" type="odom_filter.py"/> 
+
+  <!-- *****************************  Start bump-relevant processes. -->
+  <node name="bump_filter" pkg="bump_filter" type="bump_filter.py"/>
+
+  <!-- *****************************  Start perfesser processes. -->
+  <node name="perfesser" pkg="perfesser" type="perfesser.py"/> 
+  <!-- for debugging only -->
+  <node name="perfesser_summarizer" pkg="perfesser" type="perfesser_summarizer.py"/>
+
+
+</launch>

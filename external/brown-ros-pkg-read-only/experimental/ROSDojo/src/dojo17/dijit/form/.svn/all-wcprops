@@ -1,0 +1,605 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form
+END
+_ListBase.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ListBase.js
+END
+DataList.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/DataList.js
+END
+VerticalRuleLabels.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/VerticalRuleLabels.js.uncompressed.js
+END
+_FormWidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormWidget.js
+END
+NumberSpinner.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/NumberSpinner.js.uncompressed.js
+END
+_AutoCompleterMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_AutoCompleterMixin.js.uncompressed.js
+END
+_CheckBoxMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_CheckBoxMixin.js.uncompressed.js
+END
+TimeTextBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/TimeTextBox.js
+END
+_Spinner.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_Spinner.js
+END
+Textarea.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/Textarea.js
+END
+TextBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/TextBox.js.uncompressed.js
+END
+_ExpandingTextAreaMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ExpandingTextAreaMixin.js
+END
+VerticalRule.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/VerticalRule.js.uncompressed.js
+END
+HorizontalRuleLabels.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/HorizontalRuleLabels.js.uncompressed.js
+END
+_FormMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormMixin.js.uncompressed.js
+END
+_DateTimeTextBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_DateTimeTextBox.js.uncompressed.js
+END
+DateTextBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/DateTextBox.js
+END
+Button.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/Button.js.uncompressed.js
+END
+_ComboBoxMenu.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ComboBoxMenu.js
+END
+ToggleButton.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/ToggleButton.js.uncompressed.js
+END
+_ButtonMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ButtonMixin.js.uncompressed.js
+END
+_ComboBoxMenuMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ComboBoxMenuMixin.js
+END
+_ToggleButtonMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ToggleButtonMixin.js.uncompressed.js
+END
+HorizontalRule.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/HorizontalRule.js.uncompressed.js
+END
+Form.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/Form.js
+END
+FilteringSelect.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/FilteringSelect.js.uncompressed.js
+END
+_FormSelectWidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormSelectWidget.js
+END
+SimpleTextarea.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/SimpleTextarea.js.uncompressed.js
+END
+_ListMouseMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ListMouseMixin.js.uncompressed.js
+END
+MultiSelect.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/MultiSelect.js.uncompressed.js
+END
+ComboButton.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/ComboButton.js.uncompressed.js
+END
+VerticalSlider.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/VerticalSlider.js
+END
+Select.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/Select.js
+END
+_RadioButtonMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_RadioButtonMixin.js.uncompressed.js
+END
+Slider.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/Slider.js
+END
+_TextBoxMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_TextBoxMixin.js.uncompressed.js
+END
+RangeBoundTextBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/RangeBoundTextBox.js.uncompressed.js
+END
+MappedTextBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/MappedTextBox.js
+END
+_FormValueWidget.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormValueWidget.js.uncompressed.js
+END
+_ListBase.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ListBase.js.uncompressed.js
+END
+DataList.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/DataList.js.uncompressed.js
+END
+CheckBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/CheckBox.js
+END
+_FormWidget.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormWidget.js.uncompressed.js
+END
+DropDownButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/DropDownButton.js
+END
+RadioButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/RadioButton.js
+END
+HorizontalSlider.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/HorizontalSlider.js
+END
+TimeTextBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/TimeTextBox.js.uncompressed.js
+END
+_Spinner.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_Spinner.js.uncompressed.js
+END
+Textarea.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/Textarea.js.uncompressed.js
+END
+_ExpandingTextAreaMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ExpandingTextAreaMixin.js.uncompressed.js
+END
+_FormValueMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormValueMixin.js
+END
+NumberTextBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/NumberTextBox.js
+END
+ComboBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/ComboBox.js
+END
+CurrencyTextBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/CurrencyTextBox.js
+END
+ValidationTextBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/ValidationTextBox.js
+END
+_FormWidgetMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormWidgetMixin.js
+END
+DateTextBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/DateTextBox.js.uncompressed.js
+END
+ComboBoxMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/ComboBoxMixin.js
+END
+_ComboBoxMenu.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ComboBoxMenu.js.uncompressed.js
+END
+_ComboBoxMenuMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ComboBoxMenuMixin.js.uncompressed.js
+END
+VerticalRuleLabels.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/VerticalRuleLabels.js
+END
+Form.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/Form.js.uncompressed.js
+END
+NumberSpinner.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/NumberSpinner.js
+END
+_FormSelectWidget.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormSelectWidget.js.uncompressed.js
+END
+_AutoCompleterMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_AutoCompleterMixin.js
+END
+_CheckBoxMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_CheckBoxMixin.js
+END
+VerticalSlider.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/VerticalSlider.js.uncompressed.js
+END
+TextBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/TextBox.js
+END
+Select.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/Select.js.uncompressed.js
+END
+VerticalRule.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/VerticalRule.js
+END
+Slider.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/Slider.js.uncompressed.js
+END
+HorizontalRuleLabels.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/HorizontalRuleLabels.js
+END
+MappedTextBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/MappedTextBox.js.uncompressed.js
+END
+CheckBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/CheckBox.js.uncompressed.js
+END
+_FormMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormMixin.js
+END
+_DateTimeTextBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_DateTimeTextBox.js
+END
+DropDownButton.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/DropDownButton.js.uncompressed.js
+END
+Button.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/Button.js
+END
+RadioButton.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/RadioButton.js.uncompressed.js
+END
+ToggleButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/ToggleButton.js
+END
+HorizontalSlider.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/HorizontalSlider.js.uncompressed.js
+END
+_ButtonMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ButtonMixin.js
+END
+_ToggleButtonMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ToggleButtonMixin.js
+END
+HorizontalRule.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/HorizontalRule.js
+END
+FilteringSelect.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/FilteringSelect.js
+END
+_FormValueMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormValueMixin.js.uncompressed.js
+END
+SimpleTextarea.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/SimpleTextarea.js
+END
+NumberTextBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/NumberTextBox.js.uncompressed.js
+END
+_ListMouseMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_ListMouseMixin.js
+END
+ValidationTextBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/ValidationTextBox.js.uncompressed.js
+END
+ComboBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/ComboBox.js.uncompressed.js
+END
+CurrencyTextBox.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/CurrencyTextBox.js.uncompressed.js
+END
+MultiSelect.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/MultiSelect.js
+END
+ComboButton.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/ComboButton.js
+END
+_FormWidgetMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormWidgetMixin.js.uncompressed.js
+END
+_RadioButtonMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_RadioButtonMixin.js
+END
+ComboBoxMixin.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/ComboBoxMixin.js.uncompressed.js
+END
+_TextBoxMixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_TextBoxMixin.js
+END
+RangeBoundTextBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/RangeBoundTextBox.js
+END
+_FormValueWidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/form/_FormValueWidget.js
+END

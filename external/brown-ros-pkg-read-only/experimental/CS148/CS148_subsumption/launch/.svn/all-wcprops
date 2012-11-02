@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2622/trunk/experimental/CS148/CS148_subsumption/launch
+END
+enclosure_escape.launch
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2622/trunk/experimental/CS148/CS148_subsumption/launch/enclosure_escape.launch
+END
+enclosure_escape_setup.launch
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2622/trunk/experimental/CS148/CS148_subsumption/launch/enclosure_escape_setup.launch
+END
+robot.launch
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2622/trunk/experimental/CS148/CS148_subsumption/launch/robot.launch
+END

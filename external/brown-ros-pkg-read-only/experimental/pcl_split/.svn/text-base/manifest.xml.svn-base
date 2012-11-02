@@ -1,0 +1,19 @@
+<package>
+  <description brief="pcl_split">
+
+     pcl_split
+
+  </description>
+  <author>Jihoon</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/pcl_split</url>
+  <depend package="rospy"/>
+  <depend package="pcl_ros"/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="sensor_msgs"/>
+
+</package>
+
+

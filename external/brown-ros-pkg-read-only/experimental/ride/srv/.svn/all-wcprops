@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2757/trunk/experimental/ride/srv
+END
+NodeSettingsGet.srv
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/NodeSettingsGet.srv
+END
+NodeOutput.srv
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/NodeOutput.srv
+END
+LinkDestroy.srv
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/LinkDestroy.srv
+END
+NodeCreate.srv
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/NodeCreate.srv
+END
+LaunchOutput.srv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/LaunchOutput.srv
+END
+NodeStop.srv
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/NodeStop.srv
+END
+LaunchCreate.srv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/LaunchCreate.srv
+END
+Load.srv
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/Load.srv
+END
+NodeDestroy.srv
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/NodeDestroy.srv
+END
+LinkCreate.srv
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/LinkCreate.srv
+END
+NodeSettingsSet.srv
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/NodeSettingsSet.srv
+END
+NodeStart.srv
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/NodeStart.srv
+END
+LaunchDestroy.srv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2757/trunk/experimental/ride/srv/LaunchDestroy.srv
+END

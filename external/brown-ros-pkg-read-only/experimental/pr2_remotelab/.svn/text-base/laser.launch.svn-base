@@ -1,0 +1,4 @@
+<launch>
+   <include file="$(find pr2_machine)/$(env ROBOT).machine" />
+   <include file="$(find pr2_navigation_perception)/lasers_and_filters.xml" /> 
+</launch>

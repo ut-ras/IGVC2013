@@ -1,0 +1,21 @@
+<package>
+  <description brief="cover">
+
+     cover
+
+  </description>
+  <author>obot</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/cover</url>
+  <depend package="rospy"/>
+  <depend package="perfesser"/>
+  <depend package="geometry_msgs"/>
+  <depend package="nav_msgs"/>
+  <depend package="irobot_create_2_1a"/>
+  <depend package="model_create"/>
+  <depend package="tgraph"/>
+
+</package>
+
+

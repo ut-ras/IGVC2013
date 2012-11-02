@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build
+END
+elinux.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/elinux.makefile
+END
+lib.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/lib.makefile
+END
+parrotOS_codec.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/parrotOS_codec.makefile
+END
+parrotOS_drivers.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/parrotOS_drivers.makefile
+END
+libplf.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/libplf.makefile
+END
+generic.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/generic.makefile
+END
+app.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/app.makefile
+END
+sdk.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/sdk.makefile
+END
+parrotOS_core.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/parrotOS_core.makefile
+END
+sysvar.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/sysvar.makefile
+END
+common.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/common.makefile
+END
+varcontrol.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/varcontrol.makefile
+END
+parrotOS_utils.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/parrotOS_utils.makefile
+END
+parrotOS_devs.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/parrotOS_devs.makefile
+END
+vlib.makefile
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/vlib.makefile
+END
+do.sh
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/do.sh
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/Makefile
+END

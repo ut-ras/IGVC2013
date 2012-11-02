@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2790/trunk/experimental/rosbridge_clients/Java/src/edu/brown/robotics/rosbridge
+END
+Rosbridge.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/2790/trunk/experimental/rosbridge_clients/Java/src/edu/brown/robotics/rosbridge/Rosbridge.java
+END
+MessageHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/2790/trunk/experimental/rosbridge_clients/Java/src/edu/brown/robotics/rosbridge/MessageHandler.java
+END
+RosbridgeSocket.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/2790/trunk/experimental/rosbridge_clients/Java/src/edu/brown/robotics/rosbridge/RosbridgeSocket.java
+END

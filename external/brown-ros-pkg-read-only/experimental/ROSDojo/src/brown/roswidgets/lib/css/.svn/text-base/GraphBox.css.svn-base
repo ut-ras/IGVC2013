@@ -1,0 +1,98 @@
+.GraphBox {
+  position: relative;
+  margin: 0;
+  font: 14px Arial;
+  overflow: auto;
+  width: 800px;
+  height: 600px;
+}
+
+.GraphBox canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.GraphBox table {
+  border-collapse: collapse;
+}
+
+.GraphBox td {
+  vertical-align: top;
+}
+
+.GraphBox * {
+  cursor: default;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+}
+
+.GraphBox .node {
+  min-width: 150px;
+  position: absolute;
+  border: 2px solid black;
+  padding: 7px 0;
+  background: rgba(31, 31, 31, 0.9);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  box-shadow: 0 0 5px black;
+  -moz-box-shadow: 0 0 5px black;
+  -webkit-box-shadow: 0 0 5px black;
+}
+
+.GraphBox .node.selected {
+  border: 2px solid yellow;
+}
+
+.GraphBox .node table {
+  width: 100%;
+}
+
+.GraphBox .node td {
+  color: white;
+  font-size: 11px;
+  padding: 0;
+}
+
+.GraphBox .node .title {
+  margin: -3px 0 5px 0;
+  color: yellow;
+  font: 12px monospace;
+  padding: 0 10px 5px 10px;
+}
+
+.GraphBox .node .input {
+  padding: 0 10px 0 19px;
+}
+
+.GraphBox .node .output {
+  padding: 0 19px 0 10px;
+  text-align: right;
+}
+
+.GraphBox .bullet {
+  width: 6px;
+  height: 6px;
+  padding: 3px;
+  display: inline-block;
+}
+
+.GraphBox .bullet div {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.GraphBox .node .input .bullet {
+  float: left;
+  margin-left: -12px;
+}
+
+.GraphBox .node .output .bullet {
+  float: right;
+  margin-right: -12px;
+}

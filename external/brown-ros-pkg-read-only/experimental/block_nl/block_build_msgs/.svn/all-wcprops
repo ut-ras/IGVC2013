@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2394/trunk/experimental/block_nl/block_build_msgs
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2259/trunk/experimental/block_nl/block_build_msgs/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2259/trunk/experimental/block_nl/block_build_msgs/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2308/trunk/experimental/block_nl/block_build_msgs/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2259/trunk/experimental/block_nl/block_build_msgs/Makefile
+END

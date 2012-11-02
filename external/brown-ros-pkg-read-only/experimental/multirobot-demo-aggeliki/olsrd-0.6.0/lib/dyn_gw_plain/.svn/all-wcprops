@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/dyn_gw_plain
+END
+version-script.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/dyn_gw_plain/version-script.txt
+END
+README_DYN_GW_PLAIN
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/dyn_gw_plain/README_DYN_GW_PLAIN
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/dyn_gw_plain/Makefile
+END

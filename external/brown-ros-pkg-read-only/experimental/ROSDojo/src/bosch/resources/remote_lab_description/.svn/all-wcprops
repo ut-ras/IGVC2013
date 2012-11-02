@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description
+END
+table_urdf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2866/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/table_urdf.xml
+END
+remote_lab_urdf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/2866/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/remote_lab_urdf.xml
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2622/trunk/experimental/CS148/CS148_inverse_kinematics/launch
+END
+empty_world_paused.launch
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2622/trunk/experimental/CS148/CS148_inverse_kinematics/launch/empty_world_paused.launch
+END
+pr2_modified_controllers.launch
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/2622/trunk/experimental/CS148/CS148_inverse_kinematics/launch/pr2_modified_controllers.launch
+END
+inverse_kinematics_setup.launch
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/2622/trunk/experimental/CS148/CS148_inverse_kinematics/launch/inverse_kinematics_setup.launch
+END

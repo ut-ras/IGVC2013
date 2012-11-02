@@ -1,0 +1,14 @@
+<package>
+  <description brief="hbase">
+A node for logging data in hbase.
+
+  </description>
+  <author>Jesse Butterfield and Basia Korel</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/hbase</url>
+  <depend package="rospy"/>
+
+</package>
+
+

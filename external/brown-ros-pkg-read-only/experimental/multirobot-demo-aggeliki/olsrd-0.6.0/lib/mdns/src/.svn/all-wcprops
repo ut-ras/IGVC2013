@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/mdns/src
+END
+mdns.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/mdns/src/mdns.c
+END
+olsrd_plugin.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/mdns/src/olsrd_plugin.c
+END
+NetworkInterfaces.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/mdns/src/NetworkInterfaces.h
+END
+Address.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/mdns/src/Address.c
+END
+mdns.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/mdns/src/mdns.h
+END
+Packet.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/mdns/src/Packet.c
+END
+Address.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/mdns/src/Address.h
+END
+Packet.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/mdns/src/Packet.h
+END
+NetworkInterfaces.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/mdns/src/NetworkInterfaces.c
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/700/trunk/experimental/sogp/sogp_ros
+END
+sogp_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/697/trunk/experimental/sogp/sogp_ros/sogp_test.cpp
+END
+sogp_ros.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/700/trunk/experimental/sogp/sogp_ros/sogp_ros.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/696/trunk/experimental/sogp/sogp_ros/CMakeLists.txt
+END

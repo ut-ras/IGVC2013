@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions
+END
+dissolve.css
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/dissolve.css
+END
+flip.css
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/flip.css
+END
+zoomIn.css
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/zoomIn.css
+END
+zoomOut.css
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/zoomOut.css
+END
+cover.css
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/cover.css
+END
+reveal.css
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/reveal.css
+END
+scaleIn.css
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/scaleIn.css
+END
+scaleOut.css
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/scaleOut.css
+END
+fade.css
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/fade.css
+END
+swirl.css
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/swirl.css
+END
+slide.css
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/slide.css
+END
+revealv.css
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/revealv.css
+END
+coverv.css
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/coverv.css
+END
+slidev.css
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/mobile/themes/common/transitions/slidev.css
+END

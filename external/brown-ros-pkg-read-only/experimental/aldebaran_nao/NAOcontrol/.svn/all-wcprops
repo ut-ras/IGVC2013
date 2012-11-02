@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/985/trunk/experimental/aldebaran_nao/NAOcontrol
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/985/trunk/experimental/aldebaran_nao/NAOcontrol/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/NAOcontrol/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/NAOcontrol/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/NAOcontrol/Makefile
+END

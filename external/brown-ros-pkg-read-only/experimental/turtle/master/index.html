@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+  <title>Turtles on Down</title>
+  <script type="text/javascript" src="ros.js"></script>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript">
+$(function() {
+  var noTurtles = 20;
+  var con = null;
+  var subs = [];
+  var pose= /.*\/pose$/;
+  var win = $(window);
+  var height = win.height;
+  var width = win.width;
+  var contain = $('#contain');
+
+  var w;
+  var h;
+  var scale;
+
+  var h2 = $('#message');
+  function msg(message) {
+    h2.html(message);
+  }
+
+  function poseTurtle(name,msg) {
+    var x = Math.floor(msg.x/10*scale+.5);
+    var y = Math.floor(scale-(msg.y/10*scale)+.5)+65;
+    $('#' + name).css({'top':y+'px','left':x+'px'});
+    var deg = -1*msg.theta*180/Math.PI+90+'deg';
+    $('#' + name).css({
+      'transform': 'rotate('+deg+')',
+      '-ms-transform': 'rotate('+deg+')',
+      '-webkit-transform': 'rotate('+deg+')',
+      '-o-transform': 'rotate('+deg+')',
+      '-moz-transform': 'rotate('+deg+')'
+    });
+  }
+
+  function reconnect(url) {
+    w = win.width();
+    h = win.height()-65;
+    scale = w;
+    if (h < scale) scale = h*.9;
+    $('.turtle').remove();
+    var cleanDFD = $.Deferred();
+    var cleanedUp = cleanDFD.promise();
+    if (con != null) {
+      var state = function() {};
+      state.idx = -1;
+      function unsub() {
+        state.idx += 1;
+        if (state.idx >= subs.length) {
+          cleanDFD.resolve();
+          return;
+        }
+        msg('unsubscribing to ' + subs[state.idx]);
+        con.callService('/rosjs/unsubscribe',[subs[state.idx]],unsub);
+      }
+      unsub();
+    } else {
+      cleanDFD.resolve();
+    }
+
+    $.when(cleanedUp).then(function() {
+      if (con != null) con.socket.close();
+      msg('connecting to ' + url + '...');
+
+      con = new ros.Connection(url);
+
+      con.setOnError(function(e) {
+        msg('problem with connection');
+      });
+
+      con.setOnClose(function(e) {
+        msg('connection closed');
+      });
+
+      con.setOnOpen(function() {
+        msg('connected');
+
+        //clear old Turtles
+        var deathDFD = $.Deferred();
+        var turtlesAreDead = deathDFD.promise();
+        con.callService('/rosjs/topics',[],function(topics) {
+          var deathlist = [];
+          for (var i in topics) {
+            var topic = topics[i];
+            if (pose.test(topic)) {
+              var name = topic.slice(1,topic.length-5)
+              deathlist.push(name);
+            }
+          }
+
+          var state = function(){};
+          state.idx = -1;
+          function killTurtle() {
+            state.idx += 1;
+            if (state.idx >= deathlist.length) {
+              deathDFD.resolve();
+              return;
+            }
+            msg('killing ' + deathlist[state.idx]);
+            con.callService('/kill',[deathlist[state.idx]],killTurtle);
+          }
+          killTurtle();
+
+        //end topics response
+        });
+
+        var spawnDFD = $.Deferred();
+        var turtlesAreSpawned = spawnDFD.promise();
+        function spawnTurtles() {
+          msg('spawning new turtles');
+          var state = function() {};
+          state.idx = -1;
+          function spawnTurtle() {
+            state.idx += 1;
+            if (state.idx >= noTurtles) {
+              spawnDFD.resolve();
+              return;
+            }
+            con.callService('/spawn',[Math.random()*9+1,Math.random()*9+1,Math.PI/2,''],spawnTurtle);
+          }
+          spawnTurtle();
+        }
+
+        function subscribe() {
+          con.callService('/rosjs/topics',[],function(topics) {
+            subs = ['/msg']; 
+            con.addHandler('/msg',function(message) {
+              msg(message.data);
+            });
+            con.callService('/rosjs/subscribe#msg',['/msg',-1,'std_msgs/String'],function() {});
+            for (var i in topics) {
+              var topic = topics[i];
+              if (!pose.test(topic)) continue;
+              var name = topic.slice(1,topic.length-5)
+              var num = name.slice(name.match(/[0-9]/).index,name.length)
+              while (num.length < 3) num = '0' + num;
+              subs.push(topic);
+              var turtle = '<div id="'+name+'" class="turtle" style="border-color: transparent transparent rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+') transparent;"><div class="label">'+num+'</div></div>';
+              contain.append(turtle);
+              con.addHandler(topic,(function() {
+                var myName = name;
+                return function(msg) {
+                  poseTurtle(myName,msg);
+                }
+              }).call());
+              con.callService('/rosjs/subscribe#' + num,[topic,66],function() {});
+            }
+          });
+        }
+
+        $.when(turtlesAreDead).then(spawnTurtles);
+        $.when(turtlesAreSpawned).then(subscribe);
+
+      //end setOnOpen
+      });
+
+    //end whenCleaned
+    });
+      
+  //end reconnect
+  }
+
+  var form = $('#control');
+  form.find('input:submit[name=connect]').click(function() {
+    var url = 'ws://' + form.find('input:text[name=URL]').val();
+    reconnect(url);
+    return false;
+  });
+  
+  form.find('input:text[name=URL]').val(document.location.hostname+":9090");
+
+});
+  </script>
+  <style>
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+}
+
+#contain {
+  position: relative;
+}
+
+.message {    
+	border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 5px 10px;
+}
+
+.turtle {
+  font-size: 1.25em;
+  font-weight: bold;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-style: solid;
+  border-width: 0em 1.25em 1.25em 1.25em;
+  height: 0px;
+  width: 0px;
+}
+
+.label {
+  position: relative;
+  top: 1em;
+  left: -1em;
+  padding-top: 2px;
+}
+  </style>
+</head>
+<body>
+<div id="contain">
+  <form id="control" style="margin-left: 1em; margin-top: 1em;">
+    ws://<input type="text"name="URL" size="60"></input>
+    <input type="submit" name="connect" value="(re)connect"></input>
+    <h2 id="message" class="message">ready to connect</h2>
+  </form>
+</div>
+</body>
+</html>

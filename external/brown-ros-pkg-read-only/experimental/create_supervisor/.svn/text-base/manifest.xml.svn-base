@@ -1,0 +1,17 @@
+<package>
+  <description brief="create_supervisor">
+
+     create_supervisor
+
+  </description>
+  <author>Galatea</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/create_supervisor</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="irobot_create_2_1"/>
+
+</package>
+
+

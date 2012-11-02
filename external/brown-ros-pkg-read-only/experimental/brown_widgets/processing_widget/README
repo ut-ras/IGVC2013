@@ -1,0 +1,9 @@
+/wviz/
+- test_processing.html
+- process.pde
+- processingjs/
+
+/wviz/ros/widgets/
+- processingwidget.js
+
+Also widgets.js needs to include processingwidget.js

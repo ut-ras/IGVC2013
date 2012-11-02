@@ -1,0 +1,5 @@
+irobot-create.png adapted from http://irbt.imageg.net/graphics/product_images/pG01-3426567dt.jpg (copyright iRobot Corp.)
+nxt.png adapted from http://www.uaerobotchallenge.com/Pictures/General/images/NXT%20Brick_jpg.jpg
+ball.png adapted from http://s2.thisnext.com/media/400x400/Champion-Sports-Rhino-Skin_36A08051.jpg
+
+Images here are believed to be under "fair use", as they are small and used in an educational/nonprofit environment.

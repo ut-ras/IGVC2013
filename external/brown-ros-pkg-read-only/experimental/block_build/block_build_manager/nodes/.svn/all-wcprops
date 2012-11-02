@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2465/trunk/experimental/block_build/block_build_manager/nodes
+END
+init_robot.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2465/trunk/experimental/block_build/block_build_manager/nodes/init_robot.py
+END
+BuildManager.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2465/trunk/experimental/block_build/block_build_manager/nodes/BuildManager.py
+END
+pick_place.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2465/trunk/experimental/block_build/block_build_manager/nodes/pick_place.py
+END
+place_block.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2465/trunk/experimental/block_build/block_build_manager/nodes/place_block.py
+END
+test.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2465/trunk/experimental/block_build/block_build_manager/nodes/test.py
+END
+pickup_block.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2465/trunk/experimental/block_build/block_build_manager/nodes/pickup_block.py
+END

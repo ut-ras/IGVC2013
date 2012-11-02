@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/nodes
+END
+delete_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/nodes/delete_blocks.py
+END
+reset_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/nodes/reset_blocks.py
+END
+build.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/nodes/build.py
+END
+placer_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/nodes/placer_test.py
+END
+add_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/nodes/add_blocks.py
+END

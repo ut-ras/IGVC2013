@@ -1,0 +1,24 @@
+<package>
+  <description brief="ardrone_planner">
+
+     ardrone_planner
+
+  </description>
+  <author>Arjun</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ardrone_planner</url>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="bullet"/>
+  <depend package="visualization_msgs"/>
+  <depend package="costmap_2d"/>
+  <depend package="map_server"/>
+  <depend package="nav_msgs"/>
+  <depend package="move_base_msgs"/>
+  <depend package="navfn"/>
+  <depend package="ardrone_lclzr"/>
+</package>
+
+

@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="traffic_cone"      textfile="$(find gazebo_worlds)/objects/traffic_cone.model" />
+
+  <!-- push urdf to factory and spawn robot in gazebo -->
+  <node name="spawn_traffic_cone" pkg="gazebo_tools" type="gazebo_model" args="-p traffic_cone-x 1 -y -0.22 -z .57 spawn traffic_cone" respawn="false" output="screen" />
+
+</launch>

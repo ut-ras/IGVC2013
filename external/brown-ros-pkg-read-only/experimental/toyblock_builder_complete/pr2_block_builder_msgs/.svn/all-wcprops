@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder_msgs
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder_msgs/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder_msgs/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder_msgs/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder_msgs/Makefile
+END

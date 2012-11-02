@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_potentfield_nomap
+END
+coverage_potentfield_nomap_part1.launch
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_potentfield_nomap/coverage_potentfield_nomap_part1.launch
+END
+coverage_potentfield_nomap_part2.launch
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_potentfield_nomap/coverage_potentfield_nomap_part2.launch
+END
+coverage_potentfield_nomap_part3.launch
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_potentfield_nomap/coverage_potentfield_nomap_part3.launch
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_potentfield_nomap/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_potentfield_nomap/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_potentfield_nomap/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination/coverage_potentfield_nomap/Makefile
+END

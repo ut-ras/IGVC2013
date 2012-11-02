@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common
+END
+atcodec_client.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common/atcodec_client.c
+END
+com_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common/com_client.h
+END
+com_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common/com_server.c
+END
+atcodec_client.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common/atcodec_client.h
+END
+common.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common/common.c
+END
+atcodec_server.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common/atcodec_server.c
+END
+com_server.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common/com_server.h
+END
+com_client.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common/com_client.c
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common/common.h
+END
+atcodec_server.h
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Examples/common/atcodec_server.h
+END

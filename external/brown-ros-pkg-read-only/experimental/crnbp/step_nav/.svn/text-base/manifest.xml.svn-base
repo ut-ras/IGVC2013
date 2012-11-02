@@ -1,0 +1,20 @@
+<package>
+  <description brief="step_nav">
+    SUPERSEDED BY GNAV
+  </description>
+  <author>Tom Sgouros</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/step_nav</url>
+  <depend package="rospy"/>
+  <depend package="roslib"/>
+  <depend package="geometry_msgs"/>
+  <depend package="irobot_create_2_1a"/>
+  <depend package="perfesser"/>
+  <!-- testing dependencies -->
+  <depend package="tgraph"/>
+  <depend package="position_tracker"/>
+
+</package>
+
+

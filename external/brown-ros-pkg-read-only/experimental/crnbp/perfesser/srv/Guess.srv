@@ -1,0 +1,28 @@
+# This service message is used by the perfesser guesser routines to query a
+# guesser and update a guess.
+Header header
+# A human-readable indication of the kind of data we're manipulating here.
+string data_type
+# The most recent time this estimate has been updated.
+time source_stamp
+# A string describing the kind of data we're looking at and whence it came.
+string source_data
+# An array indicating the number of dimensions and the period for each one.
+# Use zero for aperiodic dimensions.
+float32[] pers
+# Means and variances of the input point array.
+float32[] means
+float32[] stds
+# The array of points input to the guesser routine.
+Pt[] inPoints
+---
+# This is set to True if there is no updated data available.
+bool no_data
+# A string identifying the sender
+string sender
+# An updated time stamp.
+time source_stamp
+# A string with the most recent data on which this guess is based.
+string source_data
+# The output points.
+Pt[] outPoints

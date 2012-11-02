@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/reduced_joint_state_publisher/src/joint_state_publisher/srv
+END
+_RequestedJointStates.py
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/reduced_joint_state_publisher/src/joint_state_publisher/srv/_RequestedJointStates.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/reduced_joint_state_publisher/src/joint_state_publisher/srv/__init__.py
+END

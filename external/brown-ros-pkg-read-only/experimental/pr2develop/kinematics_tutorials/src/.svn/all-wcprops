@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/503/trunk/experimental/pr2develop/kinematics_tutorials/src
+END
+get_collision_free_ik.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/503/trunk/experimental/pr2develop/kinematics_tutorials/src/get_collision_free_ik.cpp
+END
+get_ik.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/503/trunk/experimental/pr2develop/kinematics_tutorials/src/get_ik.cpp
+END
+get_solver_info.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/503/trunk/experimental/pr2develop/kinematics_tutorials/src/get_solver_info.cpp
+END

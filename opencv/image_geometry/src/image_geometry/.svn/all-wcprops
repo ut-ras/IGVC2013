@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ros-pkg/!svn/ver/37455/stacks/vision_opencv/trunk/image_geometry/src/image_geometry
+END
+cameramodels.py
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ros-pkg/!svn/ver/37455/stacks/vision_opencv/trunk/image_geometry/src/image_geometry/cameramodels.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ros-pkg/!svn/ver/25671/stacks/vision_opencv/trunk/image_geometry/src/image_geometry/__init__.py
+END

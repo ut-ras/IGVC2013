@@ -1,0 +1,16 @@
+<package>
+  <description brief="naoTalk">
+     naoTalk demonstrates the use of String messages to make use of the NAO's text-to-speech capabilities.
+  </description>
+  <author>Graylin Trevor Jay</author>
+  <email>tjay@cs.brown.edu</email>
+  <license>BSD</license>
+
+  <review status="unreviewed" notes=""/>
+
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+
+</package>
+
+

@@ -1,0 +1,19 @@
+<package>
+  <description brief="bag_and_tag">
+
+     bag_and_tag
+
+  </description>
+  <author>obot</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/bag_and_tag</url>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="geometry_msgs"/>
+  <depend package="ar_recog"/>
+  <depend package="irobot_create_2_1"/>
+
+</package>
+
+

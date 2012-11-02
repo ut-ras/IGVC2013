@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/778/trunk/experimental/pr2develop/pr2_camera_tele
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/778/trunk/experimental/pr2develop/pr2_camera_tele/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/503/trunk/experimental/pr2develop/pr2_camera_tele/mainpage.dox
+END
+startup.launch
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/758/trunk/experimental/pr2develop/pr2_camera_tele/startup.launch
+END
+arms.launch
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/778/trunk/experimental/pr2develop/pr2_camera_tele/arms.launch
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/758/trunk/experimental/pr2develop/pr2_camera_tele/CMakeLists.txt
+END

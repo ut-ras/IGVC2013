@@ -1,0 +1,22 @@
+<package>
+  <description brief="nxt_robot_mindstorms2_quickstart">
+
+This is the "quickstart" robot design specified in the Lego Mindstorms 2.0 NXT (8547) kit user guide.  I am unsure what robot.ldr, robot.lxf, and robot.urdf do, so they remain unchanged from nxt_robot_sensor_car.  However, the robot appears to do fine with teleoperation as-is.  Sensors are attached as recommended in the user guide.
+
+(Many thanks to Melonee Wise for the nxt_robot_sensor_car node, which I modified to create this node.)
+
+  </description>
+  <author>Brian Thomas</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <depend package="nxt_ros"/>
+  <depend package="nxt_controllers"/>
+  <depend package="robot_pose_ekf"/>
+  <depend package="nxt_description" />
+  <depend package="robot_state_publisher" />
+
+
+</package>
+
+

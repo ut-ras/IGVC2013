@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="stop_sign"      textfile="$(find gazebo_worlds)/objects/stop_sign.model" />
+
+  <!-- push urdf to factory and spawn robot in gazebo -->
+  <node name="spawn_stop_sign" pkg="gazebo_tools" type="gazebo_model" args="-p stop_sign -x 1 -y -0.22 -z .57 spawn stop_sign" respawn="false" output="screen" />
+
+</launch>

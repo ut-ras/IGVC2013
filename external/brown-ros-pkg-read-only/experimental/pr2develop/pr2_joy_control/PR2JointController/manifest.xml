@@ -1,0 +1,21 @@
+<package>
+  <description brief="PR2JointController">
+
+     PR2JoyControl
+
+  </description>
+  <author>Alex Tarvo</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/PR2JoyControl</url>
+
+  <depend package="pr2_controller_interface"/>
+  <depend package="pr2_mechanism_model"/>
+  <depend package="pluginlib"/>
+
+  <export>
+    <pr2_controller_interface plugin="${prefix}/controller_plugins.xml" />
+    <cpp cflags="-I${prefix}/msg/cpp;-I${prefix}/msg_gen/cpp/include"/>
+  </export>
+  
+</package>

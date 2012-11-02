@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1827/trunk/experimental/ardrone_nav/ardrone_planner
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_planner/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_planner/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_planner/CMakeLists.txt
+END

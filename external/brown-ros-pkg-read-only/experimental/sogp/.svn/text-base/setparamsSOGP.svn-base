@@ -1,0 +1,5 @@
+rosparam set InputDimension 4
+rosparam set OutputDimension 3
+rosparam set Capacity 60
+rosparam set W 0.2
+rosparam set N 0.1

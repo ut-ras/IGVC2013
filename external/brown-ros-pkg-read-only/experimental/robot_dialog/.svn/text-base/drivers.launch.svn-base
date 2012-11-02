@@ -1,0 +1,6 @@
+<launch>
+  <!-- Drivers -->
+  <param name="/brown/irobot_create_2_1/port" value="/dev/rfcomm0" />
+  <node name="irobot_create_2_1" pkg="irobot_create_2_1" type="driver.py" />
+</launch>
+

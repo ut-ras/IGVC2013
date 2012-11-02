@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ffmpeg_Intel_PROD_MODE_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/Stages
+END
+vlib_stage_encode.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ffmpeg_Intel_PROD_MODE_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/Stages/vlib_stage_encode.c.d
+END
+vlib_stage_decode.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ffmpeg_Intel_PROD_MODE_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/Stages/vlib_stage_decode.c.d
+END

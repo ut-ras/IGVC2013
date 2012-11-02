@@ -1,0 +1,18 @@
+<package>
+  <description brief="irobot_test">
+
+     irobot_test
+
+  </description>
+  <author>Sosentos</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+<depend package="discreteMove_0_0_1"/>
+
+<export>
+  <cpp cflags="-I${prefix}/svr/cpp"/>
+</export>
+
+</package>
+
+

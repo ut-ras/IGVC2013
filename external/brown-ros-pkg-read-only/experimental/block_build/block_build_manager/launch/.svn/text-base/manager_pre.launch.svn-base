@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find simple_robot_control)/launch/simple_robot_control_without_collision_checking.launch" /> 
+
+  <include file="$(find block_build_manager)/launch/self_filter.launch" />
+<!--  <include file="$(find tabletop_segmentor)/launch/tabletop_segmentation.launch" />
+  <include file="$(find object_manager)/launch/object_manager.launch" />-->
+</launch>

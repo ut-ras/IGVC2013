@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find block_build_manager)/launch/manager_pre.launch" />
+    <include file="$(find block_build_manager)/launch/manager.launch"/>
+    <node name="BuildManager" pkg="block_build_manager" type="BuildManager.py" respawn="false" output="screen" />
+</launch>

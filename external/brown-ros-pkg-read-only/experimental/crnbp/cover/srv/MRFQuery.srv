@@ -1,0 +1,22 @@
+# This contains a description of the request and reply made in service of the 
+# multi-robot MRF research project.  The query is in the form of a
+# suggestion that a robot should go to a 2-dimensional point and the
+# reply is on a scale from 0 to 1 (not inclusive) indicating how much
+# the robot queried agrees with the suggestion.  
+Header header
+# 
+time source_stamp
+#
+string asker
+#
+string asked
+# The question is a collection of 2-d points.  For now, it's a 1-d thing.
+perfesser/Pt[] question
+---
+# Set to True if the asked has no useful information.
+bool no_data
+#
+time source_stamp
+# Here is the reply, a collection of values from 1 to 127 representing
+# points between 0 and 1. 
+perfesser/Pt[] reply

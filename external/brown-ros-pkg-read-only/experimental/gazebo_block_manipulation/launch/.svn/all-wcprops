@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2621/trunk/experimental/gazebo_block_manipulation/launch
+END
+toyblock_builder_pr2_gazebo.launch
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/2475/trunk/experimental/gazebo_block_manipulation/launch/toyblock_builder_pr2_gazebo.launch
+END
+empty_world_paused.launch
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2611/trunk/experimental/gazebo_block_manipulation/launch/empty_world_paused.launch
+END
+pr2_modified_controllers.launch
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2614/trunk/experimental/gazebo_block_manipulation/launch/pr2_modified_controllers.launch
+END
+blocknlp_pr2_gazebo.launch
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/2616/trunk/experimental/gazebo_block_manipulation/launch/blocknlp_pr2_gazebo.launch
+END
+blocknlp_managers.launch
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2621/trunk/experimental/gazebo_block_manipulation/launch/blocknlp_managers.launch
+END

@@ -1,0 +1,21 @@
+<package>
+  <description brief="ar_localizer">
+
+     ar_localizer
+
+  </description>
+  <author>Christopher Crick</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ar_localizer</url>
+  <depend package="rospy" />
+  <depend package="sensor_msgs" />
+  <depend package="geometry_msgs" />
+  <depend package="ar_recog"/>
+  <depend package="position_tracker"/>
+  
+  <!--<depend package="nav_msgs" />-->
+
+</package>
+
+

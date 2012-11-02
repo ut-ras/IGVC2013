@@ -1,0 +1,15 @@
+<package>
+  <description brief="exampleClient">
+
+     exampleClient
+
+  </description>
+  <author>obot</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/exampleClient</url>
+  <depend package="discreteMove"/>
+
+</package>
+
+

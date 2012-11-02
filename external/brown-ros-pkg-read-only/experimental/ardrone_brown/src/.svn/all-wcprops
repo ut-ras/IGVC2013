@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/1487/trunk/experimental/ardrone_brown/src
+END
+ardrone_sdk.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1484/trunk/experimental/ardrone_brown/src/ardrone_sdk.h
+END
+teleop_twist.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1484/trunk/experimental/ardrone_brown/src/teleop_twist.cpp
+END
+ardrone_driver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1487/trunk/experimental/ardrone_brown/src/ardrone_driver.cpp
+END
+video.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/964/trunk/experimental/ardrone_brown/src/video.cpp
+END
+teleop_twist.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1484/trunk/experimental/ardrone_brown/src/teleop_twist.h
+END
+ardrone_driver.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1486/trunk/experimental/ardrone_brown/src/ardrone_driver.h
+END
+ardrone_sdk.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1484/trunk/experimental/ardrone_brown/src/ardrone_sdk.cpp
+END
+video.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/964/trunk/experimental/ardrone_brown/src/video.h
+END

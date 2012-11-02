@@ -1,0 +1,7 @@
+<launch>
+
+  <param name="/brown/irobot_create_2_1/port" value="/dev/rfcomm0" />
+  <node name="irobot_create_2_1" pkg="irobot_create_2_1" type="driver.py" />
+  <node name="position_tracker" pkg="position_tracker" type="position_tracker.py" />
+  <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" />
+</launch>

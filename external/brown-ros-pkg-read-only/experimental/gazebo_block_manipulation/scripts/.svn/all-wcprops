@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2602/trunk/experimental/gazebo_block_manipulation/scripts
+END
+blocknlp_table_setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2602/trunk/experimental/gazebo_block_manipulation/scripts/blocknlp_table_setup.py
+END
+delete_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2474/trunk/experimental/gazebo_block_manipulation/scripts/delete_blocks.py
+END
+toyblock_builder_table_setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2474/trunk/experimental/gazebo_block_manipulation/scripts/toyblock_builder_table_setup.py
+END

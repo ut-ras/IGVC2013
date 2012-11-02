@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/643/trunk/experimental/sogp_node/srv/lisp/sogp_node
+END
+Predict.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/643/trunk/experimental/sogp_node/srv/lisp/sogp_node/Predict.lisp
+END
+.Predict.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/643/trunk/experimental/sogp_node/srv/lisp/sogp_node/.Predict.asd-dep
+END
+.PredictVector.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/643/trunk/experimental/sogp_node/srv/lisp/sogp_node/.PredictVector.asd-dep
+END
+.SetParameters.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/643/trunk/experimental/sogp_node/srv/lisp/sogp_node/.SetParameters.asd-dep
+END
+.SetParams.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/643/trunk/experimental/sogp_node/srv/lisp/sogp_node/.SetParams.asd-dep
+END
+.PredictMatrix.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/643/trunk/experimental/sogp_node/srv/lisp/sogp_node/.PredictMatrix.asd-dep
+END
+_package_Predict.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/643/trunk/experimental/sogp_node/srv/lisp/sogp_node/_package_Predict.lisp
+END
+sogp_node-srv.asd
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/643/trunk/experimental/sogp_node/srv/lisp/sogp_node/sogp_node-srv.asd
+END
+.Reset.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/643/trunk/experimental/sogp_node/srv/lisp/sogp_node/.Reset.asd-dep
+END

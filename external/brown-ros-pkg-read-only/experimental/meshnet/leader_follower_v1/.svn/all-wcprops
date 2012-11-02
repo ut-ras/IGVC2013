@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/757/trunk/experimental/meshnet/leader_follower_v1
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/757/trunk/experimental/meshnet/leader_follower_v1/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/756/trunk/experimental/meshnet/leader_follower_v1/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/756/trunk/experimental/meshnet/leader_follower_v1/CMakeLists.txt
+END

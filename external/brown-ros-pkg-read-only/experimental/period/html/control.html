@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="ros.js"></script>
+  <script type="text/javascript">
+$(function() {
+  function nop() {};
+
+  var con = new ros.Connection('ws://132.230.167.209:9090');
+  //var con = new ros.Connection('ws://192.168.167.104:9091');
+  con.setOnError(function() {
+    console.log('Error!');
+  });
+  con.setOnClose(function() {
+    console.log('Closed!');
+  });
+  con.setOnOpen(function() {
+    $('#target').click(function() {
+      console.log('setting comparison...');
+      con.publish('/period/detect','std_msgs/Int8',{data:1});
+      return false;
+    });
+    $('#find').click(function() {
+      console.log('triggering detection...');
+      con.publish('/period/detect','std_msgs/Int8',{data:2});
+      return false;
+    });
+    $('#null').click(function() {
+      console.log('resting...');
+      con.publish('/period/detect','std_msgs/Int8',{data:0});
+      return false;
+    });
+
+    con.addHandler('/period/period',function(msg) {
+      $('#info input[name="period"]').val(msg.data);
+      $('#info input[name="time"]').val(Math.floor(msg.data*3+.5));
+    });
+    con.callService('/rosjs/subscribe',['/period/period',0,'std_msgs/Float32'],nop);
+
+    function track() {
+      con.publish('/period/detect','std_msgs/Int8',{data:3});
+    }
+
+    $('#track').change(function(e) {
+      tracking = $('#track').is(':checked');
+      if (tracking) track();
+    });
+
+    setInterval(function() {
+      var val = $('#info input[name="period"]').val();
+      val = parseFloat(val);
+      console.log(val);
+      con.publish('/period/period_latched','std_msgs/Float32',{data:val});
+    },1000);
+
+  });
+});
+  </script>
+</head>
+<body>
+<form id="info" name="info">
+  period: <input type="text" name="period" value="33.18"/><br/>
+  <button id="null">Null</button><br/>
+  <button id="target">Set Target</button><br/>
+  <button id="find">Find Period</button><br/><br/>
+
+  Threshold: <input type="text" value="96.0" id="threshold" name="threshold"/><br/>
+  <input type="checkbox" name="track" id="track" value="Tracking">Tracking</input>
+</form>
+</body>
+</html>

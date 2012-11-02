@@ -1,0 +1,92 @@
+.border {
+	border: 1px solid #B5BCC7;
+	border-radius: 2px;
+}
+
+.clearall {
+	clear: both;	
+}
+
+.webglerror {
+	vertical-align: middle;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	font-style: italic;
+	color: #777777;
+}
+
+.blockcontrolpanel {
+	width: 130px;
+}
+
+.blockcontrolpanel .dijitButton .dijitButtonNode {
+	width: 115px;
+}
+
+.blockui {
+	text-align: center;
+}
+
+.blockui .controls {
+	padding-top: 8px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.blockui .statusdisplay {
+	padding-bottom: 3px;
+	background-color: #E5F2FE;
+	border-radius: 5px;
+	border: 1px solid #759DC0;
+	font-size: 14pt;
+	width: 400px;
+	text-align: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.blockui .statusdisplay .title {
+	background-color: #ABD6FF;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius:5px;
+	border: 1px solid #759DC0;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	margin: -1px;
+}
+
+.blockui .statusdisplay .status {
+	color: #444444;
+	padding-left: 15px;
+}
+
+.blockui .controls > div {
+	display: inline-block;
+}
+
+.blockui .floatwrapper {
+	float: right;
+	position: relative;
+	left: -50%;
+	text-align: left;
+}
+
+.blockui .floatwrapper .components {
+	position: relative;
+	left: 50%;
+}
+
+.blockui .floatwrapper .components > div {
+	float: left;
+	text-align: center;
+}
+
+.blockui .components .blockvisualiser {
+}
+
+.blockui .components .blockplacer {
+	padding-left: 110px;
+	padding-top: 20px;
+}

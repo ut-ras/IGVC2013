@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/thingi
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/thingi/LICENSE
+END
+binaryReader.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/thingi/binaryReader.js
+END
+thingiloader.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/thingi/thingiloader.js
+END
+README.markdown
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/thingi/README.markdown
+END

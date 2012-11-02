@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<field>
+    <width>43</width> <!-- inches -->
+    <height>45</height>
+    <border_color>rgb(0,0,0)</border_color> <!-- black -->
+    <marker_color>rgb(255,255,0)</marker_color>  <!-- yellow -->
+</field>
+
+
+

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/985/trunk/experimental/nolan
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/985/trunk/experimental/nolan/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/747/trunk/experimental/nolan/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/747/trunk/experimental/nolan/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/747/trunk/experimental/nolan/Makefile
+END

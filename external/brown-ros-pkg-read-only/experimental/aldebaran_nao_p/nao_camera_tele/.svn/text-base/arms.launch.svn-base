@@ -1,0 +1,12 @@
+<launch>
+
+
+  <!-- set input dimension -->
+  <param name="nao_camera_tele/r_arm_id" type="int" value="1"/>
+
+  <!-- set output dimension -->
+  <param name="nao_camera_tele/l_arm_id" type="int" value="10"/>
+
+	<param name="nao_camera_tele/r_hand_id" type="int" value="0"/>
+  <node name="nao_camera_tele" pkg="nao_camera_tele" type="nao_camera_tele" output="screen"/>
+</launch>

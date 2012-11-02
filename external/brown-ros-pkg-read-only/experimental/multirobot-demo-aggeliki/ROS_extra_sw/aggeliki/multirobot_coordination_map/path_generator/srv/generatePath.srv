@@ -1,0 +1,6 @@
+uint32 type
+map_loader/GraphMap gmap
+position_tracker/Position init_pos
+position_tracker/Position dst_pos
+---
+path_navigator/Waypoints w

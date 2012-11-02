@@ -1,0 +1,35 @@
+<launch>
+  <!--start gazebo with a simple world for drink serving -->
+  <param name="/use_sim_time" value="true"/>
+ 
+  <param name="table_description" command="$(find xacro)/xacro.py $(find pr2_drinkserving)/objects/table.urdf.xacro" />
+  <param name="wine" textfile="$(find pr2_drinkserving)/objects/wineglass.model" />
+  <param name="coffee_cup" textfile="$(find pr2_drinkserving)/objects/coffee_cup.model" />
+<param name="tray" textfile="$(find pr2_drinkserving)/objects/tray.model" />
+  
+
+
+ <!--push urdfs to factory and spawn them in gazebo-->
+
+  <node name ="gazebo" pkg="gazebo" type="gazebo" args="$(find pr2_drinkserving)/worlds/drinkserving.world" respawn="false" output="screen">
+   <env name="LD_LIBRARY_PATH" value="$(find gazebo_plugins)/lib:$(find pr2_gazebo_plugins)/lib:$(find gazebo)/gazebo/lib:$(optenv LD_LIBRARY_PATH)" />
+   <env name="GAZEBO_RESOURCE_PATH" value="$(find pr2_ogre):$(find pr2_description):$(find gazebo_worlds):$(find gazebo)/gazebo/share/gazebo" />
+   <env name="OGRE_RESOURCE_PATH" value="$(find ogre)/ogre/lib/OGRE" />
+  </node>
+
+ <node name="spawn_table" pkg="gazebo_tools" type="gazebo_model" args="-p table_description  -z 0.01 spawn table_model" respawn="false" output="screen" />
+
+ <node name="spawn_table2" pkg="gazebo_tools" type="gazebo_model" args="-p table_description  -x 2 -y 3 -z 0.01 spawn table_model2" respawn="false" output="screen" />
+
+<node name="spawn_tray" pkg="gazebo_tools" type="gazebo_model" args="-p tray -x 2.8 -y 3 -z .65 spawn tray" respawn="false" output="screen" />
+
+ <node name="spawn_wine_cup" pkg="gazebo_tools" type="gazebo_model" args="-p wine  -x 1 -y .2 -z .594 spawn wine" respawn="false" output="screen" />
+
+ 
+ <node name="spawn_coffee_cup" pkg="gazebo_tools" type="gazebo_model" args="-p coffee_cup -x 1.2 -y -.2  -z .594 spawn coffee_cup" respawn="false" output="screen" />
+
+ 
+
+ 
+
+</launch>

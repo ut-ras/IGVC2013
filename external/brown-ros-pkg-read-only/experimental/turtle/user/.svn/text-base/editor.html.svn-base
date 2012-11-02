@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+  <title>rosbridge code editor</title>
+
+  <script type="text/javascript" src="CodeMirror-2.24/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="CodeMirror-2.24/lib/codemirror.css">
+  <script type="text/javascript" src="CodeMirror-2.24/mode/xml/xml.js"></script>
+  <script type="text/javascript" src="CodeMirror-2.24/mode/javascript/javascript.js"></script>
+  <script type="text/javascript" src="CodeMirror-2.24/mode/css/css.js"></script>
+  <script type="text/javascript" src="CodeMirror-2.24/mode/htmlmixed/htmlmixed.js"></script>
+  
+  <script type="text/javascript" src="ros.js"></script>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript">
+$(function() {
+  var skeleton = '';
+  skeleton += '<!doctype html>\n';
+  skeleton += '<html>\n';
+  skeleton += '  <head>\n';
+  skeleton += '    <script type="text/javascript" src="ros.js"><\/script>\n';
+  skeleton += '    <script type="text/javascript">\n';
+  skeleton += '\n';
+  skeleton += '      var con = new ros.Connection(\'ws:\/\/'+document.location.host+':9090\');\n';
+  skeleton += '\n';
+  skeleton += '      con.setOnOpen(function() {\n';
+  skeleton += '\n';
+  skeleton += '      var velocity = {\n';
+  skeleton += '        linear: 1,\n';
+  skeleton += '        angular: 1\n';
+  skeleton += '      }\n';
+  skeleton += '\n';
+  skeleton += '      var keepMoving = function() {\n';
+  skeleton += '        con.publish("/turtle12/command_velocity", "turtlesim/Velocity", JSON.stringify(velocity));\n';
+  skeleton += '        con.publish("/msg", "std_msgs/String", { "data": "r=dunn;" });\n';
+  skeleton += '        window.setTimeout(keepMoving, 1000);\n';
+  skeleton += '      }\n';
+  skeleton += '\n';
+  skeleton += '      keepMoving();\n';
+  skeleton += '\n';
+  skeleton += '      // Publish to a topic:\n';
+  skeleton += '      //con.publish(\'/topic\',\'type-string\',JSONobj);\n';
+  skeleton += '\n';
+  skeleton += '      // Subscribe to a topic:\n';
+  skeleton += '      //con.callService(\'\/rosbridge\/subscribe\',[\'\/topic\',-1],function(msg) {});\n';
+  skeleton += '\n';
+  skeleton += '      // Add a callback handler for a topic\n';
+  skeleton += '      //con.addHandler(\'\/topic\',function(msg) {});\n';
+  skeleton += '\n';
+  skeleton += '      // Call a service\n';
+  skeleton += '      //con.callService(\'\/service\',[arg1,arg2,arg3],function(msg) {});\n';
+  skeleton += '\n';
+  skeleton += '      });\n';
+  skeleton += '\n';
+  skeleton += '    <\/script>\n';
+  skeleton += '  <\/head>\n';
+  skeleton += '<body>\n';
+  skeleton += '\n';
+  skeleton += '<h1>Your code is running in this browser window.</h1>\n';
+  skeleton += '<a href="../user" target="_blank">View the turtles in new tab!</a><br><br>\n';
+  skeleton += '<a href="#" onclick="window.close();">Stop the code and close this window.<\/a>\n';
+  skeleton += '\n';
+  skeleton += '<!-- MORE HTML HERE -->\n';
+  skeleton += '\n';
+  skeleton += '<\/body>\n';
+  skeleton += '<\/html>\n';
+  
+  var editor = CodeMirror(document.body,{value: skeleton, 
+                                           mode:"htmlmixed",
+                                           lineNumbers: true,});
+
+  $('#test').click(function() {
+    var HTML = editor.getValue();
+    var win = window.open();
+    win.document.write(HTML);
+
+    return false;
+  });
+});
+  </script>
+  <style>
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background: gray;
+}
+
+.header {
+  margin: 1em;
+  text-align: center;
+}
+
+.CodeMirror {
+  background: white;
+  margin: 2em;
+}
+
+.CodeMirror-scroll {
+  height: 600px;
+}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Create your HTML page below.</h1>
+    <input id="test" type="submit" value="Test This Page"></input>
+  </div>
+</body>
+</html>

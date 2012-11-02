@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3010/trunk/experimental/ROSDojo/src/brown/controller
+END
+TurtlebotTeleop.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/3010/trunk/experimental/ROSDojo/src/brown/controller/TurtlebotTeleop.js
+END
+Utils.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2691/trunk/experimental/ROSDojo/src/brown/controller/Utils.js
+END
+TwistTeleop.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2692/trunk/experimental/ROSDojo/src/brown/controller/TwistTeleop.js
+END
+ARDroneTeleop.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2696/trunk/experimental/ROSDojo/src/brown/controller/ARDroneTeleop.js
+END

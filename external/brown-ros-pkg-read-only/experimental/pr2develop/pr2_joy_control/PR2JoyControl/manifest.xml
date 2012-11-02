@@ -1,0 +1,21 @@
+<package>
+  <description brief="PR2JoyControl">
+
+     PR2JoyControl
+
+  </description>
+  <author>Alex Tarvo</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/PR2JoyControl</url>
+  <depend package="joy"/>
+  <depend package="BrownJoyControlBase"/>
+  <depend package="PR2JointController"/>
+  <depend package="pr2_controllers_msgs"/>
+  <depend package="actionlib"/>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+
+</package>
+
+

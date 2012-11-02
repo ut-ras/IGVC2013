@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>smpBlobs</title>
+	<link rel="stylesheet" type="text/css" href="resources/reset-context-min.css">
+	<script type="text/javascript" src="resources/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/CanvasMatrix.js"></script>
+	<script type="text/javascript" src="resources/utils3d.js"></script>
+
+<script id="vshader" type="x-shader/x-vertex">
+uniform vec3 color;
+
+attribute vec3 vPosition;
+
+varying vec3 fColor;
+
+void main() {
+        gl_Position = vec4(vPosition.x, vPosition.y, vPosition.z, 1.0);
+	fColor = color;
+}
+</script>
+
+<script id="fshader" type="x-shader/x-fragment">
+varying vec3 fColor;
+
+void main() {
+        gl_FragColor = vec4(fColor.r, fColor.g, fColor.b, 1.0);
+}
+</script>
+
+<script type="text/javascript">
+	var count = 0;
+	function log(msg) {
+		count += 1;
+		$("#smpStatusContent").html($("#smpStatusContent").html() + 
+		(($("#smpStatusContent").html() == "") ? "" : "<br/>")  
+		+ count + ": " + msg);
+	}
+
+	function clearLog() {
+		$("#smpStatusContent").html('');
+	}
+
+	var gl;
+	var vertexBuffer;
+	var colorLoc;
+	var width;
+	var height;
+
+	var blobs = [[0,0,0]];
+
+	function drawRect(x, y, xp, yp, r, g, b) {
+		r /= 255;
+		g /= 255;
+		b /= 255;
+
+		x /= width / 2;
+		xp /= width / 2;
+		y /= height / 2;
+		yp /= height / 2;
+
+		x = x - 1;
+		xp = xp - 1;
+		y = 1 - y;
+		yp = 1 - yp;
+
+		var vertices = new WebGLFloatArray(
+		[
+		   x,  y,  0.0,
+		   xp, y,  0.0,
+		   x,  yp, 0.0,
+		   xp, y,  0.0,
+		   xp, yp, 0.0,
+		   x,  yp, 0.0,
+		]
+		);
+
+		//set the color
+		gl.uniform3f(colorLoc, r, g, b);
+
+		//copy the vertex data
+		gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.DYNAMIC_DRAW);
+
+		//draw!
+		gl.drawArrays(gl.TRIANGLE_STRIP, 0, 6);
+
+		return;
+	}
+
+	function drawLoop() {
+		blobs = eval(report());
+		gl.clear(gl.COLOR_BUFFER_BIT); //2D mode
+		for (var i = 1; i <= blobs[0][2]; i++) {
+			var blob = blobs[i];
+			drawRect(blob[0], blob[1], blob[2], blob[3], blob[4], blob[5], blob[6]);
+		}
+		gl.flush();
+	}
+
+	var connect = function(host, port) {};
+	var report = function() {};
+
+	$(function() {
+		//window.console = function() {};
+		//window.console.log = log;
+		//log("******start logging******");
+		var applet = $("#javaBlobs")[0];
+
+		connect = function(host, port) {
+			applet.connect(host,port);
+		}
+
+		report = function() {
+			return applet.report();
+		}
+
+		width = $('#blbCanvas').width();
+		height = $('#blbCanvas').height();
+
+		gl = initWebGL("blbCanvas","vshader","fshader",["vPosition",],[1,1,1,1],0);
+		//log("gl: " + gl);
+
+		gl.disable(gl.DEPTH_TEST);
+		//log("2D mode");
+
+		gl.viewport(0,0,$("#blbCanvas").width(),$("#blbCanvas").height());
+		//log("viewport set");
+
+		gl.enableVertexAttribArray(0);
+		//log("vertex attribute for position enabled");
+
+		vertexBuffer = gl.createBuffer();
+		//log("buffer allocated");
+
+		gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+		//log("buffer bound");
+
+		gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0); //0 means tightly packed
+		//log("linked buffer to attribute");
+
+		colorLoc = gl.getUniformLocation(gl.program, "color")
+		//log("got location of color variable");
+
+		setInterval(drawLoop, 15);
+		
+		//log("******end logging******");
+	});
+</script>
+
+<style type="text/css">
+#blbCanvas {
+	border: solid 1px black;
+}
+</style>
+
+</head>
+<body>
+	<center>
+		<form name ="form_connect" id="form_connect" action="#">
+			IP Address: <input type="text" name="ip" id="txt_ip">
+			Port: <input type="text" name="port" id="txt_port">
+			<input type="button" name="button_connect" value="Connect" onclick="connect(txt_ip.value, parseInt(txt_port.value))">
+		</form>
+		<br/>
+		<canvas id="blbCanvas" width="640" height="480"></canvas>
+	</center>
+
+	<object id="javaBlobs" type="application/x-java-applet" width="1" height="1">
+		<param name="code" value="Blobs.class"></param>
+		<param name="type" value="application/x-java-applet"></param>
+		<param name="mayscript" value="true">
+		<param name="scriptable" value="true"></param>
+	</object>
+
+</body>
+</html>

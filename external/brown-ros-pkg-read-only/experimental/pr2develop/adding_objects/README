@@ -1,0 +1,15 @@
+Written by Hojoon Park (hojoon@cs.brown.edu)
+
+Useage:
+
+1. Copy /launch directory to ~ros/pkgs/simulator_gazebo/gazebo_worlds/launch
+2. Copy /models directory to ~ros/pkgs/simulator_gazebo/gazebo_worlds/Media/models
+3. Copy /objects directory to ~ros/pkgs/simulator_gazebo/gazebo_worlds/objects
+
+Changing Scale:
+
+- Edit .model file on /objects directory
+
+Changing Position:
+
+- Edit .launch file on /launch directory

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/tas/data
+END
+chat_send.lsp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/tas/data/chat_send.lsp
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/tas/data/index.html
+END
+chat_recv.lsp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/tas/data/chat_recv.lsp
+END
+show.lsp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/tas/data/show.lsp
+END
+chat_head.lsp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/tas/data/chat_head.lsp
+END

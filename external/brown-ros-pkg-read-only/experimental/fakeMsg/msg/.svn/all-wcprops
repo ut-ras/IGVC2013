@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1473/trunk/experimental/fakeMsg/msg
+END
+pubMsg.msg
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1473/trunk/experimental/fakeMsg/msg/pubMsg.msg
+END
+FakeMsg.msg
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1061/trunk/experimental/fakeMsg/msg/FakeMsg.msg
+END
+subMsg.msg
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1473/trunk/experimental/fakeMsg/msg/subMsg.msg
+END

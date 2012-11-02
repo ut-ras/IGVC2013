@@ -1,0 +1,16 @@
+K 10
+svn:ignore
+V 94
+build
+srv_gen
+.project
+.pydevproject
+msg_gen
+
+CMakeCache.txt
+
+CMakeFiles
+
+cmake_install.cmake
+
+END

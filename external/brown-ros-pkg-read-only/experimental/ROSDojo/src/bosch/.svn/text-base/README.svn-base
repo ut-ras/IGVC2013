@@ -1,0 +1,18 @@
+This README file explains the changes that have been made to the bosch web visualization code for dojo integration.
+
+The bosch source code is unchanged except in the following places:
+
+ros.js is NOT included
+
+Bootstrapping: the bootstrapping code in bosch/ros/common.js has been tweaked to correctly load files from the right place
+
+NodeHandle: the code that normally resides in rosjs_common/js/core/* has been removed.  
+It has been replaced with a single file, core.js, which interfaces with rosdojo rather than creating its own connections.
+
+visualization/scenenode/robotnode Make sure to load correctly the .dae files using dojo.moduleUrl
+
+Set a better default camera position in visualization/interactor/orbitinteractor
+
+The folder widgets has been removed and common.js no longer loads widgets
+
+Modified spidergl to set {preserveDrawingBuffer: true} in context, to enable screenshotting

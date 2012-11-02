@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/src/naoExpmnt/msg
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/src/naoExpmnt/msg/__init__.py
+END
+_Head.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/src/naoExpmnt/msg/_Head.py
+END
+_Motion.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/src/naoExpmnt/msg/_Motion.py
+END

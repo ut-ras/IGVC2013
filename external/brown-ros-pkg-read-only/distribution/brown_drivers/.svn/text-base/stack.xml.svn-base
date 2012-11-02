@@ -1,0 +1,12 @@
+<stack>
+  <description brief="brown_drivers">ROS drivers for various lowcost platforms </description>
+  <author>Maintained by Christopher Crick and Trevor Jay</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/brown_drivers</url>
+  <depend stack="common_msgs" /> <!-- nav_msgs, geometry_msgs -->
+  <depend stack="geometry" /> <!-- tf -->
+  <depend stack="ros" />
+  <depend stack="ros_comm" /> <!-- rospy, roscpp -->
+
+</stack>

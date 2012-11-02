@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/1473/trunk/experimental/fakeMsg/nodes
+END
+test.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1057/trunk/experimental/fakeMsg/nodes/test.py
+END
+genFake.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1061/trunk/experimental/fakeMsg/nodes/genFake.py
+END
+pubsub.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1473/trunk/experimental/fakeMsg/nodes/pubsub.py
+END

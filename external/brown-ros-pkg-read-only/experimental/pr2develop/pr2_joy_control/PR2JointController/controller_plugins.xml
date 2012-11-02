@@ -1,0 +1,5 @@
+<library path="lib/libPR2JointController">
+  <class name="PR2JointControllerPlugin" 
+         type="brown_ros::PR2JointController"
+         base_class_type="pr2_controller_interface::Controller" />
+</library>

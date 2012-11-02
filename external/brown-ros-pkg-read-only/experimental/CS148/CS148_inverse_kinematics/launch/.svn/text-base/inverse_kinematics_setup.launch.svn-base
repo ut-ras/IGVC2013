@@ -1,0 +1,21 @@
+<launch>
+<!-- start up empty world -->
+  <include file="$(find inverse_kinematics)/launch/empty_world_paused.launch"/>
+
+ <!-- send pr2 urdf to param server -->
+  <include file="$(find pr2_description)/robots/upload_pr2.launch">
+    <arg name="swept_back_kinect" value="true"/>
+  </include>
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_pr2_model" pkg="gazebo" type="spawn_model" args="$(optenv ROBOT_INITIAL_POSE) -unpause -urdf -param robot_description -model pr2" respawn="false" output="screen" />
+
+  <node name="inverse_kinematics_table_setup" pkg="inverse_kinematics" type="inverse_kinematics_setup.py" respawn="false" output="screen" />
+
+  <!-- default bringup script -->
+  <include file="$(find pr2_gazebo)/pr2_bringup.launch" />
+
+  <!-- Load and Start Default Controllers -->
+  <include file="$(find gazebo_block_manipulation)/launch/pr2_modified_controllers.launch" />
+
+</launch>

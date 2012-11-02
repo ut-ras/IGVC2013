@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/VP_Stages
+END
+vp_stages_io_com.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/VP_Stages/vp_stages_io_com.c.d
+END
+vp_stages_buffer_to_picture.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 203
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/VP_Stages/vp_stages_buffer_to_picture.c.d
+END
+vp_stages_io_file.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/VP_Stages/vp_stages_io_file.c.d
+END
+vp_stages_frame_pipe.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/VP_Stages/vp_stages_frame_pipe.c.d
+END
+vp_stages_configs.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/VP_Stages/vp_stages_configs.c.d
+END
+vp_stages_io_console.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/VP_Stages/vp_stages_io_console.c.d
+END
+vp_stages_o_sdl.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 191
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/VP_Stages/vp_stages_o_sdl.c.d
+END
+vp_stages_io_buffer.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/VP_Stages/vp_stages_io_buffer.c.d
+END
+vp_stages_yuv2rgb.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/VP_Stages/vp_stages_yuv2rgb.c.d
+END

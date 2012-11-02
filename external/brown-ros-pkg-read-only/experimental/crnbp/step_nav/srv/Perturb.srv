@@ -1,0 +1,7 @@
+# Use this to signal to the navigator that a bump was encountered.  It
+# signals to the navigator that it should come up with a perturbation
+# goal and push it onto the goal stack.
+bool bumpLeft
+bool bumpRight
+---
+bool result 

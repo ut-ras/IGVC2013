@@ -1,0 +1,23 @@
+<launch>
+
+  <!-- Create driver -->
+  <param name="brown/irobot_create_2_1a/port" value="/dev/ttyUSB0" />
+  <node name="irobot_create_2_1a" pkg="irobot_create_2_1a" type="driver.py" />
+
+  <!-- ***************************** Guesser parameters.  -->
+  <param name="/guesser/position/npoints" value="500"/>
+  <param name="/guesser/position/wait_time" value="0.01"/>
+
+  <!-- *****************************  Start odometry-relevant processes. -->
+  <node name="odom_filter" pkg="odom_filter" type="odom_filter.py"/> 
+
+  <!-- debugging only -->
+  <node name="position_tracker" pkg="position_tracker" type="position_tracker.py"/>
+
+  <!-- *****************************  Start perfesser processes. -->
+  <node name="perfesser" pkg="perfesser" type="perfesser.py"/> 
+  <!-- for debugging only -->
+  <node name="perfesser_summarizer" pkg="perfesser" type="perfesser_summarizer.py"/>
+
+
+</launch>

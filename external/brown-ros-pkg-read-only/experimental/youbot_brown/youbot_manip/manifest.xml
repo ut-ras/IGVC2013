@@ -1,0 +1,30 @@
+<package>
+  <description brief="youbot_manip">
+
+     youbot_manip contains launch files to launch youbot arm control through interactive markers.
+
+  </description>
+  <author>Arjun Arumbakkam, Brown University, Computer Science</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/youbot_manip</url>
+
+  <depend package="actionlib"/>
+  <depend package="actionlib_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf_conversions"/>
+  <depend package="object_manipulation_msgs"/>
+  <depend package="object_manipulator"/>
+  <depend package="tabletop_object_detector"/>
+  <depend package="tabletop_collision_map_processing"/>
+  <depend package="household_objects_database"/>
+  <depend package="pr2_gripper_reactive_approach"/>
+  <depend package="pr2_manipulation_controllers"/>
+  <depend package="pr2_tabletop_manipulation_launch"/>
+  <depend package="pr2_interactive_manipulation"/>
+  <depend package="pr2_controllers_msgs"/>
+  <depend package="rail_youbot_description"/>
+  <depend package="youbot_arm_navigation"/>
+</package>
+
+

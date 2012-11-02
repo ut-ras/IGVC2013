@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/985/trunk/experimental/aldebaran_nao/NaoImageTransport
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/985/trunk/experimental/aldebaran_nao/NaoImageTransport/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/NaoImageTransport/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/NaoImageTransport/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/NaoImageTransport/Makefile
+END

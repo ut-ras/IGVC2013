@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/1731/trunk/experimental/crnbp/gnav
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1550/trunk/experimental/crnbp/gnav/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1731/trunk/experimental/crnbp/gnav/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1513/trunk/experimental/crnbp/gnav/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1513/trunk/experimental/crnbp/gnav/Makefile
+END

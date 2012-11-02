@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3061/trunk/experimental/gestures/gests/launch
+END
+gests-debug.launch
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/3052/trunk/experimental/gestures/gests/launch/gests-debug.launch
+END
+gests-kinect.launch
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/3052/trunk/experimental/gestures/gests/launch/gests-kinect.launch
+END
+gests.launch
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/3061/trunk/experimental/gestures/gests/launch/gests.launch
+END

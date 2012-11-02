@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Overhead Map</title>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.query.js"></script>
+    <script type="text/javascript" src="js/ros.min.js"></script>
+    <script type="text/javascript" src="overhead_map.js"></script>
+  </head>
+  <body>
+    <table>
+      <tr><td>
+	  <!-- canvas width/height controls the max. size of the board -->
+	  <canvas id="overhead_map_board" width="800" height="600" ></canvas>
+      </td></tr>
+      <tr><td>
+	  Log:
+      </td></tr>
+      <tr><td>
+	  <textarea id="overhead_map_console" rows="10" cols="80" readonly="readonly"></textarea>
+      </td></tr>
+    </table>
+  </body>
+</html>

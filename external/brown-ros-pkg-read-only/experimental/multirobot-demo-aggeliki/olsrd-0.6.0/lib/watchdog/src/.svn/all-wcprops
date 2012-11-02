@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/watchdog/src
+END
+olsrd_plugin.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/watchdog/src/olsrd_plugin.c
+END
+olsrd_plugin.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/watchdog/src/olsrd_plugin.h
+END

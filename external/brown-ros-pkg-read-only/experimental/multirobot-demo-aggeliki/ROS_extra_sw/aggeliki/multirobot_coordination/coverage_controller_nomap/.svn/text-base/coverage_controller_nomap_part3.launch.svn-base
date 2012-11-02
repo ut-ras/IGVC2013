@@ -1,0 +1,5 @@
+<launch>
+
+<node name="cc1" pkg="coverage_controller" type="coverage_controller" output="screen" />
+
+</launch>

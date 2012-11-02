@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/cfg
+END
+Rectify.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/cfg/Rectify.cfg
+END
+Debayer.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/cfg/Debayer.cfg
+END
+CropDecimate.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/cfg/CropDecimate.cfg
+END

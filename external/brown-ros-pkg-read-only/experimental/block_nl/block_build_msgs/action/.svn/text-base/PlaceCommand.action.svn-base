@@ -1,0 +1,11 @@
+#goal
+float32 x
+float32 y
+float32 z
+geometry_msgs/Quaternion orientation
+bool precise_place
+---
+#result definition
+bool result
+---
+#feedback

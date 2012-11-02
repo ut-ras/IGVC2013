@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1506/trunk/experimental/rlrobot/rosglue
+END
+.build_version
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/638/trunk/experimental/rlrobot/rosglue/.build_version
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/821/trunk/experimental/rlrobot/rosglue/manifest.xml
+END
+loc.launch
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/828/trunk/experimental/rlrobot/rosglue/loc.launch
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/638/trunk/experimental/rlrobot/rosglue/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/638/trunk/experimental/rlrobot/rosglue/CMakeLists.txt
+END

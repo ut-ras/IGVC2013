@@ -1,0 +1,9 @@
+<!-- Use this launch file to start location guessing routines on a single node.
+     The inputs include odometry and ar_recog. -->
+<launch>
+
+
+  <!-- Map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find map_filter)/maps/fourth_floor_map.yaml"/>
+
+</launch>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/oct/sogp_node
+END
+sogp_node_TrainPair.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/oct/sogp_node/sogp_node_TrainPair.m
+END
+sogp_node_TrainDatapoint.m
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/oct/sogp_node/sogp_node_TrainDatapoint.m
+END
+sogp_node_TrainMatrix.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/oct/sogp_node/sogp_node_TrainMatrix.m
+END
+sogp_node_Datapoint.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/oct/sogp_node/sogp_node_Datapoint.m
+END

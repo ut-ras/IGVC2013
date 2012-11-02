@@ -1,0 +1,7 @@
+{
+  "interfaces":
+    [
+      {"name":"ImageSeg",       "tutorialurl":"http://www.youtube.com/embed/BW9hK-eP5GQ","launcher":"image_seg", "interface":"userstudy.ImageSegmentation", "surveyurl":"blank"},
+      {"name":"AssistiveTeleop","tutorialurl":"http://www.youtube.com/embed/573v2guH8N4","launcher":"assistive_teleop","interface":"blockbuilder.BlockUI","surveyurl":"blank"},
+    ]
+}

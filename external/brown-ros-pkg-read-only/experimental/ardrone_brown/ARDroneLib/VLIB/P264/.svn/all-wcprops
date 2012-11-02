@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264
+END
+p264_Qp.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_Qp.h
+END
+p264.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264.h
+END
+p264_intra_pred.c
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_intra_pred.c
+END
+p264_mb_layer.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_mb_layer.c
+END
+p264_zigzag.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_zigzag.c
+END
+p264_intra_pred.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_intra_pred.h
+END
+p264_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_common.h
+END
+p264_merge.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_merge.c
+END
+p264_zigzag.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_zigzag.h
+END
+p264_inter_mc.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_inter_mc.c
+END
+p264_gob_layer.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_gob_layer.c
+END
+p264_layers.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_layers.h
+END
+p264_merge.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_merge.h
+END
+p264_inter_mc.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_inter_mc.h
+END
+video_p264.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/video_p264.c
+END
+p264_picture_layer.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_picture_layer.c
+END
+p264_transform.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_transform.c
+END
+video_p264.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/video_p264.h
+END
+p264_codec.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_codec.c
+END
+p264.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264.c
+END
+p264_Qp.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_Qp.c
+END
+p264_transform.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_transform.h
+END
+p264_codec.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P264/p264_codec.h
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/include
+END
+simple_path_generator_controller_dijkstras.h
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/include/simple_path_generator_controller_dijkstras.h
+END
+simple_path_generator_controller_random_walk.h
+K 25
+svn:wc:ra_dav:version-url
+V 184
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/include/simple_path_generator_controller_random_walk.h
+END
+simple_path_navigator_controller.h
+K 25
+svn:wc:ra_dav:version-url
+V 172
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/include/simple_path_navigator_controller.h
+END

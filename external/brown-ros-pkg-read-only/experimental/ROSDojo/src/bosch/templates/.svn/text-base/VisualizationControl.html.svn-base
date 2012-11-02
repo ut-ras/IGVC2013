@@ -1,0 +1,11 @@
+<div>
+  <div class="video_widget" dojoAttachPoint="videoAttach"></div>
+  <center>
+  <div dojoAttachPoint="layoutAttach"></div>
+  <div class="buttons" dojoAttachPoint="buttonsAttach">
+  <div class="avails" dojoAttachPoint="availAttach"></div>
+    <button dojoAttachPoint="addAttach"></button>
+    <button dojoAttachPoint="globalOptionAttach"> </button>
+  </div>
+  </center>
+</div>

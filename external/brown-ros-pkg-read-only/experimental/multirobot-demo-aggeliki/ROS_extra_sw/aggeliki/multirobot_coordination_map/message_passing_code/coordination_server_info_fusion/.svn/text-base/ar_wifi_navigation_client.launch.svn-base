@@ -1,0 +1,5 @@
+<launch>
+
+<node name="cc1" pkg="coordination_client" type="coordination_client"/>
+
+</launch>

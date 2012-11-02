@@ -1,0 +1,230 @@
+<html>
+<head>
+<title>Remote Lab Demo</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/yahoo/yahoo-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/json/json-min.js"></script>
+<script type="text/javascript" src="http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/rosjs/ros.min.js"></script>
+<script type="text/javascript">
+function nop() {};
+function json(obj) {
+	return YAHOO.lang.JSON.stringify(obj);
+};
+
+function log(msg) {
+	console.html(console.html() + msg + '<br/>');
+}
+
+var jsonpCallback = nop;
+function jsonp(url, callback) {
+	jsonpCallback = callback;
+	$('#sandbox').html('<script type="text/javascript" src="' + url + '&jsonp=jsonpCallback"><\/script>');
+};
+
+var server = 'http://security.brown-robotics.org/index.pl';
+var googIDURL = 'https://www.google.com/accounts/o8/ud';
+var googArgs = 'openid.mode=checkid_setup&openid.ns=http%3A//specs.openid.net/auth/2.0&openid.claimed_id=http%3A//specs.openid.net/auth/2.0/identifier_select&openid.identity=http%3A//specs.openid.net/auth/2.0/identifier_select&openid.ns.ax=http%3A//openid.net/srv/ax/1.0&openid.ax.mode=fetch_request&openid.ax.required=email&openid.ax.type.email=http%3A//axschema.org/contact/email'
+
+var base ='';
+
+var startRec = nop;
+var stopRec = nop;
+var save = nop;
+var saveServer = nop;
+var playBack = nop;
+
+function login() {
+	jsonp(server + '?',function(rsp) {
+		var challenge = rsp.challenge;
+		document.location = googIDURL + '?' + googArgs + '&openid.return_to=' + escape(base + '?challenge=' + challenge);
+	});
+	return false;
+}
+
+function connect(key) {
+	log('Connecting...');
+	var ros = new ROS('ws://rosjs:9090');
+	ros.setOnError(function(e) {
+		log('##########################');
+		log('Error!');
+		log('##########################');
+	});
+	ros.setOnClose(function(e) {
+		log('##########################');
+		log('No connection with rosjs!');
+		log('##########################');
+	});
+	ros.setOnOpen(function(e) {
+		log('Connection established.');
+		log('Giving rosjs the key <b>' + key + '<\/b>.');
+		ros.callService('/rosjs/authorize',json([key]),function(msg) {
+			ros.callService('/rosjs/topics',json([]),function(msg) {
+				log('Authorization accepted.');
+				setTimeout(function() {main(ros)},0);
+			});
+		});
+	});
+}
+
+function main(ros) {
+	var left = false;
+	var right = false;
+	var up = false;
+	var down = false;
+
+	var recording = false;
+	var dance = [];
+
+	var loop = setInterval(function() {
+		var x = 0;
+		var z = 0;
+
+		if (right) {z = -1;};
+		if (left) {z = 1;};
+		if (down) {x = -.5;};
+		if (up) {x = .5;};
+
+		var twist = {"linear":	{
+						"x":	x,
+						"y":	0,
+						"z":	0
+					},
+			     "angular":	{
+						"x":	0,
+						"y":	0,
+						"z":	z
+			     		}};
+		ros.publish('/cmd_vel','geometry_msgs/Twist',json(twist));
+		if (recording) {
+			dance.push(twist);
+		}
+	},33);
+
+	function handleKey(code, dwn) {
+		switch(code) {
+			case 37:
+				//left
+				left = dwn;
+				break;
+			case 38:
+				//up
+				up = dwn;
+				break;
+			case 39:
+				//right
+				right = dwn;
+				break;
+			case 40:
+				//down
+				down = dwn;
+				break;
+		}
+	}
+	document.addEventListener('keydown',function(e) {
+		handleKey(e.keyCode,true);
+	});
+	document.addEventListener('keyup',function(e) {
+		handleKey(e.keyCode,false);
+	});
+
+	save = function() {
+		var win = window.open('','log','menubar=1');
+		var txt = json(dance);
+		win.document.open();
+		win.document.write(txt);
+		win.document.close();
+		return false;
+	}
+
+	saveServer = function() {
+		var filename = prompt('file name?','logfile');
+		ros.callService('/rosjs/log',json([filename,json(dance)]),function(msg) {
+			alert('file saved');
+		});
+	}
+
+	playBack = function() {
+		$('#play').remove();
+		clearInterval(loop);
+		var data = prompt('data?','[]'); 
+		data = YAHOO.lang.JSON.parse(data); 
+		var count = 0;
+		setInterval(function() {
+			if (count >= data.length) {
+				return;
+			}
+			ros.publish('/cmd_vel','geometry_msgs/Twist',json(data[count++]));
+		},33);
+	}
+
+	log('Now controlling the robot.');
+
+	stopRec = function() {
+		$('#stop').remove();
+		recording = false;
+		log('<form id="saveLocal"><input type="button" value="save locally" onclick="save();"><\/input><\/form>');
+		log('<form id="saveServer"><input type="button" value="save to server" onclick="saveServer();"><\/input><\/form>');
+		log('<form id="play"><input type="button" value="play" onclick="playBack();"><\/input><\/form>');
+	}
+
+	startRec = function () {
+		$('#start').remove();
+		recording = false;
+		dance = [];
+		recording = true;
+		log('<form id="stop"><input type="button" value="stop recording" onclick="stopRec();"><\/input><\/form>');
+		return false;
+	}
+
+	log('<form id="start"><input type="button" value="start recording" onclick="startRec();"><\/input><\/form>');
+
+}
+
+$(function() {
+	base = document.location.toString();
+	base = base.replace(/\.html.*/g,'.html');
+
+	console = $('#console');
+	if (!/key=/.test(document.location.toString()) && !/openid\.mode=id_res/.test(document.location.toString())) {
+		log('You do not currently have a key. To get one, <a href="#" onclick="login();">Confirm<\/a> your G-Mail account .');
+		return;
+	}
+
+	if (/openid\.mode=id_res/.test(document.location.toString())) {
+		log('Confirming your identity with Google...');
+		var confirmation = document.location.toString().replace(/[^&]*&/,'');
+		confirmation = confirmation.replace(/openid\.mode=id_res/,'openid.mode=check_authentication');
+		jsonp(server + '?confirmation=' + escape(confirmation), function(rsp) {
+			if (!rsp.valid) {
+				alert('There was a problem confirming your identity. In a moment, you will be directed back to the authorization page. If this problem persist, you should use the "Sign in as a different user" so that you are re-prompted for your password.'); 
+				login();
+				return;
+			}
+
+			log('Your identity is confirmed!');
+			log('Retrieving key...');
+			document.location = base + '?key=' + rsp.key;
+		});
+		return;
+	}
+
+	if (/key=/.test(document.location.toString())) {
+		var key = document.location.toString().match(/.*key=([^&]*)/);
+		key = key[1];
+		log('You are using <b>' + key + '<\/b> as your rosjs key. If rosjs rejects it, or you have other problems. You can <a href="#" onclick="login();">click here<\/a> to get another.');
+		log('Now logging into rosjs...');
+		setTimeout(function() {connect(key);},0);
+	}
+});
+</script>
+<style type="text/css">
+#sandbox {
+	display: none;
+}
+</style>
+</head>
+<body>
+  <div id="sandbox"></div>
+  <div id="console"></div>
+</body>
+</html>

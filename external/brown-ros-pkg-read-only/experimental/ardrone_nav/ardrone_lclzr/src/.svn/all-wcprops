@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1703/trunk/experimental/ardrone_nav/ardrone_lclzr/src
+END
+ardrone_pf.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1595/trunk/experimental/ardrone_nav/ardrone_lclzr/src/ardrone_pf.cpp
+END
+quat_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1586/trunk/experimental/ardrone_nav/ardrone_lclzr/src/quat_utils.h
+END
+ardrone_state.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1586/trunk/experimental/ardrone_nav/ardrone_lclzr/src/ardrone_state.h
+END
+ardrone_lclzr.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1624/trunk/experimental/ardrone_nav/ardrone_lclzr/src/ardrone_lclzr.cpp
+END
+ardrone_particle.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_lclzr/src/ardrone_particle.h
+END
+ardrone_pf.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1703/trunk/experimental/ardrone_nav/ardrone_lclzr/src/ardrone_pf.h
+END
+tagserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_lclzr/src/tagserver.h
+END
+quat_utils.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1586/trunk/experimental/ardrone_nav/ardrone_lclzr/src/quat_utils.cpp
+END

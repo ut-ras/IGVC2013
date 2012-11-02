@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1668/trunk/distribution/brown_remotelab/teleop_twist_keyboard
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1668/trunk/distribution/brown_remotelab/teleop_twist_keyboard/manifest.xml
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1110/trunk/distribution/brown_remotelab/teleop_twist_keyboard/README.txt
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1110/trunk/distribution/brown_remotelab/teleop_twist_keyboard/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1110/trunk/distribution/brown_remotelab/teleop_twist_keyboard/Makefile
+END

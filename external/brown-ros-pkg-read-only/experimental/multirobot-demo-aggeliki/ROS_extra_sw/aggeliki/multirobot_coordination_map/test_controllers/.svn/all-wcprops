@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers
+END
+CMakeCache.txt
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/CMakeCache.txt
+END
+simple_step_navigator_nomap_controller.launch
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/simple_step_navigator_nomap_controller.launch
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/manifest.xml
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/cmake_install.cmake
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/mainpage.dox
+END
+simple_path_navigator_controller.launch
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/simple_path_navigator_controller.launch
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/test_controllers/Makefile
+END

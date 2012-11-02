@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/torso_v0
+END
+torso_lift_normals.tif
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/torso_v0/torso_lift_normals.tif
+END
+torso_lift_L.stl
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/torso_v0/torso_lift_L.stl
+END
+torso_lift_normals.png
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/torso_v0/torso_lift_normals.png
+END
+torso_lift_color.tif
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/torso_v0/torso_lift_color.tif
+END
+torso_lift.stl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/torso_v0/torso_lift.stl
+END
+torso_lift_color.png
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/torso_v0/torso_lift_color.png
+END
+torso.stl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/torso_v0/torso.stl
+END
+torso_lift.dae
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/torso_v0/torso_lift.dae
+END

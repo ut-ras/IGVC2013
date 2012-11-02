@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder/src
+END
+blockGrabber.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder/src/blockGrabber.cpp
+END
+Picker.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder/src/Picker.py
+END
+grab_block.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder/src/grab_block.cpp
+END
+place.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder/src/place.py
+END
+Placer.py
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder/src/Placer.py
+END
+Builder.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder/src/Builder.py
+END
+pick.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder/src/pick.py
+END

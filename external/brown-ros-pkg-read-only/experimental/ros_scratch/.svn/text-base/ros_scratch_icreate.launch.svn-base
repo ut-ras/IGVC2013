@@ -1,0 +1,9 @@
+<launch>
+  <!-- iCreate -->
+  <!-- <param name="/brown/irobot_create_2_1/port" value="/dev/rfcomm0" /> -->
+  <node name="irobot_create_2_1" pkg="irobot_create_2_1" type="driver.py" respawn="true" />
+
+  <!-- ROS<->Scratch interface -->
+  <node name="ros_scratch_icreate" pkg="ros_scratch" type="ros_scratch_icreate.py" respawn="true" output="screen" />
+</launch>
+

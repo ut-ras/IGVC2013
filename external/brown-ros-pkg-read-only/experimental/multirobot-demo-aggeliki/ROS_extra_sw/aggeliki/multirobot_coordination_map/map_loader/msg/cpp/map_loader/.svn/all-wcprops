@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/msg/cpp/map_loader
+END
+GraphMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/msg/cpp/map_loader/GraphMap.h
+END
+Edge.h
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/msg/cpp/map_loader/Edge.h
+END
+Node.h
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/msg/cpp/map_loader/Node.h
+END
+LineMap.h
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/msg/cpp/map_loader/LineMap.h
+END
+Line.h
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/msg/cpp/map_loader/Line.h
+END

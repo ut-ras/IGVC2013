@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+  <title> ROSProcessingjs - Test suite </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <style>
+    .css{ margin:0; padding: 0; overflow: hidden; }
+  </style>
+     <script type="text/javascript" src="ros/ros.min.js"></script>
+     <script type="text/javascript" src="ros/ros_control.js"></script>
+     <script type="text/javascript" src="util.js"></script>
+     <script src="processingjs/processing-1.0.0.min.js"> </script>
+     <script src="http://code.jquery.com/jquery-1.5.1.min.js"> </script>
+     <script type="text/javascript">
+
+     var ins;
+     var new_ins;
+     var baseSource;
+     var dockSource;
+
+     function log(str) {
+       ins.log(concatObject(str));
+     }
+
+     function GetSelectedItem() {
+       var value = $("#dropList").val();
+       var src = "./source2/" + value + ".pde";
+       
+	     $.get(src, null, function(response){
+          $("#source").val(response); // where theTextArea is the ID of the textarea you want to put the data into.
+          });
+     }
+
+     function init() {
+       ins = Processing.getInstanceById("canvasDraw");
+       var src = "./source2/empty.pde";
+
+ 	     $.get(src, null, function(response){
+           $("#source").val(response); // where theTextArea is the ID of the textarea you want to put the data into.    
+       });
+
+       src = "./source2/dock.pde";
+       $.get(src, null, function(response){ 
+           dockSource = response;
+         });
+     }
+     
+     function newSource()
+     {  
+       $("#canvasDraw").remove();
+       $("#canvasBox").html('<canvas id="canvasDraw" display="none"></canvas>')
+
+       var source = $("#source").val();
+       new_ins = new Processing($("#canvasDraw")[0],source);
+     }
+
+     function run() 
+    {
+      new_ins.run();
+    }
+    function stop()  
+    { 
+      new_ins.stop();
+    }
+     </script>
+
+  </head>
+  <body onload="init()">
+    <h2> Brown Robotics - Remote House </h2>
+    <hr/><hr/>
+
+  <div style="float:left;width:50%;height:100%">
+    <div id="canvasBox">
+      <canvas id="canvasDraw" data-processing-sources="source/init.pde"></canvas>
+    </div>
+    <div>
+      <input type="button" Value="init" onClick="newSource()"/>
+      <input type="button" Value="Run" onClick="run()"/>
+      <input type="button" Value="Stop" onClick="stop()"/>
+    </div>
+  </div>
+  <div style="float:left;width:50%;height:100%;">
+    <form id="codeForm" action"#">
+      <select name = "dropList" id="dropList" style="width:200px" onChange="GetSelectedItem()"> 
+        <option value="empty"> Empty </option>
+        <option value="enclosure">Enclosure Escape</option>
+        <option value="teleop">Keyboard Control</option>
+        <option value="line">Line Follower</option>
+        <option value="dock">Docking</option>
+        <option value="tagseeking_cam">Tag Seeking with Cam</option>
+        <option value="tagseeking_cam">Tag Seeking with no Cam</option>
+      </select>
+      <textarea id="source" rows="20" cols="70%">
+      </textarea>	
+    </form>
+  </div>
+
+  <div style="float:left;width:50%;height:100%;">
+    &nbsp;<br/>
+  <p> Button Description <p>
+  Init - load Processingjs code in textarea <br/>
+  Run  - calls run() function in processingjs <br/>
+  Stop - calls stop() function in processingjs <br/>
+  <br/>
+  </div>
+
+  <div style="float:left;width:50%;height:100%;">
+  <p> API Reference </p>
+  publish('/topic_name','topic_type','topic_message') - Publish a topic <br/>
+  subscribe('topic_name',function name) - Subscribe a topic <br/>
+  move(x,z) - Publish Twist message<br/><br/> 
+  </div>
+  <a href="http://code.google.com/p/brown-ros-pkg/wiki/ROSProcessingjs">ROSProcessingjs Wiki</a>
+  </body>
+</html>

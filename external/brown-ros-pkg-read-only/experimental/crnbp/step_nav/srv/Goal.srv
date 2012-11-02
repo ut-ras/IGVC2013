@@ -1,0 +1,11 @@
+# Input is a position tuple to be construed as a goal.
+# operation =
+#    1 : create new goal (use position[]) and push it onto stack
+#    2 : pop goal (with index, if > 0)
+#    3 : update existing goal with position[]
+# See step_nav.dispatchGoalRequest() for more detail
+int16 operation
+int16 index
+float32[] position
+---
+int16 result

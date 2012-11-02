@@ -1,0 +1,16 @@
+<package>
+  <description brief="BrownJoyControlBase">
+
+     BrownJoyControlBase
+
+  </description>
+  <author>Alex Tarvo</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/BrownJoyControlBase</url>
+  <depend package="joy"/>
+
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib"/>
+  </export>
+</package>

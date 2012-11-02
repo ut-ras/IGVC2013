@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/697/trunk/experimental/sogp/srv
+END
+PredictVector.srv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/697/trunk/experimental/sogp/srv/PredictVector.srv
+END
+PredictMatrix.srv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/697/trunk/experimental/sogp/srv/PredictMatrix.srv
+END
+Reset.srv
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/688/trunk/experimental/sogp/srv/Reset.srv
+END

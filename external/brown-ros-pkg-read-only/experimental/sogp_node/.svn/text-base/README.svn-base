@@ -1,0 +1,32 @@
+This is ROS node that implements SOGP (Sample Online Gaussian Process) algorithm.
+Contains SOGP code by Dan Grossman and newmat library
+
+The node listens to following topics:
+AddMatrix - receives training data in form of matrices of predictor and target variables. 
+            Pair of predictor/target matrices is represented by the AddMatrix message;
+            This is a preferred method to traing the node if there is a large amount of training data.
+AddVector - receives training data in form of a single datapoint. Every datapoint is contains predictor and target
+            datapoint. It is represented by a AddVector message
+
+
+The node advertizes following services:
+SetParameters - used to set parameters of the algorithm, including dimensions of input/output data and other settings
+                This service MUST be called before performing any other operations with the node
+Reset         - resets the node to its initial state, so it can be trained with the new data
+PredictVector - make a prediction for a single datapoint. Request contains predictor datapoint. Response contains
+                a predicted value
+PredictMatrix - make a prediction for a number of datapoints, represented in form of matrix. Request contains a set 
+                of predictor datapoints (matrix). Response contains a set of predictions.
+Any response from these methods also contains an error description field. If an error occured during the operation, that
+field contains a error description in form of string.
+
+
+Typical usage scenario should be following
+1. Set parameters by calling SetParameters service;
+2. Train the node by sending training data to AddMatrix/AddVector topics.
+3. Call PredictVector/PredictMatrix servers to get a prediction for a data
+
+Please look at sogp_node/sogp_test.cpp for example of usage.
+
+For questions and comments please contact Alex Tarvo (alexta at cs.brown.edu)
+

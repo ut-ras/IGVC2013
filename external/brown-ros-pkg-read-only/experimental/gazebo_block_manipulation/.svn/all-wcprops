@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2621/trunk/experimental/gazebo_block_manipulation
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2598/trunk/experimental/gazebo_block_manipulation/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2474/trunk/experimental/gazebo_block_manipulation/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2503/trunk/experimental/gazebo_block_manipulation/CMakeLists.txt
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2620/trunk/experimental/gazebo_block_manipulation/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2474/trunk/experimental/gazebo_block_manipulation/Makefile
+END

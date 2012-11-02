@@ -1,0 +1,16 @@
+<package>
+  <description brief="nao_camera_tele">
+
+     nao_camera_tele
+
+  </description>
+  <author>jbutterf</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/nao_camera_tele</url>
+  <depend package="ar_recog"/>
+  <depend package="NAOcontrol"/>
+
+</package>
+
+

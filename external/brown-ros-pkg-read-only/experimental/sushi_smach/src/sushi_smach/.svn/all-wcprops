@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2768/trunk/experimental/sushi_smach/src/sushi_smach
+END
+PutdownStateGenerator.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/src/sushi_smach/PutdownStateGenerator.py
+END
+CelebrateSuccessStateMachineGenerator.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/src/sushi_smach/CelebrateSuccessStateMachineGenerator.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/src/sushi_smach/__init__.py
+END
+TableSettingStateMachineGenerator.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2768/trunk/experimental/sushi_smach/src/sushi_smach/TableSettingStateMachineGenerator.py
+END
+PickupStateGenerator.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/src/sushi_smach/PickupStateGenerator.py
+END
+states.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/src/sushi_smach/states.py
+END
+SushiServingStateMachineGenerator.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/src/sushi_smach/SushiServingStateMachineGenerator.py
+END
+TableCleanStateMachineGenerator.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/src/sushi_smach/TableCleanStateMachineGenerator.py
+END

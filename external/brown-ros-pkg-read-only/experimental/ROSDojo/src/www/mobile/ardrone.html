@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="../../dojo17/dijit/themes/claro/claro.css" />
+<title>ARDrone Touch</title>
+<script src="../../dojo17/dojo/dojo.js.uncompressed.js"></script>
+<style type="text/css">
+
+	body {
+		margin: 0; 
+		text-align: center;
+	}
+
+	body .connectionpanel {
+		padding-top: 20px;
+	}
+	
+	body .main div, body, .main {
+		overflow: hidden;
+	}
+
+	.main {
+		width: 100%; 
+		height: 100%; 
+	}
+	
+</style>
+<script>
+	var camera = null;
+	function resize() {
+	    console.log("resizing");
+	    camera.domNode.firstChild.style.height = (window.innerHeight-1)+"px";
+	    camera.domNode.firstChild.style.width = (window.innerWidth-1)+"px";
+	}
+	function transition() {
+	    // Hide the connection panel
+	    dojo.style(dojo.byId("connect"), "display", "none");
+	    
+	    // Create the camera
+	    camera = new mobile.ARDroneCameraJoystick();
+	    document.body.appendChild(camera.domNode);
+	    camera.startup();
+
+	    // Stretch it 100%
+	    dojo.addClass(camera.domNode, "main");
+	    resize();
+	    
+	    // Resize whenever the window size changes
+        dojo.connect(window, "resize", resize);
+	}
+   	function init() {
+      dojo.registerModulePath("rosdojo", "../../brown/rosdojo");
+      dojo.registerModulePath("roswidgets", "../../brown/roswidgets");
+      dojo.registerModulePath("mobile","../../brown/mobile");
+      dojo.require("mobile.ARDroneCameraJoystick");
+      dojo.require("roswidgets.ConnectionPanel");
+      dojo.require("dojo.parser");
+      
+  	  dojo.parser.parse();
+  	  
+  	  dojo.connect(ros, "onOpen", this, transition);
+   	}
+   	
+   	dojo.ready(init);
+   </script>
+</head>
+<body id="body" class="claro">
+	<div id="connect" dojoType="roswidgets.ConnectionPanel"></div>
+</body>
+</html>

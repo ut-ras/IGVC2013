@@ -1,0 +1,10 @@
+# operation =
+#    1 : create a new force, add to list
+#    2 : remove existing force from list
+#    3 : update existing force with new node position
+int16 operation
+char forceType
+int16 index
+float32[] nodePosition
+---
+int16 result

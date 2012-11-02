@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2715/trunk/experimental/ROSDojo/src/brown/cs148widgets/lib/mode/xquery/test
+END
+testMultiAttr.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/2715/trunk/experimental/ROSDojo/src/brown/cs148widgets/lib/mode/xquery/test/testMultiAttr.js
+END
+testBase.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2715/trunk/experimental/ROSDojo/src/brown/cs148widgets/lib/mode/xquery/test/testBase.js
+END
+testEmptySequenceKeyword.js
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/2715/trunk/experimental/ROSDojo/src/brown/cs148widgets/lib/mode/xquery/test/testEmptySequenceKeyword.js
+END
+testNamespaces.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/2715/trunk/experimental/ROSDojo/src/brown/cs148widgets/lib/mode/xquery/test/testNamespaces.js
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2715/trunk/experimental/ROSDojo/src/brown/cs148widgets/lib/mode/xquery/test/index.html
+END
+testQuotes.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2715/trunk/experimental/ROSDojo/src/brown/cs148widgets/lib/mode/xquery/test/testQuotes.js
+END
+testProcessingInstructions.js
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/2715/trunk/experimental/ROSDojo/src/brown/cs148widgets/lib/mode/xquery/test/testProcessingInstructions.js
+END

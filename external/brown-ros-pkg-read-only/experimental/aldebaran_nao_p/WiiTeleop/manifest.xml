@@ -1,0 +1,15 @@
+<package>
+  <description brief="WiiTeleop">
+     WiiTeleop demonstrates the use of the NAOcontrol messages. It is a small
+client program that allows the user to drive the NAO via WiiMote.
+  </description>
+  <author>Graylin Trevor Jay</author>
+  <email>tjay@cs.brown.edu</email>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+
+  <depend package="wiimote"/>
+  <depend package="NAOcontrol"/>
+  <depend package="ar_alpha"/>
+
+</package>

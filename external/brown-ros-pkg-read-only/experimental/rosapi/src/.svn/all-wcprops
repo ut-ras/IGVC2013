@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2843/trunk/experimental/rosapi/src
+END
+registry.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2841/trunk/experimental/rosapi/src/registry.py
+END
+proxy.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2842/trunk/experimental/rosapi/src/proxy.py
+END
+objectutils.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2841/trunk/experimental/rosapi/src/objectutils.py
+END

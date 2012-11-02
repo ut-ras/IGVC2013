@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/956/trunk/experimental/planar_tracker/docs/cmvision-files
+END
+colors_r.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/956/trunk/experimental/planar_tracker/docs/cmvision-files/colors_r.txt
+END
+cmvision_r.launch
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/956/trunk/experimental/planar_tracker/docs/cmvision-files/cmvision_r.launch
+END
+colors_l.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/956/trunk/experimental/planar_tracker/docs/cmvision-files/colors_l.txt
+END
+cmvision_l.launch
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/956/trunk/experimental/planar_tracker/docs/cmvision-files/cmvision_l.launch
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/956/trunk/experimental/planar_tracker/docs/cmvision-files/README
+END

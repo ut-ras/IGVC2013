@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization
+END
+webgl-debug.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/webgl-debug.js
+END
+interactivemarkermanager.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/interactivemarkermanager.js
+END
+cameraoverlay.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/cameraoverlay.js
+END
+markermanager.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/markermanager.js
+END
+visualizationmanager.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/visualizationmanager.js
+END
+boundingbox.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/boundingbox.js
+END
+rayintersectioninfo.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/rayintersectioninfo.js
+END
+sceneviewer.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/sceneviewer.js
+END
+pickmanager.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/pickmanager.js
+END
+visualization.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/visualization.js
+END
+rightcontext.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/rightcontext.js
+END

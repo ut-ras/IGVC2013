@@ -1,0 +1,2 @@
+width, height: Any type of units, as long as it is consistent.  Parsed as a floating-point number.
+border_color, marker_color: Any string accepted by the html5 canvas object.  The simplest is: rgb(123,45,67)

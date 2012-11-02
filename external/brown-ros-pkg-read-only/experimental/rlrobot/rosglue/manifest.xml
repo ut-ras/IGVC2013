@@ -1,0 +1,15 @@
+<package>
+  <description brief="rosglue">
+ROSGlue
+  </description>
+  <author>Sarah Osentoski</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+
+  <depend package="rospy"/>
+  <depend package="discreteMove_0_0_1"/>
+  <depend package="position_tracker"/>
+
+</package>
+
+

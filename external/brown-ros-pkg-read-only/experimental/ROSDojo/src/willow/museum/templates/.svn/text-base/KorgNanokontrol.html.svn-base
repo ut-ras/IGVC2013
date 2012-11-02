@@ -1,0 +1,9 @@
+<div class="korg-nanokontrol">
+	<div class="leftside">
+		<div data-dojo-type="museum.KorgButtonControl" data-dojo-attach-point="buttonController"></div>
+	</div>
+	<div class="rightside">
+		<div data-dojo-type="museum.KorgSlidersControl" data-dojo-attach-point="sliderController" data-dojo-attach-event="korgChanged:onVirtualKorgChanged"></div>
+	</div>
+	<div class="clear"></div>
+</div>

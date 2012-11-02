@@ -1,0 +1,12 @@
+#goal
+int8 x
+int8 y
+int8 z
+
+geometry_msgs/Quaternion orientation
+bool precise_place
+---
+#result definition
+bool result
+---
+#feedback

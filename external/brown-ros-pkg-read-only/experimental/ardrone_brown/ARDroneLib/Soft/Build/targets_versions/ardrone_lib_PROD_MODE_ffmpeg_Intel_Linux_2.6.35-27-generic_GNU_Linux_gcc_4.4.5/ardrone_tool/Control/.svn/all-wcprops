@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 190
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Control
+END
+ardrone_control_configuration.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 224
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Control/ardrone_control_configuration.c.d
+END
+ardrone_control_soft_update.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 222
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Control/ardrone_control_soft_update.c.d
+END
+ardrone_control_ack.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 214
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Control/ardrone_control_ack.c.d
+END
+ardrone_navdata_control.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 218
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Control/ardrone_navdata_control.c.d
+END
+ardrone_control.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 210
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Control/ardrone_control.c.d
+END

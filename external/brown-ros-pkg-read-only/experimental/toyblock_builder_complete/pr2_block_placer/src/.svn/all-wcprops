@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_placer/src
+END
+block_placer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_placer/src/block_placer.cpp
+END
+run_block_placer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_placer/src/run_block_placer.cpp
+END

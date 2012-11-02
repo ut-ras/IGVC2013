@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/src/PR2JointController/msg
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/src/PR2JointController/msg/__init__.py
+END
+_ArmVelocities.py
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/src/PR2JointController/msg/_ArmVelocities.py
+END

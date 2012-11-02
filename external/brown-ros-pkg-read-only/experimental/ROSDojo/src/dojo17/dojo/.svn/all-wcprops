@@ -1,0 +1,677 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo
+END
+html.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/html.js
+END
+NodeList-html.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-html.js.uncompressed.js
+END
+Stateful.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/Stateful.js.uncompressed.js
+END
+keys.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/keys.js
+END
+parser.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/parser.js.uncompressed.js
+END
+uacss.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/uacss.js
+END
+NodeList-dom.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-dom.js.uncompressed.js
+END
+aspect.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/aspect.js
+END
+dom-class.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-class.js
+END
+hash.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/hash.js
+END
+loadInit.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/loadInit.js.uncompressed.js
+END
+cache.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/cache.js.uncompressed.js
+END
+main.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/main.js
+END
+ready.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/ready.js.uncompressed.js
+END
+domReady.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/domReady.js.uncompressed.js
+END
+mouse.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/mouse.js
+END
+window.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/window.js.uncompressed.js
+END
+Evented.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/Evented.js
+END
+regexp.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/regexp.js
+END
+cookie.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/cookie.js.uncompressed.js
+END
+NodeList-traverse.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-traverse.js.uncompressed.js
+END
+on.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/on.js.uncompressed.js
+END
+DeferredList.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/DeferredList.js.uncompressed.js
+END
+date.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/date.js.uncompressed.js
+END
+dom-style.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-style.js.uncompressed.js
+END
+NodeList-manipulate.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-manipulate.js.uncompressed.js
+END
+dom.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom.js.uncompressed.js
+END
+back.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/back.js
+END
+dom-form.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-form.js.uncompressed.js
+END
+query.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/query.js
+END
+string.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/string.js
+END
+number.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/number.js.uncompressed.js
+END
+json.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/json.js
+END
+jaxer.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/jaxer.js
+END
+has.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/has.js
+END
+dojo.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dojo.js.uncompressed.js
+END
+require.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/require.js
+END
+fx.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/fx.js
+END
+dom-prop.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-prop.js.uncompressed.js
+END
+i18n.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/i18n.js
+END
+behavior.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/behavior.js.uncompressed.js
+END
+gears.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/gears.js.uncompressed.js
+END
+colors.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/colors.js.uncompressed.js
+END
+text.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/text.js
+END
+html.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/html.js.uncompressed.js
+END
+dom-attr.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-attr.js
+END
+NodeList-data.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-data.js
+END
+dojo.profile.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dojo.profile.js
+END
+currency.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/currency.js
+END
+NodeList-fx.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-fx.js
+END
+keys.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/keys.js.uncompressed.js
+END
+uacss.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/uacss.js.uncompressed.js
+END
+aspect.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/aspect.js.uncompressed.js
+END
+dom-construct.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-construct.js
+END
+dom-class.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-class.js.uncompressed.js
+END
+hash.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/hash.js.uncompressed.js
+END
+main.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/main.js.uncompressed.js
+END
+dom-geometry.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-geometry.js
+END
+mouse.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/mouse.js.uncompressed.js
+END
+AdapterRegistry.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/AdapterRegistry.js
+END
+io-query.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/io-query.js
+END
+regexp.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/regexp.js.uncompressed.js
+END
+Evented.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/Evented.js.uncompressed.js
+END
+topic.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/topic.js
+END
+back.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/back.js.uncompressed.js
+END
+touch.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/touch.js
+END
+NodeList-html.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-html.js
+END
+query.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/query.js.uncompressed.js
+END
+string.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/string.js.uncompressed.js
+END
+Stateful.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/Stateful.js
+END
+json.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/json.js.uncompressed.js
+END
+jaxer.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/jaxer.js.uncompressed.js
+END
+has.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/has.js.uncompressed.js
+END
+parser.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/parser.js
+END
+require.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/require.js.uncompressed.js
+END
+fx.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/fx.js.uncompressed.js
+END
+NodeList-dom.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-dom.js
+END
+i18n.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/i18n.js.uncompressed.js
+END
+cache.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/cache.js
+END
+loadInit.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/loadInit.js
+END
+ready.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/ready.js
+END
+domReady.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/domReady.js
+END
+text.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/text.js.uncompressed.js
+END
+OpenAjax.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/OpenAjax.js
+END
+window.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/window.js
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/LICENSE
+END
+dom-attr.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-attr.js.uncompressed.js
+END
+NodeList-data.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-data.js.uncompressed.js
+END
+cookie.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/cookie.js
+END
+NodeList-traverse.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-traverse.js
+END
+currency.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/currency.js.uncompressed.js
+END
+DeferredList.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/DeferredList.js
+END
+on.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/on.js
+END
+date.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/date.js
+END
+NodeList-fx.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-fx.js.uncompressed.js
+END
+dom-style.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-style.js
+END
+NodeList-manipulate.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/NodeList-manipulate.js
+END
+dom.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom.js
+END
+dom-form.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-form.js
+END
+dom-construct.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-construct.js.uncompressed.js
+END
+number.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/number.js
+END
+package.json
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/package.json
+END
+dom-geometry.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-geometry.js.uncompressed.js
+END
+AdapterRegistry.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/AdapterRegistry.js.uncompressed.js
+END
+dojo.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dojo.js
+END
+io-query.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/io-query.js.uncompressed.js
+END
+dom-prop.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/dom-prop.js
+END
+topic.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/topic.js.uncompressed.js
+END
+behavior.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/behavior.js
+END
+gears.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/gears.js
+END
+colors.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/colors.js
+END
+touch.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojo/touch.js.uncompressed.js
+END

@@ -1,0 +1,956 @@
+<div id="enclosureescape">
+	<div class="instructionstitle">CS148 Project 1: Enclosure Escape</div>
+	
+	<div class="subheading">Introduction</div>
+	
+	<p>This project is to acquaint you with the basics of writing robot controllers.</p>
+	
+	<div class="subheading">ROS, the Robot Operating System</div>
+	
+	<p>ROS (the Robot Operating System) is a middleware platform for robotics.  It facilitates
+	portability across robot hardware and reusability of software components.  It has a large
+	and growing body of support for devices and software libraries used in robotics.</p>
+	
+	<p>Over the course of CS148, you will come to learn and understand ROS and how the underlying
+	pieces of software interact with each other.  For most of the assignments, you will not be
+	implementing the assignment directly in ROS.  Instead, a ROS environment will be set up for you
+	and will be running behind the scenes; you will simply interact with it via a web browser.</p> 
+	
+	
+	
+	<div class="subheading">Rosbridge</div>
+	
+	<p>Rosbridge is 
+	
+	
+	
+	
+	
+	<p>For this project, we are using a web-based programming interface.  You will be given a
+	URL for a computer that already has a robot environment set up for you.  All you will need
+	to do is complete the proceeding environment in the web browser interface.</p>
+	
+	
+	<div class="level1">
+
+		<p>
+			<a
+				title="http://dl.dropbox.com/u/14391589/cs148/pictures/Toy_robot.jpg"
+				class="media"
+				href="/cs148/lib/exe/fetch.php?hash=0ef43a&amp;media=http%3A%2F%2Fdl.dropbox.com%2Fu%2F14391589%2Fcs148%2Fpictures%2FToy_robot.jpg"><img
+				width="250" alt="Toy robot finding its way"
+				title="Toy robot finding its way" class="media"
+				src="/cs148/lib/exe/fetch.php?hash=0ef43a&amp;w=250&amp;media=http%3A%2F%2Fdl.dropbox.com%2Fu%2F14391589%2Fcs148%2Fpictures%2FToy_robot.jpg"></a>
+		</p>
+
+	</div>
+
+	<h2 class="sectionedit2">
+		<a id="introduction" name="introduction">Introduction</a>
+	</h2>
+	<div class="level2">
+
+		<p>
+			This project is structured to acquaint you with the basics of writing
+			robot controllers using <a rel="nofollow" title="http://ros.org"
+				class="urlextern" href="http://ros.org">ROS (the Robot Operating
+				System)</a>. This introductory project is in the context of building an
+			random traversal robot controller to “escape” an arbitrary planar
+			environment. ROS runs onboard a robot (or any computing device) and
+			provides a software interface to the robot hardware, such as sensors
+			and actuators, over an IP network. Similar to a <a rel="nofollow"
+				title="http://en.wikipedia.org/wiki/Hardware_abstraction_layer"
+				class="urlextern"
+				href="http://en.wikipedia.org/wiki/Hardware_abstraction_layer">hardware
+				abstraction layers</a> for modern operating systems, ROS is considered <a
+				rel="nofollow"
+				title="http://en.wikipedia.org/wiki/Robotics_middleware"
+				class="urlextern"
+				href="http://en.wikipedia.org/wiki/Robotics_middleware">robot
+				middleware</a> to facilitate portability across robot hardware and
+			reusability of robot software components.
+		</p>
+
+		<p>
+			A video of <a rel="nofollow"
+				title="http://il.youtube.com/user/lizajane999#p/u/29/LBHizwQ-Mk4"
+				class="urlextern"
+				href="http://il.youtube.com/user/lizajane999#p/u/29/LBHizwQ-Mk4">Lisa
+				Miller's implementation of this assignment</a> from Spring Semester
+			2009:
+		</p>
+
+		<p>
+			<!--[if !IE]> -->
+			<object width="420" height="350"
+				data="/cs148/lib/exe/fetch.php?hash=ac6142&amp;media=http%3A%2F%2Fwww.youtube.com%2Fv%2FLBHizwQ-Mk4%3F.swf"
+				type="application/x-shockwave-flash" class="media">
+				<!-- <![endif]-->
+				<!--[if IE]>
+<object class="media" width="420" height="350" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+    <param name="movie" value="/cs148/lib/exe/fetch.php?hash=ac6142&amp;media=http%3A%2F%2Fwww.youtube.com%2Fv%2FLBHizwQ-Mk4%3F.swf" />
+<!-->
+				<!-- -->
+				<param value="high" name="quality">
+				The <a href="http://www.adobe.com/products/flashplayer/">Adobe
+					Flash Plugin</a> is needed to display this content.
+			</object>
+			<!-- <![endif]-->
+
+		</p>
+
+	</div>
+
+	<h2 class="sectionedit3">
+		<a id="important_dates" name="important_dates">Important Dates</a>
+	</h2>
+	<div class="level2">
+
+		<p>Project Assigned: Sept 12, 2011</p>
+
+		<p>Project Due: Sept 19, 2011, 12:30pm (just before class)</p>
+
+	</div>
+
+	<h1 class="sectionedit4">
+		<a id="backgroundros_the_50_000ft_view"
+			name="backgroundros_the_50_000ft_view">Background: ROS, the
+			50,000ft View</a>
+	</h1>
+	<div class="level1">
+
+		<p>ROS is many things wrapped into one. It is an interface layer
+			for software to work with robots. It is a network protocol. It is a
+			message structure of data types for robots. It is package
+			distribution system. It is a form of inter-process communication.
+			This will get confusing.</p>
+
+		<p>Thus, the following is a short high-level description of ROS to
+			help prime your understanding.</p>
+
+	</div>
+
+	<h2 class="sectionedit5">
+		<a id="ros_as_a_robot_runtime_environment"
+			name="ros_as_a_robot_runtime_environment">ROS as a Robot Runtime
+			Environment</a>
+	</h2>
+	<div class="level2">
+
+		<p>
+			A primary motivation of ROS is to facilitate modular design and reuse
+			of software components, portability across robot hardware, and
+			programming language independence. As such, the ROS run-time
+			environment is essentially a means of <a rel="nofollow"
+				title="http://en.wikipedia.org/wiki/Inter-process_communication"
+				class="urlextern"
+				href="http://en.wikipedia.org/wiki/Inter-process_communication">inter-process
+				communication</a> over internet sockets, but with a large and growing
+			body of support for devices and software libraries used in robotics.
+		</p>
+
+		<p>
+			Central to ROS is the concept of a <a rel="nofollow"
+				title="http://www.ros.org/wiki/ROS/Technical%20Overview#Node"
+				class="urlextern"
+				href="http://www.ros.org/wiki/ROS/Technical%20Overview#Node">
+				ROS node</a>, ROS's basic building block. Each node is a modular process
+			with some specialized purpose. For example, there are nodes that
+			interface with devices, such as nodes that control the basic movement
+			of a robot or simply publish information from a sensor. Other nodes
+			can provide interfaces to existing software libraries, such as for
+			path planning or visual object recognition. By establishing
+			communication between nodes, more complex behavior can be created.
+			For example, a robot can recognize objects by connecting its node for
+			publishing images to a node for visual object recognition. Further,
+			another node can be created to follow recognized objects by receiving
+			information from the visual object recognition node and sending motor
+			commands to a node that interfaces with the robot's motors. !!
+			example
+		</p>
+
+		<p>
+			Nodes exchange information over an IP network as <a rel="nofollow"
+				title="http://www.ros.org/wiki/Messages" class="urlextern"
+				href="http://www.ros.org/wiki/Messages">messages</a> for
+			communicating <a rel="nofollow"
+				title="http://www.ros.org/wiki/Topics" class="urlextern"
+				href="http://www.ros.org/wiki/Topics">topics</a> (handled in a <a
+				rel="nofollow"
+				title="http://en.wikipedia.org/wiki/Publish/subscribe"
+				class="urlextern"
+				href="http://en.wikipedia.org/wiki/Publish/subscribe">publish-subscribe</a>
+			manner) or <a rel="nofollow" title="http://www.ros.org/wiki/Services"
+				class="urlextern" href="http://www.ros.org/wiki/Services">services</a>
+			(handled in a <a rel="nofollow"
+				title="http://en.wikipedia.org/wiki/Request-response"
+				class="urlextern"
+				href="http://en.wikipedia.org/wiki/Request-response">request-response</a>
+			manner). Nodes use two protocols:
+		</p>
+		<ul>
+			<li class="level1"><div class="li">
+					<a rel="nofollow" title="http://en.wikipedia.org/wiki/XML-RPC"
+						class="urlextern" href="http://en.wikipedia.org/wiki/XML-RPC">XML-RPC</a>
+					(over <acronym title="Hyper Text Transfer Protocol">HTTP</acronym>)
+					to negotiate connections with other nodes and the ROS master
+					(described below)
+				</div></li>
+			<li class="level1"><div class="li">
+					<a rel="nofollow" title="http://www.ros.org/wiki/ROS/TCPROS"
+						class="urlextern" href="http://www.ros.org/wiki/ROS/TCPROS">TCPROS</a>
+					(over TCP) (or <a rel="nofollow"
+						title="http://www.ros.org/wiki/ROS/TCPROS" class="urlextern"
+						href="http://www.ros.org/wiki/ROS/TCPROS">UDPROS</a> over UDP) for
+					transport of data as topic and service messages
+				</div></li>
+		</ul>
+
+		<p>
+			<a
+				title="http://dl.dropbox.com/u/14391589/cs148/pictures/master-node-example.png"
+				class="media"
+				href="/cs148/lib/exe/fetch.php?hash=8f2485&amp;media=http%3A%2F%2Fdl.dropbox.com%2Fu%2F14391589%2Fcs148%2Fpictures%2Fmaster-node-example.png"><img
+				width="400" align="right" alt="" class="mediaright"
+				src="/cs148/lib/exe/fetch.php?hash=8f2485&amp;w=400&amp;media=http%3A%2F%2Fdl.dropbox.com%2Fu%2F14391589%2Fcs148%2Fpictures%2Fmaster-node-example.png"></a>
+		</p>
+
+		<p>
+			To moderate communication in ROS, there a special node called the <a
+				rel="nofollow" title="http://www.ros.org/wiki/Master"
+				class="urlextern" href="http://www.ros.org/wiki/Master">master
+				node</a>. Conceptually, this node is a matchmaker that is responsible
+			connecting publishers to subscribers (or requesters to services) for
+			data messages of a particular ROS <a rel="nofollow"
+				title="http://www.ros.org/wiki/Topics" class="urlextern"
+				href="http://www.ros.org/wiki/Topics">topic</a>, using <acronym
+				title="Extensible Markup Language">XML</acronym>-<acronym
+				title="Remote Procedure Call">RPC</acronym>. Once nodes are matched,
+			the publishing node will talk directly to its subscriber(s), using
+			TPCROS or UDPROS. An illustrations of how ROS performs matchmaking is
+			shown. ROS also uses a <a rel="nofollow"
+				title="http://www.ros.org/wiki/Parameter%20Server" class="urlextern"
+				href="http://www.ros.org/wiki/Parameter%20Server">parameter
+				server</a> to pass arguments to nodes from the command line using <a
+				rel="nofollow" title="http://www.ros.org/wiki/rosparam"
+				class="urlextern" href="http://www.ros.org/wiki/rosparam">rosparam</a>.
+		</p>
+
+		<p>
+			At runtime, the publish-subscribe connections between nodes forms a
+			graph representing the flow of information. Information about this
+			graph can be accessed in various ways provided by ROS. For example,
+			the <a rel="nofollow" title="http://www.ros.org/wiki/rxgraph"
+				class="urlextern" href="http://www.ros.org/wiki/rxgraph">rxgraph</a>
+			utility will show a visual display of all nodes and their topic
+			connections currently executing. The <a rel="nofollow"
+				title="http://www.ros.org/wiki/rostopic" class="urlextern"
+				href="http://www.ros.org/wiki/rostopic">rostopic</a> command-line
+			utility allows for querying and analysis of topics currently active
+			in ROS.
+		</p>
+
+		<p>
+			A more complete <a rel="nofollow"
+				title="http://www.ros.org/wiki/ROS/Introduction" class="urlextern"
+				href="http://www.ros.org/wiki/ROS/Introduction">conceptual and
+				technical overview of ROS</a> is described on the main ROS web site.
+		</p>
+
+		<p>
+			As <a rel="nofollow"
+				title="http://dspace.mit.edu/bitstream/handle/1721.1/46708/MIT-CSAIL-TR-2009-041.pdf?sequence=1"
+				class="urlextern"
+				href="http://dspace.mit.edu/bitstream/handle/1721.1/46708/MIT-CSAIL-TR-2009-041.pdf?sequence=1">surveyed
+				by Huang et al.</a>, it should be noted that ROS is only one of many
+			viable robot middleware frameworks. Also, the core functionality of
+			ROS is to perform socket-based <a rel="nofollow"
+				title="http://en.wikipedia.org/wiki/Inter-process_communication"
+				class="urlextern"
+				href="http://en.wikipedia.org/wiki/Inter-process_communication">inter-process
+				communication</a>, or “communications and marshalling” as described for
+			the <a rel="nofollow" title="http://code.google.com/p/lcm/LCM"
+				class="urlextern" href="http://code.google.com/p/lcm/LCM">LCM</a>
+			library. The “robot” aspects of ROS are due to its support for
+			robot-related devices and software, which are a complementary but
+			orthogonal features to inter-process communication.
+		</p>
+
+	</div>
+
+	<h3 class="sectionedit6">
+		<a id="ros_as_a_development_environment"
+			name="ros_as_a_development_environment">ROS as a Development
+			Environment</a>
+	</h3>
+	<div class="level3">
+
+		<p>
+			In addition to providing a software interface for robots, ROS also
+			provides a development environment that resembles a <a rel="nofollow"
+				title="http://en.wikipedia.org/wiki/Package_management_system"
+				class="urlextern"
+				href="http://en.wikipedia.org/wiki/Package_management_system">package
+				management system</a>. The <a rel="nofollow"
+				title="http://www.ros.org/wiki/Packages" class="urlextern"
+				href="http://www.ros.org/wiki/Packages">package</a> is the primary
+			element in the ROS build environment “that logically constitutes a
+			useful module.” A package is typically a directory containing a
+			collection of ROS nodes with related files, such as <a rel="nofollow"
+				title="http://www.ros.org/wiki/srv" class="urlextern"
+				href="http://www.ros.org/wiki/srv">service</a> and <a rel="nofollow"
+				title="http://www.ros.org/wiki/msg" class="urlextern"
+				href="http://www.ros.org/wiki/msg">message</a> definitions, <a
+				rel="nofollow" title="http://en.wikipedia.org/wiki/Make_(software)"
+				class="urlextern"
+				href="http://en.wikipedia.org/wiki/Make_(software)">makefiles</a>,
+			and external libraries. Packages can be compiled using the <a
+				rel="nofollow" title="http://www.ros.org/wiki/rosmake"
+				class="urlextern" href="http://www.ros.org/wiki/rosmake">rosmake</a>
+			or <a rel="nofollow" title="http://www.ros.org/wiki/rosdep"
+				class="urlextern" href="http://www.ros.org/wiki/rosdep">rosdep</a>
+			commands, handling the process of building executable nodes and “some
+			special ROS magic.” The ROS build system uses <a rel="nofollow"
+				title="http://en.wikipedia.org/wiki/CMake" class="urlextern"
+				href="http://en.wikipedia.org/wiki/CMake">CMake</a> at its core.
+			Packages can be created using the <a rel="nofollow"
+				title="http://www.ros.org/wiki/roscreate" class="urlextern"
+				href="http://www.ros.org/wiki/roscreate">roscreate-pkg</a> command,
+			providing a skeleton of a valid package as a starting point.
+			Dependencies for a package can be found using the <a rel="nofollow"
+				title="http://www.ros.org/wiki/rospack" class="urlextern"
+				href="http://www.ros.org/wiki/rospack">rospack</a> command.
+		</p>
+
+		<p>
+			ROS <a rel="nofollow" title="http://www.ros.org/wiki/Stacks"
+				class="urlextern" href="http://www.ros.org/wiki/Stacks">stacks</a>
+			are used to organize collections of packages for code sharing. Stacks
+			are the software units ROS uses for <a rel="nofollow"
+				title="http://www.ros.org/wiki/release" class="urlextern"
+				href="http://www.ros.org/wiki/release">testing, release, and
+				distribution</a> of software modules. The resulting modules are binary
+			Debian packages that are available via <a rel="nofollow"
+				title="http://en.wikipedia.org/wiki/Advanced_Packaging_Tool"
+				class="urlextern"
+				href="http://en.wikipedia.org/wiki/Advanced_Packaging_Tool">apt-get</a>
+			as part of a <a rel="nofollow"
+				title="http://www.ros.org/wiki/Distributions" class="urlextern"
+				href="http://www.ros.org/wiki/Distributions">ROS distribution</a>.
+		</p>
+
+		<p>
+			Due to its distribution-centered design, ROS tends to rosinvent
+			existing unix tools for easier navigation of ROS packages. For
+			example, <a rel="nofollow" title="http://www.ros.org/wiki/rosbash"
+				class="urlextern" href="http://www.ros.org/wiki/rosbash">rosbash</a>
+			includes several ros-ified commands such as roscd, rosls, etc.
+		</p>
+
+	</div>
+
+	<h4>
+		<a id="programming_language_support"
+			name="programming_language_support">Programming Language Support</a>
+	</h4>
+	<div class="level4">
+
+		<p>
+			Although ROS nodes can be developed in any programming language that
+			can support ROS messages, the only languages with first-class support
+			as <a rel="nofollow"
+				title="http://www.ros.org/wiki/Client%20Libraries" class="urlextern"
+				href="http://www.ros.org/wiki/Client%20Libraries">ROS client
+				libraries</a> are currently for Python and C++. <a rel="nofollow"
+				title="http://code.google.com/p/rosjava/" class="urlextern"
+				href="http://code.google.com/p/rosjava/">Java support for ROS</a>
+			was announced recently, but is unsupported by cs148. Support deemed
+			unworthy of first-class support by the powers governing ROS will also
+			not be supported in cs148.
+		</p>
+
+		<p>
+			For arbitrary languages and operating environments, brown-ros-pkg
+			provides the <a rel="nofollow"
+				title="http://www.ros.org/wiki/rosbridge" class="urlextern"
+				href="http://www.ros.org/wiki/rosbridge">rosbridge</a> package for
+			exchanging <a rel="nofollow"
+				title="http://code.google.com/p/brown-ros-pkg/wiki/rosjs"
+				class="urlextern"
+				href="http://code.google.com/p/brown-ros-pkg/wiki/rosjs">Javascript
+				support for ROS</a> using <a rel="nofollow"
+				title="http://en.wikipedia.org/wiki/WebSockets" class="urlextern"
+				href="http://en.wikipedia.org/wiki/WebSockets">websockets</a>.
+		</p>
+
+	</div>
+
+	<h3 class="sectionedit7">
+		<a id="ros_installation_and_support_packages"
+			name="ros_installation_and_support_packages">ROS Installation and
+			Support Packages</a>
+	</h3>
+	<div class="level3">
+
+		<p>CS148 robots have ROS and support packages preinstalled. So,
+			there is no need for you to create your own ROS installation.</p>
+
+		<p>
+			However, if you want to have your own ROS install (which is very
+			helpful), directions are on the <a rel="nofollow"
+				title="http://www.ros.org/wiki/ROS/Installation" class="urlextern"
+				href="http://www.ros.org/wiki/ROS/Installation">ROS installation
+				page</a>. ROS is currently transitioning versions, between the older
+			“Diamondback” and the new “Electric” versions. For this class, at
+			least initially, we will be using the older, more stable Diamondback
+			release.
+		</p>
+
+		<p>
+			<strong>Linux support </strong> ROS's package management system is
+			primarily designed for the <a rel="nofollow"
+				title="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)"
+				class="urlextern"
+				href="http://en.wikipedia.org/wiki/Ubuntu_(operating_system)">Ubuntu
+				Linux</a> operating system, but should work with most common Linux
+			distributions. You can install ROS and the Turtlebot-specific stacks
+			on your Ubuntu system easily, using apt-get:
+		</p>
+		<pre class="code">sudo apt-get install ros-diamondback-desktop-full
+sudo apt-get install ros-diamondback-turtlebot-desktop
+sudo apt-get install ros-diamondback-brown_remotelab</pre>
+
+		<p>
+			<strong><acronym title="Operating System">OS</acronym> X
+				support</strong> It can be made to work with Mac <acronym
+				title="Operating System">OS</acronym> X, but not without a fair
+			amount of work &ndash; if you wish to try, details are also found at
+			the ROS installation page.
+		</p>
+
+		<p>
+			<strong>Windows and other <acronym title="Operating System">OS</acronym>
+				support
+			</strong> Direct use of ROS in Windows and non-Linux operating systems is not
+			yet supported. However, we will spend time later in the class with <a
+				rel="nofollow" title="http://www.ros.org/wiki/rosbridge"
+				class="urlextern" href="http://www.ros.org/wiki/rosbridge">rosbridge</a>,
+			a ROS proxy that enables non-ROS applications to use ROS from any
+			platform or development environment using <a rel="nofollow"
+				title="http://en.wikipedia.org/wiki/JSON" class="urlextern"
+				href="http://en.wikipedia.org/wiki/JSON">JSON</a> messaging.
+		</p>
+
+		<p>
+			<strong>ROS by virtual machine</strong> We very much recommend that
+			you use Ubuntu Linux; if you are running <acronym
+				title="Operating System">OS</acronym> X or Windows it is probably
+			best to install a virtual machine running Ubuntu via <a
+				rel="nofollow" title="http://vmware.com" class="urlextern"
+				href="http://vmware.com">VmWare</a> or <a rel="nofollow"
+				title="http://virtualbox.com" class="urlextern"
+				href="http://virtualbox.com">Virtualbox</a>. brown-ros-pkg has a <a
+				rel="nofollow"
+				title="http://code.google.com/p/brown-ros-pkg/wiki/Quick_start_rosbridge_and_ROS"
+				class="urlextern"
+				href="http://code.google.com/p/brown-ros-pkg/wiki/Quick_start_rosbridge_and_ROS">ROS
+				quick start guide</a> installing ROS and provides a <a rel="nofollow"
+				title="http://robotics.cs.brown.edu/resources/VM-Ubuntu-maverick-ros.tgz"
+				class="urlextern"
+				href="http://robotics.cs.brown.edu/resources/VM-Ubuntu-maverick-ros.tgz">VMWare
+				image with ROS pre-installed</a>.
+		</p>
+
+	</div>
+
+	<h1 class="sectionedit8">
+		<a id="assignment_instructions" name="assignment_instructions">Assignment
+			Instructions</a>
+	</h1>
+	<div class="level1">
+
+		<p>For this assignment, you will be expected to work with an
+			existing installation of ROS to write a simple random traversal
+			controller to escape a static environment.</p>
+
+		<p>Before writing your own controller, you must first setup the
+			robot and verify that it is running properly. Once your controller is
+			completed, your robot will be able to escape from an enclosed area by
+			bumping into walls and reacting appropriately.</p>
+
+		<p>Your tasks for this assignment are as follows.</p>
+		<ol>
+			<li class="level1"><div class="li">Setup remote access to
+					the robot's netbook</div></li>
+			<li class="level1"><div class="li">Run ROS and teleoperate
+					the robot</div></li>
+			<li class="level1"><div class="li">Write your own random
+					traversal controller</div></li>
+			<li class="level1"><div class="li">Commit to your group's
+					repository</div></li>
+		</ol>
+
+		<p>
+			For the most part, the sections below will follow the <a
+				rel="nofollow" title="http://www.ros.org/wiki/Robots/TurtleBot"
+				class="urlextern" href="http://www.ros.org/wiki/Robots/TurtleBot">Turtlebot
+				bring up and teleop tutorials</a> from ros.org:
+		</p>
+
+	</div>
+
+	<h2 class="sectionedit9">
+		<a id="starting_the_robot_and_remote_access"
+			name="starting_the_robot_and_remote_access">Starting the robot
+			and remote access</a>
+	</h2>
+	<div class="level2">
+
+		<p>First, you will need access to CIT 404 where the robots reside:
+		</p>
+		<ul>
+			<li class="level1"><div class="li">Ask one of the TAs for
+					access to the Roomba Lab (CIT 404).</div></li>
+		</ul>
+
+		<p>Next, you need to find a group to work with for the semester:</p>
+		<ul>
+			<li class="level1"><div class="li">Find a partner and
+					choose one of the names on the whiteboard in 404 as the team name.
+					The TA will use this to create a repository that will be used later
+					in this assignment.</div></li>
+		</ul>
+
+		<p>Now, you should be ready to use the robot. The robot base and
+			computer should already be plugged in to power:</p>
+		<ul>
+			<li class="level1"><div class="li">Unplug the power cords
+					from the Turtlebot base and computer.</div></li>
+			<li class="level1"><div class="li">Ensure that the robot
+					base is turned on (a green light should glow next to the power
+					button). Connect the two USB cables to the laptop.</div></li>
+			<li class="level1"><div class="li">Unplug the two USB
+					cables connecting the Turtlebot computer to the rest of the robot.</div>
+			</li>
+			<li class="level1"><div class="li">Turn on the computer
+					(if necessary) and log in: userid and password are both your team
+					name initially. Feel free to change your password. (Note: that you
+					will have to do this for each robot.)</div></li>
+			<li class="level1"><div class="li">
+					From a terminal window, use <a rel="nofollow"
+						title="http://www.ros.org/wiki/roslaunch" class="urlextern"
+						href="http://www.ros.org/wiki/roslaunch">roslaunch</a> to launch
+					the Turtlebot driver on the Turtlebot computer. roslaunch is a
+					means to start the execution of a collection of ROS nodes
+					automatically. Each Turtlebot has a launchfile in the
+					/home/turtlebot directory that sets some calibration parameters and
+					then brings up some subset of the Turtlebot's functionality. For
+					this assignment, the “minimal.launch” file provides functionality
+					that we need for now:
+				</div></li>
+		</ul>
+		<pre class="code"> &gt; roslaunch ~/turtlebot.launch</pre>
+		<ul>
+			<li class="level1"><div class="li">From a second terminal,
+					start up the Turtlebot dashboard:</div></li>
+		</ul>
+		<pre class="code"> &gt; rosrun turtlebot_dashboard turtlebot_dashboard </pre>
+
+	</div>
+
+	<h4>
+		<a id="supplementary_information" name="supplementary_information">Supplementary
+			information</a>
+	</h4>
+	<div class="level4">
+
+		<p>
+			Turtlebot <a rel="nofollow"
+				title="http://www.ros.org/wiki/turtlebot_bringup/Tutorials/TurtleBot%20Bringup"
+				class="urlextern"
+				href="http://www.ros.org/wiki/turtlebot_bringup/Tutorials/TurtleBot%20Bringup">
+				bring up tutorial</a> and video from ros.org:
+		</p>
+
+		<p>
+			<!--[if !IE]> -->
+			<object width="420" height="350"
+				data="/cs148/lib/exe/fetch.php?hash=63dc95&amp;media=http%3A%2F%2Fwww.youtube.com%2Fv%2F1gOBQc6z03E%3F.swf"
+				type="application/x-shockwave-flash" class="media">
+				<!-- <![endif]-->
+				<!--[if IE]>
+<object class="media" width="420" height="350" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+    <param name="movie" value="/cs148/lib/exe/fetch.php?hash=63dc95&amp;media=http%3A%2F%2Fwww.youtube.com%2Fv%2F1gOBQc6z03E%3F.swf" />
+<!-->
+				<!-- -->
+				<param value="high" name="quality">
+				The <a href="http://www.adobe.com/products/flashplayer/">Adobe
+					Flash Plugin</a> is needed to display this content.
+			</object>
+			<!-- <![endif]-->
+
+		</p>
+
+		<p>[Note: This video contains instructions for running the
+			turtlebot dashboard from another computer. Your 148 TA staff is
+			working on solving networking issues so that we can do this. Ignore
+			these instructions for now; we'll have the network ready within a
+			couple of weeks and will provide instructions when ready and
+			necessary.]</p>
+
+	</div>
+
+	<h2 class="sectionedit10">
+		<a id="teleoperate_the_robot" name="teleoperate_the_robot">Teleoperate
+			the robot</a>
+	</h2>
+	<div class="level2">
+
+		<p>
+			When the robot is started, it will be in passive mode. When you are
+			ready to make the robot move, enable “Full mode” on the <a
+				rel="nofollow" title="http://www.ros.org/wiki/turtlebot_dashboard"
+				class="urlextern" href="http://www.ros.org/wiki/turtlebot_dashboard">Turtlebot
+				dashboard</a>, by clicking on the cog-wheel icon.
+		</p>
+
+		<p>
+			<a
+				title="http://dl.dropbox.com/u/14391589/cs148/pictures/turtlebot_dashboard.png"
+				class="media"
+				href="/cs148/lib/exe/fetch.php?hash=63e579&amp;media=http%3A%2F%2Fdl.dropbox.com%2Fu%2F14391589%2Fcs148%2Fpictures%2Fturtlebot_dashboard.png"><img
+				alt="" class="media"
+				src="/cs148/lib/exe/fetch.php?hash=63e579&amp;media=http%3A%2F%2Fdl.dropbox.com%2Fu%2F14391589%2Fcs148%2Fpictures%2Fturtlebot_dashboard.png"></a>
+		</p>
+
+		<p>This tells the robot to begin accepting motor commands. Then
+			run the teleoperation interface from the brown_remotelab package.</p>
+		<pre class="code">rosrun teleop_twist_keyboard teleop_twist_keyboard.py /cmd_vel:=/turtlebot_node/cmd_vel</pre>
+
+		<p>This command tells the robot to run the
+			teleop_twist_keyboard.py program, found in the teleop_twist_keyboard
+			stack, and remaps the /cmd_vel topic (which is where the teleop
+			program publishes its motor commands) to the /turtlebot_node/cmd_vel
+			topic (which is where the Turtlebot driver is listening for motor
+			commands). If successful, you should see the following interface
+			appear in the teleoperation terminal and control the robot (driving
+			and turning speed) from your keyboard.</p>
+		<pre class="code">Reading from the keyboard  and Publishing to Twist!
+---------------------------
+Moving around:
+   u    i    o
+   j    k    l
+   m    ,    .
+  
+q/z : increase/decrease max speeds by 10%
+w/x : increase/decrease only linear speed by 10%
+e/c : increase/decrease only angular speed by 10%
+anything else : stop
+  
+CTRL-C to quit</pre>
+
+		<p>Have fun driving the robot around. If it works, then everything
+			is configured properly. If not, time to track the problem down.</p>
+
+	</div>
+
+	<h5>
+		<a id="supplementary_information1" name="supplementary_information1">Supplementary
+			information</a>
+	</h5>
+	<div class="level5">
+
+		<p>
+			Turtlebot <a rel="nofollow"
+				title="http://www.ros.org/wiki/turtlebot_dashboard"
+				class="urlextern" href="http://www.ros.org/wiki/turtlebot_dashboard">
+				dashboard description</a> and <a rel="nofollow"
+				title="http://www.ros.org/wiki/turtlebot_teleop/Tutorials/Teleoperation"
+				class="urlextern"
+				href="http://www.ros.org/wiki/turtlebot_teleop/Tutorials/Teleoperation">
+				teleoperation tutorial</a> and video from ros.org:
+		</p>
+
+		<p>
+			<!--[if !IE]> -->
+			<object width="420" height="350"
+				data="/cs148/lib/exe/fetch.php?hash=0421e1&amp;media=http%3A%2F%2Fwww.youtube.com%2Fv%2FwDU1Wc9SO7Q%3F.swf"
+				type="application/x-shockwave-flash" class="media">
+				<!-- <![endif]-->
+				<!--[if IE]>
+<object class="media" width="420" height="350" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+    <param name="movie" value="/cs148/lib/exe/fetch.php?hash=0421e1&amp;media=http%3A%2F%2Fwww.youtube.com%2Fv%2FwDU1Wc9SO7Q%3F.swf" />
+<!-->
+				<!-- -->
+				<param value="high" name="quality">
+				The <a href="http://www.adobe.com/products/flashplayer/">Adobe
+					Flash Plugin</a> is needed to display this content.
+			</object>
+			<!-- <![endif]-->
+
+		</p>
+
+	</div>
+
+	<h2 class="sectionedit11">
+		<a id="care_and_feeding_of_the_turtlebot"
+			name="care_and_feeding_of_the_turtlebot">Care and feeding of the
+			Turtlebot</a>
+	</h2>
+	<div class="level2">
+
+		<p>
+			Please see and follow the instructions in <a
+				title="turtlebot_hardware_setup" class="wikilink1"
+				href="/cs148/doku.php?id=turtlebot_hardware_setup">Turtlebot
+				Hardware Setup</a>.
+		</p>
+
+	</div>
+
+	<h2 class="sectionedit12">
+		<a id="write_your_own_random_traversal_controller"
+			name="write_your_own_random_traversal_controller">Write your own
+			random traversal controller</a>
+	</h2>
+	<div class="level2">
+
+		<p>
+			We highly recommend that you go through the <a rel="nofollow"
+				title="http://www.ros.org/wiki/ROS/Tutorials" class="urlextern"
+				href="http://www.ros.org/wiki/ROS/Tutorials">ROS tutorials</a> on
+			ros.org. These instructions roughly follow the <a rel="nofollow"
+				title="http://www.ros.org/wiki/ROS/Tutorials/WritingPublisherSubscriber(python)"
+				class="urlextern"
+				href="http://www.ros.org/wiki/ROS/Tutorials/WritingPublisherSubscriber(python)">ROS
+				tutorial on creating a simple publisher and subscriber</a>. We skip over
+			several helpful details and features in the interest of being
+			concise.
+		</p>
+
+		<p>In this section, you will create a ROS package that will allow
+			you to implement enclosure escape. You will modify the source in
+			these instructions for implementing the random walk robot behavior
+			for enclosure escape. The following steps describe how to create,
+			build, and execute ROS packages for a sample robot controller:</p>
+		<ul>
+			<li class="level1"><div class="li">Create a directory
+					somewhere where an appropriate version of ROS is installed (either
+					on your machine or your account on the robot). This directory will
+					become the root of a git source repository, as noted below:</div></li>
+		</ul>
+		<pre class="code">mkdir &lt;groupname&gt;
+cd &lt;groupname&gt;</pre>
+		<ul>
+			<li class="level1"><div class="li">ROS needs to be told to
+					look in this directory in order to find robot programs. You can run
+					this command inside every terminal shell you start, or you can add
+					it to a .bashrc file for convenience:</div></li>
+		</ul>
+		<pre class="code">source /opt/ros/diamondback/setup.bash
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:/path/to/&lt;groupname&gt;</pre>
+		<ul>
+			<li class="level1"><div class="li">
+					Create a ROS package for your enclosure escape code using the <a
+						rel="nofollow" title="http://www.ros.org/wiki/roscreate"
+						class="urlextern" href="http://www.ros.org/wiki/roscreate">roscreate-pkg</a>
+					command:
+				</div></li>
+		</ul>
+		<pre class="code">roscreate-pkg enclosure_escape rospy std_msgs turtlebot_node</pre>
+
+		<p>
+			This automatically creates a directory called enclosure_escape with
+			direct dependencies on two other packages <a rel="nofollow"
+				title="http://www.ros.org/wiki/rospy" class="urlextern"
+				href="http://www.ros.org/wiki/rospy">rospy</a> (ROS Python client
+			library) and <a rel="nofollow"
+				title="http://www.ros.org/wiki/turtlebot_node" class="urlextern"
+				href="http://www.ros.org/wiki/turtlebot_node">Turtlebot node</a>.
+			These packages depend on several other packages, which can be found
+			using the <a rel="nofollow" title="http://www.ros.org/wiki/rospack"
+				class="urlextern" href="http://www.ros.org/wiki/rospack">rospack</a>
+			command. roscreate generates a number of files for building the new
+			package, as described in the <a rel="nofollow"
+				title="http://www.ros.org/wiki/ROS/Tutorials/CreatingPackage"
+				class="urlextern"
+				href="http://www.ros.org/wiki/ROS/Tutorials/CreatingPackage">roscreate
+				tutorial</a>.
+		</p>
+		<ul>
+			<li class="level1"><div class="li">Change directory into
+					the enclosure_escape package:</div></li>
+		</ul>
+		<pre class="code">roscd enclosure_escape</pre>
+		<ul>
+			<li class="level1"><div class="li">Create the nodes
+					directory within the enclosure_escape package:</div></li>
+		</ul>
+		<pre class="code">mkdir nodes</pre>
+		<ul>
+			<li class="level1"><div class="li">
+					Create a file called nodes/enclosure_escape.py (<a rel="nofollow"
+						title="http://dl.dropbox.com/u/14391589/cs148/files/enclosure_escape.py"
+						class="urlextern"
+						href="http://dl.dropbox.com/u/14391589/cs148/files/enclosure_escape.py">file</a>),
+					and paste the following inside it:
+				</div></li>
+		</ul>
+		<pre class="code"> #!/usr/bin/env python
+ import roslib; roslib.load_manifest('enclosure_escape')
+ import rospy
+ from geometry_msgs.msg import Twist
+ from turtlebot_node.msg import TurtlebotSensorState
+ # global variables 
+ bump = False
+ 
+ # listen (adapted from line_follower
+ def processSensing(TurtlebotSensorState):
+     global bump
+     bump = TurtlebotSensorState.bumps_wheeldrops &gt; 0
+     #newInfo = True
+ 
+ 
+ def hello_create():
+     pub = rospy.Publisher('/turtlebot_node/cmd_vel', Twist)
+     rospy.Subscriber('/turtlebot_node/sensor_state', TurtlebotSensorState, processSensing)
+     rospy.init_node('hello_create')
+     #listen
+     global bump
+     twist = Twist()
+     while not rospy.is_shutdown():
+         if bump:
+             str = "hello create, you have bumped into something  %s"%rospy.get_time()
+             rospy.loginfo(str)
+             twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
+             twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0
+             bump = False
+         else:
+             str = "hello create, you can spin now %s"%rospy.get_time()
+             rospy.loginfo(str)
+             twist.linear.x = 0.1; twist.linear.y = 0; twist.linear.z = 0
+             twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0.1
+         pub.publish(twist)
+         rospy.sleep(0.25)
+ if __name__ == '__main__':
+     try:
+         hello_create()
+     except rospy.ROSInterruptException: pass
+</pre>
+		<ul>
+			<li class="level1"><div class="li">Make the source for
+					this node is executable:</div></li>
+		</ul>
+		<pre class="code">chmod +x nodes/enclosure_escape.py</pre>
+		<ul>
+			<li class="level1"><div class="li">Compile the
+					enclosure_escape package</div></li>
+		</ul>
+		<pre class="code">rosmake enclosure_escape</pre>
+		<ul>
+			<li class="level1"><div class="li">Run the
+					enclosure_escape node (make sure you're connected to the robot,
+					that your dashboard is up, and that the robot is in Full mode)</div></li>
+		</ul>
+		<pre class="code">rosrun enclosure_escape enclosure_escape.py</pre>
+
+		<p>If successful, you should see the robot move forward at an
+			angle, and stop when it bumps into something.</p>
+		<ul>
+			<li class="level1"><div class="li">Modify
+					enclosure_escape.py to perform random traversal</div></li>
+		</ul>
+
+	</div>
+
+	<h3 class="sectionedit13">
+		<a id="committing_your_package_to_your_repository"
+			name="committing_your_package_to_your_repository">Committing your
+			package to your repository</a>
+	</h3>
+	<div class="level3">
+
+		<p>
+			For setting up your git repository, see <a title="repository_setup"
+				class="wikilink1" href="/cs148/doku.php?id=repository_setup">repository_setup</a>.
+		</p>
+
+		<p>We expect your repository to have one branch for each project.
+			While you will be able to view or tamper with the repositories of
+			other groups, doing so is a violation of the honor code and we'll
+			notice.</p>
+
+		<p>We will be using a script to checkout your code to test it.
+			This will be completed and posted shortly.</p>
+
+		<p>Hint: For your first commit, cd into the root directory of your
+			git repository, and:</p>
+		<pre class="code">&gt; git add .
+&gt; git commit -a -m "My first commit!"
+&gt; git push</pre>
+
+		<p>The last line puts your code into the repository online.</p>
+
+		<p>In order to synchronize your code with the repository, use this
+			command:</p>
+		<pre class="code">&gt; git pull</pre>
+
+	</div>
+
+	<h1 class="sectionedit14">
+		<a id="care_and_feeding_of_the_turtlebot_again"
+			name="care_and_feeding_of_the_turtlebot_again">Care and feeding
+			of the Turtlebot (again)</a>
+	</h1>
+	<div class="level1">
+
+		<p>
+			When you have finished with your Turtlebot for the time being, stop
+			all of the ROS nodes running on your own computer except for the
+			Turtlebot dashboard. Commit and delete all of your code on the robot,
+			if you were working with your own code. Put the machine back into
+			Passive mode again by clicking on the cog-wheel icon on your
+			dashboard. <strong>This is important.</strong> The robot will not
+			charge unless it is in Passive mode. Plug power cables into both the
+			computer and the robot base, and verify on your dashboard that the
+			battery icons now indicate charging. At this point, you can stop the
+			dashboard on your own machine and leave.
+		</p>
+
+	</div>
+
+	<h1 class="sectionedit15">
+		<a id="submission_and_testing" name="submission_and_testing">Submission
+			and Testing</a>
+	</h1>
+	<div class="level1">
+
+		<p>To submit this project, create a branch of your repository
+			named “submit_enclosure_escape”. This code will be checkout and run
+			by the course staff, without modification. This code will be tested
+			against two environments with five trials for each enclosure. Sample
+			enclosures are outlined below:</p>
+
+		<p>
+			<a
+				title="http://dl.dropbox.com/u/14391589/cs148/pictures/cs148_enclosure_escape_env_examples.png"
+				class="media"
+				href="/cs148/lib/exe/fetch.php?hash=f7317b&amp;media=http%3A%2F%2Fdl.dropbox.com%2Fu%2F14391589%2Fcs148%2Fpictures%2Fcs148_enclosure_escape_env_examples.png"><img
+				width="600" alt="" class="media"
+				src="/cs148/lib/exe/fetch.php?hash=f7317b&amp;w=600&amp;media=http%3A%2F%2Fdl.dropbox.com%2Fu%2F14391589%2Fcs148%2Fpictures%2Fcs148_enclosure_escape_env_examples.png"></a>
+		</p>
+
+		<p>A script will be provided soon to test automated checkout and
+			execution of your code on a Turtlebot.</p>
+
+	</div>
+
+
+
+	<div class="meta">
+		<div class="user"></div>
+		<div class="doc">enclosure_escape.txt · Last modified:
+			2011/09/14 18:00 by brian</div>
+	</div>
+
+</div>

@@ -1,0 +1,12 @@
+<stack name="rlrobot" version="0.1.0">
+  <description brief="rlrobot">
+
+     rlrobot
+
+  </description>
+  <author>Maintained by Sosentos</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rlrobot</url>
+
+</stack>

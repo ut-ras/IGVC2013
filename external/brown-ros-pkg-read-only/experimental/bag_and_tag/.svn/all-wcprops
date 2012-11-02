@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/949/trunk/experimental/bag_and_tag
+END
+bag_and_tag.launch
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/901/trunk/experimental/bag_and_tag/bag_and_tag.launch
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/870/trunk/experimental/bag_and_tag/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/868/trunk/experimental/bag_and_tag/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/871/trunk/experimental/bag_and_tag/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/949/trunk/experimental/bag_and_tag/Makefile
+END

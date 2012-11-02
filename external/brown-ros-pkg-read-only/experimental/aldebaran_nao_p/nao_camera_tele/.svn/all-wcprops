@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/773/trunk/experimental/aldebaran_nao_p/nao_camera_tele
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/773/trunk/experimental/aldebaran_nao_p/nao_camera_tele/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/773/trunk/experimental/aldebaran_nao_p/nao_camera_tele/mainpage.dox
+END
+arms.launch
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/773/trunk/experimental/aldebaran_nao_p/nao_camera_tele/arms.launch
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/773/trunk/experimental/aldebaran_nao_p/nao_camera_tele/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/773/trunk/experimental/aldebaran_nao_p/nao_camera_tele/Makefile
+END

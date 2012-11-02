@@ -1,0 +1,6 @@
+<div>
+  <div class="video_widget" dojoAttachPoint="videoAttach"></div>
+  <center>
+  <div dojoAttachPoint="visAttach"></div>
+  </center>
+</div>

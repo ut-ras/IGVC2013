@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <title>Let's ros.js</title>
+
+  <script type="text/javascript" src="CodeMirror-2.24/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="CodeMirror-2.24/lib/codemirror.css">
+  <script type="text/javascript" src="CodeMirror-2.24/mode/xml/xml.js"></script>
+  <script type="text/javascript" src="CodeMirror-2.24/mode/javascript/javascript.js"></script>
+  <script type="text/javascript" src="CodeMirror-2.24/mode/css/css.js"></script>
+  <script type="text/javascript" src="CodeMirror-2.24/mode/htmlmixed/htmlmixed.js"></script>
+  
+  <script type="text/javascript" src="ros.js"></script>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript">
+$(function() {
+  var skeleton = '';
+  skeleton += '<!doctype html>\n';
+  skeleton += '<html>\n';
+  skeleton += '  <head>\n';
+  skeleton += '\n';
+  skeleton += '    <title>Let\'s ros.js<\/title>\n';
+  skeleton += '\n';
+  skeleton += '    <script type="text/javascript" src="';
+  skeleton += document.location.toString().slice(0,-11) + 'ros.js';
+  skeleton += '"><\/script>\n';
+  skeleton += '    <script type="text/javascript">\n';
+  skeleton += '\n';
+  skeleton += '      var con = new ros.Connection(\'ws:\/\/localhost:9090\');\n';
+  skeleton += '      con.setOnError(function() {\n';
+  skeleton += '        document.title = \'Error\';\n';
+  skeleton += '      });\n';
+  skeleton += '      con.setOnClose(function() {\n';
+  skeleton += '        document.title = \'Closed\';\n';
+  skeleton += '      });\n';
+  skeleton += '\n';
+  skeleton += '      con.setOnOpen(function() {\n';
+  skeleton += '\n';
+  skeleton += '        //con.publish(\'/topic\',\'type-string\',JSONobj);\n';
+  skeleton += '        //con.addHandler(\'\/topic\',function(msg) {});\n';
+  skeleton += '        //con.callService(\'\/service\',[arg1,arg2,arg3],function(msg) {});\n';
+  skeleton += '        //con.callService(\'\/rosjs\/subscribe\',[\'\/topic\',-1],function(msg) {});\n';
+  skeleton += '\n';
+  skeleton += '        //your script here\n';
+  skeleton += '\n';
+  skeleton += '      });\n';
+  skeleton += '\n';
+  skeleton += '    <\/script>\n';
+  skeleton += '  <\/head>\n';
+  skeleton += '<body>\n';
+  skeleton += '\n';
+  skeleton += '<a href="#" onclick="window.close();">close me<\/a>\n';
+  skeleton += '\n';
+  skeleton += '<!-- MORE HTML HERE -->\n';
+  skeleton += '\n';
+  skeleton += '<\/body>\n';
+  skeleton += '<\/html>\n';
+  
+  var editor = CodeMirror(document.body,{value: skeleton, 
+                                           mode:"htmlmixed",
+                                           lineNumbers: true,});
+
+  $('#test').click(function() {
+    var HTML = editor.getValue();
+    var win = window.open();
+    win.document.write(HTML);
+
+    return false;
+  });
+});
+  </script>
+  <style>
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background: gray;
+}
+
+.header {
+  margin: 1em;
+  text-align: center;
+}
+
+.CodeMirror {
+  background: white;
+  margin: 2em;
+}
+
+.CodeMirror-scroll {
+  height: 600px;
+}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Create your HTML page below.</h1>
+    <input id="test" type="submit" value="Test This Page"></input>
+  </div>
+</body>
+</html>

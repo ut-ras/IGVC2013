@@ -1,0 +1,9 @@
+<launch>
+<node name="ic1" pkg="irobot_create_2_1" type="driver.py"/>
+<node name="p1" pkg="gscam" type="gscam"/>
+
+<param name="compressed_image_transport_jpeg_quality" value="45"/>
+<node name="ts1" pkg="mesh_teleop2" type="teleop_server">
+    <param name="image_transport" value="compressed"/>
+</node>
+</launch>

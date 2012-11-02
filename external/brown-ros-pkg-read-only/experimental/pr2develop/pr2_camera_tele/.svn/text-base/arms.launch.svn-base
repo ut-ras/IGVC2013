@@ -1,0 +1,11 @@
+<launch>
+
+
+  <!-- set input dimension -->
+  <param name="pr2_camera_tele/r_arm_id" type="int" value="1"/>
+
+  <!-- set output dimension -->
+  <param name="pr2_camera_tele/l_arm_id" type="int" value="0"/>
+
+  <node name="pr2_camera_tele" pkg="pr2_camera_tele" type="pr2_camera_tele" output="screen"/>
+</launch>

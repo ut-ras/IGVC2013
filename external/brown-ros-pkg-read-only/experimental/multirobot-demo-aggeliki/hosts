@@ -1,0 +1,20 @@
+127.0.0.1	localhost
+#127.0.1.1	syndrome
+192.168.0.6	syndrome
+192.168.0.2	greengoblin
+192.168.0.3	noname
+192.168.0.4	doom
+192.168.0.5	brainiac
+192.168.0.7	luthor
+192.168.0.8	joker
+192.168.0.9	magog
+192.168.0.10	nonameblack
+192.168.0.11	frizzle
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts

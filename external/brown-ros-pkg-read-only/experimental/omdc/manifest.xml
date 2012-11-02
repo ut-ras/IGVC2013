@@ -1,0 +1,17 @@
+<package>
+  <description brief="omdc">
+    overhead_map display controller
+
+  </description>
+  <author>Brian Thomas</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/omdc</url>
+  <depend package="rospy" />
+  <!-- below for msgs -->
+  <depend package="planar_tracker"/>
+  <depend package="om_msgs"/>
+
+</package>
+
+

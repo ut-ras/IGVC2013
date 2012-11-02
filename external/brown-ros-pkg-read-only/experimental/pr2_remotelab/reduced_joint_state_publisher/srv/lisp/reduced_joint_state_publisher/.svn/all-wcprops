@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/reduced_joint_state_publisher/srv/lisp/reduced_joint_state_publisher
+END
+RequestedJointStates.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/reduced_joint_state_publisher/srv/lisp/reduced_joint_state_publisher/RequestedJointStates.lisp
+END
+_package.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/reduced_joint_state_publisher/srv/lisp/reduced_joint_state_publisher/_package.lisp
+END
+.RequestedJointStates.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/reduced_joint_state_publisher/srv/lisp/reduced_joint_state_publisher/.RequestedJointStates.asd-dep
+END
+_package_RequestedJointStates.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/reduced_joint_state_publisher/srv/lisp/reduced_joint_state_publisher/_package_RequestedJointStates.lisp
+END
+reduced_joint_state_publisher-srv.asd
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/reduced_joint_state_publisher/srv/lisp/reduced_joint_state_publisher/reduced_joint_state_publisher-srv.asd
+END

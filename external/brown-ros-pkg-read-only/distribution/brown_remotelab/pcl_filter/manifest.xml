@@ -1,0 +1,18 @@
+<package>
+  <description brief="pcl_filter">
+
+     pcl_filter
+
+  </description>
+  <author>Jihoon</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/pcl_filter</url>
+  <depend package="roscpp"/>
+  <depend package="pcl_ros"/>
+  <depend package="sensor_msgs"/>
+  <depend package="std_msgs"/>
+
+</package>
+
+

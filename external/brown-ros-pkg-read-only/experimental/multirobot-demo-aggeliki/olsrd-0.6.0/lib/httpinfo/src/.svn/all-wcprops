@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/httpinfo/src
+END
+olsrd_httpinfo.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/httpinfo/src/olsrd_httpinfo.c
+END
+olsrd_plugin.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/httpinfo/src/olsrd_plugin.c
+END
+olsrd_httpinfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/httpinfo/src/olsrd_httpinfo.h
+END
+olsrd_plugin.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/httpinfo/src/olsrd_plugin.h
+END
+admin_interface.c
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/httpinfo/src/admin_interface.c
+END
+gfx.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/httpinfo/src/gfx.h
+END
+admin_interface.h
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/httpinfo/src/admin_interface.h
+END

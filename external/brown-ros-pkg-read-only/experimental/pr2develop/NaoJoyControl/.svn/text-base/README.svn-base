@@ -1,0 +1,217 @@
+NaoJoyControl ROS node - user guide
+
+version 1.1.                            Alex Tarvo, 04/18/2010
+
+
+1. General information
+
+    The node is designed to control Aldebaran Nao robot using a joystick or a 
+joystick-like control device, e.g. gamepad controller. In fact, using an gamepad
+controller is a preferred method of input because of a large number of DOFs that
+can be controlled with it. Current configuration that comes with the node is
+pre-programmed to use gamepad similar to one used on XBOX or PS2/3.
+    The NaoJoyControl node is implemented using C++ and depends on following 
+ROS nodes:
+- std_msgs   - standard ROS messages library;
+- roscpp     - ROS C++ runtime;
+- NAOcontrol - node that contains messages for Aldebaran Nao control. 
+NaoJoyControl uses these messages to control Nao. NAOcontrol is a part of 
+brown-ros-pkg package;
+- joy        - ROS node that captures joystick information and transmits 
+them to the /joy ROS topic;
+- BrownJoyControlBase - ROS node that contains a base class for any node designed
+for controlling a robot with a joystick
+    NaoJoyControl is fully configurable and allows assigning various robot 
+actions to any buttons or axes of the joystick.
+
+    Overall schema of operation is following:
+- joy package gets data from the joystick and publishes them into the /joy
+ROS topic;
+- NaoJoyControl listens to the /joy topic and reads all the messages. Based 
+on robot actions assigned to each button/axis, it generates a control message
+for NAO and publish it into one of the following topics: /motion (controls
+robot's walk), /headF (controls head angular motions), /RArmAngles, /LArmAngles
+(controls right and left hands correspondingly).
+- control.py script is listening to /motion, /headF, /RArmAngles and /LArmAngles
+topics and sends command to the robot using a NaoQi API. control.py can run 
+either on the Nao itself or, if on the PC if the Choreography simulator is used.
+    In fact, NaoJoyControl constantly sends control messages to control.py. 
+However, if the user makes no input on the control device, these mesasges do
+not contain any commands and thus control.py does not issue any commands to the
+robot.
+
+2. Building the node
+
+    Please use rosmake to build the NaoJoyControl package. Please refer to 
+ROS documentation for a more detailed guide on NaoJoyControl.
+    It is recommended to build all the dependent packages first to make sure 
+their dependencies are satisfied. In fact, joy package has a number of external 
+dependencies, so it is wise to make sure they are all satisfied first.
+
+3. Controlling the robot
+    NaoJoyControl controls allows to specify forward/right/left/forward-left/
+forward-right comands for walking. It controls robot's head and arms in the 
+joint space, so operator must control every robot's joint separately using a
+axis or button. It might require some little practice, but control is straight-
+forward if a good gamepad is used.
+    Every button or axis is mapped to a specific robot's actions. However, Nao 
+has a high number of DOF, and even a sophisticated controller might not have
+a sufficient number of buttons/axes to control them all. So we create a number 
+of "configurations" - different mappings of commands to buttons/axes. Currently
+we allow having two configurations. User can switch between those using buttons,
+e.g. in our gamepad we button 9 enables configuration 1, and button 10 enables
+configuration 2. Configuration 1 is used to control robot's walk and head move-
+ments, and configurtion 2 is used to control its arms.
+
+4. Action mapping
+
+    Before running the node, we have to assign robot's actions to button and
+axes. This is done using ROS parameters. Below we will guide you through the 
+parameter namespace and parameters assignment. Examples assume that a DualShock 
+controller (see http://en.wikipedia.org/wiki/DualShock for details and images)
+with 6 axes and 12 buttons is used. You might be using a different controller
+though.
+    NaoJoyControl uses local namespace for all the parameters. An
+example of parameter configuration for DualShock controller is provided in the
+NaoJoyControl.launch launch file.
+    First, we have to set parameters of the controller - the number of buttons, 
+axes and configurations. For now, the number of configurations cannot exceed 2.
+The number of axes/buttons must be equal to the numbers of actions/buttons on
+the controller. To do this, we have to set following parameters
+    NumConfigurations
+    NumButtons
+    NumAxes
+for the number of configurations, buttons and axes correspondingly.
+    We also need to adjust axes sensitivity. When touched, every axis sends 
+a number (-1,1) proportional to the angle on which the axis is deflected. We do 
+not want to react to very small angles since the user might have touched 
+corresponding control accidentally. Thus if the number is less than a sensitivity
+threshold, no command is issued. The sensitivity threshold is specified using a
+AxesSensitivity parameter.
+    Now we can specify mapping of joystic buttons/axes to robot commands. There
+is a predefined set of commands that can be assigned. As we said, buttons can 
+only send  "1" if the button is pressed and "0" otherwise, and axes will send
+a number from (-1, 1) range. Thus some of these commands can be assigned only 
+to buttons, and some - only to axes (since axis gives additional information).
+Mappings have a form
+
+    <parameter name> <command name>
+
+<parameter name> stays for the name of the ROS parameter that defines a button
+or axis on the controller. They have following syntax:
+    Config<config. no>/Axis<axis no>  - for axes
+    Config<config. no>/Btn<button no> - for buttons
+
+<command name> is the name of the robot's command mapped to this axis/button.
+
+Examples:
+    Config0/Axis3 axis_walk - maps walk forward/backward command to the 
+axis3 if the configuration 0 is selected;
+    Config1/Axis0 axis_lshoulderroll - maps right arm shoulder roll control to 
+the axis 0 if configuration 1 is selected;
+    Config1/Btn0 relbowrollleft - maps "roll right elbow left" command to the
+button 0 if configuration 0 is selected;
+    Config1/Btn11 rgraspcommand - maps "close/open right grasper" command to
+the button 11 if the configuration 1 is selected;
+
+A complete list of commands is provided below:
+
+Command name         Command type   Command description
+                     (button/axis)
+==================================================
+"config0"              button      Enable configuration 0
+"config1"              button      Enable configuration 1
+"walkforward"          button      Walk forward
+"walkbackward"         button      Walk backwards (not imlementde yet)
+"turnleft"             button      Turn leftwards
+"turnright"            button      Turn rightwards
+"axis_walk"            axis        walk forward/backwards
+"axis_turn"            axis        turn right/left
+"headup"               button      Raise the head
+"headdown"             button      Lower the head
+"headleft"             button      Turn the head leftwards
+"headright"            button      Turn the head right
+"axis_headpitch"       axis        Raise/lower the head
+"axis_headyaw"         axis        Turn the head right/left
+"rshoulderrollright"   button      Roll the right sholder joint rightwards
+"rshoulderrollleft"    button      Roll the right sholder joint leftwards
+"rshoulderpitchup"     button      Raise the right sholder joint
+"rshoulderpitchdown"   button      Lower the right sholder joint
+"relbowrollright"      button      Roll the right elbow joint rightwards
+"relbowrollleft"       button      Roll the right elbow joint leftwards
+"relbowyawright"       button      Turn (yaw) right elbow joint rightwards
+"relbowyawleft"        button      Turn (yaw) right elbow joint leftwards
+"axis_rshoulderroll"   axis        Control roll axis of the right shoulder joint
+"axis_rshoulderpitch"  axis        Control pitch axis of the right shoulder joint
+"axis_relbowroll"      axis        Control roll axis of the right elbow joint
+"axis_relbowyaw"       axis        Control yaw axis of the right elbow joint
+"rwristleft"           button      Rotate right wrist leftwards
+"rwristright"          button      Rotate right wrist rightwards
+"rgraspcommand"        button      Close/open right grasper
+"lshoulderrollright"   button      Roll the left sholder joint rightwards
+"lshoulderrollleft"    button      Roll the left sholder joint leftwards
+"lshoulderpitchup"     button      Raise the left sholder joint
+"lshoulderpitchdown"   button      Lower the left sholder joint
+"lelbowrollright"      button      Roll the left elbow joint rightwards
+"lelbowrollleft"       button      Roll the left elbow joint leftwards
+"lelbowyawright"       button      Turn (yaw) left elbow joint rightwards
+"lelbowyawleft"        button      Turn (yaw) left elbow joint leftwards
+"axis_lshoulderroll"   axis        Control roll axis of the left shoulder joint
+"axis_lshoulderpitch"  axis        Control pitch axis of the left shoulder joint
+"axis_lelbowroll"      axis        Control roll axis of the left elbow joint
+"axis_lelbowyaw"       axis        Control yaw axis of the left elbow joint
+"lwristleft"           button      Rotate left wrist leftwards
+"lwristright"          button      Rotate left wrist rightwards
+"lgraspcommand"        button      Close/open left grasper
+
+How parameter names are created:
+    The first element of the parameter name is the name of the configuration -
+either Config0 or Config1. Then actual name of the axis or button follows which 
+is formed as Axis<number> or Button<number>. Numeration of number of buttons 
+starts from 0.
+    Sometimes it is not trivial to determine what number the actual button has.
+To do this, we recommend you to run joy node and then listen to that node using
+"rostopic echo /joy" command. Press a button and/or move the axis, and the 
+rostopic will print out arrays of axes/button values.
+
+5. Running
+
+    To control Nao using NaoJoyControl node, please run following ROS nodes.
+a) make sure that roscore is running;
+b) run control.py script on the Nao;
+c) On the PC to which the controller is attached, run joy node: 
+    rosrun joy joy_node
+d) if necessary, modify controller parameters by editing NaoJoyControl.launch
+launch file;
+e) run NaoJoyControl node:
+    roslaunch NaoJoyControl.launch
+
+6. Notes on implementation
+    In fact, all this program is doing is mapping joystick buttons/axes to robot 
+actions. This functionality is implemented in the BrownJoyControlBase class, which,
+in turn, is defined in the BrownJoyControlBase.h file in the BrownJoyControlBase
+ROS package. BrownJoyControlBase is responsible for reading configuration and 
+building mappings of joystic controls to robot action codes (which are integers).
+This mapping is done during the node startup, when Initialize() method is called. 
+During Initialize() both commands are mapped and also the node connects to ROS
+topics through which it can control the robot.
+    NaoJoyControlNode class is derived from BrownJoyControlBase. Inter-
+nally, commands are represented as numeric codes - members of CommandCodes enum. 
+String command codes (ones that are set using rosparam) are stored in the 
+m_arrConfigCommandStrings array. IT IS IMPORTANT that for every command, 
+value of the numeric command code should be equal to the index of the corres-
+ponding string in the m_arrConfigCommandStrings.
+    After Initialize(), the Run() method is called. Run() enters the loop, during 
+which it constantly cals SendCommandToRobot() method. This method is sending a 
+command to the robot. If the user takes no actions, the command is "void", namely
+it does not require the robot to take any actions.However, when the user uses a 
+joystick, the JoystickCallback callback function is called. JoystickCallback scans 
+the state of all the joystick controls. For every button/axis it calls OnCommandReceive 
+function. That function forms a command that will be send to a robot. 
+    The program has been tested both on the live Nao and on Choreography and
+it works fine. However there is a small chance that some commands that are not 
+listed in the NaoJoyControl.launch file might be forcing the robot to take an
+action in the wrong direction (e.g. instead of turning the hand rightwards it
+will turn it leftwards). In this case the user can try to change sign of the
+values assigned to the m_dblXXXX variables in the corresponding "case" statement
+of the OnCommandReceive function.

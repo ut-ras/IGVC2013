@@ -1,0 +1,22 @@
+<package>
+  <description brief="bump_filter">
+
+     bump_filter
+
+  </description>
+  <author>Tom</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/bump_filter</url>
+  <depend package="rospy"/>
+  <depend package="nav_msgs"/>
+  <depend package="irobot_create_2_1a"/>
+  <depend package="geometry_msgs"/>
+  <depend package="perfesser"/>
+  <depend package="step_nav"/>
+  <!-- testing dependencies -->
+  <depend package="tgraph"/>
+
+</package>
+
+

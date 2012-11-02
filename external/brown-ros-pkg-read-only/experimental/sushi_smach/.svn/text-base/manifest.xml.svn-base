@@ -1,0 +1,17 @@
+<package>
+  <description brief="sushi_smach">
+
+     sushi_smach
+
+  </description>
+  <author>jihoonl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/sushi_smach</url>
+  <depend package="rospy"/>
+  <depend package="smach"/>
+  <depend package="smach_ros"/>
+
+</package>
+
+

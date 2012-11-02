@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2821/trunk/experimental/CS148/CS148_object_seeking
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2808/trunk/experimental/CS148/CS148_object_seeking/manifest.xml
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2654/trunk/experimental/CS148/CS148_object_seeking/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2654/trunk/experimental/CS148/CS148_object_seeking/Makefile
+END

@@ -1,0 +1,19 @@
+<package>
+  <description brief="ros_scratch">
+
+     ros_scratch
+
+  </description>
+  <author>Brian Thomas</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ros_scratch</url>
+
+  <depend package="rospy" />
+  <depend package="geometry_msgs" />
+  <depend package="ar_recog" />
+  <depend package="irobot_create_2_1" />
+
+</package>
+
+

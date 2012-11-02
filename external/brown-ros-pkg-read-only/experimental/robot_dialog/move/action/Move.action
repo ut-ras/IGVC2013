@@ -1,0 +1,8 @@
+#goal definition
+string[] command
+---
+#result definition
+bool success
+---
+#feedback
+bool feedback

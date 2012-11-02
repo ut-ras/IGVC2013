@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common
+END
+navdata_keys.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/navdata_keys.h
+END
+at_msgs_ids.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/at_msgs_ids.h
+END
+at_msgs.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/at_msgs.h
+END
+autoconf.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/autoconf.h
+END
+vision_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/vision_common.h
+END
+config_keys.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/config_keys.h
+END
+led_animation.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/led_animation.h
+END
+ardrone_api.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/ardrone_api.h
+END
+control_states.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/control_states.h
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/config.h
+END
+navdata_common.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/navdata_common.h
+END
+ardrone_common_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/ardrone_common_config.h
+END
+generated_custom.h
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Common/generated_custom.h
+END

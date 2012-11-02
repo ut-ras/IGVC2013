@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2905/trunk/experimental/youbot_brown/youbot_arm_kinematics/ros/src
+END
+arm_analytical_inverse_kinematics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/2905/trunk/experimental/youbot_brown/youbot_arm_kinematics/ros/src/arm_analytical_inverse_kinematics.cpp
+END
+arm_kdl_forward_kinematics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/2905/trunk/experimental/youbot_brown/youbot_arm_kinematics/ros/src/arm_kdl_forward_kinematics.cpp
+END
+solver_info_processor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/2905/trunk/experimental/youbot_brown/youbot_arm_kinematics/ros/src/solver_info_processor.cpp
+END
+youbot_arm_kinematics_plugin.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/2905/trunk/experimental/youbot_brown/youbot_arm_kinematics/ros/src/youbot_arm_kinematics_plugin.cpp
+END
+arm_kdl_inverse_kinematics.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/2905/trunk/experimental/youbot_brown/youbot_arm_kinematics/ros/src/arm_kdl_inverse_kinematics.cpp
+END
+inverse_kinematics_solver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/2905/trunk/experimental/youbot_brown/youbot_arm_kinematics/ros/src/inverse_kinematics_solver.cpp
+END

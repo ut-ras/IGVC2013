@@ -1,0 +1,14 @@
+<launch>
+  <!-- AR.Drone -->
+  <node name="ardrone_driver"
+  	pkg="ardrone_brown"
+  	type="ardrone_driver" />
+  <node name="drone_teleop"
+  	pkg="drone_teleop"
+  	type="drone_teleop.py"
+	output="screen" />
+
+  <!-- ROS<->Scratch interface -->
+  <node name="ros_scratch_ardrone" pkg="ros_scratch" type="ros_scratch_ardrone.py" respawn="true" output="screen" />
+</launch>
+

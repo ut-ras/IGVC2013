@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/libimage_proc
+END
+advertisement_checker.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/libimage_proc/advertisement_checker.cpp
+END
+processor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/libimage_proc/processor.cpp
+END

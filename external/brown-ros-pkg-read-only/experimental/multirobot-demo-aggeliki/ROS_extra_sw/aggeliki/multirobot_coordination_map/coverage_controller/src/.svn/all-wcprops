@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/coverage_controller/src
+END
+coverage_controller.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/coverage_controller/src/coverage_controller.cpp
+END
+coverage_controller_primitive.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/coverage_controller/src/coverage_controller_primitive.cpp
+END
+coverage_controller_primitive2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/coverage_controller/src/coverage_controller_primitive2.cpp
+END

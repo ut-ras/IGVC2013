@@ -1,0 +1,21 @@
+<package>
+  <description brief="tabletop_object_manager">
+
+     tabletop_object_manager
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/tabletop_object_manager</url>
+  <depend package="roscpp"/>
+  <depend package="pcl"/>
+  <depend package="pcl_ros"/>
+  <depend package="sensor_msgs"/>
+  <depend package="visualization_msgs"/>
+  <depend package="scene_filter"/>
+  <depend package="object_manipulation_msgs"/>
+
+</package>
+
+

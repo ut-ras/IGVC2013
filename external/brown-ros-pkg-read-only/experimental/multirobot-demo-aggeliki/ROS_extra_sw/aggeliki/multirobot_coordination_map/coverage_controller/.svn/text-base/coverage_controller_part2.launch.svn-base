@@ -1,0 +1,18 @@
+<launch>
+
+<node name="ml1" pkg="map_loader" type="map_loader"/>
+
+<node name="bl1" pkg="bumper_localizer" type="bumper_localizer"/>
+
+<param name="/step_navigator/ok_to_drive" value="1"/>
+<node name="sn1" pkg="step_navigator" type="step_navigator"/>
+
+<node name="pn1" pkg="path_navigator" type="path_navigator"/>
+
+<node name="pg1" pkg="path_generator" type="path_generator"/>
+
+<node name="wc" pkg="wifi_comm" type="wifi_discovery_node"/>
+
+<!-- <node name="cc1" pkg="coverage_controller" type="coverage_controller" output="screen"/> -->
+
+</launch>

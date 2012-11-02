@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/tilting_laser_v0
+END
+tilting_hokuyo.dae
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/tilting_laser_v0/tilting_hokuyo.dae
+END
+tilting_hokuyo_normals.tif
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/tilting_laser_v0/tilting_hokuyo_normals.tif
+END
+tilting_hokuyo_L.stl
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/tilting_laser_v0/tilting_hokuyo_L.stl
+END
+tilting_hokuyo_normals.png
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/tilting_laser_v0/tilting_hokuyo_normals.png
+END
+tilting_hokuyo_color.tif
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/tilting_laser_v0/tilting_hokuyo_color.tif
+END
+tilting_hokuyo.stl
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/tilting_laser_v0/tilting_hokuyo.stl
+END
+tilting_hokuyo_color.png
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/tilting_laser_v0/tilting_hokuyo_color.png
+END
+hok_tilt.stl
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/meshes/tilting_laser_v0/hok_tilt.stl
+END

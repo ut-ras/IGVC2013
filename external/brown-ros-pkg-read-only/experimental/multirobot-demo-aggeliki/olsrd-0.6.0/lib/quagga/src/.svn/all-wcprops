@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src
+END
+client.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/client.c
+END
+plugin.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/plugin.c
+END
+parse.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/parse.h
+END
+olsrd_plugin.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/olsrd_plugin.c
+END
+plugin.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/plugin.h
+END
+client.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/client.h
+END
+quagga.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/quagga.c
+END
+packet.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/packet.c
+END
+parse.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/parse.c
+END
+quagga.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/quagga.h
+END
+packet.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/packet.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/src/common.h
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2593/trunk/experimental/block_build/scene_filter
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2593/trunk/experimental/block_build/scene_filter/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2581/trunk/experimental/block_build/scene_filter/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/2590/trunk/experimental/block_build/scene_filter/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2581/trunk/experimental/block_build/scene_filter/Makefile
+END

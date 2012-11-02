@@ -1,0 +1,26 @@
+body {
+	margin: auto; 
+	width: 100%;
+	min-width: 1000px; 
+	height: 100%;
+}
+
+body .tabs {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.header {
+	text-align: center; 
+	padding-top: 3px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #B5BCC7; 
+}
+
+.connectionpanel {
+	padding-bottom: 20px;
+}
+
+.commandfont {
+	font-family: courier;
+}

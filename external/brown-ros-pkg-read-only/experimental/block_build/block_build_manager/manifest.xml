@@ -1,0 +1,19 @@
+<package>
+  <description brief="block_build_manager">
+
+     block_build_manager
+
+  </description>
+  <author>Jihoon</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/block_build_manager</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="actionlib"/>
+  <depend package="simple_robot_control"/>
+  <depend package="std_srvs" />
+  <depend package="object_manager"/>
+  <depend package="block_build_msgs"/>
+
+</package>

@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="sandwich_board"   textfile="$(find pr2_drinkserving)/objects/sandwich_board.model" />
+
+  <!-- push urdf to factory and spawn robot in gazebo -->
+  <node name="spawn_sandwich_board" pkg="gazebo_tools" type="gazebo_model" args="-p sandwich_board -x 3 -y 3 -z .57 spawn sandwich_board" respawn="false" output="screen" />
+
+</launch>

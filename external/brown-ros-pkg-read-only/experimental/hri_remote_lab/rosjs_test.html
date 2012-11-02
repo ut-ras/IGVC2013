@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>HRI LfD Experiment</title>
+<link href="inettuts.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/rosjs/ros.min.js"></script>
+<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"</script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/json/json-min.js"></script>
+
+<script>
+
+function nop() {};
+function json(obj) {return JSON.stringify(obj);};
+function log(msg) {
+    $('#console').append(msg.toString() + '<br/>');
+};
+
+$(function() {
+	var x = 0;
+	var z = 0;
+	var ros = new ROS("ws://chriscrick.ath.cx:9090");
+	var g = $('#display')[0].getContext('2d');
+	var in_use = false;
+	var camera = false;
+	var lock = false;
+        var bumping = false;
+	
+	ros.setOnClose(function (e) {
+		log("Connection closed");
+	    });
+	ros.setOnError(function (e) {
+		log("Unknown error");
+	    });
+	ros.setOnOpen(function (e) {
+
+		function pub() {
+		    ros.publish('/cmd_vel', 'geometry_msgs/Twist', '{"linear":{"x":' + x + ',"y":0,"z":0}, "angular":{"x":0,"y":0,"z":' + z + '}}');
+		}
+
+		function handleKey(code, down) {
+		    var scale = 0;
+		    if (down == true) {
+			scale = 1;
+		    }
+		    switch (code) {
+		    case 37:
+			//left
+			z = 1 * scale;
+			break;
+		    case 38:
+			//up
+			x = .5 * scale;
+			break;
+		    case 39:
+			//right 
+			z = -1 * scale;
+			break;
+		    case 40:
+			//down
+			x = -.5 * scale;
+			break;
+		    }
+		    pub();
+		}
+
+		camera = (Math.random() < 0.5);
+		ros.callService('/rosjs/topics',json([]),nop);
+		log("Connecting...");
+
+		ros.callService('/check_session',json([]), function(rsp) {
+			if (rsp.session_active) {
+			    window.location="http://chriscrick.ath.cx:8080/busy.html";
+			}
+			else {
+			    ros.callService('/begin_session',json([(camera ? 0 : 1)]),nop);
+		
+			    $('body').keydown(function(e) {handleKey(e.keyCode,true);});
+			    $('body').keyup(function(e) {handleKey(e.keyCode,false);});
+		
+			    ros.addHandler('/sensorPacket', function(msg) {
+				    if (msg.bumpLeft || msg.bumpRight) {
+					bumping = true;
+				    }
+				    else {
+					bumping = false;
+				    }
+				});
+			    ros.callService('/rosjs/subscribe',json(['/sensorPacket', 67]), nop);
+			    
+			    if (camera) {
+				ros.addHandler('/gscam/image_raw', function(msg) {
+					if (lock) return;
+					lock = true;
+					var img = new Image();
+					img.onload = function() {
+					    g.clearRect(0,0,680,520);
+					    g.save();
+					    g.fillStyle = (bumping ? "red" : "white");
+					    g.fillRect(0,0,680,520);
+					    g.scale(5,5);
+					    g.drawImage(img,4,4,128,96);
+					    g.restore();
+					    lock = false;
+					}
+					img.src = msg.uri;
+				    });
+				
+				ros.callService('/rosjs/subscribe',json(['/gscam/image_raw',0,'jpeg',128,96,100]),nop);
+			    }
+			    else {
+				ros.addHandler('/tags', function(msg) {
+					if (lock) return;
+					lock = true;
+					g.clearRect(0,0,680,520);
+					g.save();
+					g.fillStyle = (bumping ? "red" : "white");
+					g.fillRect(0,0,680,520);
+					for (var i in msg.tags) {
+					    g.fillStyle = "blue";
+					    g.beginPath();
+					    g.moveTo(20+2*msg.tags[i].cwCorners[0],20+2*msg.tags[i].cwCorners[1]);
+					    g.lineTo(20+2*msg.tags[i].cwCorners[2],20+2*msg.tags[i].cwCorners[3]);
+					    g.lineTo(20+2*msg.tags[i].cwCorners[4],20+2*msg.tags[i].cwCorners[5]);
+					    g.lineTo(20+2*msg.tags[i].cwCorners[6],20+2*msg.tags[i].cwCorners[7]);
+					    g.lineTo(20+2*msg.tags[i].cwCorners[0],20+2*msg.tags[i].cwCorners[1]);
+					    g.closePath();
+					    g.fill();
+					    
+					    g.fillStyle = "white";
+					    
+					    var diag = Math.sqrt(Math.pow(2*msg.tags[i].x-2*msg.tags[i].cwCorners[0],2)+Math.pow(2*msg.tags[i].y-2*msg.tags[i].cwCorners[1],2));
+					    g.font = diag/3 + "px sans-serif";
+					    g.fillText(msg.tags[i].id,20+2*msg.tags[i].x,20+2*msg.tags[i].y+diag/2);
+					}
+					g.restore();
+					lock = false;
+				    });
+				ros.callService('/rosjs/subscribe',json(['/tags',67]),nop);
+			    }			
+			}
+		    });    
+	    });
+    });
+</script>
+<style type="text/css">
+#console {
+width: 730px;
+text-align: left;
+}
+</style>
+</head>
+<body>
+<center>
+<canvas id="display" width="680" height="520"></canvas>
+<div id="console"><br/>
+</div>
+<p><a href="score.html">I'm finished!</a></p>
+<img src="maze.png" alt="Maze map" width="250" height="275"/>
+</center>
+</body>
+</html>

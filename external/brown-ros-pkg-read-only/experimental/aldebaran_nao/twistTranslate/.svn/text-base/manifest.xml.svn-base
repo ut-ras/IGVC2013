@@ -1,0 +1,17 @@
+<package>
+  <description brief="twistTranslate">
+
+     twistTranslate
+
+  </description>
+  <author>sosentos</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/twistTranslate</url>
+  <depend package="rospy"/>
+  <depend package="geometry_msgs"/>
+  <depend package="NAOcontrol"/>
+
+</package>
+
+

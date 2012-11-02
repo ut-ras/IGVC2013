@@ -1,0 +1,20 @@
+<package>
+  <description brief="model_create">
+
+     model_create
+
+  </description>
+  <author>Tom Sgouros</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/model_create</url>
+  <depend package="rospy"/>
+  <depend package="geometry_msgs"/>
+  <depend package="irobot_create_2_1a"/>
+  <!-- The dependency on step_nav is only because we use the force.py
+       module there for testing this model.  See model_test.py -->
+ <depend package="step_nav"/> 
+
+</package>
+
+

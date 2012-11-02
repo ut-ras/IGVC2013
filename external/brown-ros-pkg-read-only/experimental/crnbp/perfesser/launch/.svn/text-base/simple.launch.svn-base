@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- Create driver -->
+  <param name="brown/irobot_create_2_1a/port" value="/dev/ttyUSB0" />
+  <node name="irobot_create_2_1a" pkg="irobot_create_2_1a" type="driver.py" />
+
+  <!-- debugging only -->
+  <node name="position_tracker" pkg="position_tracker" type="position_tracker.py"/>
+
+</launch>

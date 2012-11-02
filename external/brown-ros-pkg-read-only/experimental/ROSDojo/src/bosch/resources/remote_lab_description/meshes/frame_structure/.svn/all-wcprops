@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/frame_structure
+END
+lab_structure.stl
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/frame_structure/lab_structure.stl
+END
+lab_structure_reduced.dae
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/frame_structure/lab_structure_reduced.dae
+END
+lab_structure_reduced_color.png
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/frame_structure/lab_structure_reduced_color.png
+END
+lab_structure_reduced.stl
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/frame_structure/lab_structure_reduced.stl
+END
+lab_structure_reduced_scaled.dae
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/frame_structure/lab_structure_reduced_scaled.dae
+END

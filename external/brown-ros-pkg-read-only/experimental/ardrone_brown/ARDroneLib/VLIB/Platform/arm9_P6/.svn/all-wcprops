@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6
+END
+video_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_config.h
+END
+video_utils_p6.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_utils_p6.h
+END
+video_packetizer_p6.h
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_packetizer_p6.h
+END
+video_quantizer_p6.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_quantizer_p6.h
+END
+video_dct_p6.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_dct_p6.c
+END
+video_p264_p6.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_p264_p6.c
+END
+video_utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_utils.c
+END
+video_dct_p6.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_dct_p6.h
+END
+P6_h264_reg.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/P6_h264_reg.h
+END
+video_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_utils.h
+END
+video_p264_p6.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_p264_p6.h
+END
+video_packetizer_p6.S
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_packetizer_p6.S
+END
+video_quantizer_p6.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9_P6/video_quantizer_p6.c
+END

@@ -1,0 +1,21 @@
+<package>
+  <description brief="odom_filter">
+    The odom_filter node tracks Odometry messages and uses the
+    accumulated data to update location estimates issued by the
+    Perfesser node.  In the Bayesian lingo, think of this as updating
+    the priors.
+  </description>
+  <author>Tom Sgouros</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/odom_filter</url>
+  <depend package="rospy"/>
+  <depend package="nav_msgs"/>
+  <depend package="perfesser"/>
+  <depend package="irobot_create_2_1a"/>
+  <!-- testing dependencies -->
+  <depend package="tgraph"/>
+
+</package>
+
+

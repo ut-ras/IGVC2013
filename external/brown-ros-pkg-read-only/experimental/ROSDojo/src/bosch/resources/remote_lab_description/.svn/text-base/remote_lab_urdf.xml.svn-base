@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<robot name="remote_lab" xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom" xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#slider" xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- The following included files set up definitions of parts of the robot body -->
+  <!-- misc common stuff? -->
+  <!-- Remote Lab Walls -->
+  <!-- Remote Lab Frame -->
+  <!-- materials for visualization -->
+  <material name="Blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  <material name="Green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="Grey">
+    <color rgba="0.7 0.7 0.7 1.0"/>
+  </material>
+  <material name="Grey2">
+    <color rgba="0.9 0.9 0.9 1.0"/>
+  </material>
+  <material name="Red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="White">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <link name="walls">
+    <inertial>
+      <mass value="116.0"/>
+      <origin xyz="-0.061 0.0 0.293"/>
+      <inertia ixx="5.652232699207" ixy="-0.009719934438" ixz="1.293988226423" iyy="5.669473158652" iyz="-0.007379583694" izz="3.683196351726"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://remote_lab_description/meshes/walls/lab_walls_scaled.dae"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://remote_lab_description/meshes/walls/lab_walls.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="frame_structure">
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.57 0 0" xyz="0.050 4.850 0"/>
+      <geometry>
+        <mesh filename="package://remote_lab_description/meshes/frame_structure/lab_structure_reduced_scaled.dae"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.071"/>
+      <geometry>
+        <mesh filename="package://remote_lab_description/meshes/walls/lab_structure_reduced.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="vika_amon_table">
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://remote_lab_description/meshes/vika_amon_59/vika_amon_59_scaled.dae"/>
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://remote_lab_description/meshes/vika_amon_59/vika_amon_59.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="remote_lab_frame_joint" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <parent link="walls"/>
+    <child link="frame_structure"/>
+  </joint>
+  <joint name="vika_amon_table_joint" type="fixed">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <parent link="walls"/>
+    <child link="vika_amon_table"/>
+  </joint>
+</robot>

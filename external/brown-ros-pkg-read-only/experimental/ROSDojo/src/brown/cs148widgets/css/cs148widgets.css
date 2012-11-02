@@ -1,0 +1,85 @@
+.cs148 .content {
+	padding: 0;
+	margin: 0;
+	padding-top: 5px;
+	width: 100%;
+	padding-bottom: 8px;
+}
+
+.cs148 .clear {
+	clear: both;
+}
+
+.instructions .instructionstitle {
+	font-size: 28px;
+}
+
+.instructions .subheading {
+	font-size: 20px;
+}
+
+.connection {
+	padding-top: 20px !important;
+	padding-left: 10px !important;
+}
+
+.connection .connectioninstructionstop {
+	padding-bottom: 20px;
+}
+
+.codePanel {
+	background-color: green;
+}
+
+.codePanel .CodeMirror-scroll {
+	overflow: auto;
+	height: 100%;
+}
+
+.codePanel .CodeMirror {
+	height: 100%;
+}
+
+.pythonEditor {
+	padding: 0;
+	width: 100%;
+}
+
+.codePanel .dijitButtonNode {
+	width: 100px;
+}
+
+.dijitContentPane.codePanel {
+	padding-bottom: 0 !important;
+}
+
+.console {
+	overflow: auto;
+	border: 1px solid #B5BCC7;
+	font-family: courier new;
+	position: relative;
+	padding-left: 20px;
+}
+
+.console .consoletext {
+	position: absolute;
+	bottom: 0;
+	overflow: auto;
+}
+
+.console .clearconsole {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	background-image: url("../../../dojo17/dijit/icons/images/commonIconsObjActEnabled.png");
+	background-position: -64px 50%;	
+	margin-left: 2px;
+	margin-bottom: 2px;
+	display: block;
+}
+
+.console .consoleentry {
+	word-wrap: break-word;
+}

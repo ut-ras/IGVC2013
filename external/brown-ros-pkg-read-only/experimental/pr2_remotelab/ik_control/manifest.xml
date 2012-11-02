@@ -1,0 +1,26 @@
+<package>
+  <description brief="ik_control">
+
+     ik_control
+
+  </description>
+  <author>Sarah Osentoski</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ik_control</url>
+  <depend package="rospy"/>
+  <depend package="kinematics_msgs"/>
+  <depend package="pr2_arm_navigation_kinematics"/>
+  <depend package="pr2_arm_move_ik"/>
+  <depend package="pr2_arm_kinematics_constraint_aware"/>
+  <depend package="move_arm"/>
+  <depend package="actionlib"/>
+  <depend package="pr2_controllers_msgs"/>
+  <depend package="motion_planning_msgs"/>
+  <depend package="trajectory_filter_server"/>
+  <depend package="pcl"/>
+  <depend package="geometry_msgs"/>
+  <depend package="image_geometry"/>
+</package>
+
+

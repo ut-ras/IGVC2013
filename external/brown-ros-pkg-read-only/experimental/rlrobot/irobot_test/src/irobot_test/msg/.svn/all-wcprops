@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/772/trunk/experimental/rlrobot/irobot_test/src/irobot_test/msg
+END
+_Locations.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/772/trunk/experimental/rlrobot/irobot_test/src/irobot_test/msg/_Locations.py
+END
+_topDownPos.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/128/trunk/experimental/rlrobot/irobot_test/src/irobot_test/msg/_topDownPos.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/128/trunk/experimental/rlrobot/irobot_test/src/irobot_test/msg/__init__.py
+END
+_LocalizableObject.py
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/772/trunk/experimental/rlrobot/irobot_test/src/irobot_test/msg/_LocalizableObject.py
+END

@@ -1,0 +1,21 @@
+<launch>
+
+  <arg name="debug" default="false"/>
+  <arg if="$(arg debug)" name="launch_prefix" value="xterm -e gdb -args"/>
+  <arg unless="$(arg debug)" name="launch_prefix" value=""/>
+
+  <remap from="image" to="/camera/depth/points"/>
+  <node name="gests" pkg="gests" type="gests" 
+	launch-prefix="$(arg launch_prefix)">
+
+    <param name="personConst" value="2000.0" />
+    <param name="tolerance" value="8" />
+    <param name="minSize" value="250" />
+    <param name="vWidth" value="640" />
+    <param name="vHeight" value="480" />
+    <param name="cameraY" value="0.8" />
+    <param name="trainingFile" value="/home/turtlebot/ros/gestures/gests/gests-121021.csv" />
+  </node>
+
+
+</launch>

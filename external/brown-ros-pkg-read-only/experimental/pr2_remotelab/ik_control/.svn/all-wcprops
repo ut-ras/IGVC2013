@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1016/trunk/experimental/pr2_remotelab/ik_control
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1016/trunk/experimental/pr2_remotelab/ik_control/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/ik_control/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/ik_control/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/857/trunk/experimental/pr2_remotelab/ik_control/Makefile
+END

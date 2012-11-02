@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2808/trunk/experimental/CS148/CS148_object_seeking/launch
+END
+object_seeking.launch
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2657/trunk/experimental/CS148/CS148_object_seeking/launch/object_seeking.launch
+END
+object_seeking_pr2.launch
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/2808/trunk/experimental/CS148/CS148_object_seeking/launch/object_seeking_pr2.launch
+END
+setup.launch
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2658/trunk/experimental/CS148/CS148_object_seeking/launch/setup.launch
+END
+robot.launch
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2654/trunk/experimental/CS148/CS148_object_seeking/launch/robot.launch
+END

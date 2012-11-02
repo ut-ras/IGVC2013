@@ -1,0 +1,19 @@
+<package>
+  <description brief="map_filter">
+
+     map_filter
+
+  </description>
+  <author>Tom</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/map_filter</url>
+  <depend package="rospy"/>
+  <depend package="perfesser"/>
+  <depend package="nav_msgs"/>
+  <!-- testing dependencies -->
+  <depend package="tgraph"/>
+
+</package>
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<field>
+    <width>4</width> <!-- meters -->
+    <height>2.5</height>
+    <border_color>rgb(97,254,87)</border_color> <!-- light green -->
+    <marker_color>rgb(33,46,216)</marker_color>  <!-- blue -->
+</field>
+
+
+

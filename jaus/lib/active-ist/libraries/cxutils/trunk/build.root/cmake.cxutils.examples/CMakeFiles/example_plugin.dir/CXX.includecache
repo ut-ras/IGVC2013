@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ras/IGVC2013/jaus/lib/active-ist/libraries/cxutils/trunk/src/examples/example_plugin.cpp
+iostream
+-
+string.h
+-
+cxutils/plugin/pluginloader.h
+/home/ras/IGVC2013/jaus/lib/active-ist/libraries/cxutils/trunk/src/examples/cxutils/plugin/pluginloader.h
+
+build/cmake/examples/../../../include/cxutils/cxbase.h
+cxutils/time.h
+build/cmake/examples/../../../include/cxutils/cxutils/time.h
+
+build/cmake/examples/../../../include/cxutils/plugin/plugin.h
+cxutils/cxbase.h
+build/cmake/examples/../../../include/cxutils/plugin/cxutils/cxbase.h
+
+build/cmake/examples/../../../include/cxutils/plugin/pluginloader.h
+cxutils/plugin/plugin.h
+build/cmake/examples/../../../include/cxutils/plugin/cxutils/plugin/plugin.h
+map
+-
+
+build/cmake/examples/../../../include/cxutils/time.h
+cxutils/cxbase.h
+build/cmake/examples/../../../include/cxutils/cxutils/cxbase.h
+string
+-
+cmath
+-
+vector
+-
+

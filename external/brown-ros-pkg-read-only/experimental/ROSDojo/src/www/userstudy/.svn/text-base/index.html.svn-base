@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hello</title>
+  <!-- load Dojo and the default dojo theme, claro -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../../dojo17/dijit/themes/claro/claro.css" />
+  <script src="../../dojo17/dojo/dojo.js"></script>
+  <script>
+    function initialize() {
+      dojo.registerModulePath("rosdojo", "../../brown/rosdojo");
+      dojo.registerModulePath("roswidgets", "../../brown/roswidgets");
+      dojo.registerModulePath("userstudy", "../../userstudy");
+      dojo.registerModulePath("museum", "../../willow/museum");
+      dojo.registerModulePath("blockbuilder", "../../brown/blockbuilder");
+
+		  // Now specify the main widgets in the page
+      dojo.require("roswidgets.ConnectionPanel");
+      
+      // user study 
+      dojo.require("userstudy.Header");
+
+      var headerDiv = dojo.byId("userstudy-header");
+
+      var header = new userstudy.Header({boardID:"userstudy-board"});
+
+      headerDiv.appendChild(header.domNode);
+
+      // Parse the page.  This creates widgets in place of the <div> tags below
+      dojo.parser.parse();
+    }
+
+    dojo.ready(initialize);
+  </script>
+
+</head>
+<body class="claro webtools" style="font: 14px Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;">
+	<div id="headers">
+      <img src="imgs/pr2_remote_lab.png" height="30" />
+      <img src="imgs/newbrownlogo.png" height="30" />
+      <img src="imgs/Bosch_logo_invented_for_life__400x50.png" height="30" />
+      <div width=100%>
+      <div id="userstudy-header" style="text-align: right":></div>
+<!--		  <div dojoType="roswidgets.ConnectionPanel"></div>-->
+      </div>
+	</div>
+    <div id="userstudy-board"></div>
+	<div class="clear"></div>
+
+</body>
+</html>

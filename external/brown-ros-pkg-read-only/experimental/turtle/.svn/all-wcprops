@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2840/trunk/experimental/turtle
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2823/trunk/experimental/turtle/.project
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2830/trunk/experimental/turtle/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2830/trunk/experimental/turtle/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2830/trunk/experimental/turtle/CMakeLists.txt
+END

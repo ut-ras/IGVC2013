@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find mjpeg_server)/launch/mjpeg_server.launch" />
+  <node name="rosbridge" pkg="rosbridge" type="rosbridge.py" respawn="true" output="screen" />
+  <node name="grab_block" pkg="pr2_block_builder" type="grab_block" output="screen" />
+  <node name="toy_builder" pkg="pr2_block_builder" type="build.py"  output="screen" />
+  <node name="block_placer" pkg="pr2_block_placer" type="block_placer"  output="screen" />
+</launch>

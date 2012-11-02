@@ -1,0 +1,20 @@
+<package>
+  <description brief="virtual_border">
+
+    Receives velocity commands and relays that information along, so long as the robot is not touching a (high light intensity) border.  When a border is reached, this controller reverses the last issued velocity command until the robot is off of the high-intensity line, thereby preventing its escape.
+    A threshold is passed in as a command-line argument.  Any intensity reading of at least this threshold will be counted as on the border.
+
+
+  </description>
+  <author>Brian Thomas</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <depend package="rospy"/>
+  <depend package="geometry_msgs"/>
+  <depend package="irobot_create_2_1"/>
+  <!-- <depend package="nxt_msgs"/> -->
+
+</package>
+
+

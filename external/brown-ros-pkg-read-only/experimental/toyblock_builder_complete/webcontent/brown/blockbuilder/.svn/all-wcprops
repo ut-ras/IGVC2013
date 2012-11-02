@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2224/trunk/experimental/toyblock_builder_complete/webcontent/brown/blockbuilder
+END
+BlockUI.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/brown/blockbuilder/BlockUI.js
+END
+BlockControlPanel.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/brown/blockbuilder/BlockControlPanel.js
+END
+THREEVisualiser.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/brown/blockbuilder/THREEVisualiser.js
+END
+BlockROSInterface.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/brown/blockbuilder/BlockROSInterface.js
+END
+Utils.js
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/brown/blockbuilder/Utils.js
+END
+BlockVisualiser.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2224/trunk/experimental/toyblock_builder_complete/webcontent/brown/blockbuilder/BlockVisualiser.js
+END
+BlockPlacer.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/2224/trunk/experimental/toyblock_builder_complete/webcontent/brown/blockbuilder/BlockPlacer.js
+END

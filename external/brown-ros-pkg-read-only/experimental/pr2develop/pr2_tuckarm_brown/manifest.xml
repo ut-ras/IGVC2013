@@ -1,0 +1,18 @@
+<package>
+  <description brief="PR2 Arms Teleoperator">
+
+     First attempt at a basic, individual joint teleoperator for the PR2 Simulator's arms
+
+  </description>
+  <author>Gal Peleg</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+
+  <depend package="rospy"/>
+  <depend package="trajectory_msgs"/>
+  <depend package="pr2_mechanism_msgs"/>
+
+
+</package>
+
+

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2676/trunk/experimental/period
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2675/trunk/experimental/period/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2674/trunk/experimental/period/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2674/trunk/experimental/period/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2674/trunk/experimental/period/Makefile
+END

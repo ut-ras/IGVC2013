@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control
+END
+ardrone_control.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control/ardrone_control.h
+END
+ardrone_control_configuration.c
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control/ardrone_control_configuration.c
+END
+ardrone_control_configuration.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control/ardrone_control_configuration.h
+END
+ardrone_control_soft_update.c
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control/ardrone_control_soft_update.c
+END
+ardrone_control_ack.c
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control/ardrone_control_ack.c
+END
+ardrone_navdata_control.c
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control/ardrone_navdata_control.c
+END
+ardrone_control.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control/ardrone_control.c
+END
+ardrone_control_soft_update.h
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control/ardrone_control_soft_update.h
+END
+ardrone_navdata_control.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control/ardrone_navdata_control.h
+END
+ardrone_control_ack.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Control/ardrone_control_ack.h
+END

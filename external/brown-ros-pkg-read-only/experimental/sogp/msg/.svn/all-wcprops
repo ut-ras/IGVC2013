@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/697/trunk/experimental/sogp/msg
+END
+AddVector.msg
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/697/trunk/experimental/sogp/msg/AddVector.msg
+END
+AddMatrix.msg
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/697/trunk/experimental/sogp/msg/AddMatrix.msg
+END
+Vector.msg
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/688/trunk/experimental/sogp/msg/Vector.msg
+END
+Matrix.msg
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/688/trunk/experimental/sogp/msg/Matrix.msg
+END

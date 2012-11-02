@@ -1,0 +1,17 @@
+<package>
+  <description brief="NAOcontrol">
+     NAOcontrol provides message types to be used by NAO control nodes. 
+  </description>
+  <author>Graylin Trevor Jay</author>
+  <email>tjay@cs.brown.edu</email>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+
+  <export>
+    <cpp cflags="-I${prefix}/msg/cpp"/>
+  </export>
+
+</package>

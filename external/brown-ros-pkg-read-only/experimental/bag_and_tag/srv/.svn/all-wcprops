@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/918/trunk/experimental/bag_and_tag/srv
+END
+BeginSession.srv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/869/trunk/experimental/bag_and_tag/srv/BeginSession.srv
+END
+EndSession.srv
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/868/trunk/experimental/bag_and_tag/srv/EndSession.srv
+END
+GetScore.srv
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/918/trunk/experimental/bag_and_tag/srv/GetScore.srv
+END
+CheckSession.srv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/868/trunk/experimental/bag_and_tag/srv/CheckSession.srv
+END

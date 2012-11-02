@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/src
+END
+object_detector.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/src/object_detector.cpp
+END
+matrix2x2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/src/matrix2x2.cpp
+END
+bgmodeler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/src/bgmodeler.cpp
+END
+object_tracker.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/src/object_tracker.cpp
+END
+morpho.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/src/morpho.cpp
+END
+kalman_filter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/src/kalman_filter.cpp
+END
+bgmodel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/src/bgmodel.cpp
+END

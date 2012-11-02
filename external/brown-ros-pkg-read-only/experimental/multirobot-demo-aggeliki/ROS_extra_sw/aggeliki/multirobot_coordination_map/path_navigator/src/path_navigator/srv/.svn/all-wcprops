@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/path_navigator/src/path_navigator/srv
+END
+_setWaypoints.py
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/path_navigator/src/path_navigator/srv/_setWaypoints.py
+END
+_getNextWaypoint.py
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/path_navigator/src/path_navigator/srv/_getNextWaypoint.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/path_navigator/src/path_navigator/srv/__init__.py
+END

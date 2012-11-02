@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/503/trunk/experimental/pr2develop/joint_states_listener/srv
+END
+ReturnJointStates.srv
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/493/trunk/experimental/pr2develop/joint_states_listener/srv/ReturnJointStates.srv
+END

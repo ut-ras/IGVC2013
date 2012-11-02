@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CS148 ᐧ Enclosure Escape</title>
+<!-- load Dojo and the default dojo theme, claro -->
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="../../dojo17/dijit/themes/claro/claro.css" />
+<link rel="stylesheet" href="../../brown/roswidgets/css/roswidgets.css" />
+<script src="../../dojo17/dojo/dojo.js.uncompressed.js"></script>
+<script src="../../brown/roswidgets/lib/GraphBox.js"></script>
+<script src="processing.js"></script>
+<script>
+   	function resizeTabcontainer() {
+        var tabsheight = (window.innerHeight - dojo.byId("header").offsetHeight-15);
+        if (tabsheight < 500) { tabsheight = 500; }
+        dojo.style(dojo.byId("maintabcontainer"), "height", tabsheight+"px");
+        dijit.byId("maintabcontainer").resize();
+   	}
+   	function init() {
+   		console.log("Initializing page");
+   		
+   		// Register rosdojo and the web tools widgets
+        dojo.registerModulePath("rosdojo", "../../brown/rosdojo");
+        dojo.registerModulePath("webtools", "../../brown/webtools");
+        dojo.registerModulePath("roswidgets", "../../brown/roswidgets");
+        dojo.registerModulePath("cs148panels", "../../brown/cs148panels");
+        dojo.registerModulePath("cs148widgets", "../../brown/cs148widgets");
+        
+        // Load CS148 widgets
+        dojo.require("cs148panels.Instructions");
+        dojo.require("cs148panels.Connection");
+        dojo.require("cs148panels.EnclosureEscape");
+        
+        // Load the rosdojo and webtools widgets
+        dojo.require("webtools.Topics");
+        dojo.require("webtools.Services");
+        dojo.require("webtools.Cameras");
+        
+        // Load the dojo widgets for the main page
+        dojo.require("dijit.layout.TabContainer");
+        dojo.require("dijit.layout.ContentPane");
+                
+        // Parse the page
+   		dojo.parser.parse();
+        
+        // Start up the tabs
+        resizeTabcontainer();
+        dojo.connect(window, "resize", resizeTabcontainer);
+   	}
+   	dojo.ready(init);
+   </script>
+</head>
+<body class="claro webtools cs148" style="font: 14px Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;">
+	<div class="header" id="header">
+		<div class="banner"><img src="banner.png" style="width: 475px; height: 85px;"></div>
+		<div class="title">CS148 ᐧ Enclosure Escape</div>
+	</div>
+	<div data-dojo-type="dijit.layout.TabContainer" class="tabs" id="maintabcontainer">
+		<script type="dojo/connect" data-dojo-event="startup"> this.resize(); </script>
+		<div data-dojo-type="cs148panels.EnclosureEscapeInstructions" id="instructions"></div>
+		<div data-dojo-type="cs148panels.Connection"></div>
+		<div data-dojo-type="cs148panels.EnclosureEscape""></div>
+		<div data-dojo-type="webtools.Topics"></div>
+		<div data-dojo-type="webtools.Services"></div>
+		<div data-dojo-type="webtools.Cameras"></div>
+	</div>
+	
+</body>
+</html>

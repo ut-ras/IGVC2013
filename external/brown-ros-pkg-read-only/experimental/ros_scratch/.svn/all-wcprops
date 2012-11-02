@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1100/trunk/experimental/ros_scratch
+END
+ros_scratch_icreate.launch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1100/trunk/experimental/ros_scratch/ros_scratch_icreate.launch
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1087/trunk/experimental/ros_scratch/manifest.xml
+END
+ros_scratch_icreate_camera.launch
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1100/trunk/experimental/ros_scratch/ros_scratch_icreate_camera.launch
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1087/trunk/experimental/ros_scratch/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1087/trunk/experimental/ros_scratch/CMakeLists.txt
+END
+ros_scratch_ardrone.launch
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1087/trunk/experimental/ros_scratch/ros_scratch_ardrone.launch
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1087/trunk/experimental/ros_scratch/Makefile
+END

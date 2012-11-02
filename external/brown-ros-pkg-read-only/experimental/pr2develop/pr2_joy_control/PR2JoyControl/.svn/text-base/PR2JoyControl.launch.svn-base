@@ -1,0 +1,73 @@
+<launch>
+    <node type="PR2JoyControl" pkg="PR2JoyControl" name="PR2JoyControl_main" output="screen">
+        <param name="LoopRate" value="10" type="int"/>
+
+<!--    Joystick parameters -->
+        <param name="AxesSensitivity" value="0.5"/>
+        <param name="NumConfigurations" value="2" type="int"/>
+        <param name="NumButtons" value="12" type="int"/>
+        <param name="NumAxes" value="6" type="int"/>
+
+<!--    Command mappings    -->
+        <param name="Config0/Btn8" value="config0"/>
+        <param name="Config0/Btn9" value="config1"/>
+        <param name="Config0/Axis2" value="axis_turn"/>
+        <param name="Config0/Axis3" value="axis_move"/>
+        <param name="Config0/Axis4" value="axis_headyaw"/>
+        <param name="Config0/Axis5" value="axis_headpitch"/>
+        
+        <param name="Config1/Btn0" value="rforearmrollleft"/>
+        <param name="Config1/Btn2" value="rforearmrollright"/>
+        <param name="Config1/Btn1" value="relbowflexright"/>
+        <param name="Config1/Btn3" value="relbowflexleft"/>
+        
+<!--
+        <param name="Config1/Btn4" value="lwristrollleft"/>
+        <param name="Config1/Btn5" value="rwristrollleft"/>
+        <param name="Config1/Btn6" value="lwristrollright"/>
+        <param name="Config1/Btn7" value="rwristrollright"/>
+-->
+        <param name="Config1/Btn4" value="lwristpitchdown"/>
+        <param name="Config1/Btn5" value="rwristpitchdown"/>
+        <param name="Config1/Btn6" value="lwristpitchup"/>
+        <param name="Config1/Btn7" value="rwristpitchup"/>
+
+        <param name="Config1/Btn8" value="config0"/>
+        <param name="Config1/Btn9" value="config1"/>
+        <param name="Config1/Btn11" value="rgraspcommand"/>
+        <param name="Config1/Btn10" value="lgraspcommand"/>
+        
+        <param name="Config1/Axis0" value="axis_lshoulderroll"/>
+<!--
+        <param name="Config1/Axis0" value="axis_lupperarmroll"/> 
+-->
+
+        <param name="Config1/Axis1" value="axis_lshoulderpitch"/>
+
+        <param name="Config1/Axis2" value="axis_rshoulderroll"/>
+<!--
+        <param name="Config1/Axis2" value="axis_rupperarmroll"/> 
+-->
+
+        <param name="Config1/Axis3" value="axis_rshoulderpitch"/>
+        <param name="Config1/Axis4" value="axis_lforearmroll"/>
+        <param name="Config1/Axis5" value="axis_lelbowflex"/>
+
+<!--    Gripper command parameters  -->
+        <param name="gripper_open_position" value="0.08"/>
+        <param name="gripper_close_position" value="-100.0"/>
+        <param name="gripper_max_effort" value="-1.0"/>
+
+<!--    Robot linear speed -->
+        <param name="linear_speed" value="0.3"/>
+        <param name="angular_speed" value="0.7"/>
+        
+<!--    Effort for each joint -->
+       <param name="upper_arm_effort" value="3"/>
+        <param name="shoulder_effort" value="8"/>
+        <param name="elbow_effort" value="3"/>
+        <param name="forearm_effort" value="3"/>
+        <param name="wrist_effort" value="2"/>
+    </node>
+</launch>
+

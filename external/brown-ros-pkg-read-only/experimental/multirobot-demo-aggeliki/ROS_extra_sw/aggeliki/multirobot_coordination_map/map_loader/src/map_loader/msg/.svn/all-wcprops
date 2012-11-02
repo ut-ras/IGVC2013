@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/src/map_loader/msg
+END
+_GraphMap.py
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/src/map_loader/msg/_GraphMap.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/src/map_loader/msg/__init__.py
+END
+_Edge.py
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/src/map_loader/msg/_Edge.py
+END
+_LineMap.py
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/src/map_loader/msg/_LineMap.py
+END
+_Node.py
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/src/map_loader/msg/_Node.py
+END
+_Line.py
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/map_loader/src/map_loader/msg/_Line.py
+END

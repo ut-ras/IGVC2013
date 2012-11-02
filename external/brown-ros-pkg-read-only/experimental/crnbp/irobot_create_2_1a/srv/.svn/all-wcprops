@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv
+END
+Song.srv
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/Song.srv
+END
+Leds.srv
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/Leds.srv
+END
+Turn.srv
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/Turn.srv
+END
+PlaySong.srv
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/PlaySong.srv
+END
+Start.srv
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/Start.srv
+END
+Tank.srv
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/Tank.srv
+END
+Circle.srv
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/Circle.srv
+END
+Reset.srv
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/Reset.srv
+END
+Brake.srv
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/Brake.srv
+END
+Demo.srv
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/Demo.srv
+END
+Stop.srv
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1380/trunk/experimental/crnbp/irobot_create_2_1a/srv/Stop.srv
+END

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node
+END
+_package_TrainMatrix.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/_package_TrainMatrix.lisp
+END
+.TrainPair.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/.TrainPair.asd-dep
+END
+TrainDatapoint.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/TrainDatapoint.lisp
+END
+Datapoint.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/Datapoint.lisp
+END
+.Vector.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/.Vector.asd-dep
+END
+.TrainMatrix.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/.TrainMatrix.asd-dep
+END
+.Matrix.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/.Matrix.asd-dep
+END
+TrainPair.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/TrainPair.lisp
+END
+_package_TrainDatapoint.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/_package_TrainDatapoint.lisp
+END
+_package_Datapoint.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/_package_Datapoint.lisp
+END
+.AddVector.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/.AddVector.asd-dep
+END
+sogp_node-msg.asd
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/sogp_node-msg.asd
+END
+.AddMatrix.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/.AddMatrix.asd-dep
+END
+TrainMatrix.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/TrainMatrix.lisp
+END
+_package_TrainPair.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/_package_TrainPair.lisp
+END
+.TrainDatapoint.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/.TrainDatapoint.asd-dep
+END
+.Datapoint.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/643/trunk/experimental/sogp_node/msg/lisp/sogp_node/.Datapoint.asd-dep
+END

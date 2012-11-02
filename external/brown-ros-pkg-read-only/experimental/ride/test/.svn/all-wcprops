@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2757/trunk/experimental/ride/test
+END
+test_a.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2757/trunk/experimental/ride/test/test_a.py
+END
+test_b.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2757/trunk/experimental/ride/test/test_b.py
+END

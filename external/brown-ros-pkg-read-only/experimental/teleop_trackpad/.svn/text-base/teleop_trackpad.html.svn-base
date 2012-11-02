@@ -1,0 +1,39 @@
+<!doctype html>
+
+<!--
+   ______
+   |     |
+   |  .  |
+   |     |
+   |_____|
+
+   Control robot from centerpoint, move on mousedown, stop on mouseup, up is forward.
+
+   -->
+
+<html>
+  <head>
+    <style>
+      div { width:400px; height:300px; margin:10px; margin-right:50px;
+            border:2px groove; }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.query.js"></script>
+    <script type="text/javascript" src="js/ros.min.js"></script>
+    <script type="text/javascript" src="teleop_trackpad.js"></script>
+  </head>
+  <body>
+    <img src="trackpad.png" id="robotController" /><br>
+    <table>
+      <tr><td colspan="2" align="left">Sensitivity:</td></tr>
+      <tr><td colspan="2"><input id="invSensitivity" type="range" min="25" max="400" value="100" /></td></tr>
+      <tr><td align="left">Speed</td><td align="right">Control</td></tr>
+    </table><br>
+    <span id="positionCoords"></span><br>
+    <textarea rows="10" cols="80" readonly="readonly" id="console"></textarea><br>
+    <script>
+    </script>
+  </body>
+</html>
+
+

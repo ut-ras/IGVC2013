@@ -1,0 +1,38 @@
+TODO
+- autoconnect things with the same topic name
+
+MAYBE
+- have a way to rosmake a package
+- how to kill image_view when you close the window? what's going on?
+
+DONE
+- fix bug with phantom connection when deleting a node
+- rosbridge bugs?
+  - rosbridge drops messages and there's no way to tell it to be reliable
+    this is fixed temporarily in ridebridge but needs an official fix
+  - need to unsubscribe dropped connections from everything they subscribed to
+    otherwise connecting multiple times means lots of copies of each message?
+- get rid of temporary roslaunch files and run binaries directly?
+  - would get less cluttered stdout and exit code
+- need better status information
+  - running normally
+  - running but no node (still starting up)
+  - not running (process terminated) -> see log
+- need start/stop button
+- make node list return two different node types for sanity (owned/unowned)
+- add hacky forwarding nodes
+- switch from polling with js to polling the master within a python loop
+  - only broadcast events when the state changes or when a new client appears
+  - would increase network performance and decrease latency
+  - might be able to poll faster than 0.5 seconds
+  - could send delta state instead of entire state
+  - /rosbridge/subscribe drops lots of messages if you don't pass it -1
+    with -1 it only drops a few messages, still has queue_size of 10
+- need real-time editing of connections
+- need to hide temporary forwarding nodes
+- minimap for large programs
+- automatic graph layout
+- show types of topics?
+  - do topics even have a single type?
+  - if so, maybe only show types along edges?
+- better topic names

@@ -1,0 +1,18 @@
+<package>
+  <description brief="sogp">
+Uses Sparse Online Gaussian Processes for multi-dimensional function regression.
+
+  </description>
+  <author>Alex Tarvo</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <export>
+    <cpp cflags="-I${prefix}/srv/cpp -I${prefix}/msg/cpp" />
+  </export>
+  <url>http://brown-robotics.org/index.php?title=Internal:SOGP_Instructions</url>
+
+</package>
+
+

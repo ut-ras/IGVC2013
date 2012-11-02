@@ -1,0 +1,8 @@
+<launch>
+        <include file="$(find CS148_object_seeking)/launch/setup.launch" />
+        <include file="$(find CS148_object_seeking)/launch/robot.launch"/>
+	<node name="rosbridge" pkg="rosbridge" type="rosbridge.py" respawn="false" output="screen"/>
+	<node pkg="mjpeg_server" type="mjpeg_server"  name="mjpeg_server">
+		<param name="port" type="int" value="8080" />
+	</node>
+</launch>

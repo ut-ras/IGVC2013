@@ -1,0 +1,5 @@
+<launch>
+  <node name="object_manager" pkg="object_manager" type="run_objmanager" respawn="false" output="screen" /> 
+  <node name="grab_block" pkg="block_builder" type="grab_block" respawn="false" output="screen" />
+  <node name="block_placer" pkg="block_builder" type="block_placer" respawn="false" output="screen" />
+</launch>

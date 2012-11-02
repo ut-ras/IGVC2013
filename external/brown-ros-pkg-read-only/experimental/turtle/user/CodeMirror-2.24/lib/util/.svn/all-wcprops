@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util
+END
+loadmode.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/loadmode.js
+END
+simple-hint.css
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/simple-hint.css
+END
+search.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/search.js
+END
+javascript-hint.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/javascript-hint.js
+END
+match-highlighter.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/match-highlighter.js
+END
+runmode.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/runmode.js
+END
+simple-hint.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/simple-hint.js
+END
+formatting.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/formatting.js
+END
+dialog.css
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/dialog.css
+END
+dialog.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/dialog.js
+END
+foldcode.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/foldcode.js
+END
+overlay.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/overlay.js
+END
+closetag.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/closetag.js
+END
+searchcursor.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2829/trunk/experimental/turtle/user/CodeMirror-2.24/lib/util/searchcursor.js
+END

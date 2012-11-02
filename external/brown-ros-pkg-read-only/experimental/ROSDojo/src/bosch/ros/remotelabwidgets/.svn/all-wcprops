@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets
+END
+servicewidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/servicewidget.js
+END
+pr2_pickandplace_widget.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/pr2_pickandplace_widget.js
+END
+mjpegwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/mjpegwidget.js
+END
+pr2_pickandplace_widget_controller.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/pr2_pickandplace_widget_controller.js
+END
+pr2_marker_control_widget.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/pr2_marker_control_widget.js
+END
+videowidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/videowidget.js
+END
+pr2keycontrol.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/pr2keycontrol.js
+END
+circuitmonitorwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/circuitmonitorwidget.js
+END
+runstopwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/runstopwidget.js
+END
+bitrategraphwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/bitrategraphwidget.js
+END
+topicwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/topicwidget.js
+END
+pinggraphwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/pinggraphwidget.js
+END
+loggerwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/loggerwidget.js
+END
+batterymonitorwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/batterymonitorwidget.js
+END
+fpscounterwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/fpscounterwidget.js
+END
+soundwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/soundwidget.js
+END
+bitratewidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/bitratewidget.js
+END
+motorsmonitorwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/motorsmonitorwidget.js
+END
+remotelabwidgets.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/remotelabwidgets.js
+END
+pingwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/pingwidget.js
+END
+pr2_interactivepickandplace_widget.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/pr2_interactivepickandplace_widget.js
+END
+snapshotwidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/snapshotwidget.js
+END
+visualization_select_widget.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/remotelabwidgets/visualization_select_widget.js
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder_msgs/srv
+END
+Start.srv
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder_msgs/srv/Start.srv
+END
+Restart.srv
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder_msgs/srv/Restart.srv
+END
+Stop.srv
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/2221/trunk/experimental/toyblock_builder_complete/pr2_block_builder_msgs/srv/Stop.srv
+END

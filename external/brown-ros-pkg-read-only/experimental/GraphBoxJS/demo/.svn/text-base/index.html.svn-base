@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../lib/GraphBox.css">
+    <script src="../lib/GraphBox.js"></script>
+    <script src="ROS.js"></script>
+  </head>
+  <body>
+    <h1>Introspection Demo</h1>
+    <p>This demo expects to connect to an existing ridebridge instance running on port 9090. Please run "rosrun ridebridge rosbridge.py."</p>
+    <script src="script.js"></script>
+  </body>
+</html>

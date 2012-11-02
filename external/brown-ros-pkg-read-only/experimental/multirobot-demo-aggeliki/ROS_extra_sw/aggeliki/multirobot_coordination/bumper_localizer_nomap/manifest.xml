@@ -1,0 +1,18 @@
+<package>
+  <description brief="bumper_localizer_nomap">
+
+     bumper_localizer_nomap
+
+  </description>
+  <author>syndrome</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/bumper_localizer_nomap</url>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="irobot_create_2_1"/>
+  <depend package="position_tracker"/>
+
+</package>
+
+

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Canvas Drive Demo</title>
+    <meta name="author" content="Paul Savickas"/>
+
+    <style type="text/css">
+      canvas { border: 2px solid black; }
+    </style>
+  </head>
+
+  <body onload="init();">
+    <form name ="form_connect" id="form_connect" action="#">
+        IP Address: <input type="text" name="ip" id="txt_ip">
+        Port: <input type="text" name="port" id="txt_port">
+        <input type="button" name="button_connect" value="Connect" onclick="connect(txt_ip.value, parseInt(txt_port.value))">
+    </form>
+    <canvas id="joystick" width="300" height="300"></canvas>
+
+    <textarea id="fwdVel">FwdVel:</textarea>
+    <textarea id="turnVel">TurnVel:</textarea>
+
+    <script type="text/javascript" src="DriveDemo.js"></script>
+
+	<object id="javaJoystick" type="application/x-java-applet" width="1" height="1">
+		<param name="code" value="Joystick.class"></param>
+		<param name="type" value="application/x-java-applet"></param>
+		<param name="mayscript" value="true">
+		<param name="scriptable" value="true"></param>
+	</object>
+
+  </body>
+</html>

@@ -1,0 +1,248 @@
+/*****************************************************************************                             
+RightContext v0.2.5                                                                                        
+Author: Harel Malka                                                                                        
+http://www.harelmalka.com                                                                                  
+harel@harelmalka.com                                                                                       
+Bugs: Leave comment on the site                                                                            
+                                                                                                           
+February 2007 - Initial Revision                                                                           
+----------------------------------------------------------------------------                               
+                                                                                                           
+RightContext is a supercharged context menu. I created it to                                               
+answer a few requirements I had of context menus which I could not find                                    
+anywhere else; mainly provide the *correct* contextualized links depending                                 
+on what was triggering the menu. Originaly this was a Right Click menu only,                               
+though this was changed in 0.2.4 to allow menu triggering by Left/Right Click,                             
+or Mouse over actions.                                                                                     
+RightContext generates unique context menus that are built based on the DOM                                
+element clicked using special attributes embedded in the element's html.                                   
+The attributes are custom generated and can be anything. Menu items can                                    
+include [tags] referencing those attributes, which will cause them to be                                   
+transformed to contain the actual values when the menu is constructed                                      
+(i.e., when an element is left/right clicked or moused over, depending on                                  
+the menu's setting.)    
+
+Some of the key features of RightClick:                                                                    
+        * Trigger items via Right click, Left click or Mouse over (new in 0.2.4)                           
+        * Menu items that link somewhere                                                                   
+        * Menu items that perform a custom javascript function                                             
+        * Menu items that display hardcoded text                                                           
+        * Menu items that retrieve text via a remote 'ajax' call                                           
+        * Menu item separators                                                                             
+        * Supports multiple different menus that can be called depending on                                
+                the element clicked                                                                        
+        * All menu items can contain [tags] which are transformed at runtime to                            
+                the values embedded in the clicked element 
+        * Conditional evaluation of menu items. An item can show or not show depending                     
+                on a specified condition in the menu template (new in v0.2.3)                              
+        * Css based look and feel                                                                          
+        * Unobtrusive standalone javascript: no additional js framework required.                          
+                                                                                                           
+RightContext is the menu object. It contains a collection of context menu                                  
+definitions which can be retrieved by unique names. A context menu will                                    
+receive a set of arguments from any calling Context that can be used to                                    
+construct the links or text in it.                                                                         
+This is a singleton object that should have one instance per page.  
+
+A few of the object's properties that you can edit:                                                        
+        menuTriggerEvent -> Can be either RIGHT (default), LEFT, or MOVE to                                
+                                                determine what triggers the menus generated (left/right    
+                                                click or a mouse over event). Value is in UPPER case.      
+        allowedContexts  -> A String array of tag names that can have a menu attached                      
+                                                to them. The default list covers A, DIV, SPAN, INPUT tags.
+                                                                                                           
+A menu definition is an object with the following spec: 
+
+        menu1 = { attributes: "attr1,attr2,attr3" ,                                                        
+                                                                                                           
+                                items: [                                                                   
+                                        {type:RightContext.TYPE_MENU,                                      
+                                                text:"Search for [attr2] on Google",                       
+                                                url:"http://www.goole.com?q=[attr1]",                      
+                                                image: "icon.gif", align:"right" },                        
+                                                                                                           
+                                        {type:RightContext.TYPE_MENU,                                      
+                                                text:"The second item in the menu. it will show if attr3=Y\
+ (and its: [attr3])",                                                                                      
+                                                requires: ["attr3", "Y"],                                  
+                                                onclick:function() { alert('This is a custom javascript')}\
+ },
+                                       {type: RightContext.TYPE_SEPERATOR },                              
+                                                                                                           
+                                        {type: RightContext.TYPE_TEXT,                                     
+                                                text: "This is hardcoded, yet dynamic text: attr1=[attr1],\
+ attr2=[attr2], attr3=[attr3]"} ,                                                                          
+                                                                                                           
+                                        {type: RightContext.TYPE_TEXT_EXT,                                 
+                                                url: "external.html"}   ]                                  
+                        };
+
+Each menu definition object contains two properties:                                                       
+                                                                                                           
+        attributes : a comma delimited list of attributes that this menu will                              
+                                look for in the elements its bound to                                      
+        items      : an array of objects, each describes a menu item of a given                            
+                                type. The example above covers all                                         
+                                currently supported types and their respective properties.
+
+A couple of notes about item properties:                                                                   
+        * Use either url or onclick for TYPE_MENU items - url will take precedence                         
+        over onclick.                                                                                      
+        * For url type menu items, you can add an optional frame property to redirect                      
+        the link to a specific frame, or use _blank to open a new window                                   
+        * The image attribute for TYPE_MENU are optional.                                                  
+        * For TYPE_MENU, you can use the optional 'requires' property. It accepts                          
+        an array with two elements; the first one is an attribute to evaluate and                          
+        the second is what it should evaluate to if this menu item is to be displayed.                     
+                                                                                                           
+After creating some menu definitions, you need to add them to the menu                                     
+collection within RightContext by doing:                                                                   
+                                                                                                           
+        RightContext.addMenu("menuOne", menu1);                                                            
+                                                                                                           
+This adds menu1 and tags it with unique name: menuOne. The unique name is how                              
+we'll refer to this menu later.
+
+Not all html tags are used to allow context menus. By default, only                                        
+A, DIV, SPAN and INPUT tags are considered 'contextualizable' but you can add                              
+additional tags by editing the allowedContexts property of the RightContext                                
+object.
+
+To generate a context menu for a particular html tag, first add the context                                
+attribute to it, and then any additional attributes that you'd like it to                                  
+have. The context attribute holds which menu to call up.                                                   
+The additional ones are the attributes defined in the attributes property of                               
+the menu definition.                                                                                       
+For the menu definition above, here's an A tag example:                                                    
+                                                                                                           
+        <a href="http://www.freecrm.com" context="menuOne" attr1="freecrm"                                 
+                                                attr2="FreeCRM.com" attr3="Hi mum!">Right Click Me</a>     
+                                                   
+
+        The above link will use the menuOne (mapped to menu1) defintion. When                              
+        triggered, the first menu item will a link titled                                                  
+        "Search for freecrm on Google" ([attr1] is replaced by the tag's                                   
+        attribute value - freecrm)                                                                         
+        The second item will pop a javascript alert and will be titled                                     
+        "The second item in the menu. attr3=Hi Mum!".                                                      
+        It will be followed by a separator and then the following text:                                    
+        "This is hardcoded, yet dynamic text: attr1=freecrm, attr2=FreeCRM.com,                            
+        attr3=Hi mum!"                                                                                     
+        The last item will retrieve the contents of the external.html file                                 
+        provided. Obviously, you can also embed url parameters in the url as tags.                         
+        Note that the link above will cause the second menu item to not display                            
+        because the attr3 attribute is equal to "Hi mum!" while the menu template                          
+        defines that the second item will only show if the attr3 is equal to Y.                            
+                                                                                                           
+You can create as many menu definitions as needed for different elements on                                
+your page. Simple define which menu to call in the tag's context attribute.  
+
+
+Finally, to kick of the party and start some context menu action going, you                                
+need to bind the tags that contain the context attribute to their respectful                               
+menus by doing:                                                                                            
+                                                                                                           
+        RightContext.initialize();                                                                         
+                                                                                                           
+Please see the example file provided (index.html). An example is worth                                     
+a thousand comments...                                                                                     
+                                                                                                           
+CSS Notes:                                                                                                 
+The RightContext object makes use of some CSS classes defined in the                                       
+rightcontext.css file. You need to include that in your html, or make use                                  
+of these classes yourself.     
+
+Some credits:                                                                                             
+I was always on the lookout for the right context menu but was too busy (or                               
+lazy) to make my own. What finally broke the camel's back was a ContextMenu                               
+script using prototype that i found here:                                                                 
+http://www.ajaxline.com/node/338 (note - last i checked the link was not                                  
+active). But, it wasn't stand alone, and it wasn't really "contextualize"                                 
+to what's clicked. I wasn't a happy puppy, So i rolled up my sleeves.                                     
+I used the getDimensions method from prototype since it worked great and                                  
+saved me time doing my own. (http://prototype.conio.net)                                                  
+I also adapted the logic in Alessandro Fulciniti great bubble tooltip                                     
+script's Locate method for the locateMousePos (slightly modified)                                         
+method for the same reason (http://pro.html.it  and                                                       
+http://web-graphics.com )                                                                                 
+Also thanks to all the good people who bothered to comment about this script.                             
+Thanks to them I added the left click and mouse over trigger options.                                     
+In 0.2.5 I also incorporated fixes provided by Ian, CraigD, David Zhang and fanno.                        
+So thanks guys!
+
+LICENSE:                                                                                                  
+This script is FREE to use and modify for personal or commercial purposes.                                
+I only ask that you either leave this commented message intact, OR leave                                  
+credit where credit is due, with all URLs provided (not just to myself,                                   
+but also to prototype and Alessandro).                                                                    
+As well, if you make any modifications to this script that enhances its                                   
+functionality, please DO give them back to the world and please email them                                
+to me so that I can consider including them into my own version here.                                     
+I'd also love to hear of any good use you've made with this script!                                       
+                                                                                                          
+WARRANTY:                                                                                                 
+This code comes with NO Warranty whatsoever. I cannot be help responsible                                 
+for any damage of any kind to any thing resulting from using this code.                                   
+Do NOT use this code for NASA shuttle launches! It won't work.                                            
+                                                                                                          
+Please send bug reports to rightcontext@googlemail.com
+
+Have fun                                                                                                  
+                                                                                                          
+CHANGE LOG -----------------------------------------------------------------                              
+                                                                                                          
+0.2   : 12 Feb 2007  Added support for tags in menu onclick event handlers.                               
+                                        Added a couple of fixes provided by JDG including a Safari        
+                                        fix.                                                              
+0.2.1 : 17 Feb 2007  Bug fix: event handler parsing was overwriting the template                          
+                                        with the first parsed item.                                       
+0.2.2 : 20 Feb 2007  Bug fix: IE6-7 issue with onlclick events containing tags                            
+                                        and a menu positioning fix.                                       
+0.2.3 : 20 Feb 2007  Added conditional display of menu items based on [tag] values                        
+0.2.4 : 26 Feb 2007  Added menu triggering via LEFT click and mouse over (MOVE)                           
+                                        events.                                                           
+0.2.5 : 04 Oct 2008  Fixes tags not passing properly on FF3 with onclick events.                          
+                                        Also incorporates all fixes proposed by users.                    
+                                        Thanks to Ian, CraigD, David Zhang and fanno 
+*/
+
+.rcMenuContainer {
+    font-family:verdana, arial;
+    position: absolute;
+    border: 1px solid black;
+    background: #efebe7;
+    padding:2px;
+    width:200px; 
+}
+.rcMenuItem {
+    font-size:11px;
+    font-weight:normal;
+    padding:3px;
+    width:100%;
+}
+.rcMenuItemHover {
+    font-size:11px;
+    font-weight:normal;
+    background:#5e88ae;
+    color:white;
+    padding:3px;
+}
+.rcMenuItemText {
+    font-size:11px;
+    font-weight:normal;
+    border:0px;
+    padding:2px;
+}
+.rcMenuItemTextExt {
+    font-size:11px;
+    font-weight:normal;
+    border:1px dotted grey;
+    padding:2px;
+} 
+.rcMenuSeparator{
+    color:black;
+    height:3px;
+}
+.rcImage {
+	padding-right:4px; 
+}

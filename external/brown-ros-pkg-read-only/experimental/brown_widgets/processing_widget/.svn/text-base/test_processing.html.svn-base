@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<title>Processing Test</title> 
+
+<!-- Required scripts for processing -->
+<script src="processingjs/processing-1.0.0.js"> </script>
+
+<script type="text/javascript" src="resources/jquery.min.js"></script>
+<script type="text/javascript" src="resources/json2.js"></script>
+<script type="text/javascript" src="resources/ros.js"></script>
+<script type="text/javascript" src="resources/spidergl.js"> </script> 
+<script type="text/javascript" src="ros/ros.js"> </script> 
+
+<script> 
+var node = new ros.NodeHandle("ws://whoola:9090");
+
+function start()
+{
+  var processingIns = Processing.getInstanceById("processcanvas");
+  
+  var pro = new ros.widgets.ProcessingMapWidget(node,processingIns,"/compressed_map");
+  
+  function nop() {};
+  function json(obj) {return JSON.stringify(obj);};
+  
+  function log(msg) {
+    $('#log').append(msg.toString() + '<br>');
+  };
+}
+
+</script>
+<style type="text/css">
+  canvas {
+    border: 2px solid black;
+  }
+</style>
+</head>
+
+<body onload="start()">
+  <canvas id="processcanvas" data-processing-sources="canvasdraw.pde"></canvas>
+</body>
+</html>

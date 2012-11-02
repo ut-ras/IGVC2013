@@ -1,0 +1,15 @@
+<package>
+  <description brief="kinematics_tutorials">
+
+     kinematics_tutorials
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/kinematics_tutorials</url>
+  <depend package="kinematics_msgs"/>
+
+</package>
+
+

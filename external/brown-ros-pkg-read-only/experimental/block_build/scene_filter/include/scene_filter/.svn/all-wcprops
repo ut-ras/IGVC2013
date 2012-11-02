@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2591/trunk/experimental/block_build/scene_filter/include/scene_filter
+END
+self_see_filter.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2581/trunk/experimental/block_build/scene_filter/include/scene_filter/self_see_filter.h
+END
+self_filter_server.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/2591/trunk/experimental/block_build/scene_filter/include/scene_filter/self_filter_server.h
+END
+self_mask.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2581/trunk/experimental/block_build/scene_filter/include/scene_filter/self_mask.h
+END

@@ -1,0 +1,28 @@
+<package>
+  <description brief="block_builder">
+
+     block_builder
+
+  </description>
+  <author>BrownRobotics</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/block_builder</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="actionlib"/>
+  <depend package="object_manipulation_msgs"/>
+  <depend package="tabletop_object_detector"/>
+  <depend package="tabletop_collision_map_processing"/>
+  <depend package="pr2_controllers_msgs" />
+  <depend package="block_build_msgs"/>
+  <depend package="arm_navigation_msgs"/>
+  <depend package="object_manager"/>
+  <depend package="simple_robot_control"/>
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lros"/>
+  </export>
+
+
+</package>
+

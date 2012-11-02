@@ -1,0 +1,15 @@
+<package>
+  <description brief="userstudy_server">
+
+     userstudy_server
+
+  </description>
+  <author>jihoonl</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/userstudy_server</url>
+  <depend package="rospy"/>
+
+</package>
+
+

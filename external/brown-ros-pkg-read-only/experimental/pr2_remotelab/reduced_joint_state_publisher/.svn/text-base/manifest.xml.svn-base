@@ -1,0 +1,17 @@
+<package>
+  <description brief="reduced_joint_state_publisher">
+
+     reduced_joint_state_publisher
+
+  </description>
+  <author>Sarah Osentoski</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/reduced_joint_state_publisher</url>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="sensor_msgs"/>
+
+</package>
+
+

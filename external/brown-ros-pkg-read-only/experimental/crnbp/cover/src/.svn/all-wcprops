@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1731/trunk/experimental/crnbp/cover/src
+END
+coverage.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1688/trunk/experimental/crnbp/cover/src/coverage.py
+END
+model_room.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1706/trunk/experimental/crnbp/cover/src/model_room.py
+END
+cover_control.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1609/trunk/experimental/crnbp/cover/src/cover_control.py
+END
+model_phi.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1706/trunk/experimental/crnbp/cover/src/model_phi.py
+END
+room_net.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1731/trunk/experimental/crnbp/cover/src/room_net.py
+END

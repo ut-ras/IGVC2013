@@ -1,0 +1,19 @@
+<package>
+  <description brief="perfesser">
+    Perfesser is a node to do localization from noisy sensors.  It includes
+    a particle filter library and facilities for managing a belief processing
+    application.  See comments in the perfesser_guesser.py file.
+  </description>
+  <author>Tom Sgouros</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/perfesser</url>
+  <depend package="rospy"/>
+  <depend package="roslib"/>
+  <depend package="std_msgs"/>
+  <!-- testing dependencies -->
+  <depend package="tgraph"/>
+
+</package>
+
+

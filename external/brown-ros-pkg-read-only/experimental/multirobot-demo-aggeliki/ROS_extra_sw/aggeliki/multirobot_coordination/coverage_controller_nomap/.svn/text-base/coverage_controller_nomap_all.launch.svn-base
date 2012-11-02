@@ -1,0 +1,24 @@
+<launch>
+<node name="gs1" pkg="gscam" type="gscam" cwd="node"/>
+
+<param name="aov" value=".67"/>
+<node name="ar1" pkg="ar_recog" type="ar_recog" args="image:=/gscam/image_raw" cwd="node" />
+
+<node name="pt1" pkg="position_tracker" type="position_tracker.py" cwd="node"/>
+
+<node name="al1" pkg="ar_localizer" type="ar_localizer.py" cwd="node"/>
+
+<node name="ic1" pkg="irobot_create_2_1" type="driver.py"/>
+
+<node name="tk1" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/>
+
+<node name="bl1" pkg="bumper_localizer_nomap" type="bumper_localizer_nomap"/>
+
+<param name="/step_navigator/ok_to_drive" value="1"/>
+<node name="sn1" pkg="step_navigator_nomap" type="step_navigator_nomap"/>
+
+<node name="wc" pkg="wifi_comm" type="wifi_discovery_node"/>
+
+<node name="cc1" pkg="coverage_controller_nomap" type="coverage_controller_nomap" output="screen" />
+
+</launch>

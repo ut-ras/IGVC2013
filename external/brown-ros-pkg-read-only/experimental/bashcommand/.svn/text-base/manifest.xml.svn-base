@@ -1,0 +1,12 @@
+<package>
+  <description brief="bashcommand">
+A extremely simple wrapper that allows you to launch arbitrary bash commands from within launch files. When launched it will execute the command located in the COMMAND environment variable and then exit.
+  </description>
+  <author>Graylin Trevor jay</author>
+  <email>tjay@cs.brown.edu</email>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+
+  <depend package="rospy"/>
+
+</package>

@@ -1,0 +1,7 @@
+geometry_msgs/Point point
+---
+int8 result
+
+int8 INSIDE  = 0
+int8 OUTSIDE = 1
+int8 SHADOW = 2

@@ -1,0 +1,21 @@
+<package>
+  <description brief="ardrone_cntrlr">
+
+     ardrone_cntrlr
+
+  </description>
+  <author>Arjun</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ardrone_cntrlr</url>
+  <depend package="roscpp"/>
+  <depend package="bullet"/>
+  <depend package="geometry_msgs"/>
+  <depend package="nav_msgs"/>
+  <depend package="visualization_msgs"/>
+  <depend package="ardrone_lclzr"/>
+  <depend package="ardrone_brown"/>
+
+</package>
+
+

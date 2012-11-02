@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/PROD_MODE_gcc_4.3.3_Examples/linux
+END
+sym_api_wifiClientTCP_raw_sdl
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/PROD_MODE_gcc_4.3.3_Examples/linux/sym_api_wifiClientTCP_raw_sdl
+END
+api_ethernet_raw_sdl
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/PROD_MODE_gcc_4.3.3_Examples/linux/api_ethernet_raw_sdl
+END
+api_serial_raw_sdl
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/PROD_MODE_gcc_4.3.3_Examples/linux/api_serial_raw_sdl
+END
+api_wifiClientTCP_raw_sdl
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/PROD_MODE_gcc_4.3.3_Examples/linux/api_wifiClientTCP_raw_sdl
+END
+sym_api_ethernet_raw_sdl
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/PROD_MODE_gcc_4.3.3_Examples/linux/sym_api_ethernet_raw_sdl
+END
+sym_api_serial_raw_sdl
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/Build/PROD_MODE_gcc_4.3.3_Examples/linux/sym_api_serial_raw_sdl
+END

@@ -1,0 +1,6 @@
+<launch>
+  <node name="rosjs" pkg="rosjs" type="rosjs.py" />
+  <node name="omclock" pkg="omclock" type="omclock.py" />
+  <!-- Finally, point your web browser to: file://[overhead_map_root]/overhead_map.html?map=soccer -->
+</launch>
+

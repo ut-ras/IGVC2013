@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9
+END
+video_utils_p5p.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_utils_p5p.h
+END
+video_packetizer_p5p.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_packetizer_p5p.h
+END
+video_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_config.h
+END
+video_quantizer_p5p.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_quantizer_p5p.h
+END
+video_dct_p5p.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_dct_p5p.c
+END
+video_picture_p5p.S
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_picture_p5p.S
+END
+video_gen_sad.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_gen_sad.c
+END
+video_utils.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_utils.c
+END
+video_dct_p5p.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_dct_p5p.h
+END
+video_packetizer_p5p.S
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_packetizer_p5p.S
+END
+video_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_utils.h
+END
+video_gen_sad.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_gen_sad.h
+END
+video_quantizer_p5p.S
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/arm9/video_quantizer_p5p.S
+END

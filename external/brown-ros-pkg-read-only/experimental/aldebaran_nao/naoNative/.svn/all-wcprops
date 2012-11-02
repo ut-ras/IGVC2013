@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/985/trunk/experimental/aldebaran_nao/naoNative
+END
+libbrowneyes.so
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/naoNative/libbrowneyes.so
+END
+autoload.ini
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/naoNative/autoload.ini
+END
+naoros.tar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/985/trunk/experimental/aldebaran_nao/naoNative/naoros.tar
+END
+walkConfig.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/naoNative/walkConfig.py
+END

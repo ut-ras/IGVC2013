@@ -1,0 +1,13 @@
+<package>
+  <description brief="launcher">
+ROS Service that can launch ROS launch files
+  </description>
+  <author>Graylin Trevor Jay</author>
+  <email>tjay@cs.brown.edu</email>
+  <license>BSD</license>
+  <depend package="rospy"/>
+  <depend package="roslaunch"/>
+
+</package>
+
+

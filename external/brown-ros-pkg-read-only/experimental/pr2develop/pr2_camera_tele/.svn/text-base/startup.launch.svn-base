@@ -1,0 +1,41 @@
+<launch>
+	
+	<node name="gscam" pkg="gscam" type="gscam"/>
+  <node name="ar_recog" pkg="ar_recog" type="ar_recog" args="image:=/gscam/image_raw camera_info:=/gscam/camera_info"/>
+  <!-- Location of the cmvision color file -->
+  <param name="cmvision/color_file" type="string" 
+         value="$(find cmvision)/colors.txt" />
+
+  <!-- Turn debug output on or off -->
+  <param name="cmvision/debug_on" type="bool" value="true"/>
+
+  <!-- Turn color calibration on or off -->
+  <param name="cmvision/color_cal_on" type="bool" value="false"/>
+
+  <!-- Enable Mean shift filtering -->
+  <param name="cmvision/mean_shift_on" type="bool" value="false"/>
+
+  <!-- Spatial bandwidth: Bigger = smoother image -->
+  <param name="cmvision/spatial_radius_pix" type="double" value="2.0"/>
+
+  <!-- Color bandwidth: Bigger = smoother image-->
+  <param name="cmvision/color_radius_pix" type="double" value="40.0"/>
+
+  <node name="cmvision" pkg="cmvision" type="cmvision" args="image:=ar/image" 
+        output="screen" />
+        
+  <param name="/use_sim_time" value="false" />
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="$(find gazebo_worlds)/worlds/empty.world" respawn="false"/>
+  <!-- send table urdf to param server -->
+  <param name="table_description" command="$(find xacro)/xacro.py $(find gazebo_worlds)/objects/table.urdf.xacro" />
+
+  <!-- push table_description to factory and spawn robot in gazebo -->
+  <node name="spawn_table" pkg="gazebo_tools" type="gazebo_model" args="-p table_description -z 0.01 spawn table_model" respawn="false" />
+  
+  <!-- startup pr2 without starting up any defaut controllers -->
+  <include file="$(find pr2_gazebo)/pr2_no_controllers.launch" />
+
+  <!-- Default Controllers -->
+  <include file="$(find pr2_controller_configuration_gazebo)/pr2_default_controllers.launch" />
+  
+</launch>

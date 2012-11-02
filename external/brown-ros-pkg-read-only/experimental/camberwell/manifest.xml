@@ -1,0 +1,16 @@
+<package>
+  <description brief="camberwell">
+Camberwell is the rough begining of a rosbridge testing suite. The initial focus
+is on throughput and message integrity.
+  </description>
+  <author>Graylin Trevor Jay</author>
+  <email>tjay@cs.brown.edu</email>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/camberwell</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+
+</package>
+
+

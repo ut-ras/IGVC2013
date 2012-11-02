@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/775/trunk/experimental/meshnet/batman_mesh_info
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/756/trunk/experimental/meshnet/batman_mesh_info/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/756/trunk/experimental/meshnet/batman_mesh_info/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/756/trunk/experimental/meshnet/batman_mesh_info/CMakeLists.txt
+END

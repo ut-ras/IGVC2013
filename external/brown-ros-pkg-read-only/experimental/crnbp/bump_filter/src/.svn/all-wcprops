@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1542/trunk/experimental/crnbp/bump_filter/src
+END
+bump_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1497/trunk/experimental/crnbp/bump_filter/src/bump_server.py
+END
+bump_guesser.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1542/trunk/experimental/crnbp/bump_filter/src/bump_guesser.py
+END
+map_data.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1394/trunk/experimental/crnbp/bump_filter/src/map_data.py
+END

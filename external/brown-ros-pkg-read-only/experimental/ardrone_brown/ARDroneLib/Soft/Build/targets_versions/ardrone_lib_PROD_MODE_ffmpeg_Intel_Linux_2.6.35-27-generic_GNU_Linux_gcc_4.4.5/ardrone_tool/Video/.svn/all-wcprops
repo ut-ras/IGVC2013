@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Video
+END
+video_stage_recorder.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 213
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Video/video_stage_recorder.c.d
+END
+video_stage_ffmpeg_recorder.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 220
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Video/video_stage_ffmpeg_recorder.c.d
+END
+video_com_stage.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 208
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Video/video_com_stage.c.d
+END
+video_stage.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/ardrone_lib_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ardrone_tool/Video/video_stage.c.d
+END

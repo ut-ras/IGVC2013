@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2427/trunk/experimental/block_nl/tabletop_segmentor
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2259/trunk/experimental/block_nl/tabletop_segmentor/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2259/trunk/experimental/block_nl/tabletop_segmentor/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/2259/trunk/experimental/block_nl/tabletop_segmentor/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2259/trunk/experimental/block_nl/tabletop_segmentor/Makefile
+END

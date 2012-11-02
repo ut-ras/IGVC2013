@@ -1,0 +1,50 @@
+Current Status (3/15/2012)
+------------------------------------------------------------------
+Due to simulation jitter, the robot will not get a gripper stall notification with the pr2_controller_configuration_gazebo/pr2_default_controllers.launch. The param for stall_velocity_threshold seems to low.
+However, setting it much higher causes the gripper to send a success result too soon. It's a finicky situation and where its set now you'll see both situations. This situation really needs a better way of
+moving the block that doesn't rely on collision detection.
+
+The command pickup_block.py [block_num] is not consistent for which block it thinks to pick up if you use the same number. Frustrating I know.
+
+The manager nodes are finicky with this whole process. When a pickup or place doesn't work out, the managers get confused and can't process any more goal messages. It seems almost best at this point
+to restart at least the blocknlp_managers.launch file and many times the whole simulation itself.
+
+
+Configuration
+------------------------------------------------------------------
+To get this running on your machine, you need the 'ros-electric-pr2-desktop' package installed but I imagine you've already done that.
+
+Checkout the gazebo_block_manipulation package to 'brown-ros-pkg/experimental'
+
+> cd brown-ros-pkg/experimental/
+> svn checkout https://brown-ros-pkg.googlecode.com/svn/trunk/experimental/gazebo_block_manipulation gazebo_block_manipulation
+
+Rosmake the files.
+
+> rosmake gazebo_block_manipulation
+
+It currently depends on toyblock_builder, so it will fail during the rosdep part if it that's not downloaded. You can remove that line in the gazebo_block_manipulation 'manifest.xml' if you'd rather not download that package.
+
+Start the gazebo instance
+
+>roslaunch gazebo_block_manipulation blocknlp_pr2_gazebo.launch
+
+Once the pr2 has been spawned in simulation, roslaunch blocknlp_managers.launch
+>roslaunch gazebo_block_manipulation blocknlp_managers.launch
+
+The setup process is automatic but slow between these two launch files. The blocknlp.launch puts the robot into the default configuration for picking up blocks. The blocknlp_table_setup.py node waits for the robot to be in position and then spawns the table and blocks. When the robot is actually looking at the table, then it should be ready to go. You can then run:
+
+>rosrun block_build_manager pickup_block.py [block_num]
+>rosrun block_build_manager place_block.py [x] [y] //0.45 < x < 0.7 and -0.1 < y < 0.5 (roughly)
+
+
+
+Customization
+--------------------------------------------------------------------
+If you want to change the configuration of the blocks on table modify:
+gazebo_block_manipulation/scripts/blocknlp_table_setup.py
+
+It can include any other color of block in:
+gazebo_block_manipulation/objects/
+
+To change the color of the blocks modify the .urdf files in the above folder.

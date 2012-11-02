@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2721/trunk/experimental/youbot_brown/youbot_manip/launch/object_detection
+END
+tabletop_segmentation.launch
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/2721/trunk/experimental/youbot_brown/youbot_manip/launch/object_detection/tabletop_segmentation.launch
+END
+tabletop_complete_standalone.launch
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/launch/object_detection/tabletop_complete_standalone.launch
+END
+tabletop_object_recognition.launch
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/launch/object_detection/tabletop_object_recognition.launch
+END
+tabletop_complete.launch
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2721/trunk/experimental/youbot_brown/youbot_manip/launch/object_detection/tabletop_complete.launch
+END

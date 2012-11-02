@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform
+END
+video_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/video_config.h
+END
+video_utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/Platform/video_utils.h
+END

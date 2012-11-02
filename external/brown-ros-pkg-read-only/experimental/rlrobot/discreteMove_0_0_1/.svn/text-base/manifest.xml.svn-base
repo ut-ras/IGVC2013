@@ -1,0 +1,26 @@
+<package>
+  <description brief="discreteMove_0_0_1">
+Provides a services with three discrete actions: left(1), forward(2), and right(3).
+  </description>
+  <author>Graylin Trevor Jay</author>
+  <email>tjay@cs.brown.edu</email>
+  <license>BSD</license>
+
+  <review status="unreviewed" notes=""/>
+
+  <rosdep name="python-serial"/>
+  <depend package="irobot_create_2_1"/>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>	
+  <depend package="nav_msgs"/>
+	
+  <export>
+    <cpp cflags="-I${prefix}/srv/cpp"/>
+    <cpp cflags="-I${prefix}/msg/cpp"/>
+  </export>
+
+</package>
+
+

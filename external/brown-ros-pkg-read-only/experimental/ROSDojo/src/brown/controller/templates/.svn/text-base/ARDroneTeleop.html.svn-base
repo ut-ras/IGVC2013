@@ -1,0 +1,31 @@
+<div class="ardroneteleop">
+  <center>
+  <table>
+    <tr>
+      <td dojoAttachPoint="takeOffAttach"></td>
+      <td/>
+      <td dojoAttachPoint="landAttach"></td>
+      <td/>
+      <td dojoAttachPoint="stopAttach"></td>
+    </tr>
+    <tr>
+      <td /><td dojoAttachPoint="forwardAttach"></td><td/>
+    </tr>
+    <tr>
+      <td dojoAttachPoint="turnleftAttach"></td> <td/><td dojoAttachPoint="turnrightAttach"></td>
+    </tr>
+    <tr>
+      <td /><td dojoAttachPoint="reverseAttach"></td><td/>
+    </tr>
+    <tr>
+      <td /><td dojoAttachPoint="climbAttach"></td><td/>
+    </tr>
+    <tr>
+      <td dojoAttachPoint="strafeleftAttach"></td> <td/><td dojoAttachPoint="straferightAttach"></td>
+    </tr>
+    <tr>
+      <td /><td dojoAttachPoint="descendAttach"></td><td/>
+    </tr>
+  </table>
+  </center>
+</div>

@@ -1,0 +1,10 @@
+<launch>
+  <!-- <node name="rosjs" pkg="rosjs" type="rosjs.py" required="true" args="cAmd_vel:=cmd_vel_unregulated" /> -->
+
+  <!-- Parser for input -->
+  <node name="action_sequencer" pkg="action_sequencer" type="action_sequencer.py" cwd="node" output="screen" />
+
+  <!-- Action servers -->
+  <node name="move" pkg="move" type="moveAS.py" />
+</launch>
+

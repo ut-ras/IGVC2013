@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/503/trunk/experimental/pr2develop/joint_states_listener/srv/lisp/joint_states_listener
+END
+_package.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/493/trunk/experimental/pr2develop/joint_states_listener/srv/lisp/joint_states_listener/_package.lisp
+END
+.ReturnJointStates.asd-dep
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/493/trunk/experimental/pr2develop/joint_states_listener/srv/lisp/joint_states_listener/.ReturnJointStates.asd-dep
+END
+_package_ReturnJointStates.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/!svn/ver/493/trunk/experimental/pr2develop/joint_states_listener/srv/lisp/joint_states_listener/_package_ReturnJointStates.lisp
+END
+joint_states_listener-srv.asd
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/493/trunk/experimental/pr2develop/joint_states_listener/srv/lisp/joint_states_listener/joint_states_listener-srv.asd
+END
+ReturnJointStates.lisp
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/503/trunk/experimental/pr2develop/joint_states_listener/srv/lisp/joint_states_listener/ReturnJointStates.lisp
+END

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/opt/ros/boxturtle/ros/aggeliki/map_loader/src/Tokenizer.cpp
+map_loader/Tokenizer.h
+/opt/ros/boxturtle/ros/aggeliki/map_loader/src/map_loader/Tokenizer.h
+
+include/map_loader/Tokenizer.h
+string
+-
+

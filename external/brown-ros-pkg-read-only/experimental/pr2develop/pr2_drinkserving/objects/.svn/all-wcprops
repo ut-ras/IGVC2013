@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/554/trunk/experimental/pr2develop/pr2_drinkserving/objects
+END
+table.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/496/trunk/experimental/pr2develop/pr2_drinkserving/objects/table.urdf.xacro
+END
+sandwich_board.model
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/548/trunk/experimental/pr2develop/pr2_drinkserving/objects/sandwich_board.model
+END
+china_cup.model
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/496/trunk/experimental/pr2develop/pr2_drinkserving/objects/china_cup.model
+END
+wineglass.model
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/548/trunk/experimental/pr2develop/pr2_drinkserving/objects/wineglass.model
+END
+coffee_cup.model
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/504/trunk/experimental/pr2develop/pr2_drinkserving/objects/coffee_cup.model
+END
+tray.model
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/554/trunk/experimental/pr2develop/pr2_drinkserving/objects/tray.model
+END

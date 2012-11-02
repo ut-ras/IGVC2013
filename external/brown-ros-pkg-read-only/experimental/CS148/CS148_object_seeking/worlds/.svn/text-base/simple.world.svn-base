@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+
+<gazebo:world 
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz" 
+  xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model" 
+  xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" 
+  xmlns:window="http://playerstage.sourceforge.net/gazebo/xmlschema/#window" 
+  xmlns:param="http://playerstage.sourceforge.net/gazebo/xmlschema/#param" 
+  xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body" 
+  xmlns:geo="http://willowgarage.com/xmlschema/#geo" 
+  xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom" 
+  xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint" 
+  xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" 
+  xmlns:ui="http://playerstage.sourceforge.net/gazebo/xmlschema/#ui"
+  xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering" 
+  xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable" 
+  xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+  xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" >
+
+  <verbosity>5</verbosity>
+
+<!-- cfm is 1e-5 for single precision -->
+<!-- erp is typically .1-.8 -->
+<!-- here's the global contact cfm/erp -->
+  <physics:ode>
+    <stepTime>0.001</stepTime>
+    <gravity>0 0 -9.8</gravity>
+    <cfm>0.000000000001</cfm>
+    <erp>0.2</erp>
+    <quickStep>true</quickStep>
+    <quickStepIters>10</quickStepIters>
+    <quickStepW>1.3</quickStepW>
+    <contactMaxCorrectingVel>100.0</contactMaxCorrectingVel>
+    <contactSurfaceLayer>0.001</contactSurfaceLayer>
+  </physics:ode>
+
+  <geo:origin>
+    <lat>37.4270909558</lat><lon>-122.077919338</lon>
+  </geo:origin>
+
+  <rendering:gui>
+    <type>fltk</type>
+    <size>480 320</size>
+    <pos>0 0</pos>
+    <frames>
+      <row height="100%">
+        <camera width="100%">
+          <xyz>0 0 20</xyz>
+          <rpy>0 90 90</rpy>
+        </camera>
+      </row>
+    </frames>
+  </rendering:gui>
+
+
+  <rendering:ogre>
+    <ambient>0.0 0.0 0.0 0.0</ambient>
+    <sky>
+      <material>Gazebo/CloudySky</material>
+    </sky>
+    <grid>false</grid>
+    <maxUpdateRate>10</maxUpdateRate>
+    <shadowTechnique>stencilAdditive</shadowTechnique>
+  </rendering:ogre>
+
+  <model:physical name="gplane">
+    <xyz>0 0 0</xyz>	
+    <rpy>0 0 0</rpy>
+    <static>true</static>
+
+    <body:plane name="plane">
+      <geom:plane name="plane">
+        <laserRetro>2000.0</laserRetro>
+        <kp>1000000.0</kp>
+        <kd>1.0</kd>
+        <normal>0 0 1</normal>
+        <size>51.3 51.3</size>
+        <segments>10 10</segments>
+        <uvTile>100 100</uvTile>
+        <material>Gazebo/GrayGrid</material>
+      </geom:plane>
+    </body:plane>
+  </model:physical>
+
+  <!-- AR Tagged Block Fiducial -->
+  <model:physical name="artag_block_model">
+    <xyz> 2  1   10</xyz>
+    <rpy>   0.0    0.0    0.0</rpy>
+    <static>true</static>
+    <body:box name="artag_block_body">
+      <massMatrix>true</massMatrix>
+      <mass>0.001</mass>
+      <ixx>1</ixx>
+      <iyy>1</iyy>
+      <izz>1</izz>
+      <ixy>0</ixy>
+      <ixz>0</ixz>
+      <iyz>0</iyz>
+      <cx>0</cx>
+      <cy>0</cy>
+      <cz>0</cz>
+      <geom:box name="artag_block_geom">
+        <mesh>default</mesh>
+        <mass>0.001</mass>
+        <size>10 10 10</size>
+        <visual>
+          <size>10 10 10</size>
+          <material name="artag">
+            <texture filename="package://CS148_object_seeking/textures/alpha.jpg"/>
+          </material>
+          <mesh>unit_box</mesh>
+        </visual>
+      </geom:box>
+    </body:box>
+  </model:physical>
+
+
+
+  <!-- Purple Fiducial -->
+  <model:physical name="fid_purple_model">
+    <xyz> 1  1   0.25</xyz>
+    <rpy>   0.0    0.0    0.0</rpy>
+    <static>false</static>
+    <body:cylinder name="fid_purple_body">
+    <massMatrix>true</massMatrix>
+    <mass>0.001</mass>
+    <ixx>1</ixx>
+    <iyy>1</iyy>
+    <izz>1</izz>
+    <ixy>0</ixy>
+    <ixz>0</ixz>
+    <iyz>0</iyz>
+    <cx>0</cx>
+    <cy>0</cy>
+    <cz>0</cz>
+      <geom:cylinder name="fid_purple_geom">
+        <mesh>default</mesh>
+        <mass>0.001</mass>
+        <size>0.2 0.4</size>
+        <visual>
+          <size>0.2 0.2 0.4</size>
+          <material>Gazebo/Purple</material>
+          <mesh>unit_cylinder</mesh>
+        </visual>
+      </geom:cylinder>
+    </body:cylinder>
+  </model:physical>
+
+  <!-- Green^Purple_ Fiducial -->
+  <model:physical name="fid_g_model">
+    <xyz> -2  -1   0.2</xyz>
+    <rpy>   0.0    0.0    0.0</rpy>
+    <static>false</static>
+    <body:cylinder name="fid_g_body">
+    <massMatrix>true</massMatrix>
+    <mass>0.001</mass>
+    <ixx>1</ixx>
+    <iyy>1</iyy>
+    <izz>1</izz>
+    <ixy>0</ixy>
+    <ixz>0</ixz>
+    <iyz>0</iyz>
+    <cx>0</cx>
+    <cy>0</cy>
+    <cz>0</cz>
+      <geom:cylinder name="fid_g_geom">
+      <xyz> 0  0   -0.1</xyz>
+      <rpy>   0.0    0.0    0.0</rpy>
+        <mesh>default</mesh>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <size>0.2 0.2</size>
+        <visual>
+          <size>0.2 0.2 0.2</size>
+          <material>Gazebo/Green</material>
+          <mesh>unit_cylinder</mesh>
+        </visual>
+      </geom:cylinder>
+    </body:cylinder>
+    <body:cylinder name="fid_p_body">
+    <massMatrix>true</massMatrix>
+    <mass>0.001</mass>
+    <ixx>1</ixx>
+    <iyy>1</iyy>
+    <izz>1</izz>
+    <ixy>0</ixy>
+    <ixz>0</ixz>
+    <iyz>0</iyz>
+    <cx>0</cx>
+    <cy>0</cy>
+    <cz>0</cz>
+      <geom:cylinder name="fid_p_geom">
+      <xyz> 0  0   0.1</xyz>
+      <rpy>   0.0    0.0    0.0</rpy>
+        <mesh>default</mesh>
+        <size>0.2 0.2</size>
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <visual>
+          <size>0.2 0.2 0.2</size>
+          <material>Gazebo/Purple</material>
+          <mesh>unit_cylinder</mesh>
+        </visual>
+      </geom:cylinder>
+    </body:cylinder>
+  </model:physical>
+
+
+  <!-- Yellow Ball -->
+  <model:physical name="ball_yellow_model">
+    <xyz> 1  0   0.2</xyz>
+    <rpy>   0.0    0.0    0.0</rpy>
+    <static>false</static>
+    <body:sphere name="ball_yellow_body">
+    <massMatrix>true</massMatrix>
+    <mass>0.001</mass>
+    <ixx>1</ixx>
+    <iyy>1</iyy>
+    <izz>1</izz>
+    <ixy>0</ixy>
+    <ixz>0</ixz>
+    <iyz>0</iyz>
+    <cx>0</cx>
+    <cy>0</cy>
+    <cz>0</cz>
+      <geom:sphere name="ball_yellow_geom">
+        <mesh>default</mesh>
+        <size>0.2</size>
+        <visual>
+          <size>0.2 0.2 0.2</size>
+          <material>Gazebo/Yellow</material>
+          <mesh>unit_sphere</mesh>
+        </visual>
+      </geom:sphere>
+    </body:sphere>
+  </model:physical>
+
+  <!-- White Directional light -->
+  <model:renderable name="point_white">
+    <xyz>0.0 0.0 3</xyz>
+    <enableGravity>false</enableGravity>
+    <light>
+      <type>point</type>
+      <diffuseColor>0.8 0.8 0.8</diffuseColor>
+      <specularColor>.1 .1 .1</specularColor>
+      <attenuation>0.2 0.1 0</attenuation>
+      <range>10</range>
+    </light>
+  </model:renderable>
+  
+
+</gazebo:world>

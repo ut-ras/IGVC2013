@@ -1,0 +1,429 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<title>Remote Lab Mockup</title> 
+
+<link href="inettuts.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery-ui-personalized-1.6rc2.min.js"></script>
+<script type="text/javascript" src="inettuts.js"></script>
+<script type="text/javascript" src="http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/rosjs/ros.min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/yahoo/yahoo-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/json/json-min.js"></script>
+
+<script src="resources/spidergl.js"> </script> 
+<script src="ros/ros.js"> </script> 
+<script src="ros/math/math.js"> </script> 
+<script src="ros/urdf/urdf.js"> </script>  
+<script src="ros/webgl/webgl.js"> </script> 
+<script src="ros/tf/tf.js"> </script> 
+<script src="widgetjs/imagedisplay.js"></script>
+<<script src="widgetjs/batterymeter.js"></script>
+<script src="widgetjs/pr2keycontrol.js"></script>
+<script type="text/javascript" src="http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/html_teleop/joystick.js"></script>
+
+<!--<script type="text/javascript" src="resources/jquery.min.js"></script>
+<script type="text/javascript" src="resources/json2.js"></script>
+<script type="text/javascript" src="resources/ros.min.js"></script>
+<script type="text/javascript" src="jquery-ui-personalized-1.6rc2.min.js"></script>
+<script type="text/javascript" src="inettuts.js"></script>
+ -->
+<script> 
+//configuration
+var server = 'http://security.brown-robotics.org/index.pl';
+
+var gSceneViewer = new ros.webgl.SceneViewer();
+var gTf = new ros.tf.Transformer();
+var gRobotModel = new ros.urdf.Model();
+var gLabModel = new ros.urdf.Model();
+
+sglRegisterCanvas("SGL_CANVAS1", gSceneViewer, 10.0);
+
+function nop() {};
+var jsonpCallback = nop;
+function jsonp(url, callback) {
+	jsonpCallback = callback;
+	$('#sandbox').html('<script type="text/javascript" src="' + url + '&jsonp=jsonpCallback"><\/script>');
+};
+
+function start()
+{
+  var gl = gSceneViewer.ui.gl;
+  var shaderManager = new ros.webgl.ShaderManager(gl);
+  
+  gRobotModel.initFile("resources/pr2_description/pr2_urdf.xml",function(model) {
+    var robot_model = new ros.webgl.RobotModel(gl, shaderManager.shaderPrograms[shaderManager.ShaderTypes.PHONG], model, gTf);
+    gSceneViewer.addNode(robot_model);
+  });
+  
+  gLabModel.initFile("resources/remote_lab_description/remote_lab_urdf.xml",function(model) {
+    var lab_model = new ros.webgl.RobotModel(gl, shaderManager.shaderPrograms[shaderManager.ShaderTypes.PHONG], model, gTf);
+    lab_model.scale = 0.001;
+    gSceneViewer.addNode(lab_model);
+  });
+
+  var tf_model = new ros.webgl.TFModel(gl,shaderManager.shaderPrograms[shaderManager.ShaderTypes.FLAT], gTf);
+  gSceneViewer.addNode(tf_model);
+
+  var map_model = new ros.webgl.MapModel(gl,shaderManager.shaderPrograms[shaderManager.ShaderTypes.TEXTURE]);
+  gSceneViewer.addNode(map_model);
+
+  var coord_model = new ros.webgl.CoordinateFrameModel(gl,shaderManager.shaderPrograms[shaderManager.ShaderTypes.FLAT]);
+  gSceneViewer.addNode(coord_model);
+  
+  function nop() {};
+  function json(obj) {return JSON.stringify(obj);};
+
+
+  // function to dump properties of an object for debug purposes
+
+    function dumpProps(obj, parent) {
+	// Go through all the properties of the passed-in object 
+	for (var i in obj) {
+	    // if a parent (2nd parameter) was passed in, then use that to 
+	    // build the message. Message includes i (the object's property name) 
+	    // then the object's property value on a new line 
+	    if (parent) { var msg = parent + "." + i + "\n" + obj[i]; } else { var msg = i + "\n" + obj[i]; }
+	    // Display the message. If the user clicks "OK", then continue. If they 
+	    // click "CANCEL" then quit this level of recursion 
+	    if (!confirm(msg)) { return; }
+	    // If this property (i) is an object, then recursively process the object 
+	    if (typeof obj[i] == "object") { 
+		if (parent) { dumpProps(obj[i], parent + "." + i); } else { dumpProps(obj[i], i); }
+	    }
+	}
+    }
+
+
+  function log(msg) {
+    $('#log').append(msg.toString() + '<br>');
+  };
+
+  function receiveTf(tf_msg) {
+    gTf.updateFromMessage(tf_msg.transforms);
+    //gSceneViewer.ui.requestDraw();
+    //log("received " + tf_msg.transforms.length + " transforms");
+  };
+
+  function receiveMap(grid_map_msg) {
+      ros_debug('Got a grid map message');
+      map_model.updateFromMessage(grid_map_msg);
+      log("recieved Map message");
+  };
+  
+    var g = null;
+    var h = null;
+    var canvastrack=null;
+    
+    var video_status=true;
+    
+    var armlaunched=false;
+    var videolaunched=false;
+
+
+  function init(key) {
+    
+      //use rostopic pub stuff std_msgs/String "hi" -r 1
+      // to test the subscription
+      var ros = new ROS("ws://66.134.138.102:9090");
+
+      g = $('#cameradisplay')[0].getContext('2d');
+      var lock=false;
+      
+      h = $('#statusdisplay')[0].getContext('2d');
+      var lock2=false;
+      
+//      canvastrack= $('#joystick')[0].getContext('2d');
+      
+      ros.setOnClose(function(e) {
+	  log("Disconnected or Can't Connect.");
+      });
+      ros.setOnError(function(e) {
+	  log("Unknown error!");
+      });
+
+
+
+      function main(ros) {
+	  var args = JSON.stringify(['/tf_throttled',0]);
+	  ros.callService('/rosjs/subscribe',args,function(msg)
+			  {log('Subscribed to tf_throttled<br>');});
+	  ros.callService('/rosjs/subscribe',args,function(msg)
+			  {log('Subscribed to tf_throttled<br>');});
+	  ros.addHandler('/tf_throttled',receiveTf);
+	  
+	  args = JSON.stringify(['/map',0]);
+	  ros.callService('/rosjs/subscribe',args,function(msg)
+			  {log('Subscribed to map<br>');});
+	  ros.addHandler('/map',receiveMap);
+
+
+
+	  gscamImageDisplay=new imagedisplay();
+	  
+	  var lock1=false;
+	  
+	  //function to handle images
+	  ros.addHandler('/wide_stereo/left/image_rect_color',function(msg) {gscamImageDisplay.handler(msg,video_status, g)});// /gscam/image_raw',function(msg) {gscamImageDisplay.handler(msg,video_status, g)});
+	  
+
+	  
+	  $('#videolaunch').click(function(e){
+	      log("Click");
+	      if(!videolaunched){
+		  videolaunched=true;
+		  //ros.callService('/launch', json(['gscam_visualization.launch']), nop);
+		  log("Gscam Nodes Launched");	
+		 
+		  //wait 3 seconds to make sure gscam launched
+		  setTimeout(function(){
+		      log("in subscriber function");
+		      ros.callService('/rosjs/subscribe',json(['/wide_stereo/left/image_rect_color',100,'jpeg',128,96,100]),nop);
+		      //json(['/gscam/image_raw',100,'jpeg',128,96,100]),nop);
+		      log("Subscribed to Gscam");
+		  }, 3000);
+		  
+	      }
+	  });
+	  
+	  log("vis handled");
+	  
+	  //launch nodes that allow arm control to happen.
+	  $('#armlaunch').click(function(e){
+	      log("Click2");
+	      if(!armlaunched){
+		  armlaunched=true;
+		  ros.callService('/launch', json(['arm_teleop.launch']), nop);
+		  log("Arm Control Nodes Launched");
+	      }
+	  });
+	  
+	  log("post armlaunch");
+
+	  //look at battery info and display to canvas h: 
+	  battery=new batterymeter();
+	  ros.addHandler('/dashboard_agg', function(msg) {battery.handler(msg, h);});
+	  ros.callService('/rosjs/subscribe', json(['/dashboard_agg', 100]), nop);
+	 
+
+	  log("post battery");
+
+	  
+	  //Why are there 2 methods for this?
+
+	  ros.addHandler('/l_wrist_link_position',function(msg) {
+	      handXr = msg.pose.position.x;
+	      handYr = msg.pose.position.y;
+	      handZr = msg.pose.position.z;
+	  });
+	  ros.callService('/rosjs/subscribe',json(['/l_wrist_link_position',0]),nop);
+	  
+
+	  ros.addHandler('/l_wrist_link_position',function(msg) {
+	      handXr = msg.pose.position.x;
+	      handYr = msg.pose.position.y;
+	      handZr = msg.pose.position.z;
+	  });
+	  ros.callService('/rosjs/subscribe',json(['/l_wrist_link_position',0]),nop);
+	  
+	  log("post weird double wrist thing");
+	  
+	  //pr2 Keyboard Control: pr2keycontrol.js
+
+	  pr2keycont= new pr2KeyControl('/l_cart/command_pose', 'geometry_msgs/PoseStamped', '/base_controller/command', 'geometry_msgs/Twist', '/head_traj_controller/command', 'trajectory_msgs/JointTrajectory');
+	  $('body').keydown(function(e) {pr2keycont.handleKey(e.keyCode,true);});
+	  $('body').keyup(function(e) {pr2keycont.handleKey(e.keyCode,false);});
+
+	  setInterval(function() {pr2keycont.handler(ros); }, 50);
+
+	  log("post pr2 control handler");
+
+	  //virtual joystick control
+	  var stick=new Joystick('joystickholder');
+
+	  setInterval(function(){ 	  
+	      ros.publish('/base_controller/command', 'geometry_msgs/Twist', 
+			  json({'linear': {'x': stick.x,
+					   'y': 0,
+					   'z': 0},
+				'angular':{'x': 0,
+					   'y': 0,
+					   'z': stick.z}}))
+			       
+			      }, 50);
+	  
+	  //Code box handler
+	  var usercode=false;
+	  setInterval(function(){if(usercode){eval(usercode);}}, 20);
+	  
+	  $("#goButton").click(function(){
+	      log("Initializing");
+	      log("Running your code!");;
+	      usercode = $("#code").val();
+	  });
+	  $("#stopButton").click(function(){
+	      log("Code has stopped!");
+	      usercode = false;
+	  });
+	
+      }
+      
+      ros.setOnOpen(function(e) {   
+	  log("connected via key: " + key);
+
+          ros.callService('/rosjs/authorize',json([key]),function(msg) {
+            ros.callService('/rosjs/topics',json([]),function(msg) {
+              log('Authorization accepted.');
+              setTimeout(function() {main(ros)},0);
+            });
+          });
+
+      });
+  };
+  var confirmation = document.location.toString().replace(/[^&]*&/,'');
+  confirmation = confirmation.replace(/openid\.mode=id_res/,'openid.mode=check_authentication');
+  jsonp(server + '?confirmation=' + escape(confirmation), function(rsp) {
+    if(rsp.valid) {
+	init(rsp.key);
+    } else {
+    	log('key was not valid');
+    	log('try logging in again');
+    }
+  });
+}
+
+$(function() {
+	var interval;
+	interval = setInterval(function() {
+		try {
+			if (gSceneViewer.ui.gl) {
+				clearInterval(interval);
+				setTimeout(start,0);
+			}
+		} catch(err) {};
+	}, 500);
+});
+
+</script> 
+<!--<style type="text/css"> 
+    canvas {
+        border: 2px solid black;
+    }
+</style>--> 
+</head> 
+
+<body> 
+
+<div id="head">
+  <h1>Remote Lab</h1>
+</div>
+
+<center>
+  <canvas id="SGL_CANVAS1" width="1000" height="600"></canvas> 
+</center>
+
+
+<div id="columns">
+  
+  <ul id="column1" class="column">
+    <li class="widget color-green" id="visualization">
+      <div class="widget-head">
+	<h3>Visualization Widget</h3>
+      </div>
+      <div class="widget-content">
+	<p>
+	  
+	  <canvas id="cameradisplay" width="400" height="280"></canvas>
+	</p>
+      </div>
+    </li>
+    <li class="widget color-red">  
+      <div class="widget-head">
+	<h3>Control Widget</h3>
+      </div>
+      <div class="widget-content">
+	Robot Driver:
+	<div id="joystickholder" style="width: 300px; height: 300px; border: solid 2px black;"></div>    
+	<p>
+
+	  Head and Arm Keyboard Control:
+	  Use the v and b keys to pan the head<br>
+	  Use the n and m keys to tilt<br>
+	  <br>
+	  w moves the hand away from the body, s closer <br>
+	  a moves the hand left, d right<br>
+	  q raises the hand, e lowers it<br>	  
+	 
+	</p>
+      </div>
+    </li>
+  </ul>
+  
+    <ul id="column2" class="column">
+    <li class="widget color-blue">  
+    <div class="widget-head">
+    <h3> Console Widget</h3>
+    </div>
+    <div class="widget-content">
+    
+    <div id="log"><br/></div>
+    
+
+</div>
+    </li>
+    <li class="widget color-yellow">  
+    <div class="widget-head">
+    <h3>Status Widget </h3>
+    </div>
+    <div class="widget-content">
+    <center>
+    <canvas id="statusdisplay" width="400" height="93" backgroundColor="white"></canvas>
+    </center>
+    </div>
+    </li>
+    </ul>
+    
+    <ul id="column3" class="column">
+    <li class="widget color-orange">  
+    <div class="widget-head">
+    <h3>Launcher Widget</h3>
+    </div>
+    <div class="widget-content">
+    
+      <button type="button", id="videolaunch"> Launch Video </button>
+      <button type="button", id="armlaunch"> Launch Arm Control </button>
+      
+    </div>
+    </li>
+    <li class="widget color-white">  
+    <div class="widget-head">
+    <h3>Code Widget</h3>
+    </div>
+    <div class="widget-content">
+      <textarea id="code" rows="10" cols="60"></textarea><br/>
+      <center>
+      <button id="goButton" type="button">Run!</button>
+      <button id="stopButton" type="button">Stop!</button>
+      </center>
+    </div>
+    </li>
+    
+</ul>
+    
+    </div>
+    
+
+
+
+
+
+<div id="framerate"></div> 
+<!--<div style="font-family: fixed-width; font-size: small;" id="log"></div>-->
+
+<script type="text/javascript" src="jquery-ui-personalized-1.6rc2.min.js"></script>
+<script type="text/javascript" src="inettuts.js"></script>
+<div id="sandbox" style="display: none;"></div>
+</body> 
+ 
+</html> 

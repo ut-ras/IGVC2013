@@ -1,0 +1,34 @@
+<robot name="block">
+  <link name="toyblock">
+    <inertial>
+      <mass value="0.04" />
+      <!-- center of mass (com) is defined w.r.t. link local coordinate system -->
+      <!-- give a little y-offset to make the top precess -->
+      <origin xyz="0 0 0" /> 
+	<!--From Wikipedia Icm = ms^2/6 for side length s and mass m -->
+      <inertia  ixx="0.000013" ixy="0.0"  ixz="0.0"  iyy="0.000013"  iyz="0.0"  izz="0.000013" />
+    </inertial>
+    <visual>
+      <!-- visual origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+      <geometry>
+        <box size="0.044 0.044 0.044"/>
+      </geometry>
+    </visual>
+    <collision>
+      <!-- collision origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+      <geometry>
+        <box size="0.044 0.044 0.044"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="toyblock">
+    <mu1>10</mu1>
+    <mu2>10</mu2>
+    <material name="artag">
+      <texture filename="package://CS148_object_seeking/textures/alpha.jpg"/>
+    </material>
+    
+  </gazebo>
+</robot>

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/message_passing_code/coordination_server_info_fusion
+END
+CMakeCache.txt
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/message_passing_code/coordination_server_info_fusion/CMakeCache.txt
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/message_passing_code/coordination_server_info_fusion/manifest.xml
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/message_passing_code/coordination_server_info_fusion/cmake_install.cmake
+END
+ar_wifi_navigation_client.launch
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/message_passing_code/coordination_server_info_fusion/ar_wifi_navigation_client.launch
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 178
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/message_passing_code/coordination_server_info_fusion/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/message_passing_code/coordination_server_info_fusion/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/message_passing_code/coordination_server_info_fusion/Makefile
+END
+ar_wifi_navigation_server.launch
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/message_passing_code/coordination_server_info_fusion/ar_wifi_navigation_server.launch
+END

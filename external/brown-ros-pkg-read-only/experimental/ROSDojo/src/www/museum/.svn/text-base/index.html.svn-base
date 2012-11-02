@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Web Genie</title>
+<!-- load Dojo and the default dojo theme, claro -->
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="../../dojo17/dijit/themes/claro/claro.css" />
+<script src="../../dojo17/dojo/dojo.js"></script>
+<script>
+    function resize() {
+        // Get the size of the window
+        var window_height = dojo.window.getBox().h;
+        console.log("window height is ", window_height);
+
+        // Get the height of the headers
+        var headers_height = dojo.marginBox(dojo.byId("headers")).h;
+        console.log("headers height is ", headers_height);
+
+        // Set the height of the list and visualization to be the remaining space
+        var calculated_height = window_height - headers_height - 10;
+        dijit.byId("sequence-widget").setHeight(calculated_height);
+        dojo.style(dojo.byId("visualization-container"), "height", calculated_height+"px");
+        dijit.byId("visualization-widget").setHeight(calculated_height-30);
+    }
+    /**
+     * The initialize method sets the URL paths to the modules we're using, so that
+     * dojo knows where to load files from correctly.  It also loads the widgets
+     * that are displayed on the page initially.
+     */
+    function initialize() {
+        // Register the paths for where each of the modules are.  Paths are
+        // relative to where dojo.js is loaded from.
+        dojo.registerModulePath("rosdojo", "../../brown/rosdojo");
+        dojo.registerModulePath("roswidgets", "../../brown/roswidgets");
+        dojo.registerModulePath("misc", "../../brown/misc");
+        dojo.registerModulePath("bosch", "../../bosch");
+        dojo.registerModulePath("museum", "../../willow/museum");
+
+        // Now specify the main widgets in the page
+        dojo.require("roswidgets.HideableConnectionPanel");
+        dojo.require("museum.PR2Visualization");
+        dojo.require("museum.PoseSequence");
+        dojo.require("museum.KorgNanokontrol");
+        dojo.require("museum.AjaxApi");
+        dojo.require("museum.LoginPanel");
+        dojo.require("museum.PoseStatus");
+        dojo.require("misc.URLQueryString");
+        dojo.require("museum.SendToRobot");
+
+        // Parse the page.  This creates widgets in place of the <div> tags below
+        dojo.parser.parse();
+
+        // Layout the page after everything's loaded
+        window.setTimeout(resize, 0);
+        window.setTimeout(resize, 5000);
+
+        // Make it so that whenever the window is resized, so are our widgets
+        dojo.connect(window, "resize", resize);
+
+        // Finally, run the application logic that ties together the widgets
+        museum();
+    }
+    function museum() {
+        // Get handles to the widgets
+        var sequence = dijit.byId("sequence-widget");
+        var visualization = dijit.byId("visualization-widget");
+        var nanokontrol = dijit.byId("nanokontrol-widget").buttonController;
+        var loginPanel = dijit.byId("loginPanel");
+        var appDetails = sequence.appDetails;
+        var sendtorobot = dijit.byId("sendtorobot");
+        var connect = dijit.byId("connect");
+        connect.tooltipAttachPoint = sendtorobot.button.domNode;
+        
+        sendtorobot.setAppDetails(appDetails);
+
+        // Set the image preview method to the visualization method
+        sequence.getImagePreview = dojo.hitch(visualization, "generatePreview");
+
+        // When the record button is pressed on the nanokontrol, save the pose
+        dojo.connect(nanokontrol, "onRecordButton", sequence, "saveCurrentPose");
+        dojo.connect(nanokontrol, "onRefreshButton", sequence, "executeSequence");
+        dojo.connect(nanokontrol, "onPlayButton", sequence, "executeSelection");
+        dojo.connect(nanokontrol, "onNextButton", sequence, "selectNext");
+        dojo.connect(nanokontrol, "onPreviousButton", sequence, "selectPrevious");
+        dojo.connect(nanokontrol, "onStopButton", sequence, "stopSequenceExecution");
+
+        // Make sure when the user logs in, the user can access their apps
+        dojo.connect(loginPanel, "setUser", function() { appDetails.loggedIn(loginPanel.user); });
+        dojo.connect(loginPanel, "loggedOut", appDetails, "loggedOut");
+    }
+    dojo.ready(initialize);
+</script>
+</head>
+<body class="claro webtools" style="font: 14px Myriad, Helvetica, Tahoma, Arial, clean, sans-serif;">
+	<div id="headers" class="headers">
+		<img src="wglogo.gif" class="logo"> <img src="cartoon.png" class="cartoon">
+		<div dojoType="roswidgets.HideableConnectionPanel" id="connect"></div>
+		<div dojoType="museum.SendToRobot" id="sendtorobot"></div>
+		<div dojoType="museum.LoginPanel" id="loginPanel"></div>
+	</div>
+	<div dojoType="museum.PoseSequence" id="sequence-widget"></div>
+	<div class="viz" id="visualization-container">
+		<div dojoType="museum.PR2Visualization" id="visualization-widget"></div>
+		<div dojoType="museum.PoseStatus" id="posestatus-widget"></div>
+	</div>
+	<div class="clear"></div>
+	<div dojoType="museum.KorgNanokontrol" id="nanokontrol-widget" style="display: none"></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<div class="pose-sequence-widget">
+	<div class="pose-sequence-buttons" dojoAttachPoint="buttons">
+		<div data-dojo-type="museum.AppDetails" data-dojo-attach-point="appDetails" data-dojo-attach-event="setAppData:setSequenceData,onNewApp:clear"></div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-attach-event="onClick:toggleIconSize" data-dojo-attach-point="zoomButton" iconClass="pose-sequence-zoomin" showLabel="false" title="Toggle row size"></div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-attach-event="onClick:duplicateSelected" data-dojo-attach-point="duplicateButton" iconClass="pose-sequence-duplicate" showLabel="false" title="Duplicate selected poses"></div>
+	</div>
+	<div class="pose-sequence" dojoAttachPoint="sequence" tabindex="-1">
+		<table class="pose-sequence-table" dojoAttachPoint="table">
+			<tbody dojoAttachPoint="tbody"></tbody>
+		</table>
+	</div>
+</div>

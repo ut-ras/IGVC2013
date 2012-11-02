@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1099/trunk/experimental/robot_dialog
+END
+drivers.launch
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1099/trunk/experimental/robot_dialog/drivers.launch
+END
+dialog.launch
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1099/trunk/experimental/robot_dialog/dialog.launch
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1099/trunk/experimental/robot_dialog/README.txt
+END

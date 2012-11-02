@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2394/trunk/experimental/block_nl/block_build_msgs/action
+END
+PlaceCommand.action
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/2318/trunk/experimental/block_nl/block_build_msgs/action/PlaceCommand.action
+END
+PickCommand.action
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2259/trunk/experimental/block_nl/block_build_msgs/action/PickCommand.action
+END
+Command.action
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2394/trunk/experimental/block_nl/block_build_msgs/action/Command.action
+END

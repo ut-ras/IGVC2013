@@ -1,0 +1,14 @@
+<div class="blockui">
+	<div class="controls">
+		<div class="statusdisplay"><span class="title">PR2 Status: </span><span class="status" dojoAttachPoint="statusAttach">not connected</span></div>
+		<div dojoAttachPoint="controlPanelAttach"></div>
+	</div>
+	<div class="clearall"></div>
+	<div class="floatwrapper">
+		<div class="components">	
+			<div dojoAttachPoint="blockPlacerAttach"></div>
+			<div dojoAttachPoint="visualisationAttach"></div>
+		</div>
+	</div>
+	<div class="clearall"></div>
+</div>

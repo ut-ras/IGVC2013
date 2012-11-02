@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/path_generator/srv
+END
+generatePath.srv
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/path_generator/srv/generatePath.srv
+END
+availableNextHops.srv
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/path_generator/srv/availableNextHops.srv
+END

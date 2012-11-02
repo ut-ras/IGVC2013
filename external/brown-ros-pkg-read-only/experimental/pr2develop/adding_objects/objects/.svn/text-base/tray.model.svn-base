@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<model:physical name="tray">
+  <xyz>   0      0      0</xyz>
+  <rpy>   0.0    1000.0    0.0</rpy>
+  <static>false</static>
+  <body:trimesh name="tray_body">
+    <turnGravityOff>true</turnGravityOff> 
+    <massMatrix>true</massMatrix> 
+    <mass>0.3</mass>
+    <ixx>0.000</ixx>
+    <ixy>0.0</ixy>
+    <ixz>0.0</ixz>
+    <iyy>0.000</iyy>
+    <iyz>0.0</iyz>
+    <izz>0.000</izz>
+    <cx>0.0</cx>
+    <cy>0.0</cy>
+    <cz>0.00</cz>
+
+    <geom:trimesh name="tray_geom">
+      <xyz>0 0 0</xyz>
+      <laserRetro>2000.0</laserRetro>
+      <kp>1000000.0</kp>
+      <kd>1.0</kd>
+      <scale>0.01 0.01 0.01</scale>
+      <mesh>tray.mesh</mesh>
+      <visual>
+        <xyz>0 0 0.0</xyz>
+        <scale>0.01 0.01 0.01</scale>
+        <material>GazeboWorlds/check</material>
+        <mesh>tray.mesh</mesh>
+      </visual>
+    </geom:trimesh>
+  </body:trimesh>
+</model:physical>
+
+
+

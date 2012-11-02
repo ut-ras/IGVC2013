@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets
+END
+PointCloudWidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/PointCloudWidget.js
+END
+visualization_widgets.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/visualization_widgets.js
+END
+GridWidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/GridWidget.js
+END
+RobotModelWidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/RobotModelWidget.js
+END
+colorpicker.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/colorpicker.js
+END
+frame_selector_widget.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/frame_selector_widget.js
+END
+visualization_handler.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/visualization_handler.js
+END
+visualization_widget_manager.js
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/visualization_widget_manager.js
+END
+visualization_control_panel.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/visualization_control_panel.js
+END
+PropertiesWidget.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/PropertiesWidget.js
+END
+yaml.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/yaml.js
+END
+visualization_select_widget.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/visualization_widgets/visualization_select_widget.js
+END

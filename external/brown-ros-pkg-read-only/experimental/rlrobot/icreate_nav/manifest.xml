@@ -1,0 +1,19 @@
+<package>
+  <description brief="icreate_nav">
+
+     icreate_nav
+
+  </description>
+  <author>Sarah Osentoski</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+
+  <depend package="roscpp"/>
+  <depend package="discreteMove_0_0_1"/>
+  <depend package="position_tracker"/>
+
+  <url>http://ros.org/wiki/icreate_nav</url>
+
+</package>
+
+

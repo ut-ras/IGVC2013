@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/772/trunk/experimental/ar_localizer
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/761/trunk/experimental/ar_localizer/manifest.xml
+END
+loc.launch
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/772/trunk/experimental/ar_localizer/loc.launch
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/540/trunk/experimental/ar_localizer/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/543/trunk/experimental/ar_localizer/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/540/trunk/experimental/ar_localizer/Makefile
+END

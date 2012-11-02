@@ -1,0 +1,6 @@
+int32       block_id
+Pose        block_pose
+tf/frame    parent_frame_id
+
+---
+bool result

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/themes/soria/layout
+END
+TabContainer.css
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/themes/soria/layout/TabContainer.css
+END
+TabContainer_rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/themes/soria/layout/TabContainer_rtl.css
+END
+SplitContainer.css
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/themes/soria/layout/SplitContainer.css
+END
+ContentPane.css
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/themes/soria/layout/ContentPane.css
+END
+BorderContainer.css
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/themes/soria/layout/BorderContainer.css
+END
+AccordionContainer.css
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/themes/soria/layout/AccordionContainer.css
+END
+AccordionContainer_rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dijit/themes/soria/layout/AccordionContainer_rtl.css
+END

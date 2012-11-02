@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/643/trunk/experimental/sogp_node/tests
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/tests/cmake_install.cmake
+END
+SOGPtest.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/643/trunk/experimental/sogp_node/tests/SOGPtest.cc
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/643/trunk/experimental/sogp_node/tests/CMakeLists.txt
+END

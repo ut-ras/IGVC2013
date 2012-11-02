@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/522/trunk/experimental/pr2develop/NaoJoyControl
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/522/trunk/experimental/pr2develop/NaoJoyControl/manifest.xml
+END
+NaoJoyControl.launch
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/522/trunk/experimental/pr2develop/NaoJoyControl/NaoJoyControl.launch
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/522/trunk/experimental/pr2develop/NaoJoyControl/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/522/trunk/experimental/pr2develop/NaoJoyControl/CMakeLists.txt
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/522/trunk/experimental/pr2develop/NaoJoyControl/README
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2545/trunk/experimental/block_nl/object_manager
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2322/trunk/experimental/block_nl/object_manager/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2259/trunk/experimental/block_nl/object_manager/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2259/trunk/experimental/block_nl/object_manager/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2259/trunk/experimental/block_nl/object_manager/Makefile
+END

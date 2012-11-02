@@ -1,0 +1,53 @@
+PR2JointController ROS node - user guide
+
+version 1.0.                            Alex Tarvo
+
+
+1. General information
+
+    Existing PR2 arm controllers allow controlling the robot in the cartesian 
+space. Namely, they accept the position of the robot actuator and movement speed
+and move the robot's actuator to the specified position. This type of control is 
+great for the trajectory planning, however, it is almost unusable for 
+teleoperation. To cope with this problem, we developed a different type of the
+controller that allows controlling robot joints directly. This controller is used
+to teleoperate PR2 from joystick, where operator directly controls every joint of
+the robot.
+
+
+2. Building the node
+
+    Please use rosmake to build the PR2JointController package.
+
+
+3. Running the controller
+
+    We did not have a chance to run the controller on a live robot. So we could 
+only test it on the PR2 simulator pr2_gazebo. In order to load and run the controller
+the user has to run runPR2JointController script. This script stops default arm
+controllers so they will not interfere with our joint controller and launches
+our pr2_joint_controller. To stop the controller one has to press Ctrl+C. The 
+pr2_joint_controller will be stopped and default controllers will be loaded again.
+
+4. Implementation
+
+    The code of the controller is very simple and based directly on the code of the
+controller from "Writing a realtime joint controller" tutorial. Overall schema of 
+operation is following:
+    - when the controller is loaded, init() method is called to initialize the 
+controller. Here controller calls InitializeConnections() to initialize connections
+to ROS topics used to send user commands to the controller. Also the controller 
+calls ConnectArmJoints() method to intialize JointSpace objects for every joint.
+    - when the controller enters the realtime mode, starting() method is called.
+We are doing nothing in this method;
+    - evey 1 millisecond an update() method is called. This method sends effort
+values to every robot joints.
+    - when the controller stops, stopping() method is called. Nothing happens in
+this method;
+    The package exports a single type of the message. Every member of the message
+corresponds to a single joint of the robot's arm. The controller advertizes two
+topics - one for the right arm and another for the left arm. Currently it is assumed
+that joint effort values are sent through these topics. As a result, it is possible
+that the robot will not able to operate heavy objects with its arms. In future 
+it is possible to send joint velocity instead of effort and calculate effort using 
+the PID controllers.

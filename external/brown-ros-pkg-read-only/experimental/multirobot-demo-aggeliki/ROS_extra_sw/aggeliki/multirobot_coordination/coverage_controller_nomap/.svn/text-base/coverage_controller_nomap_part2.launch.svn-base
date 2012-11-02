@@ -1,0 +1,12 @@
+<launch>
+
+<node name="bl1" pkg="bumper_localizer_nomap" type="bumper_localizer_nomap"/>
+
+<param name="/step_navigator/ok_to_drive" value="1"/>
+<node name="sn1" pkg="step_navigator_nomap" type="step_navigator_nomap"/>
+
+<node name="wc" pkg="wifi_comm" type="wifi_discovery_node"/>
+
+<!-- <node name="cc1" pkg="coverage_controller" type="coverage_controller" output="screen"/> -->
+
+</launch>

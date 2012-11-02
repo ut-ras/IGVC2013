@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2619/trunk/experimental/block_nl/location_tracking/srv
+END
+RequestDeleteBlock.srv
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2619/trunk/experimental/block_nl/location_tracking/srv/RequestDeleteBlock.srv
+END
+RequestMoveBlock.srv
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2619/trunk/experimental/block_nl/location_tracking/srv/RequestMoveBlock.srv
+END
+RequestAddBlock.srv
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2619/trunk/experimental/block_nl/location_tracking/srv/RequestAddBlock.srv
+END
+RequestReleaseBlock.srv
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2619/trunk/experimental/block_nl/location_tracking/srv/RequestReleaseBlock.srv
+END

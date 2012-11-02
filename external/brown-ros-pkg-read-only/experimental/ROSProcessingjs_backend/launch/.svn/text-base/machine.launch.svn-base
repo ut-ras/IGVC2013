@@ -1,0 +1,7 @@
+<launch>
+  <machine name="base" address="whoola" ros-root="/opt/ros/electric/ros" ros-package-path="/home/robot/ros:/opt/ros/electric/stacks"/>
+  <machine name="robot" address="whoolaman" ros-root="/opt/ros/electric/ros" ros-package-path="/home/robot/ros:/opt/ros/electric/stacks">
+    <env name="ROS_MASTER_URI" value="http://whoola:11311" />
+  </machine>
+
+</launch>

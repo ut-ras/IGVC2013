@@ -1,0 +1,17 @@
+<package>
+  <description brief="head_gripper">
+
+     head_gripper
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/head_gripper</url>
+  <depend package="roscpp"/>
+  <depend package="actionlib"/>
+  <depend package="pr2_controllers_msgs"/>
+
+</package>
+
+

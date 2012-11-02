@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description
+END
+pr2_urdf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2866/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/pr2_urdf.xml
+END
+gripper_urdf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/2866/trunk/experimental/ROSDojo/src/bosch/resources/pr2_description/gripper_urdf.xml
+END

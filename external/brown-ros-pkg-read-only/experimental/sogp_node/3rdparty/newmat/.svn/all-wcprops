@@ -1,0 +1,545 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat
+END
+myexcept.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/myexcept.cpp
+END
+newmatrm.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmatrm.h
+END
+nm_cc.mak
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nm_cc.mak
+END
+tmt.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt.h
+END
+garch.dat
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/garch.dat
+END
+nm_b55.mak
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nm_b55.mak
+END
+solution.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/solution.h
+END
+evalue.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/evalue.cpp
+END
+garch.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/garch.txt
+END
+nm10.htm
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nm10.htm
+END
+precisio.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/precisio.h
+END
+newmatio.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmatio.h
+END
+newfft.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newfft.cpp
+END
+nm_i8.mak
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nm_i8.mak
+END
+newmat.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat.h
+END
+nm_m6.mak
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nm_m6.mak
+END
+myexcept.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/myexcept.h
+END
+nm_m8.mak
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nm_m8.mak
+END
+nm_ow.mak
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nm_ow.mak
+END
+test_exc.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/test_exc.txt
+END
+garch.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/garch.cpp
+END
+tmt1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt1.cpp
+END
+tmt2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt2.cpp
+END
+newmat.lfl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat.lfl
+END
+tmt3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt3.cpp
+END
+jacobi.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/jacobi.cpp
+END
+tmt4.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt4.cpp
+END
+newmatex.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmatex.cpp
+END
+tmt5.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt5.cpp
+END
+tmt6.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt6.cpp
+END
+newmatnl.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmatnl.h
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/README.txt
+END
+tmt7.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt7.cpp
+END
+svd.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/svd.cpp
+END
+tmt8.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt8.cpp
+END
+tmt9.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt9.cpp
+END
+tmt.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt.txt
+END
+nl_ex.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nl_ex.txt
+END
+bandmat.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/bandmat.cpp
+END
+sl_ex.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/sl_ex.txt
+END
+rbd.css
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/rbd.css
+END
+test_exc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/test_exc.cpp
+END
+cholesky.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/cholesky.cpp
+END
+newmatap.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmatap.h
+END
+AUTHORS.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/AUTHORS.txt
+END
+nm_targ.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nm_targ.txt
+END
+newmatnl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmatnl.cpp
+END
+sort.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/sort.cpp
+END
+example.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/example.txt
+END
+newmatrm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmatrm.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/CMakeLists.txt
+END
+tmt.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmt.cpp
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/cmake_install.cmake
+END
+COPYING.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/COPYING.txt
+END
+nl_ex.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nl_ex.cpp
+END
+tmta.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmta.cpp
+END
+tmtb.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmtb.cpp
+END
+tmtc.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmtc.cpp
+END
+add_time.png
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/add_time.png
+END
+tmtd.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmtd.cpp
+END
+tmte.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmte.cpp
+END
+nm_gnu.mak
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nm_gnu.mak
+END
+tmtf.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmtf.cpp
+END
+sl_ex.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/sl_ex.cpp
+END
+tmtg.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmtg.cpp
+END
+solution.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/solution.cpp
+END
+nm_il8.mak
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/nm_il8.mak
+END
+tmth.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmth.cpp
+END
+controlw.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/controlw.h
+END
+newmat1.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat1.cpp
+END
+tmti.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmti.cpp
+END
+newmat2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat2.cpp
+END
+tmtj.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmtj.cpp
+END
+newmat3.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat3.cpp
+END
+tmtk.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmtk.cpp
+END
+fft.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/fft.cpp
+END
+newmat4.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat4.cpp
+END
+newmat5.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat5.cpp
+END
+tmtl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmtl.cpp
+END
+newmat6.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat6.cpp
+END
+tmtm.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/tmtm.cpp
+END
+newmat7.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat7.cpp
+END
+newmat8.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat8.cpp
+END
+newmat9.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmat9.cpp
+END
+boolean.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/boolean.h
+END
+hholder.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/hholder.cpp
+END
+newmatrc.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/newmatrc.h
+END
+include.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/include.h
+END
+submat.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/submat.cpp
+END
+example.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/sogp_node/3rdparty/newmat/example.cpp
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2494/trunk/experimental/gazebo_block_manipulation/objects
+END
+blueblock.urdf
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2474/trunk/experimental/gazebo_block_manipulation/objects/blueblock.urdf
+END
+purpleblock.urdf
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2474/trunk/experimental/gazebo_block_manipulation/objects/purpleblock.urdf
+END
+table.urdf.xacro
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2477/trunk/experimental/gazebo_block_manipulation/objects/table.urdf.xacro
+END
+redblock.urdf
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2474/trunk/experimental/gazebo_block_manipulation/objects/redblock.urdf
+END
+orangeblock.urdf
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2474/trunk/experimental/gazebo_block_manipulation/objects/orangeblock.urdf
+END
+toyblock.urdf
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2474/trunk/experimental/gazebo_block_manipulation/objects/toyblock.urdf
+END
+table.urdf
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2494/trunk/experimental/gazebo_block_manipulation/objects/table.urdf
+END
+greenblock.urdf
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2474/trunk/experimental/gazebo_block_manipulation/objects/greenblock.urdf
+END

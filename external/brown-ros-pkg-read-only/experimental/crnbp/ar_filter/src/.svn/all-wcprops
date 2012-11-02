@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1731/trunk/experimental/crnbp/ar_filter/src
+END
+ar_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1731/trunk/experimental/crnbp/ar_filter/src/ar_server.py
+END
+ar_guesser.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1731/trunk/experimental/crnbp/ar_filter/src/ar_guesser.py
+END

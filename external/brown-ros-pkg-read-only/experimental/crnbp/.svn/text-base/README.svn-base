@@ -1,0 +1,134 @@
+This directory contains code for various ROS functionality written for
+Chad Jenkins by Tom Sgouros.  Est. 4/21/11
+
+The CRNBP (Coordinating Robot Networks through Belief Propagation)
+software is a collection of Python ROS packages, consisting of three
+parts:
+
+ -- An approximate localization stack.
+ -- A potential field navigator
+ -- A controller for using belief propagation to do coverage.
+
+LOCALIZATION
+
+The localization stack consists of the Perfesser node, and a suite of
+"filter" nodes to work with it.  It is designed for robots without a
+lot of sensing power -- in other words, robots who are never really
+sure where they are and whose sensors probably aren't precise enough
+to be all that informative.  It is designed to work with sensors that
+merely reduce the uncertainty of a position measurement.  (Of course
+this is how all sensors work.  What's different here is that there is
+no lower threshold of usability.  Even a terrible sensor can
+contribute useful information here.)
+
+During operation, the Perfesser node queries each 'filter' node with a
+question that consists of a distribution of localization estimates,
+and each filter replies by resampling that distribution according to
+its knowledge of whatever it's responsible for measuring.  So for
+example, the ar_filter tracks the relative location of known AR-tag
+landmarks and resamples the distribution according to those
+measurements.
+
+The odom_filter package is roughly similar, though it differs from
+other filters because it's not so much resampling the localization
+estimates provided by the Perfesser node as advancing them according
+to its estimate of the odometry.  The odom_filter is an essential part
+of the system, though any other filter is optional.
+
+The Perfesser package contains classes that are useful to the
+construction of other filter programs (a particle filter, a class to
+manage a belief, resampling facilities, and so on), and the
+architecture can accommodate an arbitrary number of these filters.
+For example, a filter that has a global map can know that a bump
+implies it should resample the given distribution to favor points near
+walls.  Another filter with a map could use a lack of bumps to favor
+points away from walls, and so on.
+
+The Perfesser package also comes with a few sample launch files.
+
+
+POTENTIAL-FIELD NAVIGATION
+
+The CRNBP packages include gnav, a package that implements a basic
+potential-field navigator.  Features include a stack for storing
+intermediate navigation goals, and an arbitrarily large collection of
+arbitrary potential-field functions for managing obstacle avoidance,
+goal-seeking, or dancing in formation.  The potential field functions
+are managed as lists of Python function objects so can be as complex
+as you have the stomach to create.
+
+
+BELIEF PROPAGATION
+
+The Cover package implements a Markov-random-field-based coverage
+controller for a collection of multiple robots with relatively poor
+localization skillz.  The idea here is that the robots compare notes
+with each other, reconcile their opinions, and act accordingly.
+
+The Cover package software consists of two pieces:
+
+ -- A simulation environment set up for an Model room
+ -- Real coverage controller
+
+The simulation environment consists of a model room containing an
+arbitrary number of robots and a controller executed by each one.  The
+controller executes as a single process no matter how many robots are
+using it, so it's not the speediest in the world.  You can also see a
+graphical representation of which robots are communicating with which
+of their neighbors.  There are a couple of launch files in the Cover
+package to run versions of the simulation.
+
+The real coverage controller is meant to execute on multiple robots
+that are presumed to be using gnav and the perfesser localization
+stack.  The "observations" of a robot's neighbors' positions are
+gathered by eavesdropping on the neighbor robots' ROS topic exchanges.
+A robot that actually measured its neighbors' positions (as envisioned
+by the original algorithm) could dispense with the dependency on the
+perfesser packages.
+
+The gnav dependency is only because the coverage controller operates
+by setting gnav goals.  Gnav also takes care of bump events
+internally.  This is not necessary (the simulation controller does so
+itself), but it is how these packages are implemented.
+
+
+OTHER
+
+The CRNBP packages include an iRobot Create simulator called
+model_create.  This was written to have a far lower overhead (and
+shorter learning curve) than Gazebo.  See the Cover package simulator
+for an example of its use.
+
+CRNBP also includes the tgraph library, a tk-based graphics library
+used only because matplotlib doesn't appear to work with the Python
+rev we have been working with.  This was hacked together, and has no
+pretensions of being anything more than that.
+
+
+General python recommendations:
+
+  Put source files in package/src.  If you have a package called
+  Package, with a ROS node, create package.py and put it in
+  Package/bin.  That file should be executable, and should be the code
+  for the ROS process it represents.  It should contain as few class
+  definitions as possible, importing everything that isn't
+  ros-specific from module files parked in package/src.  The modules
+  should be named something like: package_classes.py.  (They should
+  *not* be named package.py.)  These files should have testing
+  apparatus appended to them so that executing them in standalone
+  fashion executes the tests.  As much as possible, the tests should
+  not depend on the ROS apparatus (like having a core running, etc).
+
+  Sometimes you just want to run the tests, but also graphics are
+  useful for looking at results and have their own QA uses.  You can
+  put graphics at the end of the tests, in a block like this:
+
+  import sys
+  if len(sys.argv) > 1:
+      print "true"
+  else:
+      print "false"
+
+  Now you can get the graphics whenever you invoke the script with an
+  argument. Several of the Perfesser and Gnav nodes have implemented
+  these graphics tests.

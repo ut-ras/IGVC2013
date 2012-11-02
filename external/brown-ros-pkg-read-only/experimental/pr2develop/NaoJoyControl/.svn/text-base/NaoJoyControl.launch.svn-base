@@ -1,0 +1,39 @@
+<launch>
+    <node type="NaoJoyControl" pkg="NaoJoyControl" name="NaoJoyControl_main" output="screen">
+        <param name="LoopRate" value="10" type="int"/>
+
+        <param name="NumConfigurations" value="2" type="int"/>
+        <param name="NumButtons" value="12" type="int"/>
+        <param name="NumAxes" value="6" type="int"/>
+        <param name="AxesSensitivity" value="0.5"/>
+        
+        <param name="Config0/Btn8" value="config0"/>
+        <param name="Config0/Btn9" value="config1"/>
+        <param name="Config0/Axis2" value="axis_turn"/>
+        <param name="Config0/Axis3" value="axis_walk"/>
+        <param name="Config0/Axis4" value="axis_headyaw"/>
+        <param name="Config0/Axis5" value="axis_headpitch"/>
+        
+        <param name="Config1/Btn0" value="relbowrollleft"/>
+        <param name="Config1/Btn2" value="relbowrollright"/>
+        <param name="Config1/Btn1" value="relbowyawright"/>
+        <param name="Config1/Btn3" value="relbowyawleft"/>
+        <param name="Config1/Btn4" value="lwristleft"/>
+        <param name="Config1/Btn6" value="lwristright"/>
+        <param name="Config1/Btn5" value="rwristleft"/>
+        <param name="Config1/Btn7" value="rwristright"/>
+        <param name="Config1/Btn8" value="config0"/>
+        <param name="Config1/Btn9" value="config1"/>
+        <param name="Config1/Btn11" value="rgraspcommand"/>
+        <param name="Config1/Btn10" value="lgraspcommand"/>
+        
+        <param name="Config1/Axis0" value="axis_lshoulderroll"/>
+        <param name="Config1/Axis1" value="axis_lshoulderpitch"/>
+        <param name="Config1/Axis2" value="axis_rshoulderroll"/>
+        <param name="Config1/Axis3" value="axis_rshoulderpitch"/>
+        <param name="Config1/Axis4" value="axis_lelbowroll"/>
+        <param name="Config1/Axis5" value="axis_lelbowyaw"/>
+
+    </node>
+</launch>
+

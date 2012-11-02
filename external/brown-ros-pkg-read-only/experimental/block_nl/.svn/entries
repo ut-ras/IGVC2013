@@ -1,0 +1,80 @@
+10
+
+dir
+3064
+http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/block_nl
+http://brown-ros-pkg.googlecode.com/svn
+
+
+
+2012-05-24T19:45:59.281965Z
+2806
+jonathan.c.mace@gmail.com
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+0d49d21e-669f-11de-873c-fb8c264d332a
+
+object_manager
+dir
+
+block_builder
+dir
+
+block_build_msgs
+dir
+
+block_build_manager
+dir
+
+location_tracking
+dir
+
+tabletop_segmentor
+dir
+
+README
+file
+
+
+
+
+2012-11-02T02:22:34.105046Z
+48514dedc4ae681edc8cce7e80413b4f
+2012-03-01T22:04:30.524990Z
+2436
+nevernim@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1794
+

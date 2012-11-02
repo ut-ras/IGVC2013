@@ -1,0 +1,22 @@
+<package>
+  <description brief="ardrone_lclzr">
+
+     ardrone_lclzr
+
+  </description>
+  <author>Arjun</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ardrone_lclzr</url>
+  <depend package="tf"/>
+  <depend package="roscpp"/>
+  <depend package="ar_recog"/>
+  <depend package="ardrone_brown"/>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="bullet"/>
+  <depend package="amcl"/>
+  <depend package="visualization_msgs"/>
+</package>
+
+

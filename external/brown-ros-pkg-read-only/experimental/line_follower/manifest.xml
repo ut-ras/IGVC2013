@@ -1,0 +1,15 @@
+<package>
+  <description brief="line_follower">
+    Follows a line using cliffFrontLeftSignal as a guide.  Will stop if it bumps into anything.  Calibrates initially using cliffFrontLeftSignal (on line) and cliffFrontRightSignal (off line).  You'll probably want a teleop to steer the robot onto the line after calibration (or, you can place it by hand).
+  </description>
+  <author>Brian Thomas</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+  <depend package="rospy"/>
+  <depend package="geometry_msgs"/>
+  <depend package="irobot_create_2_1"/>
+
+</package>
+
+

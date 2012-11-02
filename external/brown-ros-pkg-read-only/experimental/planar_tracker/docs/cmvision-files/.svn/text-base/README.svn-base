@@ -1,0 +1,2 @@
+Place these in cmvision's root directory.  These are called by overhead_start_l.sh and overhead_start_r.sh (particularly, by their associated launch files overhead_l.launch and overhead_r.launch).
+

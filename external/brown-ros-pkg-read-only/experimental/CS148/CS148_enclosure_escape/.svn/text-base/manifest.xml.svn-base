@@ -1,0 +1,16 @@
+<package>
+  <description brief="CS148_enclosure_escape">
+
+     CS148_enclosure_escape
+
+  </description>
+  <author>Brawner</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/CS148_enclosure_escape</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="actionlib"/>
+  <depend package="std_srvs" />
+  <depend package="turtlebot_gazebo"/>
+</package>

@@ -1,0 +1,32 @@
+<launch>
+
+  <!-- Camera -->
+  <node name="gscam" pkg="gscam" type="gscam" cwd="node" />
+
+  <!-- AR tagger -->
+  <!-- Logitech Quickcam value="0.728465217"-->
+  <!-- Onboard Asus camera value="0.591508"-->
+  <!-- Creative camera value="0.352327"-->
+  <!-- PS3 camera value="1.16632169603"-->
+  <param name="aov" value="1.16632169603" />
+  <node name="ar_recog" pkg="ar_recog" type="ar_recog" args="image:=/gscam/image_raw" cwd="node" />
+
+  <!-- Camera video -->
+  <node name="image_view" pkg="image_view" type="image_view" args="image:=/ar/image" />
+
+  <!-- Create driver -->
+  <param name="brown/irobot_create_2_1/port" value="/dev/ttyUSB0" />
+  <node name="irobot_create_2_1" pkg="irobot_create_2_1" type="driver.py" />
+
+  <!-- Odometry/vision sensor fusion -->
+  <node name="position_tracker" pkg="position_tracker" type="position_tracker.py" />
+  <node name="position_tracker_web" pkg="position_tracker_web" type="position_tracker_web.py" />
+
+  <!-- Localization with AR tags -->
+  <node name="ar_localizer" pkg="ar_localizer" type="ar_localizer.py" cwd="node" />
+
+  <!-- Create driving control -->
+  <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" />
+  <!--<node name="teleop_twist_web" pkg="teleop_twist_web" type="teleop_twist_web.py" />-->
+
+</launch>

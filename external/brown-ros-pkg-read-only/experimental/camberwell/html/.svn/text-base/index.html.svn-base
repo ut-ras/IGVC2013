@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ROSBridge Test</title>
+    <script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/rosbridge/ros.js"></script>
+    <script type="text/javascript">
+$(function() {
+  console.log("Creating payload...");
+  var payload= new Array();
+  for (var i = 0; i < 30720; i++) {
+    payload.push(String.fromCharCode(Math.round(Math.random()*25+65))); 
+  }
+  payload = payload.join('');
+  //console.log(payload);
+  var connection = new ros.Connection("ws://localhost:9090");
+  connection.setOnClose(function (e) {
+    console.log('connection closed.');
+  });
+  connection.setOnError(function (e) {
+    console.log('error!');
+  });
+  connection.setOnOpen(function (e) {
+    console.log('connected to ROS');
+    console.log('establishing type...');
+    connection.publish('/camberwell','std_msgs/String','{"data":"camberwell"}');
+    setTimeout(function() {
+      console.log('Waiting for type...');
+      connection.addHandler('/camberwell',function(msg) {
+        console.log(msg);
+        connection.publish('/camberwell','std_msgs/String','{"data":"' + payload + '"}');
+      });
+      setTimeout(function() {
+        console.log("Waiting for handler...");
+        connection.callService('/rosbridge/subscribe','["/camberwell",-1]',function(rsp) {
+          setTimeout(function() {
+            console.log('Waiting for subscriber...');
+            connection.publish('/camberwell','std_msgs/String','{"data":"echo."}');
+          },5000);
+        });
+      },5000);
+    },5000);
+  });
+});
+    </script>
+  </head>
+<body>
+</body>
+</html>

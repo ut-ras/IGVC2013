@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2581/trunk/experimental/block_build/block_build_manager/launch
+END
+manager.launch
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2497/trunk/experimental/block_build/block_build_manager/launch/manager.launch
+END
+self_filter.launch
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2581/trunk/experimental/block_build/block_build_manager/launch/self_filter.launch
+END
+manager_pre.launch
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/2581/trunk/experimental/block_build/block_build_manager/launch/manager_pre.launch
+END

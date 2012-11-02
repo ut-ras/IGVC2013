@@ -1,0 +1,18 @@
+<launch>
+  <!-- Uncomment this to use with bluetooth in virtual box on mac. -->
+  <!--  <param name="/brown/irobot_create_2_1/port" 
+	 value="/dev/ttyS0"/> -->
+
+  <node name="create_driver" 
+	pkg="irobot_create_2_1a" 
+	type="driver.py"/>
+
+  <node name="position_tracker" 
+	pkg="position_tracker" 
+	type="position_tracker.py" />
+
+<!--  <node name="position_guesser"
+	pkg="position_guesser"
+	type="position_guesser.py" />
+-->
+</launch>

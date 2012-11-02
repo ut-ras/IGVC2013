@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/688/trunk/experimental/sogp/sogp
+END
+sogp_aux.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/688/trunk/experimental/sogp/sogp/sogp_aux.cc
+END
+sogp_aux.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/688/trunk/experimental/sogp/sogp/sogp_aux.h
+END
+sogp.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/688/trunk/experimental/sogp/sogp/sogp.cc
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/688/trunk/experimental/sogp/sogp/CMakeLists.txt
+END
+sogp.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/688/trunk/experimental/sogp/sogp/sogp.h
+END

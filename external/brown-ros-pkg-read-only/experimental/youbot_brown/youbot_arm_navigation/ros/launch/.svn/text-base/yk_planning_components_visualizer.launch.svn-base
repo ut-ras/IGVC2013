@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+	<include file="$(find planning_environment)/launch/environment_server.launch" >
+	  <arg name="use_monitor" value="false"/>
+	  <arg name="use_collision_map" value="false"/>
+	</include>
+
+	<include file="$(find youbot_arm_navigation)/ros/launch/planning_environment.launch" />
+	<include file="$(find youbot_arm_navigation)/ros/launch/constraint_aware_kinematics.launch" />
+	<include file="$(find youbot_arm_navigation)/ros/launch/ompl_planning.launch" />
+	<include file="$(find youbot_arm_navigation)/ros/launch/trajectory_filter.launch" />
+	
+	<node pkg="rviz" type="rviz" name="rviz_planning_components" args="-d $(find youbot_arm_navigation)/ros/config/planning_components_visualizer.vcg" />
+
+	<node pkg="youbot_imarker" type="youbot_imarker" name="youbot_planning_components_visualizer" output="screen">
+		<remap from="/trajectory_filter_server/filter_trajectory_with_constraints" to="trajectory_filter/filter_trajectory_with_constraints" />
+	</node>
+	
+	<node pkg="robot_state_publisher" type="state_publisher" name="rob_st_pub">
+	  <remap from="joint_states" to="youbot_states"/>
+	</node>
+
+</launch>

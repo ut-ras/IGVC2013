@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2686/trunk/experimental/CS148/cs148_manager
+END
+manager.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2685/trunk/experimental/CS148/cs148_manager/manager.py
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2681/trunk/experimental/CS148/cs148_manager/manifest.xml
+END
+controllerformanager.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2686/trunk/experimental/CS148/cs148_manager/controllerformanager.py
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2681/trunk/experimental/CS148/cs148_manager/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2681/trunk/experimental/CS148/cs148_manager/Makefile
+END

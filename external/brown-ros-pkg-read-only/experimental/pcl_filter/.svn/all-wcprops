@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/1066/trunk/experimental/pcl_filter
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1061/trunk/experimental/pcl_filter/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1061/trunk/experimental/pcl_filter/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1061/trunk/experimental/pcl_filter/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1061/trunk/experimental/pcl_filter/Makefile
+END

@@ -1,0 +1,10 @@
+<!-- Use this launch file to start location guessing routines on a single node.
+     The inputs include odometry and ar_recog. -->
+<launch>
+
+  <!-- Create drivers/graphical feedback -->
+  <node name="model_2d" pkg="cover" type="model_ffloor.py" />
+
+  <node name="model_2d_control" pkg="cover" type="model_2d_control.py"/> 
+
+</launch>

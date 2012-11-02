@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ATcodec
+END
+ATcodec_Sorted_List.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ATcodec/ATcodec_Sorted_List.c.d
+END
+ATcodec_Tree.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 186
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ATcodec/ATcodec_Tree.c.d
+END
+ATcodec.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ATcodec/ATcodec.c.d
+END
+ATcodec_Memory.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ATcodec/ATcodec_Memory.c.d
+END
+ATcodec_Buffer.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ATcodec/ATcodec_Buffer.c.d
+END
+ATcodec_api.c.d
+K 25
+svn:wc:ra_dav:version-url
+V 185
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Build/targets_versions/sdk_PROD_MODE_ffmpeg_Intel_Linux_2.6.35-27-generic_GNU_Linux_gcc_4.4.5/ATcodec/ATcodec_api.c.d
+END

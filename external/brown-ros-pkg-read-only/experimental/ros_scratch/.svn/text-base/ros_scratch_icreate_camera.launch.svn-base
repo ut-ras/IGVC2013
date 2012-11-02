@@ -1,0 +1,38 @@
+<launch>
+  <!-- iCreate -->
+  <!-- <param name="/brown/irobot_create_2_1/port" value="/dev/rfcomm0" /> -->
+  <node name="irobot_create_2_1" pkg="irobot_create_2_1" type="driver.py" respawn="true" />
+
+  <!-- Camera and vision -->
+  <node name="gscam"
+  	pkg="gscam"
+  	type="gscam"
+  	cwd="node"
+  	respawn="false" > <!-- -->
+    <env name="GSCAM_CONFIG"
+  	 value="v4l2src device=/dev/video1 ! video/x-raw-rgb ! ffmpegcolorspace" />
+  </node>
+  <!-- ^^ You may need to instead use: value="v4l2src device=/dev/video0 ! video/x-raw-rgb ! ffmpegcolorspace ! identity name=ros ! fakesink" -->
+  <node name="gscam_throttle"
+  	pkg="topic_tools"
+  	type="throttle"
+  	args="messages /gscam/image_raw 1.0 /gscam/image_raw_throttle"
+  	respawn="true" />
+  <node name="ar_recog"
+  	pkg="ar_recog"
+  	type="ar_recog"
+  	args="image:=/gscam/image_raw_throttle"
+  	cwd="node"
+  	respawn="true" />
+
+  <!-- User display -->
+  <node name="image_view"
+  	pkg="image_view"
+  	type="image_view"
+  	args="image:=/ar/image"
+  	respawn="false" />
+
+  <!-- ROS<->Scratch interface -->
+  <node name="ros_scratch_icreate_camera" pkg="ros_scratch" type="ros_scratch_icreate_camera.py" respawn="true" output="screen" />
+</launch>
+

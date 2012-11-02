@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/115/trunk/experimental/naoExpmnt
+END
+LICENSE.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/110/trunk/experimental/naoExpmnt/LICENSE.TXT
+END
+.build_version
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/.build_version
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/manifest.xml
+END
+naoros.tar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/naoros.tar
+END
+README.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/115/trunk/experimental/naoExpmnt/README.TXT
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/CMakeLists.txt
+END
+manifest.xml.actual
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/manifest.xml.actual
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/108/trunk/experimental/naoExpmnt/Makefile
+END

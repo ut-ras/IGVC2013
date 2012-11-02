@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2473/trunk/experimental/toyblock_builder/pr2_block_builder/nodes
+END
+reset_blocks.py
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2180/trunk/experimental/toyblock_builder/pr2_block_builder/nodes/reset_blocks.py
+END
+build.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/2218/trunk/experimental/toyblock_builder/pr2_block_builder/nodes/build.py
+END
+placer_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/2036/trunk/experimental/toyblock_builder/pr2_block_builder/nodes/placer_test.py
+END

@@ -1,0 +1,67 @@
+body {
+	margin: auto;
+	width: 800px;
+	text-align: center;
+}
+
+.pagetitle {
+    border-bottom: 1px solid #444444;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.main .connectionpanel .dijitComboBox {
+	width: 326px;
+}
+
+.main .connectionpanel .label {
+	padding-bottom: 4px;
+}
+
+.demoapp {
+	display: inline-block;
+	border: 1px solid #CCCCCC;
+	border-radius: 5px;
+	margin: 25px;
+}
+
+.demoimage {
+	border-bottom: 1px solid #EEEEEE;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.demoimage {
+	width: 320px;
+	height: 240px;
+}
+
+.demotitle {
+	font-size: 17px;	
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.demotitle > a {
+	text-decoration: none;
+}
+
+.demosubtitles {
+	height: 22px;
+}
+
+.demosubtitle {
+	display: inline-block;
+	width: 120px;
+	font-size: 12px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.demosubtitle > a:hover,
+.demosubtitle > a:active,
+.demosubtitle > a:visited,
+.demosubtitle > a:link {
+	color: black;
+}

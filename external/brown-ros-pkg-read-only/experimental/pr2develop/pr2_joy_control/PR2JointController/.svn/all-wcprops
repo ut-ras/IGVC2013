@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController
+END
+runPR2JointController
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/runPR2JointController
+END
+pr2_joint_controller.launch
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/pr2_joint_controller.launch
+END
+controller_plugins.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/controller_plugins.xml
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/mainpage.dox
+END
+pr2_joint_controller.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/pr2_joint_controller.yaml
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/CMakeLists.txt
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/Makefile
+END

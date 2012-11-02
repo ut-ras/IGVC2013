@@ -1,0 +1,25 @@
+<launch>
+  <node name="gscam"
+	pkg="gscam"
+	type="gscam"
+	cwd="node" >
+    <env name="GSCAM_CONFIG"
+	 value="v4l2src device=/dev/video1 ! video/x-raw-rgb ! ffmpegcolorspace ! identity name=ros ! fakesink" />
+  </node>
+  <node name="ar_recog"
+  	pkg="ar_recog"
+  	type="ar_recog"
+  	args="image:=/gscam/image_raw"
+	cwd="node" />
+  <include file="$(find cmvision)/cmvision_r.launch" />
+  <node name="planar_tracker"
+	pkg="planar_tracker"
+	type="planar_tracker.py"
+  	args="tag_positions:=tag_positions_r"
+	cwd="node" />
+  <node name="image_view"
+	pkg="image_view"
+	type="image_view"
+  	args="image:=/ar/image" />
+</launch>
+

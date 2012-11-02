@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga
+END
+README_QUAGGA
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/README_QUAGGA
+END
+version-script.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/version-script.txt
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/ChangeLog
+END
+Contributors
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/Contributors
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/Makefile
+END

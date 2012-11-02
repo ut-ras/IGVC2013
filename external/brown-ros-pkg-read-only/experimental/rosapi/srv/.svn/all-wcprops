@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv
+END
+ServiceNode.srv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/ServiceNode.srv
+END
+Subscribers.srv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/Subscribers.srv
+END
+Nodes.srv
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/Nodes.srv
+END
+MessageDetails.srv
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/MessageDetails.srv
+END
+TopicsForType.srv
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/TopicsForType.srv
+END
+ServiceProviders.srv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/ServiceProviders.srv
+END
+ServiceHost.srv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/ServiceHost.srv
+END
+ServiceRequestDetails.srv
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/ServiceRequestDetails.srv
+END
+TopicType.srv
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/TopicType.srv
+END
+Publishers.srv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/Publishers.srv
+END
+Topics.srv
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/Topics.srv
+END
+ServiceType.srv
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/ServiceType.srv
+END
+Services.srv
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/Services.srv
+END
+ServiceResponseDetails.srv
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2841/trunk/experimental/rosapi/srv/ServiceResponseDetails.srv
+END

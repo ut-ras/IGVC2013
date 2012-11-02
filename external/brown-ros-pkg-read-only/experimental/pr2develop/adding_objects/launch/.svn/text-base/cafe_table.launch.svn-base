@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="cafe_table"      textfile="$(find gazebo_worlds)/objects/cafe_table.model" />
+
+  <!-- push urdf to factory and spawn robot in gazebo -->
+  <node name="spawn_cafe_table" pkg="gazebo_tools" type="gazebo_model" args="-p cafe_table -x 1 -y -0.22 -z .57 spawn cafe_table" respawn="false" output="screen" />
+
+</launch>

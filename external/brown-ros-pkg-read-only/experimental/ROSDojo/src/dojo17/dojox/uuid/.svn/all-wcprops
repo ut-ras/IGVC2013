@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/uuid
+END
+Uuid.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/uuid/Uuid.js
+END
+Uuid.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/uuid/Uuid.js.uncompressed.js
+END
+_base.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/uuid/_base.js
+END
+_base.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/uuid/_base.js.uncompressed.js
+END
+generateTimeBasedUuid.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/uuid/generateTimeBasedUuid.js
+END
+generateTimeBasedUuid.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/uuid/generateTimeBasedUuid.js.uncompressed.js
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/uuid/README
+END
+generateRandomUuid.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/uuid/generateRandomUuid.js
+END
+generateRandomUuid.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1886/trunk/experimental/ROSDojo/src/dojo17/dojox/uuid/generateRandomUuid.js.uncompressed.js
+END

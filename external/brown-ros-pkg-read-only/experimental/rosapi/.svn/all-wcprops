@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2843/trunk/experimental/rosapi
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2842/trunk/experimental/rosapi/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2842/trunk/experimental/rosapi/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2841/trunk/experimental/rosapi/CMakeLists.txt
+END

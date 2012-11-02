@@ -1,0 +1,16 @@
+K 10
+svn:ignore
+V 77
+CMakeFiles
+
+srv_gen
+
+.project
+
+cmake_install.cmake
+
+CMakeCache.txt
+
+Makefile
+
+END

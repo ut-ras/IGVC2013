@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/501/trunk/experimental/pr2develop/joint_states_listener/scripts
+END
+joint_states_listener_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/493/trunk/experimental/pr2develop/joint_states_listener/scripts/joint_states_listener_test.py
+END
+single_query_jsl_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/501/trunk/experimental/pr2develop/joint_states_listener/scripts/single_query_jsl_test.py
+END

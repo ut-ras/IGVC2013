@@ -1,0 +1,11 @@
+auto lo
+iface lo inet loopback
+
+auto wlan0
+iface wlan0 inet static
+wireless-mode ad-hoc
+wireless-ap 00:60:1D:01:23:45
+#wireless-channel 4
+wireless-essid rlab_mesh_test
+address 192.168.0.2
+netmask 255.255.255.0

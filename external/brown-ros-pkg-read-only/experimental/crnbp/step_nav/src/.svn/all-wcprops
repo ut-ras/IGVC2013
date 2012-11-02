@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1542/trunk/experimental/crnbp/step_nav/src
+END
+force.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1451/trunk/experimental/crnbp/step_nav/src/force.py
+END
+step_to_goal.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1542/trunk/experimental/crnbp/step_nav/src/step_to_goal.py
+END
+goal.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1496/trunk/experimental/crnbp/step_nav/src/goal.py
+END

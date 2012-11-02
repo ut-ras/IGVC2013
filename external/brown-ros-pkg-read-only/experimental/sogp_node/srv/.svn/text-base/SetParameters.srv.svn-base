@@ -1,0 +1,7 @@
+int32 input_dimension
+int32 output_dimension
+int32 capacity
+float32 w
+float32 n
+---
+string error_msg

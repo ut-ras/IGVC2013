@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/895/trunk/experimental/nxt_robot_mindstorms2_quickstart
+END
+robot.min.launch
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/895/trunk/experimental/nxt_robot_mindstorms2_quickstart/robot.min.launch
+END
+robot.urdf
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/874/trunk/experimental/nxt_robot_mindstorms2_quickstart/robot.urdf
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/874/trunk/experimental/nxt_robot_mindstorms2_quickstart/manifest.xml
+END
+robot.ldr
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/874/trunk/experimental/nxt_robot_mindstorms2_quickstart/robot.ldr
+END
+robot.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/874/trunk/experimental/nxt_robot_mindstorms2_quickstart/robot.yaml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/874/trunk/experimental/nxt_robot_mindstorms2_quickstart/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/874/trunk/experimental/nxt_robot_mindstorms2_quickstart/CMakeLists.txt
+END
+robot.lxf
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/874/trunk/experimental/nxt_robot_mindstorms2_quickstart/robot.lxf
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/874/trunk/experimental/nxt_robot_mindstorms2_quickstart/Makefile
+END
+robot.launch
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/874/trunk/experimental/nxt_robot_mindstorms2_quickstart/robot.launch
+END

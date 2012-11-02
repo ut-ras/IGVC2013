@@ -1,0 +1,22 @@
+<package>
+  <description brief="object_manager">
+
+     object_manager
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/object_manager</url>
+  <depend package="roscpp"/>
+  <depend package="actionlib"/>
+  <depend package="sensor_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="pcl"/>
+  <depend package="pcl_ros"/>
+  <depend package="tabletop_segmentor"/>
+  <depend package="object_manipulator"/>
+
+</package>
+
+

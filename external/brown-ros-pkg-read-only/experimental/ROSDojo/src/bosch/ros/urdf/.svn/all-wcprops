@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf
+END
+pose.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/pose.js
+END
+cylinder.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/cylinder.js
+END
+color.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/color.js
+END
+joint.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/joint.js
+END
+vector3.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/vector3.js
+END
+sphere.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/sphere.js
+END
+box.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/box.js
+END
+geometry.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/geometry.js
+END
+mesh.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/mesh.js
+END
+link.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/link.js
+END
+material.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/material.js
+END
+rotation.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/rotation.js
+END
+model.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/model.js
+END
+urdf.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/urdf.js
+END
+visual.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/urdf/visual.js
+END

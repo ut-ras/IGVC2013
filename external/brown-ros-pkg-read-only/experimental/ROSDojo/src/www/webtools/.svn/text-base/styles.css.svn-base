@@ -1,0 +1,49 @@
+body {
+	margin: auto; 
+	width: 100%;
+	min-width: 1000px; 
+	height: 100%;
+}
+
+.header {
+	text-align: center; 
+	padding-top: 3px;
+	border-bottom: 1px solid #B5BCC7; 
+	padding-bottom: 10px;
+}
+
+.connectionpanel {
+	padding-top: 5px;
+	text-align: center
+}
+
+.tabs, .connectionpanel {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.commandfont {
+	font-family: courier;
+}
+
+.hackathon {
+	margin: auto;
+	text-align: center
+}
+
+.hackathon .disclaimer {    
+	background-color: #F5F5F5;
+    border-top: 1px solid #B5BCC7;
+	border-bottom: 1px solid #B5BCC7;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+    color: #882222;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hackathon .showmessage {
+	color: #999999;
+	font-size: 15px;
+}

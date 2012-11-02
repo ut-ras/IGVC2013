@@ -1,0 +1,52 @@
+10
+
+dir
+3064
+http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/CS148
+http://brown-ros-pkg.googlecode.com/svn
+
+
+
+2012-06-05T20:18:09.944860Z
+2821
+brawner@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0d49d21e-669f-11de-873c-fb8c264d332a
+
+CS148_run_n_slam
+dir
+
+CS148_enclosure_escape
+dir
+
+CS148_buggin_out
+dir
+
+CS148_inverse_kinematics
+dir
+
+CS148_path_planning
+dir
+
+CS148_subsumption
+dir
+
+cs148_manager
+dir
+
+CS148_object_seeking
+dir
+

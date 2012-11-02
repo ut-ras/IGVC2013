@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki
+END
+hosts
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/hosts
+END
+.bashrc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/.bashrc
+END
+interfaces
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/interfaces
+END
+meshnet_doc.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/meshnet_doc.txt
+END

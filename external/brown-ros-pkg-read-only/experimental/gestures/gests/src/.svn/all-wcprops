@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3063/trunk/experimental/gestures/gests/src
+END
+logit.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3062/trunk/experimental/gestures/gests/src/logit.cpp
+END
+ges.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3063/trunk/experimental/gestures/gests/src/ges.cpp
+END
+logit.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3061/trunk/experimental/gestures/gests/src/logit.hpp
+END
+ges.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/3061/trunk/experimental/gestures/gests/src/ges.hpp
+END
+gests.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3061/trunk/experimental/gestures/gests/src/gests.cpp
+END

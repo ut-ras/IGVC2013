@@ -1,0 +1,35 @@
+<launch>
+  <!-- rosbridge -->
+  <node name="rosbridge" pkg="rosbridge" type="rosbridge.py" respawn="true" output="screen" />
+
+  <!-- gscam -->
+  <node name="gscam" pkg="gscam" type="gscam" respawn="true" cwd="node">
+    <remap from="/gscam/image_raw" to="/overhead/image_raw" />
+  </node>
+
+  <!-- ar_recog -->
+  <node name="ar_recog_over" pkg="ar_recog" type="ar_recog" respawn="true" cwd="node">
+    <remap from="image" to="/overhead/image_raw" />
+    <remap from="/ar/image" to="/overhead/arimage"/>
+    <remap from="/tags" to="/overhead/tags"/>
+  </node>
+  
+  <!-- ar_recog robot -->
+  <node name="ar_recog_robot" pkg="ar_recog" type="ar_recog" respawn="true" cwd="node">
+    <remap from="image" to="/robot/image_raw" />
+    <remap from="/ar/image" to="/robot/arimage"/>
+    <remap from="/tags" to="/robot/tags"/>
+  </node>
+
+
+  <!-- mjpeg server -->
+  <node pkg="mjpeg_server" type="mjpeg_server" name="mjpeg_server" output="screen" respawn="true">
+    <param name="port" type="int" value="8080"/>
+  </node>
+
+  <!-- launcher -->
+  <node pkg="launcher" type="launcher.py" name="launcher" output="screen" respawn="true"/>
+
+
+</launch>
+

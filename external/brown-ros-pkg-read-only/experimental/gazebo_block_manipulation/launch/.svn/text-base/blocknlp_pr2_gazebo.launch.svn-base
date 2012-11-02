@@ -1,0 +1,23 @@
+<launch>
+<!-- start up empty world -->
+  <include file="$(find gazebo_block_manipulation)/launch/empty_world_paused.launch"/>
+
+ <!-- send pr2 urdf to param server -->
+  <include file="$(find pr2_description)/robots/upload_pr2.launch">
+    <arg name="swept_back_kinect" value="true"/>
+  </include>
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_pr2_model" pkg="gazebo" type="spawn_model" args="$(optenv ROBOT_INITIAL_POSE) -unpause -urdf -param robot_description -model pr2" respawn="false" output="screen" />
+
+  <node name="blocknlp_table_setup" pkg="gazebo_block_manipulation" type="blocknlp_table_setup.py" respawn="false" output="screen" />
+
+  <node name="kinect_image_pointcloud_assembler" pkg="gazebo_block_manipulation" type="image_pointcloud_assembler" args="subscribe_pointcloud=/kinect_rgb/points subscribe_frame_id=head_mount_kinect_rgb_optical_frame" respawn="true" output="screen" />
+
+  <!-- default bringup script -->
+  <include file="$(find pr2_gazebo)/pr2_bringup.launch" />
+
+  <!-- Load and Start Default Controllers -->
+  <include file="$(find gazebo_block_manipulation)/launch/pr2_modified_controllers.launch" />
+
+</launch>

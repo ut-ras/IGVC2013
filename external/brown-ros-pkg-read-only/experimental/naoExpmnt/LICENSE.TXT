@@ -1,0 +1,5 @@
+This project includes unmodified source and compiled binaries from the following projects:
+http://python.org/
+http://www.ros.org/wiki/
+
+Please see those projects for licensing details concerning those projects. All original code is released as indicated.

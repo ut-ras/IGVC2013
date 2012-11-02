@@ -1,0 +1,10 @@
+#goal
+int8 command
+int8 obj_num
+float32 x
+float32 y
+---
+#result definition
+bool result
+---
+#feedback

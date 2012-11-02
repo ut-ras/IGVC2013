@@ -1,0 +1,16 @@
+<launch>
+
+  <!--param name="sogp/saveFile" type="string" value="$(find sogp)/test.txt" /-->
+  <!--param name="sogp/loadFile" type="string" value="$(find sogp)/test.txt" /-->
+  
+  <!-- Turn debug output on or off -->
+  <param name="sogp/width" type="double" value=".2"/>
+  <param name="sogp/capacity" type="int" value="300"/>
+  <param name="sogp/noise" type="double" value=".1"/>
+  <param name="sogp/inputDimension" type="int" value="2"/>
+  <param name="sogp/outputDimension" type="int" value="2"/>
+  
+  
+  <node name="sogp" pkg="sogp" type="sogp_regress" />
+  <node name="sogp_test" pkg="sogp" type="sogp_test" output="screen"/>
+</launch>

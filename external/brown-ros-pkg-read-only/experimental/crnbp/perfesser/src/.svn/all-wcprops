@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1731/trunk/experimental/crnbp/perfesser/src
+END
+perfesser_guesser.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1731/trunk/experimental/crnbp/perfesser/src/perfesser_guesser.py
+END
+perfesser_tester.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1542/trunk/experimental/crnbp/perfesser/src/perfesser_tester.py
+END
+perfesser_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1731/trunk/experimental/crnbp/perfesser/src/perfesser_server.py
+END

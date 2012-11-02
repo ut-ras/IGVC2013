@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/watchdog
+END
+version-script.txt
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/watchdog/version-script.txt
+END
+README_WATCHDOG
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/watchdog/README_WATCHDOG
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/watchdog/Makefile
+END

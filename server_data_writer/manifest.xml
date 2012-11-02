@@ -1,0 +1,16 @@
+<package>
+  <description brief="server_data_writer">
+
+     server_data_writer
+
+  </description>
+  <author>Lt. Commander Data</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/server_data_writer</url>
+
+  <depend package="ocean_server_imu"/>
+
+</package>
+
+

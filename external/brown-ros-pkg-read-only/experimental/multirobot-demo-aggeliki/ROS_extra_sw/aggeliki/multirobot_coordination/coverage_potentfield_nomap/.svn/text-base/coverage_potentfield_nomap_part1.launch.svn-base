@@ -1,0 +1,16 @@
+<launch>
+<node name="gs1" pkg="gscam" type="gscam" cwd="node"/>
+
+<param name="aov" value=".67"/>
+<node name="ar1" pkg="ar_recog" type="ar_recog" args="image:=/gscam/image_raw" cwd = "node">
+</node>
+
+<node name="pt1" pkg="position_tracker" type="position_tracker.py" cwd="node"/>
+
+<node name="al1" pkg="ar_localizer" type="ar_localizer.py" cwd="node"/>
+
+<node name="ic1" pkg="irobot_create_2_1" type="driver.py"/>
+
+<node name="tk1" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/>
+
+</launch>

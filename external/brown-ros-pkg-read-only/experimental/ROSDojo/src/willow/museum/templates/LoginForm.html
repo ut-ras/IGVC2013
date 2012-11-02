@@ -1,0 +1,54 @@
+<div class="museum-login-form intro">
+	<div class="museum-login-form-intro">
+		<div>
+			<div data-dojo-type="dijit.form.Button" data-dojo-attach-event="onClick:enableCreate">I am new, sign me up!</div>
+		</div>
+		<div>
+			<div data-dojo-type="dijit.form.Button" data-dojo-attach-event="onClick:enableLogin">I have an account, log me in!</div>
+		</div>
+	</div>
+	<div class="museum-login-form-create">
+		<div class="museum-login-form-header">Create a new account</div>
+		<div class="museum-login-form-row">
+			<label class='museum-login-form-key' for='create_form_username'>Username:</label>
+			<input type="text" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-attach-point="create_form_username" data-dojo-attach-event="validate:validateCreateForm"
+			promptMessage="Enter a username for your account" invalidMessage="Enter a username for your account" id="create_form_username"></input>			
+			<div class="clear"></div>
+		</div>
+		<div class="museum-login-form-row">
+			<label class='museum-login-form-key' for='create_form_pw1'>Password:</label>
+			<input type="password" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-attach-point="create_form_pw1" data-dojo-attach-event="validate:validateCreateForm"
+			required="true" promptMessage="Enter a password" invalidMessage="Enter a password" id="create_form_pw1"></input>
+			<div class="clear"></div>
+		</div>
+		<div class="museum-login-form-row">
+			<label class='museum-login-form-key' for='create_form_pw2'>Password (again):</label>
+			<input type="password" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-attach-point="create_form_pw2" data-dojo-attach-event="validate:validateCreateForm"
+			required="true" promptMessage="Re-enter the password you entered" invalidMessage="Passwords don't match" id="create_form_pw2"></input>
+			<div class="clear"></div>
+		</div>
+		<div class="museum-login-form-row">
+			<label class='museum-login-form-key' for='create_form_email'>Parent's e-mail (optional):</label>
+			<input type="text" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-attach-point="create_form_email" data-dojo-attach-event="validate:validateCreateForm"
+			required="true" promptMessage="If you want us to tell you when our website is up and running, tell us your parent's e-mail address" invalidMessage="This is not a valid e-mail address" id="create_form_email"></input>
+			<div class="clear"></div>
+		</div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-attach-event="onClick:enableIntro">Back</div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-attach-event="onClick:onCreate" disabled="true" data-dojo-attach-point="createButton">Create</div>
+	</div>
+	<div class="museum-login-form-login">
+		<div class="museum-login-form-header">Login</div>
+		<div class="museum-login-form-row">
+			<label class='museum-login-form-key' for='login_form_username'>Username:</label>
+			<input type="text" data-dojo-type="dijit.form.TextBox" data-dojo-attach-point="login_form_username" id="login_form_username"></input>			
+			<div class="clear"></div>
+		</div>
+		<div class="museum-login-form-row">
+			<label class='museum-login-form-key' for='login_form_password'>Password:</label>
+			<input type="password" data-dojo-type="dijit.form.TextBox" data-dojo-attach-point="login_form_password" id="login_form_password"></input>
+			<div class="clear"></div>
+		</div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-attach-event="onClick:enableIntro">Back</div>
+		<div data-dojo-type="dijit.form.Button" data-dojo-attach-event="onClick:onLogin" data-dojo-attach-point="loginButton">Login</div>
+	</div>
+</div>

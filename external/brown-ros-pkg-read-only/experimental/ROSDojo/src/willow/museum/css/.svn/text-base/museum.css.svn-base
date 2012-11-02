@@ -1,0 +1,305 @@
+.pose-sequence-buttons {
+	background-color: #E9F8F8
+}
+
+.pose-sequence-zoomout {
+	background-image: url("../img/icons/zoomout.png");
+    height: 32px;
+    width: 32px;
+}
+
+.pose-sequence-zoomin {
+	background-image: url("../img/icons/zoomin.png");
+    height: 32px;
+    width: 32px;
+}
+
+.pose-sequence-duplicate {
+	background-image: url("../img/icons/duplicate.png");
+    height: 32px;
+    width: 32px;
+}
+
+.pose-sequence-buttons .dijitButtonContents {
+	outline: none;
+}
+
+.museum-app-details .textButton .dijitButtonNode {
+	padding-top: 8px !important;
+	height: 24px;
+}
+
+.pose-sequence .museum-app-details {
+	float: right;
+	display: inline-block;
+	text-align: right;
+}
+
+.pose-sequence-table {
+	padding: 5px;
+	border-spacing: 0;
+}
+
+.pose-sequence-row > td {
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: white;
+	border-top: 5px solid white;
+	border-bottom: 5px solid white;
+}
+
+.pose-sequence-row.dojoDndItemOver > td {
+	background-color: #EFEFEF;
+}
+
+.pose-sequence-table.dojoDndSourceMoved .pose-sequence-row.dojoDndItemOver > td {
+	background-color: #EAEAEA;
+}
+
+.pose-sequence-row.dojoDndItemAnchor > td,
+.pose-sequence-row.dojoDndItemSelected > td,
+.pose-sequence-table.dojoDndSourceMoved .pose-sequence-row.dojoDndItemAnchor.dojoDndItemOver > td,
+.pose-sequence-table.dojoDndSourceMoved .pose-sequence-row.dojoDndItemSelected.dojoDndItemOver > td {
+    background-color: #5BBDEA;	
+}
+
+.pose-sequence-row > td:first-child,
+.pose-sequence-row > td:only-child {
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	padding-left: 10px;
+}
+
+.pose-sequence-row > td:last-child,
+.pose-sequence-row > td:only-child {
+	border-bottom-right-radius: 15px;
+	border-top-right-radius: 15px;
+	padding-right: 10px;
+}
+
+.pose-sequence-row.dojoDndItemBefore > td {
+	border-top-color: black;
+}
+
+.pose-sequence-row.dojoDndItemAfter > td {
+	border-bottom-color: black;
+}
+
+.pose-sequence-row.dojoDndItemAnchor.dojoDndItemBefore > td,
+.pose-sequence-row.dojoDndItemAnchor.dojoDndItemAfter > td,
+.pose-sequence-row.dojoDndItemSelected.dojoDndItemBefore > td,
+.pose-sequence-row.dojoDndItemSelected.dojoDndItemAfter > td {
+	border-color: white;
+}
+
+.pose-sequence-row .posedetails {
+	font: 14px courier;
+}
+
+.pose-sequence-row .posenumber {
+    font-size: 20px;
+    font-weight: bold;
+	color: #254D70;
+}
+
+.pose-sequence-table.small td.thumbnail > img {
+	width: 30px;
+	height: 30px;
+}
+
+.pose-sequence-table.small td.posedetails {
+	white-space: nowrap;
+}
+
+.pose-sequence {
+    overflow: auto;
+    outline: none;
+}
+
+.dojoDndAvatar {
+	width: 600px;
+	overflow: hidden;
+}
+
+.dojoDndAvatar table {
+	border-spacing: 0;
+	padding:0;
+}
+
+.museum-app-details-save {
+	background-image: url("../img/icons/Save.png");
+    height: 32px;
+    width: 32px;
+}
+
+.museum-app-details-inlineedit {
+	display: inline-block;
+}
+
+.korg-slider {
+	position: relative;
+	height: 150px;
+	width: 30px;
+	display: inline-block;
+	border-radius: 12px;
+	background-color: #EAEAEA;
+}
+
+.korg-slider .korg-slider-knob {
+	background-image: url("../img/korg-slider.png");
+	background-repeat: no-repeat;
+	background-position: center;
+  top:25px;
+	width: 100%;
+	height: 50px;
+	position: absolute;
+}
+
+.korg-slider .korg-slider-line {
+	position: absolute;
+	height: 100px;
+	left: 45%;
+	top: 25px;
+	border: 1px solid #CCCCCC;
+}
+
+.korg-nanokontrol .korg-slider {
+	margin: 10px;
+}
+
+.korg-nanokontrol .leftside,
+.korg-nanokontrol .rightside {
+	display: inline-block;
+	float: left
+}
+
+.korg-nanokontrol .leftside {
+	width: 40%;
+}
+
+.korg-nanokontrol .rightside {
+	width: 60%
+}
+
+.korg-nanokontrol {
+	border-radius: 20px;
+	background-color: #CFEFFF;
+}
+
+.museum-server-online {
+	display: block;
+}
+
+.museum-server-offline {
+	display: none !important;
+}
+
+.museum-login-panel .museum-login-panel-loggedin,
+.museum-login-panel .museum-login-panel-loggedout {
+	display: none;
+}
+
+.museum-login-panel.loggedin .museum-login-panel-loggedin,
+.museum-login-panel.loggedout .museum-login-panel-loggedout {
+	display: block;
+}
+
+.museum-login-form {
+	text-align: center;
+}
+
+.museum-login-form-header {
+	padding-bottom: 5px;
+}
+
+.museum-login-form-intro,
+.museum-login-form-create,
+.museum-login-form-login {
+	display: none;
+}
+
+.museum-login-form.intro .museum-login-form-intro,
+.museum-login-form.create .museum-login-form-create,
+.museum-login-form.login .museum-login-form-login {
+	display: block;
+}
+
+.museum-login-form-row {
+	width: 400px;
+	padding-bottom: 3px;
+}
+
+.museum-login-form-key {
+	float: left;
+	display: inline-block;
+	width: 30%;
+	text-align: left
+}
+
+.museum-login-form-row .dijitTextBox {
+	float: left;
+	display: inline-block;
+	width: 70%;
+	box-sizing: border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+
+.museum-login-form .clear {
+	clear: both;
+}
+
+.posestatus.collision .posevalues {
+	color: #AA2222;
+}
+
+.posestatus .robotstatustext {
+	font-weight: bold;
+}
+
+.museum-app-selector {
+	text-align: center;
+	width: 175px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.museum-app-selector .museum-app-selector-apps {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.museum-app-selector .museum-app-selector-apps .dijitButton {
+	margin: 1px !important;
+}
+
+.museum-cancel-button .dijitButtonNode {
+	background-color: #FFBBBB !important;
+	border-color: #AA0000 !important;
+}
+
+.museum-cancel-button .dijitButtonHover .dijitButtonNode {
+	background-color: #EE9999 !important;
+	border-color: #AA0000 !important;
+}
+
+.send-to-robot-pr2 {
+	background-image: url("../img/pr2.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 80px;
+	height: 80px;
+}
+
+.museum-send-to-robot .dijitButtonText {
+	display: block;
+}
+
+.museum-send-to-robot .dijitButtonNode {
+	background-color: #F2FEE5 !important;
+	border-color: #A2AE95 !important;
+}
+
+.museum-send-to-robot .dijitButtonHover .dijitButtonNode {
+	background-color: #E2EED5 !important;
+}

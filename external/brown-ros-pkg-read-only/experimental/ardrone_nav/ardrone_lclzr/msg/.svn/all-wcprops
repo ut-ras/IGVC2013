@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_lclzr/msg
+END
+ardrone_mean_state.msg
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_lclzr/msg/ardrone_mean_state.msg
+END
+drone_transform.msg
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1567/trunk/experimental/ardrone_nav/ardrone_lclzr/msg/drone_transform.msg
+END

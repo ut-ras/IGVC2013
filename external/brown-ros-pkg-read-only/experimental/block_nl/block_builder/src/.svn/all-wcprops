@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2617/trunk/experimental/block_nl/block_builder/src
+END
+blockGrabber.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2617/trunk/experimental/block_nl/block_builder/src/blockGrabber.cpp
+END
+block_placer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/src/block_placer.cpp
+END
+Picker.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/src/Picker.py
+END
+.blockGrabber.cpp.swo
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/src/.blockGrabber.cpp.swo
+END
+run_block_placer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/src/run_block_placer.cpp
+END
+grab_block.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2545/trunk/experimental/block_nl/block_builder/src/grab_block.cpp
+END
+Placer.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/src/Placer.py
+END
+Builder.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/2438/trunk/experimental/block_nl/block_builder/src/Builder.py
+END

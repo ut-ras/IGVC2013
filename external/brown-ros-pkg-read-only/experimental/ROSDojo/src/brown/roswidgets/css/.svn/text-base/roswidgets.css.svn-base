@@ -1,0 +1,297 @@
+body {
+	font: 14px Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;
+}
+
+.border {
+	border: 1px solid #B5BCC7;
+	border-radius: 2px;
+}
+
+.clear {
+	clear: both;
+}
+
+.connectionpanel .label {    
+	background-color: #ABD6FF;
+    border-bottom: 1px solid #759DC0;
+    border-bottom-left-radius: 5px;
+    border-left: 1px solid #759DC0;
+    border-top: 1px solid #759DC0;
+    border-right: 1px solid #B5BCC7;
+    border-top-left-radius: 5px;
+    display: inline-block;
+    margin-right: -7px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 7px;
+    padding-top: 1px;
+}
+
+.dj_webkit .connectionpanel .label {
+	padding-top: 0;
+	padding-bottom: 4px;
+}
+
+.connectionpanel .buttons {
+    display: inline-block;
+}
+
+.claro .connectionpanel .dijitTextBoxDisabled, 
+.claro .connectionpanel .dijitTextBoxDisabled .dijiInputContainer {
+	border-left: 1px solid #759DC0;
+}
+
+.claro .connectionpanel .dijitTextBox .dijitInputField {
+	padding-left: 5px;
+}
+
+.connectionpanel .dijitComboBox {
+	width: 250px;
+}
+
+.connectionpanel .dijitButton .dijitButtonNode {
+  width: 130px;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.topicviewer {
+  font-size: 10pt;
+}
+
+.topicviewer.disconnected {
+	color: #777777;
+}
+
+.topicviewer.empty {
+	font-style: italic;
+	color: #777777;
+}
+
+.topicfilter .helpicon {    
+	padding: 4px 4px 1px;
+	vertical-align: middle;
+}
+
+.topicfilter > .dijitTextBox {
+	width: 95%;
+}
+
+.topicfilterhelp .key,
+.topicfilterhelp .value {
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.topicfilterhelp .topic {
+	width: 80px;
+	display: inline-block;
+	padding-left: 10px;
+}
+
+.topicfilterhelp .example {
+	padding-left: 10px;
+}
+
+.claro .topicfilter.nofilter > .dijitTextBox, 
+.claro .topicfilter.nofilter .dijitInputInner {
+	font-style: italic;
+	color: #777777 !important;
+}
+
+.topiclist .dijitFolderClosed,
+.topiclist .dijitFolderOpened,
+.videotopicslist .dijitFolderClosed,
+.videotopicslist .dijitFolderOpened {
+	background-position: -288px 50%;	
+}
+
+.topiclist .dijitLeaf {
+	background-position: -192px 50%;
+}
+
+.videotopicslist .dijitLeaf {
+	background-image: url("../img/camera.gif");
+	background-position: 0;
+}
+
+.servicelist .dijitFolderClosed,
+.servicelist .dijitFolderOpened {
+	background-position: -96px 50%;
+}
+
+.servicelist .dijitLeaf {
+	background-position: -368px 50%;	
+}
+
+.topicdetails .properties .propRow,
+.servicedetails .properties .propRow {
+	padding-bottom: 5px;
+}
+
+.topicdetails .properties .propRow.name,
+.servicedetails .properties .propRow.name {
+	padding-bottom: 2px;
+}
+
+.topicdetails .properties .propName,
+.servicedetails .properties .propName {
+	font-weight: bold;
+	float: left;
+	width: 30%;
+}
+
+.topicdetails .properties .propValue,
+.servicedetails .properties .propValue {
+	float: left;
+}
+
+.topicdetails .unknown,
+.servicedetails .unknown {
+	font-style: italic;
+	color: #777777;
+}
+
+.topicdetails .msgicon,
+.topicdetails .topicicon,
+.servicedetails .srvicon,
+.servicedetails .msgicon {
+	padding-right: 6px;
+	margin-left: -4px;
+}
+
+.topicdetails .msgicon img,
+.topicdetails .topicicon img,
+.servicedetails .srvicon img,
+.servicedetails .msgicon img {
+	display: inline-block;
+	height: 16px;
+	margin-bottom: -3px;
+}
+
+.topicdetails .prettyjson,
+.servicedetails .prettyjson {
+	margin: 0;
+	border-radius: 6px;
+	border-left: 1px solid #777777;
+	border-right: 1px solid #777777;
+	padding-right: 20px;
+}
+
+.prettyjson .string { color: green; }
+.prettyjson .number { color: darkorange; }
+.prettyjson .boolean { color: blue; }
+.prettyjson .null { color: magenta; }
+.prettyjson .key { color: red; }
+
+.messageeditor .dijitInline {
+	display: inline-block !important;
+}
+
+.message {
+	word-wrap: break-word;
+	border: 1px solid #DDDDDD;
+	border-radius: 6px;
+	font-family: courier;
+	font-size: 14px;
+}
+
+.message.loading,
+.video.loading {
+    color: #CCCCCC;
+    font-family: sans-serif;
+    font-size: 9pt;
+    font-style: italic;
+    padding-bottom: 3px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 3px;
+}
+
+.message > .row {
+	padding-bottom: 5px;
+}
+
+.message > .row > .name,
+.message > .row > .type {
+	float: left;
+	display: inline-block;
+}
+
+.message > .row > .name {
+	padding-left: 5px;
+	padding-right: 3px;
+	letter-spacing: -1px;
+}
+
+.message > .row > .name.blank {
+	visibility: hidden; 
+}
+
+.message > .row > .type {
+	padding-left: 5px;
+	margin-right: 10px;
+}
+
+.message > .row > .type.submessage {
+	padding-left: 0;
+}
+
+.message .name {
+	color: #BB1111;
+}
+
+.message > .row > .type.string {
+	color: green;
+}
+
+.message > .row > .type.int8,
+.message > .row > .type.uint8,
+.message > .row > .type.int16,
+.message > .row > .type.uint16,
+.message > .row > .type.int32,
+.message > .row > .type.uint32,
+.message > .row > .type.int64,
+.message > .row > .type.uint64 {
+	color: darkorange;
+}
+
+.message > .row > .type.float32,
+.message > .row > .type.float64 {
+	color: darkblue;
+}
+
+.message > .row > .type.special {
+    color: darkblue;
+}
+
+.message > .row > .type.complex,
+.message > .row > .none {
+    color: #555555;
+    font-family: sans-serif;
+    font-size: 9pt;
+    font-style: italic;
+}
+
+.message > .row > .none {
+	padding-left: 6px;
+	margin-right: 10px;
+}
+
+.imageviewer {
+	border-radius: 6px;
+	border: 1px solid #DDDDDD;
+	padding: 2px;
+}
+
+.imageviewer .videofeed {
+	border-radius: 3px;
+}
+
+.nodesgraph, 
+.nodesgraph .GraphBox {
+	width: 100%;
+	height: 100%;
+}

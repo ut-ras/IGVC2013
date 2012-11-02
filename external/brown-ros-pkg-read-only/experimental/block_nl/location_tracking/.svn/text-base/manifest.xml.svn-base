@@ -1,0 +1,23 @@
+<package>
+  <description brief="location_awareness">
+
+     block_builder
+
+  </description>
+  <author>BrownRobotics</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/location_tracking</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="actionlib"/>
+  <depend package="object_manipulation_msgs"/>
+  <depend package="tabletop_object_detector"/>
+  <depend package="tabletop_collision_map_processing"/>
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lros"/>
+  </export>
+
+
+</package>
+

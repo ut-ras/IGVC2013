@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/UVLC
+END
+uvlc.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/UVLC/uvlc.h
+END
+uvlc_picture_layer.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/UVLC/uvlc_picture_layer.c
+END
+uvlc_mb_layer.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/UVLC/uvlc_mb_layer.c
+END
+uvlc_codec.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/UVLC/uvlc_codec.c
+END
+uvlc.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/UVLC/uvlc.c
+END
+uvlc_codec.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/UVLC/uvlc_codec.h
+END
+uvlc_gob_layer.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/UVLC/uvlc_gob_layer.c
+END
+uvlc_layers.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/UVLC/uvlc_layers.h
+END

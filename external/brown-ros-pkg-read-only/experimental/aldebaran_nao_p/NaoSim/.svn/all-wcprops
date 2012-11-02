@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao_p/NaoSim
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao_p/NaoSim/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao_p/NaoSim/mainpage.dox
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao_p/NaoSim/README.txt
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao_p/NaoSim/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao_p/NaoSim/Makefile
+END

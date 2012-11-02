@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/985/trunk/experimental/aldebaran_nao/WiiTeleop
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/985/trunk/experimental/aldebaran_nao/WiiTeleop/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/WiiTeleop/mainpage.dox
+END
+rosdep.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/WiiTeleop/rosdep.yaml
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/WiiTeleop/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/643/trunk/experimental/aldebaran_nao/WiiTeleop/Makefile
+END

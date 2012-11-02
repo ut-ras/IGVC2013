@@ -1,0 +1,8 @@
+<launch>
+  <param name="aov" value="1.16632169603" />
+  <!--<param name="/brown/irobot_create_2_1/port" value="/dev/rfcomm0" />-->
+  <node name="gscam" pkg="gscam" type="gscam" cwd="node" />
+  <node name="ar_recog" pkg="ar_recog" type="ar_recog" args="image:=/gscam/image_raw" cwd="node" />
+  <node name="irobot_create_2_1" pkg="irobot_create_2_1" type="driver.py" />
+  <!--<node name="bag_and_tag" pkg="bag_and_tag" type="bag_and_tag.py" cwd="node" output="screen" />-->
+</launch>

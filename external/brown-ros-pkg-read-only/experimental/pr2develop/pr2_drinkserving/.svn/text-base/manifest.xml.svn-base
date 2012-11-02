@@ -1,0 +1,14 @@
+<package>
+  <description>Gazebo world and model files for drink serving task (some were copied from gazebo_simulator).</description>
+  <author>Sarah Osentoski</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url></url>
+
+  <depend package="xacro"/>
+  <depend package="convex_decomposition"/>
+  <depend package="ivcon"/>
+  <depend package="ogre_tools"/>
+  <depend package="gazebo_tools"/>
+  <depend package="gazebo_plugins"/>
+</package>

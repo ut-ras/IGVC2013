@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1079/trunk/experimental/robot_dialog/move/depricated
+END
+move-forward.launch
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1079/trunk/experimental/robot_dialog/move/depricated/move-forward.launch
+END
+move-stop.launch
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1079/trunk/experimental/robot_dialog/move/depricated/move-stop.launch
+END
+move-left.launch
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1079/trunk/experimental/robot_dialog/move/depricated/move-left.launch
+END
+move-right.launch
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1079/trunk/experimental/robot_dialog/move/depricated/move-right.launch
+END
+move-backward.launch
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1079/trunk/experimental/robot_dialog/move/depricated/move-backward.launch
+END

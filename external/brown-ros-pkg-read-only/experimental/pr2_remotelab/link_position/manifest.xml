@@ -1,0 +1,15 @@
+<package>
+  <description brief="link_position">
+
+     link_position
+
+  </description>
+  <author>Sarah Osentoski</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/link_position</url>
+  <depend package="kinematics_msgs"/>
+
+</package>
+
+

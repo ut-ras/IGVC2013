@@ -1,0 +1,30 @@
+body {
+	margin: auto;
+	width: 800px;
+	text-align: center;
+}
+
+.pagetitle {
+    border-bottom: 1px solid #444444;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.main {
+}
+
+.main .connectionpanel .dijitComboBox {
+	width: 326px;
+}
+
+.main .connectionpanel .label {
+	padding-bottom: 4px;
+}
+
+.mjpegviewer {
+	border: 1px solid #444444;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+

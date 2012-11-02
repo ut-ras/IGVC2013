@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Brown HRI LfD Experiment</title>
+</head>
+<body>
+<center>
+<img src="rlab_logo.png">
+<h2>Learning from Demonstration</h2>
+<h3>Human-Robot Interaction</h3>
+</center>
+<p>Hello!  Thank you for agreeing to participate in our experiment.
+Before you begin, here's a few words to explain what it is we're
+hoping to accomplish.</p>
+<p>You will be given control of a mobile robot, and you are trying to
+teach it how to navigate a simple maze.  It will not attempt to move
+itself during the trial, but it _is_ paying attention to how you move,
+in response to what you see, and trying to learn what to do from that
+information.</p>
+<p>When you click on the link below, you will be given control of the
+robot and some way of seeing your environment, determined at random.
+You may be getting a direct camera feed, in which case you will be
+able to see the robot's environment directly.  Otherwise, you may be
+provided with a depiction of what the _robot_ is able to see.  This
+will be much less familiar and probably more difficult for you to
+interpret.  Each leg of the maze has been marked with a
+black-and-white tag, and these markers are all that the robot is able
+to see.  You will have to navigate based on the markers alone.</p>
+<p>So what is the point?  If you are using your own eyes to make sense
+of a scene, you're seeing all kinds of things that a robot cannot.
+And if it can't see them, how can it learn from them?  On the other
+hand, you're likely to be much better at demonstrating how to get
+through the maze if you can see what you're doing, and maybe the robot
+will learn more from competent demonstrations.  We're interested in
+probing that tradeoff.</p>
+<hr/>
+<p>On the next page, you will be seeing a video feed from the robot's
+camera.  You can control its motion with your arrow keys -- forward,
+backward, left and right.  You have a map of the maze, and you will be
+able to see the tags -- 0, 1, 2 and 3.  If you get the whole camera
+feed, then you will also be able to see everything else -- the walls
+of the maze, the floor, etc.  Your job is to navigate the robot
+through the maze as quickly and adeptly as possible.  If you run into
+the walls of the maze, the screen will flash red.  When you reach the
+goal, click on the "I'm finished" link, and you will receive a score
+based on how quickly and cleanly you navigated the maze.  And
+thanks!</p>
+
+<a href="rosjs_test.html">Start the experiment!</a>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1473/trunk/experimental/fakeMsg
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1057/trunk/experimental/fakeMsg/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1057/trunk/experimental/fakeMsg/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1057/trunk/experimental/fakeMsg/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/1057/trunk/experimental/fakeMsg/Makefile
+END

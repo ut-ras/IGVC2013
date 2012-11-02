@@ -1,0 +1,18 @@
+<package>
+  <description brief="nao2pr2">
+  A node for converting the commands for the nao into pr2 commands. 
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/nao2pr2</url>
+  <depend package="trajectory_msgs"/>
+  <depend package="pr2_mechanism_msgs"/>
+  <depend package="pr2_controllers_msgs"/>
+  <depend package="NAOcontrol"/>
+  <depend package="rospy"/>
+
+</package>
+
+

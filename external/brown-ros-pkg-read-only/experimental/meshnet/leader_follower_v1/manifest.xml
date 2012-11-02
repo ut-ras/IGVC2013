@@ -1,0 +1,23 @@
+<package>
+  <description brief="leader_follower_v1">
+
+     leader_follower_v1
+
+  </description>
+  <author>human</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/leader_follower_v1</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+  <depend package="nav_msgs"/>
+  <depend package="opencv2"/>
+  <depend package="cv_bridge"/>
+  <depend package="image_transport"/>
+  <depend package="ar_recog"/>
+</package>
+
+

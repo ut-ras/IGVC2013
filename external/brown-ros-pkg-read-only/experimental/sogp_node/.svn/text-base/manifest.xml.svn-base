@@ -1,0 +1,19 @@
+<package>
+  <description brief="sogp_node">
+
+     sogp_node
+
+  </description>
+  <author>Alex Tarvo</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <export>
+    <cpp cflags="-I${prefix}/srv/cpp -I${prefix}/msg/cpp" />
+  </export>
+  <url>http://ros.org/wiki/sogp_node</url>
+
+</package>
+
+

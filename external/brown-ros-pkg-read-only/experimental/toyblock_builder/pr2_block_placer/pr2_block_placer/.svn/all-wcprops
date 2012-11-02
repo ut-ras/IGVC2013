@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2449/trunk/experimental/toyblock_builder/pr2_block_placer/pr2_block_placer
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2449/trunk/experimental/toyblock_builder/pr2_block_placer/pr2_block_placer/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2272/trunk/experimental/toyblock_builder/pr2_block_placer/pr2_block_placer/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2272/trunk/experimental/toyblock_builder/pr2_block_placer/pr2_block_placer/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/2272/trunk/experimental/toyblock_builder/pr2_block_placer/pr2_block_placer/Makefile
+END

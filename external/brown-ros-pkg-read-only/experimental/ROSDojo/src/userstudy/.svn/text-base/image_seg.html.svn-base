@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="language" content="en" />
+  <title> Web Robot Controller</title>
+  <link rel="stylesheet" type="text/css" href="css/layout-default-latest.css" />
+  <link rel="stylesheet" type="text/css" href="css/themes/base/jquery.ui.all.css" />
+  <!-- CUSTOMIZE/OVERRIDE THE DEFAULT CSS -->
+  <link rel="stylesheet" type="text/css" href="css/remote_lab.css" />
+  <link rel="stylesheet" type="text/css" href="css/rightcontext.css" />
+
+  <!-- REQUIRED scripts for processing canvas-->
+  <script src="processingjs/processing-1.0.0.min.js"> </script>
+
+  <!-- REQUIRED scripts for layout widget -->
+  <script type="text/javascript" src="js/jquery/jquery-latest.js"></script>
+  <script type="text/javascript" src="js/jquery/jquery-ui-latest.js"></script>
+  <script type="text/javascript" src="js/jquery/jquery.layout-latest.js"></script>
+  <script type="text/javascript" src="js/jquery/themeswitchertool.js"></script>
+  <script type="text/javascript" src="js/jquery/debug.js"></script>
+	<script type="text/javascript" src="js/util.js"></script>
+
+	<!-- REQUIRED scripts for ROS -->
+	<script type="text/javascript" src="js/ros/ros.js"></script>
+	<script type="text/javascript" src="js/ros/common.js"></script>
+  <script type="text/javascript" src="js/ros/remotelabwidgets/remotelabwidgets.js"></script>
+  <script type="text/javascript">
+    var rosjs_server = "arwen";
+    
+    function log(msg) {
+      jQuery('#log').append(msg.toString() + '<br/>');
+      $('#log').attr({ scrollTop: $('#log').attr('scrollHeight')});
+    }
+
+    function init()
+    {
+      var rosNode = new ros.NodeHandle("ws://" + rosjs_server + ":9090");
+    
+      rosNode.setOnClose(function(e) {
+        log("Disconncted or Can't Connect.");
+        });
+
+      rosNode.setOnError(function(e) {
+        log("Unknown error!");
+        });
+
+      rosNode.setOnOpen(function(e) {
+        log("Connected to " + rosNode.url + ".");
+        initializeWidgets(rosNode);
+        });
+    }
+
+    function initializeWidgets(rosNode)
+    {
+      widgetmanager = new ros.widgets.WidgetManager(rosNode);
+      widgetmanager.setupWidgets();
+
+      var img_seg_obj = document.getElementById("image_segmentation_widget");
+      if(img_seg_obj)
+      {
+        var processingIns = Processing.getInstanceById('CANVAS');
+        var img_widget = new ros.widgets.ImageSegWidget(rosNode,"image_segmentation_widget",processingIns);
+      }
+
+      createVideoWidget("merry","video1","/remote_lab_cam2/image_raw?invert",250,200);
+    }
+
+  function resizeCanvas() {
+    var state = outerLayout.state;
+    //var left = document.getElementById('CANVAS');
+    var processingIns = Processing.getInstanceById('CANVAS');
+    var eastOffset = state.east.isClosed?0:state.east.size;
+
+    
+    var width = state.container.innerWidth - eastOffset - 50;
+    var height = state.container.innerHeight - state.south.size - state.north.size - 65;
+    processingIns.size(width,height);
+  }
+
+  jQuery(document).ready( function() {
+    jQuery("#right_nav").tabs();
+
+    // create the outer layout
+    outerLayout = jQuery('body').layout({
+        east__size: 300
+      , south__size:  100
+      , west__onresize: function() { jQuery("#accordion_west").accordion("resize");}
+      , east__onresize: function() { jQuery("#accordion_east").accordion("resize");}
+    , center__onresize_end: function () { resizeCanvas(); }
+      });
+
+    //addThemeSwitcher('.ui-layout-north',{ top:'12px',right:'20px'});
+
+    log("ok setup");
+
+    jQuery("a").each(function() {
+      var path = document.location.href;
+      if (path.substr(path.length-1)=="#") path = path.substr(0,path.length-1);
+      if (this.href.substr(this.href.length-1) == "#") this.href = path +"#";
+    });
+
+    resizeCanvas();
+  });
+
+  </script>
+</head>
+<body onload="init()">
+<style>
+  #feedback { font-size: 1.2em; }
+<!--  #selectable .ui-selecting { background: #feca40;  }-->
+    #selectable .ui-selecting { background: #f39814; color: white;  }
+  #selectable .ui-selected { background: #f39814; color: white; }
+  #selectable { list-style-type: none; margin: 3px; padding: 0; width: 60%; }
+  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.2em; height: 18px; }
+</style>
+
+<!-- Header -->
+<div class="ui-layout-north ui-widget-content" style="display:none;">
+  <div id="navigation" class="ui-tabs uiwidget ui-widget-content ui-corner-all">
+    <ul id="right_nav" class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+      <li>
+        <img src="img/remote_lab_header_small.jpg" height="50"/> 
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="ui-layout-center" style="display: none;">
+  <div class="ui-widget-header">
+    Visualization
+  </div>
+ <p class="ui-layout-content ui-widget-content">
+    <canvas id="CANVAS" data-processing-sources="image_seg.pde" width="800" height="490" style="border: 2px solid black"></canvas>
+  </p>
+</div>
+<!-- Right body -->
+<div class="ui-layout-east" style="display:none;">
+  <div class="ui-widget-header">
+    Image Segmentation
+  </div>
+  <div class="ui-layout-content ui-widget-content">
+    <center>
+    <div id="video1"></div>
+    <div id="image_segmentation_widget"></div>
+    </center>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="ui-layout-south" style="font-size:1.0em;">
+  <div id="log" class="inner-west" style="font-size: 1.0em;"></br/></div>
+</div>
+</body>
+</html>

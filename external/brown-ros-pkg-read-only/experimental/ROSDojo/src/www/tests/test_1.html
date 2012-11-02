@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Web Genie</title>
+<!-- load Dojo and the default dojo theme, claro -->
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="../../dojo17/dijit/themes/claro/claro.css" />
+<script src="../../dojo17/dojo/dojo.js"></script>
+<script>
+   	function resize() {
+   		// Get the size of the window
+   		var window_height = dojo.window.getBox().h;
+   		console.log("window height is ", window_height);
+		
+		// Get the height of the headers
+		var headers_height = dojo.marginBox(dojo.byId("headers")).h;
+		console.log("headers height is ", headers_height);
+   		
+   		// Set the height of the list and visualization to be the remaining space
+   		var calculated_height = window_height - headers_height;
+   	}
+
+	/**
+	* The initialize method sets the URL paths to the modules we're using, so that
+	* dojo knows where to load files from correctly.  It also loads the widgets
+	* that are displayed on the page initially.
+	*/
+   	function initialize() {   		
+   		// Register the paths for where each of the modules are.  Paths are
+   		// relative to where dojo.js is loaded from.
+      dojo.registerModulePath("rosdojo", "../../brown/rosdojo");
+      dojo.registerModulePath("roswidgets", "../../brown/roswidgets");
+      dojo.registerModulePath("bosch", "../../bosch");
+      dojo.registerModulePath("museum", "../../willow/museum");
+        
+		  // Now specify the main widgets in the page
+      dojo.require("roswidgets.ConnectionPanel");
+      dojo.require("bosch.Visualization");
+
+      // Parse the page.  This creates widgets in place of the <div> tags below
+      dojo.parser.parse();
+
+      // Call the resize method to do a little bit of fancy layout. Most widgets
+      // are capable of making themselves the right size, but we may need to lend help
+      resize();
+        
+      // Make it so that whenever the window is resized, so are our widgets
+      dojo.connect(window, "resize", resize);
+    }
+
+    dojo.ready(initialize);
+  </script>
+</head>
+<body class="claro webtools" style="font: 14px Myriad,Helvetica,Tahoma,Arial,clean,sans-serif;">
+	<div id="headers">
+      <img src="imgs/pr2_remote_lab.png" height="30" />
+      <img src="imgs/newbrownlogo.png" height="30" />
+      <img src="imgs/Bosch_logo_invented_for_life__400x50.png" height="30" />
+		  <div dojoType="roswidgets.ConnectionPanel"></div>
+	</div>
+  <div id="middle">
+    <div id="middle-left">
+      <div data-dojo-type="roswidgets.MJPEGViewer" data-dojo-props="topic:'/camera/rgb/image_rect'"></div> 
+      <div data-dojo-type="roswidgets.MJPEGViewer" data-dojo-props="topic:'/wide/image_rect'"></div> 
+    </div>
+    <div id="middle-right">
+	    <div dojoType="bosch.Visualization" id="visualization-widget"></div>
+    </div>
+  </div>
+</body>
+</html>
+

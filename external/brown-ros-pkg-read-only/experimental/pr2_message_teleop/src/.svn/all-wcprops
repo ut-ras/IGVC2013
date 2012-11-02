@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1515/trunk/experimental/pr2_message_teleop/src
+END
+pr2_message_teleop.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1515/trunk/experimental/pr2_message_teleop/src/pr2_message_teleop.cpp
+END
+pr2_message_teleop_commander.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1515/trunk/experimental/pr2_message_teleop/src/pr2_message_teleop_commander.cpp
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1731/trunk/experimental/crnbp/ar_filter
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1731/trunk/experimental/crnbp/ar_filter/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1731/trunk/experimental/crnbp/ar_filter/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1548/trunk/experimental/crnbp/ar_filter/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1380/trunk/experimental/crnbp/ar_filter/Makefile
+END

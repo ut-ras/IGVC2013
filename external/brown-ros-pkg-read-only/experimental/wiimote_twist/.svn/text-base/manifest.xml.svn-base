@@ -1,0 +1,15 @@
+<package>
+  <description brief="wiimote_twist">
+ wiimote_twist is a wiimote-to-twist teleoperator
+  </description>
+  <author>Brian Thomas</author>
+  <email>brian@cs.brown.edu</email>
+  <license>Creative Commons Attribution</license>
+  <review status="unreviewed" notes=""/>
+
+  <depend package="rospy"/>
+  <depend package="wiimote"/>
+  <depend package="joy"/>
+  <depend package="geometry_msgs"/>
+
+</package>

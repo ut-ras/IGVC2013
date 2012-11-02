@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/1395/trunk/experimental/crnbp/step_nav/srv
+END
+Force.srv
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1380/trunk/experimental/crnbp/step_nav/srv/Force.srv
+END
+Goal.srv
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1380/trunk/experimental/crnbp/step_nav/srv/Goal.srv
+END
+Perturb.srv
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1395/trunk/experimental/crnbp/step_nav/srv/Perturb.srv
+END

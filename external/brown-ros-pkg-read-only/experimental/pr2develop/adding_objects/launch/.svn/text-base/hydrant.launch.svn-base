@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="garden_border"      textfile="$(find gazebo_worlds)/objects/garden_border_001.model" />
+
+  <!-- push urdf to factory and spawn robot in gazebo -->
+  <node name="spawn_garden_border" pkg="gazebo_tools" type="gazebo_model" args="-p garden_border -x 1 -y -0.22 -z .57 spawn garden_border" respawn="false" output="screen" />
+
+</launch>

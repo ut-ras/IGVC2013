@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3036/trunk/experimental/ardrone_brown
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1458/trunk/experimental/ardrone_brown/manifest.xml
+END
+ParrotLicense.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/978/trunk/experimental/ardrone_brown/ParrotLicense.txt
+END
+build_sdk.sh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/970/trunk/experimental/ardrone_brown/build_sdk.sh
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/970/trunk/experimental/ardrone_brown/mainpage.dox
+END
+rosdep.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1862/trunk/experimental/ardrone_brown/rosdep.yaml
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/3036/trunk/experimental/ardrone_brown/CMakeLists.txt
+END
+ParrotCopyrightAndDisclaimer.txt
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/978/trunk/experimental/ardrone_brown/ParrotCopyrightAndDisclaimer.txt
+END

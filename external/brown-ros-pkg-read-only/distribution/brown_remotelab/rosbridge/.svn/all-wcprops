@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/3000/trunk/distribution/brown_remotelab/rosbridge
+END
+rosnode.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/2453/trunk/distribution/brown_remotelab/rosbridge/rosnode.js
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2453/trunk/distribution/brown_remotelab/rosbridge/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2453/trunk/distribution/brown_remotelab/rosbridge/mainpage.dox
+END
+ros2ros.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/2453/trunk/distribution/brown_remotelab/rosbridge/ros2ros.yaml
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/2453/trunk/distribution/brown_remotelab/rosbridge/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/2453/trunk/distribution/brown_remotelab/rosbridge/Makefile
+END
+ros.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3000/trunk/distribution/brown_remotelab/rosbridge/ros.js
+END

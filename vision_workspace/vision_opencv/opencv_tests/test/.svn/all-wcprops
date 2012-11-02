@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ros-pkg/!svn/ver/40193/stacks/vision_opencv/trunk/opencv_tests/test
+END
+utest.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ros-pkg/!svn/ver/40187/stacks/vision_opencv/trunk/opencv_tests/test/utest.cpp
+END
+utest2.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ros-pkg/!svn/ver/40193/stacks/vision_opencv/trunk/opencv_tests/test/utest2.cpp
+END
+enumerants.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ros-pkg/!svn/ver/26832/stacks/vision_opencv/trunk/opencv_tests/test/enumerants.py
+END

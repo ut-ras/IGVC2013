@@ -1,0 +1,96 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<title>Remote Lab Mockup</title> 
+
+<link href="inettuts.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery-ui-personalized-1.6rc2.min.js"></script>
+<script type="text/javascript" src="inettuts.js"></script>
+<script type="text/javascript" src="http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/rosjs/ros.min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/yahoo/yahoo-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/json/json-min.js"></script>
+
+<script src="resources/spidergl.js"> </script> 
+<script src="ros/ros.js"> </script> 
+
+<script> 
+//configuration
+var destURL = 'http://maria/~sosentos/wviz/remotelab_viewer_demo.html';
+var server = 'http://security.brown-robotics.org/index.pl';
+var googIDURL = 'https://www.google.com/accounts/o8/ud';
+var googArgs = 'openid.mode=checkid_setup&openid.ns=http%3A//specs.openid.net/auth/2.0&openid.claimed_id=http%3A//specs.openid.net/auth/2.0/identifier_select&openid.identity=http%3A//specs.openid.net/auth/2.0/identifier_select&openid.ns.ax=http%3A//openid.net/srv/ax/1.0&openid.ax.mode=fetch_request&openid.ax.required=email&openid.ax.type.email=http%3A//axschema.org/contact/email'
+
+function nop() {};
+var jsonpCallback = nop;
+function jsonp(url, callback) {
+	jsonpCallback = callback;
+	$('#sandbox').html('<script type="text/javascript" src="' + url + '&jsonp=jsonpCallback"><\/script>');
+};
+
+$(function() {
+	jsonp(server + '?',function(rsp) {
+		var challenge = rsp.challenge;
+		$('#logon').click(function() {
+			document.location = googIDURL + '?' + googArgs + '&openid.return_to=' + escape(destURL + '?challenge=' + challenge);
+			return false;
+		});
+		return false;
+	});
+});
+</script> 
+<!--<style type="text/css"> 
+    canvas {
+        border: 2px solid black;
+    }
+</style>--> 
+</head> 
+
+<body onload="start()"> 
+
+<div id="head">
+  <h1>Remote Lab</h1>
+</div>
+
+<div id="columns">
+  
+  <ul id="column1" class="column">
+	  
+  </ul>
+  
+    <ul id="column2" class="column">
+    <li class="widget color-blue">  
+    <div class="widget-head">
+    <h3> Authorization</h3>
+    </div>
+    <div class="widget-content">
+    <center>
+      <button id="logon" type="button", id="authorize"> Log On </button>
+    </center>
+    </div>
+    </li>
+        
+    </ul>
+    
+    <ul id="column3" class="column">
+    
+    
+</ul>
+    
+    </div>
+    
+
+
+
+
+
+<div id="framerate"></div> 
+<!--<div style="font-family: fixed-width; font-size: small;" id="log"></div>-->
+
+<script type="text/javascript" src="jquery-ui-personalized-1.6rc2.min.js"></script>
+<script type="text/javascript" src="inettuts.js"></script>
+<div id="sandbox" style="display: none;"></div>
+</body> 
+ 
+</html> 

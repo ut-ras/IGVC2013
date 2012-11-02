@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/985/trunk/experimental/bashcommand
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/985/trunk/experimental/bashcommand/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/903/trunk/experimental/bashcommand/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/903/trunk/experimental/bashcommand/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/903/trunk/experimental/bashcommand/Makefile
+END

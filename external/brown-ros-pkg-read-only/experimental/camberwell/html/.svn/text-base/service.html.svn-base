@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ROSBridge Test</title>
+    <script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/rosbridge/ros.js"></script>
+    <script type="text/javascript">
+$(function() {
+  console.log("Creating payload...");
+  var payload= new Array();
+  for (var i = 0; i < 30720; i++) {
+    payload.push(String.fromCharCode(Math.round(Math.random()*25+65))); 
+  }
+  payload = payload.join('');
+  //console.log(payload);
+  var connection = new ros.Connection("ws://localhost:9090");
+  connection.setOnClose(function (e) {
+    console.log('connection closed.');
+  });
+  connection.setOnError(function (e) {
+    console.log('error!');
+  });
+  connection.setOnOpen(function (e) {
+    console.log('connected to ROS');
+    function call(rsp) {
+      console.log(rsp);
+      connection.callService('/add_two_ints','[2,2]',call);
+    }
+    call(4);
+  });
+});
+    </script>
+  </head>
+<body>
+</body>
+</html>

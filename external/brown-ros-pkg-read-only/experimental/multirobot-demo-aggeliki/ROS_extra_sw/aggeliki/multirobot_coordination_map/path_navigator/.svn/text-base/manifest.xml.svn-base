@@ -1,0 +1,20 @@
+<package>
+  <description brief="path_navigator">
+
+     path_navigator
+
+  </description>
+  <author>human</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/path_navigator</url>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="map_loader"/>
+
+  <export>
+    <cpp cflags="-I${prefix}/msg/cpp -I${prefix}/srv/cpp"/>
+  </export>
+</package>
+
+

@@ -1,0 +1,39 @@
+<launch>
+<!-- Launch file for each individual machine referenced in cover.launch -->
+  <arg name="machine_name"/>
+
+  <machine name="$(arg machine_name)" 
+	   address="$(arg machine_name)" user="obot"/>
+
+  <node machine="$(arg machine_name)" name="irobot_create_2_1a" 
+	pkg="irobot_create_2_1a" type="driver.py" />
+
+  <!-- *****************************  Start AR-relevant processes. -->
+  <env name="GSCAM_CONFIG"
+       value="v4l2src device=/dev/video1 ! video/x-raw-rgb ! ffmpegcolorspace ! identity name=ros"/>
+  <node machine="$(arg machine_name)" name="gscam"  
+	pkg="gscam" type="gscam" cwd="node"/>
+  <node machine="$(arg machine_name)" name="ar_recog" 
+	pkg="ar_recog" type="ar_recog" 
+	args="image:=gscam/image_raw" cwd="node" />
+
+  <!-- *****************************  Start guesser filters. -->
+  <node machine="$(arg machine_name)" name="ar_filter" 
+	pkg="ar_filter" type="ar_filter.py"/> 
+
+  <node machine="$(arg machine_name)" name="odom_filter" 
+	pkg="odom_filter" type="odom_filter.py"/> 
+
+  <!-- *****************************  Start perfesser processes. -->
+  <node machine="$(arg machine_name)" name="perfesser" 
+	pkg="perfesser" type="perfesser.py"/> 
+
+  <!-- ***************************** Start nav processes. -->
+  <node machine="$(arg machine_name)" name="gnav" 
+	pkg="gnav" type="gnav.py"/> 
+
+  <!-- *****************************  Start cover process. -->
+  <node machine="$(arg machine_name)" name="cover" 
+	pkg="cover" type="cover.py" />
+
+</launch>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/camera
+END
+camera.js
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/camera/camera.js
+END
+perspectivecamera.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/camera/perspectivecamera.js
+END
+calibratedcamera.js
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/2950/trunk/experimental/ROSDojo/src/bosch/ros/old_visualization/camera/calibratedcamera.js
+END

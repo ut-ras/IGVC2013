@@ -1,0 +1,46 @@
+<launch>
+  <!-- set stereo to true for narrow stereo, false for kinect -->
+  <arg name="stereo" default="true" />
+  <!-- <arg name="use_slip_controllers" default="false"/> -->
+  <arg name="use_right_arm" default="true"/>
+  <arg name="use_left_arm" default="true"/>
+  <!-- <arg name="use_task_cartesian" default="false"/> -->
+  <!-- <arg name="log_to_warehouse" default="false"/> -->
+  <arg name="flatten_table" default="false"/>
+
+
+
+  <!-- load perception -->
+  <!-- this launch file was moved inside this package in order to change laser settings -->
+  <include file="$(find pr2_object_manipulation_launch)/launch/laser+stereo-perception.launch">
+    <arg name="stereo" value="$(arg stereo)"/>
+    <arg name="use_right_arm" value="$(arg use_right_arm)"/>
+    <arg name="use_left_arm" value="$(arg use_left_arm)"/>
+  </include>
+
+
+
+  <!-- load move_arm -->
+  <include file="$(find pr2_arm_navigation_actions)/launch/move_right_arm.launch"/>
+
+  <!-- load planning_environment -->
+  <include file="$(find planning_environment)/launch/environment_server.launch"/>
+
+  <!-- load planning -->
+  <include file="$(find pr2_arm_navigation_planning)/launch/ompl_planning.launch"/>
+
+  <!-- load filters -->
+  <include file="$(find pr2_arm_navigation_filtering)/launch/trajectory_filter.launch"/>
+
+  <!-- load ik -->
+  <include file="$(find pr2_arm_navigation_kinematics)/launch/right_arm_collision_free_ik.launch"/>
+
+
+  <!-- tabletop segmentation and object recognition -->
+  <include file="$(find tabletop_object_detector)/launch/tabletop_complete.launch">
+      <arg unless="$(arg stereo)" name="tabletop_segmentation_points_input" value="camera/depth/points"/>
+      <arg if="$(arg stereo)" name="tabletop_segmentation_points_input" value="narrow_stereo_textured/points2"/>
+      <arg name="flatten_table" value="$(arg flatten_table)"/>
+  </include>
+
+</launch>

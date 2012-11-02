@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/walls
+END
+lab_walls.stl
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/walls/lab_walls.stl
+END
+lab_walls_color.png
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/walls/lab_walls_color.png
+END
+lab_walls_scaled.dae
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/walls/lab_walls_scaled.dae
+END
+lab_walls.dae
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/2867/trunk/experimental/ROSDojo/src/bosch/resources/remote_lab_description/meshes/walls/lab_walls.dae
+END

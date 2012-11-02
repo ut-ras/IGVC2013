@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2768/trunk/experimental/sushi_smach
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2767/trunk/experimental/sushi_smach/Makefile
+END

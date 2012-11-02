@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/msg
+END
+ArmVelocities.msg
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/522/trunk/experimental/pr2develop/pr2_joy_control/PR2JointController/msg/ArmVelocities.msg
+END

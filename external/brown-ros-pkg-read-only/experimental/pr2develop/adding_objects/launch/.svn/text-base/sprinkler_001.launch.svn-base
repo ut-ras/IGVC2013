@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- send urdf to param server -->
+  <param name="sprinkler"      textfile="$(find gazebo_worlds)/objects/sprinkler_001.model" />
+
+  <!-- push urdf to factory and spawn robot in gazebo -->
+  <node name="spawn_sprinkler" pkg="gazebo_tools" type="gazebo_model" args="-p sprinkler -x 1 -y -0.22 -z .57 spawn sprinkler" respawn="false" output="screen" />
+
+</launch>

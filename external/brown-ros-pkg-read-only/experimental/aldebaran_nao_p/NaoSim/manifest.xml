@@ -1,0 +1,15 @@
+<package>
+  <description brief="NaoSim">
+
+     NaoSim is a package for simulating the nao in ros using aldebaran's naoqi and choreagraphe software. Check out the README for details.
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/NaoSim</url>
+  <depend package="NAOcontrol"/>
+
+</package>
+
+

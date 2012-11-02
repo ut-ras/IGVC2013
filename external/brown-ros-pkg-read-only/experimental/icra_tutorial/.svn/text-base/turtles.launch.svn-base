@@ -1,0 +1,8 @@
+<launch>
+  <rosparam>/brown/rosbridge/hz: 200</rosparam>
+  <node pkg="rosbridge" type="rosbridge.py" name="rosbridge" respawn="true" output="screen"/>
+  <node pkg="launcher" type="launcher.py" name="launcher" respawn="true" cwd="node" output="screen"/>
+
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" respawn="true" cwd="node" output="screen"/>
+
+</launch>

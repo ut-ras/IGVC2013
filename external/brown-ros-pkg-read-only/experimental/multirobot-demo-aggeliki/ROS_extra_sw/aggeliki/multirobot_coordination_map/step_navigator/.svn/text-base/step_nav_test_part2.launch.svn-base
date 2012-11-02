@@ -1,0 +1,12 @@
+<launch>
+
+<node name="ml1" pkg="map_loader" type="map_loader"/>
+
+<node name="bl1" pkg="bumper_localizer" type="bumper_localizer"/>
+
+<param name="step_navigator/goal_pos_x" value="15"/>
+<param name="step_navigator/goal_pos_y" value="13"/>
+<param name="step_navigator/ok_to_drive" value="1"/>
+<node name="sn1" pkg="step_navigator" type="step_navigator"/>
+
+</launch>

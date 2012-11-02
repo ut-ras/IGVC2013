@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/contrib/netsimpcap
+END
+licence
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/contrib/netsimpcap/licence
+END
+sampleconf.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/contrib/netsimpcap/sampleconf.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/contrib/netsimpcap/Makefile
+END

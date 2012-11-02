@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P263
+END
+p263_layers.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P263/p263_layers.h
+END
+p263_huffman.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P263/p263_huffman.c
+END
+p263_picture_layer.c
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P263/p263_picture_layer.c
+END
+p263_huffman.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P263/p263_huffman.h
+END
+p263_mb_layer.c
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P263/p263_mb_layer.c
+END
+p263_codec.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P263/p263_codec.c
+END
+p263_codec.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P263/p263_codec.h
+END
+p263_gob_layer.c
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VLIB/P263/p263_gob_layer.c
+END

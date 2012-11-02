@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="GraphBox.css">
+    <script src="GraphBox.js"></script>
+  </head>
+  <body>
+    <script>
+
+var graph = new GraphBox.Graph();
+
+// Create node 1
+var node1 = new GraphBox.Node('camera');
+node1.outputs = [
+  new GraphBox.Connection('image')
+];
+node1.moveTo(50, 250);
+graph.addNode(node1);
+
+// Create node 2
+var node2 = new GraphBox.Node('path_planner');
+node2.readOnlyFlag = false;
+node2.inputs = [
+  new GraphBox.Connection('image'),
+  new GraphBox.Connection('location')
+];
+node2.outputs = [
+  new GraphBox.Connection('speed'),
+  new GraphBox.Connection('rotation')
+];
+node2.moveTo(350, 400);
+graph.addNode(node2);
+
+// Create node 3
+var node3 = new GraphBox.Node('image_view');
+node3.inputs = [
+  new GraphBox.Connection('image')
+];
+node3.moveTo(300, 100);
+graph.addNode(node3);
+
+// Create node 4
+var node4 = new GraphBox.Node('untitled_node');
+node4.detailText = 'Loading...';
+node4.moveTo(400, 200);
+graph.addNode(node4);
+
+// Link nodes
+node1.output('image').connect(node2.input('image'));
+node1.output('image').connect(node3.input('image'));
+
+// Update read-only status
+node2.input('location').readOnlyFlag = true;
+node2.output('rotation').readOnlyFlag = true;
+node2.updateHTML();
+
+document.body.appendChild(graph.element);
+graph.updateBounds();
+
+    </script>
+  </body>
+</html>

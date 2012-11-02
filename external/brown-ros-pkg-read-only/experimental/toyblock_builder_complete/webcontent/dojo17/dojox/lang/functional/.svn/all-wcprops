@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional
+END
+curry.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/curry.js
+END
+fold.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/fold.js.uncompressed.js
+END
+scan.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/scan.js.uncompressed.js
+END
+sequence.js
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/sequence.js
+END
+numrec.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/numrec.js.uncompressed.js
+END
+linrec.js
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/linrec.js
+END
+util.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/util.js
+END
+reversed.js
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/reversed.js
+END
+zip.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/zip.js.uncompressed.js
+END
+fold.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/fold.js
+END
+scan.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/scan.js
+END
+object.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/object.js.uncompressed.js
+END
+numrec.js
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/numrec.js
+END
+array.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/array.js.uncompressed.js
+END
+lambda.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/lambda.js.uncompressed.js
+END
+zip.js
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/zip.js
+END
+tailrec.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/tailrec.js.uncompressed.js
+END
+multirec.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/multirec.js.uncompressed.js
+END
+object.js
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/object.js
+END
+listcomp.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/listcomp.js.uncompressed.js
+END
+array.js
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/array.js
+END
+lambda.js
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/lambda.js
+END
+binrec.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/binrec.js.uncompressed.js
+END
+tailrec.js
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/tailrec.js
+END
+multirec.js
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/multirec.js
+END
+curry.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/curry.js.uncompressed.js
+END
+sequence.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/sequence.js.uncompressed.js
+END
+listcomp.js
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/listcomp.js
+END
+linrec.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/linrec.js.uncompressed.js
+END
+util.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/util.js.uncompressed.js
+END
+reversed.js.uncompressed.js
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/reversed.js.uncompressed.js
+END
+binrec.js
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/2222/trunk/experimental/toyblock_builder_complete/webcontent/dojo17/dojox/lang/functional/binrec.js
+END

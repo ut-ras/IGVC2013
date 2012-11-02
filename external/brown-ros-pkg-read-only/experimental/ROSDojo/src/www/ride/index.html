@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RIDE - an IDE for ROS</title>
+    <link rel="stylesheet" href="GraphBox.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="ROS.js"></script>
+    <script src="GraphBox.js"></script>
+    <script src="GraphLayout.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <style>
+      body { overflow: hidden; cursor: default; }
+      .modal { display: none; top: 20px; margin-top: 0; width: 530px; }
+      #launch_settings textarea, #launch_settings input { width: 490px; }
+      #launch_files { display: none; }
+      #launch_files .nav-header { color: black; text-transform: none; white-space: nowrap; font-size: 13px; margin: 0; }
+      #launch_files .divider:first-child { display: none; }
+      .terminal { background: black; color: white; border: none; overflow-y: auto; max-height: 200px; }
+      .navbar .container { width: 100%; }
+      .navbar .brand { margin-left: -10px; }
+      .GraphBox .title { padding-right: 28px; }
+      .GraphBox .dropdown { position: absolute; right: 5px; top: 5px; font-size: 13px; }
+      .GraphBox .dropdown > a { display: block; width: 18px; height: 18px; }
+      .GraphBox .dropdown .caret { border-top-color: white; margin: 7px 0 0 5px; }
+      #minimap { position: absolute; right: 0; bottom: 0; z-index: 1; display: none; -webkit-box-shadow: 0 0 10px black; -moz-box-shadow: 0 0 10px black; box-shadow: 0 0 10px black; }
+    </style>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top" id="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand">RIDE</a>
+          <form class="navbar-search pull-left" onsubmit="return false">
+            <input id="insert_node" type="text" class="search-query" placeholder="Insert node" autocomplete="off">
+          </form>
+          <ul class="nav pull-left">
+            <li><a href="javascript:ui.layoutGraph()">Auto Layout</a></li>
+            <li class="dropdown" id="launch_files">
+              <a href="javascript:void 0" class="dropdown-toggle" data-toggle="dropdown" id="launch_files_count"></a>
+              <ul class="dropdown-menu" id="launch_files_menu"></ul>
+            </li>
+          </ul>
+          <ul class="nav pull-right">
+            <li><a id="connection_status" href="javascript:ui.changeConnectionURL()">Disconnected</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="terminal_output" class="modal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3>Terminal Output</h3>
+      </div>
+      <div class="modal-body">
+        <p>This is both stdout and stderr:</p>
+        <pre id="terminal_output_data" class="terminal"></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary" data-dismiss="modal">Close</a>
+      </div>
+    </div>
+
+    <div id="launch_settings" class="modal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3>Launch Settings</h3>
+      </div>
+      <div class="modal-body">
+        <p>These settings will take effect when the node is next started.</p>
+        <form onsubmit="javascript:ui.setLaunchSettings(true);return false">
+          <input id="launch_settings_node_name" type="hidden">
+          <p><b>Command-line arguments</b></p>
+          <input id="launch_settings_cmd_line_args" placeholder='--flag --key="value with spaces"' type="text">
+          <!-- HACK: Placeholders can't have newlines, but browsers will wrap text after a lot of spaces -->
+          <p><b>ROS params</b> (key = value, one per line, JSON syntax)</p>
+          <textarea id="launch_settings_rosparams" placeholder="param1 = 0                                                                                                                                /namespace/param2 = { a: 1, b: 2 }"></textarea>
+          <p><b>Environment variables</b> (key = value, one per line)</p>
+          <textarea id="launch_settings_env_vars" placeholder="VAR1 = 0                                                                                                                                VAR2 = text with spaces"></textarea>
+          <p><b>Initial working directory:</b></p>
+          <input id="launch_settings_starting_cwd" type="text">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a class="btn" data-dismiss="modal">Cancel</a>
+        <a href="javascript:ui.setLaunchSettings(false)" class="btn">Change</a>
+        <a href="javascript:ui.setLaunchSettings(true)" class="btn btn-primary">Change and Relaunch</a>
+      </div>
+    </div>
+
+    <div id="change_connection_url" class="modal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3>Change Connection URL</h3>
+      </div>
+      <div class="modal-body">
+        <p>
+          This app needs to contact two ROS nodes, <b>rosbridge</b> and <b>ride</b>.
+          If they are not already running, please type <code>roslaunch ride.launch</code> in a new terminal.
+        </p>
+        <p>&nbsp;</p>
+        <form class="form-horizontal" onsubmit="javascript:ui.setConnectionURL();return false">
+          <div class="control-group">
+            <label class="control-label" for="new_connection_url">Connection URL</label>
+            <div class="controls"><input type="text" class="input-xlarge" id="new_connection_url" placeholder="ws://localhost:9000"></div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a class="btn" data-dismiss="modal">Cancel</a>
+        <a href="javascript:ui.setConnectionURL()" class="btn btn-primary">Change</a>
+      </div>
+    </div>
+
+    <canvas id="minimap"></canvas>
+
+    <div id="sidebar" class="sidebar"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

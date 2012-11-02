@@ -1,0 +1,10 @@
+K 14
+svn:executable
+V 1
+*
+K 13
+svn:mergeinfo
+V 192
+/stacks/image_pipeline/branches/image_pipeline-1.4/stereo_image_proc/cfg/Disparity.cfg:36721-36722
+/stacks/image_pipeline/branches/rep0104/stereo_image_proc/cfg/StereoImageProc.cfg:33672-33767
+END

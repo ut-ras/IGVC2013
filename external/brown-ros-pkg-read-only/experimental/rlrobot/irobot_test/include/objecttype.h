@@ -1,0 +1,3 @@
+#define OBJ_TYPE_SMURV 0
+#define OBJ_TYPE_BALL 1
+#define OBJ_TYPE_OBSTACLE 2

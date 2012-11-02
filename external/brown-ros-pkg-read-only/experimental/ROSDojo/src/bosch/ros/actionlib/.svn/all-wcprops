@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib
+END
+actionlib.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/actionlib.js
+END
+goalstatusarray.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/goalstatusarray.js
+END
+simpleactionclient.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/simpleactionclient.js
+END
+goalstatus.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/goalstatus.js
+END
+actionspec.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/actionspec.js
+END
+actionclient.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/actionclient.js
+END
+clientgoalhandle.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/clientgoalhandle.js
+END
+goalmanager.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/goalmanager.js
+END
+goalid.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/goalid.js
+END
+actiongoal.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/actiongoal.js
+END
+commstatemachine.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/2893/trunk/experimental/ROSDojo/src/bosch/ros/actionlib/commstatemachine.js
+END

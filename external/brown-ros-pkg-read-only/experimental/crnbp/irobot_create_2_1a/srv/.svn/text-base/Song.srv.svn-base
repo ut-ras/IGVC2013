@@ -1,0 +1,4 @@
+int16 songNumber
+int16[] song
+---
+bool success

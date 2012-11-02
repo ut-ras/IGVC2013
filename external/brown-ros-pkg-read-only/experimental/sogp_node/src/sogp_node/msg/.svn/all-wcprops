@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/643/trunk/experimental/sogp_node/src/sogp_node/msg
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/643/trunk/experimental/sogp_node/src/sogp_node/msg/__init__.py
+END
+_TrainDatapoint.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/643/trunk/experimental/sogp_node/src/sogp_node/msg/_TrainDatapoint.py
+END
+_TrainMatrix.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/643/trunk/experimental/sogp_node/src/sogp_node/msg/_TrainMatrix.py
+END

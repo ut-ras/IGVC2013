@@ -1,0 +1,18 @@
+<package>
+  <description brief="simple_biconnectivity_controller">
+
+     simple_biconnectivity_controller
+
+  </description>
+  <author>human</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/simple_biconnectivity_controller</url>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="wifi_comm"/>
+  <depend package="position_tracker"/>
+
+</package>
+
+

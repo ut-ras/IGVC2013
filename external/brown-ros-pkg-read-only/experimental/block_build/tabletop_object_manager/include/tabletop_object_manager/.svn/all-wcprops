@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/2593/trunk/experimental/block_build/tabletop_object_manager/include/tabletop_object_manager
+END
+TabletopObjectManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/2593/trunk/experimental/block_build/tabletop_object_manager/include/tabletop_object_manager/TabletopObjectManager.h
+END
+TabletopSegmentor.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/2540/trunk/experimental/block_build/tabletop_object_manager/include/tabletop_object_manager/TabletopSegmentor.h
+END

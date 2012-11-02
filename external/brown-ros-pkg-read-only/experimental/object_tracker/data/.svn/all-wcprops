@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/data
+END
+bg.dat
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/data/bg.dat
+END
+dark_bg.dat
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/data/dark_bg.dat
+END
+bg10.dat
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/data/bg10.dat
+END
+bg100.dat
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/data/bg100.dat
+END
+bg1000.dat
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/data/bg1000.dat
+END
+fg.dat
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/data/fg.dat
+END
+bg5000.dat
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/data/bg5000.dat
+END
+newfg.dat
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2594/trunk/experimental/object_tracker/data/newfg.dat
+END

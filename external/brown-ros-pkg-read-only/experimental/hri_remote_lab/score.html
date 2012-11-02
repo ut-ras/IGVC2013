@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Thanks</title>
+<script type="text/javascript" src="http://brown-ros-pkg.googlecode.com/svn/trunk/experimental/rosjs/ros.min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/json/json-min.js"></script>
+<script type="text/javascript">
+
+var console = null;
+function json(obj) {return JSON.stringify(obj);};
+function init() {
+    function waitForDOM() {
+	var cnsl = document.getElementById('console');
+	if (cnsl == null) {
+	    setTimeout(waitForDOM, 100);
+	} else {
+	    console = cnsl;
+	    setTimeout(main, 0);
+	}
+    }
+    setTimeout(waitForDOM, 100);
+}
+
+function main() {
+    var ros = new ROS("ws://chriscrick.ath.cx:9090");
+    ros.setOnClose(function(e) {
+	    //	    log("Connection closed");
+	});
+    ros.setOnError(function(e) {
+	    //	    log("Unknown error");
+	});
+    ros.setOnOpen(function(e) {
+	    ros.callService('/get_score',json([]), function(rsp) {
+		    console.innerHTML = console.innerHTML + "You completed the maze in " + Math.round(rsp.score.time) + " seconds.<br>";
+		    console.innerHTML = console.innerHTML + "You bumped into the walls " + rsp.score.bumps + " times.<br>";
+		    if (rsp.score.distance < 400.0) {
+			console.innerHTML = console.innerHTML + "You made it to the goal!";
+		    }
+		    else {
+			console.innerHTML = console.innerHTML + "The robot does not believe that you made it to the goal.";
+		    }
+		});
+	});
+}
+</script>
+</head>
+<body onload="init()">
+<center>
+<img src="rlab_logo.png">
+<h2>Thanks for participating.</h2>
+</center>
+<div id="console"></div>
+</body>
+</html>

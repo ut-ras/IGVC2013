@@ -1,0 +1,4 @@
+<launch>
+	<include file="$(find mjpeg_server)/launch/mjpeg_server.launch" />
+	<node pkg="rosbridge" type="rosbridge.py" name="rosbridge" output="screen"/>
+</launch>

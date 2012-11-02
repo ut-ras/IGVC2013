@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/VP_Os/linux
+END
+vp_os_signal_dep.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/VP_Os/linux/vp_os_signal_dep.h
+END
+vp_os_signal.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/VP_Os/linux/vp_os_signal.c
+END
+vp_os_delay.c
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/VP_Os/linux/vp_os_delay.c
+END
+intrin.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/VP_Os/linux/intrin.h
+END
+vp_os_serial.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/VP_Os/linux/vp_os_serial.h
+END
+vp_os_thread_dep.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/VP_Os/linux/vp_os_thread_dep.h
+END
+vp_os_thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/VP_SDK/VP_Os/linux/vp_os_thread.c
+END

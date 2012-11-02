@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/UI
+END
+ardrone_input.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/UI/ardrone_input.h
+END
+ardrone_tool_ui.c
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/UI/ardrone_tool_ui.c
+END
+ardrone_tool_ui.h
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/UI/ardrone_tool_ui.h
+END
+ardrone_input.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/UI/ardrone_input.c
+END

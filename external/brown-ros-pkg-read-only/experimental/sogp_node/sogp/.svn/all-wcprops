@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/643/trunk/experimental/sogp_node/sogp
+END
+cmake_install.cmake
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/643/trunk/experimental/sogp_node/sogp/cmake_install.cmake
+END
+sogp_aux.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/643/trunk/experimental/sogp_node/sogp/sogp_aux.cc
+END
+sogp_aux.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/643/trunk/experimental/sogp_node/sogp/sogp_aux.h
+END
+sogp.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/643/trunk/experimental/sogp_node/sogp/sogp.cc
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/643/trunk/experimental/sogp_node/sogp/CMakeLists.txt
+END
+sogp.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/643/trunk/experimental/sogp_node/sogp/sogp.h
+END

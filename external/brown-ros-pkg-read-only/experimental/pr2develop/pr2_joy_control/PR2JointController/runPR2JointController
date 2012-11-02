@@ -1,0 +1,11 @@
+#Stopping left and right arms default controllers so they would not interfere with 
+#our controller
+
+rosrun pr2_controller_manager pr2_controller_manager stop l_arm_controller
+rosrun pr2_controller_manager pr2_controller_manager stop r_arm_controller
+
+#Launching our controller
+roslaunch pr2_joint_controller.launch
+
+rosrun pr2_controller_manager pr2_controller_manager start l_arm_controller
+rosrun pr2_controller_manager pr2_controller_manager start r_arm_controller

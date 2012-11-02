@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make
+END
+guess_os.sh
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/guess_os.sh
+END
+Makefile.wince
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/Makefile.wince
+END
+Makefile.nbsd
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/Makefile.nbsd
+END
+makewine.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/makewine.cmd
+END
+Makefile.obsd
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/Makefile.obsd
+END
+Makefile.osx
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/Makefile.osx
+END
+Makefile.kfbsd
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/Makefile.kfbsd
+END
+Makefile.fbsd
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/Makefile.fbsd
+END
+Makefile.linux
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/Makefile.linux
+END
+Makefile.android
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/Makefile.android
+END
+Makefile.win32
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/make/Makefile.win32
+END

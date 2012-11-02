@@ -1,0 +1,17 @@
+<package>
+  <description brief="CS148_object_seeking">
+
+     CS148_object_seeking
+
+  </description>
+  <author>Brawner</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/CS148_object_seeking</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="actionlib"/>
+  <depend package="std_srvs" />
+  <depend package="turtlebot_gazebo"/>
+  <depend package="pr2_gazebo"/>
+</package>

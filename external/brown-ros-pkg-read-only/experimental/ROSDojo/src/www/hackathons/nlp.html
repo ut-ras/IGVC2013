@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PR2 Block Commander</title>
+<!-- load Dojo and the default dojo theme, claro -->
+<link rel="stylesheet" href="../../dojo17/dijit/themes/claro/claro.css" />
+<link rel="stylesheet" href="nlp.css" />
+<script src="../../dojo17/dojo/dojo.js"></script>
+<script>
+   	function init() {
+   	    // Register module paths
+        dojo.registerModulePath("rosdojo", "../../brown/rosdojo");
+        dojo.registerModulePath("roswidgets", "../../brown/roswidgets");
+        dojo.registerModulePath("blocknlp", "../../brown/blocknlp");
+        
+        // Require the constituent widgets in the page
+        dojo.require("roswidgets.ConnectionPanel");
+        dojo.require("blocknlp.CommandEntry");
+        dojo.require("blocknlp.BlockVisualiser");
+        
+        // Inflate the widgets
+   		dojo.parser.parse();
+   		
+   		// Show the 'speech not enabled' message (if necessary)
+   		dijit.byId("commandentry").displaySpeechMessage();
+   	}
+   	dojo.ready(init);
+   </script>
+</head>
+<body class="claro">
+    <div class="pagetitle">
+        <a href="http://www.brown-robotics.org"><img src="banner.png"></a>
+    </div>
+	<div class="main">
+		<div data-dojo-type="roswidgets.ConnectionPanel"></div>
+		<div data-dojo-type="blocknlp.CommandEntry" id="commandentry"></div>
+		<div data-dojo-type="blocknlp.BlockVisualiser"></div>
+	</div>
+
+</body>
+</html>

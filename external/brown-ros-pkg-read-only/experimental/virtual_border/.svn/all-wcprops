@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/947/trunk/experimental/virtual_border
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/947/trunk/experimental/virtual_border/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/875/trunk/experimental/virtual_border/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/875/trunk/experimental/virtual_border/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/875/trunk/experimental/virtual_border/Makefile
+END

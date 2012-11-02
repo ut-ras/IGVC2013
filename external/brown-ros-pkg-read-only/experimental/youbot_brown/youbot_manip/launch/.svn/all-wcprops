@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2919/trunk/experimental/youbot_brown/youbot_manip/launch
+END
+yk_description.launch
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/2903/trunk/experimental/youbot_brown/youbot_manip/launch/yk_description.launch
+END
+yk_simulation.launch
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2919/trunk/experimental/youbot_brown/youbot_manip/launch/yk_simulation.launch
+END
+cups.launch
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/launch/cups.launch
+END
+coffee_cup.launch
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/launch/coffee_cup.launch
+END
+custom_object.launch
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/2720/trunk/experimental/youbot_brown/youbot_manip/launch/custom_object.launch
+END
+object_detection.launch
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/2721/trunk/experimental/youbot_brown/youbot_manip/launch/object_detection.launch
+END

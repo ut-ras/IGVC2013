@@ -1,0 +1,29 @@
+Written by Hojoon Park (hojoon@cs.brown.edu)
+
+1. Copy texture files (.jpg .png .bmp) to ~/ros/pkgs/simulator_gazebo/gazebo_worlds/Media/materials/textures/
+2. Modify "gazebo_worlds.material" in ~ros/pkgs/simulator_gazebo/gazebo_worlds/Media/materials/scripts/
+    * Add this codes for each texture file:
+=====
+material GazeboWorlds/ART_SA
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+	texture artag_sa.jpg
+      }
+    }
+  }
+}
+======
+3. Modify a .model file in ~/ros/pkgs/simulator_gazebo/gazebo_worlds/objects
+  3.1 You can find such a line as 
+	<material>Gazebo/PioneerBody</material>
+  3.2 Change the line to this
+	<material>GazeboWorlds/ART_SA</material>
+
+** I used sandwich_board.model file for this example for RLAB
+*** If you want to place the texture on spceific position, then you should use blender or 3DMAX to modify texture files. The blender tutorial link is that
+	http://www.youtube.com/watch?v=mVhhZ2KRr4Q

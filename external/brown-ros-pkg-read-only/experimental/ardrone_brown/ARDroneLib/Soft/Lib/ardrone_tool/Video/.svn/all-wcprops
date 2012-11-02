@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video
+END
+video_stage_recorder.c
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/video_stage_recorder.c
+END
+video_stage.h
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/video_stage.h
+END
+buffer_to_picture_stage.h
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/buffer_to_picture_stage.h
+END
+vlib_stage_decode.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/vlib_stage_decode.c
+END
+video_stage_ffmpeg_recorder.c
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/video_stage_ffmpeg_recorder.c
+END
+video_stage_recorder.h
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/video_stage_recorder.h
+END
+video_stage_ffmpeg_recorder.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/video_stage_ffmpeg_recorder.h
+END
+video_com_stage.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/video_com_stage.c
+END
+vlib_stage_decode.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/vlib_stage_decode.h
+END
+mjpeg_stage_decode.c
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/mjpeg_stage_decode.c
+END
+video_stage.c
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/video_stage.c
+END
+buffer_to_picture_stage.c
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/buffer_to_picture_stage.c
+END
+video_com_stage.h
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/video_com_stage.h
+END
+mjpeg_stage_decode.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1483/trunk/experimental/ardrone_brown/ARDroneLib/Soft/Lib/ardrone_tool/Video/mjpeg_stage_decode.h
+END

@@ -1,0 +1,22 @@
+<package>
+  <description brief="ar_map_navigate_bumpers">
+
+     ar_map_navigate_bumpers
+
+  </description>
+  <author>human</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ar_map_navigate_bumpers</url>
+  <depend package="std_msgs"/>
+  <!--<depend package="rospy"/>-->
+  <depend package="roscpp"/>
+  <depend package="ar_recog"/>
+  <depend package="ar_localizer"/>
+  <depend package="position_tracker"/>
+  <depend package="nav_msgs"/>
+  <depend package="irobot_create_2_1"/>
+
+</package>
+
+

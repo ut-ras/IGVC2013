@@ -1,0 +1,47 @@
+body {
+	margin: auto;
+	width: 800px;
+	text-align: center;
+}
+
+.pagetitle {
+    border-bottom: 1px solid #444444;
+    padding-top: 8px;
+    margin-bottom: 40px;
+}
+
+.main {
+}
+
+.main .connectionpanel .dijitComboBox {
+	width: 326px;
+}
+
+.main .connectionpanel {
+	padding-bottom: 10px;    
+}
+
+.commandentry .speechentry {
+	width: 288px;
+}
+
+.commandentry .commandlabel {
+	background-color: #ABD6FF;
+    border-bottom-left-radius: 5px;
+    border-color: #759DC0 #B5BCC7 #759DC0 #759DC0;
+    border-style: solid;
+    border-top-left-radius: 5px;
+    border-width: 1px;
+    display: inline-block;
+    margin-right: -7px;
+    padding: 1px 7px 3px 10px;
+}
+
+.dj_webkit .commandentry .commandlabel {
+	padding-top: 0;
+	padding-bottom: 4px;
+}
+
+.commandentry .dijitButtonNode {
+	width: 130px;
+}

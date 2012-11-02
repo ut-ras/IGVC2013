@@ -1,0 +1,26 @@
+<package>
+  <description brief="tabletop_segmentor">
+
+     tabletop_segmentor
+
+  </description>
+  <author></author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/tabletop_segmentor</url>
+  <depend package="roscpp"/>
+  <depend package="pcl"/>
+  <depend package="pcl_ros"/>
+  <depend package="sensor_msgs"/>
+  <depend package="tabletop_object_detector"/>
+
+  <depend package="common_rosdeps"/>
+  <rosdep name="eigen" />
+  <export>
+     <cpp cflags="`pkg-config --cflags eigen3` -I${prefix}/include `rosboost-cfg --cflags`" 
+          lflags="-Wl,-rpath,${prefix}/lib -L${prefix}/lib -lplanning_models"/>
+  </export>
+
+</package>
+
+

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/2445/trunk/experimental/toyblock_builder/pr2_block_builder_msgs/action
+END
+PlaceCommand.action
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/2154/trunk/experimental/toyblock_builder/pr2_block_builder_msgs/action/PlaceCommand.action
+END
+PickCommand.action
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/2445/trunk/experimental/toyblock_builder/pr2_block_builder_msgs/action/PickCommand.action
+END

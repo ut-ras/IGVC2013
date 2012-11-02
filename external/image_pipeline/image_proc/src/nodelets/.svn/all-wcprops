@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ros-pkg/!svn/ver/40006/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/nodelets
+END
+crop_decimate.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/nodelets/crop_decimate.cpp
+END
+yuv422.h
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/nodelets/yuv422.h
+END
+edge_aware.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/nodelets/edge_aware.cpp
+END
+rectify.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/ros-pkg/!svn/ver/40006/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/nodelets/rectify.cpp
+END
+edge_aware.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/nodelets/edge_aware.h
+END
+debayer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/nodelets/debayer.cpp
+END
+yuv422.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/ros-pkg/!svn/ver/39270/stacks/image_pipeline/branches/image_pipeline-1.8/image_proc/src/nodelets/yuv422.cpp
+END

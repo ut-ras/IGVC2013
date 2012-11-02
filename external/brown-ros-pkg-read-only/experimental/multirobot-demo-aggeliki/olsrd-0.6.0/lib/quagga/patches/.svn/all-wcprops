@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/patches
+END
+quagga-0.98.6.diff
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/patches/quagga-0.98.6.diff
+END
+quagga-0.99.16.diff
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1379/trunk/experimental/multirobot-demo-aggeliki/olsrd-0.6.0/lib/quagga/patches/quagga-0.99.16.diff
+END
