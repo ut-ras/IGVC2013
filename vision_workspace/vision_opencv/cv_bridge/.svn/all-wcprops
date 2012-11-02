@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/ros-pkg/!svn/ver/40193/stacks/vision_opencv/trunk/cv_bridge
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ros-pkg/!svn/ver/39090/stacks/vision_opencv/trunk/cv_bridge/manifest.xml
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ros-pkg/!svn/ver/35528/stacks/vision_opencv/trunk/cv_bridge/mainpage.dox
+END
+rosdoc.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ros-pkg/!svn/ver/36125/stacks/vision_opencv/trunk/cv_bridge/rosdoc.yaml
+END
+conf.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ros-pkg/!svn/ver/30279/stacks/vision_opencv/trunk/cv_bridge/conf.py
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ros-pkg/!svn/ver/39137/stacks/vision_opencv/trunk/cv_bridge/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ros-pkg/!svn/ver/25223/stacks/vision_opencv/trunk/cv_bridge/Makefile
+END
+index.rst
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ros-pkg/!svn/ver/30278/stacks/vision_opencv/trunk/cv_bridge/index.rst
+END

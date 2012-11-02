@@ -1,0 +1,22 @@
+<package>
+  <description brief="roscv">
+
+     roscv
+
+  </description>
+  <author>Lt. Commander Data</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/roscv</url>
+  <depend package="sensor_msgs"/>
+  <depend package="opencv2"/>
+  <depend package="cv_bridge"/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="image_transport"/>
+  <depend package="turtlesim"/>
+  <depend package="std_srvs"/>
+
+</package>
+
+

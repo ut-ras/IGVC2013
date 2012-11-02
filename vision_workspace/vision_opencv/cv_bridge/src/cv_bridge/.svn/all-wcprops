@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ros-pkg/!svn/ver/39999/stacks/vision_opencv/trunk/cv_bridge/src/cv_bridge
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ros-pkg/!svn/ver/25223/stacks/vision_opencv/trunk/cv_bridge/src/cv_bridge/__init__.py
+END
+cv_bridge.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ros-pkg/!svn/ver/39999/stacks/vision_opencv/trunk/cv_bridge/src/cv_bridge/cv_bridge.py
+END

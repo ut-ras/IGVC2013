@@ -1,0 +1,13 @@
+<package>
+  <description brief="JAUS"> 
+
+  </description>
+  <author>UT IEEE Robotics and Automation Society</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/jaus</url>
+  <depend package="roscpp"/>
+  
+</package>
+
+

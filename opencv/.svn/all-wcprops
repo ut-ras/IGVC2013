@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/ros-pkg/!svn/ver/40203/stacks/vision_opencv/trunk
+END
+stack.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/ros-pkg/!svn/ver/38506/stacks/vision_opencv/trunk/stack.xml
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ros-pkg/!svn/ver/40203/stacks/vision_opencv/trunk/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/ros-pkg/!svn/ver/24943/stacks/vision_opencv/trunk/Makefile
+END
+rosdep.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ros-pkg/!svn/ver/38737/stacks/vision_opencv/trunk/rosdep.yaml
+END

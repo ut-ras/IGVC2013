@@ -85,7 +85,7 @@ int main(int argc, char **argv)
   ros::Publisher imu_pub = n.advertise<ocean_server_imu::RawData> ("imu_data", 1);
 
   boost::asio::io_service io;
-  boost::asio::serial_port port(io, "/dev/ttyUSB0");
+  boost::asio::serial_port port(io, "/dev/ttyUSB1");
   port.set_option(boost::asio::serial_port_base::baud_rate(115200));
   serial_device device(port);
   serial_stream stream(device);
