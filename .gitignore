@@ -179,7 +179,7 @@ pip-log.txt
 
 
 #############
-## Files that constantly change
+## Folders that we won't change and that are too big to keep in the repo
 ############
 
-pythonsimpleserver/hokuyo.txt
+/external/brown-ros-pkg-read-only/*
