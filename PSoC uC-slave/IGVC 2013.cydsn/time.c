@@ -44,7 +44,7 @@ int GetSec(void){ return time%SEC_PER_MIN; }
 void WatchdogTimeout(void){
 	JoystickOut(128,128); //stop the bot
 	VelCtrlRunning = 0;
-	Err_LED_1_Write(0);
+	Err_LED_1_Write(1);
 }
 
 void MainTimeISRHandler(void){
@@ -66,7 +66,7 @@ void MainTimeISRHandler(void){
 void ResetWatchdog(void){
 	if( ms + WATCHDOG_TIMEOUT >= MS_PER_SEC) WatchdogOverflow = 1;
 	WatchdogTime = (( ms + WATCHDOG_TIMEOUT ) % MS_PER_SEC);
-	Err_LED_1_Write(1);
+	Err_LED_1_Write(0);
 }
 
 void InitializeWatchdog(void){

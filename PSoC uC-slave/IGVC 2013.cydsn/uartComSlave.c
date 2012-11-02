@@ -23,13 +23,17 @@
 #define CODE_START					1
 #define CODE_LENGTH					4
 #define DATA_START					6
-#define SVXA 'S'^'V'^'X'^'A'
-#define SVYA 'S'^'V'^'Y'^'A'
-#define SVLX 'S'^'V'^'L'^'X'
-#define SVAZ 'S'^'V'^'A'^'Z'
+#define SVXA 'S'^'V'^'X'^'A' //Set Voltage X Axis
+#define SVYA 'S'^'V'^'Y'^'A' //Set Voltage Y Axis
+#define SVLX 'S'^'V'^'L'^'X' //Set Velocity Linear X
+#define SVAZ 'S'^'V'^'A'^'Z' //Set Velocity Angular Z
+#define ETFM 'E'^'T'^'F'^'M' //Enable Telemetry Feedback Messages
+#define DTFM 'D'^'T'^'F'^'M' //Disable Telemetry Feedback Messages
+#define RSTE 'R'^'S'^'T'^'E' //Reset Encoder Count
 #define SATURATE(in,min,max) (min > in) ? min : ( (max < in) ? max : in)
 
 extern uint8 VelCtrlRunning;
+uint8 EnableSensorFeedbackMessages;
 
 uint8 isValidMessage(const char * ch){
 	if(ch[0] == '>') return 1;
@@ -75,6 +79,12 @@ void handleCommMessage(void){
 					   VelCtrlRunning = 1;
 					   ResetWatchdog();
 					   break;
+			case ETFM: EnableSensorFeedbackMessages = 1;
+					   break;
+			case DTFM: EnableSensorFeedbackMessages = 0;
+					   break;
+			case RSTE: ResetEncoders();
+					   break;
 			default:   UARTprintf("UNRECOGNIZED MESSAGE: %s\r\n", buffer);
 					   break;
 		}
@@ -86,16 +96,16 @@ void handleCommMessage(void){
 }
 
 void sendCommMessage(void){
-	UARTprintf("(: ENCL %d ENCR %d VELV %d VELW %d TIME %d%.3d :)\r\n", GetLeftEncoder(), GetRightEncoder(), GetV(), GetW(), GetTime(), GetMS());
+	if(EnableSensorFeedbackMessages) UARTprintf("(: ENCL %d ENCR %d VELV %d VELW %d TIME %d%.3d :)\r\n", GetLeftEncoder(), GetRightEncoder(), GetV(), GetW(), GetTime(), GetMS());
 }
 
 void InitializeUCSlave(void){
+	InitializeUART();
+	InitializeTime();
 	JoystickInit();
 	InitializeWatchdog();
 	InitializeVelocityControl();
-	InitializeUART();
-	InitializeTime();
-	Err_LED_1_Write(1);
+	EnableSensorFeedbackMessages = 0;
 }
 
 void RunUCSlave(void){
