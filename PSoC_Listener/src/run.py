@@ -14,9 +14,10 @@ def publisher():
     pos_pub = rospy.Publisher('enc_data', Encoder)
     vel_pub = rospy.Publisher('enc_vel',Twist)
     rospy.init_node('PSoC_Listener')
-    ser.write('>ETFM')
-    ser.flush()
+    ser.write('>ETFM\n')
+    ser.flushOutput()
     while not rospy.is_shutdown():
+        ser.flushInput()
         line = ser.readline()
         rospy.loginfo("Got Something!: "+ line)
         tokens = string.split(line)

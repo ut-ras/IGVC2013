@@ -2,9 +2,7 @@
 
 import roslib; roslib.load_manifest('server_data_writer')
 import rospy
-import math
 
-from sensor_msgs.msg import LaserScan
 from ocean_server_imu.msg import RawData
 
 def imu_callback(data):
