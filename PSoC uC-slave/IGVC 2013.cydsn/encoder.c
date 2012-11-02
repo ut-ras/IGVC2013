@@ -21,6 +21,10 @@ int32 GetLeftEncoder(void){
 int32 GetRightEncoder(void){
 	return invertRight * Right_Encoder_GetCounter();
 }
+void ResetEncoders(void){
+	Left_Encoder_SetCounter(0);
+	Right_Encoder_SetCounter(0);
+}
 void LeftEncoderInterruptHandler(void){
 	Left_Encoder_Interrupt_ClearPending() ;
 	//doubt this is gonna overflow

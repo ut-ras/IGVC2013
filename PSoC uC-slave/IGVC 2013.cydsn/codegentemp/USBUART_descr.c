@@ -47,7 +47,7 @@ const uint8 CYCODE USBUART_DEVICE0_DESCR[] = {
 /* idProduct                               */ 0x32u, 0xF2u,
 /* bcdDevice                               */ 0x01u, 0x00u,
 /* iManufacturer                           */ 0x01u,
-/* iProduct                                */ 0x02u,
+/* iProduct                                */ 0x05u,
 /* iSerialNumber                           */ 0x80u,
 /* bNumConfigurations                      */ 0x01u
 };
@@ -185,6 +185,14 @@ const uint8 CYCODE USBUART_STRING_DESCRIPTORS[] = {
 /* DescriptorType: STRING                  */ 0x03u,
  'C', 0,'D', 0,'C', 0,' ', 0,'D', 0,'a', 0,'t', 0,'a', 0,' ', 0,'I', 0
 ,'n', 0,'t', 0,'e', 0,'r', 0,'f', 0,'a', 0,'c', 0,'e', 0,
+/*********************************************************************
+* String Descriptor: "Doloras IGVC 2013 UT IEEE-RAS"
+*********************************************************************/
+/* Descriptor Length                       */ 0x3Cu,
+/* DescriptorType: STRING                  */ 0x03u,
+ 'D', 0,'o', 0,'l', 0,'o', 0,'r', 0,'a', 0,'s', 0,' ', 0,'I', 0,'G', 0
+,'V', 0,'C', 0,' ', 0,'2', 0,'0', 0,'1', 0,'3', 0,' ', 0,'U', 0,'T', 0
+,' ', 0,'I', 0,'E', 0,'E', 0,'E', 0,'-', 0,'R', 0,'A', 0,'S', 0,
 /*********************************************************************/
 /* Marks the end of the list.              */ 0x00u};
 /*********************************************************************/
@@ -193,9 +201,9 @@ const uint8 CYCODE USBUART_STRING_DESCRIPTORS[] = {
 * Serial Number String Descriptor
 *********************************************************************/
 const uint8 CYCODE USBUART_SN_STRING_DESCRIPTOR[] = {
-/* Descriptor Length                       */ 0x02u,
+/* Descriptor Length                       */ 0x10u,
 /* DescriptorType: STRING                  */ 0x03u,
-
+'D', 0,'o', 0,'l', 0,'o', 0,'r', 0,'a', 0,'s', 0
 };
 
 
