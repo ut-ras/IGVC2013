@@ -1,2 +1,0 @@
-rosbuild_add_executable(test_amtec test_amtec.cpp)
-target_link_libraries(test_amtec amtec)

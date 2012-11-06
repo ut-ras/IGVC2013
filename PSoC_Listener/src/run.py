@@ -1,38 +1,48 @@
 #!/usr/bin/env python
 import roslib; roslib.load_manifest('PSoC_Listener')
 import rospy
-from PSoC_Listener.msg import Encoder
-from geometry_msgs.msg import Twist 
+from PSoC_Listener.msg import PSoC 
+from std_msgs.msg import String
 import serial
 import string
+import atexit
 
-pos_pub = rospy.Publisher('enc_data',Encoder)
+ser = serial.Serial(port='/dev/ttyACM1', baudrate = 115200)
 
-def publisher():
-    ser = serial.Serial(port='/dev/ttyACM1', baudrate = 115200)
-    print "PSoC Listener is running on " + ser.portstr
-    pos_pub = rospy.Publisher('enc_data', Encoder)
-    vel_pub = rospy.Publisher('enc_vel',Twist)
+@atexit.register
+def onExit():
+    ser.write('>DTFM\n')
+    ser.flush()
+
+def callback(data):
+    rospy.logdebug('Sending message to PSoC: '+data.data)
+    ser.write(data.data+'\n')
+    ser.flushOutput()
+
+def psoc():
+    rospy.loginfo( "PSoC Listener is running on " + ser.portstr )
+    pub = rospy.Publisher('psoc_data', PSoC)
     rospy.init_node('PSoC_Listener')
+    sub = rospy.Subscriber('psoc_cmd', String, callback)
     ser.write('>ETFM\n')
     ser.flushOutput()
     while not rospy.is_shutdown():
         ser.flushInput()
         line = ser.readline()
-        rospy.loginfo("Got Something!: "+ line)
         tokens = string.split(line)
         if(tokens[0] == '(:' and tokens[len(tokens)-1] == ':)'):
-            e = Encoder()
-            e.left = int(tokens[2])
-            e.right = int(tokens[4])
-            t = Twist()
-            t.linear.x = int(tokens[6])
-            t.angular.z = int(tokens[8])
-            e.time = long(tokens[10])
-            pos_pub.publish(e)
-            vel_pub.publish(t)
-    ser.write('>DTFM')
-    ser.flush()
-
+            p = PSoC()
+            p.left_enc = int(tokens[2])
+            p.right_enc = int(tokens[4])
+            p.vel_v = int(tokens[6])
+            p.vel_w = int(tokens[8])
+            p.time = long(tokens[10])
+            pub.publish(p)
+            rospy.logdebug('Telemetry message: '+line)
+        else:
+            rospy.loginfo('Info message from PSoC: '+ line)
+    
 if __name__ == "__main__":
-    publisher()
+    try:
+        psoc()
+    except rospy.ROSInterruptException: pass

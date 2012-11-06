@@ -1,3 +1,0 @@
-float64 velocity_pan             # set target pan acceleration
-float64 velocity_tilt            # set target tilt acceleration
----

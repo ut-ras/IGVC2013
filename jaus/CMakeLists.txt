@@ -32,9 +32,9 @@ rosbuild_genmsg()
 #target_link_libraries(example ${PROJECT_NAME})
 
 # the node
-include_directories(lib/active-ist/libraries/jaus++/trunk/include)
-include_directories(lib/active-ist/libraries/cxutils/trunk/include)
-include_directories(lib/active-ist/libraries/tinyxml/trunk/include)
+include_directories(~/external/jaus/active-ist/libraries/jaus++/trunk/include)
+include_directories(~/external/jaus/active-ist/libraries/cxutils/trunk/include)
+include_directories(~/external/jaus/active-ist/libraries/tinyxml/trunk/include)
 link_directories(/usr/local/lib/active)
 rosbuild_add_executable(jaus_node src/jaus.cpp)
 target_link_libraries(jaus_node libcxutils.so)

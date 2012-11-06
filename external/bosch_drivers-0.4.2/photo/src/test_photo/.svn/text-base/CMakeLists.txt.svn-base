@@ -1,2 +1,0 @@
-rosbuild_add_executable(test_photo test_photo.cpp)
-target_link_libraries(test_photo photo)
