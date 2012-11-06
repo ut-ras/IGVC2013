@@ -6,8 +6,6 @@
                :std_msgs-msg
 )
   :components ((:file "_package")
-    (:file "custom_cool_msg" :depends-on ("_package_custom_cool_msg"))
-    (:file "_package_custom_cool_msg" :depends-on ("_package"))
     (:file "RawData" :depends-on ("_package_RawData"))
     (:file "_package_RawData" :depends-on ("_package"))
   ))

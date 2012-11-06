@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+import roslib; roslib.load_manifest('PSoC_Listener')
+import rospy
+from jaus.msg import Pose
+
+def main():
+    count = 0
+
+    rospy.init_node('jaus_debug')
+    pub = rospy.Publisher('jaus/local_pose', Pose)
+
+    rospy.loginfo('feeding bogus data to "jaus/local_pose"')
+
+    while not rospy.is_shutdown():
+        n = Pose()
+        n.xpos = count
+        count += 1
+        
+        pub.publish(n)
+        rospy.sleep(0.1)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except rospy.ROSInterruptException:
+        pass

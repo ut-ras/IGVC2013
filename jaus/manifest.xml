@@ -7,7 +7,8 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/jaus</url>
   <depend package="roscpp"/>
-  
+  <depend package="rospy"/>
+
 </package>
 
 
