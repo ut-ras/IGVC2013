@@ -9,18 +9,7 @@
  *
  * ========================================
 */
-#include <device.h>
-#include <servo.h>
 
-void ServosOut(uint8 x, uint8 y){
-	Servo_WriteCompare1(x?1500:4500);
-	Servo_WriteCompare2(y?1500:4500);
-}
+void InitializeIMU(void);
 
-void ServoInit(void){
-	Servo_Start();
-}
-
-
-
-/* [] END OF FILE */
+//[] END OF FILE
