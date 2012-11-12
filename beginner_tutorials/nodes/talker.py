@@ -3,11 +3,10 @@ import roslib; roslib.load_manifest('beginner_tutorials')
 import rospy
 from geometry_msgs.msg import Twist
 from std_msgs.msg import String
-from ocean_server_imu.msg import custom_cool_msg
 
 def talker():
-    pub = rospy.Publisher('chatterzxcvxczvr', String)
-    rospy.init_node('talkersdfgsdfg')
+    pub = rospy.Publisher('chatter', String)
+    rospy.init_node('talker')
 
     while not rospy.is_shutdown():
         str = "hello world %s"%rospy.get_time()

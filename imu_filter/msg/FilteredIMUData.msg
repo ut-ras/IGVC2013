@@ -1,8 +1,7 @@
-#postion information. z is always zero.
-geometry_msgs/Point position
+Header header
 
 #velocity information. z is always zero.
-geometry_msgs/Vector3 velocity
+geometry_msgs/Vector3 acceleration
 
 #yaw pitch and roll
 float64 roll    #roll from the imu

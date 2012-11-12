@@ -1,0 +1,14 @@
+<package>
+  <description brief="navCalib">
+
+     navCalib
+
+  </description>
+  <author>Lt. Commander Data</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/navCalib</url>
+
+</package>
+
+

@@ -1,3 +1,2 @@
-from ._Pose import *
 from ._Velocity import *
-from ._pose import *
+from ._Pose import *

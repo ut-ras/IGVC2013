@@ -1,8 +1,8 @@
 (cl:in-package imu_filter-msg)
-(cl:export '(POSITION-VAL
-          POSITION
-          VELOCITY-VAL
-          VELOCITY
+(cl:export '(HEADER-VAL
+          HEADER
+          ACCELERATION-VAL
+          ACCELERATION
           ROLL-VAL
           ROLL
           PITCH-VAL

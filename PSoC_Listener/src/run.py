@@ -16,7 +16,10 @@ def onExit():
 
 def callback(data):
     rospy.logdebug('Sending message to PSoC: '+data.data)
-    ser.write(data.data+'\n')
+    if(data.data[len(data.data)-1]!='\n' and data.data[len(data.data)-1]!='\r'):
+        ser.write(data.data+'\n')
+    else:
+        ser.write(data.data)
     ser.flushOutput()
 
 def psoc():
@@ -37,6 +40,7 @@ def psoc():
             p.vel_v = int(tokens[6])
             p.vel_w = int(tokens[8])
             p.time = long(tokens[10])
+            p.rate = int(tokens[12])
             pub.publish(p)
             rospy.logdebug('Telemetry message: '+line)
         else:
