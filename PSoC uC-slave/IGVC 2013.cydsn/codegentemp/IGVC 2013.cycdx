@@ -19,8 +19,8 @@
       <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
       <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     </block>
-    <register name="Left_Encoder_Cnt16_COUNTER" address="0x40006406" bitWidth="16" desc="Сount value of Counter" />
-    <register name="Left_Encoder_STATUS_REG" address="0x40006566" bitWidth="8" desc="Quadrature Decoder Status Register">
+    <register name="Left_Encoder_Cnt16_COUNTER" address="0x4000640A" bitWidth="16" desc="Сount value of Counter" />
+    <register name="Left_Encoder_STATUS_REG" address="0x40006468" bitWidth="8" desc="Quadrature Decoder Status Register">
       <field name="OVERFLOW" from="0" to="0" access="R" resetVal="" desc="Counter overflow" />
       <field name="UNDERFLOW" from="1" to="1" access="R" resetVal="" desc="Counter underflow" />
       <field name="RESET" from="2" to="2" access="R" resetVal="" desc="Counter Reset due index" />
@@ -105,13 +105,13 @@
       <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
       <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     </block>
-    <register name="Right_Encoder_STATUS_REG" address="0x40006467" bitWidth="8" desc="Quadrature Decoder Status Register">
+    <register name="Right_Encoder_Cnt16_COUNTER" address="0x40006504" bitWidth="16" desc="Сount value of Counter" />
+    <register name="Right_Encoder_STATUS_REG" address="0x40006566" bitWidth="8" desc="Quadrature Decoder Status Register">
       <field name="OVERFLOW" from="0" to="0" access="R" resetVal="" desc="Counter overflow" />
       <field name="UNDERFLOW" from="1" to="1" access="R" resetVal="" desc="Counter underflow" />
       <field name="RESET" from="2" to="2" access="R" resetVal="" desc="Counter Reset due index" />
       <field name="INVALID_IN" from="3" to="3" access="R" resetVal="" desc="Invalid state transition on the A and B inputs" />
     </register>
-    <register name="Right_Encoder_Cnt16_COUNTER" address="0x40006509" bitWidth="16" desc="Сount value of Counter" />
   </block>
   <block name="Right_Encoder_Interrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Left_Encoder_Interrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -131,10 +131,10 @@
     <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="OneTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="I2C_IRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="I2C_DATA" address="0x40006408" bitWidth="8" desc="Data">
+    <register name="I2C_DATA" address="0x4000640F" bitWidth="8" desc="Data">
       <field name="data" from="7" to="0" access="RW" resetVal="" desc="This register provides read/write access to the Shift register." />
     </register>
-    <register name="I2C_CSR" address="0x4000646B" bitWidth="7" desc="Status Register">
+    <register name="I2C_CSR" address="0x40006461" bitWidth="7" desc="Status Register">
       <field name="interrupt" from="7" to="7" access="R" resetVal="" desc="Interrupt bit" />
       <field name="lost_arb" from="6" to="6" access="R" resetVal="" desc="" />
       <field name="stop_status" from="5" to="5" access="RW" resetVal="" desc="" />
@@ -144,7 +144,7 @@
       <field name="lrb" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="byte_complete" from="0" to="0" access="R" resetVal="" desc="" />
     </register>
-    <register name="I2C_CFG" address="0x4000647A" bitWidth="8" desc="Configuration Register">
+    <register name="I2C_CFG" address="0x40006474" bitWidth="8" desc="Configuration Register">
       <field name="start_gen" from="7" to="7" access="RW" resetVal="" desc="" />
       <field name="stop_gen" from="6" to="6" access="RW" resetVal="" desc="" />
       <field name="restart_gen" from="5" to="5" access="RW" resetVal="" desc="" />
@@ -153,7 +153,7 @@
       <field name="transmit" from="2" to="2" access="RW" resetVal="" desc="" />
       <field name="master_en" from="1" to="1" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_INT_MASK" address="0x4000648B" bitWidth="8" desc="Interrupt Mask" />
+    <register name="I2C_INT_MASK" address="0x40006481" bitWidth="8" desc="Interrupt Mask" />
   </block>
   <block name="SCL_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Servo" BASE="0x0" SIZE="0x0" desc="" visible="true">

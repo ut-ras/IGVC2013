@@ -1,6 +1,6 @@
 // ======================================================================
 // IGVC 2013.v generated from TopDesign.cysch
-// 11/05/2012 at 17:50
+// 11/12/2012 at 07:20
 // ======================================================================
 
 /* -- WARNING: The following section of defines are deprecated and will be removed in a future release -- */
@@ -1123,7 +1123,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v2_10\B_UART_v2_10.v"
 `endif
 
-// UART_v2_10(Address1=0, Address2=0, BaudRate=115200, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, CtrlModeReplacementString=AsyncCtl, Enable_RX=1, Enable_RXIntInterrupt=1, Enable_TX=1, Enable_TXIntInterrupt=1, EnableHWAddress=0, EnIntRXInterrupt=true, EnIntTXInterrupt=true, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=false, InternalClock=true, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=1, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=true, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=true, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=9, NumStopBits=1, OverSamplingRate=8, ParityType=3, ParityTypeSw=false, RequiredClock=921600, RXAddressMode=0, RXBufferSize=64, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=64, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_COMPONENT_NAME=UART_v2_10, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=IMU, CY_INSTANCE_SHORT_NAME=IMU, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=IMU, )
+// UART_v2_10(Address1=0, Address2=0, BaudRate=115200, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, CtrlModeReplacementString=AsyncCtl, Enable_RX=1, Enable_RXIntInterrupt=1, Enable_TX=1, Enable_TXIntInterrupt=1, EnableHWAddress=0, EnIntRXInterrupt=true, EnIntTXInterrupt=true, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=false, InternalClock=true, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=1, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=true, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=true, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=8, NumStopBits=1, OverSamplingRate=8, ParityType=0, ParityTypeSw=false, RequiredClock=921600, RXAddressMode=0, RXBufferSize=64, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=64, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_COMPONENT_NAME=UART_v2_10, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=IMU, CY_INSTANCE_SHORT_NAME=IMU, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=IMU, )
 module UART_v2_10_11 (rx_clk, rx_data, tx_clk, tx_data, rx_interrupt, tx_interrupt, tx, tx_en, rts_n, reset, cts_n, clock, rx);
     output  rx_clk;
     output  rx_data;
@@ -1146,9 +1146,9 @@ module UART_v2_10_11 (rx_clk, rx_data, tx_clk, tx_data, rx_interrupt, tx_interru
     parameter FlowControl = 0;
     parameter HalfDuplexEn = 0;
     parameter HwTXEnSignal = 0;
-    parameter NumDataBits = 9;
+    parameter NumDataBits = 8;
     parameter NumStopBits = 1;
-    parameter ParityType = 3;
+    parameter ParityType = 0;
     parameter RXEnable = 1;
     parameter TXEnable = 1;
 
@@ -1208,10 +1208,10 @@ module UART_v2_10_11 (rx_clk, rx_data, tx_clk, tx_data, rx_interrupt, tx_interru
     defparam BUART.FlowControl = 0;
     defparam BUART.HalfDuplexEn = 0;
     defparam BUART.HwTXEnSignal = 0;
-    defparam BUART.NumDataBits = 9;
+    defparam BUART.NumDataBits = 8;
     defparam BUART.NumStopBits = 1;
     defparam BUART.OverSampleCount = 8;
-    defparam BUART.ParityType = 3;
+    defparam BUART.ParityType = 0;
     defparam BUART.ParityTypeSw = 0;
     defparam BUART.RXAddressMode = 0;
     defparam BUART.RXEnable = 1;
@@ -2035,9 +2035,9 @@ module top ;
     defparam IMU.FlowControl = 0;
     defparam IMU.HalfDuplexEn = 0;
     defparam IMU.HwTXEnSignal = 0;
-    defparam IMU.NumDataBits = 9;
+    defparam IMU.NumDataBits = 8;
     defparam IMU.NumStopBits = 1;
-    defparam IMU.ParityType = 3;
+    defparam IMU.ParityType = 0;
     defparam IMU.RXEnable = 1;
     defparam IMU.TXEnable = 1;
 
