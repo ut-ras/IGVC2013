@@ -2,7 +2,7 @@
 --	Conversion of IGVC 2013.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Oct 31 23:48:39 2012
+--	Mon Nov 05 17:51:14 2012
 --
 
 USE cypress.cypress.all;
@@ -1307,6 +1307,347 @@ SIGNAL \Right_Encoder:bQuadDec:status_5\ : bit;
 SIGNAL \Right_Encoder:bQuadDec:status_6\ : bit;
 SIGNAL \Right_Encoder:Net_1151\ : bit;
 SIGNAL \Right_Encoder:Net_1229\ : bit;
+SIGNAL Net_414 : bit;
+SIGNAL \IMU:Net_9\ : bit;
+SIGNAL Net_404 : bit;
+SIGNAL \IMU:Net_61\ : bit;
+SIGNAL \IMU:BUART:clock_op\ : bit;
+SIGNAL \IMU:BUART:control_7\ : bit;
+SIGNAL \IMU:BUART:control_6\ : bit;
+SIGNAL \IMU:BUART:control_5\ : bit;
+SIGNAL \IMU:BUART:control_4\ : bit;
+SIGNAL \IMU:BUART:control_3\ : bit;
+SIGNAL \IMU:BUART:control_2\ : bit;
+SIGNAL \IMU:BUART:control_1\ : bit;
+SIGNAL \IMU:BUART:control_0\ : bit;
+SIGNAL \IMU:BUART:reset_reg\ : bit;
+SIGNAL \IMU:BUART:reset_reg_dp\ : bit;
+SIGNAL \IMU:BUART:tx_hd_send_break\ : bit;
+SIGNAL \IMU:BUART:HalfDuplexSend\ : bit;
+SIGNAL \IMU:BUART:FinalParityType_1\ : bit;
+SIGNAL \IMU:BUART:FinalParityType_0\ : bit;
+SIGNAL \IMU:BUART:FinalAddrMode_2\ : bit;
+SIGNAL \IMU:BUART:FinalAddrMode_1\ : bit;
+SIGNAL \IMU:BUART:FinalAddrMode_0\ : bit;
+SIGNAL \IMU:BUART:tx_ctrl_mark\ : bit;
+SIGNAL Net_386 : bit;
+SIGNAL \IMU:BUART:txn\ : bit;
+SIGNAL \IMU:BUART:tx_interrupt_out\ : bit;
+SIGNAL \IMU:BUART:rx_interrupt_out\ : bit;
+SIGNAL \IMU:BUART:tx_state_1\ : bit;
+SIGNAL \IMU:BUART:tx_state_0\ : bit;
+SIGNAL \IMU:BUART:tx_bitclk_enable_pre\ : bit;
+SIGNAL \IMU:BUART:sTX:TxShifter:ce0\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:ce0\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:cl0\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:cl0\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:z0\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:z0\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:ff0\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:ff0\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:ce1\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:ce1\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:cl1\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:cl1\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:z1\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:z1\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:ff1\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:ff1\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:ov_msb\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:ov_msb\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:co_msb\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:co_msb\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:cmsb\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:cmsb\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:tx_shift_out\ : bit;
+SIGNAL \IMU:BUART:tx_fifo_notfull\ : bit;
+SIGNAL \IMU:BUART:tx_fifo_empty\ : bit;
+SIGNAL \IMU:BUART:sTX:TxShifter:f1_bus_stat\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:f1_bus_stat\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:f1_blk_stat\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:f1_blk_stat\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:ce0_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:ce0_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:cl0_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:cl0_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:z0_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:z0_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:ff0_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:ff0_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:ce1_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:ce1_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:cl1_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:cl1_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:z1_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:z1_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:ff1_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:ff1_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:ov_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:ov_msb_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:co_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:co_msb_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:cmsb_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:cmsb_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:so_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:so_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:f0_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:f0_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:f0_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:f0_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:f1_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:f1_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sTX:TxShifter:f1_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sTX:TxShifter:f1_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:counter_load\ : bit;
+SIGNAL \IMU:BUART:tx_state_2\ : bit;
+SIGNAL \IMU:BUART:tx_bitclk\ : bit;
+SIGNAL \IMU:BUART:counter_load_not\ : bit;
+SIGNAL \IMU:BUART:tx_bitclk_dp\ : bit;
+SIGNAL \IMU:BUART:tx_counter_dp\ : bit;
+SIGNAL \IMU:BUART:sc_out_7\ : bit;
+SIGNAL \IMU:BUART:sc_out_6\ : bit;
+SIGNAL \IMU:BUART:sc_out_5\ : bit;
+SIGNAL \IMU:BUART:sc_out_4\ : bit;
+SIGNAL \IMU:BUART:sc_out_3\ : bit;
+SIGNAL \IMU:BUART:sc_out_2\ : bit;
+SIGNAL \IMU:BUART:sc_out_1\ : bit;
+SIGNAL \IMU:BUART:sc_out_0\ : bit;
+SIGNAL \IMU:BUART:tx_counter_tc\ : bit;
+SIGNAL \IMU:BUART:tx_status_6\ : bit;
+SIGNAL \IMU:BUART:tx_status_5\ : bit;
+SIGNAL \IMU:BUART:tx_status_4\ : bit;
+SIGNAL \IMU:BUART:tx_status_0\ : bit;
+SIGNAL \IMU:BUART:tx_status_1\ : bit;
+SIGNAL \IMU:BUART:tx_status_2\ : bit;
+SIGNAL \IMU:BUART:tx_status_3\ : bit;
+SIGNAL Net_411 : bit;
+SIGNAL \IMU:BUART:tx_ctrl_mark_last\ : bit;
+SIGNAL \IMU:BUART:tx_mark\ : bit;
+SIGNAL \IMU:BUART:tx_parity_bit\ : bit;
+SIGNAL \IMU:BUART:rx_addressmatch\ : bit;
+SIGNAL \IMU:BUART:rx_addressmatch1\ : bit;
+SIGNAL \IMU:BUART:rx_addressmatch2\ : bit;
+SIGNAL \IMU:BUART:rx_state_1\ : bit;
+SIGNAL \IMU:BUART:rx_state_0\ : bit;
+SIGNAL \IMU:BUART:rx_bitclk_enable\ : bit;
+SIGNAL \IMU:BUART:rx_postpoll\ : bit;
+SIGNAL \IMU:BUART:rx_load_fifo\ : bit;
+SIGNAL \IMU:BUART:sRX:RxShifter:cl0\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:cl0\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:z0\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:z0\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:ff0\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:ff0\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:cl1\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:cl1\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:z1\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:z1\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:ff1\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:ff1\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:ov_msb\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:ov_msb\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:co_msb\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:co_msb\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:cmsb\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:cmsb\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:hd_shift_out\ : bit;
+SIGNAL \IMU:BUART:rx_fifonotempty\ : bit;
+SIGNAL \IMU:BUART:rx_fifofull\ : bit;
+SIGNAL \IMU:BUART:hd_tx_fifo_notfull\ : bit;
+SIGNAL \IMU:BUART:hd_tx_fifo_empty\ : bit;
+SIGNAL \IMU:BUART:sRX:RxShifter:ce0_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:ce0_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:cl0_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:cl0_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:z0_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:z0_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:ff0_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:ff0_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:ce1_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:ce1_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:cl1_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:cl1_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:z1_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:z1_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:ff1_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:ff1_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:ov_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:ov_msb_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:co_msb_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:co_msb_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:cmsb_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:cmsb_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:so_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:so_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:f0_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:f0_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:f0_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:f0_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:f1_bus_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:f1_bus_stat_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:RxShifter:f1_blk_stat_reg\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:RxShifter:f1_blk_stat_reg\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:rx_counter_load\ : bit;
+SIGNAL \IMU:BUART:rx_state_3\ : bit;
+SIGNAL \IMU:BUART:rx_state_2\ : bit;
+SIGNAL \IMU:BUART:rx_bitclk_pre\ : bit;
+SIGNAL \IMU:BUART:rx_count_2\ : bit;
+SIGNAL \IMU:BUART:rx_count_1\ : bit;
+SIGNAL \IMU:BUART:rx_count_0\ : bit;
+SIGNAL \IMU:BUART:rx_bitclk_pre16x\ : bit;
+SIGNAL \IMU:BUART:rx_count_6\ : bit;
+SIGNAL \IMU:BUART:rx_count_5\ : bit;
+SIGNAL \IMU:BUART:rx_count_4\ : bit;
+SIGNAL \IMU:BUART:rx_count_3\ : bit;
+SIGNAL \IMU:BUART:rx_count7_tc\ : bit;
+SIGNAL \IMU:BUART:rx_count7_bit8_wire\ : bit;
+SIGNAL \IMU:BUART:rx_bitclk\ : bit;
+SIGNAL \IMU:BUART:rx_state_stop1_reg\ : bit;
+SIGNAL \IMU:BUART:rx_poll_bit0\ : bit;
+SIGNAL \IMU:BUART:rx_poll_bit1\ : bit;
+SIGNAL \IMU:BUART:rx_poll_bit2\ : bit;
+SIGNAL \IMU:BUART:pollingrange\ : bit;
+SIGNAL \IMU:BUART:pollcount_1\ : bit;
+SIGNAL Net_391 : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:add_vv_vv_MODGEN_4_1\ : bit;
+SIGNAL \IMU:BUART:pollcount_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:add_vv_vv_MODGEN_4_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:cmp_vv_vv_MODGEN_5\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_4:g2:a0:a_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODIN2_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_4:g2:a0:a_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODIN2_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_4:g2:a0:b_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_4:g2:a0:b_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_4:g2:a0:s_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_4:g2:a0:s_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_4:g2:a0:g1:z1:s0:g1:u0:c_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_4:g2:a0:g1:z1:s0:g1:u0:c_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_4:g2:a0:g1:z1:s0:g1:u0:b_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:newa_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODIN3_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:newa_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODIN3_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:newb_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:newb_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:dataa_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:dataa_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:datab_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:datab_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:lta_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:gta_1\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:lta_0\ : bit;
+SIGNAL \IMU:BUART:sRX:s23Poll:MODULE_5:g2:a0:gta_0\ : bit;
+SIGNAL \IMU:BUART:rx_status_0\ : bit;
+SIGNAL \IMU:BUART:rx_markspace_status\ : bit;
+SIGNAL \IMU:BUART:rx_status_1\ : bit;
+SIGNAL \IMU:BUART:rx_status_2\ : bit;
+SIGNAL \IMU:BUART:rx_parity_error_status\ : bit;
+SIGNAL \IMU:BUART:rx_status_3\ : bit;
+SIGNAL \IMU:BUART:rx_stop_bit_error\ : bit;
+SIGNAL \IMU:BUART:rx_status_4\ : bit;
+SIGNAL \IMU:BUART:rx_status_5\ : bit;
+SIGNAL \IMU:BUART:rx_status_6\ : bit;
+SIGNAL \IMU:BUART:rx_addr_match_status\ : bit;
+SIGNAL Net_410 : bit;
+SIGNAL \IMU:BUART:rx_markspace_pre\ : bit;
+SIGNAL \IMU:BUART:rx_parity_error_pre\ : bit;
+SIGNAL \IMU:BUART:rx_break_status\ : bit;
+SIGNAL \IMU:BUART:sRX:cmp_vv_vv_MODGEN_6\ : bit;
+SIGNAL \IMU:BUART:rx_address_detected\ : bit;
+SIGNAL \IMU:BUART:rx_last\ : bit;
+SIGNAL \IMU:BUART:rx_parity_bit\ : bit;
+SIGNAL \IMU:BUART:sRX:cmp_vv_vv_MODGEN_7\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newa_6\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newa_5\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newa_4\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newa_3\ : bit;
+SIGNAL \IMU:BUART:sRX:MODIN4_6\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newa_2\ : bit;
+SIGNAL \IMU:BUART:sRX:MODIN4_5\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newa_1\ : bit;
+SIGNAL \IMU:BUART:sRX:MODIN4_4\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newa_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODIN4_3\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newb_6\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newb_5\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newb_4\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newb_3\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newb_2\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newb_1\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:newb_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:dataa_6\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:dataa_5\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:dataa_4\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:dataa_3\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:dataa_2\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:dataa_1\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:dataa_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:datab_6\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:datab_5\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:datab_4\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:datab_3\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:datab_2\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:datab_1\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:datab_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:lta_6\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:gta_6\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:lta_5\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:gta_5\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:lta_4\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:gta_4\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:lta_3\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:gta_3\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:lta_2\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:gta_2\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:lta_1\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:gta_1\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:lta_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_6:g2:a0:gta_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:newa_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:newb_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:dataa_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:datab_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:a_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:b_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:xnor_array_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:aeqb_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:eq_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:eqi_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:aeqb_1\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:albi_1\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:agbi_1\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:lt_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:gt_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:lti_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:gti_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:albi_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:gx:u0:agbi_0\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:xeq\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:xneq\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:xlt\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:xlte\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:xgt\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:g1:a0:xgte\ : bit;
+SIGNAL \IMU:BUART:sRX:MODULE_7:lt\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:MODULE_7:lt\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:MODULE_7:eq\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:MODULE_7:eq\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:MODULE_7:gt\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:MODULE_7:gt\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:MODULE_7:gte\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:MODULE_7:gte\:SIGNAL IS 2;
+SIGNAL \IMU:BUART:sRX:MODULE_7:lte\ : bit;
+ATTRIBUTE port_state_att of \IMU:BUART:sRX:MODULE_7:lte\:SIGNAL IS 2;
+SIGNAL tmpOE__Rx_1_net_0 : bit;
+SIGNAL tmpIO_0__Rx_1_net_0 : bit;
+TERMINAL tmpSIOVREF__Rx_1_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__Rx_1_net_0 : bit;
+SIGNAL tmpOE__Tx_1_net_0 : bit;
+SIGNAL tmpFB_0__Tx_1_net_0 : bit;
+SIGNAL tmpIO_0__Tx_1_net_0 : bit;
+TERMINAL tmpSIOVREF__Tx_1_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__Tx_1_net_0 : bit;
 SIGNAL \I2C:bI2C_UDB:sda_in_reg\\D\ : bit;
 SIGNAL \I2C:bI2C_UDB:control_reg_7\\D\ : bit;
 SIGNAL \I2C:bI2C_UDB:control_reg_6\\D\ : bit;
@@ -1386,6 +1727,35 @@ SIGNAL \Right_Encoder:bQuadDec:state_2\\D\ : bit;
 SIGNAL \Right_Encoder:bQuadDec:state_3\\D\ : bit;
 SIGNAL \Right_Encoder:bQuadDec:state_1\\D\ : bit;
 SIGNAL \Right_Encoder:bQuadDec:state_0\\D\ : bit;
+SIGNAL \IMU:BUART:reset_reg\\D\ : bit;
+SIGNAL \IMU:BUART:txn\\D\ : bit;
+SIGNAL \IMU:BUART:tx_state_1\\D\ : bit;
+SIGNAL \IMU:BUART:tx_state_0\\D\ : bit;
+SIGNAL \IMU:BUART:tx_state_2\\D\ : bit;
+SIGNAL \IMU:BUART:tx_bitclk\\D\ : bit;
+SIGNAL Net_411D : bit;
+SIGNAL \IMU:BUART:tx_ctrl_mark_last\\D\ : bit;
+SIGNAL \IMU:BUART:tx_mark\\D\ : bit;
+SIGNAL \IMU:BUART:tx_parity_bit\\D\ : bit;
+SIGNAL \IMU:BUART:rx_state_1\\D\ : bit;
+SIGNAL \IMU:BUART:rx_state_0\\D\ : bit;
+SIGNAL \IMU:BUART:rx_load_fifo\\D\ : bit;
+SIGNAL \IMU:BUART:rx_state_3\\D\ : bit;
+SIGNAL \IMU:BUART:rx_state_2\\D\ : bit;
+SIGNAL \IMU:BUART:rx_bitclk\\D\ : bit;
+SIGNAL \IMU:BUART:rx_state_stop1_reg\\D\ : bit;
+SIGNAL \IMU:BUART:pollcount_1\\D\ : bit;
+SIGNAL \IMU:BUART:pollcount_0\\D\ : bit;
+SIGNAL \IMU:BUART:rx_markspace_status\\D\ : bit;
+SIGNAL \IMU:BUART:rx_parity_error_status\\D\ : bit;
+SIGNAL \IMU:BUART:rx_stop_bit_error\\D\ : bit;
+SIGNAL \IMU:BUART:rx_addr_match_status\\D\ : bit;
+SIGNAL \IMU:BUART:rx_markspace_pre\\D\ : bit;
+SIGNAL \IMU:BUART:rx_parity_error_pre\\D\ : bit;
+SIGNAL \IMU:BUART:rx_break_status\\D\ : bit;
+SIGNAL \IMU:BUART:rx_address_detected\\D\ : bit;
+SIGNAL \IMU:BUART:rx_last\\D\ : bit;
+SIGNAL \IMU:BUART:rx_parity_bit\\D\ : bit;
 BEGIN
 
 zero <=  ('0') ;
@@ -1440,8 +1810,8 @@ tmpOE__Err_LED_1_net_0 <=  ('1') ;
 \I2C:bI2C_UDB:m_state_0\\D\ <= ((not \I2C:bI2C_UDB:control_reg_5\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and not \I2C:bI2C_UDB:lost_arb2_reg\ and \I2C:bI2C_UDB:control_reg_4\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:control_reg_7\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
-	OR (not \I2C:bI2C_UDB:tx_reg_empty\ and not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
+	OR (not \I2C:bI2C_UDB:tx_reg_empty\ and not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and not \I2C:bI2C_UDB:lost_arb_reg\ and \I2C:bI2C_UDB:control_reg_6\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:m_state_0\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:tx_reg_empty\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:m_state_0\)
 	OR (not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_4\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:m_state_0\)
@@ -1717,6 +2087,118 @@ tmpOE__Err_LED_1_net_0 <=  ('1') ;
 \Right_Encoder:Net_530\ <= ((\Right_Encoder:Net_1210\ and \Right_Encoder:Net_1251\));
 
 \Right_Encoder:Net_611\ <= ((not \Right_Encoder:Net_1251\ and \Right_Encoder:Net_1210\));
+
+Net_386 <= (not \IMU:BUART:txn\);
+
+\IMU:BUART:counter_load_not\ <= ((not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_state_2\)
+	OR \IMU:BUART:tx_state_0\
+	OR \IMU:BUART:tx_state_1\);
+
+\IMU:BUART:tx_bitclk_enable_pre\ <= (not \IMU:BUART:tx_bitclk_dp\);
+
+\IMU:BUART:tx_status_0\ <= ((not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_fifo_empty\ and \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_bitclk\));
+
+\IMU:BUART:tx_status_2\ <= (not \IMU:BUART:tx_fifo_notfull\);
+
+\IMU:BUART:tx_mark\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_ctrl_mark_last\ and not \IMU:BUART:tx_mark\ and \IMU:BUART:control_2\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:tx_counter_dp\ and \IMU:BUART:tx_mark\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_mark\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_mark\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_mark\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_mark\));
+
+\IMU:BUART:tx_state_2\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_bitclk\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_2\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_2\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_state_2\));
+
+\IMU:BUART:tx_state_1\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_bitclk\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_state_1\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_1\));
+
+\IMU:BUART:tx_state_0\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_fifo_empty\ and not \IMU:BUART:tx_state_2\ and not \IMU:BUART:tx_bitclk\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_state_0\ and not \IMU:BUART:tx_fifo_empty\ and \IMU:BUART:tx_bitclk\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and not \IMU:BUART:tx_state_2\ and not \IMU:BUART:tx_counter_dp\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_bitclk\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_fifo_empty\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_2\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_2\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_state_0\));
+
+\IMU:BUART:txn\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and not \IMU:BUART:tx_state_2\ and not \IMU:BUART:tx_counter_dp\ and not \IMU:BUART:tx_mark\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_bitclk\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and not \IMU:BUART:tx_shift_out\ and not \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_counter_dp\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_state_2\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_state_0\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_shift_out\ and not \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_state_0\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:txn\ and \IMU:BUART:tx_state_1\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:txn\ and \IMU:BUART:tx_state_2\));
+
+\IMU:BUART:tx_parity_bit\\D\ <= ((not \IMU:BUART:tx_state_0\ and \IMU:BUART:txn\ and \IMU:BUART:tx_parity_bit\)
+	OR (not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_parity_bit\)
+	OR \IMU:BUART:tx_parity_bit\);
+
+\IMU:BUART:rx_counter_load\ <= ((not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:rx_state_3\ and not \IMU:BUART:rx_state_2\));
+
+\IMU:BUART:rx_bitclk_pre\ <= ((not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_1\ and not \IMU:BUART:rx_count_0\));
+
+\IMU:BUART:rx_state_stop1_reg\\D\ <= (not \IMU:BUART:rx_state_2\
+	OR not \IMU:BUART:rx_state_3\
+	OR \IMU:BUART:rx_state_0\
+	OR \IMU:BUART:rx_state_1\);
+
+\IMU:BUART:pollcount_1\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_0\ and not \IMU:BUART:pollcount_1\ and Net_391 and \IMU:BUART:pollcount_0\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_1\ and not \IMU:BUART:pollcount_1\ and Net_391 and \IMU:BUART:pollcount_0\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_0\ and not \IMU:BUART:pollcount_0\ and \IMU:BUART:pollcount_1\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_1\ and not \IMU:BUART:pollcount_0\ and \IMU:BUART:pollcount_1\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_0\ and not Net_391 and \IMU:BUART:pollcount_1\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_1\ and not Net_391 and \IMU:BUART:pollcount_1\));
+
+\IMU:BUART:pollcount_0\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_0\ and not \IMU:BUART:pollcount_0\ and Net_391)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_1\ and not \IMU:BUART:pollcount_0\ and Net_391)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_0\ and not Net_391 and \IMU:BUART:pollcount_0\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_count_2\ and not \IMU:BUART:rx_count_1\ and not Net_391 and \IMU:BUART:pollcount_0\));
+
+\IMU:BUART:rx_status_4\ <= ((\IMU:BUART:rx_load_fifo\ and \IMU:BUART:rx_fifofull\));
+
+\IMU:BUART:rx_status_5\ <= ((\IMU:BUART:rx_fifonotempty\ and \IMU:BUART:rx_state_stop1_reg\));
+
+\IMU:BUART:rx_stop_bit_error\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:pollcount_1\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\ and \IMU:BUART:rx_state_2\));
+
+\IMU:BUART:rx_markspace_status\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\ and \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_markspace_pre\));
+
+\IMU:BUART:rx_load_fifo\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\));
+
+\IMU:BUART:rx_state_3\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_2\ and not \IMU:BUART:rx_count_6\ and not \IMU:BUART:rx_count_4\ and \IMU:BUART:rx_state_0\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_2\ and not \IMU:BUART:rx_count_6\ and not \IMU:BUART:rx_count_5\ and \IMU:BUART:rx_state_0\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_1\ and \IMU:BUART:rx_state_3\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_state_3\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_0\ and \IMU:BUART:rx_state_3\));
+
+\IMU:BUART:rx_state_2\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:rx_state_3\ and not \IMU:BUART:rx_state_2\ and not Net_391 and \IMU:BUART:rx_last\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_2\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_0\ and \IMU:BUART:rx_state_2\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_1\ and \IMU:BUART:rx_state_2\));
+
+\IMU:BUART:rx_state_1\\D\ <= ((not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_1\));
+
+\IMU:BUART:rx_state_0\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_3\ and not \IMU:BUART:pollcount_1\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_2\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_0\ and \IMU:BUART:rx_count_5\ and \IMU:BUART:rx_count_4\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_0\ and \IMU:BUART:rx_count_6\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_0\ and \IMU:BUART:rx_state_3\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_1\ and \IMU:BUART:rx_state_0\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_0\ and \IMU:BUART:rx_state_2\));
+
+\IMU:BUART:rx_last\\D\ <= ((not \IMU:BUART:reset_reg\ and Net_391));
+
+\IMU:BUART:rx_address_detected\\D\ <= ((not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_address_detected\));
+
+\IMU:BUART:rx_markspace_pre\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\ and \IMU:BUART:pollcount_1\)
+	OR (\IMU:BUART:rx_state_3\ and \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_markspace_pre\)
+	OR (\IMU:BUART:pollcount_1\ and \IMU:BUART:rx_markspace_pre\)
+	OR (not \IMU:BUART:rx_state_3\ and not \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_markspace_pre\)
+	OR (not \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_markspace_pre\)
+	OR (\IMU:BUART:rx_state_0\ and \IMU:BUART:rx_markspace_pre\)
+	OR (\IMU:BUART:rx_state_1\ and \IMU:BUART:rx_markspace_pre\)
+	OR (\IMU:BUART:reset_reg\ and \IMU:BUART:rx_markspace_pre\));
 
 \VDAC8_1:viDAC8\:cy_psoc3_vidac8_v1_0
 	GENERIC MAP(cy_registers=>"",
@@ -3343,6 +3825,408 @@ Left_Encoder_Interrupt:cy_isr_v1_0
 Right_Encoder_Interrupt:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>Net_325);
+\IMU:TXInternalInterrupt\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>Net_414);
+\IMU:IntClock\:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
+		source_clock_id=>"",
+		divisor=>0,
+		period=>"1085069444.44444",
+		is_direct=>'0',
+		is_digital=>'1')
+	PORT MAP(clock_out=>\IMU:Net_9\,
+		dig_domain_out=>open);
+\IMU:RXInternalInterrupt\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>Net_404);
+\IMU:BUART:ClkSync\:cy_psoc3_udb_clock_enable_v1_0
+	GENERIC MAP(sync_mode=>'1')
+	PORT MAP(clock_in=>\IMU:Net_9\,
+		enable=>tmpOE__Err_LED_1_net_0,
+		clock_out=>\IMU:BUART:clock_op\);
+\IMU:BUART:sCR:AsyncCtl:CtrlReg\:cy_psoc3_control
+	GENERIC MAP(cy_init_value=>"00000000",
+		cy_force_order=>'1',
+		cy_ctrl_mode_1=>"00000000",
+		cy_ctrl_mode_0=>"00000000",
+		cy_ext_reset=>'0')
+	PORT MAP(reset=>zero,
+		clock=>zero,
+		control=>(\IMU:BUART:control_7\, \IMU:BUART:control_6\, \IMU:BUART:control_5\, \IMU:BUART:control_4\,
+			\IMU:BUART:control_3\, \IMU:BUART:control_2\, \IMU:BUART:control_1\, \IMU:BUART:control_0\));
+\IMU:BUART:sTX:TxShifter:u0\:cy_psoc3_dp
+	GENERIC MAP(cy_dpconfig=>"0000000000000000000000000000000000000000000000000000000011000000000000000000000000000010010000000000000000000000000000000000000011111111000000001111111111111111000000000000000001000100111100000000000000001100",
+		d0_init=>"00000000",
+		d1_init=>"00000000",
+		a0_init=>"00000000",
+		a1_init=>"00000000",
+		ce0_sync=>'1',
+		cl0_sync=>'1',
+		z0_sync=>'1',
+		ff0_sync=>'1',
+		ce1_sync=>'1',
+		cl1_sync=>'1',
+		z1_sync=>'1',
+		ff1_sync=>'1',
+		ov_msb_sync=>'1',
+		co_msb_sync=>'1',
+		cmsb_sync=>'1',
+		so_sync=>'1',
+		f0_bus_sync=>'1',
+		f0_blk_sync=>'1',
+		f1_bus_sync=>'1',
+		f1_blk_sync=>'1')
+	PORT MAP(reset=>zero,
+		clk=>\IMU:BUART:clock_op\,
+		cs_addr=>(\IMU:BUART:tx_state_1\, \IMU:BUART:tx_state_0\, \IMU:BUART:tx_bitclk_enable_pre\),
+		route_si=>zero,
+		route_ci=>zero,
+		f0_load=>zero,
+		f1_load=>zero,
+		d0_load=>zero,
+		d1_load=>zero,
+		ce0=>open,
+		cl0=>open,
+		z0=>open,
+		ff0=>open,
+		ce1=>open,
+		cl1=>open,
+		z1=>open,
+		ff1=>open,
+		ov_msb=>open,
+		co_msb=>open,
+		cmsb=>open,
+		so=>\IMU:BUART:tx_shift_out\,
+		f0_bus_stat=>\IMU:BUART:tx_fifo_notfull\,
+		f0_blk_stat=>\IMU:BUART:tx_fifo_empty\,
+		f1_bus_stat=>open,
+		f1_blk_stat=>open,
+		ce0_reg=>open,
+		cl0_reg=>open,
+		z0_reg=>open,
+		ff0_reg=>open,
+		ce1_reg=>open,
+		cl1_reg=>open,
+		z1_reg=>open,
+		ff1_reg=>open,
+		ov_msb_reg=>open,
+		co_msb_reg=>open,
+		cmsb_reg=>open,
+		so_reg=>open,
+		f0_bus_stat_reg=>open,
+		f0_blk_stat_reg=>open,
+		f1_bus_stat_reg=>open,
+		f1_blk_stat_reg=>open,
+		ci=>zero,
+		co=>open,
+		sir=>zero,
+		sor=>open,
+		sil=>zero,
+		sol=>open,
+		msbi=>zero,
+		msbo=>open,
+		cei=>(zero, zero),
+		ceo=>open,
+		cli=>(zero, zero),
+		clo=>open,
+		zi=>(zero, zero),
+		zo=>open,
+		fi=>(zero, zero),
+		fo=>open,
+		capi=>(zero, zero),
+		capo=>open,
+		cfbi=>zero,
+		cfbo=>open,
+		pi=>(zero, zero, zero, zero,
+			zero, zero, zero, zero),
+		po=>open);
+\IMU:BUART:sTX:sCLOCK:TxBitClkGen\:cy_psoc3_dp
+	GENERIC MAP(cy_dpconfig=>"1010100001000000001000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111100000111001000000100000000000101111100000000000000001000",
+		d0_init=>"00000000",
+		d1_init=>"00000000",
+		a0_init=>"00000000",
+		a1_init=>"00000000",
+		ce0_sync=>'1',
+		cl0_sync=>'1',
+		z0_sync=>'1',
+		ff0_sync=>'1',
+		ce1_sync=>'1',
+		cl1_sync=>'1',
+		z1_sync=>'1',
+		ff1_sync=>'1',
+		ov_msb_sync=>'1',
+		co_msb_sync=>'1',
+		cmsb_sync=>'1',
+		so_sync=>'1',
+		f0_bus_sync=>'1',
+		f0_blk_sync=>'1',
+		f1_bus_sync=>'1',
+		f1_blk_sync=>'1')
+	PORT MAP(reset=>zero,
+		clk=>\IMU:BUART:clock_op\,
+		cs_addr=>(zero, zero, \IMU:BUART:counter_load_not\),
+		route_si=>zero,
+		route_ci=>zero,
+		f0_load=>zero,
+		f1_load=>zero,
+		d0_load=>zero,
+		d1_load=>zero,
+		ce0=>open,
+		cl0=>\IMU:BUART:tx_bitclk_dp\,
+		z0=>open,
+		ff0=>open,
+		ce1=>open,
+		cl1=>\IMU:BUART:tx_counter_dp\,
+		z1=>open,
+		ff1=>open,
+		ov_msb=>open,
+		co_msb=>open,
+		cmsb=>open,
+		so=>open,
+		f0_bus_stat=>open,
+		f0_blk_stat=>open,
+		f1_bus_stat=>open,
+		f1_blk_stat=>open,
+		ce0_reg=>open,
+		cl0_reg=>open,
+		z0_reg=>open,
+		ff0_reg=>open,
+		ce1_reg=>open,
+		cl1_reg=>open,
+		z1_reg=>open,
+		ff1_reg=>open,
+		ov_msb_reg=>open,
+		co_msb_reg=>open,
+		cmsb_reg=>open,
+		so_reg=>open,
+		f0_bus_stat_reg=>open,
+		f0_blk_stat_reg=>open,
+		f1_bus_stat_reg=>open,
+		f1_blk_stat_reg=>open,
+		ci=>zero,
+		co=>open,
+		sir=>zero,
+		sor=>open,
+		sil=>zero,
+		sol=>open,
+		msbi=>zero,
+		msbo=>open,
+		cei=>(zero, zero),
+		ceo=>open,
+		cli=>(zero, zero),
+		clo=>open,
+		zi=>(zero, zero),
+		zo=>open,
+		fi=>(zero, zero),
+		fo=>open,
+		capi=>(zero, zero),
+		capo=>open,
+		cfbi=>zero,
+		cfbo=>open,
+		pi=>(zero, zero, zero, zero,
+			zero, zero, zero, zero),
+		po=>(\IMU:BUART:sc_out_7\, \IMU:BUART:sc_out_6\, \IMU:BUART:sc_out_5\, \IMU:BUART:sc_out_4\,
+			\IMU:BUART:sc_out_3\, \IMU:BUART:sc_out_2\, \IMU:BUART:sc_out_1\, \IMU:BUART:sc_out_0\));
+\IMU:BUART:sTX:TxSts\:cy_psoc3_statusi
+	GENERIC MAP(cy_force_order=>'1',
+		cy_md_select=>"0000001",
+		cy_int_mask=>"1111111")
+	PORT MAP(reset=>zero,
+		clock=>\IMU:BUART:clock_op\,
+		status=>(zero, zero, zero, \IMU:BUART:tx_fifo_notfull\,
+			\IMU:BUART:tx_status_2\, \IMU:BUART:tx_fifo_empty\, \IMU:BUART:tx_status_0\),
+		interrupt=>Net_414);
+\IMU:BUART:sRX:RxShifter:u0\:cy_psoc3_dp
+	GENERIC MAP(cy_dpconfig=>"0000000000000000000000000000000000000000000000000000001001000000000100000000000000010000001100000001000000000000000100100001000011111111000000001111111111111111101000000110001001000001111100000000000000001100",
+		d0_init=>"00000000",
+		d1_init=>"00000000",
+		a0_init=>"00000000",
+		a1_init=>"00000000",
+		ce0_sync=>'1',
+		cl0_sync=>'1',
+		z0_sync=>'1',
+		ff0_sync=>'1',
+		ce1_sync=>'1',
+		cl1_sync=>'1',
+		z1_sync=>'1',
+		ff1_sync=>'1',
+		ov_msb_sync=>'1',
+		co_msb_sync=>'1',
+		cmsb_sync=>'1',
+		so_sync=>'1',
+		f0_bus_sync=>'1',
+		f0_blk_sync=>'1',
+		f1_bus_sync=>'1',
+		f1_blk_sync=>'1')
+	PORT MAP(reset=>zero,
+		clk=>\IMU:BUART:clock_op\,
+		cs_addr=>(\IMU:BUART:rx_state_1\, \IMU:BUART:rx_state_0\, \IMU:BUART:rx_bitclk_enable\),
+		route_si=>\IMU:BUART:pollcount_1\,
+		route_ci=>zero,
+		f0_load=>\IMU:BUART:rx_load_fifo\,
+		f1_load=>zero,
+		d0_load=>zero,
+		d1_load=>zero,
+		ce0=>\IMU:BUART:rx_addressmatch1\,
+		cl0=>open,
+		z0=>open,
+		ff0=>open,
+		ce1=>\IMU:BUART:rx_addressmatch2\,
+		cl1=>open,
+		z1=>open,
+		ff1=>open,
+		ov_msb=>open,
+		co_msb=>open,
+		cmsb=>open,
+		so=>\IMU:BUART:hd_shift_out\,
+		f0_bus_stat=>\IMU:BUART:rx_fifonotempty\,
+		f0_blk_stat=>\IMU:BUART:rx_fifofull\,
+		f1_bus_stat=>\IMU:BUART:hd_tx_fifo_notfull\,
+		f1_blk_stat=>\IMU:BUART:hd_tx_fifo_empty\,
+		ce0_reg=>open,
+		cl0_reg=>open,
+		z0_reg=>open,
+		ff0_reg=>open,
+		ce1_reg=>open,
+		cl1_reg=>open,
+		z1_reg=>open,
+		ff1_reg=>open,
+		ov_msb_reg=>open,
+		co_msb_reg=>open,
+		cmsb_reg=>open,
+		so_reg=>open,
+		f0_bus_stat_reg=>open,
+		f0_blk_stat_reg=>open,
+		f1_bus_stat_reg=>open,
+		f1_blk_stat_reg=>open,
+		ci=>zero,
+		co=>open,
+		sir=>zero,
+		sor=>open,
+		sil=>zero,
+		sol=>open,
+		msbi=>zero,
+		msbo=>open,
+		cei=>(zero, zero),
+		ceo=>open,
+		cli=>(zero, zero),
+		clo=>open,
+		zi=>(zero, zero),
+		zo=>open,
+		fi=>(zero, zero),
+		fo=>open,
+		capi=>(zero, zero),
+		capo=>open,
+		cfbi=>zero,
+		cfbo=>open,
+		pi=>(zero, zero, zero, zero,
+			zero, zero, zero, zero),
+		po=>open);
+\IMU:BUART:sRX:RxBitCounter\:cy_psoc3_count7
+	GENERIC MAP(cy_period=>"1110100",
+		cy_init_value=>"0000000",
+		cy_route_ld=>'1',
+		cy_route_en=>'1',
+		cy_alt_mode=>'0')
+	PORT MAP(clock=>\IMU:BUART:clock_op\,
+		reset=>\IMU:BUART:reset_reg\,
+		load=>\IMU:BUART:rx_counter_load\,
+		enable=>tmpOE__Err_LED_1_net_0,
+		count=>(\IMU:BUART:rx_count_6\, \IMU:BUART:rx_count_5\, \IMU:BUART:rx_count_4\, \IMU:BUART:rx_count_3\,
+			\IMU:BUART:rx_count_2\, \IMU:BUART:rx_count_1\, \IMU:BUART:rx_count_0\),
+		tc=>\IMU:BUART:rx_count7_tc\);
+\IMU:BUART:sRX:RxSts\:cy_psoc3_statusi
+	GENERIC MAP(cy_force_order=>'1',
+		cy_md_select=>"1011111",
+		cy_int_mask=>"1111111")
+	PORT MAP(reset=>zero,
+		clock=>\IMU:BUART:clock_op\,
+		status=>(zero, \IMU:BUART:rx_status_5\, \IMU:BUART:rx_status_4\, \IMU:BUART:rx_status_3\,
+			\IMU:BUART:rx_status_2\, zero, zero),
+		interrupt=>Net_404);
+Rx_1:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"87978b5a-18a4-4ef5-a0c5-df96e371aa6f",
+		drive_mode=>"001",
+		ibuf_enabled=>"1",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		intr_mode=>"00",
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"0",
+		output_sync=>"0",
+		oe_conn=>"0",
+		pin_aliases=>"",
+		pin_mode=>"I",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"0",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"00",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0")
+	PORT MAP(oe=>(tmpOE__Err_LED_1_net_0),
+		y=>(zero),
+		fb=>Net_391,
+		analog=>(open),
+		io=>(tmpIO_0__Rx_1_net_0),
+		siovref=>(tmpSIOVREF__Rx_1_net_0),
+		annotation=>(open),
+		interrupt=>tmpINTERRUPT_0__Rx_1_net_0);
+Tx_1:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"6701c87a-b093-4894-a9b5-58763ed14ae9",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"1",
+		input_sync=>"1",
+		intr_mode=>"00",
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"1",
+		output_sync=>"0",
+		oe_conn=>"0",
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"0",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0")
+	PORT MAP(oe=>(tmpOE__Err_LED_1_net_0),
+		y=>Net_386,
+		fb=>(tmpFB_0__Tx_1_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Tx_1_net_0),
+		siovref=>(tmpSIOVREF__Tx_1_net_0),
+		annotation=>(open),
+		interrupt=>tmpINTERRUPT_0__Tx_1_net_0);
+IMU_Interrupt:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10")
+	PORT MAP(int_signal=>Net_404);
 \I2C:bI2C_UDB:sda_in_reg\:cy_dff
 	PORT MAP(d=>\I2C:Net_855\,
 		clk=>\I2C:bI2C_UDB:op_clk\,
@@ -3675,5 +4559,121 @@ Right_Encoder_Interrupt:cy_isr_v1_0
 	PORT MAP(d=>\Right_Encoder:bQuadDec:state_0\\D\,
 		clk=>\Right_Encoder:bQuadDec:sync_clock\,
 		q=>\Right_Encoder:bQuadDec:state_0\);
+\IMU:BUART:reset_reg\:cy_dff
+	PORT MAP(d=>zero,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:reset_reg\);
+\IMU:BUART:txn\:cy_dff
+	PORT MAP(d=>\IMU:BUART:txn\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:txn\);
+\IMU:BUART:tx_state_1\:cy_dff
+	PORT MAP(d=>\IMU:BUART:tx_state_1\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:tx_state_1\);
+\IMU:BUART:tx_state_0\:cy_dff
+	PORT MAP(d=>\IMU:BUART:tx_state_0\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:tx_state_0\);
+\IMU:BUART:tx_state_2\:cy_dff
+	PORT MAP(d=>\IMU:BUART:tx_state_2\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:tx_state_2\);
+\IMU:BUART:tx_bitclk\:cy_dff
+	PORT MAP(d=>\IMU:BUART:tx_bitclk_enable_pre\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:tx_bitclk\);
+Net_411:cy_dff
+	PORT MAP(d=>zero,
+		clk=>\IMU:BUART:clock_op\,
+		q=>Net_411);
+\IMU:BUART:tx_ctrl_mark_last\:cy_dff
+	PORT MAP(d=>\IMU:BUART:control_2\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:tx_ctrl_mark_last\);
+\IMU:BUART:tx_mark\:cy_dff
+	PORT MAP(d=>\IMU:BUART:tx_mark\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:tx_mark\);
+\IMU:BUART:tx_parity_bit\:cy_dff
+	PORT MAP(d=>\IMU:BUART:tx_parity_bit\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:tx_parity_bit\);
+\IMU:BUART:rx_state_1\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_state_1\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_state_1\);
+\IMU:BUART:rx_state_0\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_state_0\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_state_0\);
+\IMU:BUART:rx_load_fifo\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_load_fifo\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_load_fifo\);
+\IMU:BUART:rx_state_3\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_state_3\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_state_3\);
+\IMU:BUART:rx_state_2\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_state_2\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_state_2\);
+\IMU:BUART:rx_bitclk\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_bitclk_pre\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_bitclk_enable\);
+\IMU:BUART:rx_state_stop1_reg\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_state_stop1_reg\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_state_stop1_reg\);
+\IMU:BUART:pollcount_1\:cy_dff
+	PORT MAP(d=>\IMU:BUART:pollcount_1\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:pollcount_1\);
+\IMU:BUART:pollcount_0\:cy_dff
+	PORT MAP(d=>\IMU:BUART:pollcount_0\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:pollcount_0\);
+\IMU:BUART:rx_markspace_status\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_markspace_status\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_markspace_status\);
+\IMU:BUART:rx_parity_error_status\:cy_dff
+	PORT MAP(d=>zero,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_status_2\);
+\IMU:BUART:rx_stop_bit_error\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_stop_bit_error\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_status_3\);
+\IMU:BUART:rx_addr_match_status\:cy_dff
+	PORT MAP(d=>zero,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_addr_match_status\);
+\IMU:BUART:rx_markspace_pre\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_markspace_pre\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_markspace_pre\);
+\IMU:BUART:rx_parity_error_pre\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_parity_error_pre\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_parity_error_pre\);
+\IMU:BUART:rx_break_status\:cy_dff
+	PORT MAP(d=>zero,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_break_status\);
+\IMU:BUART:rx_address_detected\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_address_detected\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_address_detected\);
+\IMU:BUART:rx_last\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_last\\D\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_last\);
+\IMU:BUART:rx_parity_bit\:cy_dff
+	PORT MAP(d=>\IMU:BUART:rx_parity_bit\,
+		clk=>\IMU:BUART:clock_op\,
+		q=>\IMU:BUART:rx_parity_bit\);
 
 END R_T_L;

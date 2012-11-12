@@ -20,7 +20,6 @@
 #define	SEC_PER_MIN 60
 #define MS_PER_SEC 1000
 #define WATCHDOG_TIMEOUT 200
-#define VELOCITY_UPDATE 20 //needs to be a factor of 1000 (MS_PER_SEC) in current implementation
 
 uint32 time; //current time in sec past 0:00
 uint16 ms; //millisecond counter
@@ -28,6 +27,7 @@ uint32 WatchdogTime; //watchdog timeout
 uint8 WatchdogRunning; //boolean representing if WD is running
 uint8 WatchdogOverflow;
 uint8 VelCtrlRunning;
+uint16 VelCtrlRate;
 
 void SetClock(int hr, int min, int sec, int milli){
 	time = (((hr * SEC_PER_HOUR) + (min * SEC_PER_MIN) + sec ) % SEC_PER_DAY );
@@ -40,11 +40,12 @@ uint32 GetTime(void){ return time; }
 int GetHour(void){ return time/SEC_PER_HOUR; }
 int GetMin(void){ return time%SEC_PER_HOUR/SEC_PER_MIN; }
 int GetSec(void){ return time%SEC_PER_MIN; }
- 
+void SetMessageRate(uint16 in) { VelCtrlRate = in; }
+uint16 GetMessageRate(void) { return VelCtrlRate; }
 void WatchdogTimeout(void){
 	JoystickOut(128,128); //stop the bot
 	VelCtrlRunning = 0;
-	Err_LED_1_Write(0);
+	Err_LED_1_Write(1);
 }
 
 void MainTimeISRHandler(void){
@@ -56,7 +57,7 @@ void MainTimeISRHandler(void){
 	}
 	if(time >= SEC_PER_DAY) time = 0;
 	if(WatchdogRunning && !WatchdogOverflow && (WatchdogTime <= ms)) WatchdogTimeout();
-	if((ms % VELOCITY_UPDATE) == 0){
+	if((ms % VelCtrlRate) == 0){
 		UpdateVelocity();
 		sendCommMessage();
 		if(VelCtrlRunning) RunVelocityControl();
@@ -66,12 +67,13 @@ void MainTimeISRHandler(void){
 void ResetWatchdog(void){
 	if( ms + WATCHDOG_TIMEOUT >= MS_PER_SEC) WatchdogOverflow = 1;
 	WatchdogTime = (( ms + WATCHDOG_TIMEOUT ) % MS_PER_SEC);
-	Err_LED_1_Write(1);
+	Err_LED_1_Write(0);
 }
 
 void InitializeWatchdog(void){
 	WatchdogRunning = 1;
 	VelCtrlRunning = 0;
+	VelCtrlRate = 20;
 	ResetWatchdog();
 }
 
