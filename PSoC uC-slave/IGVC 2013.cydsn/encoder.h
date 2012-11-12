@@ -13,6 +13,7 @@
 void InitializeEncoders(void);
 int32 GetLeftEncoder(void);
 int32 GetRightEncoder(void);
+void ResetEncoders(void);
 void InitializeEncodersInvert(int leftInvert, int rightInvert);
 
 //[] END OF FILE

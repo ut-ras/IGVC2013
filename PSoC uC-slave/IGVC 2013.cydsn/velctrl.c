@@ -14,6 +14,8 @@
 #include <time.h>
 #include <encoder.h>
 #include <joystick.h>
+#define SATURATE(in,min,max) (min > in) ? min : ( (max < in) ? max : in)
+
 
 int linearX;  //percieved linear X velocity in encoder ticks per 20ms (50hz) (+ being the front of the robot, 0 being stationary)
 int angularZ; //percieved angular Z velocity in encoder ticks per 20ms (50hz) (+ being clockwise, 0 being 12 o'clock)
@@ -79,8 +81,8 @@ int ZPID(){
 
 //called to update the joystick outputs based on the current
 void RunVelocityControl(void){
-	JoystickYOut(XPID());
-	JoystickXOut(ZPID());
+	JoystickYOut(SATURATE(XPID(),0,255));
+	JoystickXOut(SATURATE(ZPID(),0,255));
 }
 
 void UpdateVelocity(void){

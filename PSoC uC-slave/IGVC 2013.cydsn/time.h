@@ -18,6 +18,8 @@ uint32 GetTime(void);
 int GetHour(void);
 int GetMin(void);
 int GetSec(void);
+void SetMessageRate(uint16 in);
+uint16 GetMessageRate(void);
 void MainTimeISRHandler(void);
 void ResetWatchdog(void);
 void InitializeWatchdog(void);

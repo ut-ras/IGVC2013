@@ -12,11 +12,12 @@
 #include <device.h>
 #include <nunchuck.h>
 #include <joystick.h>
-#include <servo.h>
+#include <servodriver.h>
 #include <uart.h>
 #include <time.h>
 #include <uartComSlave.h>
 #include <encoder.h>
+#include <imudriver.h>
 
 void main()
 {
