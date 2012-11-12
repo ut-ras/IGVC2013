@@ -18,7 +18,7 @@
 #include <uart.h>
 #include <velctrl.h>
 #include <encoder.h>
-#include <imudriver.h>
+#include <sphero.h>
 
 
 #define CODE_START					1
@@ -106,7 +106,21 @@ void handleCommMessage(void){
 }
 
 void sendCommMessage(void){
-	if(EnableSensorFeedbackMessages) UARTprintf("(: ENCL %d ENCR %d VELV %d VELW %d TIME %d%.3d RATE %d :)\r\n", GetLeftEncoder(), GetRightEncoder(), GetV(), GetW(), GetTime(), GetMS(), GetMessageRate() );
+	if(EnableSensorFeedbackMessages){
+		//UARTprintf("(: ENCL %d ENCR %d VELV %d VELW %d TIME %d%.3d RATE %d :)\r\n", 
+		//UARTprintf("^.- ROLL %d PTCH %d YAWW %d -.^\r\n", roll, pitch, yaw );
+		UARTprintf("(: %d %d %d %d %d %d %d %d%.3d %d :)\r\n", 
+		GetLeftEncoder(), 
+		GetRightEncoder(), 
+		GetV(), 
+		GetW(), 
+		GetRoll(),
+		GetPitch(),
+		GetYaw(),
+		GetTime(), 
+		GetMS(),
+		GetMessageRate() );
+	}
 }
 
 void InitializeUCSlave(void){
