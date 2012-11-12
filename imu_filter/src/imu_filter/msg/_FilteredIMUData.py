@@ -5,16 +5,16 @@ import genpy
 import struct
 
 import geometry_msgs.msg
+import std_msgs.msg
 
 class FilteredIMUData(genpy.Message):
-  _md5sum = "810801c7caac3a9aa8ca4d780921fe8d"
+  _md5sum = "3b992381865faf3f0d8287b533e18895"
   _type = "imu_filter/FilteredIMUData"
-  _has_header = False #flag to mark the presence of a Header object
-  _full_text = """#postion information. z is always zero.
-geometry_msgs/Point position
+  _has_header = True #flag to mark the presence of a Header object
+  _full_text = """Header header
 
 #velocity information. z is always zero.
-geometry_msgs/Vector3 velocity
+geometry_msgs/Vector3 acceleration
 
 #yaw pitch and roll
 float64 roll    #roll from the imu
@@ -22,11 +22,22 @@ float64 pitch   #pitch from the imu
 float64 yaw     #yaw from the imu
 
 ================================================================================
-MSG: geometry_msgs/Point
-# This contains the position of a point in free space
-float64 x
-float64 y
-float64 z
+MSG: std_msgs/Header
+# Standard metadata for higher-level stamped data types.
+# This is generally used to communicate timestamped data 
+# in a particular coordinate frame.
+# 
+# sequence ID: consecutively increasing ID 
+uint32 seq
+#Two-integer timestamp that is expressed as:
+# * stamp.secs: seconds (stamp_secs) since epoch
+# * stamp.nsecs: nanoseconds since stamp_secs
+# time-handling sugar is provided by the client library
+time stamp
+#Frame this data is associated with
+# 0: no frame
+# 1: global frame
+string frame_id
 
 ================================================================================
 MSG: geometry_msgs/Vector3
@@ -36,8 +47,8 @@ float64 x
 float64 y
 float64 z
 """
-  __slots__ = ['position','velocity','roll','pitch','yaw']
-  _slot_types = ['geometry_msgs/Point','geometry_msgs/Vector3','float64','float64','float64']
+  __slots__ = ['header','acceleration','roll','pitch','yaw']
+  _slot_types = ['std_msgs/Header','geometry_msgs/Vector3','float64','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -47,7 +58,7 @@ float64 z
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       position,velocity,roll,pitch,yaw
+       header,acceleration,roll,pitch,yaw
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -56,10 +67,10 @@ float64 z
     if args or kwds:
       super(FilteredIMUData, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.position is None:
-        self.position = geometry_msgs.msg.Point()
-      if self.velocity is None:
-        self.velocity = geometry_msgs.msg.Vector3()
+      if self.header is None:
+        self.header = std_msgs.msg.Header()
+      if self.acceleration is None:
+        self.acceleration = geometry_msgs.msg.Vector3()
       if self.roll is None:
         self.roll = 0.
       if self.pitch is None:
@@ -67,8 +78,8 @@ float64 z
       if self.yaw is None:
         self.yaw = 0.
     else:
-      self.position = geometry_msgs.msg.Point()
-      self.velocity = geometry_msgs.msg.Vector3()
+      self.header = std_msgs.msg.Header()
+      self.acceleration = geometry_msgs.msg.Vector3()
       self.roll = 0.
       self.pitch = 0.
       self.yaw = 0.
@@ -86,7 +97,15 @@ float64 z
     """
     try:
       _x = self
-      buff.write(_struct_9d.pack(_x.position.x, _x.position.y, _x.position.z, _x.velocity.x, _x.velocity.y, _x.velocity.z, _x.roll, _x.pitch, _x.yaw))
+      buff.write(_struct_3I.pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+      _x = self.header.frame_id
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.pack('<I%ss'%length, length, _x))
+      _x = self
+      buff.write(_struct_6d.pack(_x.acceleration.x, _x.acceleration.y, _x.acceleration.z, _x.roll, _x.pitch, _x.yaw))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -96,15 +115,28 @@ float64 z
     :param str: byte array of serialized message, ``str``
     """
     try:
-      if self.position is None:
-        self.position = geometry_msgs.msg.Point()
-      if self.velocity is None:
-        self.velocity = geometry_msgs.msg.Vector3()
+      if self.header is None:
+        self.header = std_msgs.msg.Header()
+      if self.acceleration is None:
+        self.acceleration = geometry_msgs.msg.Vector3()
       end = 0
       _x = self
       start = end
-      end += 72
-      (_x.position.x, _x.position.y, _x.position.z, _x.velocity.x, _x.velocity.y, _x.velocity.z, _x.roll, _x.pitch, _x.yaw,) = _struct_9d.unpack(str[start:end])
+      end += 12
+      (_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs,) = _struct_3I.unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.header.frame_id = str[start:end].decode('utf-8')
+      else:
+        self.header.frame_id = str[start:end]
+      _x = self
+      start = end
+      end += 48
+      (_x.acceleration.x, _x.acceleration.y, _x.acceleration.z, _x.roll, _x.pitch, _x.yaw,) = _struct_6d.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -118,7 +150,15 @@ float64 z
     """
     try:
       _x = self
-      buff.write(_struct_9d.pack(_x.position.x, _x.position.y, _x.position.z, _x.velocity.x, _x.velocity.y, _x.velocity.z, _x.roll, _x.pitch, _x.yaw))
+      buff.write(_struct_3I.pack(_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs))
+      _x = self.header.frame_id
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.pack('<I%ss'%length, length, _x))
+      _x = self
+      buff.write(_struct_6d.pack(_x.acceleration.x, _x.acceleration.y, _x.acceleration.z, _x.roll, _x.pitch, _x.yaw))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -129,18 +169,32 @@ float64 z
     :param numpy: numpy python module
     """
     try:
-      if self.position is None:
-        self.position = geometry_msgs.msg.Point()
-      if self.velocity is None:
-        self.velocity = geometry_msgs.msg.Vector3()
+      if self.header is None:
+        self.header = std_msgs.msg.Header()
+      if self.acceleration is None:
+        self.acceleration = geometry_msgs.msg.Vector3()
       end = 0
       _x = self
       start = end
-      end += 72
-      (_x.position.x, _x.position.y, _x.position.z, _x.velocity.x, _x.velocity.y, _x.velocity.z, _x.roll, _x.pitch, _x.yaw,) = _struct_9d.unpack(str[start:end])
+      end += 12
+      (_x.header.seq, _x.header.stamp.secs, _x.header.stamp.nsecs,) = _struct_3I.unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.header.frame_id = str[start:end].decode('utf-8')
+      else:
+        self.header.frame_id = str[start:end]
+      _x = self
+      start = end
+      end += 48
+      (_x.acceleration.x, _x.acceleration.y, _x.acceleration.z, _x.roll, _x.pitch, _x.yaw,) = _struct_6d.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_9d = struct.Struct("<9d")
+_struct_3I = struct.Struct("<3I")
+_struct_6d = struct.Struct("<6d")

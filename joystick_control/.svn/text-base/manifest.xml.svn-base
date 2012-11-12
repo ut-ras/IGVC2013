@@ -1,0 +1,17 @@
+<package>
+  <description brief="joystick_control">
+
+     joystick_control
+
+  </description>
+  <author>Jraipxg</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/joystick_control</url>
+  <depend package="roscpp"/>
+  <depend package="joy"/>
+  <depend package="geometry_msgs"/>
+
+</package>
+
+
