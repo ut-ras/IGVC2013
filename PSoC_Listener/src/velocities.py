@@ -11,15 +11,15 @@ rate = 20;
 def dataCallback(data):
     p = Twist()
     rate = data.rate;
-    p.linear.x = float(data.vel_v) * .00004868 * 1000 / rate
-    p.angular.z = float(data.vel_w) * .00038944 * 1000 / rate
+    p.linear.x = float(data.vel_v) * .00004871 * 1000 / rate
+    p.angular.z = float(data.vel_w) * .00019482 * 1000 / rate
     pub_data.publish(p)
 
 def cmdCallback(data):
     p = String()
-    p.data = ">SVLX:"+str(data.linear.x / .00004868 / 1000 / rate)
+    p.data = ">SVLX:"+str(data.linear.x / .00004871 / 1000 / rate)
     pub_cmd.publish(p)
-    p.data = ">SVAZ:"+str(data.angular.z / .00038944 / 1000 / rate)
+    p.data = ">SVAZ:"+str(data.angular.z / .00019482 / 1000 / rate)
     pub_cmd.publish(p)
 
 def velocities():
