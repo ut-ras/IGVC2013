@@ -35,7 +35,7 @@
 #define IMU_INTERNAL_CLOCK_USED            (1u)
 #define IMU_RXHW_ADDRESS_ENABLED           (0u)
 #define IMU_OVER_SAMPLE_COUNT              (8u)
-#define IMU_PARITY_TYPE                    (3u)
+#define IMU_PARITY_TYPE                    (0u)
 #define IMU_PARITY_TYPE_SW                 (0u)
 #define IMU_BREAK_DETECT                   (0u)
 #define IMU_BREAK_BITS_TX                  (13u)
@@ -315,7 +315,7 @@ void IMU_Wakeup(void) ;
 #define IMU_TXBUFFERSIZE           (64u)
 #define IMU_RXBUFFERSIZE           (64u)
 /* UART shifts max 8 bits, Mark/Space functionality working if 9 selected */
-#define IMU_NUMBER_OF_DATA_BITS    ((9u > 8u) ? 8u : 9u)
+#define IMU_NUMBER_OF_DATA_BITS    ((8u > 8u) ? 8u : 8u)
 #define IMU_NUMBER_OF_STOP_BITS    (1u)
 
 #if (IMU_RXHW_ADDRESS_ENABLED)

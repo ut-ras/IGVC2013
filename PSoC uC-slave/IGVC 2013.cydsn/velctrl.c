@@ -103,7 +103,7 @@ void InitializeVelocityControl(void){
 	//These two need to happen if they haven't already
 	/*InitializeWatchdog(); 
 	InitializeTime();*/
-	InitializeEncodersInvert(1,1);
+	InitializeEncodersInvert(1,-1);
 	linearX = 0;
 	angularZ = 0;
 	curLinearXCommand = 0;

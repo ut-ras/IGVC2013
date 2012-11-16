@@ -10,6 +10,9 @@
  * ========================================
 */
 
+int16 GetRoll(void);
+int16 GetPitch(void);
+int16 GetYaw(void);
 void InitializeIMU(void);
 
 //[] END OF FILE

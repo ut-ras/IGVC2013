@@ -2,7 +2,7 @@
 --	Conversion of IGVC 2013.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Nov 05 17:51:14 2012
+--	Mon Nov 12 07:21:14 2012
 --
 
 USE cypress.cypress.all;
@@ -1312,14 +1312,6 @@ SIGNAL \IMU:Net_9\ : bit;
 SIGNAL Net_404 : bit;
 SIGNAL \IMU:Net_61\ : bit;
 SIGNAL \IMU:BUART:clock_op\ : bit;
-SIGNAL \IMU:BUART:control_7\ : bit;
-SIGNAL \IMU:BUART:control_6\ : bit;
-SIGNAL \IMU:BUART:control_5\ : bit;
-SIGNAL \IMU:BUART:control_4\ : bit;
-SIGNAL \IMU:BUART:control_3\ : bit;
-SIGNAL \IMU:BUART:control_2\ : bit;
-SIGNAL \IMU:BUART:control_1\ : bit;
-SIGNAL \IMU:BUART:control_0\ : bit;
 SIGNAL \IMU:BUART:reset_reg\ : bit;
 SIGNAL \IMU:BUART:reset_reg_dp\ : bit;
 SIGNAL \IMU:BUART:tx_hd_send_break\ : bit;
@@ -1810,8 +1802,8 @@ tmpOE__Err_LED_1_net_0 <=  ('1') ;
 \I2C:bI2C_UDB:m_state_0\\D\ <= ((not \I2C:bI2C_UDB:control_reg_5\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and not \I2C:bI2C_UDB:lost_arb2_reg\ and \I2C:bI2C_UDB:control_reg_4\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:control_reg_7\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
-	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:tx_reg_empty\ and not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
+	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and not \I2C:bI2C_UDB:lost_arb_reg\ and \I2C:bI2C_UDB:control_reg_6\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:m_state_0\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:tx_reg_empty\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:m_state_0\)
 	OR (not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_4\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:m_state_0\)
@@ -2100,31 +2092,26 @@ Net_386 <= (not \IMU:BUART:txn\);
 
 \IMU:BUART:tx_status_2\ <= (not \IMU:BUART:tx_fifo_notfull\);
 
-\IMU:BUART:tx_mark\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_ctrl_mark_last\ and not \IMU:BUART:tx_mark\ and \IMU:BUART:control_2\)
-	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:tx_counter_dp\ and \IMU:BUART:tx_mark\)
-	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_mark\)
-	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_mark\)
-	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_mark\)
-	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_mark\));
+\IMU:BUART:tx_mark\\D\ <= ((not \IMU:BUART:reset_reg\ and \IMU:BUART:tx_mark\));
 
-\IMU:BUART:tx_state_2\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_bitclk\)
-	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_2\)
+\IMU:BUART:tx_state_2\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_2\ and not \IMU:BUART:tx_counter_dp\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_bitclk\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_bitclk\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_2\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_2\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_state_2\));
 
 \IMU:BUART:tx_state_1\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_bitclk\)
-	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_state_1\)
-	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_1\));
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_counter_dp\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_2\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_state_1\));
 
 \IMU:BUART:tx_state_0\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_fifo_empty\ and not \IMU:BUART:tx_state_2\ and not \IMU:BUART:tx_bitclk\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_state_0\ and not \IMU:BUART:tx_fifo_empty\ and \IMU:BUART:tx_bitclk\)
-	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and not \IMU:BUART:tx_state_2\ and not \IMU:BUART:tx_counter_dp\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_bitclk\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_fifo_empty\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_2\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_state_0\ and \IMU:BUART:tx_state_2\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_state_0\));
 
-\IMU:BUART:txn\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and not \IMU:BUART:tx_state_2\ and not \IMU:BUART:tx_counter_dp\ and not \IMU:BUART:tx_mark\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_bitclk\)
-	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and not \IMU:BUART:tx_shift_out\ and not \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_counter_dp\)
+\IMU:BUART:txn\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_0\ and not \IMU:BUART:tx_shift_out\ and not \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_state_1\ and \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_counter_dp\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_state_2\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:tx_state_0\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_state_1\ and not \IMU:BUART:tx_shift_out\ and not \IMU:BUART:tx_state_2\ and \IMU:BUART:tx_state_0\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:tx_bitclk\ and \IMU:BUART:txn\ and \IMU:BUART:tx_state_1\)
@@ -2161,9 +2148,9 @@ Net_386 <= (not \IMU:BUART:txn\);
 
 \IMU:BUART:rx_stop_bit_error\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:pollcount_1\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\ and \IMU:BUART:rx_state_2\));
 
-\IMU:BUART:rx_markspace_status\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\ and \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_markspace_pre\));
-
-\IMU:BUART:rx_load_fifo\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\));
+\IMU:BUART:rx_load_fifo\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_3\ and not \IMU:BUART:rx_state_2\ and not \IMU:BUART:rx_count_6\ and not \IMU:BUART:rx_count_4\ and \IMU:BUART:rx_state_0\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_3\ and not \IMU:BUART:rx_state_2\ and not \IMU:BUART:rx_count_6\ and not \IMU:BUART:rx_count_5\ and \IMU:BUART:rx_state_0\));
 
 \IMU:BUART:rx_state_3\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_2\ and not \IMU:BUART:rx_count_6\ and not \IMU:BUART:rx_count_4\ and \IMU:BUART:rx_state_0\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_2\ and not \IMU:BUART:rx_count_6\ and not \IMU:BUART:rx_count_5\ and \IMU:BUART:rx_state_0\)
@@ -2174,9 +2161,11 @@ Net_386 <= (not \IMU:BUART:txn\);
 
 \IMU:BUART:rx_state_2\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:rx_state_3\ and not \IMU:BUART:rx_state_2\ and not Net_391 and \IMU:BUART:rx_last\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_3\ and not \IMU:BUART:rx_count_6\ and not \IMU:BUART:rx_count_4\ and \IMU:BUART:rx_state_0\)
+	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_3\ and not \IMU:BUART:rx_count_6\ and not \IMU:BUART:rx_count_5\ and \IMU:BUART:rx_state_0\)
 	OR (not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_2\)
-	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_0\ and \IMU:BUART:rx_state_2\)
-	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_1\ and \IMU:BUART:rx_state_2\));
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_1\ and \IMU:BUART:rx_state_2\)
+	OR (not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_0\ and \IMU:BUART:rx_state_2\));
 
 \IMU:BUART:rx_state_1\\D\ <= ((not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_state_1\));
 
@@ -2190,15 +2179,6 @@ Net_386 <= (not \IMU:BUART:txn\);
 \IMU:BUART:rx_last\\D\ <= ((not \IMU:BUART:reset_reg\ and Net_391));
 
 \IMU:BUART:rx_address_detected\\D\ <= ((not \IMU:BUART:reset_reg\ and \IMU:BUART:rx_address_detected\));
-
-\IMU:BUART:rx_markspace_pre\\D\ <= ((not \IMU:BUART:reset_reg\ and not \IMU:BUART:rx_state_1\ and not \IMU:BUART:rx_state_0\ and not \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_state_3\ and \IMU:BUART:pollcount_1\)
-	OR (\IMU:BUART:rx_state_3\ and \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_markspace_pre\)
-	OR (\IMU:BUART:pollcount_1\ and \IMU:BUART:rx_markspace_pre\)
-	OR (not \IMU:BUART:rx_state_3\ and not \IMU:BUART:rx_state_2\ and \IMU:BUART:rx_markspace_pre\)
-	OR (not \IMU:BUART:rx_bitclk_enable\ and \IMU:BUART:rx_markspace_pre\)
-	OR (\IMU:BUART:rx_state_0\ and \IMU:BUART:rx_markspace_pre\)
-	OR (\IMU:BUART:rx_state_1\ and \IMU:BUART:rx_markspace_pre\)
-	OR (\IMU:BUART:reset_reg\ and \IMU:BUART:rx_markspace_pre\));
 
 \VDAC8_1:viDAC8\:cy_psoc3_vidac8_v1_0
 	GENERIC MAP(cy_registers=>"",
@@ -3846,16 +3826,6 @@ Right_Encoder_Interrupt:cy_isr_v1_0
 	PORT MAP(clock_in=>\IMU:Net_9\,
 		enable=>tmpOE__Err_LED_1_net_0,
 		clock_out=>\IMU:BUART:clock_op\);
-\IMU:BUART:sCR:AsyncCtl:CtrlReg\:cy_psoc3_control
-	GENERIC MAP(cy_init_value=>"00000000",
-		cy_force_order=>'1',
-		cy_ctrl_mode_1=>"00000000",
-		cy_ctrl_mode_0=>"00000000",
-		cy_ext_reset=>'0')
-	PORT MAP(reset=>zero,
-		clock=>zero,
-		control=>(\IMU:BUART:control_7\, \IMU:BUART:control_6\, \IMU:BUART:control_5\, \IMU:BUART:control_4\,
-			\IMU:BUART:control_3\, \IMU:BUART:control_2\, \IMU:BUART:control_1\, \IMU:BUART:control_0\));
 \IMU:BUART:sTX:TxShifter:u0\:cy_psoc3_dp
 	GENERIC MAP(cy_dpconfig=>"0000000000000000000000000000000000000000000000000000000011000000000000000000000000000010010000000000000000000000000000000000000011111111000000001111111111111111000000000000000001000100111100000000000000001100",
 		d0_init=>"00000000",
@@ -4588,7 +4558,7 @@ Net_411:cy_dff
 		clk=>\IMU:BUART:clock_op\,
 		q=>Net_411);
 \IMU:BUART:tx_ctrl_mark_last\:cy_dff
-	PORT MAP(d=>\IMU:BUART:control_2\,
+	PORT MAP(d=>\IMU:BUART:tx_ctrl_mark_last\,
 		clk=>\IMU:BUART:clock_op\,
 		q=>\IMU:BUART:tx_ctrl_mark_last\);
 \IMU:BUART:tx_mark\:cy_dff
@@ -4636,7 +4606,7 @@ Net_411:cy_dff
 		clk=>\IMU:BUART:clock_op\,
 		q=>\IMU:BUART:pollcount_0\);
 \IMU:BUART:rx_markspace_status\:cy_dff
-	PORT MAP(d=>\IMU:BUART:rx_markspace_status\\D\,
+	PORT MAP(d=>zero,
 		clk=>\IMU:BUART:clock_op\,
 		q=>\IMU:BUART:rx_markspace_status\);
 \IMU:BUART:rx_parity_error_status\:cy_dff
@@ -4652,7 +4622,7 @@ Net_411:cy_dff
 		clk=>\IMU:BUART:clock_op\,
 		q=>\IMU:BUART:rx_addr_match_status\);
 \IMU:BUART:rx_markspace_pre\:cy_dff
-	PORT MAP(d=>\IMU:BUART:rx_markspace_pre\\D\,
+	PORT MAP(d=>\IMU:BUART:rx_markspace_pre\,
 		clk=>\IMU:BUART:clock_op\,
 		q=>\IMU:BUART:rx_markspace_pre\);
 \IMU:BUART:rx_parity_error_pre\:cy_dff
