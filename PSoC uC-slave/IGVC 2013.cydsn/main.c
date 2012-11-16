@@ -17,7 +17,7 @@
 #include <time.h>
 #include <uartComSlave.h>
 #include <encoder.h>
-#include <imudriver.h>
+#include <sphero.h>
 
 void main()
 {
