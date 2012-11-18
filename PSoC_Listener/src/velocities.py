@@ -7,19 +7,23 @@ from std_msgs.msg import String
 
 pub_data = rospy.Publisher('vel_data', Twist)
 pub_cmd = rospy.Publisher('psoc_cmd', String)
-rate = 20;
+rate = 20; #milliseconds between messages
 def dataCallback(data):
     p = Twist()
     rate = data.rate;
-    p.linear.x = float(data.vel_v) * .00004871 * 1000 / rate
+    p.linear.x = float(data.vel_v) * .00004871 * 1000 / rate 
+    #Each raw v-velocity tick = 48.71 um per (time interval between messages)
     p.angular.z = float(data.vel_w) * .00019482 * 1000 / rate
+    #Each raw w-velocity tick = 194.82 urad per (time interval between messages)    
     pub_data.publish(p)
 
 def cmdCallback(data):
     p = String()
-    p.data = ">SVLX:"+str(data.linear.x / .00004871 / 1000 / rate)
+    p.data = ">SVLX:"+str(data.linear.x / .00004871 / 1000 * rate) 
+    #Each raw v-velocity tick = 48.71 um per (time interval between messages)
     pub_cmd.publish(p)
-    p.data = ">SVAZ:"+str(data.angular.z / .00019482 / 1000 / rate)
+    p.data = ">SVAZ:"+str(data.angular.z / .00019482 / 1000 * rate)
+    #Each raw w-velocity tick = 194.82 urad per (time interval between messages)    
     pub_cmd.publish(p)
 
 def velocities():
