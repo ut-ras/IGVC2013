@@ -1,0 +1,15 @@
+<package>
+  <description brief="phone_dialup">
+
+     phone_dialup
+
+  </description>
+  <author>Granny</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/phone_dialup</url>
+  <depend package="roscpp"/>
+
+</package>
+
+
