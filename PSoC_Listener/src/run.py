@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 import roslib; roslib.load_manifest('PSoC_Listener')
 import rospy
-from PSoC_Listener.msg import PSoC 
+from PSoC_Listener.msg import PSoC
 from std_msgs.msg import String
 import serial
 import string
 import atexit
 from geometry_msgs.msg import Twist
 
-ser = serial.Serial(port='/dev/ttyACM1', baudrate = 921600)
+ser = serial.Serial(port='/dev/ttyACM0', baudrate = 921600)
 
 @atexit.register
 def onExit():
@@ -52,7 +52,7 @@ def psoc():
             rospy.logdebug('Telemetry message: '+line)
         else:
             rospy.loginfo('Info message from PSoC: '+ line)
-    
+
 if __name__ == "__main__":
     try:
         psoc()

@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-import roslib; roslib.load_manifest('GPS')
+import roslib; roslib.load_manifest('GPS_Ublox')
 import rospy
 import serial
 import string
 from geometry_msgs.msg import Point
 
-ser = serial.Serial(port='/dev/ttyACM0', baudrate = 57600)
+ser = serial.Serial(port='/dev/ttyACM1', baudrate = 57600)
 
 def gps():
 	rospy.loginfo( "GPS Listener is running on " + ser.portstr )

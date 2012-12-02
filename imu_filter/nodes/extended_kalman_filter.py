@@ -6,13 +6,17 @@ import pylab
 import math
 import random
 import numpy
+import time
 
 from std_msgs.msg import String
+from geometry_msgs.msg import Twist,Point
 from ocean_server_imu.msg import RawData
 from imu_filter.msg import FilteredIMUData,EKFData
 
 OCEAN_SERVER_IMU_INDEX = 0
 ENCODERS_INDEX = 1
+GPS_INDEX = 2
+SPHERO_IMU_INDEX = 3
 
 kf = None
 prevTime = None # TODO: using timestamps from all sensors... how to unify?
@@ -46,14 +50,45 @@ def get_dt(curTime):
 
 def oceanserver_imu_callback(data):
     # rospy.loginfo("Measure:\n%f\n%f", data.acceleration.x, data.acceleration.y)
-
-    dt = get_dt(data.header.stamp.to_time())
+    dt = get_dt(time.time())
 
     control_vector = -1
-    measurement_vector = numpy.matrix( [[data.acceleration.x],[data.acceleration.y],[data.roll],[data.pitch],[data.yaw]] )
+    measurement_vector = numpy.matrix( 
+                            [ [data.acceleration.x],
+                              [data.acceleration.y],
+                              [data.roll],
+                              [data.pitch],
+                              [data.yaw] ] )
     kf.Step(OCEAN_SERVER_IMU_INDEX, control_vector, measurement_vector, dt)
     
     publish_data(kf.GetCurrentState())
+
+def encoders_imu_callback(data):
+    # rospy.loginfo("Measure:\n%f\n%f", data.acceleration.x, data.acceleration.y)
+
+    dt = get_dt(time.time())
+
+    control_vector = -1
+    measurement_vector = numpy.matrix( 
+                            [ [data.linear.x],
+                              [data.angular.z] ] )
+    kf.Step(ENCODERS_INDEX, control_vector, measurement_vector, dt)
+    
+    publish_data(kf.GetCurrentState())
+
+def gps_imu_callback(data):
+    # rospy.loginfo("Measure:\n%f\n%f", data.acceleration.x, data.acceleration.y)
+
+    dt = get_dt(time.time())
+
+    control_vector = -1
+    measurement_vector = numpy.matrix( 
+                            [ [data.x],
+                              [data.y] ] )
+    kf.Step(GPS_INDEX, control_vector, measurement_vector, dt)
+    
+    publish_data(kf.GetCurrentState())
+
 
 
 class ExtendedKalmanFilter:
@@ -92,13 +127,13 @@ class ExtendedKalmanFilter:
 
     self.P = (self.I - kalman_gain*H_jacobian)*predicted_P
 
-
 def imu_observation_funct(state, dt):
     z = state[2, 0]
     w = state[4, 0]
     a = state[5, 0]
     r = state[6, 0]
     p = state[7, 0]
+
     return numpy.matrix(\
         [ [a*math.cos(z + dt*w)],\
           [a*math.sin(z + dt*w)],\
@@ -110,6 +145,7 @@ def imu_jacobian_funct(state, dt):
     z = state[2, 0]
     w = state[4, 0]
     a = state[5, 0]
+
     return numpy.matrix(\
         [ [0, 0, -a*math.sin(z + dt*w), 0, -dt*a*math.sin(z + dt*w), math.cos(z + dt*w), 0, 0],\
           [0, 0,  a*math.cos(z + dt*w), 0,  dt*a*math.cos(z + dt*w), math.sin(z + dt*w), 0, 0],\
@@ -117,9 +153,33 @@ def imu_jacobian_funct(state, dt):
           [0, 0, 0, 0,  0, 0, 0, 1],\
           [0, 0, 1, 0, dt, 0, 0, 0] ])
 
+def encoders_observation_funct(state, dt):
+    v = state[3, 0]
+    w = state[4, 0]
+    a = state[5, 0]
 
-def transition_funct(state, control, dt):
+    return numpy.matrix(\
+        [ [v + dt*a],
+          [w] ])
 
+def encoders_jacobian_funct(state, dt):
+    return numpy.matrix(\
+        [ [0, 0, 0, 1, 0, dt, 0, 0],
+          [0, 0, 0, 0, 1,  0, 0, 0] ])
+
+def gps_observation_funct(state, dt):
+    x = state[0, 0]
+    y = state[1, 0]
+    z = state[2, 0]
+    v = state[3, 0]
+    w = state[4, 0]
+    a = state[5, 0]
+
+    return numpy.matrix(\
+    	[ [x + (dt*v + 0.5*dt*dt*a)*math.cos(z + dt*w)],\
+          [y + (dt*v + 0.5*dt*dt*a)*math.sin(z + dt*w)]])
+
+def gps_jacobian_funct(state, dt):
     x = state[0, 0]
     y = state[1, 0]
     z = state[2, 0]
@@ -129,15 +189,31 @@ def transition_funct(state, control, dt):
     r = state[6, 0]
     p = state[7, 0]
 
+    return numpy.matrix(\
+        [ [1, 0, -dt*(v + .5*a*dt)*math.sin(z + dt*w), dt*math.cos(z + dt*w),\
+                 -dt*dt*(v + .5*a*dt)*math.sin(z + dt*w), .5*dt*dt*math.cos(z + dt*w), 0, 0],\
+          [0, 1,  dt*(v + .5*a*dt)*math.cos(z + dt*w), dt*math.sin(z + dt*w),\
+                  dt*dt*(v + .5*a*dt)*math.cos(z + dt*w), .5*dt*dt*math.sin(z + dt*w), 0, 0] ])  
+
+
+def transition_funct(state, control, dt):
+    x = state[0, 0]
+    y = state[1, 0]
+    z = state[2, 0]
+    v = state[3, 0]
+    w = state[4, 0]
+    a = state[5, 0]
+    r = state[6, 0]
+    p = state[7, 0]
 
     arr = [ [x + (dt*v + 0.5*dt*dt*a)*math.cos(z + dt*w)],\
-          [y + (dt*v + 0.5*dt*dt*a)*math.sin(z + dt*w)],\
-          [z + dt*w],\
-          [v + dt*a],\
-          [w],\
-          [a],\
-          [r],\
-          [p] ]
+            [y + (dt*v + 0.5*dt*dt*a)*math.sin(z + dt*w)],\
+            [z + dt*w],\
+            [v + dt*a],\
+            [w],\
+            [a],\
+            [r],\
+            [p] ]
 
     return numpy.matrix(arr)
 
@@ -146,6 +222,7 @@ def transition_jacobian_funct(state, dt):
     v = state[3, 0]
     w = state[4, 0]
     a = state[5, 0]
+
     return numpy.matrix(\
         [ [1, 0, -dt*(v + .5*a*dt)*math.sin(z + dt*w), dt*math.cos(z + dt*w),\
                  -dt*dt*(v + .5*a*dt)*math.sin(z + dt*w), .5*dt*dt*math.cos(z + dt*w), 0, 0],\
@@ -165,15 +242,19 @@ def create_EKF():
     process_covariance = numpy.eye(8)*1e-3
 
     os_imu_measurement_covariance = numpy.eye(5)*0.03
+    encoders_measurement_covariance = numpy.eye(2)*1e-12
+    gps_measurement_covariance = numpy.eye(2)*0.03
 
     return ExtendedKalmanFilter(transition_funct,\
                                 transition_jacobian_funct,\
-                                [imu_observation_funct],\
-                                [imu_jacobian_funct],\
+                                [imu_observation_funct, encoders_observation_funct, gps_observation_funct],\
+                                [imu_jacobian_funct, encoders_jacobian_funct, gps_jacobian_funct],\
                                 initial_state,\
                                 initial_probability,\
                                 process_covariance,\
-                                [os_imu_measurement_covariance])
+                                [os_imu_measurement_covariance,\
+                                 encoders_measurement_covariance,\
+                                 gps_measurement_covariance])
 
 if __name__ == '__main__':
     rospy.init_node('extended_kalman_filter', anonymous=True)
@@ -181,8 +262,10 @@ if __name__ == '__main__':
     kf = create_EKF()
 
     rospy.Subscriber("imu_filtered_data", FilteredIMUData, oceanserver_imu_callback)
+    rospy.Subscriber("vel_data", Twist, encoders_imu_callback)
+    rospy.Subscriber("gps_data", Point, gps_imu_callback)
     pub = rospy.Publisher('EKF_data', EKFData)
-
+    
     rospy.spin()
 
 
