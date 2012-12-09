@@ -1,0 +1,14 @@
+<package>
+  <description brief="launch_files">
+
+     launch_files
+
+  </description>
+  <author>Granny</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/launch_files</url>
+
+</package>
+
+
