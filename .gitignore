@@ -185,4 +185,6 @@ pip-log.txt
 */msg_gen
 _*.py
 *.a
-
+*.cmake
+*/CMakeFiles/
+*/CMakeCache.txt

@@ -2,7 +2,7 @@
 \mainpage
 \htmlinclude manifest.html
 
-\b imu_filter 
+\b filters 
 
 <!-- 
 Provide an overview of your package.

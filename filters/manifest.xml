@@ -1,17 +1,19 @@
 <package>
-  <description brief="imu_filter">
+  <description brief="filters">
 
-     Filter data from IMU into useful information
+     filters
 
   </description>
-  <author>PoundDefined</author>
+  <author>Granny</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/imu_filter</url>
+  <url>http://ros.org/wiki/filters</url>
+
   <depend package="roscpp"/>
   <depend package="std_msgs"/>
   <depend package="geometry_msgs"/>
   <depend package="ocean_server_imu"/>
+
 </package>
 
 
