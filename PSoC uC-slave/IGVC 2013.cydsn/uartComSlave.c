@@ -124,7 +124,7 @@ void sendCommMessage(void){
 }
 
 void InitializeUCSlave(void){
-	InitializeUART();
+	//InitializeUART();
 	InitializeTime();
 	JoystickInit();
 	InitializeWatchdog();

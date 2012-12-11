@@ -894,6 +894,54 @@ library (timing) {
                 timing_sense : negative_unate;
                 timing_type : three_state_disable;
                 related_pin : "oe";
+                intrinsic_rise : 16.843;
+                intrinsic_fall : 16.843;
+            }
+            timing () {
+                timing_sense : positive_unate;
+                timing_type : three_state_enable;
+                related_pin : "oe";
+                intrinsic_rise : 16.843;
+                intrinsic_fall : 16.843;
+            }
+            timing () {
+                timing_sense : positive_unate;
+                timing_type : combinational;
+                related_pin : "pin_input";
+                intrinsic_rise : 17.376;
+                intrinsic_fall : 17.376;
+            }
+        }
+        pin (fb) {
+            direction : output;
+            timing () {
+                timing_type : rising_edge;
+                related_pin : "clock";
+                intrinsic_rise : 18.020;
+                intrinsic_fall : 18.020;
+            }
+        }
+    }
+    cell (iocell14) {
+        pin (clock) {
+            direction : input;
+            clock : true;
+        }
+        pin (pin_input) {
+            direction : input;
+        }
+        pin (oe) {
+            direction : input;
+        }
+        pin (pad_in) {
+            direction : input;
+        }
+        pin (pad_out) {
+            direction : output;
+            timing () {
+                timing_sense : negative_unate;
+                timing_type : three_state_disable;
+                related_pin : "oe";
                 intrinsic_rise : 15.776;
                 intrinsic_fall : 15.776;
             }
@@ -923,7 +971,7 @@ library (timing) {
             }
         }
     }
-    cell (iocell14) {
+    cell (iocell15) {
         pin (clock) {
             direction : input;
             clock : true;
@@ -972,7 +1020,7 @@ library (timing) {
             }
         }
     }
-    cell (iocell15) {
+    cell (iocell16) {
         pin (clock) {
             direction : input;
             clock : true;
@@ -1021,7 +1069,7 @@ library (timing) {
             }
         }
     }
-    cell (iocell16) {
+    cell (iocell17) {
         pin (clock) {
             direction : input;
             clock : true;
@@ -1070,7 +1118,7 @@ library (timing) {
             }
         }
     }
-    cell (iocell17) {
+    cell (iocell18) {
         pin (clock) {
             direction : input;
             clock : true;
@@ -19705,7 +19753,7 @@ library (timing) {
             }
         }
     }
-    cell (iocell18) {
+    cell (iocell19) {
         pin (clock) {
             direction : input;
             clock : true;
@@ -19754,7 +19802,7 @@ library (timing) {
             }
         }
     }
-    cell (iocell19) {
+    cell (iocell20) {
         pin (clock) {
             direction : input;
             clock : true;

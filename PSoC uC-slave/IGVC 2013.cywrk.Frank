@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="IGVC 2013\IGVC 2013\Generated_Source">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="IGVC 2013\IGVC 2013\Source Files\joystick.c">
 <ExpandedNodeIds>
 <v>IGVC 2013</v>
 <v>IGVC 2013\IGVC 2013</v>
@@ -40,6 +40,7 @@
 <v>IGVC 2013\IGVC 2013\Source Files\uart.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\uartComSlave.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\velctrl.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Center</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Center\Center_aliases.h</v>
@@ -219,10 +220,12 @@
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cyfittergnu.inc</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\cyfitterrv.inc</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\project.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Soft_Kill</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Soft_Kill\Soft_Kill_aliases.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Soft_Kill\Soft_Kill.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Soft_Kill\Soft_Kill.h</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>IGVC 2013</v>
-<v>IGVC 2013\IGVC 2013</v>
 <v>IGVC 2013\IGVC 2013\TopDesign.cysch</v>
 <v>IGVC 2013\IGVC 2013\IGVC 2013.cydwr</v>
 <v>IGVC 2013\IGVC 2013\Header Files</v>
@@ -248,6 +251,13 @@
 <v>IGVC 2013\IGVC 2013\Source Files\uartComSlave.c</v>
 <v>IGVC 2013\IGVC 2013\Source Files\velctrl.c</v>
 <v>IGVC 2013\IGVC 2013\Generated_Source</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Center</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Center\Center_aliases.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1\Clock_1.c</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
+<v>IGVC 2013\IGVC 2013\Generated_Source\PSoC5\Clock_2</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="IGVC 2013">
@@ -325,6 +335,9 @@
 <name v=".\IGVC 2013.cydsn\uart.c" />
 <name v=".\IGVC 2013.cydsn\uart.h" />
 <name v=".\IGVC 2013.cydsn\sphero.h" />
+<name v=".\IGVC 2013.cydsn\sphero.c" />
+<name v=".\IGVC 2013.cydsn\velctrl.c" />
+<name v=".\IGVC 2013.cydsn\joystick.c" />
 </OpenDocs>
 <config v="" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

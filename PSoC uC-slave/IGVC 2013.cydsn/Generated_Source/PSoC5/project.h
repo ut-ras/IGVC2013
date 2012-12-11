@@ -59,6 +59,8 @@
 #include <Right_Encoder_Interrupt.h>
 #include <IMU.h>
 #include <IMU_Interrupt.h>
+#include <Soft_Kill_aliases.h>
+#include <Soft_Kill.h>
 #include <USBUART_Dm_aliases.h>
 #include <USBUART_Dp_aliases.h>
 #include <USBUART_Dp.h>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
+  <block name="Left_Encoder_Pins" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Left_Encoder" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="not_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -19,14 +20,30 @@
       <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
       <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     </block>
-    <register name="Left_Encoder_Cnt16_COUNTER" address="0x4000640A" bitWidth="16" desc="Сount value of Counter" />
-    <register name="Left_Encoder_STATUS_REG" address="0x40006468" bitWidth="8" desc="Quadrature Decoder Status Register">
+    <register name="Left_Encoder_Cnt16_COUNTER" address="0x40006402" bitWidth="16" desc="Сount value of Counter" />
+    <register name="Left_Encoder_STATUS_REG" address="0x40006463" bitWidth="8" desc="Quadrature Decoder Status Register">
       <field name="OVERFLOW" from="0" to="0" access="R" resetVal="" desc="Counter overflow" />
       <field name="UNDERFLOW" from="1" to="1" access="R" resetVal="" desc="Counter underflow" />
       <field name="RESET" from="2" to="2" access="R" resetVal="" desc="Counter Reset due index" />
       <field name="INVALID_IN" from="3" to="3" access="R" resetVal="" desc="Invalid state transition on the A and B inputs" />
     </register>
   </block>
+  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Right_Encoder_Pins" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="MainTimer" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="TimerHW" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="MainTimer_GLOBAL_ENABLE" address="0x400043A3" bitWidth="8" desc="PM.ACT.CFG" />
+    <register name="MainTimer_CONTROL" address="0x40004F00" bitWidth="8" desc="TMRx.CFG0" />
+    <register name="MainTimer_CONTROL2" address="0x40004F01" bitWidth="8" desc="TMRx.CFG1" />
+    <register name="MainTimer_PERIOD" address="0x40004F02" bitWidth="16" desc="TMRx.PER0 - Assigned Period" />
+    <register name="MainTimer_COUNTER" address="0x40004F04" bitWidth="16" desc="TMRx.CNT_CMP0 - Current Down Counter Value" />
+  </block>
+  <block name="Err_LED_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="USBUART" BASE="0x0" SIZE="0x0" desc="USBFS" visible="true">
     <block name="bus_reset" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ep_0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -56,36 +73,7 @@
     <register name="USBUART_SIE_EP7_CR0_REG" address="0x4000606E" bitWidth="8" desc="The Endpoint7 Control Register" />
     <register name="USBUART_SIE_EP8_CR0_REG" address="0x4000607E" bitWidth="8" desc="The Endpoint8 Control Register" />
   </block>
-  <block name="Right_Encoder_Pins" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Left_Encoder_Pins" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Err_LED_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Center" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="timer_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="MainTimer" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="TimerHW" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="MainTimer_GLOBAL_ENABLE" address="0x400043A3" bitWidth="8" desc="PM.ACT.CFG" />
-    <register name="MainTimer_CONTROL" address="0x40004F00" bitWidth="8" desc="TMRx.CFG0" />
-    <register name="MainTimer_CONTROL2" address="0x40004F01" bitWidth="8" desc="TMRx.CFG1" />
-    <register name="MainTimer_PERIOD" address="0x40004F02" bitWidth="16" desc="TMRx.PER0 - Assigned Period" />
-    <register name="MainTimer_COUNTER" address="0x40004F04" bitWidth="16" desc="TMRx.CNT_CMP0 - Current Down Counter Value" />
-  </block>
-  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Rx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="IMU" BASE="0x0" SIZE="0x0" desc="" visible="true">
-    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="TXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  </block>
-  <block name="IMU_Interrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Tx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Right_Encoder" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="not_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -105,16 +93,29 @@
       <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
       <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     </block>
-    <register name="Right_Encoder_Cnt16_COUNTER" address="0x40006504" bitWidth="16" desc="Сount value of Counter" />
-    <register name="Right_Encoder_STATUS_REG" address="0x40006566" bitWidth="8" desc="Quadrature Decoder Status Register">
+    <register name="Right_Encoder_Cnt16_COUNTER" address="0x4000640C" bitWidth="16" desc="Сount value of Counter" />
+    <register name="Right_Encoder_STATUS_REG" address="0x40006569" bitWidth="8" desc="Quadrature Decoder Status Register">
       <field name="OVERFLOW" from="0" to="0" access="R" resetVal="" desc="Counter overflow" />
       <field name="UNDERFLOW" from="1" to="1" access="R" resetVal="" desc="Counter underflow" />
       <field name="RESET" from="2" to="2" access="R" resetVal="" desc="Counter Reset due index" />
       <field name="INVALID_IN" from="3" to="3" access="R" resetVal="" desc="Invalid state transition on the A and B inputs" />
     </register>
   </block>
-  <block name="Right_Encoder_Interrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Tx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Rx_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Soft_Kill" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="IMU_Interrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Left_Encoder_Interrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="IMU" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="BUART" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="RXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="TXInternalInterrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="IntClock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  </block>
+  <block name="Right_Encoder_Interrupt" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Center" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="I2C" BASE="0x0" SIZE="0x0" desc="" visible="true">
     <block name="VirtualMux_SCL" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="bI2C_UDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -131,10 +132,19 @@
     <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="OneTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="I2C_IRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="I2C_DATA" address="0x4000640F" bitWidth="8" desc="Data">
+    <register name="I2C_DATA" address="0x40006407" bitWidth="8" desc="Data">
       <field name="data" from="7" to="0" access="RW" resetVal="" desc="This register provides read/write access to the Shift register." />
     </register>
-    <register name="I2C_CSR" address="0x40006461" bitWidth="7" desc="Status Register">
+    <register name="I2C_CFG" address="0x4000647B" bitWidth="8" desc="Configuration Register">
+      <field name="start_gen" from="7" to="7" access="RW" resetVal="" desc="" />
+      <field name="stop_gen" from="6" to="6" access="RW" resetVal="" desc="" />
+      <field name="restart_gen" from="5" to="5" access="RW" resetVal="" desc="" />
+      <field name="ack" from="4" to="4" access="RW" resetVal="" desc="" />
+      <field name="hw_addr_en" from="3" to="3" access="RW" resetVal="" desc="" />
+      <field name="transmit" from="2" to="2" access="RW" resetVal="" desc="" />
+      <field name="master_en" from="1" to="1" access="RW" resetVal="" desc="" />
+    </register>
+    <register name="I2C_CSR" address="0x40006567" bitWidth="7" desc="Status Register">
       <field name="interrupt" from="7" to="7" access="R" resetVal="" desc="Interrupt bit" />
       <field name="lost_arb" from="6" to="6" access="R" resetVal="" desc="" />
       <field name="stop_status" from="5" to="5" access="RW" resetVal="" desc="" />
@@ -144,16 +154,7 @@
       <field name="lrb" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="byte_complete" from="0" to="0" access="R" resetVal="" desc="" />
     </register>
-    <register name="I2C_CFG" address="0x40006474" bitWidth="8" desc="Configuration Register">
-      <field name="start_gen" from="7" to="7" access="RW" resetVal="" desc="" />
-      <field name="stop_gen" from="6" to="6" access="RW" resetVal="" desc="" />
-      <field name="restart_gen" from="5" to="5" access="RW" resetVal="" desc="" />
-      <field name="ack" from="4" to="4" access="RW" resetVal="" desc="" />
-      <field name="hw_addr_en" from="3" to="3" access="RW" resetVal="" desc="" />
-      <field name="transmit" from="2" to="2" access="RW" resetVal="" desc="" />
-      <field name="master_en" from="1" to="1" access="RW" resetVal="" desc="" />
-    </register>
-    <register name="I2C_INT_MASK" address="0x40006481" bitWidth="8" desc="Interrupt Mask" />
+    <register name="I2C_INT_MASK" address="0x40006587" bitWidth="8" desc="Interrupt Mask" />
   </block>
   <block name="SCL_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Servo" BASE="0x0" SIZE="0x0" desc="" visible="true">

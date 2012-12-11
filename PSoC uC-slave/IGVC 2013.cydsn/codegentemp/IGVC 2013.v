@@ -1,6 +1,6 @@
 // ======================================================================
 // IGVC 2013.v generated from TopDesign.cysch
-// 11/12/2012 at 07:20
+// 12/10/2012 at 21:51
 // ======================================================================
 
 /* -- WARNING: The following section of defines are deprecated and will be removed in a future release -- */
@@ -2132,6 +2132,49 @@ module top ;
 		IMU_Interrupt
 		 (.int_signal(Net_404));
 
+
+	wire [0:0] tmpOE__Soft_Kill_net;
+	wire [0:0] tmpFB_0__Soft_Kill_net;
+	wire [0:0] tmpIO_0__Soft_Kill_net;
+	wire [0:0] tmpINTERRUPT_0__Soft_Kill_net;
+	electrical [0:0] tmpSIOVREF__Soft_Kill_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("b79a4fb8-c26b-40ea-8097-7f7da99e8d12"),
+		  .drive_mode(3'b100),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b0),
+		  .input_sync(1'b1),
+		  .intr_mode(2'b00),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .output_conn(1'b0),
+		  .output_sync(1'b0),
+		  .pin_aliases(""),
+		  .pin_mode("I"),
+		  .por_state(4),
+		  .use_annotation(1'b0),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b0),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .vtrip(2'b00),
+		  .width(1))
+		Soft_Kill
+		 (.oe(tmpOE__Soft_Kill_net),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__Soft_Kill_net[0:0]}),
+		  .io({tmpIO_0__Soft_Kill_net[0:0]}),
+		  .siovref(tmpSIOVREF__Soft_Kill_net),
+		  .interrupt({tmpINTERRUPT_0__Soft_Kill_net[0:0]}));
+
+	assign tmpOE__Soft_Kill_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
 

@@ -81,8 +81,8 @@ int ZPID(){
 
 //called to update the joystick outputs based on the current
 void RunVelocityControl(void){
-	JoystickYOut(SATURATE(XPID(),0,255));
-	JoystickXOut(SATURATE(ZPID(),0,255));
+	JoystickXOut(SATURATE(XPID()+128,0,255));
+	JoystickYOut(SATURATE(ZPID()+128,0,255));
 }
 
 void UpdateVelocity(void){

@@ -108,6 +108,9 @@
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\IMU_INT.c" value="ARM_C_FILE;IMU" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\IMU_Interrupt.c" value="ARM_C_FILE;IMU_Interrupt" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\IMU_Interrupt.h" value="NONE;IMU_Interrupt" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Soft_Kill_aliases.h" value="NONE;Soft_Kill" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Soft_Kill.c" value="ARM_C_FILE;Soft_Kill" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Soft_Kill.h" value="NONE;Soft_Kill" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\USBUART_Dm_aliases.h" value="NONE;USBUART_Dm" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\USBUART_Dp_aliases.h" value="NONE;USBUART_Dp" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\USBUART_Dp.c" value="ARM_C_FILE;USBUART_Dp" />
