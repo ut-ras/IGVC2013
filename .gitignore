@@ -20,7 +20,8 @@ local.properties
 .externalToolBuilders/
 
 # Locally stored "Eclipse launch configurations"
-*.launch
+# (commented out because ROS .launch files should be kept track of
+# *.launch
 
 # CDT-specific
 .cproject
