@@ -9,8 +9,8 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/odometry</url>
 
-  <depend package="PSoC_Listener"/>
 
+  <depend package="tf"/>
 </package>
 
 

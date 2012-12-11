@@ -8,7 +8,7 @@ import string
 import atexit
 from geometry_msgs.msg import Twist
 
-ser = serial.Serial(port='/dev/ttyACM0', baudrate = 921600)
+ser = serial.Serial(port='/dev/ttyACM1', baudrate = 921600)
 
 @atexit.register
 def onExit():

@@ -188,3 +188,7 @@ _*.py
 *.cmake
 */CMakeFiles/
 */CMakeCache.txt
+
+## Stuff that has nothing to do with igvc
+
+/beginner_tutorials

@@ -75,7 +75,7 @@ class ExtendedKalmanFilter:
         return dt
 
     def Predict(self):
-        dt = self.CalcDT(time.time())
+        dt = self.CalcDT(rospy.get_time())
 
         G_jacobian = self.G_jacobian_funct(self.state, dt)
 
@@ -220,7 +220,7 @@ def create_EKF():
     initial_probability = numpy.eye(8)
     process_covariance = numpy.eye(8)*1e-3
 
-    os_imu_measurement_covariance = numpy.eye(5)*0.03
+    os_imu_measurement_covariance = numpy.eye(5)*0.0005
     encoders_measurement_covariance = numpy.eye(2)*1e-12
     gps_measurement_covariance = numpy.eye(2)*0.03
 
