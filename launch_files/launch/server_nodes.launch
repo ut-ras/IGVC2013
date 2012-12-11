@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="mjpeg_server" name="mjpeg_server" type="mjpeg_server"/>
+  <!--
+  <node pkg="usb_cam" name="usb_cam" type="usb_cam_node"/>
+  -->
+  <node pkg="rosbridge" name="rosbridge" type="rosbridge.py"/>
+  <node pkg="ocean_server_imu" name="ocean_server_imu" type="os5000_node"/>
+  <node pkg="hokuyo_node" name="hokuyo_node" type="hokuyo_node">
+    <param name="port" value="/dev/Hokuyo" type="str"/>
+  </node>
+  <node pkg="PSoC_Listener" name="PSoC_Listener" type="PSoC_Listener.py"/>
+  <node pkg="PSoC_Listener" name="PSoC_Velocities" type="PSoC_Velocities.py"/>
+</launch>

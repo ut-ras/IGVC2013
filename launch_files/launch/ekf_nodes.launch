@@ -1,0 +1,11 @@
+<launch>
+  <node pkg="ocean_server_imu" name="os5000_node" type="os5000_node"/>
+  <node pkg="filters" name="os_imu_rotater" type="os_imu_rotater"/>
+
+  <node pkg="PSoC_Listener" name="PSoC_Listener" type="PSoC_Listener.py"/>
+  <node pkg="PSoC_Listener" name="PSoC_Velocities" type="PSoC_Velocities.py"/>
+
+  <node pkg="GPS_Ublox" name="GPS_Listener" type="GPS_Listener.py"/>
+
+  <node pkg="filters" name="extended_kalman_filter" type="extended_kalman_filter.py"/>
+</launch>
