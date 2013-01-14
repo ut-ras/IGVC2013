@@ -19,13 +19,15 @@
 #include <velctrl.h>
 #include <encoder.h>
 #include <sphero.h>
+#include <servo.h>
 
 
 #define CODE_START					1
 #define CODE_LENGTH					4
 #define DATA_START					6
-#define SVXA 'S'^'V'^'X'^'A' //Set Voltage X Axis
-#define SVYA 'S'^'V'^'Y'^'A' //Set Voltage Y Axis
+#define SPLM 'S'^'P'^'L'^'M' //Set Power Left Motor
+#define SPRM 'S'^'P'^'R'^'M' //Set Power Right Motor
+#define SAHS 'S'^'A'^'H'^'S' //Set Angle Hokuyo Servo
 #define SVLX 'S'^'V'^'L'^'X' //Set Velocity Linear X
 #define SVAZ 'S'^'V'^'A'^'Z' //Set Velocity Angular Z
 #define ETFM 'E'^'T'^'F'^'M' //Enable Telemetry Feedback Messages
@@ -64,13 +66,15 @@ void handleCommMessage(void){
 
 		switch(function_code)
 		{
-			case SVXA: 	JoystickXOut(SATURATE(atoi(&buffer[DATA_START]),0,255));
+			case SPLM: 	//JoystickXOut(SATURATE(atoi(&buffer[DATA_START]),0,255));
 					   	//UARTprintf("GOOD MESSAGE- SVXA: %s\r\n", buffer);
+						SetLeftMotor(SATURATE(atoi(&buffer[DATA_START]),-128,127));
 					   	VelCtrlRunning = 0;
 					  	ResetWatchdog(); //we got a valid message, so they are still talking to us
 					   	break;
-			case SVYA: 	JoystickYOut(SATURATE(atoi(&buffer[DATA_START]),0,255));
+			case SPRM: 	//JoystickYOut(SATURATE(atoi(&buffer[DATA_START]),0,255));
 					   	//UARTprintf("GOOD MESSAGE- SVYA: %s\r\n", buffer);
+					   	SetRightMotor(SATURATE(atoi(&buffer[DATA_START]),-128,127));
 					   	VelCtrlRunning = 0;
 					   	ResetWatchdog(); //we got a valid message, so they are still talking to us
 					   	break;
@@ -107,9 +111,15 @@ void handleCommMessage(void){
 
 void sendCommMessage(void){
 	if(EnableSensorFeedbackMessages){
-		//UARTprintf("(: ENCL %d ENCR %d VELV %d VELW %d TIME %d%.3d RATE %d :)\r\n", 
+		UARTprintf("(: ENCL %d ENCR %d VELV %d VELW %d TIME %d%.3d RATE %d :)\r\n",
+		GetLeftEncoder(), 
+		GetRightEncoder(), 
+		GetV(), 
+		GetW(), 
+		GetTime(),GetMS(),
+		GetMessageRate() );
 		//UARTprintf("^.- ROLL %d PTCH %d YAWW %d -.^\r\n", roll, pitch, yaw );
-		UARTprintf("(: %d %d %d %d %d %d %d %d%.3d %d :)\r\n", 
+		/*UARTprintf("(: %d %d %d %d %d %d %d %d%.3d %d :)\r\n", 
 		GetLeftEncoder(), 
 		GetRightEncoder(), 
 		GetV(), 
@@ -119,17 +129,17 @@ void sendCommMessage(void){
 		GetYaw(),
 		GetTime(), 
 		GetMS(),
-		GetMessageRate() );
+		GetMessageRate() );*/
 	}
 }
 
 void InitializeUCSlave(void){
-	//InitializeUART();
+	InitializeUART();
 	InitializeTime();
-	JoystickInit();
+	InitializeServo();
 	InitializeWatchdog();
 	InitializeVelocityControl();
-	InitializeIMU();
+	//InitializeIMU();
 	EnableSensorFeedbackMessages = 0;
 }
 

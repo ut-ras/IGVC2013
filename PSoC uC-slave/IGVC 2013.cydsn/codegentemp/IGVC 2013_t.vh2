@@ -1,5 +1,5 @@
 -- Project:   C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\IGVC 2013.cyprj
--- Generated: 12/10/2012 21:51:53
+-- Generated: 01/13/2013 20:05:10
 -- 
 
 ENTITY \IGVC 2013\ IS
@@ -8,13 +8,15 @@ ENTITY \IGVC 2013\ IS
         Err_LED_2(0)_PAD : OUT std_ulogic;
         Left_Encoder_Pins(0)_PAD : IN std_ulogic;
         Left_Encoder_Pins(1)_PAD : IN std_ulogic;
+        Left_Motor(0)_PAD : OUT std_ulogic;
         Right_Encoder_Pins(0)_PAD : IN std_ulogic;
         Right_Encoder_Pins(1)_PAD : IN std_ulogic;
+        Right_Motor(0)_PAD : OUT std_ulogic;
         Rx_1(0)_PAD : IN std_ulogic;
         SCL_1(0)_PAD : INOUT std_ulogic;
         SDA_1(0)_PAD : INOUT std_ulogic;
-        Servo0(0)_PAD : OUT std_ulogic;
-        Servo1(0)_PAD : OUT std_ulogic;
+        Servo_Out(0)_PAD : OUT std_ulogic;
+        Servo_Out(1)_PAD : OUT std_ulogic;
         Soft_Kill(0)_PAD : IN std_ulogic;
         Tx_1(0)_PAD : OUT std_ulogic);
 END \IGVC 2013\;
@@ -56,9 +58,30 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     SIGNAL Net_391_SYNCOUT : bit;
     SIGNAL Net_404 : bit;
     SIGNAL Net_414 : bit;
+    SIGNAL Net_438 : bit;
+    SIGNAL Net_449 : bit;
+    SIGNAL Net_468 : bit;
     SIGNAL Net_67 : bit;
     ATTRIBUTE global_signal OF Net_67 : SIGNAL IS true;
     SIGNAL Net_67_local : bit;
+    SIGNAL \ADC_1:Net_207_0\ : bit;
+    SIGNAL \ADC_1:Net_207_10\ : bit;
+    SIGNAL \ADC_1:Net_207_11\ : bit;
+    SIGNAL \ADC_1:Net_207_1\ : bit;
+    SIGNAL \ADC_1:Net_207_2\ : bit;
+    SIGNAL \ADC_1:Net_207_3\ : bit;
+    SIGNAL \ADC_1:Net_207_4\ : bit;
+    SIGNAL \ADC_1:Net_207_5\ : bit;
+    SIGNAL \ADC_1:Net_207_6\ : bit;
+    SIGNAL \ADC_1:Net_207_7\ : bit;
+    SIGNAL \ADC_1:Net_207_8\ : bit;
+    SIGNAL \ADC_1:Net_207_9\ : bit;
+    SIGNAL \ADC_1:Net_221\ : bit;
+    ATTRIBUTE global_signal OF \ADC_1:Net_221\ : SIGNAL IS true;
+    SIGNAL \ADC_1:Net_221_adig\ : bit;
+    SIGNAL \ADC_1:Net_221_adig_local\ : bit;
+    SIGNAL \ADC_1:Net_221_local\ : bit;
+    SIGNAL \ADC_1:Net_252\ : bit;
     SIGNAL \I2C:Net_697\ : bit;
     SIGNAL \I2C:Net_767\ : bit;
     ATTRIBUTE global_signal OF \I2C:Net_767\ : SIGNAL IS true;
@@ -219,7 +242,7 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     SIGNAL \Right_Encoder:Cnt16:CounterUDB:overflow_reg_i\ : bit;
     SIGNAL \Right_Encoder:Cnt16:CounterUDB:prevCompare\ : bit;
     SIGNAL \Right_Encoder:Cnt16:CounterUDB:reload\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.ce0__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.ce0__sig\ : bit;
     SIGNAL \Right_Encoder:Cnt16:CounterUDB:status_0\ : bit;
     SIGNAL \Right_Encoder:Cnt16:CounterUDB:status_2\ : bit;
     SIGNAL \Right_Encoder:Cnt16:CounterUDB:status_3\ : bit;
@@ -246,25 +269,43 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     SIGNAL \Right_Encoder:bQuadDec:quad_B_filt\ : bit;
     SIGNAL \Right_Encoder:bQuadDec:state_0\ : bit;
     SIGNAL \Right_Encoder:bQuadDec:state_1\ : bit;
-    SIGNAL \Servo:PWMUDB:compare1\ : bit;
-    SIGNAL \Servo:PWMUDB:compare2\ : bit;
-    SIGNAL \Servo:PWMUDB:control_0\ : bit;
-    SIGNAL \Servo:PWMUDB:control_1\ : bit;
-    SIGNAL \Servo:PWMUDB:control_2\ : bit;
-    SIGNAL \Servo:PWMUDB:control_3\ : bit;
-    SIGNAL \Servo:PWMUDB:control_4\ : bit;
-    SIGNAL \Servo:PWMUDB:control_5\ : bit;
-    SIGNAL \Servo:PWMUDB:control_6\ : bit;
-    SIGNAL \Servo:PWMUDB:ctrl_enable\ : bit;
-    SIGNAL \Servo:PWMUDB:final_kill_reg\ : bit;
-    SIGNAL \Servo:PWMUDB:prevCompare1\ : bit;
-    SIGNAL \Servo:PWMUDB:prevCompare2\ : bit;
-    SIGNAL \Servo:PWMUDB:runmode_enable\ : bit;
-    SIGNAL \Servo:PWMUDB:status_0\ : bit;
-    SIGNAL \Servo:PWMUDB:status_1\ : bit;
-    SIGNAL \Servo:PWMUDB:status_3\ : bit;
-    SIGNAL \Servo:PWMUDB:status_5\ : bit;
-    SIGNAL \Servo:PWMUDB:tc_i\ : bit;
+    SIGNAL \Servo_0:PWMUDB:compare1\ : bit;
+    SIGNAL \Servo_0:PWMUDB:compare2\ : bit;
+    SIGNAL \Servo_0:PWMUDB:control_0\ : bit;
+    SIGNAL \Servo_0:PWMUDB:control_1\ : bit;
+    SIGNAL \Servo_0:PWMUDB:control_2\ : bit;
+    SIGNAL \Servo_0:PWMUDB:control_3\ : bit;
+    SIGNAL \Servo_0:PWMUDB:control_4\ : bit;
+    SIGNAL \Servo_0:PWMUDB:control_5\ : bit;
+    SIGNAL \Servo_0:PWMUDB:control_6\ : bit;
+    SIGNAL \Servo_0:PWMUDB:ctrl_enable\ : bit;
+    SIGNAL \Servo_0:PWMUDB:final_kill_reg\ : bit;
+    SIGNAL \Servo_0:PWMUDB:prevCompare1\ : bit;
+    SIGNAL \Servo_0:PWMUDB:prevCompare2\ : bit;
+    SIGNAL \Servo_0:PWMUDB:runmode_enable\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.ce0__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:status_0\ : bit;
+    SIGNAL \Servo_0:PWMUDB:status_1\ : bit;
+    SIGNAL \Servo_0:PWMUDB:status_3\ : bit;
+    SIGNAL \Servo_0:PWMUDB:status_5\ : bit;
+    SIGNAL \Servo_0:PWMUDB:tc_i\ : bit;
+    SIGNAL \Servo_1:PWMUDB:compare1\ : bit;
+    SIGNAL \Servo_1:PWMUDB:compare2\ : bit;
+    SIGNAL \Servo_1:PWMUDB:control_0\ : bit;
+    SIGNAL \Servo_1:PWMUDB:control_1\ : bit;
+    SIGNAL \Servo_1:PWMUDB:control_2\ : bit;
+    SIGNAL \Servo_1:PWMUDB:control_3\ : bit;
+    SIGNAL \Servo_1:PWMUDB:control_4\ : bit;
+    SIGNAL \Servo_1:PWMUDB:control_5\ : bit;
+    SIGNAL \Servo_1:PWMUDB:control_6\ : bit;
+    SIGNAL \Servo_1:PWMUDB:ctrl_enable\ : bit;
+    SIGNAL \Servo_1:PWMUDB:prevCompare1\ : bit;
+    SIGNAL \Servo_1:PWMUDB:prevCompare2\ : bit;
+    SIGNAL \Servo_1:PWMUDB:runmode_enable\ : bit;
+    SIGNAL \Servo_1:PWMUDB:status_0\ : bit;
+    SIGNAL \Servo_1:PWMUDB:status_1\ : bit;
+    SIGNAL \Servo_1:PWMUDB:status_3\ : bit;
+    SIGNAL \Servo_1:PWMUDB:tc_i\ : bit;
     SIGNAL \USBUART:Net_623\ : bit;
     SIGNAL \USBUART:Net_79\ : bit;
     SIGNAL \USBUART:Net_81\ : bit;
@@ -291,8 +332,8 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
-    SIGNAL tmpOE__Err_LED_1_net_0 : bit;
-    ATTRIBUTE POWER OF tmpOE__Err_LED_1_net_0 : SIGNAL IS true;
+    SIGNAL tmpOE__ADC_In_net_0 : bit;
+    ATTRIBUTE POWER OF tmpOE__ADC_In_net_0 : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     SIGNAL \Left_Encoder:Cnt16:CounterUDB:sC16:counterdp:u0.ce0__sig\ : bit;
@@ -320,392 +361,423 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     SIGNAL \Right_Encoder:Cnt16:CounterUDB:sC16:counterdp:u0.cfbo__sig\ : bit;
     SIGNAL \Right_Encoder:Cnt16:CounterUDB:sC16:counterdp:u1.sor__sig\ : bit;
     SIGNAL \Right_Encoder:Cnt16:CounterUDB:sC16:counterdp:u1.cmsbo__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.cl0__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.z0__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.ff0__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.ce1__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.cl1__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.z1__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.ff1__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.co_msb__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.sol_msb__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u0.cfbo__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u1.sor__sig\ : bit;
-    SIGNAL \Servo:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\ : bit;
-    ATTRIBUTE lib_model OF Center(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF Center(0) : LABEL IS "P5[7]";
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.cl0__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.z0__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.ff0__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.ce1__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.cl1__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.z1__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.ff1__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.co_msb__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.sol_msb__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u0.cfbo__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u1.sor__sig\ : bit;
+    SIGNAL \Servo_0:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.cl0__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.z0__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.ff0__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.ce1__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.cl1__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.z1__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.ff1__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.co_msb__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.sol_msb__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u0.cfbo__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u1.sor__sig\ : bit;
+    SIGNAL \Servo_1:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\ : bit;
+    ATTRIBUTE lib_model OF ADC_In(0) : LABEL IS "iocell1";
+    ATTRIBUTE Location OF ADC_In(0) : LABEL IS "P5[4]";
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
     ATTRIBUTE lib_model OF Err_LED_1(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF Err_LED_1(0) : LABEL IS "P6[2]";
     ATTRIBUTE lib_model OF Err_LED_2(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF Err_LED_2(0) : LABEL IS "P6[3]";
-    ATTRIBUTE Location OF IMU_Interrupt : LABEL IS "[IntrHod=(0)][IntrId=(17)]";
-    ATTRIBUTE Location OF Left_Encoder_Interrupt : LABEL IS "[IntrHod=(0)][IntrId=(8)]";
+    ATTRIBUTE Location OF IMU_Interrupt : LABEL IS "[IntrHod=(0)][IntrId=(15)]";
+    ATTRIBUTE Location OF Left_Encoder_Interrupt : LABEL IS "[IntrHod=(0)][IntrId=(24)]";
     ATTRIBUTE lib_model OF Left_Encoder_Pins(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF Left_Encoder_Pins(0) : LABEL IS "P2[0]";
     ATTRIBUTE Location OF Left_Encoder_Pins(0)_SYNC : LABEL IS "U(3,0)";
     ATTRIBUTE lib_model OF Left_Encoder_Pins(1) : LABEL IS "iocell5";
     ATTRIBUTE Location OF Left_Encoder_Pins(1) : LABEL IS "P2[1]";
-    ATTRIBUTE Location OF Left_Encoder_Pins(1)_SYNC : LABEL IS "U(0,0)";
+    ATTRIBUTE Location OF Left_Encoder_Pins(1)_SYNC : LABEL IS "U(2,0)";
+    ATTRIBUTE lib_model OF Left_Motor(0) : LABEL IS "iocell6";
+    ATTRIBUTE Location OF Left_Motor(0) : LABEL IS "P5[0]";
     ATTRIBUTE Location OF MainTimeISR : LABEL IS "[IntrHod=(0)][IntrId=(19)]";
     ATTRIBUTE lib_model OF Net_112 : LABEL IS "macrocell1";
     ATTRIBUTE Location OF Net_112 : LABEL IS "U(3,1)";
     ATTRIBUTE lib_model OF Net_113 : LABEL IS "macrocell2";
     ATTRIBUTE Location OF Net_113 : LABEL IS "U(3,1)";
     ATTRIBUTE lib_model OF Net_386 : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF Net_386 : LABEL IS "U(0,2)";
-    ATTRIBUTE Location OF Right_Encoder_Interrupt : LABEL IS "[IntrHod=(0)][IntrId=(24)]";
-    ATTRIBUTE lib_model OF Right_Encoder_Pins(0) : LABEL IS "iocell6";
+    ATTRIBUTE Location OF Net_386 : LABEL IS "U(1,2)";
+    ATTRIBUTE lib_model OF Net_438 : LABEL IS "macrocell4";
+    ATTRIBUTE Location OF Net_438 : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF Net_449 : LABEL IS "macrocell5";
+    ATTRIBUTE Location OF Net_449 : LABEL IS "U(0,1)";
+    ATTRIBUTE Location OF Right_Encoder_Interrupt : LABEL IS "[IntrHod=(0)][IntrId=(28)]";
+    ATTRIBUTE lib_model OF Right_Encoder_Pins(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF Right_Encoder_Pins(0) : LABEL IS "P2[2]";
-    ATTRIBUTE Location OF Right_Encoder_Pins(0)_SYNC : LABEL IS "U(0,0)";
-    ATTRIBUTE lib_model OF Right_Encoder_Pins(1) : LABEL IS "iocell7";
+    ATTRIBUTE Location OF Right_Encoder_Pins(0)_SYNC : LABEL IS "U(1,0)";
+    ATTRIBUTE lib_model OF Right_Encoder_Pins(1) : LABEL IS "iocell8";
     ATTRIBUTE Location OF Right_Encoder_Pins(1) : LABEL IS "P2[3]";
-    ATTRIBUTE Location OF Right_Encoder_Pins(1)_SYNC : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF Rx_1(0) : LABEL IS "iocell8";
+    ATTRIBUTE Location OF Right_Encoder_Pins(1)_SYNC : LABEL IS "U(2,0)";
+    ATTRIBUTE lib_model OF Right_Motor(0) : LABEL IS "iocell9";
+    ATTRIBUTE Location OF Right_Motor(0) : LABEL IS "P5[1]";
+    ATTRIBUTE lib_model OF Rx_1(0) : LABEL IS "iocell10";
     ATTRIBUTE Location OF Rx_1(0) : LABEL IS "P2[5]";
-    ATTRIBUTE Location OF Rx_1(0)_SYNC : LABEL IS "U(1,0)";
-    ATTRIBUTE lib_model OF SCL_1(0) : LABEL IS "iocell9";
+    ATTRIBUTE Location OF Rx_1(0)_SYNC : LABEL IS "U(3,0)";
+    ATTRIBUTE lib_model OF SCL_1(0) : LABEL IS "iocell11";
     ATTRIBUTE Location OF SCL_1(0) : LABEL IS "P4[1]";
-    ATTRIBUTE Location OF SCL_1(0)_SYNC : LABEL IS "U(1,4)";
-    ATTRIBUTE lib_model OF SDA_1(0) : LABEL IS "iocell10";
+    ATTRIBUTE Location OF SCL_1(0)_SYNC : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF SDA_1(0) : LABEL IS "iocell12";
     ATTRIBUTE Location OF SDA_1(0) : LABEL IS "P4[0]";
-    ATTRIBUTE Location OF SDA_1(0)_SYNC : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF Servo0(0) : LABEL IS "iocell11";
-    ATTRIBUTE Location OF Servo0(0) : LABEL IS "P5[4]";
-    ATTRIBUTE lib_model OF Servo1(0) : LABEL IS "iocell12";
-    ATTRIBUTE Location OF Servo1(0) : LABEL IS "P5[5]";
-    ATTRIBUTE lib_model OF Soft_Kill(0) : LABEL IS "iocell13";
-    ATTRIBUTE Location OF Soft_Kill(0) : LABEL IS "P5[6]";
-    ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell14";
+    ATTRIBUTE Location OF SDA_1(0)_SYNC : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF Servo_Out(0) : LABEL IS "iocell13";
+    ATTRIBUTE Location OF Servo_Out(0) : LABEL IS "P5[2]";
+    ATTRIBUTE lib_model OF Servo_Out(1) : LABEL IS "iocell14";
+    ATTRIBUTE Location OF Servo_Out(1) : LABEL IS "P5[3]";
+    ATTRIBUTE lib_model OF Soft_Kill(0) : LABEL IS "iocell15";
+    ATTRIBUTE Location OF Soft_Kill(0) : LABEL IS "P5[7]";
+    ATTRIBUTE lib_model OF Tx_1(0) : LABEL IS "iocell16";
     ATTRIBUTE Location OF Tx_1(0) : LABEL IS "P2[4]";
-    ATTRIBUTE lib_model OF X0(0) : LABEL IS "iocell15";
-    ATTRIBUTE Location OF X0(0) : LABEL IS "P5[3]";
-    ATTRIBUTE lib_model OF X1(0) : LABEL IS "iocell16";
-    ATTRIBUTE Location OF X1(0) : LABEL IS "P5[2]";
-    ATTRIBUTE lib_model OF Y0(0) : LABEL IS "iocell17";
-    ATTRIBUTE Location OF Y0(0) : LABEL IS "P5[0]";
-    ATTRIBUTE lib_model OF Y1(0) : LABEL IS "iocell18";
-    ATTRIBUTE Location OF Y1(0) : LABEL IS "P5[1]";
-    ATTRIBUTE Location OF \I2C:I2C_IRQ\ : LABEL IS "[IntrHod=(0)][IntrId=(25)]";
+    ATTRIBUTE Location OF \ADC_1:ADC_SAR\ : LABEL IS "F(SAR,0)";
+    ATTRIBUTE lib_model OF \ADC_1:Bypass(0)\ : LABEL IS "iocell17";
+    ATTRIBUTE Location OF \ADC_1:Bypass(0)\ : LABEL IS "P0[4]";
+    ATTRIBUTE Location OF \ADC_1:IRQ\ : LABEL IS "[IntrHod=(0)][IntrId=(14)]";
+    ATTRIBUTE Location OF \I2C:I2C_IRQ\ : LABEL IS "[IntrHod=(0)][IntrId=(3)]";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:AsyncCtl:CtrlReg\ : LABEL IS "controlcell1";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:AsyncCtl:CtrlReg\ : LABEL IS "U(1,3)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:AsyncCtl:CtrlReg\ : LABEL IS "U(0,3)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:Master:ClkGen:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:Master:ClkGen:u0\ : LABEL IS "U(0,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:Master:ClkGen:u0\ : LABEL IS "U(1,4)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:Shifter:u0\ : LABEL IS "datapathcell2";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:Shifter:u0\ : LABEL IS "U(2,2)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:Shifter:u0\ : LABEL IS "U(0,5)";
     ATTRIBUTE lib_model OF \I2C:bI2C_UDB:StsReg\ : LABEL IS "statusicell1";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:StsReg\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:bus_busy_reg\ : LABEL IS "macrocell4";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:bus_busy_reg\ : LABEL IS "U(2,0)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:clk_eq_reg\ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:clk_eq_reg\ : LABEL IS "U(1,4)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:clkgen_tc1_reg\ : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:clkgen_tc1_reg\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:clkgen_tc2_reg\ : LABEL IS "macrocell7";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:clkgen_tc2_reg\ : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cnt_reset\ : LABEL IS "macrocell8";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:cnt_reset\ : LABEL IS "U(2,0)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_2\ : LABEL IS "macrocell9";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_2\ : LABEL IS "U(1,4)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_4\ : LABEL IS "macrocell10";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_4\ : LABEL IS "U(1,4)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_5\ : LABEL IS "macrocell11";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_5\ : LABEL IS "U(1,3)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_6\ : LABEL IS "macrocell12";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_6\ : LABEL IS "U(1,3)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_7\ : LABEL IS "macrocell13";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_7\ : LABEL IS "U(1,3)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_clkgen_0\ : LABEL IS "macrocell14";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_clkgen_0\ : LABEL IS "U(0,2)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_clkgen_1\ : LABEL IS "macrocell15";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_clkgen_1\ : LABEL IS "U(1,2)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_shifter_0\ : LABEL IS "macrocell16";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_shifter_0\ : LABEL IS "U(1,2)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_shifter_1\ : LABEL IS "macrocell17";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_shifter_1\ : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:lost_arb_reg\ : LABEL IS "macrocell18";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:lost_arb_reg\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_reset\ : LABEL IS "macrocell19";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_reset\ : LABEL IS "U(1,3)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_0\ : LABEL IS "macrocell20";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_0\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_0_split\ : LABEL IS "macrocell21";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_0_split\ : LABEL IS "U(1,3)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_1\ : LABEL IS "macrocell22";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_1\ : LABEL IS "U(0,0)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_2\ : LABEL IS "macrocell23";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_2\ : LABEL IS "U(2,0)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_2_split\ : LABEL IS "macrocell24";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_2_split\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_3\ : LABEL IS "macrocell25";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_3\ : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_4\ : LABEL IS "macrocell26";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_4\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_4_split\ : LABEL IS "macrocell27";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_4_split\ : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:scl_in_last2_reg\ : LABEL IS "macrocell28";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_last2_reg\ : LABEL IS "U(2,0)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:scl_in_last_reg\ : LABEL IS "macrocell29";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_last_reg\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:scl_in_reg\ : LABEL IS "macrocell30";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_reg\ : LABEL IS "U(1,4)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:sda_in_last2_reg\ : LABEL IS "macrocell31";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_last2_reg\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:sda_in_last_reg\ : LABEL IS "macrocell32";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_last_reg\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:sda_in_reg\ : LABEL IS "macrocell33";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_reg\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_0\ : LABEL IS "macrocell34";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_0\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_1\ : LABEL IS "macrocell35";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_1\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_2\ : LABEL IS "macrocell36";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_2\ : LABEL IS "U(2,0)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_3\ : LABEL IS "macrocell37";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_3\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_4\ : LABEL IS "macrocell38";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_4\ : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_5\ : LABEL IS "macrocell39";
-    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_5\ : LABEL IS "U(2,0)";
-    ATTRIBUTE lib_model OF \I2C:scl_x_wire\ : LABEL IS "macrocell40";
-    ATTRIBUTE Location OF \I2C:scl_x_wire\ : LABEL IS "U(0,2)";
-    ATTRIBUTE lib_model OF \I2C:sda_x_wire\ : LABEL IS "macrocell41";
-    ATTRIBUTE Location OF \I2C:sda_x_wire\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \IMU:BUART:counter_load_not\ : LABEL IS "macrocell42";
-    ATTRIBUTE Location OF \IMU:BUART:counter_load_not\ : LABEL IS "U(0,2)";
-    ATTRIBUTE lib_model OF \IMU:BUART:pollcount_0\ : LABEL IS "macrocell43";
-    ATTRIBUTE Location OF \IMU:BUART:pollcount_0\ : LABEL IS "U(1,0)";
-    ATTRIBUTE lib_model OF \IMU:BUART:pollcount_1\ : LABEL IS "macrocell44";
-    ATTRIBUTE Location OF \IMU:BUART:pollcount_1\ : LABEL IS "U(1,0)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_address_detected\ : LABEL IS "macrocell45";
-    ATTRIBUTE Location OF \IMU:BUART:rx_address_detected\ : LABEL IS "U(1,3)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_bitclk_enable\ : LABEL IS "macrocell46";
-    ATTRIBUTE Location OF \IMU:BUART:rx_bitclk_enable\ : LABEL IS "U(1,2)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_counter_load\ : LABEL IS "macrocell47";
-    ATTRIBUTE Location OF \IMU:BUART:rx_counter_load\ : LABEL IS "U(1,1)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_last\ : LABEL IS "macrocell48";
-    ATTRIBUTE Location OF \IMU:BUART:rx_last\ : LABEL IS "U(1,1)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_load_fifo\ : LABEL IS "macrocell49";
-    ATTRIBUTE Location OF \IMU:BUART:rx_load_fifo\ : LABEL IS "U(1,1)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_state_0\ : LABEL IS "macrocell50";
-    ATTRIBUTE Location OF \IMU:BUART:rx_state_0\ : LABEL IS "U(1,1)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_state_2\ : LABEL IS "macrocell51";
-    ATTRIBUTE Location OF \IMU:BUART:rx_state_2\ : LABEL IS "U(1,1)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_state_3\ : LABEL IS "macrocell52";
-    ATTRIBUTE Location OF \IMU:BUART:rx_state_3\ : LABEL IS "U(1,1)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell53";
-    ATTRIBUTE Location OF \IMU:BUART:rx_state_stop1_reg\ : LABEL IS "U(1,1)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_status_3\ : LABEL IS "macrocell54";
-    ATTRIBUTE Location OF \IMU:BUART:rx_status_3\ : LABEL IS "U(1,1)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_status_4\ : LABEL IS "macrocell55";
-    ATTRIBUTE Location OF \IMU:BUART:rx_status_4\ : LABEL IS "U(1,5)";
-    ATTRIBUTE lib_model OF \IMU:BUART:rx_status_5\ : LABEL IS "macrocell56";
-    ATTRIBUTE Location OF \IMU:BUART:rx_status_5\ : LABEL IS "U(1,0)";
-    ATTRIBUTE Location OF \IMU:BUART:sRX:RxBitCounter\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:StsReg\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:bus_busy_reg\ : LABEL IS "macrocell6";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:bus_busy_reg\ : LABEL IS "U(2,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:clk_eq_reg\ : LABEL IS "macrocell7";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:clk_eq_reg\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:clkgen_tc1_reg\ : LABEL IS "macrocell8";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:clkgen_tc1_reg\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:clkgen_tc2_reg\ : LABEL IS "macrocell9";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:clkgen_tc2_reg\ : LABEL IS "U(0,3)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cnt_reset\ : LABEL IS "macrocell10";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:cnt_reset\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_2\ : LABEL IS "macrocell11";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_2\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_4\ : LABEL IS "macrocell12";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_4\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_5\ : LABEL IS "macrocell13";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_5\ : LABEL IS "U(0,3)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_6\ : LABEL IS "macrocell14";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_6\ : LABEL IS "U(0,3)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:control_reg_7\ : LABEL IS "macrocell15";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:control_reg_7\ : LABEL IS "U(0,3)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_clkgen_0\ : LABEL IS "macrocell16";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_clkgen_0\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_clkgen_1\ : LABEL IS "macrocell17";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_clkgen_1\ : LABEL IS "U(2,4)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_shifter_0\ : LABEL IS "macrocell18";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_shifter_0\ : LABEL IS "U(2,4)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:cs_addr_shifter_1\ : LABEL IS "macrocell19";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:cs_addr_shifter_1\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:lost_arb_reg\ : LABEL IS "macrocell20";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:lost_arb_reg\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_reset\ : LABEL IS "macrocell21";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_reset\ : LABEL IS "U(0,3)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_0\ : LABEL IS "macrocell22";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_0\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_0_split\ : LABEL IS "macrocell23";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_0_split\ : LABEL IS "U(1,4)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_1\ : LABEL IS "macrocell24";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_1\ : LABEL IS "U(1,3)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_2\ : LABEL IS "macrocell25";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_2\ : LABEL IS "U(2,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_2_split\ : LABEL IS "macrocell26";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_2_split\ : LABEL IS "U(1,3)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_3\ : LABEL IS "macrocell27";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_3\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_4\ : LABEL IS "macrocell28";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_4\ : LABEL IS "U(1,4)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:m_state_4_split\ : LABEL IS "macrocell29";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:m_state_4_split\ : LABEL IS "U(0,3)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:scl_in_last2_reg\ : LABEL IS "macrocell30";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_last2_reg\ : LABEL IS "U(2,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:scl_in_last_reg\ : LABEL IS "macrocell31";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_last_reg\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:scl_in_reg\ : LABEL IS "macrocell32";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:scl_in_reg\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:sda_in_last2_reg\ : LABEL IS "macrocell33";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_last2_reg\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:sda_in_last_reg\ : LABEL IS "macrocell34";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_last_reg\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:sda_in_reg\ : LABEL IS "macrocell35";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:sda_in_reg\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_0\ : LABEL IS "macrocell36";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_0\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_1\ : LABEL IS "macrocell37";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_1\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_2\ : LABEL IS "macrocell38";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_2\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_3\ : LABEL IS "macrocell39";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_3\ : LABEL IS "U(1,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_4\ : LABEL IS "macrocell40";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_4\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \I2C:bI2C_UDB:status_5\ : LABEL IS "macrocell41";
+    ATTRIBUTE Location OF \I2C:bI2C_UDB:status_5\ : LABEL IS "U(2,5)";
+    ATTRIBUTE lib_model OF \I2C:scl_x_wire\ : LABEL IS "macrocell42";
+    ATTRIBUTE Location OF \I2C:scl_x_wire\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \I2C:sda_x_wire\ : LABEL IS "macrocell43";
+    ATTRIBUTE Location OF \I2C:sda_x_wire\ : LABEL IS "U(1,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:counter_load_not\ : LABEL IS "macrocell44";
+    ATTRIBUTE Location OF \IMU:BUART:counter_load_not\ : LABEL IS "U(1,2)";
+    ATTRIBUTE lib_model OF \IMU:BUART:pollcount_0\ : LABEL IS "macrocell45";
+    ATTRIBUTE Location OF \IMU:BUART:pollcount_0\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \IMU:BUART:pollcount_1\ : LABEL IS "macrocell46";
+    ATTRIBUTE Location OF \IMU:BUART:pollcount_1\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_address_detected\ : LABEL IS "macrocell47";
+    ATTRIBUTE Location OF \IMU:BUART:rx_address_detected\ : LABEL IS "U(1,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_bitclk_enable\ : LABEL IS "macrocell48";
+    ATTRIBUTE Location OF \IMU:BUART:rx_bitclk_enable\ : LABEL IS "U(2,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_counter_load\ : LABEL IS "macrocell49";
+    ATTRIBUTE Location OF \IMU:BUART:rx_counter_load\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_last\ : LABEL IS "macrocell50";
+    ATTRIBUTE Location OF \IMU:BUART:rx_last\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_load_fifo\ : LABEL IS "macrocell51";
+    ATTRIBUTE Location OF \IMU:BUART:rx_load_fifo\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_state_0\ : LABEL IS "macrocell52";
+    ATTRIBUTE Location OF \IMU:BUART:rx_state_0\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_state_2\ : LABEL IS "macrocell53";
+    ATTRIBUTE Location OF \IMU:BUART:rx_state_2\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_state_3\ : LABEL IS "macrocell54";
+    ATTRIBUTE Location OF \IMU:BUART:rx_state_3\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_state_stop1_reg\ : LABEL IS "macrocell55";
+    ATTRIBUTE Location OF \IMU:BUART:rx_state_stop1_reg\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_status_3\ : LABEL IS "macrocell56";
+    ATTRIBUTE Location OF \IMU:BUART:rx_status_3\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_status_4\ : LABEL IS "macrocell57";
+    ATTRIBUTE Location OF \IMU:BUART:rx_status_4\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \IMU:BUART:rx_status_5\ : LABEL IS "macrocell58";
+    ATTRIBUTE Location OF \IMU:BUART:rx_status_5\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \IMU:BUART:sRX:RxBitCounter\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \IMU:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell3";
-    ATTRIBUTE Location OF \IMU:BUART:sRX:RxShifter:u0\ : LABEL IS "U(1,1)";
+    ATTRIBUTE Location OF \IMU:BUART:sRX:RxShifter:u0\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \IMU:BUART:sRX:RxSts\ : LABEL IS "statusicell2";
-    ATTRIBUTE Location OF \IMU:BUART:sRX:RxSts\ : LABEL IS "U(1,2)";
+    ATTRIBUTE Location OF \IMU:BUART:sRX:RxSts\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \IMU:BUART:sTX:TxShifter:u0\ : LABEL IS "datapathcell4";
     ATTRIBUTE Location OF \IMU:BUART:sTX:TxShifter:u0\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \IMU:BUART:sTX:TxSts\ : LABEL IS "statusicell3";
-    ATTRIBUTE Location OF \IMU:BUART:sTX:TxSts\ : LABEL IS "U(1,3)";
+    ATTRIBUTE Location OF \IMU:BUART:sTX:TxSts\ : LABEL IS "U(1,2)";
     ATTRIBUTE lib_model OF \IMU:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "datapathcell5";
-    ATTRIBUTE Location OF \IMU:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "U(0,3)";
-    ATTRIBUTE lib_model OF \IMU:BUART:tx_bitclk\ : LABEL IS "macrocell57";
-    ATTRIBUTE Location OF \IMU:BUART:tx_bitclk\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \IMU:BUART:tx_bitclk_enable_pre\ : LABEL IS "macrocell58";
-    ATTRIBUTE Location OF \IMU:BUART:tx_bitclk_enable_pre\ : LABEL IS "U(0,3)";
-    ATTRIBUTE lib_model OF \IMU:BUART:tx_state_0\ : LABEL IS "macrocell59";
-    ATTRIBUTE Location OF \IMU:BUART:tx_state_0\ : LABEL IS "U(0,2)";
-    ATTRIBUTE lib_model OF \IMU:BUART:tx_state_1\ : LABEL IS "macrocell60";
-    ATTRIBUTE Location OF \IMU:BUART:tx_state_1\ : LABEL IS "U(1,2)";
-    ATTRIBUTE lib_model OF \IMU:BUART:tx_state_2\ : LABEL IS "macrocell61";
-    ATTRIBUTE Location OF \IMU:BUART:tx_state_2\ : LABEL IS "U(1,2)";
-    ATTRIBUTE lib_model OF \IMU:BUART:tx_status_0\ : LABEL IS "macrocell62";
-    ATTRIBUTE Location OF \IMU:BUART:tx_status_0\ : LABEL IS "U(0,2)";
-    ATTRIBUTE lib_model OF \IMU:BUART:tx_status_2\ : LABEL IS "macrocell63";
-    ATTRIBUTE Location OF \IMU:BUART:tx_status_2\ : LABEL IS "U(1,4)";
-    ATTRIBUTE lib_model OF \IMU:BUART:txn\ : LABEL IS "macrocell64";
-    ATTRIBUTE Location OF \IMU:BUART:txn\ : LABEL IS "U(1,2)";
-    ATTRIBUTE Location OF \IMU:RXInternalInterrupt\ : LABEL IS "[IntrHod=(0)][IntrId=(20)]";
-    ATTRIBUTE Location OF \IMU:TXInternalInterrupt\ : LABEL IS "[IntrHod=(0)][IntrId=(14)]";
-    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:count_enable\ : LABEL IS "macrocell65";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:count_enable\ : LABEL IS "U(3,5)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "macrocell66";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "U(3,5)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "macrocell67";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:prevCompare\ : LABEL IS "macrocell68";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:prevCompare\ : LABEL IS "U(3,5)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:reload\ : LABEL IS "macrocell69";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:reload\ : LABEL IS "U(2,4)";
+    ATTRIBUTE Location OF \IMU:BUART:sTX:sCLOCK:TxBitClkGen\ : LABEL IS "U(1,3)";
+    ATTRIBUTE lib_model OF \IMU:BUART:tx_bitclk\ : LABEL IS "macrocell59";
+    ATTRIBUTE Location OF \IMU:BUART:tx_bitclk\ : LABEL IS "U(0,2)";
+    ATTRIBUTE lib_model OF \IMU:BUART:tx_bitclk_enable_pre\ : LABEL IS "macrocell60";
+    ATTRIBUTE Location OF \IMU:BUART:tx_bitclk_enable_pre\ : LABEL IS "U(1,2)";
+    ATTRIBUTE lib_model OF \IMU:BUART:tx_state_0\ : LABEL IS "macrocell61";
+    ATTRIBUTE Location OF \IMU:BUART:tx_state_0\ : LABEL IS "U(1,2)";
+    ATTRIBUTE lib_model OF \IMU:BUART:tx_state_1\ : LABEL IS "macrocell62";
+    ATTRIBUTE Location OF \IMU:BUART:tx_state_1\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \IMU:BUART:tx_state_2\ : LABEL IS "macrocell63";
+    ATTRIBUTE Location OF \IMU:BUART:tx_state_2\ : LABEL IS "U(2,4)";
+    ATTRIBUTE lib_model OF \IMU:BUART:tx_status_0\ : LABEL IS "macrocell64";
+    ATTRIBUTE Location OF \IMU:BUART:tx_status_0\ : LABEL IS "U(1,2)";
+    ATTRIBUTE lib_model OF \IMU:BUART:tx_status_2\ : LABEL IS "macrocell65";
+    ATTRIBUTE Location OF \IMU:BUART:tx_status_2\ : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF \IMU:BUART:txn\ : LABEL IS "macrocell66";
+    ATTRIBUTE Location OF \IMU:BUART:txn\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \IMU:RXInternalInterrupt\ : LABEL IS "[IntrHod=(0)][IntrId=(13)]";
+    ATTRIBUTE Location OF \IMU:TXInternalInterrupt\ : LABEL IS "[IntrHod=(0)][IntrId=(20)]";
+    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:count_enable\ : LABEL IS "macrocell67";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:count_enable\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "macrocell68";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "macrocell69";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:prevCompare\ : LABEL IS "macrocell70";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:prevCompare\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:reload\ : LABEL IS "macrocell71";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:reload\ : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:sC16:counterdp:u0\ : LABEL IS "datapathcell6";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:sC16:counterdp:u0\ : LABEL IS "U(3,4)";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:sC16:counterdp:u0\ : LABEL IS "U(3,3)";
     ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:sC16:counterdp:u1\ : LABEL IS "datapathcell7";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:sC16:counterdp:u1\ : LABEL IS "U(2,4)";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:sC16:counterdp:u1\ : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell2";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "U(3,5)";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "U(3,2)";
     ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell4";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:status_0\ : LABEL IS "macrocell70";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:status_0\ : LABEL IS "U(3,5)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:status_2\ : LABEL IS "macrocell71";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:status_2\ : LABEL IS "U(3,5)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:status_3\ : LABEL IS "macrocell72";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:status_3\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "macrocell73";
-    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "U(3,5)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Net_1203\ : LABEL IS "macrocell74";
-    ATTRIBUTE Location OF \Left_Encoder:Net_1203\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Net_1203_split\ : LABEL IS "macrocell75";
-    ATTRIBUTE Location OF \Left_Encoder:Net_1203_split\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Net_1210\ : LABEL IS "macrocell76";
-    ATTRIBUTE Location OF \Left_Encoder:Net_1210\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Net_1251\ : LABEL IS "macrocell77";
-    ATTRIBUTE Location OF \Left_Encoder:Net_1251\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Net_1251_split\ : LABEL IS "macrocell78";
-    ATTRIBUTE Location OF \Left_Encoder:Net_1251_split\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Net_1260\ : LABEL IS "macrocell79";
-    ATTRIBUTE Location OF \Left_Encoder:Net_1260\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Net_530\ : LABEL IS "macrocell80";
-    ATTRIBUTE Location OF \Left_Encoder:Net_530\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \Left_Encoder:Net_611\ : LABEL IS "macrocell81";
-    ATTRIBUTE Location OF \Left_Encoder:Net_611\ : LABEL IS "U(3,4)";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:status_0\ : LABEL IS "macrocell72";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:status_0\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:status_2\ : LABEL IS "macrocell73";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:status_2\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:status_3\ : LABEL IS "macrocell74";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:status_3\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "macrocell75";
+    ATTRIBUTE Location OF \Left_Encoder:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Net_1203\ : LABEL IS "macrocell76";
+    ATTRIBUTE Location OF \Left_Encoder:Net_1203\ : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Net_1203_split\ : LABEL IS "macrocell77";
+    ATTRIBUTE Location OF \Left_Encoder:Net_1203_split\ : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Net_1210\ : LABEL IS "macrocell78";
+    ATTRIBUTE Location OF \Left_Encoder:Net_1210\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Net_1251\ : LABEL IS "macrocell79";
+    ATTRIBUTE Location OF \Left_Encoder:Net_1251\ : LABEL IS "U(2,0)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Net_1251_split\ : LABEL IS "macrocell80";
+    ATTRIBUTE Location OF \Left_Encoder:Net_1251_split\ : LABEL IS "U(2,0)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Net_1260\ : LABEL IS "macrocell81";
+    ATTRIBUTE Location OF \Left_Encoder:Net_1260\ : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Net_530\ : LABEL IS "macrocell82";
+    ATTRIBUTE Location OF \Left_Encoder:Net_530\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \Left_Encoder:Net_611\ : LABEL IS "macrocell83";
+    ATTRIBUTE Location OF \Left_Encoder:Net_611\ : LABEL IS "U(3,1)";
     ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:Stsreg\ : LABEL IS "statusicell5";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:Stsreg\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:error\ : LABEL IS "macrocell82";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:error\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_A_delayed_0\ : LABEL IS "macrocell83";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_A_delayed_0\ : LABEL IS "U(3,5)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_A_delayed_1\ : LABEL IS "macrocell84";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_A_delayed_1\ : LABEL IS "U(1,5)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_A_delayed_2\ : LABEL IS "macrocell85";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_A_delayed_2\ : LABEL IS "U(1,5)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_A_filt\ : LABEL IS "macrocell86";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_A_filt\ : LABEL IS "U(1,5)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_B_delayed_0\ : LABEL IS "macrocell87";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_B_delayed_0\ : LABEL IS "U(0,0)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_B_delayed_1\ : LABEL IS "macrocell88";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_B_delayed_1\ : LABEL IS "U(1,0)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_B_delayed_2\ : LABEL IS "macrocell89";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_B_delayed_2\ : LABEL IS "U(1,0)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_B_filt\ : LABEL IS "macrocell90";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_B_filt\ : LABEL IS "U(1,0)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:state_0\ : LABEL IS "macrocell91";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:state_0\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:state_1\ : LABEL IS "macrocell92";
-    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:state_1\ : LABEL IS "U(2,4)";
-    ATTRIBUTE Location OF \Left_Encoder:isr\ : LABEL IS "[IntrHod=(0)][IntrId=(6)]";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:Stsreg\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:error\ : LABEL IS "macrocell84";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:error\ : LABEL IS "U(2,0)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_A_delayed_0\ : LABEL IS "macrocell85";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_A_delayed_0\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_A_delayed_1\ : LABEL IS "macrocell86";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_A_delayed_1\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_A_delayed_2\ : LABEL IS "macrocell87";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_A_delayed_2\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_A_filt\ : LABEL IS "macrocell88";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_A_filt\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_B_delayed_0\ : LABEL IS "macrocell89";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_B_delayed_0\ : LABEL IS "U(2,5)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_B_delayed_1\ : LABEL IS "macrocell90";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_B_delayed_1\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_B_delayed_2\ : LABEL IS "macrocell91";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_B_delayed_2\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:quad_B_filt\ : LABEL IS "macrocell92";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:quad_B_filt\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:state_0\ : LABEL IS "macrocell93";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:state_0\ : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF \Left_Encoder:bQuadDec:state_1\ : LABEL IS "macrocell94";
+    ATTRIBUTE Location OF \Left_Encoder:bQuadDec:state_1\ : LABEL IS "U(3,2)";
+    ATTRIBUTE Location OF \Left_Encoder:isr\ : LABEL IS "[IntrHod=(0)][IntrId=(23)]";
     ATTRIBUTE Location OF \MainTimer:TimerHW\ : LABEL IS "F(Timer,0)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:count_enable\ : LABEL IS "macrocell93";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:count_enable\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "macrocell94";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "U(0,3)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "macrocell95";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:prevCompare\ : LABEL IS "macrocell96";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:prevCompare\ : LABEL IS "U(0,3)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:reload\ : LABEL IS "macrocell97";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:reload\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:count_enable\ : LABEL IS "macrocell95";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:count_enable\ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "macrocell96";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:count_stored_i\ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "macrocell97";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:overflow_reg_i\ : LABEL IS "U(1,0)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:prevCompare\ : LABEL IS "macrocell98";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:prevCompare\ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:reload\ : LABEL IS "macrocell99";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:reload\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:sC16:counterdp:u0\ : LABEL IS "datapathcell8";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:sC16:counterdp:u0\ : LABEL IS "U(1,4)";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:sC16:counterdp:u0\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:sC16:counterdp:u1\ : LABEL IS "datapathcell9";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:sC16:counterdp:u1\ : LABEL IS "U(0,4)";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:sC16:counterdp:u1\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell3";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "U(0,4)";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell6";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:status_0\ : LABEL IS "macrocell98";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:status_0\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:status_2\ : LABEL IS "macrocell99";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:status_2\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:status_3\ : LABEL IS "macrocell100";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:status_0\ : LABEL IS "macrocell100";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:status_0\ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:status_2\ : LABEL IS "macrocell101";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:status_2\ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:status_3\ : LABEL IS "macrocell102";
     ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:status_3\ : LABEL IS "U(0,0)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "macrocell101";
-    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "U(0,3)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Net_1203\ : LABEL IS "macrocell102";
-    ATTRIBUTE Location OF \Right_Encoder:Net_1203\ : LABEL IS "U(0,1)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Net_1203_split\ : LABEL IS "macrocell103";
-    ATTRIBUTE Location OF \Right_Encoder:Net_1203_split\ : LABEL IS "U(0,1)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Net_1210\ : LABEL IS "macrocell104";
-    ATTRIBUTE Location OF \Right_Encoder:Net_1210\ : LABEL IS "U(0,4)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Net_1251\ : LABEL IS "macrocell105";
-    ATTRIBUTE Location OF \Right_Encoder:Net_1251\ : LABEL IS "U(0,5)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Net_1251_split\ : LABEL IS "macrocell106";
-    ATTRIBUTE Location OF \Right_Encoder:Net_1251_split\ : LABEL IS "U(0,5)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Net_1260\ : LABEL IS "macrocell107";
-    ATTRIBUTE Location OF \Right_Encoder:Net_1260\ : LABEL IS "U(0,1)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Net_530\ : LABEL IS "macrocell108";
+    ATTRIBUTE lib_model OF \Right_Encoder:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "macrocell103";
+    ATTRIBUTE Location OF \Right_Encoder:Cnt16:CounterUDB:underflow_reg_i\ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Net_1203\ : LABEL IS "macrocell104";
+    ATTRIBUTE Location OF \Right_Encoder:Net_1203\ : LABEL IS "U(3,0)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Net_1203_split\ : LABEL IS "macrocell105";
+    ATTRIBUTE Location OF \Right_Encoder:Net_1203_split\ : LABEL IS "U(3,0)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Net_1210\ : LABEL IS "macrocell106";
+    ATTRIBUTE Location OF \Right_Encoder:Net_1210\ : LABEL IS "U(1,0)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Net_1251\ : LABEL IS "macrocell107";
+    ATTRIBUTE Location OF \Right_Encoder:Net_1251\ : LABEL IS "U(1,0)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Net_1251_split\ : LABEL IS "macrocell108";
+    ATTRIBUTE Location OF \Right_Encoder:Net_1251_split\ : LABEL IS "U(0,0)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Net_1260\ : LABEL IS "macrocell109";
+    ATTRIBUTE Location OF \Right_Encoder:Net_1260\ : LABEL IS "U(3,0)";
+    ATTRIBUTE lib_model OF \Right_Encoder:Net_530\ : LABEL IS "macrocell110";
     ATTRIBUTE Location OF \Right_Encoder:Net_530\ : LABEL IS "U(0,0)";
-    ATTRIBUTE lib_model OF \Right_Encoder:Net_611\ : LABEL IS "macrocell109";
+    ATTRIBUTE lib_model OF \Right_Encoder:Net_611\ : LABEL IS "macrocell111";
     ATTRIBUTE Location OF \Right_Encoder:Net_611\ : LABEL IS "U(0,0)";
     ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:Stsreg\ : LABEL IS "statusicell7";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:Stsreg\ : LABEL IS "U(0,1)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:error\ : LABEL IS "macrocell110";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:error\ : LABEL IS "U(0,5)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_A_delayed_0\ : LABEL IS "macrocell111";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_A_delayed_0\ : LABEL IS "U(0,3)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_A_delayed_1\ : LABEL IS "macrocell112";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_A_delayed_1\ : LABEL IS "U(0,3)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_A_delayed_2\ : LABEL IS "macrocell113";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_A_delayed_2\ : LABEL IS "U(0,3)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_A_filt\ : LABEL IS "macrocell114";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_A_filt\ : LABEL IS "U(0,3)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_B_delayed_0\ : LABEL IS "macrocell115";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_B_delayed_0\ : LABEL IS "U(3,2)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_B_delayed_1\ : LABEL IS "macrocell116";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_B_delayed_1\ : LABEL IS "U(1,4)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_B_delayed_2\ : LABEL IS "macrocell117";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_B_delayed_2\ : LABEL IS "U(1,4)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_B_filt\ : LABEL IS "macrocell118";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_B_filt\ : LABEL IS "U(1,4)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:state_0\ : LABEL IS "macrocell119";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:state_0\ : LABEL IS "U(0,1)";
-    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:state_1\ : LABEL IS "macrocell120";
-    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:state_1\ : LABEL IS "U(0,4)";
-    ATTRIBUTE Location OF \Right_Encoder:isr\ : LABEL IS "[IntrHod=(0)][IntrId=(23)]";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:final_kill_reg\ : LABEL IS "macrocell121";
-    ATTRIBUTE Location OF \Servo:PWMUDB:final_kill_reg\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:prevCompare1\ : LABEL IS "macrocell122";
-    ATTRIBUTE Location OF \Servo:PWMUDB:prevCompare1\ : LABEL IS "U(3,1)";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:prevCompare2\ : LABEL IS "macrocell123";
-    ATTRIBUTE Location OF \Servo:PWMUDB:prevCompare2\ : LABEL IS "U(3,1)";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:runmode_enable\ : LABEL IS "macrocell124";
-    ATTRIBUTE Location OF \Servo:PWMUDB:runmode_enable\ : LABEL IS "U(3,2)";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell4";
-    ATTRIBUTE Location OF \Servo:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "U(3,2)";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "datapathcell10";
-    ATTRIBUTE Location OF \Servo:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "datapathcell11";
-    ATTRIBUTE Location OF \Servo:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell8";
-    ATTRIBUTE Location OF \Servo:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:status_0\ : LABEL IS "macrocell125";
-    ATTRIBUTE Location OF \Servo:PWMUDB:status_0\ : LABEL IS "U(3,5)";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:status_1\ : LABEL IS "macrocell126";
-    ATTRIBUTE Location OF \Servo:PWMUDB:status_1\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \Servo:PWMUDB:status_5\ : LABEL IS "macrocell127";
-    ATTRIBUTE Location OF \Servo:PWMUDB:status_5\ : LABEL IS "U(3,2)";
-    ATTRIBUTE lib_model OF \USBUART:Dm(0)\ : LABEL IS "iocell19";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:Stsreg\ : LABEL IS "U(0,0)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:error\ : LABEL IS "macrocell112";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:error\ : LABEL IS "U(1,0)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_A_delayed_0\ : LABEL IS "macrocell113";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_A_delayed_0\ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_A_delayed_1\ : LABEL IS "macrocell114";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_A_delayed_1\ : LABEL IS "U(1,2)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_A_delayed_2\ : LABEL IS "macrocell115";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_A_delayed_2\ : LABEL IS "U(1,2)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_A_filt\ : LABEL IS "macrocell116";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_A_filt\ : LABEL IS "U(1,2)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_B_delayed_0\ : LABEL IS "macrocell117";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_B_delayed_0\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_B_delayed_1\ : LABEL IS "macrocell118";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_B_delayed_1\ : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_B_delayed_2\ : LABEL IS "macrocell119";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_B_delayed_2\ : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:quad_B_filt\ : LABEL IS "macrocell120";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:quad_B_filt\ : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:state_0\ : LABEL IS "macrocell121";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:state_0\ : LABEL IS "U(3,0)";
+    ATTRIBUTE lib_model OF \Right_Encoder:bQuadDec:state_1\ : LABEL IS "macrocell122";
+    ATTRIBUTE Location OF \Right_Encoder:bQuadDec:state_1\ : LABEL IS "U(1,0)";
+    ATTRIBUTE Location OF \Right_Encoder:isr\ : LABEL IS "[IntrHod=(0)][IntrId=(26)]";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:final_kill_reg\ : LABEL IS "macrocell123";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:final_kill_reg\ : LABEL IS "U(1,3)";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:prevCompare1\ : LABEL IS "macrocell124";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:prevCompare1\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:prevCompare2\ : LABEL IS "macrocell125";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:prevCompare2\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:runmode_enable\ : LABEL IS "macrocell126";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:runmode_enable\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell4";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "datapathcell10";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "datapathcell11";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell8";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:status_0\ : LABEL IS "macrocell127";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:status_0\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:status_1\ : LABEL IS "macrocell128";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:status_1\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \Servo_0:PWMUDB:status_5\ : LABEL IS "macrocell129";
+    ATTRIBUTE Location OF \Servo_0:PWMUDB:status_5\ : LABEL IS "U(0,2)";
+    ATTRIBUTE lib_model OF \Servo_1:PWMUDB:prevCompare1\ : LABEL IS "macrocell130";
+    ATTRIBUTE Location OF \Servo_1:PWMUDB:prevCompare1\ : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF \Servo_1:PWMUDB:prevCompare2\ : LABEL IS "macrocell131";
+    ATTRIBUTE Location OF \Servo_1:PWMUDB:prevCompare2\ : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF \Servo_1:PWMUDB:runmode_enable\ : LABEL IS "macrocell132";
+    ATTRIBUTE Location OF \Servo_1:PWMUDB:runmode_enable\ : LABEL IS "U(2,1)";
+    ATTRIBUTE lib_model OF \Servo_1:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "controlcell5";
+    ATTRIBUTE Location OF \Servo_1:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\ : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF \Servo_1:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "datapathcell12";
+    ATTRIBUTE Location OF \Servo_1:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF \Servo_1:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "datapathcell13";
+    ATTRIBUTE Location OF \Servo_1:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF \Servo_1:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "statusicell9";
+    ATTRIBUTE Location OF \Servo_1:PWMUDB:sSTSReg:nrstSts:stsreg\ : LABEL IS "U(0,1)";
+    ATTRIBUTE lib_model OF \Servo_1:PWMUDB:status_0\ : LABEL IS "macrocell133";
+    ATTRIBUTE Location OF \Servo_1:PWMUDB:status_0\ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF \Servo_1:PWMUDB:status_1\ : LABEL IS "macrocell134";
+    ATTRIBUTE Location OF \Servo_1:PWMUDB:status_1\ : LABEL IS "U(0,0)";
+    ATTRIBUTE lib_model OF \USBUART:Dm(0)\ : LABEL IS "iocell18";
     ATTRIBUTE Location OF \USBUART:Dm(0)\ : LABEL IS "P15[7]";
-    ATTRIBUTE lib_model OF \USBUART:Dp(0)\ : LABEL IS "iocell20";
+    ATTRIBUTE lib_model OF \USBUART:Dp(0)\ : LABEL IS "iocell19";
     ATTRIBUTE Location OF \USBUART:Dp(0)\ : LABEL IS "P15[6]";
     ATTRIBUTE Location OF \USBUART:Dp\ : LABEL IS "F(PICU,8)";
     ATTRIBUTE Location OF \USBUART:USB\ : LABEL IS "F(USB,0)";
     ATTRIBUTE Location OF \USBUART:arb_int\ : LABEL IS "[IntrHod=(0)][IntrId=(22)]";
-    ATTRIBUTE Location OF \USBUART:bus_reset\ : LABEL IS "[IntrHod=(0)][IntrId=(27)]";
+    ATTRIBUTE Location OF \USBUART:bus_reset\ : LABEL IS "[IntrHod=(0)][IntrId=(29)]";
     ATTRIBUTE Location OF \USBUART:dp_int\ : LABEL IS "[IntrHod=(0)][IntrId=(12)]";
-    ATTRIBUTE Location OF \USBUART:ep_0\ : LABEL IS "[IntrHod=(0)][IntrId=(30)]";
-    ATTRIBUTE Location OF \USBUART:ep_1\ : LABEL IS "[IntrHod=(0)][IntrId=(26)]";
-    ATTRIBUTE Location OF \USBUART:ep_2\ : LABEL IS "[IntrHod=(0)][IntrId=(29)]";
-    ATTRIBUTE Location OF \USBUART:ep_3\ : LABEL IS "[IntrHod=(0)][IntrId=(28)]";
-    ATTRIBUTE Location OF \USBUART:sof_int\ : LABEL IS "[IntrHod=(0)][IntrId=(0)]";
-    ATTRIBUTE Location OF \VDAC8_1:viDAC8\ : LABEL IS "F(VIDAC,3)";
-    ATTRIBUTE Location OF \VDAC8_2:viDAC8\ : LABEL IS "F(VIDAC,1)";
-    ATTRIBUTE Location OF \VDAC8_3:viDAC8\ : LABEL IS "F(VIDAC,2)";
-    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell128";
-    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \USBUART:ep_0\ : LABEL IS "[IntrHod=(0)][IntrId=(27)]";
+    ATTRIBUTE Location OF \USBUART:ep_1\ : LABEL IS "[IntrHod=(0)][IntrId=(0)]";
+    ATTRIBUTE Location OF \USBUART:ep_2\ : LABEL IS "[IntrHod=(0)][IntrId=(30)]";
+    ATTRIBUTE Location OF \USBUART:ep_3\ : LABEL IS "[IntrHod=(0)][IntrId=(31)]";
+    ATTRIBUTE Location OF \USBUART:sof_int\ : LABEL IS "[IntrHod=(0)][IntrId=(25)]";
+    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell135";
+    ATTRIBUTE Location OF __ONE__ : LABEL IS "U(0,5)";
     COMPONENT abufcell
     END COMPONENT;
     COMPONENT boostcell
@@ -1359,11 +1431,11 @@ ARCHITECTURE __DEFAULT__ OF \IGVC 2013\ IS
     END COMPONENT;
 BEGIN
 
-    Center:logicalport
+    ADC_In:logicalport
         GENERIC MAP(
             drive_mode => "000",
             ibuf_enabled => "0",
-            id => "e60a1f0b-a2c4-4f1a-acb2-14d90a356a3a",
+            id => "cc3bcd7e-5dc0-48ea-9bf6-6aa082be1ada",
             init_dr_st => "0",
             input_sync => "1",
             intr_mode => "00",
@@ -1392,7 +1464,7 @@ BEGIN
             vtrip => "10",
             width => 1);
 
-    Center(0):iocell
+    ADC_In(0):iocell
         PORT MAP(
             oe => open);
 
@@ -1417,6 +1489,10 @@ BEGIN
             dclk_1 => Net_339_local,
             dclk_glb_2 => Net_330,
             dclk_2 => Net_330_local,
+            aclk_glb_0 => \ADC_1:Net_221\,
+            aclk_0 => \ADC_1:Net_221_local\,
+            clk_a_dig_glb_0 => \ADC_1:Net_221_adig\,
+            clk_a_dig_0 => \ADC_1:Net_221_adig_local\,
             dclk_glb_3 => \I2C:Net_767\,
             dclk_3 => \I2C:Net_767_local\,
             dclk_glb_4 => \IMU:Net_9\,
@@ -1569,6 +1645,46 @@ BEGIN
             out => Net_296_SYNCOUT,
             clock => ClockBlock_BUS_CLK);
 
+    Left_Motor:logicalport
+        GENERIC MAP(
+            drive_mode => "110",
+            ibuf_enabled => "1",
+            id => "4397d3c3-b601-4d66-810c-13d78c0fdb23",
+            init_dr_st => "0",
+            input_sync => "1",
+            intr_mode => "00",
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            output_conn => "1",
+            output_sync => "0",
+            pin_aliases => "",
+            pin_mode => "O",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "0",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1);
+
+    Left_Motor(0):iocell
+        PORT MAP(
+            oe => open,
+            pin_input => Net_112,
+            pad_out => Left_Motor(0)_PAD,
+            pad_in => Left_Motor(0)_PAD);
+
     MainTimeISR:interrupt
         GENERIC MAP(
             int_type => "10")
@@ -1582,8 +1698,8 @@ BEGIN
         PORT MAP(
             q => Net_112,
             clock_0 => Net_67,
-            main_0 => \Servo:PWMUDB:ctrl_enable\,
-            main_1 => \Servo:PWMUDB:compare1\);
+            main_0 => \Servo_0:PWMUDB:ctrl_enable\,
+            main_1 => \Servo_0:PWMUDB:compare1\);
 
     Net_113:macrocell
         GENERIC MAP(
@@ -1591,8 +1707,8 @@ BEGIN
         PORT MAP(
             q => Net_113,
             clock_0 => Net_67,
-            main_0 => \Servo:PWMUDB:ctrl_enable\,
-            main_1 => \Servo:PWMUDB:compare2\);
+            main_0 => \Servo_0:PWMUDB:ctrl_enable\,
+            main_1 => \Servo_0:PWMUDB:compare2\);
 
     Net_386:macrocell
         GENERIC MAP(
@@ -1600,6 +1716,24 @@ BEGIN
         PORT MAP(
             q => Net_386,
             main_0 => \IMU:BUART:txn\);
+
+    Net_438:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * main_1)")
+        PORT MAP(
+            q => Net_438,
+            clock_0 => Net_67,
+            main_0 => \Servo_1:PWMUDB:ctrl_enable\,
+            main_1 => \Servo_1:PWMUDB:compare1\);
+
+    Net_449:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * main_1)")
+        PORT MAP(
+            q => Net_449,
+            clock_0 => Net_67,
+            main_0 => \Servo_1:PWMUDB:ctrl_enable\,
+            main_1 => \Servo_1:PWMUDB:compare2\);
 
     Right_Encoder_Interrupt:interrupt
         GENERIC MAP(
@@ -1664,6 +1798,46 @@ BEGIN
             in => Net_318,
             out => Net_318_SYNCOUT,
             clock => ClockBlock_BUS_CLK);
+
+    Right_Motor:logicalport
+        GENERIC MAP(
+            drive_mode => "110",
+            ibuf_enabled => "1",
+            id => "cb11663f-2366-48d2-b10c-a64d5480badc",
+            init_dr_st => "0",
+            input_sync => "1",
+            intr_mode => "00",
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            output_conn => "1",
+            output_sync => "0",
+            pin_aliases => "",
+            pin_mode => "O",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "0",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1);
+
+    Right_Motor(0):iocell
+        PORT MAP(
+            oe => open,
+            pin_input => Net_113,
+            pad_out => Right_Motor(0)_PAD,
+            pad_in => Right_Motor(0)_PAD);
 
     Rx_1:logicalport
         GENERIC MAP(
@@ -1804,85 +1978,52 @@ BEGIN
             out => \I2C:Net_855_SYNCOUT\,
             clock => ClockBlock_BUS_CLK);
 
-    Servo0:logicalport
+    Servo_Out:logicalport
         GENERIC MAP(
-            drive_mode => "110",
-            ibuf_enabled => "1",
-            id => "4397d3c3-b601-4d66-810c-13d78c0fdb23",
-            init_dr_st => "0",
-            input_sync => "1",
-            intr_mode => "00",
-            io_voltage => "",
+            drive_mode => "110110",
+            ibuf_enabled => "11",
+            id => "d849f74a-ef05-44a9-8f77-507333532843",
+            init_dr_st => "00",
+            input_sync => "11",
+            intr_mode => "0000",
+            io_voltage => ", ",
             layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            output_conn => "1",
-            output_sync => "0",
-            pin_aliases => "",
-            pin_mode => "O",
+            oe_conn => "00",
+            output_conn => "11",
+            output_sync => "00",
+            pin_aliases => ",",
+            pin_mode => "OO",
             por_state => 4,
             port_alias_group => "",
             port_alias_required => 0,
             sio_group_cnt => 0,
             sio_hifreq => "",
-            sio_hyst => "0",
+            sio_hyst => "00",
             sio_ibuf => "00000000",
-            sio_info => "00",
+            sio_info => "0000",
             sio_obuf => "00000000",
             sio_refsel => "00000000",
             sio_vtrip => "00000000",
-            slew_rate => "0",
+            slew_rate => "00",
             spanning => 0,
             sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1);
+            use_annotation => "00",
+            vtrip => "1010",
+            width => 2);
 
-    Servo0(0):iocell
+    Servo_Out(0):iocell
         PORT MAP(
             oe => open,
-            pin_input => Net_112,
-            pad_out => Servo0(0)_PAD,
-            pad_in => Servo0(0)_PAD);
+            pin_input => Net_438,
+            pad_out => Servo_Out(0)_PAD,
+            pad_in => Servo_Out(0)_PAD);
 
-    Servo1:logicalport
-        GENERIC MAP(
-            drive_mode => "110",
-            ibuf_enabled => "1",
-            id => "cb11663f-2366-48d2-b10c-a64d5480badc",
-            init_dr_st => "0",
-            input_sync => "1",
-            intr_mode => "00",
-            io_voltage => "",
-            layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            output_conn => "1",
-            output_sync => "0",
-            pin_aliases => "",
-            pin_mode => "O",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "",
-            sio_hyst => "0",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 0,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1);
-
-    Servo1(0):iocell
+    Servo_Out(1):iocell
         PORT MAP(
             oe => open,
-            pin_input => Net_113,
-            pad_out => Servo1(0)_PAD,
-            pad_in => Servo1(0)_PAD);
+            pin_input => Net_449,
+            pad_out => Servo_Out(1)_PAD,
+            pad_in => Servo_Out(1)_PAD);
 
     Soft_Kill:logicalport
         GENERIC MAP(
@@ -1963,16 +2104,50 @@ BEGIN
             pad_out => Tx_1(0)_PAD,
             pad_in => Tx_1(0)_PAD);
 
-    X0:logicalport
+    \ADC_1:ADC_SAR\:sarcell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            clock => \ADC_1:Net_221\,
+            pump_clock => \ADC_1:Net_221\,
+            sof_udb => __ONE__,
+            vp_ctl_udb_3 => open,
+            vp_ctl_udb_2 => open,
+            vp_ctl_udb_1 => open,
+            vp_ctl_udb_0 => open,
+            vn_ctl_udb_3 => open,
+            vn_ctl_udb_2 => open,
+            vn_ctl_udb_1 => open,
+            vn_ctl_udb_0 => open,
+            irq => \ADC_1:Net_252\,
+            data_out_udb_11 => \ADC_1:Net_207_11\,
+            data_out_udb_10 => \ADC_1:Net_207_10\,
+            data_out_udb_9 => \ADC_1:Net_207_9\,
+            data_out_udb_8 => \ADC_1:Net_207_8\,
+            data_out_udb_7 => \ADC_1:Net_207_7\,
+            data_out_udb_6 => \ADC_1:Net_207_6\,
+            data_out_udb_5 => \ADC_1:Net_207_5\,
+            data_out_udb_4 => \ADC_1:Net_207_4\,
+            data_out_udb_3 => \ADC_1:Net_207_3\,
+            data_out_udb_2 => \ADC_1:Net_207_2\,
+            data_out_udb_1 => \ADC_1:Net_207_1\,
+            data_out_udb_0 => \ADC_1:Net_207_0\,
+            eof_udb => Net_468);
+
+    \ADC_1:Bypass(0)\:iocell
+        PORT MAP(
+            oe => open);
+
+    \ADC_1:Bypass\:logicalport
         GENERIC MAP(
             drive_mode => "000",
             ibuf_enabled => "0",
-            id => "9d3948ab-03f4-4df7-9e96-e22041253e32",
+            id => "e9961e25-9851-43e9-af2d-81a3a64ea584/16a808f6-2e13-45b9-bce0-b001c8655113",
             init_dr_st => "0",
             input_sync => "1",
             intr_mode => "00",
             io_voltage => "",
-            layout_mode => "NONCONTIGUOUS",
+            layout_mode => "CONTIGUOUS",
             oe_conn => "0",
             output_conn => "0",
             output_sync => "0",
@@ -1990,126 +2165,18 @@ BEGIN
             sio_refsel => "00000000",
             sio_vtrip => "00000000",
             slew_rate => "0",
-            spanning => 1,
+            spanning => 0,
             sw_only => 0,
             use_annotation => "0",
             vtrip => "10",
             width => 1);
 
-    X0(0):iocell
-        PORT MAP(
-            oe => open);
-
-    X1:logicalport
+    \ADC_1:IRQ\:interrupt
         GENERIC MAP(
-            drive_mode => "000",
-            ibuf_enabled => "0",
-            id => "021b69ac-040e-4aad-9b7a-e7db39fb174e",
-            init_dr_st => "0",
-            input_sync => "1",
-            intr_mode => "00",
-            io_voltage => "",
-            layout_mode => "NONCONTIGUOUS",
-            oe_conn => "0",
-            output_conn => "0",
-            output_sync => "0",
-            pin_aliases => "",
-            pin_mode => "A",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "",
-            sio_hyst => "0",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 1,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1);
-
-    X1(0):iocell
+            int_type => "10")
         PORT MAP(
-            oe => open);
-
-    Y0:logicalport
-        GENERIC MAP(
-            drive_mode => "000",
-            ibuf_enabled => "0",
-            id => "cc3bcd7e-5dc0-48ea-9bf6-6aa082be1ada",
-            init_dr_st => "0",
-            input_sync => "1",
-            intr_mode => "00",
-            io_voltage => "",
-            layout_mode => "NONCONTIGUOUS",
-            oe_conn => "0",
-            output_conn => "0",
-            output_sync => "0",
-            pin_aliases => "",
-            pin_mode => "A",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "",
-            sio_hyst => "0",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 1,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1);
-
-    Y0(0):iocell
-        PORT MAP(
-            oe => open);
-
-    Y1:logicalport
-        GENERIC MAP(
-            drive_mode => "000",
-            ibuf_enabled => "0",
-            id => "63aaa2ba-0ae7-4777-8853-6a058bcf6a6e",
-            init_dr_st => "0",
-            input_sync => "1",
-            intr_mode => "00",
-            io_voltage => "",
-            layout_mode => "NONCONTIGUOUS",
-            oe_conn => "0",
-            output_conn => "0",
-            output_sync => "0",
-            pin_aliases => "",
-            pin_mode => "A",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "",
-            sio_hyst => "0",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 1,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1);
-
-    Y1(0):iocell
-        PORT MAP(
-            oe => open);
+            interrupt => Net_468,
+            clock => ClockBlock_BUS_CLK);
 
     \I2C:I2C_IRQ\:interrupt
         GENERIC MAP(
@@ -3943,38 +4010,38 @@ BEGIN
             interrupt => Net_325,
             clock => ClockBlock_BUS_CLK);
 
-    \Servo:PWMUDB:final_kill_reg\:macrocell
+    \Servo_0:PWMUDB:final_kill_reg\:macrocell
         GENERIC MAP(
             eqn_main => "1'b0")
         PORT MAP(
-            q => \Servo:PWMUDB:final_kill_reg\,
+            q => \Servo_0:PWMUDB:final_kill_reg\,
             clock_0 => Net_67);
 
-    \Servo:PWMUDB:prevCompare1\:macrocell
+    \Servo_0:PWMUDB:prevCompare1\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0)")
         PORT MAP(
-            q => \Servo:PWMUDB:prevCompare1\,
-            main_0 => \Servo:PWMUDB:compare1\,
+            q => \Servo_0:PWMUDB:prevCompare1\,
+            main_0 => \Servo_0:PWMUDB:compare1\,
             clock_0 => Net_67);
 
-    \Servo:PWMUDB:prevCompare2\:macrocell
+    \Servo_0:PWMUDB:prevCompare2\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0)")
         PORT MAP(
-            q => \Servo:PWMUDB:prevCompare2\,
-            main_0 => \Servo:PWMUDB:compare2\,
+            q => \Servo_0:PWMUDB:prevCompare2\,
+            main_0 => \Servo_0:PWMUDB:compare2\,
             clock_0 => Net_67);
 
-    \Servo:PWMUDB:runmode_enable\:macrocell
+    \Servo_0:PWMUDB:runmode_enable\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0)")
         PORT MAP(
-            q => \Servo:PWMUDB:runmode_enable\,
-            main_0 => \Servo:PWMUDB:ctrl_enable\,
+            q => \Servo_0:PWMUDB:runmode_enable\,
+            main_0 => \Servo_0:PWMUDB:ctrl_enable\,
             clock_0 => Net_67);
 
-    \Servo:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\:controlcell
+    \Servo_0:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\:controlcell
         GENERIC MAP(
             cy_ctrl_mode_0 => "00000000",
             cy_ctrl_mode_1 => "00000000",
@@ -3982,17 +4049,17 @@ BEGIN
             cy_force_order => 1,
             cy_init_value => "00000000")
         PORT MAP(
-            control_7 => \Servo:PWMUDB:ctrl_enable\,
-            control_6 => \Servo:PWMUDB:control_6\,
-            control_5 => \Servo:PWMUDB:control_5\,
-            control_4 => \Servo:PWMUDB:control_4\,
-            control_3 => \Servo:PWMUDB:control_3\,
-            control_2 => \Servo:PWMUDB:control_2\,
-            control_1 => \Servo:PWMUDB:control_1\,
-            control_0 => \Servo:PWMUDB:control_0\,
+            control_7 => \Servo_0:PWMUDB:ctrl_enable\,
+            control_6 => \Servo_0:PWMUDB:control_6\,
+            control_5 => \Servo_0:PWMUDB:control_5\,
+            control_4 => \Servo_0:PWMUDB:control_4\,
+            control_3 => \Servo_0:PWMUDB:control_3\,
+            control_2 => \Servo_0:PWMUDB:control_2\,
+            control_1 => \Servo_0:PWMUDB:control_1\,
+            control_0 => \Servo_0:PWMUDB:control_0\,
             busclk => ClockBlock_BUS_CLK);
 
-    \Servo:PWMUDB:sP16:pwmdp:u0\:datapathcell
+    \Servo_0:PWMUDB:sP16:pwmdp:u0\:datapathcell
         GENERIC MAP(
             a0_init => "00000000",
             a1_init => "00000000",
@@ -4017,24 +4084,24 @@ BEGIN
             z1_sync => 1)
         PORT MAP(
             clock => Net_67,
-            cs_addr_2 => \Servo:PWMUDB:tc_i\,
-            cs_addr_1 => \Servo:PWMUDB:runmode_enable\,
+            cs_addr_2 => \Servo_0:PWMUDB:tc_i\,
+            cs_addr_1 => \Servo_0:PWMUDB:runmode_enable\,
             busclk => ClockBlock_BUS_CLK,
-            ce0 => \Servo:PWMUDB:sP16:pwmdp:u0.ce0__sig\,
-            cl0 => \Servo:PWMUDB:sP16:pwmdp:u0.cl0__sig\,
-            z0 => \Servo:PWMUDB:sP16:pwmdp:u0.z0__sig\,
-            ff0 => \Servo:PWMUDB:sP16:pwmdp:u0.ff0__sig\,
-            ce1 => \Servo:PWMUDB:sP16:pwmdp:u0.ce1__sig\,
-            cl1 => \Servo:PWMUDB:sP16:pwmdp:u0.cl1__sig\,
-            z1 => \Servo:PWMUDB:sP16:pwmdp:u0.z1__sig\,
-            ff1 => \Servo:PWMUDB:sP16:pwmdp:u0.ff1__sig\,
-            co_msb => \Servo:PWMUDB:sP16:pwmdp:u0.co_msb__sig\,
-            sol_msb => \Servo:PWMUDB:sP16:pwmdp:u0.sol_msb__sig\,
-            cfbo => \Servo:PWMUDB:sP16:pwmdp:u0.cfbo__sig\,
-            sil => \Servo:PWMUDB:sP16:pwmdp:u1.sor__sig\,
-            cmsbi => \Servo:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\);
+            ce0 => \Servo_0:PWMUDB:sP16:pwmdp:u0.ce0__sig\,
+            cl0 => \Servo_0:PWMUDB:sP16:pwmdp:u0.cl0__sig\,
+            z0 => \Servo_0:PWMUDB:sP16:pwmdp:u0.z0__sig\,
+            ff0 => \Servo_0:PWMUDB:sP16:pwmdp:u0.ff0__sig\,
+            ce1 => \Servo_0:PWMUDB:sP16:pwmdp:u0.ce1__sig\,
+            cl1 => \Servo_0:PWMUDB:sP16:pwmdp:u0.cl1__sig\,
+            z1 => \Servo_0:PWMUDB:sP16:pwmdp:u0.z1__sig\,
+            ff1 => \Servo_0:PWMUDB:sP16:pwmdp:u0.ff1__sig\,
+            co_msb => \Servo_0:PWMUDB:sP16:pwmdp:u0.co_msb__sig\,
+            sol_msb => \Servo_0:PWMUDB:sP16:pwmdp:u0.sol_msb__sig\,
+            cfbo => \Servo_0:PWMUDB:sP16:pwmdp:u0.cfbo__sig\,
+            sil => \Servo_0:PWMUDB:sP16:pwmdp:u1.sor__sig\,
+            cmsbi => \Servo_0:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\);
 
-    \Servo:PWMUDB:sP16:pwmdp:u1\:datapathcell
+    \Servo_0:PWMUDB:sP16:pwmdp:u1\:datapathcell
         GENERIC MAP(
             a0_init => "00000000",
             a1_init => "00000000",
@@ -4059,28 +4126,28 @@ BEGIN
             z1_sync => 1)
         PORT MAP(
             clock => Net_67,
-            cs_addr_2 => \Servo:PWMUDB:tc_i\,
-            cs_addr_1 => \Servo:PWMUDB:runmode_enable\,
-            cl0_comb => \Servo:PWMUDB:compare1\,
-            z0_comb => \Servo:PWMUDB:tc_i\,
-            cl1_comb => \Servo:PWMUDB:compare2\,
-            f1_blk_stat_comb => \Servo:PWMUDB:status_3\,
+            cs_addr_2 => \Servo_0:PWMUDB:tc_i\,
+            cs_addr_1 => \Servo_0:PWMUDB:runmode_enable\,
+            cl0_comb => \Servo_0:PWMUDB:compare1\,
+            z0_comb => \Servo_0:PWMUDB:tc_i\,
+            cl1_comb => \Servo_0:PWMUDB:compare2\,
+            f1_blk_stat_comb => \Servo_0:PWMUDB:status_3\,
             busclk => ClockBlock_BUS_CLK,
-            ce0i => \Servo:PWMUDB:sP16:pwmdp:u0.ce0__sig\,
-            cl0i => \Servo:PWMUDB:sP16:pwmdp:u0.cl0__sig\,
-            z0i => \Servo:PWMUDB:sP16:pwmdp:u0.z0__sig\,
-            ff0i => \Servo:PWMUDB:sP16:pwmdp:u0.ff0__sig\,
-            ce1i => \Servo:PWMUDB:sP16:pwmdp:u0.ce1__sig\,
-            cl1i => \Servo:PWMUDB:sP16:pwmdp:u0.cl1__sig\,
-            z1i => \Servo:PWMUDB:sP16:pwmdp:u0.z1__sig\,
-            ff1i => \Servo:PWMUDB:sP16:pwmdp:u0.ff1__sig\,
-            ci => \Servo:PWMUDB:sP16:pwmdp:u0.co_msb__sig\,
-            sir => \Servo:PWMUDB:sP16:pwmdp:u0.sol_msb__sig\,
-            cfbi => \Servo:PWMUDB:sP16:pwmdp:u0.cfbo__sig\,
-            sor => \Servo:PWMUDB:sP16:pwmdp:u1.sor__sig\,
-            cmsbo => \Servo:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\);
+            ce0i => \Servo_0:PWMUDB:sP16:pwmdp:u0.ce0__sig\,
+            cl0i => \Servo_0:PWMUDB:sP16:pwmdp:u0.cl0__sig\,
+            z0i => \Servo_0:PWMUDB:sP16:pwmdp:u0.z0__sig\,
+            ff0i => \Servo_0:PWMUDB:sP16:pwmdp:u0.ff0__sig\,
+            ce1i => \Servo_0:PWMUDB:sP16:pwmdp:u0.ce1__sig\,
+            cl1i => \Servo_0:PWMUDB:sP16:pwmdp:u0.cl1__sig\,
+            z1i => \Servo_0:PWMUDB:sP16:pwmdp:u0.z1__sig\,
+            ff1i => \Servo_0:PWMUDB:sP16:pwmdp:u0.ff1__sig\,
+            ci => \Servo_0:PWMUDB:sP16:pwmdp:u0.co_msb__sig\,
+            sir => \Servo_0:PWMUDB:sP16:pwmdp:u0.sol_msb__sig\,
+            cfbi => \Servo_0:PWMUDB:sP16:pwmdp:u0.cfbo__sig\,
+            sor => \Servo_0:PWMUDB:sP16:pwmdp:u1.sor__sig\,
+            cmsbo => \Servo_0:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\);
 
-    \Servo:PWMUDB:sSTSReg:nrstSts:stsreg\:statusicell
+    \Servo_0:PWMUDB:sSTSReg:nrstSts:stsreg\:statusicell
         GENERIC MAP(
             cy_force_order => 1,
             cy_int_mask => "1111111",
@@ -4088,37 +4155,200 @@ BEGIN
         PORT MAP(
             clock => Net_67,
             status_6 => open,
-            status_5 => \Servo:PWMUDB:status_5\,
+            status_5 => \Servo_0:PWMUDB:status_5\,
             status_4 => open,
-            status_3 => \Servo:PWMUDB:status_3\,
-            status_2 => \Servo:PWMUDB:tc_i\,
-            status_1 => \Servo:PWMUDB:status_1\,
-            status_0 => \Servo:PWMUDB:status_0\);
+            status_3 => \Servo_0:PWMUDB:status_3\,
+            status_2 => \Servo_0:PWMUDB:tc_i\,
+            status_1 => \Servo_0:PWMUDB:status_1\,
+            status_0 => \Servo_0:PWMUDB:status_0\);
 
-    \Servo:PWMUDB:status_0\:macrocell
+    \Servo_0:PWMUDB:status_0\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * !main_1)")
         PORT MAP(
-            q => \Servo:PWMUDB:status_0\,
+            q => \Servo_0:PWMUDB:status_0\,
             clock_0 => Net_67,
-            main_0 => \Servo:PWMUDB:compare1\,
-            main_1 => \Servo:PWMUDB:prevCompare1\);
+            main_0 => \Servo_0:PWMUDB:compare1\,
+            main_1 => \Servo_0:PWMUDB:prevCompare1\);
 
-    \Servo:PWMUDB:status_1\:macrocell
+    \Servo_0:PWMUDB:status_1\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * !main_1)")
         PORT MAP(
-            q => \Servo:PWMUDB:status_1\,
+            q => \Servo_0:PWMUDB:status_1\,
             clock_0 => Net_67,
-            main_0 => \Servo:PWMUDB:compare2\,
-            main_1 => \Servo:PWMUDB:prevCompare2\);
+            main_0 => \Servo_0:PWMUDB:compare2\,
+            main_1 => \Servo_0:PWMUDB:prevCompare2\);
 
-    \Servo:PWMUDB:status_5\:macrocell
+    \Servo_0:PWMUDB:status_5\:macrocell
         GENERIC MAP(
             eqn_main => "(!main_0)")
         PORT MAP(
-            q => \Servo:PWMUDB:status_5\,
-            main_0 => \Servo:PWMUDB:final_kill_reg\);
+            q => \Servo_0:PWMUDB:status_5\,
+            main_0 => \Servo_0:PWMUDB:final_kill_reg\);
+
+    \Servo_1:PWMUDB:prevCompare1\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)")
+        PORT MAP(
+            q => \Servo_1:PWMUDB:prevCompare1\,
+            main_0 => \Servo_1:PWMUDB:compare1\,
+            clock_0 => Net_67);
+
+    \Servo_1:PWMUDB:prevCompare2\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)")
+        PORT MAP(
+            q => \Servo_1:PWMUDB:prevCompare2\,
+            main_0 => \Servo_1:PWMUDB:compare2\,
+            clock_0 => Net_67);
+
+    \Servo_1:PWMUDB:runmode_enable\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)")
+        PORT MAP(
+            q => \Servo_1:PWMUDB:runmode_enable\,
+            main_0 => \Servo_1:PWMUDB:ctrl_enable\,
+            clock_0 => Net_67);
+
+    \Servo_1:PWMUDB:sCTRLReg:AsyncCtl:ctrlreg\:controlcell
+        GENERIC MAP(
+            cy_ctrl_mode_0 => "00000000",
+            cy_ctrl_mode_1 => "00000000",
+            cy_ext_reset => 0,
+            cy_force_order => 1,
+            cy_init_value => "00000000")
+        PORT MAP(
+            control_7 => \Servo_1:PWMUDB:ctrl_enable\,
+            control_6 => \Servo_1:PWMUDB:control_6\,
+            control_5 => \Servo_1:PWMUDB:control_5\,
+            control_4 => \Servo_1:PWMUDB:control_4\,
+            control_3 => \Servo_1:PWMUDB:control_3\,
+            control_2 => \Servo_1:PWMUDB:control_2\,
+            control_1 => \Servo_1:PWMUDB:control_1\,
+            control_0 => \Servo_1:PWMUDB:control_0\,
+            busclk => ClockBlock_BUS_CLK);
+
+    \Servo_1:PWMUDB:sP16:pwmdp:u0\:datapathcell
+        GENERIC MAP(
+            a0_init => "00000000",
+            a1_init => "00000000",
+            ce0_sync => 1,
+            ce1_sync => 1,
+            cl0_sync => 1,
+            cl1_sync => 1,
+            cmsb_sync => 1,
+            co_msb_sync => 1,
+            cy_dpconfig => "0000000001000000000000001100000001000000010000000000000011000000000000001100000000000000110000000000000011000000000000001100000011111111000000001111111111111111101000000000000000000100000000000000000000011000",
+            d0_init => "00000000",
+            d1_init => "00000000",
+            f0_blk_sync => 1,
+            f0_bus_sync => 1,
+            f1_blk_sync => 1,
+            f1_bus_sync => 1,
+            ff0_sync => 1,
+            ff1_sync => 1,
+            ov_msb_sync => 1,
+            so_sync => 1,
+            z0_sync => 1,
+            z1_sync => 1)
+        PORT MAP(
+            clock => Net_67,
+            cs_addr_2 => \Servo_1:PWMUDB:tc_i\,
+            cs_addr_1 => \Servo_1:PWMUDB:runmode_enable\,
+            busclk => ClockBlock_BUS_CLK,
+            ce0 => \Servo_1:PWMUDB:sP16:pwmdp:u0.ce0__sig\,
+            cl0 => \Servo_1:PWMUDB:sP16:pwmdp:u0.cl0__sig\,
+            z0 => \Servo_1:PWMUDB:sP16:pwmdp:u0.z0__sig\,
+            ff0 => \Servo_1:PWMUDB:sP16:pwmdp:u0.ff0__sig\,
+            ce1 => \Servo_1:PWMUDB:sP16:pwmdp:u0.ce1__sig\,
+            cl1 => \Servo_1:PWMUDB:sP16:pwmdp:u0.cl1__sig\,
+            z1 => \Servo_1:PWMUDB:sP16:pwmdp:u0.z1__sig\,
+            ff1 => \Servo_1:PWMUDB:sP16:pwmdp:u0.ff1__sig\,
+            co_msb => \Servo_1:PWMUDB:sP16:pwmdp:u0.co_msb__sig\,
+            sol_msb => \Servo_1:PWMUDB:sP16:pwmdp:u0.sol_msb__sig\,
+            cfbo => \Servo_1:PWMUDB:sP16:pwmdp:u0.cfbo__sig\,
+            sil => \Servo_1:PWMUDB:sP16:pwmdp:u1.sor__sig\,
+            cmsbi => \Servo_1:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\);
+
+    \Servo_1:PWMUDB:sP16:pwmdp:u1\:datapathcell
+        GENERIC MAP(
+            a0_init => "00000000",
+            a1_init => "00000000",
+            ce0_sync => 1,
+            ce1_sync => 1,
+            cl0_sync => 1,
+            cl1_sync => 1,
+            cmsb_sync => 1,
+            co_msb_sync => 1,
+            cy_dpconfig => "0000000001000000000000001100000001000000010000000000000011000000000000001100000000000000110000000000000011000000000000001100000011111111000000001111111111111111101011110000000000000100000011110000000000011000",
+            d0_init => "00000000",
+            d1_init => "00000000",
+            f0_blk_sync => 1,
+            f0_bus_sync => 1,
+            f1_blk_sync => 1,
+            f1_bus_sync => 1,
+            ff0_sync => 1,
+            ff1_sync => 1,
+            ov_msb_sync => 1,
+            so_sync => 1,
+            z0_sync => 1,
+            z1_sync => 1)
+        PORT MAP(
+            clock => Net_67,
+            cs_addr_2 => \Servo_1:PWMUDB:tc_i\,
+            cs_addr_1 => \Servo_1:PWMUDB:runmode_enable\,
+            cl0_comb => \Servo_1:PWMUDB:compare1\,
+            z0_comb => \Servo_1:PWMUDB:tc_i\,
+            cl1_comb => \Servo_1:PWMUDB:compare2\,
+            f1_blk_stat_comb => \Servo_1:PWMUDB:status_3\,
+            busclk => ClockBlock_BUS_CLK,
+            ce0i => \Servo_1:PWMUDB:sP16:pwmdp:u0.ce0__sig\,
+            cl0i => \Servo_1:PWMUDB:sP16:pwmdp:u0.cl0__sig\,
+            z0i => \Servo_1:PWMUDB:sP16:pwmdp:u0.z0__sig\,
+            ff0i => \Servo_1:PWMUDB:sP16:pwmdp:u0.ff0__sig\,
+            ce1i => \Servo_1:PWMUDB:sP16:pwmdp:u0.ce1__sig\,
+            cl1i => \Servo_1:PWMUDB:sP16:pwmdp:u0.cl1__sig\,
+            z1i => \Servo_1:PWMUDB:sP16:pwmdp:u0.z1__sig\,
+            ff1i => \Servo_1:PWMUDB:sP16:pwmdp:u0.ff1__sig\,
+            ci => \Servo_1:PWMUDB:sP16:pwmdp:u0.co_msb__sig\,
+            sir => \Servo_1:PWMUDB:sP16:pwmdp:u0.sol_msb__sig\,
+            cfbi => \Servo_1:PWMUDB:sP16:pwmdp:u0.cfbo__sig\,
+            sor => \Servo_1:PWMUDB:sP16:pwmdp:u1.sor__sig\,
+            cmsbo => \Servo_1:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\);
+
+    \Servo_1:PWMUDB:sSTSReg:nrstSts:stsreg\:statusicell
+        GENERIC MAP(
+            cy_force_order => 1,
+            cy_int_mask => "1111111",
+            cy_md_select => "0100111")
+        PORT MAP(
+            clock => Net_67,
+            status_6 => open,
+            status_5 => \Servo_0:PWMUDB:status_5\,
+            status_4 => open,
+            status_3 => \Servo_1:PWMUDB:status_3\,
+            status_2 => \Servo_1:PWMUDB:tc_i\,
+            status_1 => \Servo_1:PWMUDB:status_1\,
+            status_0 => \Servo_1:PWMUDB:status_0\);
+
+    \Servo_1:PWMUDB:status_0\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1)")
+        PORT MAP(
+            q => \Servo_1:PWMUDB:status_0\,
+            clock_0 => Net_67,
+            main_0 => \Servo_1:PWMUDB:compare1\,
+            main_1 => \Servo_1:PWMUDB:prevCompare1\);
+
+    \Servo_1:PWMUDB:status_1\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * !main_1)")
+        PORT MAP(
+            q => \Servo_1:PWMUDB:status_1\,
+            clock_0 => Net_67,
+            main_0 => \Servo_1:PWMUDB:compare2\,
+            main_1 => \Servo_1:PWMUDB:prevCompare2\);
 
     \USBUART:Dm(0)\:iocell
         PORT MAP(
@@ -4279,36 +4509,6 @@ BEGIN
         PORT MAP(
             interrupt => Net_284,
             clock => ClockBlock_BUS_CLK);
-
-    \VDAC8_1:viDAC8\:vidaccell
-        GENERIC MAP(
-            cy_registers => "",
-            is_all_if_any => 0,
-            reg_data => 0)
-        PORT MAP(
-            reset => open,
-            idir => open,
-            ioff => open);
-
-    \VDAC8_2:viDAC8\:vidaccell
-        GENERIC MAP(
-            cy_registers => "",
-            is_all_if_any => 0,
-            reg_data => 0)
-        PORT MAP(
-            reset => open,
-            idir => open,
-            ioff => open);
-
-    \VDAC8_3:viDAC8\:vidaccell
-        GENERIC MAP(
-            cy_registers => "",
-            is_all_if_any => 0,
-            reg_data => 0)
-        PORT MAP(
-            reset => open,
-            idir => open,
-            ioff => open);
 
     __ONE__:macrocell
         GENERIC MAP(

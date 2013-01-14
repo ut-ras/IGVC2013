@@ -14,6 +14,7 @@
 #include <joystick.h>
 #include <velctrl.h>
 #include <uartComSlave.h>
+#include <servo.h>
 
 #define SEC_PER_DAY 86400
 #define SEC_PER_HOUR 3600
@@ -43,7 +44,8 @@ int GetSec(void){ return time%SEC_PER_MIN; }
 void SetMessageRate(uint16 in) { VelCtrlRate = in; }
 uint16 GetMessageRate(void) { return VelCtrlRate; }
 void WatchdogTimeout(void){
-	JoystickOut(128,128); //stop the bot
+	SetLeftMotor(0); //stop the bot
+	SetRightMotor(0);
 	VelCtrlRunning = 0;
 	Err_LED_1_Write(1);
 }

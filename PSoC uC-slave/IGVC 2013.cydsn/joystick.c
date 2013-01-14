@@ -9,6 +9,8 @@
  *
  * ========================================
 */
+/* Depreciated
+
 #include <device.h>
 #include <joystick.h>
 #define DAC_CENTER_OUT 156
@@ -45,5 +47,6 @@ void JoystickInit(void){
 	VDAC8_3_SetValue(DAC_CENTER_OUT);
 }
 
+*/
 
 /* [] END OF FILE */
