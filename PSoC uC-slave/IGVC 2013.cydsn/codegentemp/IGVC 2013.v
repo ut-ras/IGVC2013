@@ -1,6 +1,6 @@
 // ======================================================================
 // IGVC 2013.v generated from TopDesign.cysch
-// 11/12/2012 at 07:20
+// 01/13/2013 at 20:04
 // ======================================================================
 
 /* -- WARNING: The following section of defines are deprecated and will be removed in a future release -- */
@@ -33,107 +33,6 @@
 `define CYDEV_CHIP_FAMILY_USED 2
 `define CYDEV_CHIP_MEMBER_USED 2
 `define CYDEV_CHIP_REVISION_USED 1
-// Component: ZeroTerminal
-`ifdef CY_BLK_DIR
-`undef CY_BLK_DIR
-`endif
-
-`ifdef WARP
-`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal"
-`include "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v"
-`else
-`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal"
-`include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v"
-`endif
-
-// VDAC8_v1_70(Data_Source=0, Initial_Value=100, Strobe_Mode=0, UseWorkaround=false, VDAC_Range=4, VDAC_Speed=2, Voltage=1600, CY_COMPONENT_NAME=VDAC8_v1_70, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=VDAC8_1, CY_INSTANCE_SHORT_NAME=VDAC8_1, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=70, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=VDAC8_1, )
-module VDAC8_v1_70_0 (strobe, data, vOut);
-    input   strobe;
-    input  [7:0] data;
-    inout   vOut;
-    electrical   vOut;
-
-    parameter Data_Source = 0;
-    parameter Initial_Value = 100;
-    parameter Strobe_Mode = 0;
-
-    electrical  Net_77;
-    wire  Net_83;
-    wire  Net_82;
-    wire  Net_81;
-
-    cy_psoc3_vidac8_v1_0 viDAC8 (
-        .reset(Net_83),
-        .idir(Net_81),
-        .data(data[7:0]),
-        .strobe(strobe),
-        .vout(vOut),
-        .iout(Net_77),
-        .ioff(Net_82),
-        .strobe_udb(strobe));
-    defparam viDAC8.is_all_if_any = 0;
-    defparam viDAC8.reg_data = 0;
-
-    ZeroTerminal ZeroTerminal_1 (
-        .z(Net_81));
-
-    ZeroTerminal ZeroTerminal_2 (
-        .z(Net_82));
-
-    ZeroTerminal ZeroTerminal_3 (
-        .z(Net_83));
-
-    cy_analog_noconnect_v1_0 cy_analog_noconnect_1 (
-        .noconnect(Net_77));
-
-
-
-endmodule
-
-// VDAC8_v1_70(Data_Source=0, Initial_Value=100, Strobe_Mode=0, UseWorkaround=false, VDAC_Range=4, VDAC_Speed=2, Voltage=1600, CY_COMPONENT_NAME=VDAC8_v1_70, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=VDAC8_2, CY_INSTANCE_SHORT_NAME=VDAC8_2, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=70, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=VDAC8_2, )
-module VDAC8_v1_70_1 (strobe, data, vOut);
-    input   strobe;
-    input  [7:0] data;
-    inout   vOut;
-    electrical   vOut;
-
-    parameter Data_Source = 0;
-    parameter Initial_Value = 100;
-    parameter Strobe_Mode = 0;
-
-    electrical  Net_77;
-    wire  Net_83;
-    wire  Net_82;
-    wire  Net_81;
-
-    cy_psoc3_vidac8_v1_0 viDAC8 (
-        .reset(Net_83),
-        .idir(Net_81),
-        .data(data[7:0]),
-        .strobe(strobe),
-        .vout(vOut),
-        .iout(Net_77),
-        .ioff(Net_82),
-        .strobe_udb(strobe));
-    defparam viDAC8.is_all_if_any = 0;
-    defparam viDAC8.reg_data = 0;
-
-    ZeroTerminal ZeroTerminal_1 (
-        .z(Net_81));
-
-    ZeroTerminal ZeroTerminal_2 (
-        .z(Net_82));
-
-    ZeroTerminal ZeroTerminal_3 (
-        .z(Net_83));
-
-    cy_analog_noconnect_v1_0 cy_analog_noconnect_1 (
-        .noconnect(Net_77));
-
-
-
-endmodule
-
 // Component: OneTerminal
 `ifdef CY_BLK_DIR
 `undef CY_BLK_DIR
@@ -186,8 +85,21 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v"
 `endif
 
+// Component: ZeroTerminal
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal"
+`include "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v"
+`endif
+
 // I2C_v3_1(Address_Decode=1, BusSpeed_kHz=100, CtlModeReplacementString=AsyncCtl, EnableWakeup=false, FF=false, Hex=false, I2C_Mode=2, I2cBusPort=0, Implementation=0, NotSlaveClockMinusTolerance=25, NotSlaveClockPlusTolerance=5, Slave_Address=8, SlaveClockMinusTolerance=5, SlaveClockPlusTolerance=50, UDB_MSTR=true, UDB_MULTI_MASTER_SLAVE=false, UDB_SLV=false, UdbInternalClock=true, UdbRequiredClock=1600, UdbSlaveFixedPlacementEnable=false, CY_COMPONENT_NAME=I2C_v3_1, CY_CONTROL_FILE=I2C_Slave_DefaultPlacement.ctl, CY_FITTER_NAME=I2C, CY_INSTANCE_SHORT_NAME=I2C, CY_MAJOR_VERSION=3, CY_MINOR_VERSION=1, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=I2C, )
-module I2C_v3_1_2 (sda, scl, clock, reset, bclk, iclk);
+module I2C_v3_1_0 (sda, scl, clock, reset, bclk, iclk);
     inout   sda;
     inout   scl;
     input   clock;
@@ -310,8 +222,8 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v2_10\B_PWM_v2_10.v"
 `endif
 
-// PWM_v2_10(CaptureMode=0, CompareStatusEdgeSense=true, CompareType1=1, CompareType1Software=0, CompareType2=1, CompareType2Software=0, CompareValue1=3000, CompareValue2=3000, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, DeadBand=0, DeadBand2_4=0, DeadBandUsed=0, DeadTime=1, DitherOffset=0, EnableMode=0, FixedFunction=false, FixedFunctionUsed=0, InterruptOnCMP1=false, InterruptOnCMP2=false, InterruptOnKill=false, InterruptOnTC=false, IntOnCMP1=0, IntOnCMP2=0, IntOnKill=0, IntOnTC=0, KillMode=0, KillModeMinTime=0, MinimumKillTime=1, OneCompare=false, Period=30000, PWMMode=1, PWMModeCenterAligned=0, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, TriggerMode=0, UseControl=true, UseInterrupt=true, UseStatus=true, VerilogSectionReplacementString=sP16, CY_COMPONENT_NAME=PWM_v2_10, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Servo, CY_INSTANCE_SHORT_NAME=Servo, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Servo, )
-module PWM_v2_10_3 (pwm2, tc, clock, reset, pwm1, interrupt, capture, kill, enable, trigger, cmp_sel, pwm, ph1, ph2);
+// PWM_v2_10(CaptureMode=0, CompareStatusEdgeSense=true, CompareType1=1, CompareType1Software=0, CompareType2=1, CompareType2Software=0, CompareValue1=4125, CompareValue2=4125, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, DeadBand=0, DeadBand2_4=0, DeadBandUsed=0, DeadTime=1, DitherOffset=0, EnableMode=0, FixedFunction=false, FixedFunctionUsed=0, InterruptOnCMP1=false, InterruptOnCMP2=false, InterruptOnKill=false, InterruptOnTC=false, IntOnCMP1=0, IntOnCMP2=0, IntOnKill=0, IntOnTC=0, KillMode=0, KillModeMinTime=0, MinimumKillTime=1, OneCompare=false, Period=41250, PWMMode=1, PWMModeCenterAligned=0, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, TriggerMode=0, UseControl=true, UseInterrupt=true, UseStatus=true, VerilogSectionReplacementString=sP16, CY_COMPONENT_NAME=PWM_v2_10, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Servo_0, CY_INSTANCE_SHORT_NAME=Servo_0, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Servo_0, )
+module PWM_v2_10_1 (pwm2, tc, clock, reset, pwm1, interrupt, capture, kill, enable, trigger, cmp_sel, pwm, ph1, ph2);
     output  pwm2;
     output  tc;
     input   clock;
@@ -390,52 +302,289 @@ module PWM_v2_10_3 (pwm2, tc, clock, reset, pwm1, interrupt, capture, kill, enab
 
 endmodule
 
-// VDAC8_v1_70(Data_Source=0, Initial_Value=100, Strobe_Mode=0, UseWorkaround=false, VDAC_Range=4, VDAC_Speed=2, Voltage=1600, CY_COMPONENT_NAME=VDAC8_v1_70, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=VDAC8_3, CY_INSTANCE_SHORT_NAME=VDAC8_3, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=70, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=VDAC8_3, )
-module VDAC8_v1_70_4 (strobe, data, vOut);
-    input   strobe;
-    input  [7:0] data;
-    inout   vOut;
-    electrical   vOut;
+// PWM_v2_10(CaptureMode=0, CompareStatusEdgeSense=true, CompareType1=1, CompareType1Software=0, CompareType2=1, CompareType2Software=0, CompareValue1=4125, CompareValue2=4125, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, DeadBand=0, DeadBand2_4=0, DeadBandUsed=0, DeadTime=1, DitherOffset=0, EnableMode=0, FixedFunction=false, FixedFunctionUsed=0, InterruptOnCMP1=false, InterruptOnCMP2=false, InterruptOnKill=false, InterruptOnTC=false, IntOnCMP1=0, IntOnCMP2=0, IntOnKill=0, IntOnTC=0, KillMode=0, KillModeMinTime=0, MinimumKillTime=1, OneCompare=false, Period=41250, PWMMode=1, PWMModeCenterAligned=0, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, TriggerMode=0, UseControl=true, UseInterrupt=true, UseStatus=true, VerilogSectionReplacementString=sP16, CY_COMPONENT_NAME=PWM_v2_10, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Servo_1, CY_INSTANCE_SHORT_NAME=Servo_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Servo_1, )
+module PWM_v2_10_2 (pwm2, tc, clock, reset, pwm1, interrupt, capture, kill, enable, trigger, cmp_sel, pwm, ph1, ph2);
+    output  pwm2;
+    output  tc;
+    input   clock;
+    input   reset;
+    output  pwm1;
+    output  interrupt;
+    input   capture;
+    input   kill;
+    input   enable;
+    input   trigger;
+    input   cmp_sel;
+    output  pwm;
+    output  ph1;
+    output  ph2;
 
-    parameter Data_Source = 0;
-    parameter Initial_Value = 100;
-    parameter Strobe_Mode = 0;
+    parameter Resolution = 16;
 
-    electrical  Net_77;
-    wire  Net_83;
-    wire  Net_82;
-    wire  Net_81;
+    wire  Net_113;
+    wire  Net_114;
+    wire  Net_107;
+    wire  Net_96;
+    wire  Net_55;
+    wire  Net_57;
+    wire  Net_101;
+    wire  Net_54;
+    wire  Net_63;
 
-    cy_psoc3_vidac8_v1_0 viDAC8 (
-        .reset(Net_83),
-        .idir(Net_81),
-        .data(data[7:0]),
-        .strobe(strobe),
-        .vout(vOut),
-        .iout(Net_77),
-        .ioff(Net_82),
-        .strobe_udb(strobe));
-    defparam viDAC8.is_all_if_any = 0;
-    defparam viDAC8.reg_data = 0;
+    B_PWM_v2_10 PWMUDB (
+        .reset(reset),
+        .clock(clock),
+        .tc(Net_101),
+        .pwm1(pwm1),
+        .pwm2(pwm2),
+        .interrupt(Net_55),
+        .kill(kill),
+        .capture(capture),
+        .enable(enable),
+        .cmp_sel(cmp_sel),
+        .trigger(trigger),
+        .pwm(Net_96),
+        .ph1(ph1),
+        .ph2(ph2));
+    defparam PWMUDB.CaptureMode = 0;
+    defparam PWMUDB.CompareStatusEdgeSense = 1;
+    defparam PWMUDB.CompareType1 = 1;
+    defparam PWMUDB.CompareType2 = 1;
+    defparam PWMUDB.DeadBand = 0;
+    defparam PWMUDB.DitherOffset = 0;
+    defparam PWMUDB.EnableMode = 0;
+    defparam PWMUDB.KillMode = 0;
+    defparam PWMUDB.PWMMode = 1;
+    defparam PWMUDB.Resolution = 16;
+    defparam PWMUDB.RunMode = 0;
+    defparam PWMUDB.TriggerMode = 0;
+    defparam PWMUDB.UseStatus = 1;
+
+	// vmCompare (cy_virtualmux_v1_0)
+	assign pwm = Net_96;
+
+	// vmIRQ (cy_virtualmux_v1_0)
+	assign interrupt = Net_55;
+
+	// vmTC (cy_virtualmux_v1_0)
+	assign tc = Net_101;
+
+    OneTerminal OneTerminal_1 (
+        .o(Net_113));
+
+	// FFKillMux (cy_virtualmux_v1_0)
+	assign Net_107 = Net_114;
 
     ZeroTerminal ZeroTerminal_1 (
-        .z(Net_81));
+        .z(Net_114));
+
+
+
+endmodule
+
+// Component: cy_analog_virtualmux_v1_0
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0"
+`include "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v"
+`endif
+
+// Component: cy_vref_v1_50
+`ifdef CY_BLK_DIR
+`undef CY_BLK_DIR
+`endif
+
+`ifdef WARP
+`define CY_BLK_DIR "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_50"
+`include "$CYPRESS_DIR\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_50\cy_vref_v1_50.v"
+`else
+`define CY_BLK_DIR "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_50"
+`include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_50\cy_vref_v1_50.v"
+`endif
+
+// ADC_SAR_v1_71(ADC_Clock=1, ADC_Clock_Frequency=2000016, ADC_Input_Range=1, ADC_Power=0, ADC_Reference=1, ADC_Resolution=8, ADC_Resolution_HW=12, ADC_SampleMode=0, Ref_Voltage=2.5, Ref_Voltage_mV=2500, Sample_Precharge=7, Sample_Rate=105264, Sample_Rate_def=631579, CY_COMPONENT_NAME=ADC_SAR_v1_71, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=ADC_1, CY_INSTANCE_SHORT_NAME=ADC_1, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=71, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=ADC_1, )
+module ADC_SAR_v1_71_3 (vplus, vminus, soc, eoc, aclk, vdac_ref);
+    inout   vplus;
+    electrical   vplus;
+    inout   vminus;
+    electrical   vminus;
+    input   soc;
+    output  eoc;
+    input   aclk;
+    inout   vdac_ref;
+    electrical   vdac_ref;
+
+
+    wire [3:0] vp_ctl;
+    wire [3:0] vn_ctl;
+    electrical  Net_233;
+    wire  Net_262;
+    wire  Net_205;
+    wire  Net_252;
+    wire [11:0] Net_207;
+    electrical  Net_209;
+    electrical  Net_210;
+    electrical  Net_267;
+    electrical  Net_255;
+    electrical  Net_257;
+    electrical  Net_216;
+    electrical  Net_149;
+    electrical  Net_126;
+    electrical  Net_215;
+    electrical  Net_248;
+    wire  Net_221;
+    wire  Net_188;
+
+	// cy_analog_virtualmux_3 (cy_analog_virtualmux_v1_0)
+	cy_connect_v1_0 cy_analog_virtualmux_3_connect(Net_248, Net_216);
+	defparam cy_analog_virtualmux_3_connect.sig_width = 1;
+
+
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		IRQ
+		 (.int_signal(eoc));
+
+
+    ZeroTerminal ZeroTerminal_1 (
+        .z(vp_ctl[0]));
 
     ZeroTerminal ZeroTerminal_2 (
-        .z(Net_82));
+        .z(vp_ctl[2]));
 
     ZeroTerminal ZeroTerminal_3 (
-        .z(Net_83));
+        .z(vn_ctl[1]));
+
+    ZeroTerminal ZeroTerminal_4 (
+        .z(vn_ctl[3]));
+
+    ZeroTerminal ZeroTerminal_5 (
+        .z(vp_ctl[1]));
+
+    ZeroTerminal ZeroTerminal_6 (
+        .z(vp_ctl[3]));
+
+    ZeroTerminal ZeroTerminal_7 (
+        .z(vn_ctl[0]));
+
+    ZeroTerminal ZeroTerminal_8 (
+        .z(vn_ctl[2]));
+
+
+	cy_clock_v1_0
+		#(.id("e9961e25-9851-43e9-af2d-81a3a64ea584/696a0979-21fc-4185-bf38-6c79febcde7a"),
+		  .source_clock_id(""),
+		  .divisor(0),
+		  .period("499996000.032"),
+		  .is_direct(0),
+		  .is_digital(0))
+		theACLK
+		 (.clock_out(Net_221));
+
+
+	// Clock_VirtualMux_1 (cy_virtualmux_v1_0)
+	assign Net_188 = Net_221;
+
+    cy_psoc5_sar_v2_0 ADC_SAR (
+        .clock(Net_188),
+        .sof_udb(soc),
+        .clk_udb(),
+        .vp_ctl_udb(vp_ctl[3:0]),
+        .vn_ctl_udb(vn_ctl[3:0]),
+        .vplus(vplus),
+        .vminus(Net_126),
+        .irq(Net_252),
+        .data_out(Net_207[11:0]),
+        .eof_udb(eoc),
+        .pump_clock(Net_188),
+        .ext_pin(Net_215),
+        .vrefhi_out(Net_257),
+        .vref(Net_248));
+
+	// cy_analog_virtualmux_2 (cy_analog_virtualmux_v1_0)
+	cy_connect_v1_0 cy_analog_virtualmux_2_connect(Net_215, Net_210);
+	defparam cy_analog_virtualmux_2_connect.sig_width = 1;
+
+	wire [0:0] tmpOE__Bypass_net;
+	wire [0:0] tmpFB_0__Bypass_net;
+	wire [0:0] tmpIO_0__Bypass_net;
+	wire [0:0] tmpINTERRUPT_0__Bypass_net;
+	electrical [0:0] tmpSIOVREF__Bypass_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("e9961e25-9851-43e9-af2d-81a3a64ea584/16a808f6-2e13-45b9-bce0-b001c8655113"),
+		  .drive_mode(3'b000),
+		  .ibuf_enabled(1'b0),
+		  .init_dr_st(1'b0),
+		  .input_sync(1'b1),
+		  .intr_mode(2'b00),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .output_conn(1'b0),
+		  .output_sync(1'b0),
+		  .pin_aliases(""),
+		  .pin_mode("A"),
+		  .por_state(4),
+		  .use_annotation(1'b0),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b0),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .vtrip(2'b10),
+		  .width(1))
+		Bypass
+		 (.oe(tmpOE__Bypass_net),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__Bypass_net[0:0]}),
+		  .analog({Net_210}),
+		  .io({tmpIO_0__Bypass_net[0:0]}),
+		  .siovref(tmpSIOVREF__Bypass_net),
+		  .interrupt({tmpINTERRUPT_0__Bypass_net[0:0]}));
+
+	assign tmpOE__Bypass_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+
+	// cy_analog_virtualmux_1 (cy_analog_virtualmux_v1_0)
+	cy_connect_v1_0 cy_analog_virtualmux_1_connect(Net_126, Net_149);
+	defparam cy_analog_virtualmux_1_connect.sig_width = 1;
+
+    cy_analog_noconnect_v1_0 noconnect (
+        .noconnect(Net_209));
+
+
+	cy_vref_v1_0
+		#(.autoenable(1),
+		  .guid("4720866E-BC14-478d-B8A0-3E44F38CADAC"),
+		  .ignoresleep(0),
+		  .name("Vdda/2"))
+		vRef_Vdda
+		 (.vout(Net_216));
+
+
+	// cy_analog_virtualmux_4 (cy_analog_virtualmux_v1_0)
+	cy_connect_v1_0 cy_analog_virtualmux_4_connect(Net_257, Net_149);
+	defparam cy_analog_virtualmux_4_connect.sig_width = 1;
 
     cy_analog_noconnect_v1_0 cy_analog_noconnect_1 (
-        .noconnect(Net_77));
+        .noconnect(Net_255));
 
 
 
 endmodule
 
 // Timer_v2_20(CaptureAlternatingFall=false, CaptureAlternatingRise=false, CaptureCount=2, CaptureCounterEnabled=false, CaptureInputEnabled=true, CaptureMode=1, ControlRegRemoved=0, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, DeviceFamily=PSoC5, EnableMode=0, FF16=true, FF8=false, FixedFunction=true, FixedFunctionUsed=1, HWCaptureCounterEnabled=false, InterruptOnCapture=false, InterruptOnFIFOFull=false, InterruptOnTC=true, IntOnCapture=0, IntOnFIFOFull=0, IntOnTC=1, NumberOfCaptures=1, param45=1, Period=32999, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, Resolution=16, RstStatusReplacementString=nrstSts, RunMode=0, SiliconRevision=1, SoftwareCaptureModeEnabled=false, SoftwareTriggerModeEnabled=false, TriggerInputEnabled=false, TriggerMode=0, UDB16=false, UDB24=false, UDB32=false, UDB8=false, UsesHWEnable=0, VerilogSectionReplacementString=sT16, CY_COMPONENT_NAME=Timer_v2_20, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=MainTimer, CY_INSTANCE_SHORT_NAME=MainTimer, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=20, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=MainTimer, )
-module Timer_v2_20_5 (clock, reset, interrupt, enable, capture, trigger, capture_out, tc);
+module Timer_v2_20_4 (clock, reset, interrupt, enable, capture, trigger, capture_out, tc);
     input   clock;
     input   reset;
     output  interrupt;
@@ -492,7 +641,7 @@ module Timer_v2_20_5 (clock, reset, interrupt, enable, capture, trigger, capture
 endmodule
 
 // USBFS_v2_12(AudioDescriptors=<?xml version="1.0" encoding="utf-16"?> <Tree xmlns:CustomizerVersion="2_12">   <Tree_x0020_Descriptors>     <DescriptorNode Key="Audio">       <Nodes />     </DescriptorNode>   </Tree_x0020_Descriptors> </Tree>, CDCDescriptors=<?xml version="1.0" encoding="utf-16"?> <Tree xmlns:CustomizerVersion="2_12">   <Tree_x0020_Descriptors>     <DescriptorNode Key="CDC">       <Nodes>         <DescriptorNode Key="Interface718">           <Value d6p1:type="InterfaceGeneralDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>ALTERNATE</bDescriptorType>             <bLength>0</bLength>             <DisplayName>CDC Interface 1</DisplayName>           </Value>           <Nodes>             <DescriptorNode Key="USBDescriptor717">               <Value d8p1:type="CyCommunicationsInterfaceDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">                 <bDescriptorType>INTERFACE</bDescriptorType>                 <bLength>9</bLength>                 <iwInterface>649</iwInterface>                 <bInterfaceClass>2</bInterfaceClass>                 <bNumEndpoints>1</bNumEndpoints>                 <bInterfaceSubClass>2</bInterfaceSubClass>                 <bInterfaceProtocol>1</bInterfaceProtocol>                 <iInterface>3</iInterface>                 <sInterface>CDC Communication Interface</sInterface>               </Value>               <Nodes>                 <DescriptorNode Key="USBDescriptor719">                   <Value d10p1:type="CyCDCHeaderDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">                     <bDescriptorType>CDC</bDescriptorType>                     <bLength>5</bLength>                     <bDescriptorSubtype>HEADER</bDescriptorSubtype>                     <bcdADC>272</bcdADC>                   </Value>                   <Nodes />                 </DescriptorNode>                 <DescriptorNode Key="USBDescriptor720">                   <Value d10p1:type="CyCDCAbstractControlMgmtDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">                     <bDescriptorType>CDC</bDescriptorType>                     <bLength>4</bLength>                     <bDescriptorSubtype>ABSTRACT_CONTROL_MANAGEMENT</bDescriptorSubtype>                     <bmCapabilities>2</bmCapabilities>                   </Value>                   <Nodes />                 </DescriptorNode>                 <DescriptorNode Key="USBDescriptor721">                   <Value d10p1:type="CyCDCUnionDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">                     <bDescriptorType>CDC</bDescriptorType>                     <bLength>5</bLength>                     <bDescriptorSubtype>UNION</bDescriptorSubtype>                     <bSubordinateInterface>AQ==</bSubordinateInterface>                   </Value>                   <Nodes />                 </DescriptorNode>                 <DescriptorNode Key="USBDescriptor722">                   <Value d10p1:type="CyCDCCallManagementDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">                     <bDescriptorType>CDC</bDescriptorType>                     <bLength>5</bLength>                     <bDescriptorSubtype>CALL_MANAGEMENT</bDescriptorSubtype>                     <bDataInterface>1</bDataInterface>                   </Value>                   <Nodes />                 </DescriptorNode>                 <DescriptorNode Key="USBDescriptor723">                   <Value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">                     <bDescriptorType>ENDPOINT</bDescriptorType>                     <bLength>7</bLength>                     <DoubleBuffer>false</DoubleBuffer>                     <bEndpointAddress>129</bEndpointAddress>                     <bmAttributes>3</bmAttributes>                   </Value>                   <Nodes />                 </DescriptorNode>               </Nodes>             </DescriptorNode>           </Nodes>         </DescriptorNode>         <DescriptorNode Key="Interface725">           <Value d6p1:type="InterfaceGeneralDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>ALTERNATE</bDescriptorType>             <bLength>0</bLength>             <DisplayName>CDC Interface 2</DisplayName>           </Value>           <Nodes>             <DescriptorNode Key="USBDescriptor724">               <Value d8p1:type="CyDataInterfaceDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">                 <bDescriptorType>INTERFACE</bDescriptorType>                 <bLength>9</bLength>                 <iwInterface>650</iwInterface>                 <bInterfaceClass>10</bInterfaceClass>                 <bInterfaceNumber>1</bInterfaceNumber>                 <bNumEndpoints>2</bNumEndpoints>                 <bInterfaceSubClass>0</bInterfaceSubClass>                 <bInterfaceProtocol>0</bInterfaceProtocol>                 <iInterface>4</iInterface>                 <sInterface>CDC Data Interface</sInterface>               </Value>               <Nodes>                 <DescriptorNode Key="USBDescriptor726">                   <Value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">                     <bDescriptorType>ENDPOINT</bDescriptorType>                     <bLength>7</bLength>                     <DoubleBuffer>false</DoubleBuffer>                     <bEndpointAddress>130</bEndpointAddress>                     <bmAttributes>2</bmAttributes>                     <wMaxPacketSize>64</wMaxPacketSize>                   </Value>                   <Nodes />                 </DescriptorNode>                 <DescriptorNode Key="USBDescriptor727">                   <Value d10p1:type="EndpointDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">                     <bDescriptorType>ENDPOINT</bDescriptorType>                     <bLength>7</bLength>                     <DoubleBuffer>false</DoubleBuffer>                     <bEndpointAddress>3</bEndpointAddress>                     <bmAttributes>2</bmAttributes>                     <wMaxPacketSize>64</wMaxPacketSize>                   </Value>                   <Nodes />                 </DescriptorNode>               </Nodes>             </DescriptorNode>           </Nodes>         </DescriptorNode>       </Nodes>     </DescriptorNode>   </Tree_x0020_Descriptors> </Tree>, DeviceDescriptors=<?xml version="1.0" encoding="utf-16"?> <Tree xmlns:CustomizerVersion="2_12">   <Tree_x0020_Descriptors>     <DescriptorNode Key="Device">       <Nodes>         <DescriptorNode Key="USBDescriptor651">           <Value d6p1:type="DeviceDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>DEVICE</bDescriptorType>             <bLength>18</bLength>             <iwManufacturer>647</iwManufacturer>             <iwProduct>728</iwProduct>             <sManufacturer>Cypress Semiconductor</sManufacturer>             <sProduct>Doloras IGVC 2013 UT IEEE-RAS</sProduct>             <sSerialNumber>Doloras</sSerialNumber>             <bDeviceClass>2</bDeviceClass>             <bDeviceSubClass>0</bDeviceSubClass>             <bDeviceProtocol>0</bDeviceProtocol>             <bMaxPacketSize0>0</bMaxPacketSize0>             <idVendor>1204</idVendor>             <idProduct>62002</idProduct>             <bcdDevice>1</bcdDevice>             <iManufacturer>1</iManufacturer>             <iProduct>5</iProduct>             <iSerialNumber>128</iSerialNumber>             <bNumConfigurations>1</bNumConfigurations>             <bMemoryMgmt>0</bMemoryMgmt>             <bMemoryAlloc>0</bMemoryAlloc>           </Value>           <Nodes>             <DescriptorNode Key="USBDescriptor656">               <Value d8p1:type="ConfigDescriptor" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance">                 <bDescriptorType>CONFIGURATION</bDescriptorType>                 <bLength>9</bLength>                 <iwConfiguration>647</iwConfiguration>                 <sConfiguration>Cypress Semiconductor</sConfiguration>                 <wTotalLength>67</wTotalLength>                 <bNumInterfaces>2</bNumInterfaces>                 <bConfigurationValue>0</bConfigurationValue>                 <iConfiguration>1</iConfiguration>                 <bmAttributes>192</bmAttributes>                 <bMaxPower>50</bMaxPower>               </Value>               <Nodes>                 <DescriptorNode Key="Interface718">                   <Value d10p1:type="InterfaceGeneralDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">                     <bDescriptorType>ALTERNATE</bDescriptorType>                     <bLength>0</bLength>                     <DisplayName>CDC Interface 1</DisplayName>                   </Value>                   <Nodes>                     <DescriptorNode Key="USBDescriptor717">                       <Value d12p1:type="CyCommunicationsInterfaceDescriptor" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance">                         <bDescriptorType>INTERFACE</bDescriptorType>                         <bLength>9</bLength>                         <iwInterface>649</iwInterface>                         <bInterfaceClass>2</bInterfaceClass>                         <bNumEndpoints>1</bNumEndpoints>                         <bInterfaceSubClass>2</bInterfaceSubClass>                         <bInterfaceProtocol>1</bInterfaceProtocol>                         <iInterface>3</iInterface>                         <sInterface>CDC Communication Interface</sInterface>                       </Value>                       <Nodes>                         <DescriptorNode Key="USBDescriptor719">                           <Value d14p1:type="CyCDCHeaderDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">                             <bDescriptorType>CDC</bDescriptorType>                             <bLength>5</bLength>                             <bDescriptorSubtype>HEADER</bDescriptorSubtype>                             <bcdADC>272</bcdADC>                           </Value>                           <Nodes />                         </DescriptorNode>                         <DescriptorNode Key="USBDescriptor720">                           <Value d14p1:type="CyCDCAbstractControlMgmtDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">                             <bDescriptorType>CDC</bDescriptorType>                             <bLength>4</bLength>                             <bDescriptorSubtype>ABSTRACT_CONTROL_MANAGEMENT</bDescriptorSubtype>                             <bmCapabilities>2</bmCapabilities>                           </Value>                           <Nodes />                         </DescriptorNode>                         <DescriptorNode Key="USBDescriptor721">                           <Value d14p1:type="CyCDCUnionDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">                             <bDescriptorType>CDC</bDescriptorType>                             <bLength>5</bLength>                             <bDescriptorSubtype>UNION</bDescriptorSubtype>                             <bSubordinateInterface>AQ==</bSubordinateInterface>                           </Value>                           <Nodes />                         </DescriptorNode>                         <DescriptorNode Key="USBDescriptor722">                           <Value d14p1:type="CyCDCCallManagementDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">                             <bDescriptorType>CDC</bDescriptorType>                             <bLength>5</bLength>                             <bDescriptorSubtype>CALL_MANAGEMENT</bDescriptorSubtype>                             <bDataInterface>1</bDataInterface>                           </Value>                           <Nodes />                         </DescriptorNode>                         <DescriptorNode Key="USBDescriptor723">                           <Value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">                             <bDescriptorType>ENDPOINT</bDescriptorType>                             <bLength>7</bLength>                             <DoubleBuffer>false</DoubleBuffer>                             <bEndpointAddress>129</bEndpointAddress>                             <bmAttributes>3</bmAttributes>                           </Value>                           <Nodes />                         </DescriptorNode>                       </Nodes>                     </DescriptorNode>                   </Nodes>                 </DescriptorNode>                 <DescriptorNode Key="Interface725">                   <Value d10p1:type="InterfaceGeneralDescriptor" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance">                     <bDescriptorType>ALTERNATE</bDescriptorType>                     <bLength>0</bLength>                     <DisplayName>CDC Interface 2</DisplayName>                   </Value>                   <Nodes>                     <DescriptorNode Key="USBDescriptor724">                       <Value d12p1:type="CyDataInterfaceDescriptor" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance">                         <bDescriptorType>INTERFACE</bDescriptorType>                         <bLength>9</bLength>                         <iwInterface>650</iwInterface>                         <bInterfaceClass>10</bInterfaceClass>                         <bInterfaceNumber>1</bInterfaceNumber>                         <bNumEndpoints>2</bNumEndpoints>                         <bInterfaceSubClass>0</bInterfaceSubClass>                         <bInterfaceProtocol>0</bInterfaceProtocol>                         <iInterface>4</iInterface>                         <sInterface>CDC Data Interface</sInterface>                       </Value>                       <Nodes>                         <DescriptorNode Key="USBDescriptor726">                           <Value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">                             <bDescriptorType>ENDPOINT</bDescriptorType>                             <bLength>7</bLength>                             <DoubleBuffer>false</DoubleBuffer>                             <bEndpointAddress>130</bEndpointAddress>                             <bmAttributes>2</bmAttributes>                             <wMaxPacketSize>64</wMaxPacketSize>                           </Value>                           <Nodes />                         </DescriptorNode>                         <DescriptorNode Key="USBDescriptor727">                           <Value d14p1:type="EndpointDescriptor" xmlns:d14p1="http://www.w3.org/2001/XMLSchema-instance">                             <bDescriptorType>ENDPOINT</bDescriptorType>                             <bLength>7</bLength>                             <DoubleBuffer>false</DoubleBuffer>                             <bEndpointAddress>3</bEndpointAddress>                             <bmAttributes>2</bmAttributes>                             <wMaxPacketSize>64</wMaxPacketSize>                           </Value>                           <Nodes />                         </DescriptorNode>                       </Nodes>                     </DescriptorNode>                   </Nodes>                 </DescriptorNode>               </Nodes>             </DescriptorNode>           </Nodes>         </DescriptorNode>       </Nodes>     </DescriptorNode>   </Tree_x0020_Descriptors> </Tree>, EnableCDCApi=true, EnableMidiApi=true, endpointMA=0, endpointMM=0, extern_cls=false, extern_vnd=false, extJackCount=0, HIDReportDescriptors=<?xml version="1.0" encoding="utf-16"?> <Tree xmlns:CustomizerVersion="2_12">   <Tree_x0020_Descriptors>     <DescriptorNode Key="HIDReport">       <Nodes />     </DescriptorNode>   </Tree_x0020_Descriptors> </Tree>, max_interfaces_num=2, MidiDescriptors=<?xml version="1.0" encoding="utf-16"?> <Tree xmlns:CustomizerVersion="2_12">   <Tree_x0020_Descriptors>     <DescriptorNode Key="Midi">       <Nodes />     </DescriptorNode>   </Tree_x0020_Descriptors> </Tree>, Mode=false, mon_vbus=false, out_sof=false, rm_arb_int=false, rm_dma_1=true, rm_dma_2=true, rm_dma_3=true, rm_dma_4=true, rm_dma_5=true, rm_dma_6=true, rm_dma_7=true, rm_dma_8=true, rm_dp_int=false, rm_ep_isr_0=false, rm_ep_isr_1=false, rm_ep_isr_2=false, rm_ep_isr_3=false, rm_ep_isr_4=true, rm_ep_isr_5=true, rm_ep_isr_6=true, rm_ep_isr_7=true, rm_ep_isr_8=true, rm_ord_int=true, rm_sof_int=false, rm_usb_int=false, StringDescriptors=<?xml version="1.0" encoding="utf-16"?> <Tree xmlns:CustomizerVersion="2_12">   <Tree_x0020_Descriptors>     <DescriptorNode Key="String">       <Nodes>         <DescriptorNode Key="LANGID">           <Value d6p1:type="StringZeroDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>STRING</bDescriptorType>             <bLength>4</bLength>             <wLANGID>1033</wLANGID>           </Value>           <Nodes />         </DescriptorNode>         <DescriptorNode Key="USBDescriptor647">           <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>STRING</bDescriptorType>             <bLength>44</bLength>             <snType>USER_ENTERED_TEXT</snType>             <bString>Cypress Semiconductor</bString>             <bUsed>false</bUsed>           </Value>           <Nodes />         </DescriptorNode>         <DescriptorNode Key="USBDescriptor648">           <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>STRING</bDescriptorType>             <bLength>16</bLength>             <snType>USER_ENTERED_TEXT</snType>             <bString>USBUART</bString>             <bUsed>false</bUsed>           </Value>           <Nodes />         </DescriptorNode>         <DescriptorNode Key="USBDescriptor649">           <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>STRING</bDescriptorType>             <bLength>56</bLength>             <snType>USER_ENTERED_TEXT</snType>             <bString>CDC Communication Interface</bString>             <bUsed>false</bUsed>           </Value>           <Nodes />         </DescriptorNode>         <DescriptorNode Key="USBDescriptor650">           <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>STRING</bDescriptorType>             <bLength>38</bLength>             <snType>USER_ENTERED_TEXT</snType>             <bString>CDC Data Interface</bString>             <bUsed>false</bUsed>           </Value>           <Nodes />         </DescriptorNode>         <DescriptorNode Key="USBDescriptor728">           <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>STRING</bDescriptorType>             <bLength>60</bLength>             <snType>USER_ENTERED_TEXT</snType>             <bString>Doloras IGVC 2013 UT IEEE-RAS</bString>             <bUsed>false</bUsed>           </Value>           <Nodes />         </DescriptorNode>       </Nodes>     </DescriptorNode>     <DescriptorNode Key="SpecialString">       <Nodes>         <DescriptorNode Key="Serial">           <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>STRING</bDescriptorType>             <bLength>16</bLength>             <snType>USER_ENTERED_TEXT</snType>             <bString>Doloras</bString>             <bUsed>true</bUsed>           </Value>           <Nodes />         </DescriptorNode>         <DescriptorNode Key="EE">           <Value d6p1:type="StringDescriptor" xmlns:d6p1="http://www.w3.org/2001/XMLSchema-instance">             <bDescriptorType>STRING</bDescriptorType>             <bLength>16</bLength>             <snType>USER_ENTERED_TEXT</snType>             <bString>MSFT100</bString>             <bUsed>true</bUsed>           </Value>           <Nodes />         </DescriptorNode>       </Nodes>     </DescriptorNode>   </Tree_x0020_Descriptors> </Tree>, CY_COMPONENT_NAME=USBFS_v2_12, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=USBUART, CY_INSTANCE_SHORT_NAME=USBUART, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=12, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=USBUART, )
-module USBFS_v2_12_6 (sof);
+module USBFS_v2_12_5 (sof);
     output  sof;
 
 
@@ -686,7 +835,7 @@ endmodule
 `endif
 
 // Counter_v2_0(CaptureMode=0, CaptureModeSoftware=0, ClockMode=1, CompareMode=0, CompareModeSoftware=0, CompareStatusEdgeSense=true, CompareValue=32768, ControlRegRemoved=0, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, EnableMode=0, FixedFunction=false, FixedFunctionUsed=0, InitCounterValue=32768, InterruptOnCapture=false, InterruptOnCompare=false, InterruptOnOverUnderFlow=false, InterruptOnTC=false, Period=32768, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, ReloadOnCapture=false, ReloadOnCompare=false, ReloadOnOverUnder=true, ReloadOnReset=true, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, UseInterrupt=true, VerilogSectionReplacementString=sC16, CY_COMPONENT_NAME=Counter_v2_0, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Cnt16, CY_INSTANCE_SHORT_NAME=Cnt16, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Left_Encoder_Cnt16, )
-module Counter_v2_0_7 (clock, comp, tc, reset, interrupt, enable, capture, upCnt, downCnt, up_ndown, count);
+module Counter_v2_0_6 (clock, comp, tc, reset, interrupt, enable, capture, upCnt, downCnt, up_ndown, count);
     input   clock;
     output  comp;
     output  tc;
@@ -813,7 +962,7 @@ endmodule
 `endif
 
 // QuadDec_v2_0(Counter8bit=false, CounterResolution=4, CounterSize=32, CounterSizeReplacementString=int32, CounterSizeReplacementStringUnsigned=uint16, UsingGlitchFiltering=true, UsingIndexInput=false, CY_COMPONENT_NAME=QuadDec_v2_0, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Left_Encoder, CY_INSTANCE_SHORT_NAME=Left_Encoder, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Left_Encoder, )
-module QuadDec_v2_0_8 (quad_A, quad_B, index, clock, interrupt);
+module QuadDec_v2_0_7 (quad_A, quad_B, index, clock, interrupt);
     input   quad_A;
     input   quad_B;
     input   index;
@@ -855,7 +1004,7 @@ module QuadDec_v2_0_8 (quad_A, quad_B, index, clock, interrupt);
 		 (.int_signal(interrupt));
 
 
-    Counter_v2_0_7 Cnt16 (
+    Counter_v2_0_6 Cnt16 (
         .reset(Net_1260),
         .tc(Net_1210),
         .comp(Net_1127),
@@ -918,7 +1067,7 @@ module QuadDec_v2_0_8 (quad_A, quad_B, index, clock, interrupt);
 endmodule
 
 // Counter_v2_0(CaptureMode=0, CaptureModeSoftware=0, ClockMode=1, CompareMode=0, CompareModeSoftware=0, CompareStatusEdgeSense=true, CompareValue=32768, ControlRegRemoved=0, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, EnableMode=0, FixedFunction=false, FixedFunctionUsed=0, InitCounterValue=32768, InterruptOnCapture=false, InterruptOnCompare=false, InterruptOnOverUnderFlow=false, InterruptOnTC=false, Period=32768, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, ReloadOnCapture=false, ReloadOnCompare=false, ReloadOnOverUnder=true, ReloadOnReset=true, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, UseInterrupt=true, VerilogSectionReplacementString=sC16, CY_COMPONENT_NAME=Counter_v2_0, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Right_Encoder:Cnt16, CY_INSTANCE_SHORT_NAME=Cnt16, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Right_Encoder_Cnt16, )
-module Counter_v2_0_9 (clock, comp, tc, reset, interrupt, enable, capture, upCnt, downCnt, up_ndown, count);
+module Counter_v2_0_8 (clock, comp, tc, reset, interrupt, enable, capture, upCnt, downCnt, up_ndown, count);
     input   clock;
     output  comp;
     output  tc;
@@ -1006,7 +1155,7 @@ module Counter_v2_0_9 (clock, comp, tc, reset, interrupt, enable, capture, upCnt
 endmodule
 
 // QuadDec_v2_0(Counter8bit=false, CounterResolution=4, CounterSize=32, CounterSizeReplacementString=int32, CounterSizeReplacementStringUnsigned=uint16, UsingGlitchFiltering=true, UsingIndexInput=false, CY_COMPONENT_NAME=QuadDec_v2_0, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Right_Encoder, CY_INSTANCE_SHORT_NAME=Right_Encoder, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=0, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Right_Encoder, )
-module QuadDec_v2_0_10 (quad_A, quad_B, index, clock, interrupt);
+module QuadDec_v2_0_9 (quad_A, quad_B, index, clock, interrupt);
     input   quad_A;
     input   quad_B;
     input   index;
@@ -1048,7 +1197,7 @@ module QuadDec_v2_0_10 (quad_A, quad_B, index, clock, interrupt);
 		 (.int_signal(interrupt));
 
 
-    Counter_v2_0_9 Cnt16 (
+    Counter_v2_0_8 Cnt16 (
         .reset(Net_1260),
         .tc(Net_1210),
         .comp(Net_1127),
@@ -1124,7 +1273,7 @@ endmodule
 `endif
 
 // UART_v2_10(Address1=0, Address2=0, BaudRate=115200, BreakBitsRX=13, BreakBitsTX=13, BreakDetect=false, CRCoutputsEn=false, CtrlModeReplacementString=AsyncCtl, Enable_RX=1, Enable_RXIntInterrupt=1, Enable_TX=1, Enable_TXIntInterrupt=1, EnableHWAddress=0, EnIntRXInterrupt=true, EnIntTXInterrupt=true, FlowControl=0, HalfDuplexEn=false, HwTXEnSignal=false, InternalClock=true, InternalClockUsed=1, InterruptOnAddDetect=0, InterruptOnAddressMatch=0, InterruptOnBreak=0, InterruptOnByteRcvd=1, InterruptOnOverrunError=0, InterruptOnParityError=0, InterruptOnStopError=0, InterruptOnTXComplete=false, InterruptOnTXFifoEmpty=true, InterruptOnTXFifoFull=false, InterruptOnTXFifoNotFull=false, IntOnAddressDetect=false, IntOnAddressMatch=false, IntOnBreak=false, IntOnByteRcvd=true, IntOnOverrunError=false, IntOnParityError=false, IntOnStopError=false, NumDataBits=8, NumStopBits=1, OverSamplingRate=8, ParityType=0, ParityTypeSw=false, RequiredClock=921600, RXAddressMode=0, RXBufferSize=64, RxBuffRegSizeReplacementString=uint8, RXEnable=true, TXBitClkGenDP=true, TXBufferSize=64, TxBuffRegSizeReplacementString=uint8, TXEnable=true, Use23Polling=true, CY_COMPONENT_NAME=UART_v2_10, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=IMU, CY_INSTANCE_SHORT_NAME=IMU, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=IMU, )
-module UART_v2_10_11 (rx_clk, rx_data, tx_clk, tx_data, rx_interrupt, tx_interrupt, tx, tx_en, rts_n, reset, cts_n, clock, rx);
+module UART_v2_10_10 (rx_clk, rx_data, tx_clk, tx_data, rx_interrupt, tx_interrupt, tx, tx_en, rts_n, reset, cts_n, clock, rx);
     output  rx_clk;
     output  rx_data;
     output  tx_clk;
@@ -1259,10 +1408,25 @@ module top ;
     wire  Net_279;
     wire  Net_278;
     wire  Net_277;
+    electrical  Net_470;
+    wire  Net_469;
+    wire  Net_468;
+    wire  Net_467;
+    electrical  Net_466;
     wire  Net_282;
-    electrical  Net_157;
-    wire [7:0] Net_161;
-    wire  Net_160;
+    wire  Net_448;
+    wire  Net_447;
+    wire  Net_446;
+    wire  Net_445;
+    wire  Net_444;
+    wire  Net_443;
+    wire  Net_442;
+    wire  Net_441;
+    wire  Net_440;
+    wire  Net_449;
+    wire  Net_438;
+    wire  Net_437;
+    wire  Net_436;
     wire  Net_133;
     wire  Net_132;
     wire  Net_131;
@@ -1277,37 +1441,60 @@ module top ;
     wire  Net_124;
     wire  Net_123;
     wire  Net_109;
-    wire  Net_67;
     wire  Net_48;
     wire  Net_47;
     wire  Net_46;
     wire  Net_45;
     wire  Net_13;
     wire  Net_12;
-    wire [7:0] Net_163;
-    wire  Net_162;
-    wire [7:0] Net_159;
-    wire  Net_158;
+    electrical  Net_450;
+    wire  Net_67;
     wire  Net_268;
     wire  Net_10;
-    electrical  Net_178;
-    electrical  Net_175;
 
-    VDAC8_v1_70_0 VDAC8_1 (
-        .strobe(1'b0),
-        .data(8'b00000000),
-        .vOut(Net_175));
-    defparam VDAC8_1.Data_Source = 0;
-    defparam VDAC8_1.Initial_Value = 100;
-    defparam VDAC8_1.Strobe_Mode = 0;
+	wire [0:0] tmpOE__ADC_In_net;
+	wire [0:0] tmpFB_0__ADC_In_net;
+	wire [0:0] tmpIO_0__ADC_In_net;
+	wire [0:0] tmpINTERRUPT_0__ADC_In_net;
+	electrical [0:0] tmpSIOVREF__ADC_In_net;
 
-    VDAC8_v1_70_1 VDAC8_2 (
-        .strobe(1'b0),
-        .data(8'b00000000),
-        .vOut(Net_178));
-    defparam VDAC8_2.Data_Source = 0;
-    defparam VDAC8_2.Initial_Value = 100;
-    defparam VDAC8_2.Strobe_Mode = 0;
+	cy_psoc3_pins_v1_10
+		#(.id("cc3bcd7e-5dc0-48ea-9bf6-6aa082be1ada"),
+		  .drive_mode(3'b000),
+		  .ibuf_enabled(1'b0),
+		  .init_dr_st(1'b0),
+		  .input_sync(1'b1),
+		  .intr_mode(2'b00),
+		  .io_voltage(""),
+		  .layout_mode("NONCONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .output_conn(1'b0),
+		  .output_sync(1'b0),
+		  .pin_aliases(""),
+		  .pin_mode("A"),
+		  .por_state(4),
+		  .use_annotation(1'b0),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b0),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .slew_rate(1'b0),
+		  .spanning(1),
+		  .vtrip(2'b10),
+		  .width(1))
+		ADC_In
+		 (.oe(tmpOE__ADC_In_net),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__ADC_In_net[0:0]}),
+		  .analog({Net_450}),
+		  .io({tmpIO_0__ADC_In_net[0:0]}),
+		  .siovref(tmpSIOVREF__ADC_In_net),
+		  .interrupt({tmpINTERRUPT_0__ADC_In_net[0:0]}));
+
+	assign tmpOE__ADC_In_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 	wire [0:0] tmpOE__Err_LED_1_net;
 	wire [0:0] tmpFB_0__Err_LED_1_net;
@@ -1436,7 +1623,7 @@ module top ;
 
 	assign tmpOE__SCL_1_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
-    I2C_v3_1_2 I2C (
+    I2C_v3_1_0 I2C (
         .sda(Net_12),
         .scl(Net_13),
         .clock(1'b0),
@@ -1456,7 +1643,7 @@ module top ;
 		 (.clock_out(Net_67));
 
 
-    PWM_v2_10_3 Servo (
+    PWM_v2_10_1 Servo_0 (
         .reset(1'b0),
         .clock(Net_67),
         .tc(Net_124),
@@ -1471,57 +1658,30 @@ module top ;
         .pwm(Net_131),
         .ph1(Net_132),
         .ph2(Net_133));
-    defparam Servo.Resolution = 16;
+    defparam Servo_0.Resolution = 16;
 
-	wire [0:0] tmpOE__Y0_net;
-	wire [0:0] tmpFB_0__Y0_net;
-	wire [0:0] tmpIO_0__Y0_net;
-	wire [0:0] tmpINTERRUPT_0__Y0_net;
-	electrical [0:0] tmpSIOVREF__Y0_net;
+    PWM_v2_10_2 Servo_1 (
+        .reset(1'b0),
+        .clock(Net_67),
+        .tc(Net_437),
+        .pwm1(Net_438),
+        .pwm2(Net_449),
+        .interrupt(Net_440),
+        .capture(1'b0),
+        .kill(1'b1),
+        .enable(1'b1),
+        .trigger(1'b0),
+        .cmp_sel(1'b0),
+        .pwm(Net_446),
+        .ph1(Net_447),
+        .ph2(Net_448));
+    defparam Servo_1.Resolution = 16;
 
-	cy_psoc3_pins_v1_10
-		#(.id("cc3bcd7e-5dc0-48ea-9bf6-6aa082be1ada"),
-		  .drive_mode(3'b000),
-		  .ibuf_enabled(1'b0),
-		  .init_dr_st(1'b0),
-		  .input_sync(1'b1),
-		  .intr_mode(2'b00),
-		  .io_voltage(""),
-		  .layout_mode("NONCONTIGUOUS"),
-		  .oe_conn(1'b0),
-		  .output_conn(1'b0),
-		  .output_sync(1'b0),
-		  .pin_aliases(""),
-		  .pin_mode("A"),
-		  .por_state(4),
-		  .use_annotation(1'b0),
-		  .sio_group_cnt(0),
-		  .sio_hyst(1'b0),
-		  .sio_ibuf(""),
-		  .sio_info(2'b00),
-		  .sio_obuf(""),
-		  .sio_refsel(""),
-		  .sio_vtrip(""),
-		  .slew_rate(1'b0),
-		  .spanning(1),
-		  .vtrip(2'b10),
-		  .width(1))
-		Y0
-		 (.oe(tmpOE__Y0_net),
-		  .y({1'b0}),
-		  .fb({tmpFB_0__Y0_net[0:0]}),
-		  .analog({Net_178}),
-		  .io({tmpIO_0__Y0_net[0:0]}),
-		  .siovref(tmpSIOVREF__Y0_net),
-		  .interrupt({tmpINTERRUPT_0__Y0_net[0:0]}));
-
-	assign tmpOE__Y0_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
-
-	wire [0:0] tmpOE__Servo0_net;
-	wire [0:0] tmpFB_0__Servo0_net;
-	wire [0:0] tmpIO_0__Servo0_net;
-	wire [0:0] tmpINTERRUPT_0__Servo0_net;
-	electrical [0:0] tmpSIOVREF__Servo0_net;
+	wire [0:0] tmpOE__Left_Motor_net;
+	wire [0:0] tmpFB_0__Left_Motor_net;
+	wire [0:0] tmpIO_0__Left_Motor_net;
+	wire [0:0] tmpINTERRUPT_0__Left_Motor_net;
+	electrical [0:0] tmpSIOVREF__Left_Motor_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("4397d3c3-b601-4d66-810c-13d78c0fdb23"),
@@ -1550,21 +1710,21 @@ module top ;
 		  .spanning(0),
 		  .vtrip(2'b10),
 		  .width(1))
-		Servo0
-		 (.oe(tmpOE__Servo0_net),
+		Left_Motor
+		 (.oe(tmpOE__Left_Motor_net),
 		  .y({Net_112}),
-		  .fb({tmpFB_0__Servo0_net[0:0]}),
-		  .io({tmpIO_0__Servo0_net[0:0]}),
-		  .siovref(tmpSIOVREF__Servo0_net),
-		  .interrupt({tmpINTERRUPT_0__Servo0_net[0:0]}));
+		  .fb({tmpFB_0__Left_Motor_net[0:0]}),
+		  .io({tmpIO_0__Left_Motor_net[0:0]}),
+		  .siovref(tmpSIOVREF__Left_Motor_net),
+		  .interrupt({tmpINTERRUPT_0__Left_Motor_net[0:0]}));
 
-	assign tmpOE__Servo0_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+	assign tmpOE__Left_Motor_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
-	wire [0:0] tmpOE__Servo1_net;
-	wire [0:0] tmpFB_0__Servo1_net;
-	wire [0:0] tmpIO_0__Servo1_net;
-	wire [0:0] tmpINTERRUPT_0__Servo1_net;
-	electrical [0:0] tmpSIOVREF__Servo1_net;
+	wire [0:0] tmpOE__Right_Motor_net;
+	wire [0:0] tmpFB_0__Right_Motor_net;
+	wire [0:0] tmpIO_0__Right_Motor_net;
+	wire [0:0] tmpINTERRUPT_0__Right_Motor_net;
+	electrical [0:0] tmpSIOVREF__Right_Motor_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("cb11663f-2366-48d2-b10c-a64d5480badc"),
@@ -1593,23 +1753,15 @@ module top ;
 		  .spanning(0),
 		  .vtrip(2'b10),
 		  .width(1))
-		Servo1
-		 (.oe(tmpOE__Servo1_net),
+		Right_Motor
+		 (.oe(tmpOE__Right_Motor_net),
 		  .y({Net_113}),
-		  .fb({tmpFB_0__Servo1_net[0:0]}),
-		  .io({tmpIO_0__Servo1_net[0:0]}),
-		  .siovref(tmpSIOVREF__Servo1_net),
-		  .interrupt({tmpINTERRUPT_0__Servo1_net[0:0]}));
+		  .fb({tmpFB_0__Right_Motor_net[0:0]}),
+		  .io({tmpIO_0__Right_Motor_net[0:0]}),
+		  .siovref(tmpSIOVREF__Right_Motor_net),
+		  .interrupt({tmpINTERRUPT_0__Right_Motor_net[0:0]}));
 
-	assign tmpOE__Servo1_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
-
-    VDAC8_v1_70_4 VDAC8_3 (
-        .strobe(1'b0),
-        .data(8'b00000000),
-        .vOut(Net_157));
-    defparam VDAC8_3.Data_Source = 0;
-    defparam VDAC8_3.Initial_Value = 100;
-    defparam VDAC8_3.Strobe_Mode = 0;
+	assign tmpOE__Right_Motor_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
 	cy_isr_v1_0
@@ -1618,184 +1770,59 @@ module top ;
 		 (.int_signal(Net_282));
 
 
-	wire [0:0] tmpOE__X1_net;
-	wire [0:0] tmpFB_0__X1_net;
-	wire [0:0] tmpIO_0__X1_net;
-	wire [0:0] tmpINTERRUPT_0__X1_net;
-	electrical [0:0] tmpSIOVREF__X1_net;
-
-	cy_psoc3_pins_v1_10
-		#(.id("021b69ac-040e-4aad-9b7a-e7db39fb174e"),
-		  .drive_mode(3'b000),
-		  .ibuf_enabled(1'b0),
-		  .init_dr_st(1'b0),
-		  .input_sync(1'b1),
-		  .intr_mode(2'b00),
-		  .io_voltage(""),
-		  .layout_mode("NONCONTIGUOUS"),
-		  .oe_conn(1'b0),
-		  .output_conn(1'b0),
-		  .output_sync(1'b0),
-		  .pin_aliases(""),
-		  .pin_mode("A"),
-		  .por_state(4),
-		  .use_annotation(1'b0),
-		  .sio_group_cnt(0),
-		  .sio_hyst(1'b0),
-		  .sio_ibuf(""),
-		  .sio_info(2'b00),
-		  .sio_obuf(""),
-		  .sio_refsel(""),
-		  .sio_vtrip(""),
-		  .slew_rate(1'b0),
-		  .spanning(1),
-		  .vtrip(2'b10),
-		  .width(1))
-		X1
-		 (.oe(tmpOE__X1_net),
-		  .y({1'b0}),
-		  .fb({tmpFB_0__X1_net[0:0]}),
-		  .analog({Net_175}),
-		  .io({tmpIO_0__X1_net[0:0]}),
-		  .siovref(tmpSIOVREF__X1_net),
-		  .interrupt({tmpINTERRUPT_0__X1_net[0:0]}));
-
-	assign tmpOE__X1_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+    ADC_SAR_v1_71_3 ADC_1 (
+        .vplus(Net_450),
+        .vminus(Net_466),
+        .soc(1'b1),
+        .eoc(Net_468),
+        .aclk(1'b0),
+        .vdac_ref(Net_470));
 
     ZeroTerminal ZeroTerminal_1 (
         .z(Net_268));
 
-	wire [0:0] tmpOE__Y1_net;
-	wire [0:0] tmpFB_0__Y1_net;
-	wire [0:0] tmpIO_0__Y1_net;
-	wire [0:0] tmpINTERRUPT_0__Y1_net;
-	electrical [0:0] tmpSIOVREF__Y1_net;
+	wire [1:0] tmpOE__Servo_Out_net;
+	wire [1:0] tmpFB_1__Servo_Out_net;
+	wire [1:0] tmpIO_1__Servo_Out_net;
+	wire [0:0] tmpINTERRUPT_0__Servo_Out_net;
+	electrical [0:0] tmpSIOVREF__Servo_Out_net;
 
 	cy_psoc3_pins_v1_10
-		#(.id("63aaa2ba-0ae7-4777-8853-6a058bcf6a6e"),
-		  .drive_mode(3'b000),
-		  .ibuf_enabled(1'b0),
-		  .init_dr_st(1'b0),
-		  .input_sync(1'b1),
-		  .intr_mode(2'b00),
-		  .io_voltage(""),
-		  .layout_mode("NONCONTIGUOUS"),
-		  .oe_conn(1'b0),
-		  .output_conn(1'b0),
-		  .output_sync(1'b0),
-		  .pin_aliases(""),
-		  .pin_mode("A"),
+		#(.id("d849f74a-ef05-44a9-8f77-507333532843"),
+		  .drive_mode(6'b110_110),
+		  .ibuf_enabled(2'b1_1),
+		  .init_dr_st(2'b0_0),
+		  .input_sync(2'b1_1),
+		  .intr_mode(4'b00_00),
+		  .io_voltage(", "),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(2'b0_0),
+		  .output_conn(2'b1_1),
+		  .output_sync(2'b0_0),
+		  .pin_aliases(","),
+		  .pin_mode("OO"),
 		  .por_state(4),
-		  .use_annotation(1'b0),
+		  .use_annotation(2'b0_0),
 		  .sio_group_cnt(0),
-		  .sio_hyst(1'b0),
+		  .sio_hyst(2'b0_0),
 		  .sio_ibuf(""),
-		  .sio_info(2'b00),
+		  .sio_info(4'b00_00),
 		  .sio_obuf(""),
 		  .sio_refsel(""),
 		  .sio_vtrip(""),
-		  .slew_rate(1'b0),
-		  .spanning(1),
-		  .vtrip(2'b10),
-		  .width(1))
-		Y1
-		 (.oe(tmpOE__Y1_net),
-		  .y({1'b0}),
-		  .fb({tmpFB_0__Y1_net[0:0]}),
-		  .analog({Net_178}),
-		  .io({tmpIO_0__Y1_net[0:0]}),
-		  .siovref(tmpSIOVREF__Y1_net),
-		  .interrupt({tmpINTERRUPT_0__Y1_net[0:0]}));
+		  .slew_rate(2'b0_0),
+		  .spanning(0),
+		  .vtrip(4'b10_10),
+		  .width(2))
+		Servo_Out
+		 (.oe(tmpOE__Servo_Out_net),
+		  .y({Net_449, Net_438}),
+		  .fb({tmpFB_1__Servo_Out_net[1:0]}),
+		  .io({tmpIO_1__Servo_Out_net[1:0]}),
+		  .siovref(tmpSIOVREF__Servo_Out_net),
+		  .interrupt({tmpINTERRUPT_0__Servo_Out_net[0:0]}));
 
-	assign tmpOE__Y1_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
-
-	wire [0:0] tmpOE__X0_net;
-	wire [0:0] tmpFB_0__X0_net;
-	wire [0:0] tmpIO_0__X0_net;
-	wire [0:0] tmpINTERRUPT_0__X0_net;
-	electrical [0:0] tmpSIOVREF__X0_net;
-
-	cy_psoc3_pins_v1_10
-		#(.id("9d3948ab-03f4-4df7-9e96-e22041253e32"),
-		  .drive_mode(3'b000),
-		  .ibuf_enabled(1'b0),
-		  .init_dr_st(1'b0),
-		  .input_sync(1'b1),
-		  .intr_mode(2'b00),
-		  .io_voltage(""),
-		  .layout_mode("NONCONTIGUOUS"),
-		  .oe_conn(1'b0),
-		  .output_conn(1'b0),
-		  .output_sync(1'b0),
-		  .pin_aliases(""),
-		  .pin_mode("A"),
-		  .por_state(4),
-		  .use_annotation(1'b0),
-		  .sio_group_cnt(0),
-		  .sio_hyst(1'b0),
-		  .sio_ibuf(""),
-		  .sio_info(2'b00),
-		  .sio_obuf(""),
-		  .sio_refsel(""),
-		  .sio_vtrip(""),
-		  .slew_rate(1'b0),
-		  .spanning(1),
-		  .vtrip(2'b10),
-		  .width(1))
-		X0
-		 (.oe(tmpOE__X0_net),
-		  .y({1'b0}),
-		  .fb({tmpFB_0__X0_net[0:0]}),
-		  .analog({Net_175}),
-		  .io({tmpIO_0__X0_net[0:0]}),
-		  .siovref(tmpSIOVREF__X0_net),
-		  .interrupt({tmpINTERRUPT_0__X0_net[0:0]}));
-
-	assign tmpOE__X0_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
-
-	wire [0:0] tmpOE__Center_net;
-	wire [0:0] tmpFB_0__Center_net;
-	wire [0:0] tmpIO_0__Center_net;
-	wire [0:0] tmpINTERRUPT_0__Center_net;
-	electrical [0:0] tmpSIOVREF__Center_net;
-
-	cy_psoc3_pins_v1_10
-		#(.id("e60a1f0b-a2c4-4f1a-acb2-14d90a356a3a"),
-		  .drive_mode(3'b000),
-		  .ibuf_enabled(1'b0),
-		  .init_dr_st(1'b0),
-		  .input_sync(1'b1),
-		  .intr_mode(2'b00),
-		  .io_voltage(""),
-		  .layout_mode("NONCONTIGUOUS"),
-		  .oe_conn(1'b0),
-		  .output_conn(1'b0),
-		  .output_sync(1'b0),
-		  .pin_aliases(""),
-		  .pin_mode("A"),
-		  .por_state(4),
-		  .use_annotation(1'b0),
-		  .sio_group_cnt(0),
-		  .sio_hyst(1'b0),
-		  .sio_ibuf(""),
-		  .sio_info(2'b00),
-		  .sio_obuf(""),
-		  .sio_refsel(""),
-		  .sio_vtrip(""),
-		  .slew_rate(1'b0),
-		  .spanning(1),
-		  .vtrip(2'b10),
-		  .width(1))
-		Center
-		 (.oe(tmpOE__Center_net),
-		  .y({1'b0}),
-		  .fb({tmpFB_0__Center_net[0:0]}),
-		  .analog({Net_157}),
-		  .io({tmpIO_0__Center_net[0:0]}),
-		  .siovref(tmpSIOVREF__Center_net),
-		  .interrupt({tmpINTERRUPT_0__Center_net[0:0]}));
-
-	assign tmpOE__Center_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
+	assign tmpOE__Servo_Out_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{2'b11} : {2'b11};
 
 	wire [0:0] tmpOE__Err_LED_2_net;
 	wire [0:0] tmpFB_0__Err_LED_2_net;
@@ -1840,7 +1867,7 @@ module top ;
 
 	assign tmpOE__Err_LED_2_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
-    Timer_v2_20_5 MainTimer (
+    Timer_v2_20_4 MainTimer (
         .reset(Net_268),
         .interrupt(Net_277),
         .enable(1'b1),
@@ -1869,10 +1896,10 @@ module top ;
 		 (.clock_out(Net_10));
 
 
-    USBFS_v2_12_6 USBUART (
+    USBFS_v2_12_5 USBUART (
         .sof(Net_284));
 
-    QuadDec_v2_0_8 Left_Encoder (
+    QuadDec_v2_0_7 Left_Encoder (
         .quad_A(Net_295),
         .quad_B(Net_296),
         .index(1'b0),
@@ -1978,7 +2005,7 @@ module top ;
 		 (.clock_out(Net_339));
 
 
-    QuadDec_v2_0_10 Right_Encoder (
+    QuadDec_v2_0_9 Right_Encoder (
         .quad_A(Net_317),
         .quad_B(Net_318),
         .index(1'b0),
@@ -2014,7 +2041,7 @@ module top ;
 		 (.int_signal(Net_325));
 
 
-    UART_v2_10_11 IMU (
+    UART_v2_10_10 IMU (
         .cts_n(1'b0),
         .tx(Net_386),
         .rts_n(Net_410),
@@ -2132,6 +2159,49 @@ module top ;
 		IMU_Interrupt
 		 (.int_signal(Net_404));
 
+
+	wire [0:0] tmpOE__Soft_Kill_net;
+	wire [0:0] tmpFB_0__Soft_Kill_net;
+	wire [0:0] tmpIO_0__Soft_Kill_net;
+	wire [0:0] tmpINTERRUPT_0__Soft_Kill_net;
+	electrical [0:0] tmpSIOVREF__Soft_Kill_net;
+
+	cy_psoc3_pins_v1_10
+		#(.id("b79a4fb8-c26b-40ea-8097-7f7da99e8d12"),
+		  .drive_mode(3'b100),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b0),
+		  .input_sync(1'b1),
+		  .intr_mode(2'b00),
+		  .io_voltage(""),
+		  .layout_mode("CONTIGUOUS"),
+		  .oe_conn(1'b0),
+		  .output_conn(1'b0),
+		  .output_sync(1'b0),
+		  .pin_aliases(""),
+		  .pin_mode("I"),
+		  .por_state(4),
+		  .use_annotation(1'b0),
+		  .sio_group_cnt(0),
+		  .sio_hyst(1'b0),
+		  .sio_ibuf(""),
+		  .sio_info(2'b00),
+		  .sio_obuf(""),
+		  .sio_refsel(""),
+		  .sio_vtrip(""),
+		  .slew_rate(1'b0),
+		  .spanning(0),
+		  .vtrip(2'b00),
+		  .width(1))
+		Soft_Kill
+		 (.oe(tmpOE__Soft_Kill_net),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__Soft_Kill_net[0:0]}),
+		  .io({tmpIO_0__Soft_Kill_net[0:0]}),
+		  .siovref(tmpSIOVREF__Soft_Kill_net),
+		  .interrupt({tmpINTERRUPT_0__Soft_Kill_net[0:0]}));
+
+	assign tmpOE__Soft_Kill_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
 

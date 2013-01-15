@@ -12,7 +12,7 @@
 #include <device.h>
 #include <nunchuck.h>
 #include <joystick.h>
-#include <servodriver.h>
+#include <servo.h>
 #include <uart.h>
 #include <time.h>
 #include <uartComSlave.h>

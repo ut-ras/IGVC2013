@@ -10,15 +10,23 @@
  * ========================================
 */
 #include <device.h>
-#include <servodriver.h>
+#include <servo.h>
+#define SERVO_COMPARE_CENTER 4125
+#define SERVO_COMPARE_DEVIATION 2475
 
-void ServosOut(uint8 x, uint8 y){
-	Servo_WriteCompare1(x?1500:4500);
-	Servo_WriteCompare2(y?1500:4500);
+void SetLeftMotor(int8 out){
+	Servo_0_WriteCompare1(SERVO_COMPARE_CENTER + ((SERVO_COMPARE_DEVIATION * (int16)out) >> 8));
+}
+void SetRightMotor(int8 out){
+	Servo_0_WriteCompare2(SERVO_COMPARE_CENTER + ((SERVO_COMPARE_DEVIATION * (int16)out) >> 8));
+}
+void SetHokuyoServo(int8 out){
+	Servo_1_WriteCompare1(SERVO_COMPARE_CENTER + ((SERVO_COMPARE_DEVIATION * (int16)out) >> 8));
 }
 
-void ServoInit(void){
-	Servo_Start();
+void InitializeServo(){
+	Servo_0_Start();
+	Servo_1_Start();
 }
 
 

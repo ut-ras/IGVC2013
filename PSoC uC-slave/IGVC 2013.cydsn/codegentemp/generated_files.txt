@@ -14,12 +14,7 @@
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\cyfittergnu.inc" value="NONE;" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\cyfitterrv.inc" value="NONE;" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\cyfitter.h" value="NONE;" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\VDAC8_1.c" value="ARM_C_FILE;VDAC8_1" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\VDAC8_1.h" value="NONE;VDAC8_1" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\VDAC8_1_PM.c" value="ARM_C_FILE;VDAC8_1" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\VDAC8_2.c" value="ARM_C_FILE;VDAC8_2" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\VDAC8_2.h" value="NONE;VDAC8_2" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\VDAC8_2_PM.c" value="ARM_C_FILE;VDAC8_2" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_In_aliases.h" value="NONE;ADC_In" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Err_LED_1_aliases.h" value="NONE;Err_LED_1" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Err_LED_1.c" value="ARM_C_FILE;Err_LED_1" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Err_LED_1.h" value="NONE;Err_LED_1" />
@@ -36,25 +31,27 @@
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\I2C_PM.c" value="ARM_C_FILE;I2C" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\PWM_Clock.c" value="ARM_C_FILE;PWM_Clock" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\PWM_Clock.h" value="NONE;PWM_Clock" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo.c" value="ARM_C_FILE;Servo" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo.h" value="NONE;Servo" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo_PM.c" value="ARM_C_FILE;Servo" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Y0_aliases.h" value="NONE;Y0" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo0_aliases.h" value="NONE;Servo0" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo0.c" value="ARM_C_FILE;Servo0" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo0.h" value="NONE;Servo0" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo1_aliases.h" value="NONE;Servo1" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo1.c" value="ARM_C_FILE;Servo1" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo1.h" value="NONE;Servo1" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\VDAC8_3.c" value="ARM_C_FILE;VDAC8_3" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\VDAC8_3.h" value="NONE;VDAC8_3" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\VDAC8_3_PM.c" value="ARM_C_FILE;VDAC8_3" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo_0.c" value="ARM_C_FILE;Servo_0" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo_0.h" value="NONE;Servo_0" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo_0_PM.c" value="ARM_C_FILE;Servo_0" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo_1.c" value="ARM_C_FILE;Servo_1" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo_1.h" value="NONE;Servo_1" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo_1_PM.c" value="ARM_C_FILE;Servo_1" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Left_Motor_aliases.h" value="NONE;Left_Motor" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Left_Motor.c" value="ARM_C_FILE;Left_Motor" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Left_Motor.h" value="NONE;Left_Motor" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Right_Motor_aliases.h" value="NONE;Right_Motor" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Right_Motor.c" value="ARM_C_FILE;Right_Motor" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Right_Motor.h" value="NONE;Right_Motor" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\MainTimeISR.c" value="ARM_C_FILE;MainTimeISR" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\MainTimeISR.h" value="NONE;MainTimeISR" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\X1_aliases.h" value="NONE;X1" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Y1_aliases.h" value="NONE;Y1" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\X0_aliases.h" value="NONE;X0" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Center_aliases.h" value="NONE;Center" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1.c" value="ARM_C_FILE;ADC_1" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1.h" value="NONE;ADC_1" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_INT.c" value="ARM_C_FILE;ADC_1" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_PM.c" value="ARM_C_FILE;ADC_1" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo_Out_aliases.h" value="NONE;Servo_Out" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo_Out.c" value="ARM_C_FILE;Servo_Out" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Servo_Out.h" value="NONE;Servo_Out" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Err_LED_2_aliases.h" value="NONE;Err_LED_2" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Err_LED_2.c" value="ARM_C_FILE;Err_LED_2" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Err_LED_2.h" value="NONE;Err_LED_2" />
@@ -108,6 +105,14 @@
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\IMU_INT.c" value="ARM_C_FILE;IMU" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\IMU_Interrupt.c" value="ARM_C_FILE;IMU_Interrupt" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\IMU_Interrupt.h" value="NONE;IMU_Interrupt" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Soft_Kill_aliases.h" value="NONE;Soft_Kill" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Soft_Kill.c" value="ARM_C_FILE;Soft_Kill" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Soft_Kill.h" value="NONE;Soft_Kill" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_theACLK.c" value="ARM_C_FILE;ADC_1_theACLK" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_theACLK.h" value="NONE;ADC_1_theACLK" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_Bypass_aliases.h" value="NONE;ADC_1_Bypass" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_Bypass.c" value="ARM_C_FILE;ADC_1_Bypass" />
+  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_Bypass.h" value="NONE;ADC_1_Bypass" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\USBUART_Dm_aliases.h" value="NONE;USBUART_Dm" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\USBUART_Dp_aliases.h" value="NONE;USBUART_Dp" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\USBUART_Dp.c" value="ARM_C_FILE;USBUART_Dp" />
