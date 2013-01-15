@@ -1,0 +1,19 @@
+<package>
+  <description brief="Grayscale">
+
+     Grayscale
+
+  </description>
+  <author>Granny</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/Grayscale</url>
+  <depend package="rospy"/>
+  <depend package="opencv2"/>
+  <depend package="sensor_msgs"/>
+  <depend package="cv_bridge"/>
+  <depend package="std_msgs"/>
+
+</package>
+
+
