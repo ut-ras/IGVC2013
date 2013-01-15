@@ -1,3 +1,5 @@
 <launch>
   <node pkg="PSoC_Listener" type="PSoC_Listener.py" name="PSoC_Listener"/>
+  <node pkg="PSoC_Listener" type="PSoC_Velocities.py" name="PSoC_Velocities"/>
+  <node pkg="odometry" type="odometry.py" name="odometry"/>
 </launch>
