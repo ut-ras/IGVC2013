@@ -35,12 +35,12 @@ def psoc():
         tokens = string.split(line)
         if(tokens[0] == '(:' and tokens[len(tokens)-1] == ':)'):
             p = PSoC()
-            p.left_enc = int(tokens[2])
-            p.right_enc = int(tokens[4])
-            p.vel_v = int(tokens[6])
-            p.vel_w = int(tokens[8])
-            p.time = long(tokens[10])
-            p.rate = int(tokens[12])
+            p.left_enc = int(tokens[1])
+            p.right_enc = int(tokens[2])
+            p.vel_v = int(tokens[3])
+            p.vel_w = int(tokens[4])
+            p.time = long(tokens[5])
+            p.rate = int(tokens[6])
             pub.publish(p)
             rospy.logdebug('Telemetry message: '+line)
         else:

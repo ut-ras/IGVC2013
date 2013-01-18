@@ -19,10 +19,10 @@ def dataCallback(data):
 
 def cmdCallback(data):
     p = String()
-    p.data = ">SVLX:"+str(data.linear.x / .00004871 / 1000 * rate)
+    p.data = ">SVLX:"+str(int(data.linear.x * rate / .00004871 / 1000 / 2))
     #Each raw v-velocity tick = 48.71 um per (time interval between messages)
     pub_cmd.publish(p)
-    p.data = ">SVAZ:"+str(data.angular.z / .00019482 / 1000 * rate)
+    p.data = ">SVAZ:"+str(int(data.angular.z * rate / .00019482 / 1000/ 2))
     #Each raw w-velocity tick = 194.82 urad per (time interval between messages)
     pub_cmd.publish(p)
 

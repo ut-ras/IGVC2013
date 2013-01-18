@@ -3,13 +3,13 @@ import roslib; roslib.load_manifest('PSoC_Listener')
 import rospy, tty, sys, termios
 from geometry_msgs.msg import Twist
 
-LIN_INC = 1
-ANG_INC = 1
+LIN_INC = .5
+ANG_INC = 3
 pub_cmd = rospy.Publisher('vel_cmd', Twist)
 
 if __name__ == "__main__":
     try:
-      rospy.init_node('psoc_teleop_key')
+      rospy.init_node('PSoC_Teleop_Key')
 
       print("hit w/a/s/d to move, q to quit")
 
@@ -33,16 +33,18 @@ if __name__ == "__main__":
           print("forward!")
           p.linear.x = LIN_INC
         elif ch == "a" :
-          print("clockwise!")
-          p.linear.z = ANG_INC
+          print("counter-clockwise!")
+          p.angular.z = -ANG_INC
         elif ch == "s" :
           print("backward!")
-          p.angular.x = -LIN_INC
+          p.linear.x = -LIN_INC
         elif ch == "d" :
-          print("counter-clockwise!")
-          p.linear.z = -ANG_INC
+          print("clockwise!")
+          p.angular.z = ANG_INC
         elif ch == "q" :
           flag = False
+        else :
+          print("hit w/a/s/d to move, q to quit")
 
         pub_cmd.publish(p)
 
