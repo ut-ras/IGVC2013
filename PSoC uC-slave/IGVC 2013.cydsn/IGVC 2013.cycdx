@@ -21,8 +21,8 @@
       <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
       <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     </block>
-    <register name="Right_Encoder_Cnt16_COUNTER" address="0x4000650A" bitWidth="16" desc="Сount value of Counter" />
-    <register name="Right_Encoder_STATUS_REG" address="0x4000656A" bitWidth="8" desc="Quadrature Decoder Status Register">
+    <register name="Right_Encoder_Cnt16_COUNTER" address="0x40006404" bitWidth="16" desc="Сount value of Counter" />
+    <register name="Right_Encoder_STATUS_REG" address="0x40006464" bitWidth="8" desc="Quadrature Decoder Status Register">
       <field name="OVERFLOW" from="0" to="0" access="R" resetVal="" desc="Counter overflow" />
       <field name="UNDERFLOW" from="1" to="1" access="R" resetVal="" desc="Counter underflow" />
       <field name="RESET" from="2" to="2" access="R" resetVal="" desc="Counter Reset due index" />
@@ -79,8 +79,8 @@
       <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
       <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     </block>
-    <register name="Left_Encoder_Cnt16_COUNTER" address="0x40006405" bitWidth="16" desc="Сount value of Counter" />
-    <register name="Left_Encoder_STATUS_REG" address="0x40006566" bitWidth="8" desc="Quadrature Decoder Status Register">
+    <register name="Left_Encoder_Cnt16_COUNTER" address="0x40006508" bitWidth="16" desc="Сount value of Counter" />
+    <register name="Left_Encoder_STATUS_REG" address="0x40006568" bitWidth="8" desc="Quadrature Decoder Status Register">
       <field name="OVERFLOW" from="0" to="0" access="R" resetVal="" desc="Counter overflow" />
       <field name="UNDERFLOW" from="1" to="1" access="R" resetVal="" desc="Counter underflow" />
       <field name="RESET" from="2" to="2" access="R" resetVal="" desc="Counter Reset due index" />
@@ -130,10 +130,10 @@
     <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="OneTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="I2C_IRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="I2C_DATA" address="0x4000640E" bitWidth="8" desc="Data">
+    <register name="I2C_DATA" address="0x40006400" bitWidth="8" desc="Data">
       <field name="data" from="7" to="0" access="RW" resetVal="" desc="This register provides read/write access to the Shift register." />
     </register>
-    <register name="I2C_CSR" address="0x4000646F" bitWidth="7" desc="Status Register">
+    <register name="I2C_CSR" address="0x40006461" bitWidth="7" desc="Status Register">
       <field name="interrupt" from="7" to="7" access="R" resetVal="" desc="Interrupt bit" />
       <field name="lost_arb" from="6" to="6" access="R" resetVal="" desc="" />
       <field name="stop_status" from="5" to="5" access="RW" resetVal="" desc="" />
@@ -143,7 +143,7 @@
       <field name="lrb" from="1" to="1" access="R" resetVal="" desc="" />
       <field name="byte_complete" from="0" to="0" access="R" resetVal="" desc="" />
     </register>
-    <register name="I2C_CFG" address="0x4000647A" bitWidth="8" desc="Configuration Register">
+    <register name="I2C_CFG" address="0x4000647E" bitWidth="8" desc="Configuration Register">
       <field name="start_gen" from="7" to="7" access="RW" resetVal="" desc="" />
       <field name="stop_gen" from="6" to="6" access="RW" resetVal="" desc="" />
       <field name="restart_gen" from="5" to="5" access="RW" resetVal="" desc="" />
@@ -152,7 +152,7 @@
       <field name="transmit" from="2" to="2" access="RW" resetVal="" desc="" />
       <field name="master_en" from="1" to="1" access="RW" resetVal="" desc="" />
     </register>
-    <register name="I2C_INT_MASK" address="0x4000648F" bitWidth="8" desc="Interrupt Mask" />
+    <register name="I2C_INT_MASK" address="0x40006481" bitWidth="8" desc="Interrupt Mask" />
   </block>
   <block name="PWM_Clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Servo_0" BASE="0x0" SIZE="0x0" desc="" visible="true">
@@ -201,8 +201,8 @@
     <block name="ZeroTerminal_6" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="ZeroTerminal_4" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-    <register name="ADC_SAR_WRK0_REG" address="0x40005BA0" bitWidth="8" desc="SAR working register 0" />
-    <register name="ADC_SAR_WRK1_REG" address="0x40005BA1" bitWidth="8" desc="SAR working register 1" />
+    <register name="ADC_SAR_WRK0_REG" address="0x40005BA2" bitWidth="8" desc="SAR working register 0" />
+    <register name="ADC_SAR_WRK1_REG" address="0x40005BA3" bitWidth="8" desc="SAR working register 1" />
   </block>
   <block name="Left_Motor" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="Right_Motor" BASE="0x0" SIZE="0x0" desc="" visible="true" />

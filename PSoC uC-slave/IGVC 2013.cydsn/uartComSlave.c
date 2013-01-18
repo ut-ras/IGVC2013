@@ -111,7 +111,7 @@ void handleCommMessage(void){
 
 void sendCommMessage(void){
 	if(EnableSensorFeedbackMessages){
-		UARTprintf("(: ENCL %d ENCR %d VELV %d VELW %d TIME %d%.3d RATE %d :)\r\n",
+		UARTprintf("(: %d %d %d %d %d%.3d %d :)\r\n",
 		GetLeftEncoder(), 
 		GetRightEncoder(), 
 		GetV(), 

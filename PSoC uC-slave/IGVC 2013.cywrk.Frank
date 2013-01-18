@@ -332,12 +332,7 @@
 <name v=".\IGVC 2013.cydsn\time.c" />
 <name v=".\IGVC 2013.cydsn\time.h" />
 <name v=".\IGVC 2013.cydsn\imudriver.c" />
-<name v=".\IGVC 2013.cydsn\uart.c" />
-<name v=".\IGVC 2013.cydsn\uart.h" />
-<name v=".\IGVC 2013.cydsn\sphero.h" />
-<name v=".\IGVC 2013.cydsn\sphero.c" />
 <name v=".\IGVC 2013.cydsn\velctrl.c" />
-<name v=".\IGVC 2013.cydsn\joystick.c" />
 <name v=".\IGVC 2013.cydsn\servodriver.c" />
 <name v=".\IGVC 2013.cydsn\servodriver.h" />
 </OpenDocs>

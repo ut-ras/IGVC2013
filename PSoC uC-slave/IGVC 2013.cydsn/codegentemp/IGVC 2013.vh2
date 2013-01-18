@@ -2,7 +2,7 @@
 --	Conversion of IGVC 2013.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun Jan 13 20:04:46 2013
+--	Thu Jan 17 16:00:59 2013
 --
 
 USE cypress.cypress.all;
