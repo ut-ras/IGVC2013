@@ -87,7 +87,7 @@ int main (int argc, char* argv[])
         cv::gpu::GpuMat dst, src;
         src.upload(src_host);
 
-        cv::gpu::threshold(src, dst, 128.0, 255.0, CV_THRESH_BINARY);
+        cv::gpu::threshold(src, dst, 128.0, 255.0, CV_THRESH_TOZERO);
 
         cv::Mat result_host = (cv::Mat) dst;
         cv::imshow("Result", result_host);

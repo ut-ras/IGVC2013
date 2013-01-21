@@ -28,29 +28,30 @@ def output():
     pub.publish(p)
     time.sleep(.1)
 
-LEFT = 0
-RIGHT = 1
-def raw_drive():
+
+def joystick():
   global leftOut
   global rightOut
   rospy.init_node('psoc_raw_tank_drive')
-  rospy.loginfo("Left or Right? Left = 0, Right = 1")
+  rospy.loginfo("PSoC raw tank drive using the logitech duel action is running")
+  msgs = []
   t = Thread(target=output, args=[])
   t.start()
-  motor = int(raw_input())
-  print "Enter Values (-128 to 127), 'q' to quit"
-  while not rospy.is_shutdown():
-      inp = str(raw_input())
-      if inp is 'q':
-        rospy.signal_shutdown('user shutdown')
-        sys.exit()
-      elif motor is LEFT:
-        leftOut = int(inp)
-      elif motor is RIGHT:
-        rightOut = int(inp)
+  with open("/dev/input/js0",'r') as pipe:
+    for i in range(144): #there's 144 bytes (18 packets of data) on initialization. dropping them
+       pipe.read(1)
+    while not rospy.is_shutdown():
+      for char in pipe.read(1):
+        msgs.append(ord(char))
+        if len(msgs) is 8:
+          if msgs[6] is 2 and msgs[7] is 1:
+            leftOut = twosCompInverse(msgs[5])
+          elif msgs[6] is 2 and msgs[7] is 3:
+            rightOut = twosCompInverse(msgs[5])
+          msgs = []
 
 if __name__ == "__main__":
   try:
-    raw_drive()
+    joystick()
   except rospy.ROSInterruptException:
     pass

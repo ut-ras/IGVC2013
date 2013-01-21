@@ -1,0 +1,19 @@
+<package>
+  <description brief="tests_igvc">
+
+     tests_igvc
+
+  </description>
+  <author>Granny</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/tests_igvc</url>
+  <depend package="PSoC_Listener"/>
+  <depend package="usb_cam"/>
+  <depend package="GPS_Ublox"/>
+  <depend package="ocean_server_imu"/>
+  <depend package="hokuyo_node"/>
+
+</package>
+
+

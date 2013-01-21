@@ -21,9 +21,10 @@ def callback(data):
         pub.publish(Bridge.cv_to_imgmsg(cv2.cv.fromarray(imgray), "mono8"))
     except CvBridgeError, e:
         print e
+    print "Published grayscale image\n"
 
 def subscribe():
-    
+
     rospy.init_node('imgray')
     rospy.Subscriber("usb_cam/image_raw", Image, callback)
     rospy.spin()

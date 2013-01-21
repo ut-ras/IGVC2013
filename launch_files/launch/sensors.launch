@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="usb_cam" name="usb_cam" type="usb_cam_node"/>
+  <node pkg="ocean_server_imu" name="ocean_server_imu" type="os5000_node"/>
+  <node pkg="hokuyo_node" name="hokuyo_node" type="hokuyo_node">
+    <param name="port" value="/dev/hokuyo" type="str"/>
+  </node>
+  <node pkg="PSoC_Listener" name="PSoC_Listener" type="PSoC_Listener.py"/>
+  <node pkg="GPS_Ublox" name="GPS_Listener" type="GPS_Listener.py"/>
+</launch>

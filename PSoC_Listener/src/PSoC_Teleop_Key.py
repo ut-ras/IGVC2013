@@ -3,8 +3,8 @@ import roslib; roslib.load_manifest('PSoC_Listener')
 import rospy, tty, sys, termios
 from geometry_msgs.msg import Twist
 
-LIN_INC = .5
-ANG_INC = 3
+LIN_INC = .4
+ANG_INC = .3
 pub_cmd = rospy.Publisher('vel_cmd', Twist)
 
 if __name__ == "__main__":

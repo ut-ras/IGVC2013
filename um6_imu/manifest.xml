@@ -1,0 +1,16 @@
+<package>
+  <description brief="um6_imu">
+
+     um6_imu
+
+  </description>
+  <author>Granny</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/um6_imu</url>
+  <depend package="geometry_msgs"/>
+  <depend package="rospy"/>
+
+</package>
+
+
