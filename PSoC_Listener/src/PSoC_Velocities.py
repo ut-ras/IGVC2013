@@ -13,7 +13,7 @@ def dataCallback(data):
     rate = data.rate;
     p.linear.x = float(data.vel_v) * .00004871 * 1000 / rate
     #Each raw v-velocity tick = 48.71 um per (time interval between messages)
-    p.angular.z = float(data.vel_w) * .00019482 * 1000 / rate
+    p.angular.z = - float(data.vel_w) * .00019482 * 1000 / rate
     #Each raw w-velocity tick = 194.82 urad per (time interval between messages)
     pub_data.publish(p)
 

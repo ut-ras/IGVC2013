@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="mjpeg_server" name="mjpeg_server" type="mjpeg_server" />
+    <node pkg="rosbridge" name="rosbridge" type="rosbridge.py" />
+
+    <node pkg="filters" name="extended_kalman_filter" type="extended_kalman_filter.py" />
+</launch>

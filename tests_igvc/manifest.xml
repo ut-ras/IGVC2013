@@ -8,12 +8,20 @@
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/tests_igvc</url>
+
+  <depend package="sensor_msgs"/>
+  <depend package="opencv2"/>
+  <depend package="cv_bridge"/>
+  <depend package="roscpp"/>
+  <depend package="std_msgs"/>
+  <depend package="image_transport"/>
+
   <depend package="PSoC_Listener"/>
   <depend package="usb_cam"/>
   <depend package="GPS_Ublox"/>
   <depend package="ocean_server_imu"/>
   <depend package="hokuyo_node"/>
-
+  <depend package="um6_imu"/>
 </package>
 
 

@@ -3,15 +3,17 @@ import roslib; roslib.load_manifest('tests_igvc')
 import rospy
 
 from sensor_msgs.msg import LaserScan,Image
-from geometry_msgs.msg import Twist,Point
+from geometry_msgs.msg import Point
 from ocean_server_imu.msg import RawData
 from PSoC_Listener.msg import PSoC
+from um6_imu.msg import UM6IMU
 
 
 sensors = { \
         'hokuyo':           {'topic': "scan",              'kind': LaserScan}, \
         'camera':           {'topic': "usb_cam/image_raw", 'kind': Image}, \
-        'ocean server imu': {'topic': "os_imu_data",       'kind': RawData}, \
+        #'ocean server imu': {'topic': "os_imu_data",       'kind': RawData}, \
+        'um6 imu':          {'topic': "um6_imu_data",      'kind': UM6IMU}, \
         'gps':              {'topic': "gps_data",          'kind': Point}, \
         'psoc':             {'topic': "psoc_data",         'kind': PSoC} }
 

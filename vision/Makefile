@@ -164,6 +164,19 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
+# Target rules for targets named cuda_test
+
+# Build rule for target.
+cuda_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cuda_test
+.PHONY : cuda_test
+
+# fast build rule for target.
+cuda_test/fast:
+	$(MAKE) -f CMakeFiles/cuda_test.dir/build.make CMakeFiles/cuda_test.dir/build
+.PHONY : cuda_test/fast
+
+#=============================================================================
 # Target rules for targets named rosbuild_precompile
 
 # Build rule for target.
@@ -307,6 +320,21 @@ vision/fast:
 .PHONY : vision/fast
 
 # target to build an object file
+src/cuda_test.o:
+	$(MAKE) -f CMakeFiles/cuda_test.dir/build.make CMakeFiles/cuda_test.dir/src/cuda_test.o
+.PHONY : src/cuda_test.o
+
+# target to preprocess a source file
+src/cuda_test.i:
+	$(MAKE) -f CMakeFiles/cuda_test.dir/build.make CMakeFiles/cuda_test.dir/src/cuda_test.i
+.PHONY : src/cuda_test.i
+
+# target to generate assembly for a file
+src/cuda_test.s:
+	$(MAKE) -f CMakeFiles/cuda_test.dir/build.make CMakeFiles/cuda_test.dir/src/cuda_test.s
+.PHONY : src/cuda_test.s
+
+# target to build an object file
 src/vision_test.o:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.o
 .PHONY : src/vision_test.o
@@ -332,6 +360,7 @@ help:
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... clean-test-results"
+	@echo "... cuda_test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
@@ -345,6 +374,9 @@ help:
 	@echo "... test-results-run"
 	@echo "... tests"
 	@echo "... vision"
+	@echo "... src/cuda_test.o"
+	@echo "... src/cuda_test.i"
+	@echo "... src/cuda_test.s"
 	@echo "... src/vision_test.o"
 	@echo "... src/vision_test.i"
 	@echo "... src/vision_test.s"

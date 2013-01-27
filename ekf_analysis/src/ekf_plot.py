@@ -9,7 +9,7 @@ def update_canvas(ekfData):
     rospy.loginfo(rospy.get_name() + ": Entered Callback. Will try tp print canvas")
 
     root = Tk()
-    w = Label(root, text='Hello world!!')
+    w = Label(root, width=500, height=500)
     w.pack()
 
     root.mainloop()

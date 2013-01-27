@@ -14,7 +14,7 @@ from ocean_server_imu.msg import RawData
 from filters.msg import RotatedIMUData,EKFData
 
 
-USING_OLD_BAGGED_DATA = False
+USING_OLD_BAGGED_DATA = True
 
 OCEAN_SERVER_IMU_INDEX = 0
 ENCODERS_INDEX = 1
@@ -29,8 +29,8 @@ def oceanserver_imu_callback(data):
     # rospy.loginfo("Measure:\n%f\n%f", data.acceleration.x, data.acceleration.y)
 
     measurement_vector = numpy.matrix(
-                            [ [data.acceleration.x],
-                              [data.acceleration.y],
+                            [ #[data.acceleration.x],
+                              #[data.acceleration.y],
                               [data.roll],
                               [data.pitch],
                               [data.yaw] ] )
@@ -86,8 +86,9 @@ class ExtendedKalmanFilter:
         self.prev_time = cur_time
         return dt
 
-    def Predict(self):
-        dt = self.CalcDT(rospy.get_time())
+    def Predict(self, dt=None):
+        if dt == None:
+            dt = self.CalcDT(rospy.get_time())
 
         G_jacobian = self.G_jacobian_funct(self.state, dt)
 
@@ -95,8 +96,9 @@ class ExtendedKalmanFilter:
         self.state = self.G_funct(self.state, dt)
         self.P = (G_jacobian * self.P) * numpy.transpose(G_jacobian) + self.Q
 
-    def Step(self, sensor_index, measurement_vector):
-        dt = self.CalcDT(time.time())
+    def Step(self, sensor_index, measurement_vector, dt=None):
+        if dt == None:
+            dt = self.CalcDT(time.time())
 
         G_jacobian = self.G_jacobian_funct(self.state, dt)
 
@@ -141,6 +143,42 @@ def imu_jacobian_funct(state, dt):
         [ [0, 0, -a*math.sin(z + dt*w), 0, -dt*a*math.sin(z + dt*w), math.cos(z + dt*w), 0, 0],\
           [0, 0,  a*math.cos(z + dt*w), 0,  dt*a*math.cos(z + dt*w), math.sin(z + dt*w), 0, 0],\
           [0, 0, 0, 0,  0, 0, 1, 0],\
+          [0, 0, 0, 0,  0, 0, 0, 1],\
+          [0, 0, 1, 0, dt, 0, 0, 0] ])
+
+def accel_observation_funct(state, dt):
+    z = state[2, 0]
+    w = state[4, 0]
+    a = state[5, 0]
+
+    return numpy.matrix(\
+        [ [a*math.cos(z + dt*w)],\
+          [a*math.sin(z + dt*w)] ])
+
+
+def accel_jacobian_funct(state, dt):
+    z = state[2, 0]
+    w = state[4, 0]
+    a = state[5, 0]
+
+    return numpy.matrix(\
+        [ [0, 0, -a*math.sin(z + dt*w), 0, -dt*a*math.sin(z + dt*w), math.cos(z + dt*w), 0, 0],\
+          [0, 0,  a*math.cos(z + dt*w), 0,  dt*a*math.cos(z + dt*w), math.sin(z + dt*w), 0, 0] ])
+
+def compass_observation_funct(state, dt):
+    z = state[2, 0]
+    w = state[4, 0]
+    r = state[6, 0]
+    p = state[7, 0]
+
+    return numpy.matrix(\
+        [ [r],\
+          [p],\
+          [z + dt*w] ])
+
+def compass_jacobian_funct(state, dt):
+    return numpy.matrix(\
+        [ [0, 0, 0, 0,  0, 0, 1, 0],\
           [0, 0, 0, 0,  0, 0, 0, 1],\
           [0, 0, 1, 0, dt, 0, 0, 0] ])
 
@@ -232,14 +270,14 @@ def create_EKF():
     initial_probability = numpy.eye(8)
     process_covariance = numpy.eye(8)*1e-3
 
-    os_imu_measurement_covariance = numpy.eye(5)*1e-6
+    os_imu_measurement_covariance = numpy.eye(3)*1e-6
     encoders_measurement_covariance = numpy.eye(2)*1e-6
     gps_measurement_covariance = numpy.eye(2)*0.03
 
     return ExtendedKalmanFilter(transition_funct,\
                                 transition_jacobian_funct,\
-                                [imu_observation_funct, encoders_observation_funct, gps_observation_funct],\
-                                [imu_jacobian_funct, encoders_jacobian_funct, gps_jacobian_funct],\
+                                [compass_observation_funct, encoders_observation_funct, gps_observation_funct],\
+                                [compass_jacobian_funct, encoders_jacobian_funct, gps_jacobian_funct],\
                                 initial_state,\
                                 initial_probability,\
                                 process_covariance,\
