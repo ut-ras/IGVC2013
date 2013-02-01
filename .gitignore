@@ -193,6 +193,7 @@ __init__.py
 CMakeCache.txt
 *.cmake
 CMakeFiles/
+opencv/
 
 .cproject
 .project
