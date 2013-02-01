@@ -125,6 +125,19 @@ ROSBUILD_genmsg_lisp/fast:
 .PHONY : ROSBUILD_genmsg_lisp/fast
 
 #=============================================================================
+# Target rules for targets named ROSBUILD_genmsg_py
+
+# Build rule for target.
+ROSBUILD_genmsg_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ROSBUILD_genmsg_py
+.PHONY : ROSBUILD_genmsg_py
+
+# fast build rule for target.
+ROSBUILD_genmsg_py/fast:
+	$(MAKE) -f CMakeFiles/ROSBUILD_genmsg_py.dir/build.make CMakeFiles/ROSBUILD_genmsg_py.dir/build
+.PHONY : ROSBUILD_genmsg_py/fast
+
+#=============================================================================
 # Target rules for targets named ROSBUILD_gensrv_cpp
 
 # Build rule for target.
@@ -164,17 +177,30 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
-# Target rules for targets named cuda_test
+# Target rules for targets named opencv_cuda_test
 
 # Build rule for target.
-cuda_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cuda_test
-.PHONY : cuda_test
+opencv_cuda_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opencv_cuda_test
+.PHONY : opencv_cuda_test
 
 # fast build rule for target.
-cuda_test/fast:
-	$(MAKE) -f CMakeFiles/cuda_test.dir/build.make CMakeFiles/cuda_test.dir/build
-.PHONY : cuda_test/fast
+opencv_cuda_test/fast:
+	$(MAKE) -f CMakeFiles/opencv_cuda_test.dir/build.make CMakeFiles/opencv_cuda_test.dir/build
+.PHONY : opencv_cuda_test/fast
+
+#=============================================================================
+# Target rules for targets named perspective_correction_test
+
+# Build rule for target.
+perspective_correction_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 perspective_correction_test
+.PHONY : perspective_correction_test
+
+# fast build rule for target.
+perspective_correction_test/fast:
+	$(MAKE) -f CMakeFiles/perspective_correction_test.dir/build.make CMakeFiles/perspective_correction_test.dir/build
+.PHONY : perspective_correction_test/fast
 
 #=============================================================================
 # Target rules for targets named rosbuild_precompile
@@ -319,20 +345,48 @@ vision/fast:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/build
 .PHONY : vision/fast
 
+#=============================================================================
+# Target rules for targets named visualization
+
+# Build rule for target.
+visualization: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visualization
+.PHONY : visualization
+
+# fast build rule for target.
+visualization/fast:
+	$(MAKE) -f CMakeFiles/visualization.dir/build.make CMakeFiles/visualization.dir/build
+.PHONY : visualization/fast
+
 # target to build an object file
-src/cuda_test.o:
-	$(MAKE) -f CMakeFiles/cuda_test.dir/build.make CMakeFiles/cuda_test.dir/src/cuda_test.o
-.PHONY : src/cuda_test.o
+src/opencv_cuda_test.o:
+	$(MAKE) -f CMakeFiles/opencv_cuda_test.dir/build.make CMakeFiles/opencv_cuda_test.dir/src/opencv_cuda_test.o
+.PHONY : src/opencv_cuda_test.o
 
 # target to preprocess a source file
-src/cuda_test.i:
-	$(MAKE) -f CMakeFiles/cuda_test.dir/build.make CMakeFiles/cuda_test.dir/src/cuda_test.i
-.PHONY : src/cuda_test.i
+src/opencv_cuda_test.i:
+	$(MAKE) -f CMakeFiles/opencv_cuda_test.dir/build.make CMakeFiles/opencv_cuda_test.dir/src/opencv_cuda_test.i
+.PHONY : src/opencv_cuda_test.i
 
 # target to generate assembly for a file
-src/cuda_test.s:
-	$(MAKE) -f CMakeFiles/cuda_test.dir/build.make CMakeFiles/cuda_test.dir/src/cuda_test.s
-.PHONY : src/cuda_test.s
+src/opencv_cuda_test.s:
+	$(MAKE) -f CMakeFiles/opencv_cuda_test.dir/build.make CMakeFiles/opencv_cuda_test.dir/src/opencv_cuda_test.s
+.PHONY : src/opencv_cuda_test.s
+
+# target to build an object file
+src/perspective_correction_test.o:
+	$(MAKE) -f CMakeFiles/perspective_correction_test.dir/build.make CMakeFiles/perspective_correction_test.dir/src/perspective_correction_test.o
+.PHONY : src/perspective_correction_test.o
+
+# target to preprocess a source file
+src/perspective_correction_test.i:
+	$(MAKE) -f CMakeFiles/perspective_correction_test.dir/build.make CMakeFiles/perspective_correction_test.dir/src/perspective_correction_test.i
+.PHONY : src/perspective_correction_test.i
+
+# target to generate assembly for a file
+src/perspective_correction_test.s:
+	$(MAKE) -f CMakeFiles/perspective_correction_test.dir/build.make CMakeFiles/perspective_correction_test.dir/src/perspective_correction_test.s
+.PHONY : src/perspective_correction_test.s
 
 # target to build an object file
 src/vision_test.o:
@@ -349,6 +403,21 @@ src/vision_test.s:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.s
 .PHONY : src/vision_test.s
 
+# target to build an object file
+src/visualizer.o:
+	$(MAKE) -f CMakeFiles/visualization.dir/build.make CMakeFiles/visualization.dir/src/visualizer.o
+.PHONY : src/visualizer.o
+
+# target to preprocess a source file
+src/visualizer.i:
+	$(MAKE) -f CMakeFiles/visualization.dir/build.make CMakeFiles/visualization.dir/src/visualizer.i
+.PHONY : src/visualizer.i
+
+# target to generate assembly for a file
+src/visualizer.s:
+	$(MAKE) -f CMakeFiles/visualization.dir/build.make CMakeFiles/visualization.dir/src/visualizer.s
+.PHONY : src/visualizer.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -357,11 +426,13 @@ help:
 	@echo "... depend"
 	@echo "... ROSBUILD_genmsg_cpp"
 	@echo "... ROSBUILD_genmsg_lisp"
+	@echo "... ROSBUILD_genmsg_py"
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... clean-test-results"
-	@echo "... cuda_test"
 	@echo "... edit_cache"
+	@echo "... opencv_cuda_test"
+	@echo "... perspective_correction_test"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
@@ -374,12 +445,19 @@ help:
 	@echo "... test-results-run"
 	@echo "... tests"
 	@echo "... vision"
-	@echo "... src/cuda_test.o"
-	@echo "... src/cuda_test.i"
-	@echo "... src/cuda_test.s"
+	@echo "... visualization"
+	@echo "... src/opencv_cuda_test.o"
+	@echo "... src/opencv_cuda_test.i"
+	@echo "... src/opencv_cuda_test.s"
+	@echo "... src/perspective_correction_test.o"
+	@echo "... src/perspective_correction_test.i"
+	@echo "... src/perspective_correction_test.s"
 	@echo "... src/vision_test.o"
 	@echo "... src/vision_test.i"
 	@echo "... src/vision_test.s"
+	@echo "... src/visualizer.o"
+	@echo "... src/visualizer.i"
+	@echo "... src/visualizer.s"
 .PHONY : help
 
 

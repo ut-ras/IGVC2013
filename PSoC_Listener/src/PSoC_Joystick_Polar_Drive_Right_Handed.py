@@ -25,9 +25,10 @@ def output():
   global right_state
   pub = rospy.Publisher('vel_cmd',Twist)
   while not rospy.is_shutdown():
-    p = Twist()
-    p.linear.x = xOut*MAX_X_SPEED/128 if right_state else 0
-    p.angular.z = wOut*MAX_W_SPEED/128 if right_state else 0
+    if right_state:
+      p = Twist()
+      p.linear.x = xOut*MAX_X_SPEED/128 if right_state else 0
+      p.angular.z = wOut*MAX_W_SPEED/128 if right_state else 0
     pub.publish(p)
     time.sleep(.1) #run at 10hz
 

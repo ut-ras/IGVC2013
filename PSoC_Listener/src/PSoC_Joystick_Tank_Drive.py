@@ -24,12 +24,13 @@ def output():
   global right_state
   pub = rospy.Publisher('psoc_cmd',String)
   while not rospy.is_shutdown():
-    p = String()
-    p.data = ">SPLM:"+str(leftOut if left_state and right_state else 0)
-    pub.publish(p)
-    p = String()
-    p.data = ">SPRM:"+str(rightOut if left_state and right_state else 0)
-    pub.publish(p)
+    if left_state and right_state:
+      p = String()
+      p.data = ">SPLM:"+str(leftOut if left_state and right_state else 0)
+      pub.publish(p)
+      p = String()
+      p.data = ">SPRM:"+str(rightOut if left_state and right_state else 0)
+      pub.publish(p)
     time.sleep(.1)
 
 

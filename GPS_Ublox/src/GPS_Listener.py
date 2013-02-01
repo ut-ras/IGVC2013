@@ -4,13 +4,18 @@ import rospy
 import serial
 import string
 import math
-from geometry_msgs.msg import Point
+from GPS_Ublox.msg import GPS_UBlox_raw
 
 ser = serial.Serial(port='/dev/U-Blox', baudrate = 57600)
 
+NUMEBR_OF_SATELLITES = 0
+
 def gps():
+
+    global NUMEBR_OF_SATELLITES
+
     rospy.loginfo( "GPS Listener is running on " + ser.portstr )
-    pub = rospy.Publisher('gps_data_raw', Point)
+    pub = rospy.Publisher('gps_data_raw', GPS_UBlox_raw)
     rospy.init_node('GPS_Listener')
     while not rospy.is_shutdown():
         line = ser.readline()
@@ -22,8 +27,7 @@ def gps():
             pass
             #rospy.loginfo( "gps_data/VTG: " + line )
         elif(tokens[0] == '$GPGGA'):
-            pass
-            #rospy.loginfo( "gps_data/GGA: " + line )
+            NUMEBR_OF_SATELLITES = int(tokens[7])
         elif(tokens[0] == '$GPGSA'):
             pass
             #rospy.loginfo( "gps_data/GSA: " + line )
@@ -33,13 +37,13 @@ def gps():
         elif(tokens[0] == '$GPGLL'):
             pass
             if(tokens[6] == 'A'):
-                p = Point()
-                p.y = (float(tokens[1][:2]) + float(tokens[1][2:])/60)
-                p.x = (float(tokens[3][:3]) + float(tokens[3][3:])/60)
+                p = GPS_UBlox_raw()
+                p.latitude  = (float(tokens[1][:2]) + float(tokens[1][2:])/60)
+                p.longitude = (float(tokens[3][:3]) + float(tokens[3][3:])/60)
                 if tokens[4] == 'W':
-                    p.x = -p.x
+                    p.longitude = -p.longitude
                 if tokens[2] == 'S':
-                    p.y = -p.y
+                    p.latitude = -p.latitude
                 #rospy.loginfo( "gps_data/GLL/Latitude: " + tokens[1] )
                 #rospy.loginfo( "gps_data/GLL/N: " + tokens[2] )
                 #rospy.loginfo( "gps_data/GLL/Longitude: " + tokens[3] )
@@ -48,8 +52,11 @@ def gps():
                 #rospy.loginfo( "gps_data/GLL/Valid: " + tokens[6] )
                 #rospy.loginfo( "gps_data/GLL/Mode&Checksum: " + tokens[7] )
 
-                rospy.loginfo("Publish to topic /gps_data:\n" +
-                        "Latitude: " + str(p.y) + "  Longitude: " + str(p.x))
+                p.num_satellites = NUMEBR_OF_SATELLITES
+
+                rospy.loginfo("Publish to topic /gps_data_raw:\n" +
+                        "Latitude: " + str(p.latitude) + "  Longitude: " + str(p.longitude) +
+                        "\nFound " + str(NUMEBR_OF_SATELLITES) + " satellites\n")
 
                 pub.publish(p)
             else:

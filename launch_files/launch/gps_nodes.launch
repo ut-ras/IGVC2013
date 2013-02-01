@@ -1,0 +1,8 @@
+<launch>
+    <param name="lat" value="30.2884345" type="str"/>
+    <param name="lon" value="-97.7354548333" type="str"/>
+
+    <node pkg="GPS_Ublox" name="GPS_offset_calculator" type="GPS_offset_calculator.py"/>
+
+    <node pkg="GPS_Ublox" name="GPS_Listener" type="GPS_Listener.py" />
+</launch>

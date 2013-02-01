@@ -1,0 +1,14 @@
+<package>
+  <description brief="lidar_proc">
+
+     lidar_proc
+
+  </description>
+  <author>Granny</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/lidar_proc</url>
+
+</package>
+
+

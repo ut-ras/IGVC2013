@@ -1,0 +1,19 @@
+<package>
+  <description brief="doloRAS_IGVC_simulation">
+
+     doloRAS_IGVC_simulation
+
+  </description>
+  <author>Granny</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/doloRAS_IGVC_simulation</url>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="gazebo"/>
+  <depend package="gazebo_worlds"/>
+  <depend package="tf"/>
+
+</package>
+
+

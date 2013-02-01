@@ -7,6 +7,7 @@ from geometry_msgs.msg import Point
 from ocean_server_imu.msg import RawData
 from PSoC_Listener.msg import PSoC
 from um6_imu.msg import UM6IMU
+from GPS_Ublox.msg import GPS_UBlox_raw
 
 
 sensors = { \
@@ -14,7 +15,7 @@ sensors = { \
         'camera':           {'topic': "usb_cam/image_raw", 'kind': Image}, \
         #'ocean server imu': {'topic': "os_imu_data",       'kind': RawData}, \
         'um6 imu':          {'topic': "um6_imu_data",      'kind': UM6IMU}, \
-        'gps':              {'topic': "gps_data",          'kind': Point}, \
+        'gps':              {'topic': "gps_data_raw",      'kind': GPS_UBlox_raw}, \
         'psoc':             {'topic': "psoc_data",         'kind': PSoC} }
 
 

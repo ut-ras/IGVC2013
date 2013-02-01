@@ -317,7 +317,7 @@ if __name__ == '__main__':
 
     rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
     rospy.Subscriber("vel_data", Twist, encoders_imu_callback)
-    rospy.Subscriber("gps_data", Point, gps_imu_callback)
+    # rospy.Subscriber("gps_data", Point, gps_imu_callback)
 
     pub = rospy.Publisher('ekf_data', EKFData)
 
