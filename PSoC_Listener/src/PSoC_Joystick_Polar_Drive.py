@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 import roslib; roslib.load_manifest('PSoC_Listener')
 import rospy, sys, time
-from std_msgs.msg import String
+from geometry_msgs.msg import Twist
 from threading import Thread
+from math import pi
 
-leftOut = 0
-rightOut = 0
-left_state = False
+MAX_X_SPEED = float(2)
+MAX_W_SPEED = pi
+xOut = 0
+wOut = 0
 right_state = False
 
 def twosCompInverse(inp):
@@ -18,44 +20,38 @@ def twosCompInverse(inp):
     return -(inp - 255)
 
 def output():
-  global leftOut
-  global rightOut
-  global left_state
+  global xOut
+  global wOut
   global right_state
-  pub = rospy.Publisher('psoc_cmd',String)
+  pub = rospy.Publisher('vel_cmd',Twist)
   while not rospy.is_shutdown():
-    p = String()
-    p.data = ">SPLM:"+str(leftOut if left_state and right_state else 0)
+    p = Twist()
+    p.linear.x = xOut*MAX_X_SPEED/128 if right_state else 0
+    p.angular.z = wOut*MAX_W_SPEED/128 if right_state else 0
     pub.publish(p)
-    p = String()
-    p.data = ">SPRM:"+str(rightOut if left_state and right_state else 0)
-    pub.publish(p)
-    time.sleep(.1)
+    time.sleep(.1) #run at 10hz
 
 
 def joystick():
-  global leftOut
-  global rightOut
-  global left_state
+  global xOut
+  global wOut
   global right_state
-  rospy.init_node('psoc_raw_tank_drive')
-  rospy.loginfo("PSoC raw tank drive using the logitech duel action is running")
+  rospy.init_node('psoc_raw_polar_drive')
+  rospy.loginfo("PSoC raw tank drive polar style using the logitech duel action is running")
   msgs = []
   t = Thread(target=output, args=[])
   t.start()
   with open("/dev/input/js0",'r') as pipe:
-    for i in range(144): #there's 144 bytes (18 packets of data) on initialization. dropping them
+    for i in range(144): #there's ~144 bytes (18 packets of data) on initialization. dropping them
        pipe.read(1)
     while not rospy.is_shutdown():
       for char in pipe.read(1):
         msgs.append(ord(char))
         if len(msgs) is 8:
-          if msgs[6] is 2 and msgs[7] is 1:
-            leftOut = twosCompInverse(msgs[5])
+          if msgs[6] is 2 and msgs[7] is 2:
+            wOut = twosCompInverse(msgs[5])
           elif msgs[6] is 2 and msgs[7] is 3:
-            rightOut = twosCompInverse(msgs[5])
-          elif msgs[7] is 4:
-            left_state = (msgs[4] is 1)
+            xOut = twosCompInverse(msgs[5])
           elif msgs[7] is 5:
             right_state = (msgs[4] is 1)
           msgs = []
