@@ -29,8 +29,11 @@ public:
         image_pub_ = it_.advertise("vision/out", 1);
         image_sub_ = it_.subscribe("usb_cam/image_raw", 1, &ImageConverter::imageCb, this);
 
-        namedWindow("RAW");
-        namedWindow("OUTPUT");
+        //Going to follow Frank's pycode as close as possible
+        namedWindow("Input Video");
+        namedWindow("Red-Orange Video");
+        namedWindow("White Video");
+        namedWindow("Red-Orange and White Video");
     }
 
     ~ImageConverter()
@@ -43,7 +46,7 @@ public:
     {
         //Main processing node
 
-        gpu::GpuMat gGray, gThresh, gOut;
+        gpu::GpuMat gOut;
     
         //Convert input into usable arguments
         Mat src;        
@@ -58,60 +61,59 @@ public:
         }
 
         gpu::GpuMat gSrc = (gpu::GpuMat) src;
-        imshow("RAW",(Mat)gSrc);
-        waitKey(30);
+        gpu::GpuMat gblur_image;
+        gpu::GpuMat gproc_image;
 
-        gpu::cvtColor(gSrc, gGray, CV_BGR2GRAY);
+
+        imshow("Input Video",(Mat)gSrc);
+        waitKey(30);
 
         //PROCESSING TIME!! YAAAY~~~
         //Following Frank's steps so far (this is his ported code)
-        gpu::GaussianBlur(gSrc, gSrc, Size(7,7), 1.5, 1.5);
-        gpu::cvtColor(gSrc, gSrc, CV_BGR2HSV);
-
-        //gpu::GpuMat gColorThresh;
-        //gpu::InRangeS(gSrc, Scalar(0,0,200), Scalar(255,255,255), gColorThresh)
+        gpu::GaussianBlur(gSrc, gblur_image, Size(7,7), 1.5, 1.5);
+        gpu::cvtColor(gblur_image, gproc_image, CV_BGR2HSV);
 
         //Split into HSV channels
-        vector<gpu::GpuMat> Channels;
-        gpu::split(gSrc, Channels);
-        gpu::GpuMat thresh_sat, thresh_top, thresh_bot;
-        gpu::GpuMat red_orange;
+        //Using Frank names and prepending g to all gpu mats
+        vector<gpu::GpuMat> gsplit_image;
+        gpu::split(gproc_image, gsplit_image);
+        gpu::GpuMat gthresh_0, gthresh_1, gthresh_2;
+        gpu::GpuMat gred_orange;
 
-        //Structuring element for morphological filtering
-        Mat LineElement(20,1,CV_8U,Scalar(1));
+        gpu::threshold(gsplit_image[1], gthresh_0, 128, 255, THRESH_BINARY);// >50% saturation
+        gpu::threshold(gsplit_image[0], gthresh_1, 220, 255, THRESH_BINARY);// > purple
+        gpu::threshold(gsplit_image[0], gthresh_2,  10, 255, THRESH_BINARY_INV);//<Yellow-Orange
 
-        gpu::threshold(Channels[1], thresh_sat, 128, 255, THRESH_BINARY);
-        gpu::threshold(Channels[0], thresh_top, 220, 255, THRESH_BINARY);
-        gpu::threshold(Channels[0], thresh_bot,  10, 255, THRESH_BINARY_INV);
-        gpu::add(thresh_top, thresh_bot, red_orange);
-        gpu::bitwise_and(red_orange, thresh_sat, red_orange);
+        gpu::add(gthresh_1, gthresh_2, gred_orange);
+        gpu::bitwise_and(gred_orange, gthresh_0, gred_orange);
 
-        //gpu::erode(red_orange, red_orange, Mat(), Point(-1,-1), 1);
-        //gpu::dilate(red_orange, red_orange, Mat(), Point(-1,-1), 1);
-        
-        //gpu::dilate(red_orange, red_orange, LineElement, Point(0,19), 1);
 
-        gOut = red_orange;
-/*        
-        //DetectLanes(gGray,gOut,10,5);
-        
-        gpu::threshold(gGray,gThresh,180,255,THRESH_BINARY);
-        gpu::GaussianBlur(gGray, gGray, Size(7,7), 1.5, 1.5);
-        gpu::Canny(gGray, gThresh, 0, 100, 3);
+        gOut = gred_orange;
 
-        //DetectLanes(gThresh,laneOut,10,5);
-        gOut = gThresh;
-*/
-
-        //gpu::add(gSrc, red_orange, gSrc);
-        //imshow("RAW",(Mat)gSrc);
-        //waitKey(30);
-
-        imshow("OUTPUT", (Mat)gOut);
+        imshow("Red-Orange Video", (Mat)gred_orange);
         waitKey(30);
 
+        ///Begin white detection
+
+        gpu::cvtColor(gblur_image, gproc_image, CV_BGR2HLS);
+        gpu::split(gproc_image, gsplit_image);
+
+        //Greater than 80% luminence
+        gpu::threshold(gsplit_image[1], gthresh_0, 204, 255, THRESH_BINARY);
+
+        imshow("White Video", (Mat)gthresh_0);
+        waitKey(30);
+
+        ///End white detection
+
+        gpu::bitwise_or(gred_orange, gthresh_0, gthresh_0);
+        imshow("Red-Orange and White Video", (Mat) gthresh_0);
+        waitKey(30);
+
+        
+
         //Publish image results
-        Mat outMat = (Mat)gOut;
+        Mat outMat = (Mat)gthresh_0;
         cv_bridge::CvImage out_msg;
         out_msg.header   = msg->header;
         out_msg.encoding = sensor_msgs::image_encodings::TYPE_32FC1;
@@ -159,54 +161,6 @@ int main(int argc, char* argv[])
 
     return 0;
 }
-
-/*
-
-class video_processor:
-    def __init__(self):
-        self.sub = rospy.Subscriber('usb_cam/image_raw', Image, self.callback)
-        self.pub = rospy.Publisher('heading', Twist)
-        speed = float(1)
-        self.bridge = CvBridge()
-        cv.NamedWindow("Input Video")
-        cv.NamedWindow("Red-Orange Video")
-        cv.WaitKey(0)
-
-    def callback(self, image_in):
-
-        blur_image = cv.CreateMat(input_image.rows,input_image.cols,cv.CV_8UC3)
-        cv.Smooth(input_image,blur_image,cv.CV_BLUR, 10, 10)
-        #cv.ShowImage("Blur Video", blur_image)
-
-        hsv_image = cv.CreateMat(input_image.rows,input_image.cols,cv.CV_8UC3)
-        cv.CvtColor(blur_image, hsv_image, cv.CV_BGR2HSV)
-        #cv.ShowImage("HSV Video", hsv_image)
-
-        hue = cv.CreateMat(input_image.rows,input_image.cols,cv.CV_8UC1)
-        sat = cv.CreateMat(input_image.rows,input_image.cols,cv.CV_8UC1)
-        val = cv.CreateMat(input_image.rows,input_image.cols,cv.CV_8UC1)
-        cv.Split(hsv_image, hue,sat,val, None )
-        #cv.ShowImage("Hue Video", hue)
-        #cv.ShowImage("Saturation Video", sat)
-        #cv.ShowImage("Value Video", val)
-
-        thresh_top = cv.CreateMat(input_image.rows,input_image.cols,cv.CV_8UC1)
-        thresh_bot = cv.CreateMat(input_image.rows,input_image.cols,cv.CV_8UC1)
-        thresh_sat = cv.CreateMat(input_image.rows,input_image.cols,cv.CV_8UC1)
-        red_orange = cv.CreateMat(input_image.rows,input_image.cols,cv.CV_8UC1)
-        cv.Threshold(sat,thresh_sat, 128,255,cv.CV_THRESH_BINARY)
-        cv.Threshold(hue,thresh_top, 220,255,cv.CV_THRESH_BINARY) # > Purple
-        cv.Threshold(hue,thresh_bot, 10, 255,cv.CV_THRESH_BINARY_INV) # < Yellow-Orange
-        cv.Add(thresh_top,thresh_bot,red_orange)
-        cv.And(red_orange,thresh_sat,red_orange)
-        cv.ShowImage("Red-Orange Video",red_orange)
-        cv.WaitKey(1)
-
-        p = Twist()
-        self.pub.publish(p)
-
-*/
-
 
 /*
 namespace enc = sensor_msgs::image_encodings;
