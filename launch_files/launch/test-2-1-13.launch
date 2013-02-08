@@ -5,7 +5,7 @@
 
   <node pkg="PSoC_Listener" name="PSoC_Listener" type="PSoC_Listener.py"/>
   <node pkg="PSoC_Listener" name="PSoC_Velocities" type="PSoC_Velocities.py"/>
-  <node pkg="PSoC_Listener" name="PSoC_Joystick_Tank_Drive" type="PSoC_Joystick_Polar_Drive_Left_Handed.py"/>
+  <node pkg="PSoC_Listener" name="PSoC_Joystick_Polar_Drive_Left_Handed" type="PSoC_Joystick_Polar_Drive_Left_Handed.py"/>
 
   <node pkg="um6_imu" name="um6_imu" type="um6_imu.py"/>
   <node pkg="GPS_Ublox" name="GPS_Listener" type="GPS_Listener.py"/>

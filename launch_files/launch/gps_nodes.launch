@@ -4,5 +4,4 @@
 
     <node pkg="GPS_Ublox" name="GPS_offset_calculator" type="GPS_offset_calculator.py"/>
 
-    <node pkg="GPS_Ublox" name="GPS_Listener" type="GPS_Listener.py" />
 </launch>

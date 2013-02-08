@@ -26,10 +26,10 @@ def output():
   while not rospy.is_shutdown():
     if left_state and right_state:
       p = String()
-      p.data = ">SPLM:"+str(leftOut if left_state and right_state else 0)
+      p.data = ">SPLM:"+str(leftOut * leftOut / 128 if left_state and right_state else 0)
       pub.publish(p)
       p = String()
-      p.data = ">SPRM:"+str(rightOut if left_state and right_state else 0)
+      p.data = ">SPRM:"+str(rightOut * rightOut / 128 if left_state and right_state else 0)
       pub.publish(p)
     time.sleep(.1)
 
@@ -41,6 +41,7 @@ def joystick():
   global right_state
   rospy.init_node('psoc_raw_tank_drive')
   rospy.loginfo("PSoC raw tank drive using the logitech duel action is running")
+  print "Hold down 5 and 6 to enable"
   msgs = []
   t = Thread(target=output, args=[])
   t.start()

@@ -177,6 +177,19 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
+# Target rules for targets named decision
+
+# Build rule for target.
+decision: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 decision
+.PHONY : decision
+
+# fast build rule for target.
+decision/fast:
+	$(MAKE) -f CMakeFiles/decision.dir/build.make CMakeFiles/decision.dir/build
+.PHONY : decision/fast
+
+#=============================================================================
 # Target rules for targets named opencv_cuda_test
 
 # Build rule for target.
@@ -188,19 +201,6 @@ opencv_cuda_test: cmake_check_build_system
 opencv_cuda_test/fast:
 	$(MAKE) -f CMakeFiles/opencv_cuda_test.dir/build.make CMakeFiles/opencv_cuda_test.dir/build
 .PHONY : opencv_cuda_test/fast
-
-#=============================================================================
-# Target rules for targets named perspective_correction_test
-
-# Build rule for target.
-perspective_correction_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 perspective_correction_test
-.PHONY : perspective_correction_test
-
-# fast build rule for target.
-perspective_correction_test/fast:
-	$(MAKE) -f CMakeFiles/perspective_correction_test.dir/build.make CMakeFiles/perspective_correction_test.dir/build
-.PHONY : perspective_correction_test/fast
 
 #=============================================================================
 # Target rules for targets named rosbuild_precompile
@@ -374,19 +374,19 @@ src/opencv_cuda_test.s:
 .PHONY : src/opencv_cuda_test.s
 
 # target to build an object file
-src/perspective_correction_test.o:
-	$(MAKE) -f CMakeFiles/perspective_correction_test.dir/build.make CMakeFiles/perspective_correction_test.dir/src/perspective_correction_test.o
-.PHONY : src/perspective_correction_test.o
+src/vision_decision.o:
+	$(MAKE) -f CMakeFiles/decision.dir/build.make CMakeFiles/decision.dir/src/vision_decision.o
+.PHONY : src/vision_decision.o
 
 # target to preprocess a source file
-src/perspective_correction_test.i:
-	$(MAKE) -f CMakeFiles/perspective_correction_test.dir/build.make CMakeFiles/perspective_correction_test.dir/src/perspective_correction_test.i
-.PHONY : src/perspective_correction_test.i
+src/vision_decision.i:
+	$(MAKE) -f CMakeFiles/decision.dir/build.make CMakeFiles/decision.dir/src/vision_decision.i
+.PHONY : src/vision_decision.i
 
 # target to generate assembly for a file
-src/perspective_correction_test.s:
-	$(MAKE) -f CMakeFiles/perspective_correction_test.dir/build.make CMakeFiles/perspective_correction_test.dir/src/perspective_correction_test.s
-.PHONY : src/perspective_correction_test.s
+src/vision_decision.s:
+	$(MAKE) -f CMakeFiles/decision.dir/build.make CMakeFiles/decision.dir/src/vision_decision.s
+.PHONY : src/vision_decision.s
 
 # target to build an object file
 src/vision_test.o:
@@ -430,9 +430,9 @@ help:
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... clean-test-results"
+	@echo "... decision"
 	@echo "... edit_cache"
 	@echo "... opencv_cuda_test"
-	@echo "... perspective_correction_test"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
@@ -449,9 +449,9 @@ help:
 	@echo "... src/opencv_cuda_test.o"
 	@echo "... src/opencv_cuda_test.i"
 	@echo "... src/opencv_cuda_test.s"
-	@echo "... src/perspective_correction_test.o"
-	@echo "... src/perspective_correction_test.i"
-	@echo "... src/perspective_correction_test.s"
+	@echo "... src/vision_decision.o"
+	@echo "... src/vision_decision.i"
+	@echo "... src/vision_decision.s"
 	@echo "... src/vision_test.o"
 	@echo "... src/vision_test.i"
 	@echo "... src/vision_test.s"

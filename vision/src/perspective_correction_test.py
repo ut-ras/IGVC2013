@@ -14,9 +14,9 @@ WINDOW_HEIGHT = 30
 # using previous transform or calculate a new one
 CALC_TRANSFORM = False
 prev_transform = np.array(
-[[  3.54194687e+00,   2.41199432e+00,  -8.17003037e+02,],
- [ -1.76222405e-01,   7.13283423e+00,  -1.17488301e+03,],
- [ -3.53246409e-04,   7.83325054e-03,   1.00000000e+00]])
+[[  4.95470474e+00,   3.27305024e+00,  -1.17512850e+03],
+ [  3.22164689e-01,   9.62958447e+00,  -1.75615123e+03],
+ [  3.91447988e-04,   1.06775878e-02,   1.00000000e+00]])
 
 CALC_PERIOD = 1 # in seconds
 
@@ -95,8 +95,8 @@ def dispImages(img):
         global prev_transform
         transformed = cv2.warpPerspective(img, prev_transform, (img.shape[1], img.shape[0]))
 
-    cv2.imshow('Plain', img)
     cv2.imshow('Transformed', transformed)
+    cv2.imshow('Plain', img)
 
 prev_time = -1
 def callback(image_data):
@@ -128,7 +128,7 @@ def init():
     cv2.namedWindow('Transformed')
     cv2.moveWindow('Transformed', EXPECTED_WIDTH, WINDOW_HEIGHT)
 
-    rospy.loginfo("Now, move the chessboard around to get a correct perspective transformation!")
+    rospy.loginfo("Now, move the chessboard into view to get a correct perspective transformation!")
 
     sub = rospy.Subscriber('usb_cam/image_raw', Image, callback )
 

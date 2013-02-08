@@ -12,22 +12,35 @@ from std_msgs.msg import String
 from geometry_msgs.msg import Twist,Point
 from ocean_server_imu.msg import RawData
 from filters.msg import RotatedIMUData,EKFData
+from um6_imu.msg import UM6IMU
 
 
-USING_OLD_BAGGED_DATA = True
+USING_TEST1_BAGGED_DATA = False
+USING_TEST2_BAGGED_DATA = True
 
-OCEAN_SERVER_IMU_INDEX = 0
+#OCEAN_SERVER_IMU_INDEX = 0
+UM6_IMU_INDEX = 0
 ENCODERS_INDEX = 1
 GPS_INDEX = 2
-SPHERO_IMU_INDEX = 3
 
 
 kf = None
 
 
-def oceanserver_imu_callback(data):
-    # rospy.loginfo("Measure:\n%f\n%f", data.acceleration.x, data.acceleration.y)
+def um6_imu_callback(data):
+    if USING_TEST2_BAGGED_DATA:
+        measurement_vector = numpy.matrix(
+                                [ [data.orientation_euler.roll*math.pi/180.0],
+                                  [data.orientation_euler.pitch*math.pi/180.0],
+                                  [-data.orientation_euler.yaw*math.pi/180.0] ] )
+    else:
+        measurement_vector = numpy.matrix(
+                                [ [data.orientation_euler.roll*math.pi/180.0],
+                                  [data.orientation_euler.pitch*math.pi/180.0],
+                                  [(-data.orientation_euler.yaw)*math.pi/180.0] ] )
+    kf.Step(UM6_IMU_INDEX, measurement_vector)
 
+def oceanserver_imu_callback(data):
     measurement_vector = numpy.matrix(
                             [ #[data.acceleration.x],
                               #[data.acceleration.y],
@@ -37,9 +50,7 @@ def oceanserver_imu_callback(data):
     kf.Step(OCEAN_SERVER_IMU_INDEX, measurement_vector)
 
 def encoders_imu_callback(data):
-    # rospy.loginfo("Measure:\n%f\n%f", data.acceleration.x, data.acceleration.y)
-
-    if USING_OLD_BAGGED_DATA:
+    if USING_TEST1_BAGGED_DATA:
         measurement_vector = numpy.matrix(
                             [ [data.linear.x],
                               [-data.angular.z] ] )
@@ -47,13 +58,9 @@ def encoders_imu_callback(data):
         measurement_vector = numpy.matrix(
                             [ [data.linear.x],
                               [data.angular.z] ] )
-
-
     kf.Step(ENCODERS_INDEX, measurement_vector)
 
 def gps_imu_callback(data):
-    # rospy.loginfo("Measure:\n%f\n%f", data.acceleration.x, data.acceleration.y)
-
     measurement_vector = numpy.matrix(
                             [ [data.x],
                               [data.y] ] )
@@ -270,7 +277,8 @@ def create_EKF():
     initial_probability = numpy.eye(8)
     process_covariance = numpy.eye(8)*1e-3
 
-    os_imu_measurement_covariance = numpy.eye(3)*1e-6
+    # os_imu_measurement_covariance = numpy.eye(3)*1e-6
+    um6_imu_measurement_covariance = numpy.eye(3)*1e-6
     encoders_measurement_covariance = numpy.eye(2)*1e-6
     gps_measurement_covariance = numpy.eye(2)*0.03
 
@@ -281,7 +289,8 @@ def create_EKF():
                                 initial_state,\
                                 initial_probability,\
                                 process_covariance,\
-                                [os_imu_measurement_covariance, encoders_measurement_covariance, gps_measurement_covariance])
+                                #[os_imu_measurement_covariance, encoders_measurement_covariance, gps_measurement_covariance])
+                                [um6_imu_measurement_covariance, encoders_measurement_covariance, gps_measurement_covariance])
 
 def create_msg(belief, covariances):
     msg = EKFData()
@@ -315,7 +324,8 @@ if __name__ == '__main__':
 
     kf = create_EKF()
 
-    rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
+    rospy.Subscriber("um6_imu_data", UM6IMU, um6_imu_callback)
+    # rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
     rospy.Subscriber("vel_data", Twist, encoders_imu_callback)
     # rospy.Subscriber("gps_data", Point, gps_imu_callback)
 

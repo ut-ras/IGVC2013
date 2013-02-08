@@ -38,9 +38,9 @@ def haversine_distance(lon1, lat1, lon2, lat2):
 # given starting longitude, latitude in radians, 
 #   and deltax, deltay in meters
 # returns (res_lon, res_lat)
-def coord_from_coord_and_haversine(lon, lat, deltax, deltay) {
-    
-}
+def coord_from_coord_and_haversine(lon, lat, deltax, deltay) :
+    "placeholder"    
+
 
 
 def offset_calc(data):
@@ -84,3 +84,5 @@ if __name__ == '__main__':
         set_initial_lat_lon(float(rospy.get_param('/lon')), float(rospy.get_param('/lat')))
         listener()
     except rospy.ROSInterruptException: pass
+
+

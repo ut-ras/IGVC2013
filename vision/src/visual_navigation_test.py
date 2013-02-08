@@ -18,10 +18,10 @@ class video_processor:
         #cv.NamedWindow("Hue Video")
         #cv.NamedWindow("Saturation Video")
         #cv.NamedWindow("Value Video")
-        #cv.NamedWindow("Red-Orange Video")
-        #cv.NamedWindow("White Video")
+        cv.NamedWindow("Red-Orange Video")
+        cv.NamedWindow("White Video")
         cv.NamedWindow("Red-Orange and White Video")
-        cv.WaitKey(0)
+        #cv.WaitKey(0)
 
     def callback(self, image_in):
         try:
@@ -55,17 +55,15 @@ class video_processor:
         cv.Threshold(split_image[0],thresh_2, 10, 255,cv.CV_THRESH_BINARY_INV) # < Yellow-Orange
         cv.Add(thresh_1,thresh_2,red_orange)
         cv.And(red_orange,thresh_0,red_orange)
-        #cv.ShowImage("Red-Orange Video",red_orange)
+        cv.ShowImage("Red-Orange Video",red_orange)
 
         cv.CvtColor(blur_image, proc_image, cv.CV_BGR2HLS)
         cv.Split(proc_image, split_image[0], split_image[1],split_image[2], None )
         cv.Threshold(split_image[1],thresh_0, 204,255,cv.CV_THRESH_BINARY) # > 80% Lum
-        #cv.ShowImage("White Video",thresh_0)
-
-        cv.WaitKey(1)
-
+        cv.ShowImage("White Video",thresh_0)
         cv.Or(red_orange, thresh_0, thresh_0)
         cv.ShowImage("Red-Orange and White Video",thresh_0)
+        cv.WaitKey(30)
 
         ang_z = 0
         x = 0
@@ -75,7 +73,6 @@ class video_processor:
             for j in row.tostring():
                 ang_z = ang_z + (x * y *ord(j))
                 y = y + 1
-            print y
             x = x + 1
         ang_z = (ang_z * pi * 2 * 2 * 4 / 255 / input_image.rows / input_image.rows / input_image.cols / input_image.cols)
         p = Twist()
@@ -85,7 +82,7 @@ class video_processor:
 
 def fuck_it():
     rospy.init_node('visual_navigation_test')
-    rospy.loginfo( "Frank is now the vision team. i.e. turning our camera into a really bad line sensor" )
+    rospy.loginfo( "Visual Navigation Test Running" )
     vp = video_processor()
     rospy.spin()
 

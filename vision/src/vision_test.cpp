@@ -31,15 +31,21 @@ public:
 
         //Going to follow Frank's pycode as close as possible
         namedWindow("Input Video");
-        namedWindow("Red-Orange Video");
-        namedWindow("White Video");
+        //namedWindow("Red-Orange Video");
+        //namedWindow("White Video");
         namedWindow("Red-Orange and White Video");
+        //namedWindow("Equalized BGR");
     }
 
     ~ImageConverter()
     {
         destroyWindow("RAW");
         destroyWindow("OUTPUT");
+        destroyWindow("Input Video");
+        destroyWindow("Red-Orange Video");
+        destroyWindow("White Video");
+        destroyWindow("Red-Orange and White Video");
+        destroyWindow("Equalized BGR");
     }
 
     void imageCb(const sensor_msgs::ImageConstPtr& msg)
@@ -73,8 +79,12 @@ public:
         gpu::GaussianBlur(gSrc, gblur_image, Size(7,7), 1.5, 1.5);
         gpu::cvtColor(gblur_image, gproc_image, CV_BGR2HSV);
 
-        //Split into HSV channels
+        //Split into HSV channels and RGB channels too
         //Using Frank names and prepending g to all gpu mats
+
+        vector<gpu::GpuMat> gsplit_bgr;
+        gpu::split(gblur_image, gsplit_bgr);        
+
         vector<gpu::GpuMat> gsplit_image;
         gpu::split(gproc_image, gsplit_image);
         gpu::GpuMat gthresh_0, gthresh_1, gthresh_2;
@@ -90,8 +100,8 @@ public:
 
         gOut = gred_orange;
 
-        imshow("Red-Orange Video", (Mat)gred_orange);
-        waitKey(30);
+        //imshow("Red-Orange Video", (Mat)gred_orange);
+        //waitKey(30);
 
         ///Begin white detection
 
@@ -101,8 +111,8 @@ public:
         //Greater than 80% luminence
         gpu::threshold(gsplit_image[1], gthresh_0, 204, 255, THRESH_BINARY);
 
-        imshow("White Video", (Mat)gthresh_0);
-        waitKey(30);
+        //imshow("White Video", (Mat)gthresh_0);
+        //waitKey(30);
 
         ///End white detection
 
@@ -110,6 +120,19 @@ public:
         imshow("Red-Orange and White Video", (Mat) gthresh_0);
         waitKey(30);
 
+        //Experimental Histogram Equalization in three color channels
+        //Update: Do not equalize HSV unless you like bad acid trips; it equalized the hue band. 
+        gpu::GpuMat gEqB, gEqG, gEqR, gTotalBGR;
+        gpu::equalizeHist(gsplit_bgr[0], gEqB);
+        gpu::equalizeHist(gsplit_bgr[1], gEqG);
+        gpu::equalizeHist(gsplit_bgr[2], gEqR);
+        gpu::GpuMat gEqualizedBGR[3] = {gEqB, gEqG, gEqR};
+
+        gpu::merge(gEqualizedBGR, 3, gTotalBGR);
+
+        //imshow("Equalized BGR", (Mat) gTotalBGR);
+        //waitKey(30);
+        
         
 
         //Publish image results
@@ -122,6 +145,8 @@ public:
         image_pub_.publish(out_msg.toImageMsg());
     }
 
+
+   //TODO: debug strange behavior with other functions in class. Learn to pass GpuMats correctly.
     void DetectLanes(gpu::GpuMat &srcGray, Mat &dstBGR, int resolution, int minVotes)
     {
         vector<Vec2f> lines_;

@@ -116,12 +116,14 @@ void box_draw_mouse_callback( int event, int x, int y, int flags, void* param ){
                 draw_box( image, box );
 
                 //get the BGR values of the pixels in selection,B=[0], G=[1], R[2]
-                //TODO: fix reprentation of pixel value.
                 cv::Mat img = cv::imread("TESTIMAGE.jpg");
+
+                std::cout << "Top left coordinate: " << box.x << ", " << box.y << std::endl;
+                std::cout << "Bottom right coordinate: " << box.x+box.width << ", " << box.y+box.height << std::endl;
 
                 for(int i=box.x; i<box.x+box.width; i++)
                     for(int j=box.y; j<box.y+box.height; j++)
-                      std::cout << img.at<cv::Vec3b>(i,j)[0] << " " << img.at<cv::Vec3b>(i,j)[1] << " " << img.at<cv::Vec3b>(i,j)[2] << std::endl;
+                      std::cout << "Value at " << i << ", " << j << " " << img.at<cv::Vec3b>(i,j)[0] << " " << img.at<cv::Vec3b>(i,j)[1] << " " << img.at<cv::Vec3b>(i,j)[2] << std::endl;
                 break;
                                                                                                                                                         }
 }
@@ -133,7 +135,7 @@ void test_box_draw()
     box = cvRect(-1,-1,0,0);
 
     IplImage* image = cvLoadImage( "TESTIMAGE.jpg" );
-    IplImage* temp = cvCloneImage( image );
+//    IplImage* temp = cvCloneImage( image );
 
     cvNamedWindow( name );
 
@@ -143,19 +145,19 @@ void test_box_draw()
     // Main loop
     while( 1 )
     {
-        cvCopy( image, temp );
+        //cvCopy( image, temp );
 
         if( drawing_box ) 
-            draw_box( temp, box );
+            draw_box( image, box );
 
-        cvShowImage( name, temp );
+        cvShowImage( name, image );
 
         if( cvWaitKey( 15 )==27 ) 
             break;
     }
 
     cvReleaseImage( &image );
-    cvReleaseImage( &temp );
+//    cvReleaseImage( &temp );
     cvDestroyWindow( name );
 }
 

@@ -28,7 +28,7 @@ def output():
     if right_state:
       p = Twist()
       p.linear.x = xOut*MAX_X_SPEED/128 if right_state else 0
-      p.angular.z = wOut*MAX_W_SPEED/128 if right_state else 0
+      p.angular.z = -wOut*MAX_W_SPEED/128 if right_state else 0
     pub.publish(p)
     time.sleep(.1) #run at 10hz
 
@@ -38,7 +38,8 @@ def joystick():
   global wOut
   global right_state
   rospy.init_node('psoc_raw_polar_drive')
-  rospy.loginfo("PSoC raw tank drive polar style using the logitech duel action is running")
+  rospy.loginfo("PSoC raw tank drive polar style using the logitech duel action's right joystick")
+  print "Hold down 6 to enable"
   msgs = []
   t = Thread(target=output, args=[])
   t.start()
