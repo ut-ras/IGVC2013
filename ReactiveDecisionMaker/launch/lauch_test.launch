@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="ReactiveDecisionMaker" name="DataServiceProvider" type="DataServiceProvider.py"/>
+  <node pkg="ReactiveDecisionMaker" name="MainLoop" type="MainLoop.py"/>
+</launch>

@@ -1,0 +1,16 @@
+<package>
+  <description brief="ReactiveDecisionMaker">
+
+     ReactiveDecisionMaker
+
+  </description>
+  <author>Granny</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ReactiveDecisionMaker</url>
+  <depend package="hokuyo_node"/>
+  <depend package="filters"/>
+
+</package>
+
+
