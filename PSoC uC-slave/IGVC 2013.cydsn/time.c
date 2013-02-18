@@ -29,6 +29,7 @@ uint8 WatchdogRunning; //boolean representing if WD is running
 uint8 WatchdogOverflow;
 uint8 VelCtrlRunning;
 uint16 VelCtrlRate;
+uint16 TelemetryFeedbackRate;
 uint8 HokuyoTiltRunning;
 uint16 HokuyoTiltRate;
 
@@ -65,9 +66,9 @@ void MainTimeISRHandler(void){
 	}
 	if(time >= SEC_PER_DAY) time = 0;
 	if(WatchdogRunning && !WatchdogOverflow && (WatchdogTime <= ms)) WatchdogTimeout();
+	if((ms % TelemetryFeedbackRate) == 0) sendCommMessage();
 	if((ms % VelCtrlRate) == 0){
 		UpdateVelocity();
-		sendCommMessage();
 		if(VelCtrlRunning) RunVelocityControl();
 	}
 	if((ms % HokuyoTiltRate) == 0){
@@ -81,7 +82,8 @@ void ResetWatchdog(void){
 	Err_LED_1_Write(0);
 }
 
-#define DEFAULT_VEL_CTRL_RATE 20
+#define DEFAULT_VEL_CTRL_RATE 1
+#define DEFAULT_TELEMENTRY_RATE 20
 void InitializeWatchdog(void){
 	WatchdogRunning = 1;
 	VelCtrlRunning = 0;
@@ -93,6 +95,7 @@ void InitializeTime(void){
 	ms = 0 ;
 	time = 0 ;
 	HokuyoTiltRunning = 1;
+	TelemetryFeedbackRate = DEFAULT_TELEMENTRY_RATE;
 	HokuyoTiltRate = DEFAULT_HOKUYO_TILT_RATE;
 	MainTimer_Start() ;
 	MainTimeISR_StartEx(MainTimeISRHandler) ;

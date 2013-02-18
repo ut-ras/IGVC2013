@@ -81,11 +81,11 @@ int GetV(void){ return linearX; }
 int GetW(void){	return angularZ; }
 void SetAccelDivisor(int in) { accelDivisor = in; }
 
-#define rP 1
+#define rP 256
 #define rPdiv 20
-#define rD 1
+#define rD 256
 #define rDdiv 10
-#define rI 1
+#define rI 256
 #define rIdiv 1000
 int8 RightMotorPID(int reset){
 	static int16 prevError = 0;
@@ -106,26 +106,26 @@ int8 RightMotorPID(int reset){
 	output += rI * accError.sum / rIdiv;
 	output = output / accelDivisor;
 	output += prevOutput;
-	if (output > 127) output = 127;
-	else if (output < -128) output = -128;
+	if (output > 32767) output = 32767;
+	else if (output < -32768) output = -32768;
 	prevOutput = output;
 	prevError = curError;
 	push(curError, accError);
-	return output;
+	return output >> 8;
 }
 
-#define lP 1
+#define lP 256
 #define lPdiv 20
-#define lD 1
+#define lD 256
 #define lDdiv 10
-#define lI 1
+#define lI 256
 #define lIdiv 1000
 int8 LeftMotorPID(int reset){
 	static int16 prevError = 0;
 	static int8 prevOutput = 0;
 	static RunningAccumulator accError;
 	int16 curError;
-	int16 output = 0;
+	int32 output = 0;
 	if(reset){
 		initRunningAcc(accError);
 		prevError = 0;
@@ -139,12 +139,12 @@ int8 LeftMotorPID(int reset){
 	output += lI * accError.sum / lIdiv;
 	output = output / accelDivisor;
 	output += prevOutput;
-	if (output > 127) output = 127;
-	else if (output < -128) output = -128;
+	if (output > 32767) output = 32767;
+	else if (output < -32768) output = -32768;
 	prevOutput = output;
 	prevError = curError;
 	push(curError, accError);
-	return output;
+	return output >> 8;
 }
 
 //called to update the motor outputs
