@@ -2,7 +2,7 @@
 --	Conversion of IGVC 2013.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Jan 17 16:00:59 2013
+--	Sat Feb 02 18:37:28 2013
 --
 
 USE cypress.cypress.all;
@@ -845,7 +845,6 @@ SIGNAL \Servo_1:PWMUDB:final_kill_reg\\R\ : bit;
 SIGNAL \Servo_1:PWMUDB:final_kill_reg\\S\ : bit;
 SIGNAL \Servo_1:Net_55\ : bit;
 SIGNAL \Servo_1:PWMUDB:prevCompare1\ : bit;
-SIGNAL \Servo_1:PWMUDB:prevCompare2\ : bit;
 SIGNAL \Servo_1:PWMUDB:cs_addr_2\ : bit;
 SIGNAL \Servo_1:PWMUDB:cs_addr_1\ : bit;
 SIGNAL \Servo_1:PWMUDB:cs_addr_0\ : bit;
@@ -1189,7 +1188,7 @@ TERMINAL tmpSIOVREF__Right_Motor_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__Right_Motor_net_0 : bit;
 SIGNAL Net_282 : bit;
 TERMINAL \ADC_1:Net_248\ : bit;
-TERMINAL \ADC_1:Net_216\ : bit;
+TERMINAL \ADC_1:Net_233\ : bit;
 SIGNAL Net_468 : bit;
 SIGNAL \ADC_1:vp_ctl_0\ : bit;
 SIGNAL \ADC_1:vp_ctl_2\ : bit;
@@ -1218,22 +1217,13 @@ SIGNAL \ADC_1:Net_207_3\ : bit;
 SIGNAL \ADC_1:Net_207_2\ : bit;
 SIGNAL \ADC_1:Net_207_1\ : bit;
 SIGNAL \ADC_1:Net_207_0\ : bit;
-TERMINAL \ADC_1:Net_210\ : bit;
-SIGNAL \ADC_1:tmpOE__Bypass_net_0\ : bit;
-SIGNAL \ADC_1:tmpFB_0__Bypass_net_0\ : bit;
-SIGNAL \ADC_1:tmpIO_0__Bypass_net_0\ : bit;
-TERMINAL \ADC_1:tmpSIOVREF__Bypass_net_0\ : bit;
-SIGNAL \ADC_1:tmpINTERRUPT_0__Bypass_net_0\ : bit;
-TERMINAL \ADC_1:Net_149\ : bit;
 TERMINAL \ADC_1:Net_209\ : bit;
+TERMINAL \ADC_1:Net_149\ : bit;
 TERMINAL \ADC_1:Net_255\ : bit;
 SIGNAL Net_268 : bit;
-SIGNAL tmpOE__Servo_Out_net_1 : bit;
 SIGNAL tmpOE__Servo_Out_net_0 : bit;
-SIGNAL tmpFB_1__Servo_Out_net_1 : bit;
-SIGNAL tmpFB_1__Servo_Out_net_0 : bit;
-SIGNAL tmpIO_1__Servo_Out_net_1 : bit;
-SIGNAL tmpIO_1__Servo_Out_net_0 : bit;
+SIGNAL tmpFB_0__Servo_Out_net_0 : bit;
+SIGNAL tmpIO_0__Servo_Out_net_0 : bit;
 TERMINAL tmpSIOVREF__Servo_Out_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__Servo_Out_net_0 : bit;
 SIGNAL tmpOE__Err_LED_2_net_0 : bit;
@@ -2146,7 +2136,6 @@ SIGNAL \Servo_1:PWMUDB:cmp1_status_reg\\D\ : bit;
 SIGNAL \Servo_1:PWMUDB:cmp2_status_reg\\D\ : bit;
 SIGNAL \Servo_1:PWMUDB:final_kill_reg\\D\ : bit;
 SIGNAL \Servo_1:PWMUDB:prevCompare1\\D\ : bit;
-SIGNAL \Servo_1:PWMUDB:prevCompare2\\D\ : bit;
 SIGNAL \Left_Encoder:Net_1251\\D\ : bit;
 SIGNAL \Left_Encoder:Cnt16:CounterUDB:prevCapture\\D\ : bit;
 SIGNAL \Left_Encoder:Cnt16:CounterUDB:overflow_reg_i\\D\ : bit;
@@ -2260,8 +2249,8 @@ tmpOE__ADC_In_net_0 <=  ('1') ;
 \I2C:bI2C_UDB:m_state_0\\D\ <= ((not \I2C:bI2C_UDB:control_reg_5\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and not \I2C:bI2C_UDB:lost_arb2_reg\ and \I2C:bI2C_UDB:control_reg_4\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:control_reg_7\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
-	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:tx_reg_empty\ and not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
+	OR (not \I2C:bI2C_UDB:m_state_3\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_state_0\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:clkgen_tc1_reg\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and not \I2C:bI2C_UDB:lost_arb_reg\ and \I2C:bI2C_UDB:control_reg_6\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:m_state_0\)
 	OR (not \I2C:bI2C_UDB:m_state_4\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:tx_reg_empty\ and \I2C:bI2C_UDB:m_state_2\ and \I2C:bI2C_UDB:m_state_1\ and \I2C:bI2C_UDB:m_state_0\)
 	OR (not \I2C:bI2C_UDB:m_state_2\ and not \I2C:bI2C_UDB:m_state_1\ and not \I2C:bI2C_UDB:m_reset\ and \I2C:bI2C_UDB:m_state_4\ and \I2C:bI2C_UDB:m_state_3\ and \I2C:bI2C_UDB:m_state_0\)
@@ -2403,15 +2392,11 @@ tmpOE__ADC_In_net_0 <=  ('1') ;
 \Servo_1:PWMUDB:dith_count_0\\D\ <= ((not \Servo_1:PWMUDB:dith_count_0\ and \Servo_1:PWMUDB:tc_i\)
 	OR (not \Servo_1:PWMUDB:tc_i\ and \Servo_1:PWMUDB:dith_count_0\));
 
-\Servo_1:PWMUDB:pwm1_i\ <= ((\Servo_1:PWMUDB:ctrl_enable\ and \Servo_1:PWMUDB:compare1\));
-
-\Servo_1:PWMUDB:pwm2_i\ <= ((\Servo_1:PWMUDB:ctrl_enable\ and \Servo_1:PWMUDB:compare2\));
+\Servo_1:PWMUDB:pwm_i\ <= ((\Servo_1:PWMUDB:ctrl_enable\ and \Servo_1:PWMUDB:compare1\));
 
 \Servo_1:PWMUDB:status_5\ <= (not \Servo_1:PWMUDB:final_kill_reg\);
 
 \Servo_1:PWMUDB:cmp1_status\ <= ((not \Servo_1:PWMUDB:prevCompare1\ and \Servo_1:PWMUDB:compare1\));
-
-\Servo_1:PWMUDB:cmp2_status\ <= ((not \Servo_1:PWMUDB:prevCompare2\ and \Servo_1:PWMUDB:compare2\));
 
 \Left_Encoder:Cnt16:CounterUDB:reload\ <= (\Left_Encoder:Cnt16:CounterUDB:underflow\
 	OR \Left_Encoder:Cnt16:CounterUDB:overflow\
@@ -3393,7 +3378,7 @@ PWM_Clock:cy_clock_v1_0
 		z0=>\Servo_1:PWMUDB:tc_i\,
 		ff0=>open,
 		ce1=>\Servo_1:PWMUDB:cmp2_eq\,
-		cl1=>\Servo_1:PWMUDB:compare2\,
+		cl1=>\Servo_1:PWMUDB:cmp2_less\,
 		z1=>open,
 		ff1=>open,
 		ov_msb=>open,
@@ -3537,7 +3522,7 @@ MainTimeISR:cy_isr_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
 	PORT MAP(signal1=>\ADC_1:Net_248\,
-		signal2=>\ADC_1:Net_216\);
+		signal2=>\ADC_1:Net_233\);
 \ADC_1:IRQ\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>Net_468);
@@ -3546,7 +3531,7 @@ MainTimeISR:cy_isr_v1_0
 		id=>"e9961e25-9851-43e9-af2d-81a3a64ea584/696a0979-21fc-4185-bf38-6c79febcde7a",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"499996000.032",
+		period=>"822368421.052632",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>\ADC_1:Net_221\,
@@ -3573,21 +3558,41 @@ MainTimeISR:cy_isr_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
 	PORT MAP(signal1=>\ADC_1:Net_215\,
-		signal2=>\ADC_1:Net_210\);
-\ADC_1:Bypass\:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"e9961e25-9851-43e9-af2d-81a3a64ea584/16a808f6-2e13-45b9-bce0-b001c8655113",
-		drive_mode=>"000",
-		ibuf_enabled=>"0",
+		signal2=>\ADC_1:Net_209\);
+\ADC_1:cy_analog_virtualmux_1_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ADC_1:Net_126\,
+		signal2=>\ADC_1:Net_149\);
+\ADC_1:noconnect\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ADC_1:Net_209\);
+\ADC_1:vRef_1024\:cy_vref_v1_0
+	GENERIC MAP(guid=>"89B398AD-36A8-4627-9212-707F2986319E",
+		name=>"1.024V",
+		autoenable=>'1',
+		ignoresleep=>'0')
+	PORT MAP(vout=>\ADC_1:Net_233\);
+\ADC_1:cy_analog_virtualmux_4_connect\:cy_connect_v1_0
+	GENERIC MAP(sig_width=>1,
+		is_net_join=>'0')
+	PORT MAP(signal1=>\ADC_1:Net_257\,
+		signal2=>\ADC_1:Net_149\);
+\ADC_1:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
+	PORT MAP(noconnect=>\ADC_1:Net_255\);
+Servo_Out:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"d849f74a-ef05-44a9-8f77-507333532843",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
 		init_dr_st=>"0",
 		input_sync=>"1",
 		intr_mode=>"00",
 		io_voltage=>"",
 		layout_mode=>"CONTIGUOUS",
-		output_conn=>"0",
+		output_conn=>"1",
 		output_sync=>"0",
 		oe_conn=>"0",
 		pin_aliases=>"",
-		pin_mode=>"A",
+		pin_mode=>"O",
 		por_state=>4,
 		sio_group_cnt=>0,
 		sio_hifreq=>"",
@@ -3606,71 +3611,12 @@ MainTimeISR:cy_isr_v1_0
 		port_alias_group=>"",
 		use_annotation=>"0")
 	PORT MAP(oe=>(tmpOE__ADC_In_net_0),
-		y=>(zero),
-		fb=>(\ADC_1:tmpFB_0__Bypass_net_0\),
-		analog=>\ADC_1:Net_210\,
-		io=>(\ADC_1:tmpIO_0__Bypass_net_0\),
-		siovref=>(\ADC_1:tmpSIOVREF__Bypass_net_0\),
-		annotation=>(open),
-		interrupt=>\ADC_1:tmpINTERRUPT_0__Bypass_net_0\);
-\ADC_1:cy_analog_virtualmux_1_connect\:cy_connect_v1_0
-	GENERIC MAP(sig_width=>1,
-		is_net_join=>'0')
-	PORT MAP(signal1=>\ADC_1:Net_126\,
-		signal2=>\ADC_1:Net_149\);
-\ADC_1:noconnect\:cy_analog_noconnect_v1_0
-	PORT MAP(noconnect=>\ADC_1:Net_209\);
-\ADC_1:vRef_Vdda\:cy_vref_v1_0
-	GENERIC MAP(guid=>"4720866E-BC14-478d-B8A0-3E44F38CADAC",
-		name=>"Vdda/2",
-		autoenable=>'1',
-		ignoresleep=>'0')
-	PORT MAP(vout=>\ADC_1:Net_216\);
-\ADC_1:cy_analog_virtualmux_4_connect\:cy_connect_v1_0
-	GENERIC MAP(sig_width=>1,
-		is_net_join=>'0')
-	PORT MAP(signal1=>\ADC_1:Net_257\,
-		signal2=>\ADC_1:Net_149\);
-\ADC_1:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
-	PORT MAP(noconnect=>\ADC_1:Net_255\);
-Servo_Out:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"d849f74a-ef05-44a9-8f77-507333532843",
-		drive_mode=>"110110",
-		ibuf_enabled=>"11",
-		init_dr_st=>"00",
-		input_sync=>"11",
-		intr_mode=>"0000",
-		io_voltage=>", ",
-		layout_mode=>"CONTIGUOUS",
-		output_conn=>"11",
-		output_sync=>"00",
-		oe_conn=>"00",
-		pin_aliases=>",",
-		pin_mode=>"OO",
-		por_state=>4,
-		sio_group_cnt=>0,
-		sio_hifreq=>"",
-		sio_hyst=>"00",
-		sio_ibuf=>"00000000",
-		sio_info=>"0000",
-		sio_obuf=>"00000000",
-		sio_refsel=>"00000000",
-		sio_vtrip=>"00000000",
-		slew_rate=>"00",
-		spanning=>'0',
-		sw_only=>'0',
-		vtrip=>"1010",
-		width=>2,
-		port_alias_required=>'0',
-		port_alias_group=>"",
-		use_annotation=>"00")
-	PORT MAP(oe=>(tmpOE__ADC_In_net_0, tmpOE__ADC_In_net_0),
-		y=>(Net_449, Net_438),
-		fb=>(tmpFB_1__Servo_Out_net_1, tmpFB_1__Servo_Out_net_0),
-		analog=>(open, open),
-		io=>(tmpIO_1__Servo_Out_net_1, tmpIO_1__Servo_Out_net_0),
+		y=>Net_446,
+		fb=>(tmpFB_0__Servo_Out_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Servo_Out_net_0),
 		siovref=>(tmpSIOVREF__Servo_Out_net_0),
-		annotation=>(open, open),
+		annotation=>(open),
 		interrupt=>tmpINTERRUPT_0__Servo_Out_net_0);
 Err_LED_2:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"fcc0cf96-15dd-4ea0-9e3d-afa5895e2817",
@@ -5115,17 +5061,17 @@ Soft_Kill:cy_psoc3_pins_v1_10
 		clk=>\Servo_1:PWMUDB:ClockOutFromEnBlock\,
 		q=>\Servo_1:PWMUDB:dith_count_0\);
 \Servo_1:PWMUDB:pwm_reg_i\:cy_dff
+	PORT MAP(d=>\Servo_1:PWMUDB:pwm_i\,
+		clk=>\Servo_1:PWMUDB:ClockOutFromEnBlock\,
+		q=>Net_446);
+\Servo_1:PWMUDB:pwm1_reg_i\:cy_dff
 	PORT MAP(d=>zero,
 		clk=>\Servo_1:PWMUDB:ClockOutFromEnBlock\,
-		q=>\Servo_1:PWMUDB:pwm_reg_i\);
-\Servo_1:PWMUDB:pwm1_reg_i\:cy_dff
-	PORT MAP(d=>\Servo_1:PWMUDB:pwm1_i\,
-		clk=>\Servo_1:PWMUDB:ClockOutFromEnBlock\,
-		q=>Net_438);
+		q=>\Servo_1:PWMUDB:pwm1_reg_i\);
 \Servo_1:PWMUDB:pwm2_reg_i\:cy_dff
-	PORT MAP(d=>\Servo_1:PWMUDB:pwm2_i\,
+	PORT MAP(d=>zero,
 		clk=>\Servo_1:PWMUDB:ClockOutFromEnBlock\,
-		q=>Net_449);
+		q=>\Servo_1:PWMUDB:pwm2_reg_i\);
 \Servo_1:PWMUDB:cmp1_status_reg\:cy_dsrff
 	PORT MAP(d=>\Servo_1:PWMUDB:cmp1_status\,
 		s=>zero,
@@ -5133,7 +5079,7 @@ Soft_Kill:cy_psoc3_pins_v1_10
 		clk=>\Servo_1:PWMUDB:ClockOutFromEnBlock\,
 		q=>\Servo_1:PWMUDB:status_0\);
 \Servo_1:PWMUDB:cmp2_status_reg\:cy_dsrff
-	PORT MAP(d=>\Servo_1:PWMUDB:cmp2_status\,
+	PORT MAP(d=>zero,
 		s=>zero,
 		r=>zero,
 		clk=>\Servo_1:PWMUDB:ClockOutFromEnBlock\,
@@ -5148,10 +5094,6 @@ Soft_Kill:cy_psoc3_pins_v1_10
 	PORT MAP(d=>\Servo_1:PWMUDB:compare1\,
 		clk=>\Servo_1:PWMUDB:ClockOutFromEnBlock\,
 		q=>\Servo_1:PWMUDB:prevCompare1\);
-\Servo_1:PWMUDB:prevCompare2\:cy_dff
-	PORT MAP(d=>\Servo_1:PWMUDB:compare2\,
-		clk=>\Servo_1:PWMUDB:ClockOutFromEnBlock\,
-		q=>\Servo_1:PWMUDB:prevCompare2\);
 \Left_Encoder:Net_1251\:cy_dff
 	PORT MAP(d=>\Left_Encoder:Net_1251\\D\,
 		clk=>\Left_Encoder:bQuadDec:sync_clock\,

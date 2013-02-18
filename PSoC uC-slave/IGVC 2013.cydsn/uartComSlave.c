@@ -20,7 +20,7 @@
 #include <encoder.h>
 #include <sphero.h>
 #include <servo.h>
-
+#include <adc.h>
 
 #define CODE_START					1
 #define CODE_LENGTH					4
@@ -35,6 +35,12 @@
 #define RSTE 'R'^'S'^'T'^'E' //Reset Encoder Count
 #define STMR 'S'^'T'^'M'^'R' //Set Message Rate
 #define SETT 'S'^'E'^'T'^'T' //Set Time
+#define EHST 'E'^'H'^'S'^'T' //Enable Hokuyo Servo Tilting
+#define DHST 'D'^'H'^'S'^'T' //Disable Hokuyo Servo Tilting
+#define SHTR 'S'^'H'^'T'^'R' //Set Hokuyo Tilting Rate
+#define SACD 'S'^'A'^'C'^'D' //Set Acceleration Divisor
+//#define FLPC 'F'^'L'^'P'^'C' //Force Left PWM Comparitor (UNSAFE - Calibration Purposes Only)
+//#define FRPC 'F'^'R'^'P'^'C' //Force Right PWM Comparitor (UNSAFE - Calibration Purposes Only)
 #define SATURATE(in,min,max) (min > in) ? min : ( (max < in) ? max : in)
 
 extern uint8 VelCtrlRunning;
@@ -78,6 +84,8 @@ void handleCommMessage(void){
 					   	VelCtrlRunning = 0;
 					   	ResetWatchdog(); //we got a valid message, so they are still talking to us
 					   	break;
+			case SAHS:  SetHokuyoServo(SATURATE(atoi(&buffer[DATA_START]),-128,127));
+						break;
 			case SVLX: 	UpdateLinearX(atoi(&buffer[DATA_START]));
 					   	ResetWatchdog();
 					   	VelCtrlRunning = 1;
@@ -99,6 +107,21 @@ void handleCommMessage(void){
 						break;
 			case SETT:	SetTime(atoi(&buffer[DATA_START]));
 						break;
+			case EHST:	EnableHokuyoTilting();
+						break;
+			case DHST:	DisableHokuyoTilting();
+						break;
+			case SHTR: 	if(1000 % atoi(&buffer[DATA_START]) == 0)
+						    SetHokuyoTiltRate(atoi(&buffer[DATA_START]));
+						else
+							UARTprintf("INVALID RATE (1000%rate must = 0): %s", buffer);
+						break;
+			case SACD:  SetAccelDivisor(atoi(&buffer[DATA_START]));
+						break;
+			/*case FLPC:	Servo_0_WriteCompare1(atoi(&buffer[DATA_START]));
+						break;
+			case FRPC:	Servo_0_WriteCompare2(atoi(&buffer[DATA_START]));
+						break;*/
 			default:   	UARTprintf("UNRECOGNIZED MESSAGE: %s\r\n", buffer);
 					   	break;
 		}
@@ -111,11 +134,12 @@ void handleCommMessage(void){
 
 void sendCommMessage(void){
 	if(EnableSensorFeedbackMessages){
-		UARTprintf("(: %d %d %d %d %d%.3d %d :)\r\n",
+		UARTprintf("(: %d %d %d %d %d %d%.3d %d :)\r\n",
 		GetLeftEncoder(), 
 		GetRightEncoder(), 
 		GetV(), 
 		GetW(), 
+		GetADC(),
 		GetTime(),GetMS(),
 		GetMessageRate() );
 		//UARTprintf("^.- ROLL %d PTCH %d YAWW %d -.^\r\n", roll, pitch, yaw );
@@ -139,6 +163,7 @@ void InitializeUCSlave(void){
 	InitializeServo();
 	InitializeWatchdog();
 	InitializeVelocityControl();
+	InitializeADC();
 	//InitializeIMU();
 	EnableSensorFeedbackMessages = 0;
 }

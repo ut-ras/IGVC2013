@@ -10,11 +10,7 @@
  * ========================================
 */
 
-void SetLeftMotor(int8 out);
-void SetRightMotor(int8 out);
-uint16 GetHokuyoServo(void);
-void SetHokuyoServo(int8 out);
-void HokuyoTiltStep(void);
-void InitializeServo(void);
+int8 GetADC(void);
+void InitializeADC(void);
 
 //[] END OF FILE

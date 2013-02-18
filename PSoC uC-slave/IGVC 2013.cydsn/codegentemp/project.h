@@ -59,8 +59,6 @@
 #include <Soft_Kill_aliases.h>
 #include <Soft_Kill.h>
 #include <ADC_1_theACLK.h>
-#include <ADC_1_Bypass_aliases.h>
-#include <ADC_1_Bypass.h>
 #include <USBUART_Dm_aliases.h>
 #include <USBUART_Dp_aliases.h>
 #include <USBUART_Dp.h>

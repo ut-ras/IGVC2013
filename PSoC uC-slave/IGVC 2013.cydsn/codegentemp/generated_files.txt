@@ -110,9 +110,6 @@
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\Soft_Kill.h" value="NONE;Soft_Kill" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_theACLK.c" value="ARM_C_FILE;ADC_1_theACLK" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_theACLK.h" value="NONE;ADC_1_theACLK" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_Bypass_aliases.h" value="NONE;ADC_1_Bypass" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_Bypass.c" value="ARM_C_FILE;ADC_1_Bypass" />
-  <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\ADC_1_Bypass.h" value="NONE;ADC_1_Bypass" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\USBUART_Dm_aliases.h" value="NONE;USBUART_Dm" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\USBUART_Dp_aliases.h" value="NONE;USBUART_Dp" />
   <file name="C:\Users\Frank\Documents\PSoC Creator\IGVC2013\PSoC uC-slave\IGVC 2013.cydsn\codegentemp\USBUART_Dp.c" value="ARM_C_FILE;USBUART_Dp" />

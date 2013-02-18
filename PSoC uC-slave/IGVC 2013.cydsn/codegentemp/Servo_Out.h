@@ -54,7 +54,7 @@ uint8   Servo_Out_ClearInterrupt(void) ;
 /* Digital Port Constants */
 #define Servo_Out_MASK               Servo_Out__MASK
 #define Servo_Out_SHIFT              Servo_Out__SHIFT
-#define Servo_Out_WIDTH              2u
+#define Servo_Out_WIDTH              1u
 
 /***************************************
 *             Registers        

@@ -1,6 +1,6 @@
 // ======================================================================
 // IGVC 2013.v generated from TopDesign.cysch
-// 01/17/2013 at 15:51
+// 02/02/2013 at 18:37
 // ======================================================================
 
 /* -- WARNING: The following section of defines are deprecated and will be removed in a future release -- */
@@ -302,7 +302,7 @@ module PWM_v2_10_1 (pwm2, tc, clock, reset, pwm1, interrupt, capture, kill, enab
 
 endmodule
 
-// PWM_v2_10(CaptureMode=0, CompareStatusEdgeSense=true, CompareType1=1, CompareType1Software=0, CompareType2=1, CompareType2Software=0, CompareValue1=4125, CompareValue2=4125, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, DeadBand=0, DeadBand2_4=0, DeadBandUsed=0, DeadTime=1, DitherOffset=0, EnableMode=0, FixedFunction=false, FixedFunctionUsed=0, InterruptOnCMP1=false, InterruptOnCMP2=false, InterruptOnKill=false, InterruptOnTC=false, IntOnCMP1=0, IntOnCMP2=0, IntOnKill=0, IntOnTC=0, KillMode=0, KillModeMinTime=0, MinimumKillTime=1, OneCompare=false, Period=41250, PWMMode=1, PWMModeCenterAligned=0, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, TriggerMode=0, UseControl=true, UseInterrupt=true, UseStatus=true, VerilogSectionReplacementString=sP16, CY_COMPONENT_NAME=PWM_v2_10, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Servo_1, CY_INSTANCE_SHORT_NAME=Servo_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Servo_1, )
+// PWM_v2_10(CaptureMode=0, CompareStatusEdgeSense=true, CompareType1=1, CompareType1Software=0, CompareType2=1, CompareType2Software=0, CompareValue1=4125, CompareValue2=4125, CtlModeReplacementString=AsyncCtl, CyGetRegReplacementString=CY_GET_REG16, CySetRegReplacementString=CY_SET_REG16, DeadBand=0, DeadBand2_4=0, DeadBandUsed=0, DeadTime=1, DitherOffset=0, EnableMode=0, FixedFunction=false, FixedFunctionUsed=0, InterruptOnCMP1=false, InterruptOnCMP2=false, InterruptOnKill=false, InterruptOnTC=false, IntOnCMP1=0, IntOnCMP2=0, IntOnKill=0, IntOnTC=0, KillMode=0, KillModeMinTime=0, MinimumKillTime=1, OneCompare=true, Period=41250, PWMMode=0, PWMModeCenterAligned=0, RegDefReplacementString=reg16, RegSizeReplacementString=uint16, Resolution=16, RstStatusReplacementString=sSTSReg_nrstSts, RunMode=0, TriggerMode=0, UseControl=true, UseInterrupt=true, UseStatus=true, VerilogSectionReplacementString=sP16, CY_COMPONENT_NAME=PWM_v2_10, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=Servo_1, CY_INSTANCE_SHORT_NAME=Servo_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=Servo_1, )
 module PWM_v2_10_2 (pwm2, tc, clock, reset, pwm1, interrupt, capture, kill, enable, trigger, cmp_sel, pwm, ph1, ph2);
     output  pwm2;
     output  tc;
@@ -321,8 +321,8 @@ module PWM_v2_10_2 (pwm2, tc, clock, reset, pwm1, interrupt, capture, kill, enab
 
     parameter Resolution = 16;
 
-    wire  Net_113;
     wire  Net_114;
+    wire  Net_113;
     wire  Net_107;
     wire  Net_96;
     wire  Net_55;
@@ -354,7 +354,7 @@ module PWM_v2_10_2 (pwm2, tc, clock, reset, pwm1, interrupt, capture, kill, enab
     defparam PWMUDB.DitherOffset = 0;
     defparam PWMUDB.EnableMode = 0;
     defparam PWMUDB.KillMode = 0;
-    defparam PWMUDB.PWMMode = 1;
+    defparam PWMUDB.PWMMode = 0;
     defparam PWMUDB.Resolution = 16;
     defparam PWMUDB.RunMode = 0;
     defparam PWMUDB.TriggerMode = 0;
@@ -408,7 +408,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_50\cy_vref_v1_50.v"
 `endif
 
-// ADC_SAR_v1_71(ADC_Clock=1, ADC_Clock_Frequency=2000016, ADC_Input_Range=1, ADC_Power=0, ADC_Reference=1, ADC_Resolution=8, ADC_Resolution_HW=12, ADC_SampleMode=0, Ref_Voltage=2.5, Ref_Voltage_mV=2500, Sample_Precharge=7, Sample_Rate=105264, Sample_Rate_def=631579, CY_COMPONENT_NAME=ADC_SAR_v1_71, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=ADC_1, CY_INSTANCE_SHORT_NAME=ADC_1, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=71, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=ADC_1, )
+// ADC_SAR_v1_71(ADC_Clock=1, ADC_Clock_Frequency=1216000, ADC_Input_Range=0, ADC_Power=0, ADC_Reference=0, ADC_Resolution=8, ADC_Resolution_HW=12, ADC_SampleMode=0, Ref_Voltage=1.024, Ref_Voltage_mV=1024, Sample_Precharge=7, Sample_Rate=64000, Sample_Rate_def=631579, CY_COMPONENT_NAME=ADC_SAR_v1_71, CY_CONTROL_FILE=<:default:>, CY_FITTER_NAME=ADC_1, CY_INSTANCE_SHORT_NAME=ADC_1, CY_MAJOR_VERSION=1, CY_MINOR_VERSION=71, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=cydsfit No Version Information Found, INSTANCE_NAME=ADC_1, )
 module ADC_SAR_v1_71_3 (vplus, vminus, soc, eoc, aclk, vdac_ref);
     inout   vplus;
     electrical   vplus;
@@ -442,7 +442,7 @@ module ADC_SAR_v1_71_3 (vplus, vminus, soc, eoc, aclk, vdac_ref);
     wire  Net_188;
 
 	// cy_analog_virtualmux_3 (cy_analog_virtualmux_v1_0)
-	cy_connect_v1_0 cy_analog_virtualmux_3_connect(Net_248, Net_216);
+	cy_connect_v1_0 cy_analog_virtualmux_3_connect(Net_248, Net_233);
 	defparam cy_analog_virtualmux_3_connect.sig_width = 1;
 
 
@@ -481,7 +481,7 @@ module ADC_SAR_v1_71_3 (vplus, vminus, soc, eoc, aclk, vdac_ref);
 		#(.id("e9961e25-9851-43e9-af2d-81a3a64ea584/696a0979-21fc-4185-bf38-6c79febcde7a"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("499996000.032"),
+		  .period("822368421.052632"),
 		  .is_direct(0),
 		  .is_digital(0))
 		theACLK
@@ -508,52 +508,8 @@ module ADC_SAR_v1_71_3 (vplus, vminus, soc, eoc, aclk, vdac_ref);
         .vref(Net_248));
 
 	// cy_analog_virtualmux_2 (cy_analog_virtualmux_v1_0)
-	cy_connect_v1_0 cy_analog_virtualmux_2_connect(Net_215, Net_210);
+	cy_connect_v1_0 cy_analog_virtualmux_2_connect(Net_215, Net_209);
 	defparam cy_analog_virtualmux_2_connect.sig_width = 1;
-
-	wire [0:0] tmpOE__Bypass_net;
-	wire [0:0] tmpFB_0__Bypass_net;
-	wire [0:0] tmpIO_0__Bypass_net;
-	wire [0:0] tmpINTERRUPT_0__Bypass_net;
-	electrical [0:0] tmpSIOVREF__Bypass_net;
-
-	cy_psoc3_pins_v1_10
-		#(.id("e9961e25-9851-43e9-af2d-81a3a64ea584/16a808f6-2e13-45b9-bce0-b001c8655113"),
-		  .drive_mode(3'b000),
-		  .ibuf_enabled(1'b0),
-		  .init_dr_st(1'b0),
-		  .input_sync(1'b1),
-		  .intr_mode(2'b00),
-		  .io_voltage(""),
-		  .layout_mode("CONTIGUOUS"),
-		  .oe_conn(1'b0),
-		  .output_conn(1'b0),
-		  .output_sync(1'b0),
-		  .pin_aliases(""),
-		  .pin_mode("A"),
-		  .por_state(4),
-		  .use_annotation(1'b0),
-		  .sio_group_cnt(0),
-		  .sio_hyst(1'b0),
-		  .sio_ibuf(""),
-		  .sio_info(2'b00),
-		  .sio_obuf(""),
-		  .sio_refsel(""),
-		  .sio_vtrip(""),
-		  .slew_rate(1'b0),
-		  .spanning(0),
-		  .vtrip(2'b10),
-		  .width(1))
-		Bypass
-		 (.oe(tmpOE__Bypass_net),
-		  .y({1'b0}),
-		  .fb({tmpFB_0__Bypass_net[0:0]}),
-		  .analog({Net_210}),
-		  .io({tmpIO_0__Bypass_net[0:0]}),
-		  .siovref(tmpSIOVREF__Bypass_net),
-		  .interrupt({tmpINTERRUPT_0__Bypass_net[0:0]}));
-
-	assign tmpOE__Bypass_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 	// cy_analog_virtualmux_1 (cy_analog_virtualmux_v1_0)
 	cy_connect_v1_0 cy_analog_virtualmux_1_connect(Net_126, Net_149);
@@ -565,11 +521,11 @@ module ADC_SAR_v1_71_3 (vplus, vminus, soc, eoc, aclk, vdac_ref);
 
 	cy_vref_v1_0
 		#(.autoenable(1),
-		  .guid("4720866E-BC14-478d-B8A0-3E44F38CADAC"),
+		  .guid("89B398AD-36A8-4627-9212-707F2986319E"),
 		  .ignoresleep(0),
-		  .name("Vdda/2"))
-		vRef_Vdda
-		 (.vout(Net_216));
+		  .name("1.024V"))
+		vRef_1024
+		 (.vout(Net_233));
 
 
 	// cy_analog_virtualmux_4 (cy_analog_virtualmux_v1_0)
@@ -1781,48 +1737,48 @@ module top ;
     ZeroTerminal ZeroTerminal_1 (
         .z(Net_268));
 
-	wire [1:0] tmpOE__Servo_Out_net;
-	wire [1:0] tmpFB_1__Servo_Out_net;
-	wire [1:0] tmpIO_1__Servo_Out_net;
+	wire [0:0] tmpOE__Servo_Out_net;
+	wire [0:0] tmpFB_0__Servo_Out_net;
+	wire [0:0] tmpIO_0__Servo_Out_net;
 	wire [0:0] tmpINTERRUPT_0__Servo_Out_net;
 	electrical [0:0] tmpSIOVREF__Servo_Out_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("d849f74a-ef05-44a9-8f77-507333532843"),
-		  .drive_mode(6'b110_110),
-		  .ibuf_enabled(2'b1_1),
-		  .init_dr_st(2'b0_0),
-		  .input_sync(2'b1_1),
-		  .intr_mode(4'b00_00),
-		  .io_voltage(", "),
+		  .drive_mode(3'b110),
+		  .ibuf_enabled(1'b1),
+		  .init_dr_st(1'b0),
+		  .input_sync(1'b1),
+		  .intr_mode(2'b00),
+		  .io_voltage(""),
 		  .layout_mode("CONTIGUOUS"),
-		  .oe_conn(2'b0_0),
-		  .output_conn(2'b1_1),
-		  .output_sync(2'b0_0),
-		  .pin_aliases(","),
-		  .pin_mode("OO"),
+		  .oe_conn(1'b0),
+		  .output_conn(1'b1),
+		  .output_sync(1'b0),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
 		  .por_state(4),
-		  .use_annotation(2'b0_0),
+		  .use_annotation(1'b0),
 		  .sio_group_cnt(0),
-		  .sio_hyst(2'b0_0),
+		  .sio_hyst(1'b0),
 		  .sio_ibuf(""),
-		  .sio_info(4'b00_00),
+		  .sio_info(2'b00),
 		  .sio_obuf(""),
 		  .sio_refsel(""),
 		  .sio_vtrip(""),
-		  .slew_rate(2'b0_0),
+		  .slew_rate(1'b0),
 		  .spanning(0),
-		  .vtrip(4'b10_10),
-		  .width(2))
+		  .vtrip(2'b10),
+		  .width(1))
 		Servo_Out
 		 (.oe(tmpOE__Servo_Out_net),
-		  .y({Net_449, Net_438}),
-		  .fb({tmpFB_1__Servo_Out_net[1:0]}),
-		  .io({tmpIO_1__Servo_Out_net[1:0]}),
+		  .y({Net_446}),
+		  .fb({tmpFB_0__Servo_Out_net[0:0]}),
+		  .io({tmpIO_0__Servo_Out_net[0:0]}),
 		  .siovref(tmpSIOVREF__Servo_Out_net),
 		  .interrupt({tmpINTERRUPT_0__Servo_Out_net[0:0]}));
 
-	assign tmpOE__Servo_Out_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{2'b11} : {2'b11};
+	assign tmpOE__Servo_Out_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 	wire [0:0] tmpOE__Err_LED_2_net;
 	wire [0:0] tmpFB_0__Err_LED_2_net;

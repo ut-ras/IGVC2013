@@ -24,7 +24,6 @@
 *              Constants        
 ***************************************/
 #define Servo_Out_0		Servo_Out__0__PC
-#define Servo_Out_1		Servo_Out__1__PC
 
 #endif /* End Pins Servo_Out_ALIASES_H */
 

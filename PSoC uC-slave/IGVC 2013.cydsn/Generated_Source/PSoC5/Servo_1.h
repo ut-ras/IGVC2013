@@ -31,7 +31,7 @@
 #define Servo_1_DeadBandMode 0u
 #define Servo_1_KillModeMinTime 0u
 #define Servo_1_KillMode 0u
-#define Servo_1_PWMMode 1u
+#define Servo_1_PWMMode 0u
 #define Servo_1_PWMModeIsCenterAligned 0u
 #define Servo_1_DeadBandUsed 0u
 #define Servo_1_DeadBand2_4 0u
@@ -45,7 +45,7 @@
 #else
     #define Servo_1_UseControl 0u
 #endif
-#define Servo_1_UseOneCompareMode 0u
+#define Servo_1_UseOneCompareMode 1u
 #define Servo_1_MinimumKillTime 1u
 #define Servo_1_EnableMode 0u
 
