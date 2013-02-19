@@ -49,6 +49,27 @@ def oceanserver_imu_callback(data):
                               [data.yaw] ] )
     kf.Step(OCEAN_SERVER_IMU_INDEX, measurement_vector)
 
+"""
+This corrects for the case where the state's yaw is
+bounded from -inf to inf, whereas the update from
+a sensor is bounded in some other way
+"""
+pi2 = math.pi*2
+def compass_callback(roll, pitch, yaw, index):
+    curYaw = kf.GetCurrentState().z
+
+    bounded_curYaw = (curYaw%pi2 + pi2)%pi2
+    bounded_yaw = (yaw%pi2 + pi2)%pi2
+
+    yaw_r = bounded_yaw - bounded_curYaw
+    yaw_f = curYaw + yaw_r
+
+    measurement_vector = numpy.matrix(
+                            [[roll],
+                             [pitch],
+                             [yaw_f]] )
+    kf.Step(index, measurement_vector)
+
 def encoders_imu_callback(data):
     if USING_TEST1_BAGGED_DATA:
         measurement_vector = numpy.matrix(
@@ -280,7 +301,7 @@ def create_EKF():
     # os_imu_measurement_covariance = numpy.eye(3)*1e-6
     um6_imu_measurement_covariance = numpy.eye(3)*1e-6
     encoders_measurement_covariance = numpy.eye(2)*1e-6
-    gps_measurement_covariance = numpy.eye(2)*0.03
+    gps_measurement_covariance = numpy.eye(2)*5.0
 
     return ExtendedKalmanFilter(transition_funct,\
                                 transition_jacobian_funct,\
@@ -325,9 +346,9 @@ if __name__ == '__main__':
     kf = create_EKF()
 
     rospy.Subscriber("um6_imu_data", UM6IMU, um6_imu_callback)
-    # rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
+    #rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
     rospy.Subscriber("vel_data", Twist, encoders_imu_callback)
-    # rospy.Subscriber("gps_data", Point, gps_imu_callback)
+    rospy.Subscriber("gps_data", Point, gps_imu_callback)
 
     pub = rospy.Publisher('ekf_data', EKFData)
 
