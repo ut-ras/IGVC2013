@@ -58,7 +58,6 @@ void Servo_Out_Write(uint8 value)
 void Servo_Out_SetDriveMode(uint8 mode) 
 {
 	CyPins_SetPinDriveMode(Servo_Out_0, mode);
-	CyPins_SetPinDriveMode(Servo_Out_1, mode);
 }
 
 

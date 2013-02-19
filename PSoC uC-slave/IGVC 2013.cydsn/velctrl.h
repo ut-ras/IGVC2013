@@ -15,7 +15,9 @@ void UpdateAngularZ(int az);
 void UpdateLinearX(int lx);
 int GetV(void);
 int GetW(void);
+void SetAccelDivisor(int in);
 void RunVelocityControl(void);
+void ClearVelocityControl(void);
 void UpdateVelocity(void);
 void InitializeVelocityControl(void);
 

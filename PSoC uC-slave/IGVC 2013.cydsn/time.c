@@ -29,6 +29,9 @@ uint8 WatchdogRunning; //boolean representing if WD is running
 uint8 WatchdogOverflow;
 uint8 VelCtrlRunning;
 uint16 VelCtrlRate;
+uint16 TelemetryFeedbackRate;
+uint8 HokuyoTiltRunning;
+uint16 HokuyoTiltRate;
 
 void SetClock(int hr, int min, int sec, int milli){
 	time = (((hr * SEC_PER_HOUR) + (min * SEC_PER_MIN) + sec ) % SEC_PER_DAY );
@@ -42,11 +45,15 @@ int GetHour(void){ return time/SEC_PER_HOUR; }
 int GetMin(void){ return time%SEC_PER_HOUR/SEC_PER_MIN; }
 int GetSec(void){ return time%SEC_PER_MIN; }
 void SetMessageRate(uint16 in) { VelCtrlRate = in; }
+void SetHokuyoTiltRate(uint16 in) { HokuyoTiltRate = in; }
+void EnableHokuyoTilting(void){ HokuyoTiltRunning = 1; }
+void DisableHokuyoTilting(void){ HokuyoTiltRunning = 0; }
 uint16 GetMessageRate(void) { return VelCtrlRate; }
 void WatchdogTimeout(void){
 	SetLeftMotor(0); //stop the bot
 	SetRightMotor(0);
 	VelCtrlRunning = 0;
+	ClearVelocityControl();
 	Err_LED_1_Write(1);
 }
 
@@ -59,10 +66,13 @@ void MainTimeISRHandler(void){
 	}
 	if(time >= SEC_PER_DAY) time = 0;
 	if(WatchdogRunning && !WatchdogOverflow && (WatchdogTime <= ms)) WatchdogTimeout();
+	if((ms % TelemetryFeedbackRate) == 0) sendCommMessage();
 	if((ms % VelCtrlRate) == 0){
 		UpdateVelocity();
-		sendCommMessage();
 		if(VelCtrlRunning) RunVelocityControl();
+	}
+	if((ms % HokuyoTiltRate) == 0){
+		if(HokuyoTiltRunning) HokuyoTiltStep();
 	}
 }
 
@@ -72,16 +82,21 @@ void ResetWatchdog(void){
 	Err_LED_1_Write(0);
 }
 
+#define DEFAULT_VEL_CTRL_RATE 1
+#define DEFAULT_TELEMENTRY_RATE 20
 void InitializeWatchdog(void){
 	WatchdogRunning = 1;
 	VelCtrlRunning = 0;
-	VelCtrlRate = 20;
+	VelCtrlRate = DEFAULT_VEL_CTRL_RATE;
 	ResetWatchdog();
 }
-
+#define DEFAULT_HOKUYO_TILT_RATE 20
 void InitializeTime(void){
 	ms = 0 ;
 	time = 0 ;
+	HokuyoTiltRunning = 1;
+	TelemetryFeedbackRate = DEFAULT_TELEMENTRY_RATE;
+	HokuyoTiltRate = DEFAULT_HOKUYO_TILT_RATE;
 	MainTimer_Start() ;
 	MainTimeISR_StartEx(MainTimeISRHandler) ;
 }
