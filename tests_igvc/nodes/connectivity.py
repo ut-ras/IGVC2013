@@ -13,7 +13,7 @@ from GPS_Ublox.msg import GPS_UBlox_raw
 sensors = { \
         'hokuyo':           {'topic': "scan",              'kind': LaserScan}, \
         'camera':           {'topic': "usb_cam/image_raw", 'kind': Image}, \
-        #'ocean server imu': {'topic': "os_imu_data",       'kind': RawData}, \
+        'ocean server imu': {'topic': "os_imu_data",       'kind': RawData}, \
         'um6 imu':          {'topic': "um6_imu_data",      'kind': UM6IMU}, \
         'gps':              {'topic': "gps_data_raw",      'kind': GPS_UBlox_raw}, \
         'psoc':             {'topic': "psoc_data",         'kind': PSoC} }

@@ -1,15 +1,5 @@
 import math
-
-pi2 = math.pi*2
-def angle_dif(a1, a2):
-    a1 = (a1%pi2 + pi2)%pi2;
-    a2 = (a2%pi2 + pi2)%pi2;
-    d = abs(a1 - a2);
-    
-    if d > math.pi:
-        d = pi2 - d;
-    
-    return d
+from ReactiveUtils import ReactiveUtils
 
 class DirectionChooser:
     def __init__(self, MAXIMUM_CLEARANCE=1):
@@ -27,8 +17,8 @@ class DirectionChooser:
 
             # normalize each value
             norm_clearance = directions[i].clearance/self.MAXIMUM_CLEARANCE
-            norm_cur_heading = 1 - abs(angle_dif(directions[i].direction, heading))/math.pi
-            norm_goal_heading = 1 - abs(angle_dif(directions[i].direction, goalHeading))/math.pi
+            norm_cur_heading = 1 - abs(ReactiveUtils.angle_dif(directions[i].direction, heading))/math.pi
+            norm_goal_heading = 1 - abs(ReactiveUtils.angle_dif(directions[i].direction, goalHeading))/math.pi
             
             # multiple times weights & sum
             score = norm_clearance*self.CLEARANCE_WEIGHT\

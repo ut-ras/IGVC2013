@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 import math, pygame
+from ReactiveUtils import ReactiveUtils
+
 
 SIZEX = 400
 SIZEY = 400
@@ -15,13 +17,9 @@ class LidarValue:
         self.dist = dist
         self.angle = angle
 
-pi2 = math.pi*2.0
-def boundAngleTo2PI(angle):
-    return (angle%pi2 + pi2)%pi2;
-
 class LidarProcessor:
     def __init__(self, SHOW_GRAPHICS=True):
-        self.lidarValues = None
+        self.lidarValues = []
         self.SHOW_GRAPHICS = SHOW_GRAPHICS
 
         if self.SHOW_GRAPHICS:
@@ -48,7 +46,7 @@ class LidarProcessor:
         pygame.display.flip() 
 
     def shortenAndCorrectScan(self, data, maxval):
-        if self.lidarValues == None:
+        if len(self.lidarValues) != range(len(data.ranges)):
             self.lidarValues = [LidarValue(0,0) for i in range(len(data.ranges))]
 
         for i in range(len(data.ranges)):
@@ -67,7 +65,7 @@ class LidarProcessor:
 
     def rotateLidarValues(self, heading):
         for i in range(len(self.lidarValues)):
-            self.lidarValues[i].angle = boundAngleTo2PI(self.lidarValues[i].angle + heading)
+            self.lidarValues[i].angle = ReactiveUtils.boundAngleTo2PI(self.lidarValues[i].angle + heading)
 
         if self.SHOW_GRAPHICS:
             self.drawLidar();

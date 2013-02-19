@@ -8,17 +8,13 @@ from filters.msg import EKFData
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Point
 
-x_pos = 0
-y_pos = 0
-heading = None
+pos = Point(0, 0, 0)
+heading = 0
 scan = None
 goal = Point(10, 0, 0)
 
-def handle_getXPos(req):
-    return GetXPosResponse(y_pos)
-
-def handle_getYPos(req):
-    return GetYPosResponse(x_pos)
+def handle_getPos(req):
+    return GetPosResponse(pos)
 
 def handle_getHeading(req):
     return GetHeadingResponse(heading)
@@ -31,16 +27,15 @@ def handle_getGoal(req):
 
 def init_server():
     rospy.init_node('DataServiceProvider')
-    serv1 = rospy.Service('getXPos', GetXPos, handle_getXPos)
-    serv2 = rospy.Service('getYPos', GetYPos, handle_getYPos)
+    serv1 = rospy.Service('getPos', GetPos, handle_getPos)
     serv3 = rospy.Service('getHeading', GetHeading, handle_getHeading)
     serv4 = rospy.Service('getScan', GetScan, handle_getScan)
     serv5 = rospy.Service('getGoal', GetGoal, handle_getGoal)
 
 def ekf_callback(data):
-    global x_pos, y_pos, heading
-    x_pos = data.x_pos
-    y_pos = data.y_pos
+    global pos, pos, heading
+    pos.x = data.x_pos
+    pos.y = data.y_pos
     heading = data.yaw
 
 def scan_callback(data):
