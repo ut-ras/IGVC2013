@@ -20,9 +20,6 @@ CLOSE_ENOUGH_TO_GOAL = .1
 MIN_CLEARANCE = 1
 
 
-def euclidDist2D(p0, p1):
-    return math.sqrt((p1.x - p0.x)**2 + (p1.y - p0.y)**2)
-
 if __name__ == "__main__":
     rospy.init_node('MainReactiveLoop')
     pub = rospy.Publisher('vel_cmd', Twist)
@@ -60,8 +57,16 @@ if __name__ == "__main__":
             print 'got invalid data from GetScan service... is anything being published to /scan?'
             continue
 
-        if euclidDist2D(goalPos, curPos) < CLOSE_ENOUGH_TO_GOAL:
+        distToGoal = ReactiveUtils.euclidDistPoint(goalPos, curPos)
+
+        print distToGoal
+
+        if distToGoal < CLOSE_ENOUGH_TO_GOAL:
             print 'close enough to goal'
+
+            msg = Twist()
+            pub.publish(msg)
+
             r.sleep()
             continue
 
@@ -72,10 +77,10 @@ if __name__ == "__main__":
 
         goalHeading = goalCalculator.calcGoalHeading(curPos, goalPos)
         goalDirection = goalCalculator.calcViableDir(
-            goalHeading, 
-            shortenedLidar, 
+            goalHeading,
+            shortenedLidar,
             heading,
-            curPos, 
+            curPos,
             goalPos
         )
 
@@ -85,13 +90,13 @@ if __name__ == "__main__":
         if len(directions) > 0:
             bestDirection = directionChooser.pickBestDirection(directions, goalHeading, heading)
             msg = directionFollower.getAction(bestDirection.direction, heading)
-            # pub.publish(msg)
+            pub.publish(msg)
 
         graphicsDisplayer.drawEverything(
-            shortenedLidar, 
-            heading, 
+            shortenedLidar,
+            heading,
             directions,
-            directionFinder.endangles, 
+            directionFinder.endangles,
             directionFinder.enddists,
             bestDirection
         )

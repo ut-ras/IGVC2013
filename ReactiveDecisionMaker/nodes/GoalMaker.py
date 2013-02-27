@@ -3,15 +3,10 @@ import roslib; roslib.load_manifest('ReactiveDecisionMaker')
 
 import rospy
 
-from ReactiveDecisionMaker.srv import *
 from filters.msg import EKFData
-from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Point
 
-pos = Point(0, 0, 0)
-heading = 0
-scan = None
-goal = Point(0, 0, 0)
+goals = [Point(0, 0, 0), Point(8, 0, 0), Point(0, 0, 0)]
 
 def handle_getPos(req):
     return GetPosResponse(pos)

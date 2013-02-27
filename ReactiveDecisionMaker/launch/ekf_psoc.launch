@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="PSoC_Listener" name="PSoC_Listener" type="PSoC_Listener.py"/>
+  <node pkg="filters" name="extended_kalman_filter" type="extended_kalman_filter.py"/>
+  <node pkg="ReactiveDecisionMaker" name="DataServiceProvider" type="DataServiceProvider.py"/>
+</launch>
