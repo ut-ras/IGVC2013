@@ -12,6 +12,9 @@
 #include "opencv2/opencv.hpp"
 #include "opencv2/gpu/gpu.hpp"
 
+//Perspective details: Bottom of image at 4.5ft forward from Hokuyo
+//Length of square on checkerboard grid: 3.9in
+
 namespace enc = sensor_msgs::image_encodings;
 using namespace std;
 using namespace cv;
@@ -29,23 +32,18 @@ public:
         image_pub_ = it_.advertise("vision/out", 1);
         image_sub_ = it_.subscribe("usb_cam/image_raw", 1, &ImageConverter::imageCb, this);
 
-        //Going to follow Frank's pycode as close as possible
         namedWindow("Input Video");
-        //namedWindow("Red-Orange Video");
-        //namedWindow("White Video");
         namedWindow("Red-Orange and White Video");
-        //namedWindow("Equalized BGR");
+        namedWindow("Canny");
+        namedWindow("HoughLines");
     }
 
     ~ImageConverter()
     {
-        destroyWindow("RAW");
-        destroyWindow("OUTPUT");
         destroyWindow("Input Video");
-        destroyWindow("Red-Orange Video");
-        destroyWindow("White Video");
         destroyWindow("Red-Orange and White Video");
-        destroyWindow("Equalized BGR");
+        destroyWindow("Canny");
+        destroyWindow("HoughLines");
     }
 
     void imageCb(const sensor_msgs::ImageConstPtr& msg)
@@ -67,6 +65,7 @@ public:
         }
 
         gpu::GpuMat gSrc = (gpu::GpuMat) src;
+        gpu::GpuMat gGray;
         gpu::GpuMat gblur_image;
         gpu::GpuMat gproc_image;
 
@@ -74,10 +73,18 @@ public:
         imshow("Input Video",(Mat)gSrc);
         waitKey(30);
 
+        //Set ROI to chop out the top of the image because that's the sky and ain't nobody got time for that
+        //Maybe cut out the top quarter of the image? TODO: Test that value
+        cv::Rect ROI = cv::Rect(0, (gSrc.rows)/4, gSrc.cols, gSrc.rows*3/4);
+        gSrc = gpu::GpuMat(gSrc, ROI);
+
         //PROCESSING TIME!! YAAAY~~~
         //Following Frank's steps so far (this is his ported code)
-        gpu::GaussianBlur(gSrc, gblur_image, Size(7,7), 1.5, 1.5);
+        //EDITED: Cut blur from 7 to 5 to prevent grass from bleeding over thin white lines
+        gpu::GaussianBlur(gSrc, gblur_image, Size(5,5), 1.5, 1.5);
         gpu::cvtColor(gblur_image, gproc_image, CV_BGR2HSV);
+
+        gpu::cvtColor(gSrc, gGray, CV_BGR2GRAY);
 
         //Split into HSV channels and RGB channels too
         //Using Frank names and prepending g to all gpu mats
@@ -109,8 +116,45 @@ public:
         gpu::split(gproc_image, gsplit_image);
 
         //Greater than 80% luminence
-        gpu::threshold(gsplit_image[1], gthresh_0, 204, 255, THRESH_BINARY);
+        //EDITED: Will cut down to 70%
+        //TODO: Modular luminance based on max brightness in image
+        //gpu::GpuMat normalized;
+        //gpu::normalize(gsplit_image[1], normalized, 1, 0);
+        double min = 0;
+        double max = 0;
+        gpu::minMax(gsplit_image[1], &min, &max);
+        
+        gpu::GpuMat closed; //It is imperitive we have a middle man while doing this due to morphological filters being how they are.
+        //gpu::threshold(gsplit_image[1], gthresh_0, 204, 255, THRESH_BINARY);
+        gpu::threshold(gsplit_image[1], gthresh_0, (int)(max * 0.75), 255, THRESH_BINARY);
 
+        //Fiddle around with the shape of the kernels to make it detect vertical white lines well
+        //gpu::erode(gthresh_0, closed, Mat::ones(3, 3, CV_8U));
+        //gpu::dilate(closed, gthresh_0, Mat::ones(3, 3, CV_8U));
+
+
+                
+        //CANNY DETECTION
+        
+        gpu::GaussianBlur(gGray, gGray, Size(9,9), 1.5, 1.5);
+
+        gpu::GpuMat cannyEdges;
+        gpu::Canny( gGray, cannyEdges, 50, 50*3, 3 );
+    
+        imshow("Canny", (Mat) cannyEdges);
+        waitKey(30);
+
+
+
+
+        Mat HLines = src;
+        //TEST LINES FUNCTION: NO IDEA WTF IS GOING ON HELP MEEE
+        DetectLanes(cannyEdges, HLines, 1, 90);
+
+        imshow("HoughLines",HLines);
+        waitKey(30);
+
+        
         //imshow("White Video", (Mat)gthresh_0);
         //waitKey(30);
 
@@ -139,7 +183,7 @@ public:
         Mat outMat = (Mat)gthresh_0;
         cv_bridge::CvImage out_msg;
         out_msg.header   = msg->header;
-        out_msg.encoding = sensor_msgs::image_encodings::TYPE_32FC1;
+        out_msg.encoding = enc::MONO8;
         out_msg.image    = outMat;
 
         image_pub_.publish(out_msg.toImageMsg());
@@ -149,29 +193,28 @@ public:
    //TODO: debug strange behavior with other functions in class. Learn to pass GpuMats correctly.
     void DetectLanes(gpu::GpuMat &srcGray, Mat &dstBGR, int resolution, int minVotes)
     {
-        vector<Vec2f> lines_;
+        vector<Vec2f> lines;
         gpu::GpuMat vecLines;
-        // gpu::HoughLines(srcGray, vecLines, resolution, CV_PI/180, minVotes);
+        gpu::HoughLines(srcGray, vecLines, resolution, CV_PI/360, minVotes);
 
-        // gpu::HoughLinesDownload(vecLines, lines_);
+        gpu::HoughLinesDownload(vecLines, lines);
         
-        for ( size_t i = 0; i < lines_.size(); i++)
+        for ( int i = 0; i < lines.size(); i++)
         {
-            float rho = lines_[i][0];
-            float theta = lines_[i][resolution];
+            float rho = lines.at(i)[0];
+            float theta = lines.at(i)[1];
 
             double a = cos(theta);
             double b = sin(theta);
             double x0 = a*rho;
             double y0 = b*rho;
 
-            Point pt1(cvRound(x0 + 1000*(-b)), cvRound(y0 + 1000*(a)));
-            Point pt2(cvRound(x0 - 1000*(-b)), cvRound(y0 - 1000*(a)));
+            Point pt1(cvRound(x0 + 1500*(-b)), cvRound(dstBGR.rows/4 + y0 + 1500*(a)));
+            Point pt2(cvRound(x0 - 1500*(-b)), cvRound(dstBGR.rows/4 + y0 - 1500*(a)));
 
             clipLine(srcGray.size(), pt1, pt2);
 
-            if (!dstBGR.empty())
-                line( dstBGR, pt1, pt2, cvScalar(0,0,255), resolution, 8);
+            line( dstBGR, pt1, pt2, cvScalar(0,0,255), resolution, 8);
         }
     }
 
