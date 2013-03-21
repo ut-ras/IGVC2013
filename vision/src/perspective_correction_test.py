@@ -8,15 +8,20 @@ from cv_bridge import CvBridge, CvBridgeError
 
 
 # for displaying the windows conveniently
-EXPECTED_WIDTH = 640 
+EXPECTED_WIDTH = 640
 WINDOW_HEIGHT = 30
 
 # using previous transform or calculate a new one
 CALC_TRANSFORM = False
 prev_transform = np.array(
-[[  4.95470474e+00,   3.27305024e+00,  -1.17512850e+03],
- [  3.22164689e-01,   9.62958447e+00,  -1.75615123e+03],
- [  3.91447988e-04,   1.06775878e-02,   1.00000000e+00]])
+[[ -3.38211005e+00,  -3.63700168e+00,   7.24379943e+02],
+ [ -4.58408261e-01,  -7.79335168e+00,   9.49241798e+02],
+ [ -2.06572848e-03,  -2.00950642e-02,   1.00000000e+00]])
+"""
+[[ -6.43007193e+00,  -6.34166353e+00,   2.36758602e+03],
+ [ -1.01611500e-01,  -1.57164156e+01,   3.49195573e+03],
+ [ -7.11727384e-05,  -1.98445252e-02,   1.00000000e+00]])
+"""
 
 CALC_PERIOD = 1 # in seconds
 
@@ -56,7 +61,7 @@ def calcTransform(img, corners, boardSize):
         np.sqrt(((tr - tl)**2).sum(0)),
         np.sqrt(((bl - tl)**2).sum(0)),
     ])
-   
+
     inQuad = np.array(outerPoints, np.float32)
 
     outQuad = np.array([
@@ -72,15 +77,14 @@ def calcTransform(img, corners, boardSize):
 # end borrowed code
 ###
 
-
 def dispImages(img):
     if CALC_TRANSFORM:
         (found, corners) = cv2.findChessboardCorners(
             img,
-            boardSize,	
+            boardSize,
             flags = cv2.CALIB_CB_ADAPTIVE_THRESH | cv2.CALIB_CB_FAST_CHECK | \
                     cv2.CALIB_CB_NORMALIZE_IMAGE
-        )   
+        )
 
         if not found:
             rospy.loginfo("ERROR: cannot find chess board in image")
@@ -91,13 +95,24 @@ def dispImages(img):
         transformed = cv2.warpPerspective(img, transform, (img.shape[1],img.shape[0]))
 
         cv2.drawChessboardCorners(img, boardSize, corners, found)
-    else:   
+    else:
         global prev_transform
         transformed = cv2.warpPerspective(img, prev_transform, (img.shape[1], img.shape[0]))
 
     cv2.imshow('Transformed', transformed)
     cv2.imshow('Plain', img)
+    cv2.imwrite('plain.png', img)
+    cv2.imwrite('transformed.png', transformed)
 
+scale = .5
+rot_mat = cv2.getRotationMatrix2D((0,0), 0, scale) 
+
+def scaleDown(img):
+    rows,cols = img.shape[:2]
+    scaled_img = cv2.warpAffine(img, rot_mat, (int(cols*scale), int(rows*scale)))
+    return scaled_img
+
+curImg = None
 prev_time = -1
 def callback(image_data):
     if CALC_TRANSFORM:
@@ -108,15 +123,14 @@ def callback(image_data):
         prev_time = cur_time
 
     try:
-        input_img = bridge.imgmsg_to_cv(image_data, "bgr8")
+        input_img = np.asarray(bridge.imgmsg_to_cv(image_data, "bgr8"))
     except CvBridgeError, e:
         print e
 
-    rospy.loginfo("processing image")
-
-    dispImages(np.asarray(input_img))
-
-    cv2.waitKey(30)
+    rospy.loginfo("received image")
+    
+    global curImg
+    curImg = scaleDown(input_img) 
 
 def init():
     rospy.init_node('perspective_correction_test')
@@ -132,14 +146,21 @@ def init():
 
     sub = rospy.Subscriber('usb_cam/image_raw', Image, callback )
 
-    rospy.spin()
+    r = rospy.Rate(10)
+    while not rospy.is_shutdown():
+        global curImg
+        if curImg != None:
+            rospy.loginfo("processing image")
+            dispImages(curImg)
+            cv2.waitKey(30)
 
+        r.sleep()
 
 if __name__ == "__main__":
     try:
         init()
     except rospy.ROSInterruptException: pass
-    
+
     cv2.destroyAllWindows() # not sure if this does anything
 
 

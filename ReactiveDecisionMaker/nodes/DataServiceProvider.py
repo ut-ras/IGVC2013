@@ -28,12 +28,12 @@ def handle_getGoal(req):
 def init_server():
     rospy.init_node('DataServiceProvider')
     serv1 = rospy.Service('getPos', GetPos, handle_getPos)
-    serv3 = rospy.Service('getHeading', GetHeading, handle_getHeading)
-    serv4 = rospy.Service('getScan', GetScan, handle_getScan)
-    serv5 = rospy.Service('getGoal', GetGoal, handle_getGoal)
+    serv2 = rospy.Service('getHeading', GetHeading, handle_getHeading)
+    serv3 = rospy.Service('getScan', GetScan, handle_getScan)
+    serv4 = rospy.Service('getGoal', GetGoal, handle_getGoal)
 
 def ekf_callback(data):
-    global pos, pos, heading
+    global pos, heading
     pos.x = data.x_pos
     pos.y = data.y_pos
     heading = data.yaw

@@ -136,6 +136,17 @@ class DirectionFinder:
             if clearance > self.MIN_CLEARANCE_ALLOWED:
                 self.viableDirections.append(Direction(direction, clearance))
 
+        for i in range(len(self.viableDirections)):
+            numExtraGaps = math.floor(self.viableDirections[i].clearance/self.MIN_CLEARANCE_ALLOWED)
+
+            if numExtraGaps > 1:
+                delta_dir = ReactiveUtils.angle_dif(self.endangles[i*2], self.endangles[i*2+1])
+
+                for j in range(numExtraGaps):
+                    direction = self.endangles[i*2] + (j+1)*delta_dir/(numExtraGaps+1)
+                    self.viableDirections.append(Direction(direction, 
+                        self.viableDirections[i].clearance*numExtraGaps/(numExtraGaps+1)))
+    
         return self.viableDirections
 
     def rotateDirections(self, viableDirections, heading):

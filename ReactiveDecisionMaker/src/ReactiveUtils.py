@@ -3,6 +3,11 @@ import math
 pi2 = math.pi*2
 
 class ReactiveUtils:
+    # these constants are in meters
+    MAX_VAL = 1 
+    CLOSE_ENOUGH_TO_GOAL = .1
+    MIN_CLEARANCE = 1
+
     @staticmethod
     def boundAngleTo2PI(angle):
         return (angle%pi2 + pi2)%pi2;

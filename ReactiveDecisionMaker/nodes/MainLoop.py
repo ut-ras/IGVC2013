@@ -15,11 +15,6 @@ from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Twist, Point
 
 
-MAX_VAL = 1 # in meters
-CLOSE_ENOUGH_TO_GOAL = .1
-MIN_CLEARANCE = 1
-
-
 if __name__ == "__main__":
     rospy.init_node('MainReactiveLoop')
     pub = rospy.Publisher('vel_cmd', Twist)
@@ -36,10 +31,18 @@ if __name__ == "__main__":
     rospy.wait_for_service('getGoal')
     getGoal = rospy.ServiceProxy('getGoal', GetGoal)
 
-    directionFinder = DirectionFinder(True, MIN_CLEARANCE_ALLOWED=MIN_CLEARANCE)
+    directionFinder = DirectionFinder(
+        True, 
+        MIN_CLEARANCE_ALLOWED=ReactiveUtils.MIN_CLEARANCE
+    )
+
     lidarProcessor = LidarProcessor(False)
-    goalCalculator = GoalCalculator(MIN_CLEARANCE_ALLOWED=MIN_CLEARANCE)
-    directionChooser = DirectionChooser(MAX_VAL*2)
+
+    goalCalculator = GoalCalculator(
+        MIN_CLEARANCE_ALLOWED=.1
+    )
+
+    directionChooser = DirectionChooser(ReactiveUtils.MAX_VAL*2)
     directionFollower = DirectionFollower()
     graphicsDisplayer = GraphicsDisplayer()
 
@@ -54,15 +57,16 @@ if __name__ == "__main__":
             print "Service call failed: %s"%e
 
         if len(scan.ranges) == 0:
-            print 'got invalid data from GetScan service... is anything being published to /scan?'
+            print 'got invalid data from GetScan service...',\
+                  'is anything being published to /scan?'
             continue
 
         distToGoal = ReactiveUtils.euclidDistPoint(goalPos, curPos)
 
         print distToGoal
 
-        if distToGoal < CLOSE_ENOUGH_TO_GOAL:
-            print 'close enough to goal'
+        if distToGoal < ReactiveUtils.CLOSE_ENOUGH_TO_GOAL:
+            print "stopping because we're close enough to the goal"
 
             msg = Twist()
             pub.publish(msg)
@@ -70,7 +74,10 @@ if __name__ == "__main__":
             r.sleep()
             continue
 
-        shortenedLidar = lidarProcessor.shortenAndCorrectScan(scan, MAX_VAL);
+        shortenedLidar = lidarProcessor.shortenAndCorrectScan(
+            scan, 
+            ReactiveUtils.MAX_VAL
+        )
 
         directions = directionFinder.getViableDirections(shortenedLidar)
         directionFinder.rotateDirections(directions, heading)
@@ -88,8 +95,17 @@ if __name__ == "__main__":
             directions.append(goalDirection)
 
         if len(directions) > 0:
-            bestDirection = directionChooser.pickBestDirection(directions, goalHeading, heading)
-            msg = directionFollower.getAction(bestDirection.direction, heading)
+            bestDirection = directionChooser.pickBestDirection(
+                directions, 
+                goalHeading, 
+                heading
+            )
+
+            msg = directionFollower.getAction(
+                bestDirection.direction, 
+                heading
+            )
+
             pub.publish(msg)
 
         graphicsDisplayer.drawEverything(
