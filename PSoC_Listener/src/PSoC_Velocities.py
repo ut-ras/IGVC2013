@@ -22,7 +22,7 @@ def cmdCallback(data):
     p.data = ">SVLX:"+str(int(data.linear.x * rate / .00004871 / 1000 / 2))
     #Each raw v-velocity tick = 48.71 um per (time interval between messages)
     pub_cmd.publish(p)
-    p.data = ">SVAZ:"+str(int(data.angular.z * rate / .00019482 / 1000/ 2))
+    p.data = ">SVAZ:"+str(int(-data.angular.z * rate / .00019482 / 1000/ 2))
     #Each raw w-velocity tick = 194.82 urad per (time interval between messages)
     pub_cmd.publish(p)
 
