@@ -11,11 +11,15 @@ MIN_CLEARANCE_ALLOWED = .61 # set to approximate width of robot
 MIN_VAL = 2e-2 # if ranges are below this, assume they are actually max values
 MAXIMUM_CLEARANCE = MAX_VAL*2.0 # used to normalize clearances
 
-MAX_V = .5
-
-CLEARANCE_WEIGHT = .6
+MAX_V = .2
+"""
+CLEARANCE_WEIGHT = .3
 CURRENT_HEADING_WEIGHT = .1
-GOAL_HEADING_WEIGHT = .3
+GOAL_HEADING_WEIGHT = .6
+"""
+CLEARANCE_WEIGHT = .39
+CURRENT_HEADING_WEIGHT = .01
+GOAL_HEADING_WEIGHT = .6
 
 # returns angle equivalent to argument, but in range [0, 2*pi]
 def boundAngleTo2PI(angle):

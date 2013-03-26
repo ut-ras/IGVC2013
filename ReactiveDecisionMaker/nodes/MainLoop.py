@@ -92,10 +92,11 @@ class DecisionMaker:
                 heading
             )
 
-            msg = getAction(
-                bestDirection.direction, 
-                heading
-            )
+            if bestDirection != None:
+                msg = getAction(
+                    bestDirection.direction, 
+                    heading
+                )
 
         self.graphicsDisplayer.drawEverything(
             shortenedLidar,

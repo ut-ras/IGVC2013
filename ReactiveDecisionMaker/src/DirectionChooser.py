@@ -2,9 +2,9 @@ import math
 from ReactiveUtils import *
     
 def pickBestDirection(directions, goalHeading, heading):
-    bestDirIndex = -1
+    bestIndex = -1
     bestScore = -1
-    
+
     # loop through directions, pick best one
     for i in range(len(directions)):
         # normalize each value
@@ -24,4 +24,7 @@ def pickBestDirection(directions, goalHeading, heading):
             bestScore = score
             bestIndex = i
 
-    return directions[bestIndex]
+    if bestIndex != -1:
+        return directions[bestIndex]
+    else:
+        return None

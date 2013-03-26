@@ -2,7 +2,7 @@
 import roslib; roslib.load_manifest('ReactiveDecisionMaker')
 import rospy
 
-from ReactiveUtils import ReactiveUtils
+from ReactiveUtils import *
 
 from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Point
@@ -18,9 +18,9 @@ def processPos(pos):
     if curGoalIndex < len(goals):
         pos = Point(pos.x, pos.y, 0)
 
-        distToGoal = ReactiveUtils.euclidDistPoint(pos, goals[curGoalIndex])
+        distToGoal = euclidDistPoint(pos, goals[curGoalIndex])
 
-        if distToGoal < ReactiveUtils.CLOSE_ENOUGH_TO_GOAL:
+        if distToGoal < CLOSE_ENOUGH_TO_GOAL:
             print "close enough to ", goals[curGoalIndex].x, ",", goals[curGoalIndex].y
             curGoalIndex += 1
             if curGoalIndex < len(goals):
