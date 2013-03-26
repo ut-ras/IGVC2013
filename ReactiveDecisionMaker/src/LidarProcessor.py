@@ -1,74 +1,68 @@
 #!/usr/bin/env python
 import math, pygame
-from ReactiveUtils import ReactiveUtils
+from ReactiveUtils import *
 
-
+# size of display window
 SIZEX = 400
 SIZEY = 400
 
-MAX_VAL_THREASHOLD = 1e-3 # precision around max
-MIN_VAL = 2e-2 # if ranges are below this, assume they are actually max values
-
-DISTANCE_GUI_SCALE = 100
-
+# for displaying lidar beams
+PIXELS_PER_METER = 100
 
 class LidarValue:
     def __init__(self, dist, angle):
         self.dist = dist
         self.angle = angle
 
-class LidarProcessor:
-    def __init__(self, SHOW_GRAPHICS=True):
-        self.lidarValues = []
-        self.SHOW_GRAPHICS = SHOW_GRAPHICS
+lidarValues = []
 
-        if self.SHOW_GRAPHICS:
-            pygame.init() 
-            self.window = pygame.display.set_mode((SIZEX, SIZEY)) 
+def shortenAndCorrectScan(data):
+    numRanges = len(data.ranges)
 
-            self.background = pygame.Surface(self.window.get_size())
-            self.background = self.background.convert()
-            self.background.fill((0, 0, 0))
+    global lidarValues
+    if len(lidarValues) != numRanges:
+        lidarValues = [LidarValue(0.0, 0.0) for i in range(numRanges)]
 
-            self.center = (SIZEX/2, SIZEY/2)
+    for i in range(numRanges):
+        dist = data.ranges[i]
+        angle = i*data.angle_increment - math.pi/2.0
+        
+        dist = min(dist, MAX_VAL)
 
-    def drawLidar(self):
-        self.window.blit(self.background, (0,0))
+        if dist < MIN_VAL:
+            dist = MAX_VAL
 
-        for i in range(len(self.lidarValues)):
-            dist = self.lidarValues[i].dist
-            angle = self.lidarValues[i].angle
-            x = self.center[0] + DISTANCE_GUI_SCALE*dist*math.cos(angle)
-            y = self.center[1] + DISTANCE_GUI_SCALE*dist*math.sin(angle)
+        lidarValues[i].dist = dist
+        lidarValues[i].angle = angle
 
-            pygame.draw.line(self.window, (255, 255, 255), self.center, (x, SIZEY-y))
+    return lidarValues
 
-        pygame.display.flip() 
+window = None
+background = None
+center = None
 
-    def shortenAndCorrectScan(self, data, maxval):
-        if len(self.lidarValues) != range(len(data.ranges)):
-            self.lidarValues = [LidarValue(0,0) for i in range(len(data.ranges))]
+def initLIDARGraphics():
+    pygame.init() 
+    window = pygame.display.set_mode((SIZEX, SIZEY)) 
 
-        for i in range(len(data.ranges)):
-            dist = data.ranges[i]
-            angle = i*data.angle_increment - math.pi/2.0
-            
-            dist = min(dist, maxval)
+    background = pygame.Surface(window.get_size())
+    background = background.convert()
+    background.fill((0, 0, 0))
 
-            if dist < MIN_VAL:
-                dist = maxval
+    center = (SIZEX/2, SIZEY/2)
 
-            self.lidarValues[i].dist = dist
-            self.lidarValues[i].angle = angle
+def drawLidar(heading=0):
+    window.blit(background, (0,0))
 
-        return self.lidarValues
+    for i in range(len(lidarValues)):
+        angle = boundAngleTo2PI(lidarValues[i].angle + heading)
 
-    def rotateLidarValues(self, heading):
-        for i in range(len(self.lidarValues)):
-            self.lidarValues[i].angle = ReactiveUtils.boundAngleTo2PI(self.lidarValues[i].angle + heading)
+        dist = lidarValues[i].dist
+        angle = lidarValues[i].angle
+        x = center[0] + PIXELS_PER_METER*dist*math.cos(angle)
+        y = center[1] + PIXELS_PER_METER*dist*math.sin(angle)
 
-        if self.SHOW_GRAPHICS:
-            self.drawLidar();
+        pygame.draw.line(window, (255, 255, 255), center, (x, SIZEY - y))
 
-        return self.lidarValues
-            
+    pygame.display.flip() 
+

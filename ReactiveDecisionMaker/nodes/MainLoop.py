@@ -2,88 +2,77 @@
 import roslib; roslib.load_manifest('ReactiveDecisionMaker')
 import rospy, math
 
-from DirectionFinder import DirectionFinder
+from ReactiveUtils import *
 
-from LidarProcessor import LidarProcessor
-from GoalCalculator import GoalCalculator
-from DirectionChooser import DirectionChooser
-from DirectionFollower import DirectionFollower
+from DirectionFinder import getViableDirections, getEndangles, getEnddists
+from LidarProcessor import shortenAndCorrectScan
+from DirectionChooser import pickBestDirection
+from GoalCalculator import calcGoalHeading, calcViableDir
+from DirectionFollower import getAction
 from GraphicsDisplayer import GraphicsDisplayer
-from ReactiveUtils import ReactiveUtils
 
 from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Twist, Point
+        
+class DecisionMaker:
+    def __init__(self):
+        self.graphicsDisplayer = GraphicsDisplayer()
+    
+    def initServices(self):
+        rospy.wait_for_service('getPos')
+        self.getPos = rospy.ServiceProxy('getPos', GetPos)
 
+        rospy.wait_for_service('getHeading')
+        self.getHeading = rospy.ServiceProxy('getHeading', GetHeading)
 
-if __name__ == "__main__":
-    rospy.init_node('MainReactiveLoop')
-    pub = rospy.Publisher('vel_cmd', Twist)
+        rospy.wait_for_service('getScan')
+        self.getScan = rospy.ServiceProxy('getScan', GetScan)
 
-    rospy.wait_for_service('getPos')
-    getPos = rospy.ServiceProxy('getPos', GetPos)
+        rospy.wait_for_service('getGoal')
+        self.getGoal = rospy.ServiceProxy('getGoal', GetGoal)
 
-    rospy.wait_for_service('getHeading')
-    getHeading = rospy.ServiceProxy('getHeading', GetHeading)
-
-    rospy.wait_for_service('getScan')
-    getScan = rospy.ServiceProxy('getScan', GetScan)
-
-    rospy.wait_for_service('getGoal')
-    getGoal = rospy.ServiceProxy('getGoal', GetGoal)
-
-    directionFinder = DirectionFinder(
-        True, 
-        MIN_CLEARANCE_ALLOWED=ReactiveUtils.MIN_CLEARANCE
-    )
-
-    lidarProcessor = LidarProcessor(False)
-
-    goalCalculator = GoalCalculator(
-        MIN_CLEARANCE_ALLOWED=.1
-    )
-
-    directionChooser = DirectionChooser(ReactiveUtils.MAX_VAL*2)
-    directionFollower = DirectionFollower()
-    graphicsDisplayer = GraphicsDisplayer()
-
-    r = rospy.Rate(10) # 10hz
-    while not rospy.is_shutdown():
+    def acquireData(self):
         try:
-            curPos = getPos().pos
-            heading = getHeading().heading
-            scan = getScan().scan
-            goalPos = getGoal().goal
+            self.curPos = self.getPos().pos
+            self.heading = self.getHeading().heading
+            self.scan = self.getScan().scan
+            self.goalPos = self.getGoal().goal
+            return True
         except rospy.ServiceException, e:
             print "Service call failed: %s"%e
+            return False
+
+    def iterate(self):
+        curPos = self.curPos
+        heading = self.heading
+        scan = self.scan
+        goalPos = self.goalPos
+
+        msg = Twist()
 
         if len(scan.ranges) == 0:
             print 'got invalid data from GetScan service...',\
-                  'is anything being published to /scan?'
-            continue
+                  'so um is anything being published to /scan?'
+            return msg
 
-        distToGoal = ReactiveUtils.euclidDistPoint(goalPos, curPos)
+        distToGoal = euclidDistPoint(goalPos, curPos)
 
-        print distToGoal
+        print "distance to goal:", distToGoal
 
-        if distToGoal < ReactiveUtils.CLOSE_ENOUGH_TO_GOAL:
+        if distToGoal < CLOSE_ENOUGH_TO_GOAL:
             print "stopping because we're close enough to the goal"
 
-            msg = Twist()
-            pub.publish(msg)
+            return msg
 
-            r.sleep()
-            continue
+        shortenedLidar = shortenAndCorrectScan(scan)
 
-        shortenedLidar = lidarProcessor.shortenAndCorrectScan(
-            scan, 
-            ReactiveUtils.MAX_VAL
-        )
+        directions = getViableDirections(shortenedLidar)
+        print directions
 
-        directions = directionFinder.getViableDirections(shortenedLidar)
-        directionFinder.rotateDirections(directions, heading)
+        rotateDirections(directions, heading)
 
-        goalHeading = goalCalculator.calcGoalHeading(curPos, goalPos)
-        goalDirection = goalCalculator.calcViableDir(
+        goalHeading = calcGoalHeading(curPos, goalPos)
+        goalDirection = calcViableDir(
             goalHeading,
             shortenedLidar,
             heading,
@@ -94,34 +83,46 @@ if __name__ == "__main__":
         if goalDirection != None:
             directions.append(goalDirection)
 
+        bestDirection = None
+
         if len(directions) > 0:
-            bestDirection = directionChooser.pickBestDirection(
+            bestDirection = pickBestDirection(
                 directions, 
                 goalHeading, 
                 heading
             )
 
-            msg = directionFollower.getAction(
+            msg = getAction(
                 bestDirection.direction, 
                 heading
             )
 
-            pub.publish(msg)
-
-        graphicsDisplayer.drawEverything(
+        self.graphicsDisplayer.drawEverything(
             shortenedLidar,
             heading,
             directions,
-            directionFinder.endangles,
-            directionFinder.enddists,
+            getEndangles(),
+            getEnddists(),
             bestDirection
         )
 
+        return msg
+
+
+if __name__ == "__main__":
+    rospy.init_node('MainReactiveLoop')
+    pub = rospy.Publisher('vel_cmd', Twist)
+
+    decisionMaker = DecisionMaker()
+    decisionMaker.initServices()
+
+    r = rospy.Rate(10) 
+
+    while not rospy.is_shutdown():
         r.sleep()
+        
+        success = decisionMaker.acquireData()
 
-
-
-
-
-
-
+        if success:
+            msg = decisionMaker.iterate()
+            pub.publish(msg)
