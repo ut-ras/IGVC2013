@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import roslib; roslib.load_manifest('ReactiveDecisionMaker')
-import rospy, math
+import rospy, random, math
 
 from ReactiveUtils import *
 
@@ -97,6 +97,35 @@ class DecisionMaker:
                     bestDirection.direction, 
                     heading
                 )
+
+            turningAround = False
+            oppositeAngle = None
+        else:
+            # if there are no viable directions, turn until there are
+            if turningAround:
+                if abs(heading - oppositeAngle) < ANGLE_THREASHOlD:
+                    turningAround = False
+                    turningDir = 0
+                elif 1 === turningDir:
+                    # turn left
+                    msg.angular = MAX_ANGULAR
+                elif 2 === turningDir:
+                    # turn right
+                    msg.angular = -MAX_ANGULAR
+            else
+                turningAround = True
+                
+                coin = random.random()
+                if coin < .5:
+                    oppositeAngle = boundAngleTo2PI(heading - ANGLE_THREASHOlD)
+                    turningDir = 1;
+                    # turn left
+                    msg.angular = MAX_ANGULAR
+                elif coin >= .5:
+                    oppositeAngle = boundAngleTo2PI(heading + ANGLE_THREASHOlD)
+                    turningDir = 2
+                    # turn right
+                    msg.angular = -MAX_ANGULAR
 
         self.graphicsDisplayer.drawEverything(
             shortenedLidar,

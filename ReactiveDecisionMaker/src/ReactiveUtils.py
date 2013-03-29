@@ -60,6 +60,7 @@ def calcClearance(angle1, dist1, angle2, dist2) :
 
     return euclidDistArr(p0, p1)
 
+# returns angle on range [-pi to pi]
 def averageAngles(angle1, angle2):
     xcomp = (math.cos(angle1) + math.cos(angle2))/2.0
     ycomp = (math.sin(angle1) + math.sin(angle2))/2.0

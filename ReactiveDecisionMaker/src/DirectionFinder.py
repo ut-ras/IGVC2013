@@ -24,6 +24,77 @@ def getEnddists():
     global enddists
     return enddists
 
+def calcViableDirs(shortenedLidar):
+    numRanges = len(shortenedLidar)
+    inGap = False
+    gapIndexes = []
+    
+    for i in range(numRanges):
+        angle = shortendedLidar[i].angle
+        dist = shortendedLidar[i].dist
+        
+        atMax = abs(MAX_VAL - dist) <= CLOSE_ENOUGH_TO_MAX
+        
+        nextAtMax = False
+        if i < numRanges - 1:
+            nextAtMax = abs(MAX_VAL - shortendedLidar[i + 1].dist)
+                        <= CLOSE_ENOUGH_TO_MAX;
+        
+        if i == 0 and atMax:
+            gapIndexes.append(i)
+            inGap = True
+        elif inGap and not atMax:
+            gapIndexes.append(i)
+            inGap = False
+        elif not inGap and nextAtMax:
+            gapIndexes.append(i)
+            inGap = True
+        elif inGap and i == numRanges - 1:
+            gapIndexes.append(i)
+            inGap = False
+    
+    directions = []
+
+    for i in range(len(gapIndexes)/2):
+        i *= 2
+
+        angle1 = shortendedLidar[gapIndexes[i]].angle
+        dist1 = shortendedLidar[gapIndexes[i]].dist
+        angle2 = shortendedLidar[gapIndexes[i + 1]].angle
+        dist2 = shortendedLidar[gapIndexes[i + 1]].dist
+        
+        angle = (angle1 + angle2)/2.0
+        clearance = calcClearance(angle1, dist1, angle2, dist2)
+        
+        if clearance >= MIN_CLEARANCE_ALLOWED:    
+            directions.append(Direction(angle, clearance))
+            
+            # add left-most direction
+            for j in range(gapIndexes[i] + 1, gapIndexes[i + 1]):
+                angleN = shortendedLidar[j].angle
+                distN = shortendedLidar[j].dist
+            
+                angle = (angle1 + angleN)/2.0
+                clearance = calcClearance(angle1, dist1, angleN, distN)
+                
+                if clearance > MIN_EDGE_CLEARANCE:
+                    directions.append(Direction(angle, clearance))
+                    break
+                    
+            # add right-most direction
+            for j in range(gapIndexes[i + 1] - 1, gapIndexes[i], -1):
+                angleN = shortendedLidar[j].angle
+                distN = shortendedLidar[j].dist
+            
+                angle = (angle1 + angleN)/2.0
+                clearance = calcClearance(angle1, dist1, angleN, distN)
+                
+                if clearance > MIN_EDGE_CLEARANCE:
+                    directions.append(Direction(angle, clearance))
+                    break
+            
+    return directions
+"""
 def getViableDirections(shortenedLidar):
     global endangles, enddists
     endangles = []
@@ -71,3 +142,4 @@ def getViableDirections(shortenedLidar):
             viableDirections.append(Direction(direction, clearance))
 
     return viableDirections
+"""
