@@ -14,9 +14,9 @@ WINDOW_HEIGHT = 30
 # using previous transform or calculate a new one
 CALC_TRANSFORM = False
 prev_transform = np.array(
-[[  1.97833490e+00,   1.14785392e+00,  -1.55191394e+02],
- [ -6.41195260e-02,   3.66219334e+00,  -2.21460072e+02],
- [ -2.22609309e-04,   7.49904508e-03,   1.00000000e+00]])
+[[  2.48253566e+00,   1.65852542e+00,  -5.01512515e+02],
+ [  8.35395261e-03,   4.60948006e+00,  -6.44248503e+02],
+ [  6.77126073e-05,   4.81987961e-03,   1.00000000e+00]])
 
 """
 [[ -3.38211005e+00,  -3.63700168e+00,   7.24379943e+02],
@@ -106,7 +106,7 @@ def dispImages(img):
     cv2.imwrite('transformed.png', transformed)
 
 scale = .5
-rot_mat = cv2.getRotationMatrix2D((0,0), 0, scale) 
+rot_mat = cv2.getRotationMatrix2D((0,0), 0, scale)
 
 def scaleDown(img):
     rows,cols = img.shape[:2]
@@ -129,9 +129,10 @@ def callback(image_data):
         print e
 
     rospy.loginfo("received image")
-    
+
     global curImg
-    curImg = scaleDown(input_img) 
+    #curImg = scaleDown(input_img)
+    curImg = input_img
 
 def init():
     rospy.init_node('perspective_correction_test')
