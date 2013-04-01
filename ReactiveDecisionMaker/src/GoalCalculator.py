@@ -29,14 +29,14 @@ def calcViableDir(goalHeading, shortenedLidar, heading, curPos, goalPos):
     ### go left until hitting a bump
     leftIndex = index
     for i in range(index, numVals):
-        if abs(shortenedLidar[i].dist - MAX_VAL) > MAX_VAL_THREASHOLD:
+        if abs(shortenedLidar[i].dist - MAX_VAL) > MAX_VAL_PRECISION:
             break
         leftIndex = i
 
     ### go right until hitting a bump
     rightIndex = index
     for i in range(index, -1, -1):
-        if abs(shortenedLidar[i].dist - MAX_VAL) > MAX_VAL_THREASHOLD:
+        if abs(shortenedLidar[i].dist - MAX_VAL) > MAX_VAL_PRECISION:
             break
         rightIndex = i
 
@@ -57,7 +57,7 @@ def calcViableDir(goalHeading, shortenedLidar, heading, curPos, goalPos):
     ### to not have to worry about clearance
     goalDistance = euclidDistPoint(goalPos, curPos)
 
-    if min(shortenedLidar[leftIndex].dist, 
+    if min(shortenedLidar[leftIndex].dist,
            shortenedLidar[rightIndex].dist) > goalDistance:
         return Direction(goalHeading, MIN_CLEARANCE_ALLOWED)
 

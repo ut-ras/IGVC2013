@@ -2,10 +2,8 @@
 import roslib; roslib.load_manifest('ReactiveDecisionMaker')
 import rospy
 
-from ReactiveDecisionMaker.srv import GetAction
+from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Twist
-
-pub = None
 
 if __name__ == "__main__":
     rospy.init_node('ActionPublisher')
@@ -14,15 +12,25 @@ if __name__ == "__main__":
     rospy.wait_for_service('getAction')
     getAction = rospy.ServiceProxy('getAction', GetAction)
 
+    beingServiced = False
     r = rospy.Rate(10)
-    
+
     while not rospy.is_shutdown():
+        curAction = Twist()
+
         try:
             curAction = getAction().action
-            pub.publish(curAction)        
+            pub.publish(curAction)
+
+            if not beingServiced:
+                print "Publishing data from GetAction service!"
+                beingServiced = True
         except rospy.ServiceException, e:
             print "Service call failed: %s"%e
-        
+            beingServiced = False
+
+        pub.publish(curAction)
+
         r.sleep()
 
     rospy.spin()

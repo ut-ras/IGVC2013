@@ -4,20 +4,20 @@ import rospy, random, math
 
 from ReactiveUtils import *
 
-from DirectionFinder import getViableDirections, getEndangles, getEnddists
+from DirectionFinder import calcViableDirs, getEndangles, getEnddists
 from LidarProcessor import shortenAndCorrectScan
 from DirectionChooser import pickBestDirection
 from GoalCalculator import calcGoalHeading, calcViableDir
 from DirectionFollower import getAction
 from GraphicsDisplayer import GraphicsDisplayer
 
-from ReactiveDecisionMaker.srv import GetPos, GetHeading, GetScan, GetGoal
+from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Twist, Point
-        
+
 class DecisionMaker:
     def __init__(self):
         self.graphicsDisplayer = GraphicsDisplayer()
-    
+
     def initServices(self):
         rospy.wait_for_service('getPos')
         self.getPos = rospy.ServiceProxy('getPos', GetPos)
@@ -30,6 +30,10 @@ class DecisionMaker:
 
         rospy.wait_for_service('getGoal')
         self.getGoal = rospy.ServiceProxy('getGoal', GetGoal)
+
+        self.turningAround = False
+        self.turningDir = 0
+        self.oppositeAngle = None
 
     def acquireData(self):
         try:
@@ -47,6 +51,9 @@ class DecisionMaker:
         heading = self.heading
         scan = self.scan
         goalPos = self.goalPos
+        turningAround = self.turningAround
+        turningDir = self.turningDir
+        oppositeAngle = self.oppositeAngle # would this be a good name for a band?
 
         msg = Twist()
 
@@ -66,7 +73,7 @@ class DecisionMaker:
 
         shortenedLidar = shortenAndCorrectScan(scan)
 
-        directions = getViableDirections(shortenedLidar)
+        directions = calcViableDirs(shortenedLidar)
         print directions
 
         rotateDirections(directions, heading)
@@ -87,14 +94,14 @@ class DecisionMaker:
 
         if len(directions) > 0:
             bestDirection = pickBestDirection(
-                directions, 
-                goalHeading, 
+                directions,
+                goalHeading,
                 heading
             )
 
             if bestDirection != None:
                 msg = getAction(
-                    bestDirection.direction, 
+                    bestDirection.direction,
                     heading
                 )
 
@@ -103,29 +110,29 @@ class DecisionMaker:
         else:
             # if there are no viable directions, turn until there are
             if turningAround:
-                if abs(heading - oppositeAngle) < ANGLE_THREASHOlD:
+                if abs(heading - oppositeAngle) < ANGLE_PRECISION:
                     turningAround = False
                     turningDir = 0
-                elif 1 === turningDir:
+                elif 1 == turningDir:
                     # turn left
-                    msg.angular = MAX_ANGULAR
-                elif 2 === turningDir:
+                    msg.angular.z = MAX_ANGULAR
+                elif 2 == turningDir:
                     # turn right
-                    msg.angular = -MAX_ANGULAR
-            else
+                    msg.angular.z = -MAX_ANGULAR
+            else:
                 turningAround = True
-                
+
                 coin = random.random()
                 if coin < .5:
-                    oppositeAngle = boundAngleTo2PI(heading - ANGLE_THREASHOlD)
+                    oppositeAngle = boundAngleTo2PI(heading - ANGLE_PRECISION)
                     turningDir = 1;
                     # turn left
-                    msg.angular = MAX_ANGULAR
+                    msg.angular.z = MAX_ANGULAR
                 elif coin >= .5:
-                    oppositeAngle = boundAngleTo2PI(heading + ANGLE_THREASHOlD)
+                    oppositeAngle = boundAngleTo2PI(heading + ANGLE_PRECISION)
                     turningDir = 2
                     # turn right
-                    msg.angular = -MAX_ANGULAR
+                    msg.angular.z = -MAX_ANGULAR
 
         self.graphicsDisplayer.drawEverything(
             shortenedLidar,
@@ -142,33 +149,35 @@ TIMEOUT = 1.0 # seconds
 latestAction = None
 latestTime = None
 
-def handle_getAction():
+def handle_getAction(req):
     if latestAction == None:
-        return None
+        return GetActionResponse(Twist())
 
     curTime = rospy.get_time()
 
     if curTime - latestTime < TIMEOUT:
-        return latestAction
+        print latestAction
+        return GetActionResponse(latestAction)
     else:
-        return None
+        print 'data became too old!'
+        return GetActionResponse(Twist())
 
 if __name__ == "__main__":
     rospy.init_node('MainReactiveLoop')
-    
+
     serv = rospy.Service('getAction', GetAction, handle_getAction)
 
     decisionMaker = DecisionMaker()
     decisionMaker.initServices()
 
-    r = rospy.Rate(10) 
+    r = rospy.Rate(10)
 
     while not rospy.is_shutdown():
         r.sleep()
-        
+
         success = decisionMaker.acquireData()
 
         if success:
             msg = decisionMaker.iterate()
             latestTime = rospy.get_time()
-            latestAction = msg 
+            latestAction = msg

@@ -35,24 +35,25 @@ class GraphicsDisplayer:
 
             pygame.draw.line(self.window, (255, 255, 255), REF_POS, (x, SIZEY - y))
 
-        for i in range(len(endangles)/2):
-            index = i*2
+        if endangles != None and enddists != None:
+            for i in range(len(endangles)/2):
+                index = i*2
 
-            angle1 = endangles[index]
-            angle2 = endangles[index+1]
-            dist1 = enddists[index]
-            dist2 = enddists[index+1]
+                angle1 = endangles[index]
+                angle2 = endangles[index+1]
+                dist1 = enddists[index]
+                dist2 = enddists[index+1]
 
-            angle1 += math.pi/2
-            angle2 += math.pi/2
+                angle1 += math.pi/2
+                angle2 += math.pi/2
 
-            x1 = REF_POS[0] + PIXELS_PER_METER*dist1*math.cos(angle1 + heading)
-            y1 = REF_POS[1] + PIXELS_PER_METER*dist1*math.sin(angle1 + heading)
-            x2 = REF_POS[0] + PIXELS_PER_METER*dist2*math.cos(angle2 + heading)
-            y2 = REF_POS[1] + PIXELS_PER_METER*dist2*math.sin(angle2 + heading)
+                x1 = REF_POS[0] + PIXELS_PER_METER*dist1*math.cos(angle1 + heading)
+                y1 = REF_POS[1] + PIXELS_PER_METER*dist1*math.sin(angle1 + heading)
+                x2 = REF_POS[0] + PIXELS_PER_METER*dist2*math.cos(angle2 + heading)
+                y2 = REF_POS[1] + PIXELS_PER_METER*dist2*math.sin(angle2 + heading)
 
-            pygame.draw.circle(self.window, (0, 0, 255), (int(x1), int(SIZEY - y1)), 5, 5)
-            pygame.draw.circle(self.window, (0, 255, 0), (int(x2), int(SIZEY - y2)), 5, 5)
+                pygame.draw.circle(self.window, (0, 0, 255), (int(x1), int(SIZEY - y1)), 5, 5)
+                pygame.draw.circle(self.window, (0, 255, 0), (int(x2), int(SIZEY - y2)), 5, 5)
 
         for i in range(len(viableDirections)):
             direction = viableDirections[i].direction
