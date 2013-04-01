@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="rosbag" type="play" name="rosbag" args="-d 2 /home/granny/ros/ros-bag/walkway_3-7-13_2.bag --topics /usb_cam/image_raw"/>
+  <node name="extract" pkg="image_view" type="extract_images" respawn="false" output="screen" cwd="ROS_HOME">
+    <remap from="image" to="/usb_cam/image_raw"/>
+  </node>
+</launch>
