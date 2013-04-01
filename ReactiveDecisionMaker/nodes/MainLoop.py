@@ -11,7 +11,7 @@ from GoalCalculator import calcGoalHeading, calcViableDir
 from DirectionFollower import getAction
 from GraphicsDisplayer import GraphicsDisplayer
 
-from ReactiveDecisionMaker.srv import *
+from ReactiveDecisionMaker.srv import GetPos, GetHeading, GetScan, GetGoal
 from geometry_msgs.msg import Twist, Point
         
 class DecisionMaker:
@@ -138,10 +138,25 @@ class DecisionMaker:
 
         return msg
 
+TIMEOUT = 1.0 # seconds
+latestAction = None
+latestTime = None
+
+def handle_getAction():
+    if latestAction == None:
+        return None
+
+    curTime = rospy.get_time()
+
+    if curTime - latestTime < TIMEOUT:
+        return latestAction
+    else:
+        return None
 
 if __name__ == "__main__":
     rospy.init_node('MainReactiveLoop')
-    pub = rospy.Publisher('vel_cmd', Twist)
+    
+    serv = rospy.Service('getAction', GetAction, handle_getAction)
 
     decisionMaker = DecisionMaker()
     decisionMaker.initServices()
@@ -155,4 +170,5 @@ if __name__ == "__main__":
 
         if success:
             msg = decisionMaker.iterate()
-            pub.publish(msg)
+            latestTime = rospy.get_time()
+            latestAction = msg 

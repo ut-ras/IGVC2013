@@ -10,7 +10,6 @@
   <url>http://ros.org/wiki/ReactiveDecisionMaker</url>
   <depend package="hokuyo_node"/>
   <depend package="filters"/>
-
 </package>
 
 

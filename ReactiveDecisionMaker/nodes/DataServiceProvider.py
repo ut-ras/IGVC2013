@@ -3,7 +3,7 @@ import roslib; roslib.load_manifest('ReactiveDecisionMaker')
 
 import rospy
 
-from ReactiveDecisionMaker.srv import *
+from ReactiveDecisionMaker.srv import GetPos, GetHeading, GetScan, GetGoal
 from filters.msg import EKFData
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Point
