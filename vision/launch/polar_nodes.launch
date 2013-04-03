@@ -1,0 +1,17 @@
+<launch>
+  <node pkg="image_view" name="image_view" type="image_view">
+    <remap from="image" to="/usb_cam/image_raw"/>
+  </node>
+
+  <node pkg="vision" name="orange_detection" type="orange_detection.py"/>
+  <node pkg="vision" name="log_polar_transform" type="log_polar_transform.py"/>
+  <node pkg="vision" name="log_polar_processor" type="log_polar_processor.py"/>
+
+  <node pkg="image_view" name="red_orange_view" type="image_view">
+    <remap from="image" to="/binimg_orange_red_threshold"/>
+  </node>
+
+  <node pkg="image_view" name="log_polar_view" type="image_view">
+    <remap from="image" to="/log_polar_transformed"/>
+  </node>
+</launch>
