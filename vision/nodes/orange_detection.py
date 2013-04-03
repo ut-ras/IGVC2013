@@ -53,7 +53,7 @@ def init():
     sub = rospy.Subscriber('usb_cam/image_raw', Image, callback)
     pub = rospy.Publisher('binimg_orange_red_threshold', Image)
 
-    r = rospy.Rate(10)
+    r = rospy.Rate(3)
 
     while not rospy.is_shutdown():
         global curImg

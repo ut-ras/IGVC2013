@@ -77,7 +77,7 @@ def init():
     sub = rospy.Subscriber('binimg_orange_red_threshold', Image, callback)
     pub = rospy.Publisher('log_polar_transformed', Image)
 
-    r = rospy.Rate(10)
+    r = rospy.Rate(3)
 
     while not rospy.is_shutdown():
         global curImg
@@ -90,8 +90,8 @@ def init():
 
             pub.publish(bridge.cv_to_imgmsg(log_polar, encoding="passthrough"))
 
-            #display(homography, log_polar)
-            #cv2.waitKey(30)
+            # display(homography, log_polar)
+            # cv2.waitKey(30)
 
         r.sleep()
 
