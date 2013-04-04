@@ -8,6 +8,8 @@ from filters.msg import EKFData
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Point
 
+GOAL_TIMEOUT = .5
+
 pos = Point(0, 0, 0)
 heading = 0
 scan = None
@@ -22,8 +24,17 @@ def handle_getHeading(req):
 def handle_getScan(req):
     return GetScanResponse(scan)
 
+latestGoalTime = None
+
 def handle_getGoal(req):
-    return GetGoalResponse(goal)
+    curTime = rospy.get_time()
+
+    if curTime - latestGoalTime < GOAL_TIMEOUT:
+        return GetGoalResponse(goal)
+    else:
+        rospy.loginfo("goal data is too old!")
+        return GetGoalResponse(Point(0, 0, -10))
+    return 
 
 def init_server():
     rospy.init_node('DataServiceProvider')
@@ -43,15 +54,17 @@ def scan_callback(data):
     scan = data
 
 def goal_callback(data):
-    global goal
+    global goal, latestGoalTime
     goal = data
+    latestGoalTime = rospy.get_time()
 
 def init_subscriptions():
     sub1 = rospy.Subscriber("ekf_data", EKFData, ekf_callback)
-    sub2 = rospy.Subscriber("scan", LaserScan, scan_callback)
+    sub2 = rospy.Subscriber("image_scan", LaserScan, scan_callback)
     sub3 = rospy.Subscriber("goal", Point, goal_callback)
 
 if __name__ == "__main__":
     init_server()
     init_subscriptions()
+    rospy.loginfo("server is up & we've subscribed to topics!");
     rospy.spin()

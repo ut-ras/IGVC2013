@@ -7,7 +7,7 @@ from ReactiveUtils import *
 from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Point
 
-goals = [Point(0, 0, 0), Point(8, 0, 0), Point(0, 0, 0)]
+goals = [Point(0, 0, 0), Point(6, 0, 0), Point(6, 6, 0), Point(0, 6, 0), Point(0, 0, 0)]
 curGoalIndex = 0
 
 pub = None
@@ -17,7 +17,7 @@ def processPos(pos):
 
     if curGoalIndex < len(goals):
         pos = Point(pos.x, pos.y, 0)
-
+        
         distToGoal = euclidDistPoint(pos, goals[curGoalIndex])
 
         if distToGoal < CLOSE_ENOUGH_TO_GOAL:
@@ -25,8 +25,9 @@ def processPos(pos):
             curGoalIndex += 1
             if curGoalIndex < len(goals):
                 print "setting new goal to ", goals[curGoalIndex].x, ",", goals[curGoalIndex].y
-
+        
         if curGoalIndex < len(goals):
+            print "publishing goal ", goals[curGoalIndex]
             pub.publish(goals[curGoalIndex])
 
 if __name__ == "__main__":

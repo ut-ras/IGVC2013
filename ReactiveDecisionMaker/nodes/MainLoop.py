@@ -62,12 +62,16 @@ class DecisionMaker:
                   'so um is anything being published to /scan?'
             return msg
 
+        if goalPos.z == -10:
+            # this indicates a timeout in the DataServiceProvider            
+            return msg
+
         distToGoal = euclidDistPoint(goalPos, curPos)
 
         print "distance to goal:", distToGoal
 
         if distToGoal < CLOSE_ENOUGH_TO_GOAL:
-            print "stopping because we're close enough to the goal"
+            rospy.loginfo("stopping because we're close enough to the goal")
 
             return msg
 
