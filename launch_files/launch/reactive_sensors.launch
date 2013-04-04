@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="PSoC_Listener" name="PSoC_Listener" type="PSoC_Listener.py"/>
+  <node pkg="PSoC_Listener" name="PSoC_Velocities" type="PSoC_Velocities.py"/>
+  <node pkg="ReactiveDecisionMaker" name="DataServiceProvider" type="DataServiceProvider.py"/>
+  <node pkg="vn_200_imu" name="vn_200_node" type="vn_200_node.py"/>
+  <node pkg="usb_cam" name="usb_cam_node" type="usb_cam_node"/>
+</launch>
