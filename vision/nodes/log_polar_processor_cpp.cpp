@@ -72,6 +72,7 @@ void processsImage(Mat img) {
     scan.header.stamp = scan_time;
     scan.header.frame_id = "laser_frame";
     scan.angle_increment = angle_width;
+    scan.angle_min = -M_PI/2.0;
 
     scan.ranges.resize(num_readings);
     for (unsigned int i = 0; i < num_readings; ++i){

@@ -5,7 +5,7 @@ import rospy, random, math
 from ReactiveUtils import *
 
 from DirectionFinder import calcViableDirs, getEndangles, getEnddists
-from LidarProcessor import shortenAndCorrectScan
+from PlanarDataProcessor import shortenAndCorrectPlanarData
 from DirectionChooser import pickBestDirection
 from GoalCalculator import calcGoalHeading, calcViableDir
 from DirectionFollower import getAction
@@ -25,8 +25,8 @@ class DecisionMaker:
         rospy.wait_for_service('getHeading')
         self.getHeading = rospy.ServiceProxy('getHeading', GetHeading)
 
-        rospy.wait_for_service('getScan')
-        self.getScan = rospy.ServiceProxy('getScan', GetScan)
+        rospy.wait_for_service('getPlanarData')
+        self.getPlanarData = rospy.ServiceProxy('getPlanarData', GetPlanarData)
 
         rospy.wait_for_service('getGoal')
         self.getGoal = rospy.ServiceProxy('getGoal', GetGoal)
@@ -39,7 +39,7 @@ class DecisionMaker:
         try:
             self.curPos = self.getPos().pos
             self.heading = self.getHeading().heading
-            self.scan = self.getScan().scan
+            self.pdata = self.getPlanarData().pdata
             self.goalPos = self.getGoal().goal
             return True
         except rospy.ServiceException, e:
@@ -49,7 +49,7 @@ class DecisionMaker:
     def iterate(self):
         curPos = self.curPos
         heading = self.heading
-        scan = self.scan
+        pdata = self.pdata
         goalPos = self.goalPos
         turningAround = self.turningAround
         turningDir = self.turningDir
@@ -57,13 +57,13 @@ class DecisionMaker:
 
         msg = Twist()
 
-        if len(scan.ranges) == 0:
-            print 'got invalid data from GetScan service...',\
-                  'so um is anything being published to /scan?'
+        if len(pdata.ranges) == 0:
+            print 'got invalid data from GetPlanarData service...',\
+                  'so um is anything being published to /planar_data?'
             return msg
 
         if goalPos.z == -10:
-            # this indicates a timeout in the DataServiceProvider            
+            # this indicates a timeout in the DataServiceProvider
             return msg
 
         distToGoal = euclidDistPoint(goalPos, curPos)
@@ -75,7 +75,7 @@ class DecisionMaker:
 
             return msg
 
-        shortenedLidar = shortenAndCorrectScan(scan)
+        shortenedLidar = shortenAndCorrectPlanarData(pdata)
 
         directions = calcViableDirs(shortenedLidar)
         print directions

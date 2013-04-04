@@ -13,6 +13,11 @@ SIZEY = 400
 PIXELS_PER_METER = 100
 REF_POS = (SIZEX/2, SIZEY/2)
 
+ROTATE_90 = True
+BEAM_COLOR = (255, 255, 255) # white
+POS_DIR_COLOR = (0, 255, 0) # green
+BEST_DIR_COLOR = (255, 0, 0) # red
+
 class GraphicsDisplayer:
     def __init__(self):
         pygame.init()
@@ -28,12 +33,13 @@ class GraphicsDisplayer:
             angle = shortenedLidar[i].angle
             dist = shortenedLidar[i].dist
 
-            angle += math.pi/2
+            if ROTATE_90:
+                angle += math.pi/2.0
 
             x = REF_POS[0] + PIXELS_PER_METER*dist*math.cos(angle + heading)
             y = REF_POS[1] + PIXELS_PER_METER*dist*math.sin(angle + heading)
 
-            pygame.draw.line(self.window, (255, 255, 255), REF_POS, (x, SIZEY - y))
+            pygame.draw.line(self.window, BEAM_COLOR, REF_POS, (x, SIZEY - y))
 
         if endangles != None and enddists != None:
             for i in range(len(endangles)/2):
@@ -44,8 +50,9 @@ class GraphicsDisplayer:
                 dist1 = enddists[index]
                 dist2 = enddists[index+1]
 
-                angle1 += math.pi/2
-                angle2 += math.pi/2
+                if ROTATE_90:
+                    angle1 += math.pi/2.0
+                    angle2 += math.pi/2.0
 
                 x1 = REF_POS[0] + PIXELS_PER_METER*dist1*math.cos(angle1 + heading)
                 y1 = REF_POS[1] + PIXELS_PER_METER*dist1*math.sin(angle1 + heading)
@@ -58,11 +65,12 @@ class GraphicsDisplayer:
         for i in range(len(viableDirections)):
             direction = viableDirections[i].direction
 
-            direction += math.pi/2
+            if ROTATE_90:
+                direction += math.pi/2.0
 
             pygame.draw.line(
                 self.window,
-                (0, 255, 255),
+                POS_DIR_COLOR,
                 REF_POS,
                 (REF_POS[0] + 100*math.cos(direction),
                 SIZEY - (REF_POS[1] + 100*math.sin(direction))),
@@ -72,11 +80,12 @@ class GraphicsDisplayer:
         if None != bestDirection:
             direction = bestDirection.direction
 
-            direction += math.pi/2
+            if ROTATE_90:
+                direction += math.pi/2.0
 
             pygame.draw.line(
                 self.window,
-                (255, 0, 0),
+                BEST_DIR_COLOR,
                 REF_POS,
                 (REF_POS[0] + 100*math.cos(direction),
                 SIZEY - (REF_POS[1] + 100*math.sin(direction))),
