@@ -17,15 +17,14 @@ namespace enc = sensor_msgs::image_encodings;
 using namespace std;
 using namespace cv;
 
-double RATE = 10,
-       LOG_SCALE = 20.0,
+double LOG_SCALE = 20.0,
        PIXELS_PER_METER = 281.0,
        DISTANCE_FROM_FRONT = .31,
        RAY_THICKNESS = 1;
 
 ros::Publisher scan_pub;
 
-void processImage(Mat img) {
+void processsImage(Mat img) {
     //
     // Scan through the image and calculate distances
     //
@@ -82,22 +81,17 @@ void processImage(Mat img) {
     scan_pub.publish(scan);
 }
 
-bool imgInit = false;
-Mat curImg;
-
 void callback(const sensor_msgs::ImageConstPtr& msg) {
     Mat src;   
  
     try {
         src = cv_bridge::toCvCopy(msg, enc::MONO8)->image;
-        curImg = src;
-        imgInit = true;
     } catch (cv_bridge::Exception& e) {
         ROS_ERROR("cv_bridge exception: %s", e.what());
         return;
     }
 
-    // processsImage(src);
+    processsImage(src);
 
     // imshow("Input from log polar", src);
     // waitKey(30);
@@ -123,15 +117,7 @@ int main(int argc, char* argv[])
         &callback
     );
 
-    ros::Rate loop_rate(RATE);
-    while (ros::ok()) {
-        if (imgInit) {
-            processImage(curImg);
-        }
-
-        ros::spinOnce();
-        loop_rate.sleep();
-    }
+    ros::spin();
 
     return 0;
 }
