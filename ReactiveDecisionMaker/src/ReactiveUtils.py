@@ -13,16 +13,16 @@ MIN_VAL = 2e-2 # if ranges are below this, assume they are actually max values
 MAXIMUM_CLEARANCE = MAX_VAL*2.0 # used to normalize clearances
 ANGLE_PRECISION = 1e-1
 
-MAX_V = .2
+MAX_V = .5
 MAX_ANGULAR = .2
 """
 CLEARANCE_WEIGHT = .3
 CURRENT_HEADING_WEIGHT = .1
 GOAL_HEADING_WEIGHT = .6
 """
-CLEARANCE_WEIGHT = .39
+CLEARANCE_WEIGHT = .19
 CURRENT_HEADING_WEIGHT = .01
-GOAL_HEADING_WEIGHT = .6
+GOAL_HEADING_WEIGHT = .8
 
 # returns angle equivalent to argument, but in range [0, 2*pi]
 def boundAngleTo2PI(angle):
