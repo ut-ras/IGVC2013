@@ -2,6 +2,7 @@ Header header
 
 float64 latitude
 float64 longitude
+float64 altitude
 
 int32 num_satellites
 
@@ -19,3 +20,7 @@ geometry_msgs/Vector3 ned_acceleration
 
 # the speed accuracy estimate in meters/sec
 float64 speed_accuracy_estimate
+
+# error checking information
+bool error_present
+string error_string

@@ -190,6 +190,19 @@ decision/fast:
 .PHONY : decision/fast
 
 #=============================================================================
+# Target rules for targets named log_polar_processor_cpp
+
+# Build rule for target.
+log_polar_processor_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 log_polar_processor_cpp
+.PHONY : log_polar_processor_cpp
+
+# fast build rule for target.
+log_polar_processor_cpp/fast:
+	$(MAKE) -f CMakeFiles/log_polar_processor_cpp.dir/build.make CMakeFiles/log_polar_processor_cpp.dir/build
+.PHONY : log_polar_processor_cpp/fast
+
+#=============================================================================
 # Target rules for targets named opencv_cuda_test
 
 # Build rule for target.
@@ -359,6 +372,21 @@ visualization/fast:
 .PHONY : visualization/fast
 
 # target to build an object file
+nodes/log_polar_processor_cpp.o:
+	$(MAKE) -f CMakeFiles/log_polar_processor_cpp.dir/build.make CMakeFiles/log_polar_processor_cpp.dir/nodes/log_polar_processor_cpp.o
+.PHONY : nodes/log_polar_processor_cpp.o
+
+# target to preprocess a source file
+nodes/log_polar_processor_cpp.i:
+	$(MAKE) -f CMakeFiles/log_polar_processor_cpp.dir/build.make CMakeFiles/log_polar_processor_cpp.dir/nodes/log_polar_processor_cpp.i
+.PHONY : nodes/log_polar_processor_cpp.i
+
+# target to generate assembly for a file
+nodes/log_polar_processor_cpp.s:
+	$(MAKE) -f CMakeFiles/log_polar_processor_cpp.dir/build.make CMakeFiles/log_polar_processor_cpp.dir/nodes/log_polar_processor_cpp.s
+.PHONY : nodes/log_polar_processor_cpp.s
+
+# target to build an object file
 src/opencv_cuda_test.o:
 	$(MAKE) -f CMakeFiles/opencv_cuda_test.dir/build.make CMakeFiles/opencv_cuda_test.dir/src/opencv_cuda_test.o
 .PHONY : src/opencv_cuda_test.o
@@ -432,6 +460,7 @@ help:
 	@echo "... clean-test-results"
 	@echo "... decision"
 	@echo "... edit_cache"
+	@echo "... log_polar_processor_cpp"
 	@echo "... opencv_cuda_test"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
@@ -446,6 +475,9 @@ help:
 	@echo "... tests"
 	@echo "... vision"
 	@echo "... visualization"
+	@echo "... nodes/log_polar_processor_cpp.o"
+	@echo "... nodes/log_polar_processor_cpp.i"
+	@echo "... nodes/log_polar_processor_cpp.s"
 	@echo "... src/opencv_cuda_test.o"
 	@echo "... src/opencv_cuda_test.i"
 	@echo "... src/opencv_cuda_test.s"

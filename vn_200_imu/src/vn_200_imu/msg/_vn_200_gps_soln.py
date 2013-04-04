@@ -8,13 +8,14 @@ import geometry_msgs.msg
 import std_msgs.msg
 
 class vn_200_gps_soln(genpy.Message):
-  _md5sum = "4b97643fb4b2ab6ddc284d8679adf435"
+  _md5sum = "7d5e768e2131af394154c512a558f76a"
   _type = "vn_200_imu/vn_200_gps_soln"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
 
 float64 latitude
 float64 longitude
+float64 altitude
 
 int32 num_satellites
 
@@ -32,6 +33,10 @@ geometry_msgs/Vector3 ned_acceleration
 
 # the speed accuracy estimate in meters/sec
 float64 speed_accuracy_estimate
+
+# error checking information
+bool error_present
+string error_string
 
 ================================================================================
 MSG: std_msgs/Header
@@ -59,8 +64,8 @@ float64 x
 float64 y
 float64 z
 """
-  __slots__ = ['header','latitude','longitude','num_satellites','ned_velocities','ned_acceleration','speed_accuracy_estimate']
-  _slot_types = ['std_msgs/Header','float64','float64','int32','geometry_msgs/Vector3','geometry_msgs/Vector3','float64']
+  __slots__ = ['header','latitude','longitude','altitude','num_satellites','ned_velocities','ned_acceleration','speed_accuracy_estimate','error_present','error_string']
+  _slot_types = ['std_msgs/Header','float64','float64','float64','int32','geometry_msgs/Vector3','geometry_msgs/Vector3','float64','bool','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -70,7 +75,7 @@ float64 z
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,latitude,longitude,num_satellites,ned_velocities,ned_acceleration,speed_accuracy_estimate
+       header,latitude,longitude,altitude,num_satellites,ned_velocities,ned_acceleration,speed_accuracy_estimate,error_present,error_string
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -85,6 +90,8 @@ float64 z
         self.latitude = 0.
       if self.longitude is None:
         self.longitude = 0.
+      if self.altitude is None:
+        self.altitude = 0.
       if self.num_satellites is None:
         self.num_satellites = 0
       if self.ned_velocities is None:
@@ -93,14 +100,21 @@ float64 z
         self.ned_acceleration = geometry_msgs.msg.Vector3()
       if self.speed_accuracy_estimate is None:
         self.speed_accuracy_estimate = 0.
+      if self.error_present is None:
+        self.error_present = False
+      if self.error_string is None:
+        self.error_string = ''
     else:
       self.header = std_msgs.msg.Header()
       self.latitude = 0.
       self.longitude = 0.
+      self.altitude = 0.
       self.num_satellites = 0
       self.ned_velocities = geometry_msgs.msg.Vector3()
       self.ned_acceleration = geometry_msgs.msg.Vector3()
       self.speed_accuracy_estimate = 0.
+      self.error_present = False
+      self.error_string = ''
 
   def _get_types(self):
     """
@@ -123,7 +137,13 @@ float64 z
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_struct_2di7d.pack(_x.latitude, _x.longitude, _x.num_satellites, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.ned_acceleration.x, _x.ned_acceleration.y, _x.ned_acceleration.z, _x.speed_accuracy_estimate))
+      buff.write(_struct_3di7dB.pack(_x.latitude, _x.longitude, _x.altitude, _x.num_satellites, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.ned_acceleration.x, _x.ned_acceleration.y, _x.ned_acceleration.z, _x.speed_accuracy_estimate, _x.error_present))
+      _x = self.error_string
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -155,8 +175,18 @@ float64 z
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 76
-      (_x.latitude, _x.longitude, _x.num_satellites, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.ned_acceleration.x, _x.ned_acceleration.y, _x.ned_acceleration.z, _x.speed_accuracy_estimate,) = _struct_2di7d.unpack(str[start:end])
+      end += 85
+      (_x.latitude, _x.longitude, _x.altitude, _x.num_satellites, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.ned_acceleration.x, _x.ned_acceleration.y, _x.ned_acceleration.z, _x.speed_accuracy_estimate, _x.error_present,) = _struct_3di7dB.unpack(str[start:end])
+      self.error_present = bool(self.error_present)
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.error_string = str[start:end].decode('utf-8')
+      else:
+        self.error_string = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -178,7 +208,13 @@ float64 z
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_struct_2di7d.pack(_x.latitude, _x.longitude, _x.num_satellites, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.ned_acceleration.x, _x.ned_acceleration.y, _x.ned_acceleration.z, _x.speed_accuracy_estimate))
+      buff.write(_struct_3di7dB.pack(_x.latitude, _x.longitude, _x.altitude, _x.num_satellites, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.ned_acceleration.x, _x.ned_acceleration.y, _x.ned_acceleration.z, _x.speed_accuracy_estimate, _x.error_present))
+      _x = self.error_string
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -211,12 +247,22 @@ float64 z
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 76
-      (_x.latitude, _x.longitude, _x.num_satellites, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.ned_acceleration.x, _x.ned_acceleration.y, _x.ned_acceleration.z, _x.speed_accuracy_estimate,) = _struct_2di7d.unpack(str[start:end])
+      end += 85
+      (_x.latitude, _x.longitude, _x.altitude, _x.num_satellites, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.ned_acceleration.x, _x.ned_acceleration.y, _x.ned_acceleration.z, _x.speed_accuracy_estimate, _x.error_present,) = _struct_3di7dB.unpack(str[start:end])
+      self.error_present = bool(self.error_present)
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.error_string = str[start:end].decode('utf-8')
+      else:
+        self.error_string = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
 _struct_3I = struct.Struct("<3I")
-_struct_2di7d = struct.Struct("<2di7d")
+_struct_3di7dB = struct.Struct("<3di7dB")

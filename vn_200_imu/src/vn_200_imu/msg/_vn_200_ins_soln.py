@@ -9,7 +9,7 @@ import vn_200_imu.msg
 import std_msgs.msg
 
 class vn_200_ins_soln(genpy.Message):
-  _md5sum = "13c7447a8aee6f060eb260381280d6e5"
+  _md5sum = "8ef5890d88aaf7b237af923ec92b6fef"
   _type = "vn_200_imu/vn_200_ins_soln"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
@@ -34,6 +34,10 @@ float64 position_uncertainty
 
 # uncertainty in velocity estimate in meters/sec
 float64 velocity_uncertainty
+
+# error checking information
+bool error_present
+string error_string
 
 ================================================================================
 MSG: std_msgs/Header
@@ -67,8 +71,8 @@ float64 x
 float64 y
 float64 z
 """
-  __slots__ = ['header','orientation_euler','geodetic_latitude','geodetic_longitude','altitude','ned_velocities','attitude_uncertainty','position_uncertainty','velocity_uncertainty']
-  _slot_types = ['std_msgs/Header','vn_200_imu/EulerOrientation','float64','float64','float64','geometry_msgs/Vector3','float64','float64','float64']
+  __slots__ = ['header','orientation_euler','geodetic_latitude','geodetic_longitude','altitude','ned_velocities','attitude_uncertainty','position_uncertainty','velocity_uncertainty','error_present','error_string']
+  _slot_types = ['std_msgs/Header','vn_200_imu/EulerOrientation','float64','float64','float64','geometry_msgs/Vector3','float64','float64','float64','bool','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -78,7 +82,7 @@ float64 z
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,orientation_euler,geodetic_latitude,geodetic_longitude,altitude,ned_velocities,attitude_uncertainty,position_uncertainty,velocity_uncertainty
+       header,orientation_euler,geodetic_latitude,geodetic_longitude,altitude,ned_velocities,attitude_uncertainty,position_uncertainty,velocity_uncertainty,error_present,error_string
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -105,6 +109,10 @@ float64 z
         self.position_uncertainty = 0.
       if self.velocity_uncertainty is None:
         self.velocity_uncertainty = 0.
+      if self.error_present is None:
+        self.error_present = False
+      if self.error_string is None:
+        self.error_string = ''
     else:
       self.header = std_msgs.msg.Header()
       self.orientation_euler = vn_200_imu.msg.EulerOrientation()
@@ -115,6 +123,8 @@ float64 z
       self.attitude_uncertainty = 0.
       self.position_uncertainty = 0.
       self.velocity_uncertainty = 0.
+      self.error_present = False
+      self.error_string = ''
 
   def _get_types(self):
     """
@@ -137,7 +147,13 @@ float64 z
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_struct_12d.pack(_x.orientation_euler.roll, _x.orientation_euler.pitch, _x.orientation_euler.yaw, _x.geodetic_latitude, _x.geodetic_longitude, _x.altitude, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.attitude_uncertainty, _x.position_uncertainty, _x.velocity_uncertainty))
+      buff.write(_struct_12dB.pack(_x.orientation_euler.roll, _x.orientation_euler.pitch, _x.orientation_euler.yaw, _x.geodetic_latitude, _x.geodetic_longitude, _x.altitude, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.attitude_uncertainty, _x.position_uncertainty, _x.velocity_uncertainty, _x.error_present))
+      _x = self.error_string
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -169,8 +185,18 @@ float64 z
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 96
-      (_x.orientation_euler.roll, _x.orientation_euler.pitch, _x.orientation_euler.yaw, _x.geodetic_latitude, _x.geodetic_longitude, _x.altitude, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.attitude_uncertainty, _x.position_uncertainty, _x.velocity_uncertainty,) = _struct_12d.unpack(str[start:end])
+      end += 97
+      (_x.orientation_euler.roll, _x.orientation_euler.pitch, _x.orientation_euler.yaw, _x.geodetic_latitude, _x.geodetic_longitude, _x.altitude, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.attitude_uncertainty, _x.position_uncertainty, _x.velocity_uncertainty, _x.error_present,) = _struct_12dB.unpack(str[start:end])
+      self.error_present = bool(self.error_present)
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.error_string = str[start:end].decode('utf-8')
+      else:
+        self.error_string = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -192,7 +218,13 @@ float64 z
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_struct_12d.pack(_x.orientation_euler.roll, _x.orientation_euler.pitch, _x.orientation_euler.yaw, _x.geodetic_latitude, _x.geodetic_longitude, _x.altitude, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.attitude_uncertainty, _x.position_uncertainty, _x.velocity_uncertainty))
+      buff.write(_struct_12dB.pack(_x.orientation_euler.roll, _x.orientation_euler.pitch, _x.orientation_euler.yaw, _x.geodetic_latitude, _x.geodetic_longitude, _x.altitude, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.attitude_uncertainty, _x.position_uncertainty, _x.velocity_uncertainty, _x.error_present))
+      _x = self.error_string
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(se)
     except TypeError as te: self._check_types(te)
 
@@ -225,12 +257,22 @@ float64 z
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 96
-      (_x.orientation_euler.roll, _x.orientation_euler.pitch, _x.orientation_euler.yaw, _x.geodetic_latitude, _x.geodetic_longitude, _x.altitude, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.attitude_uncertainty, _x.position_uncertainty, _x.velocity_uncertainty,) = _struct_12d.unpack(str[start:end])
+      end += 97
+      (_x.orientation_euler.roll, _x.orientation_euler.pitch, _x.orientation_euler.yaw, _x.geodetic_latitude, _x.geodetic_longitude, _x.altitude, _x.ned_velocities.x, _x.ned_velocities.y, _x.ned_velocities.z, _x.attitude_uncertainty, _x.position_uncertainty, _x.velocity_uncertainty, _x.error_present,) = _struct_12dB.unpack(str[start:end])
+      self.error_present = bool(self.error_present)
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.error_string = str[start:end].decode('utf-8')
+      else:
+        self.error_string = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
 _struct_3I = struct.Struct("<3I")
-_struct_12d = struct.Struct("<12d")
+_struct_12dB = struct.Struct("<12dB")

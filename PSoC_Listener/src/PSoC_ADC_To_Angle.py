@@ -10,6 +10,7 @@ pub = rospy.Publisher('hokuyo_angle', Float64)
 lastValue = float(0)
 MAX_ANGLE = PI / 18
 MAX_INPUT = float(-400)
+ANGLE_OFFSET = float(0)
 
 def service(req):
     return lastValue
@@ -17,7 +18,7 @@ def service(req):
 def callback(data):
     global lastValue
     p = Float64()
-    p.data = float(data.adc) * MAX_ANGLE / MAX_INPUT
+    p.data = (float(data.adc) * MAX_ANGLE / MAX_INPUT) + ANGLE_OFFSET
     lastValue = p.data
     pub.publish(p)
 

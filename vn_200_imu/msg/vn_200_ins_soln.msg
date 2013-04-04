@@ -20,3 +20,7 @@ float64 position_uncertainty
 
 # uncertainty in velocity estimate in meters/sec
 float64 velocity_uncertainty
+
+# error checking information
+bool error_present
+string error_string

@@ -6,7 +6,7 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 from vision_lib import hsv_orange_red_threshold
 
-RATE = 10
+pub = None
 
 # for conversion of raw image topic data to OpenCV image data
 bridge = CvBridge()
@@ -20,68 +20,31 @@ def display(img):
 
     cv.ShowImage("result", img)
 
-curImg = None
 def callback(image_data):
     try:
+        global bridge
         input_img = bridge.imgmsg_to_cv(image_data, "bgr8")
+        resImg = hsv_orange_red_threshold(input_img)
 
-        global curImg
-        curImg = input_img
+        global pub
+        pub.publish(bridge.cv_to_imgmsg(resImg, encoding="passthrough"))
+
+        # display(resImg)
+        # cv2.waitKey(30)
     except CvBridgeError, e:
         print e
 
 def init():
     rospy.init_node('orange_red_thresholder')
 
-    sub = rospy.Subscriber('usb_cam/image_raw', Image, callback)
+    global pub
     pub = rospy.Publisher('binimg_orange_red_threshold', Image)
+    sub = rospy.Subscriber('usb_cam/image_raw', Image, callback)
 
-    r = rospy.Rate(RATE)
-
-    while not rospy.is_shutdown():
-        global curImg
-
-        if curImg != None:
-            resImg = hsv_orange_red_threshold(curImg)
-            pub.publish(bridge.cv_to_imgmsg(resImg, encoding="passthrough"))
-
-            # display(resImg)
-            # cv2.waitKey(30)
-
-        r.sleep()
+    rospy.spin()
 
 if __name__ == "__main__":
     try:
         init()
     except rospy.ROSInterruptException: pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

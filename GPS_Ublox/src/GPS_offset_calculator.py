@@ -6,7 +6,7 @@ import math
 
 from geometry_msgs.msg import Point
 from GPS_Ublox.msg import GPS_UBlox_raw
-
+from vn_200_imu.msg import vn_200_gps_soln
 
 INITIAL_LONGITUDE = 0.0
 INITIAL_LATITUDE = 0.0
@@ -35,16 +35,16 @@ def haversine_distance(lon1, lat1, lon2, lat2):
     return RADIUS_OF_EARTH * c
 
 # TODO LUCAS
-# given starting longitude, latitude in radians, 
+# given starting longitude, latitude in radians,
 #   and deltax, deltay in meters
 # returns (res_lon, res_lat)
 def coord_from_coord_and_haversine(lon, lat, deltax, deltay) :
-    "placeholder"    
-
-
+    pass
 
 def offset_calc(data):
+
     pub = rospy.Publisher('gps_data', Point)
+
     msg = Point()
 
     if data.num_satellites < 3:
@@ -53,7 +53,8 @@ def offset_calc(data):
     global INITIAL_LATITUDE
     global INITIAL_LONGITUDE
 
-    rospy.loginfo('INIT_LONG: ' + str(INITIAL_LONGITUDE) + 'INIT_LAT: ' + str(INITIAL_LATITUDE))
+    rospy.loginfo('INIT_LONG: ' + str(INITIAL_LONGITUDE) + ' INIT_LAT: ' + str(INITIAL_LATITUDE))
+    rospy.loginfo('data_long: ' + str(data.longitude) + ' data_lat: ' + str(data.latitude))
 
     if INITIAL_LONGITUDE == data.longitude and INITIAL_LATITUDE == data.latitude:
         msg.x = 0
@@ -68,14 +69,16 @@ def offset_calc(data):
             msg.y = -msg.y
 
     rospy.loginfo('Publishing to topic gps_data:\n' +
-            'x: ' + str(msg.x) + '\ny: ' + str(msg.y))
+            'x: ' + str(msg.x) + '\ny: ' + str(msg.y) + '\n\n')
     pub.publish(msg)
 
 
 def listener():
     rospy.init_node('GPS_offset_calculator', anonymous=False)
-    rospy.Subscriber('gps_data_raw', GPS_UBlox_raw, offset_calc)
+    #rospy.Subscriber('gps_data_raw', GPS_UBlox_raw, offset_calc)
     rospy.loginfo('GPS_offset_calculator node initialized')
+
+    rospy.Subscriber('/vn_200_gps_soln', vn_200_gps_soln, offset_calc)
     rospy.spin()
 
 if __name__ == '__main__':
@@ -84,5 +87,3 @@ if __name__ == '__main__':
         set_initial_lat_lon(float(rospy.get_param('/lon')), float(rospy.get_param('/lat')))
         listener()
     except rospy.ROSInterruptException: pass
-
-

@@ -8,7 +8,12 @@
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/lidar_proc</url>
-
+    <depend package="roscpp"/>
+    <depend package="std_msgs"/>
+    <depend package="sensor_msgs"/>
+    <depend package="geometry_msgs"/>
+    <depend package="laser_geometry"/>
+    <depend package="filters"/>
 </package>
 
 
