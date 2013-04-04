@@ -13,13 +13,15 @@ from geometry_msgs.msg import Twist,Point
 from ocean_server_imu.msg import RawData
 from filters.msg import RotatedIMUData,EKFData
 from um6_imu.msg import UM6IMU
+from vn_200_imu.msg import vn_200_ins_soln
 
 
 USING_TEST1_BAGGED_DATA = False
-USING_TEST2_BAGGED_DATA = True
+USING_TEST2_BAGGED_DATA = False
 
 #OCEAN_SERVER_IMU_INDEX = 0
-UM6_IMU_INDEX = 0
+#UM6_IMU_INDEX = 0
+VN_200_IMU_INDEX = 0
 ENCODERS_INDEX = 1
 GPS_INDEX = 2
 
@@ -48,6 +50,13 @@ def oceanserver_imu_callback(data):
                               [data.pitch],
                               [data.yaw] ] )
     kf.Step(OCEAN_SERVER_IMU_INDEX, measurement_vector)
+
+def vn_200_imu_callback(data):
+    measurement_vector = numpy.matrix(
+                            [ [data.orientation_euler.roll*math.pi/180.0],
+                              [data.orientation_euler.pitch*math.pi/180.0],
+                              [-data.orientation_euler.yaw*math.pi/180.0] ] )
+    #kf.Step(VN_200_IMU_INDEX, measurement_vector)
 
 """
 This corrects for the case where the state's yaw is
@@ -299,7 +308,8 @@ def create_EKF():
     process_covariance = numpy.eye(8)*1e-3
 
     # os_imu_measurement_covariance = numpy.eye(3)*1e-6
-    um6_imu_measurement_covariance = numpy.eye(3)*1e-6
+    # um6_imu_measurement_covariance = numpy.eye(3)*1e-6
+    vn_200_imu_measurement_covariance = numpy.eye(3)*1e-6
     encoders_measurement_covariance = numpy.eye(2)*1e-6
     gps_measurement_covariance = numpy.eye(2)*5.0
 
@@ -311,7 +321,8 @@ def create_EKF():
                                 initial_probability,\
                                 process_covariance,\
                                 #[os_imu_measurement_covariance, encoders_measurement_covariance, gps_measurement_covariance])
-                                [um6_imu_measurement_covariance, encoders_measurement_covariance, gps_measurement_covariance])
+                                #[um6_imu_measurement_covariance, encoders_measurement_covariance, gps_measurement_covariance])
+                                [vn_200_imu_measurement_covariance, encoders_measurement_covariance, gps_measurement_covariance])
 
 def create_msg(belief, covariances):
     msg = EKFData()
@@ -345,10 +356,11 @@ if __name__ == '__main__':
 
     kf = create_EKF()
 
-    rospy.Subscriber("um6_imu_data", UM6IMU, um6_imu_callback)
+    #rospy.Subscriber("um6_imu_data", UM6IMU, um6_imu_callback)
     #rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
+    rospy.Subscriber("vn_200_ins_soln", vn_200_ins_soln, vn_200_imu_callback)
     rospy.Subscriber("vel_data", Twist, encoders_imu_callback)
-    rospy.Subscriber("gps_data", Point, gps_imu_callback)
+    rospy.Subscriber("gps_offset", Point, gps_imu_callback)
 
     pub = rospy.Publisher('ekf_data', EKFData)
 
