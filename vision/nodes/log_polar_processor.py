@@ -12,6 +12,7 @@ from cv_bridge import CvBridge, CvBridgeError
 
 from sensor_msgs.msg import Image, LaserScan
 
+SHOW_GRAPHICS = True
 
 bridge = CvBridge()
 
@@ -24,12 +25,12 @@ anglescale = 80
 
 # after the image is homography (perspective) transformed, this is the number
 # of pixels that go into one meter
-PIXELS_PER_METER = 100.0
+PIXELS_PER_METER = 281.0
 
 # this is the distance in meters from the place on the ground that is seen
 # on the bottom of the image to the point on the ground just below the
 # front of the robot
-DISTANCE_FROM_FRONT = .2
+DISTANCE_FROM_FRONT = .31
 
 def makeScanFromImg(img):
     rowHeight = 1
@@ -131,7 +132,8 @@ def init():
             scan = makeScanFromImg(curImgData)
             pub.publish(scan)
 
-            # display(scan)
+            if SHOW_GRAPHICS:
+                display(scan)
 
         r.sleep()
 

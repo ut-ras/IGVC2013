@@ -5,6 +5,8 @@ import rospy, sys, cv2, cv
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
+RATE = 10
+
 # for conversion of raw image topic data to OpenCV image data
 bridge = CvBridge()
 
@@ -53,7 +55,7 @@ def init():
     sub = rospy.Subscriber('usb_cam/image_raw', Image, callback)
     pub = rospy.Publisher('binimg_orange_red_threshold', Image)
 
-    r = rospy.Rate(3)
+    r = rospy.Rate(RATE)
 
     while not rospy.is_shutdown():
         global curImg

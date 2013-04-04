@@ -6,13 +6,15 @@ import numpy as np
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
+RATE = 10
+
 # for conversion of raw image topic data to OpenCV image data
 bridge = CvBridge()
 
 PERSPECTIVE_TRANSFORM = np.array(
-[[  2.48253566e+00,   1.65852542e+00,  -5.01512515e+02],
- [  8.35395261e-03,   4.60948006e+00,  -6.44248503e+02],
- [  6.77126073e-05,   4.81987961e-03,   1.00000000e+00]])
+[[  1.78778569e+00,   9.19775038e-01,  -2.56236007e+02],
+ [  2.24321245e-02,   2.98569665e+00,  -3.37687301e+02],
+ [  8.04901494e-05,   2.72273026e-03,   1.00000000e+00]])
 def homography_transform(img):
     return cv2.warpPerspective(
             img,
@@ -77,7 +79,7 @@ def init():
     sub = rospy.Subscriber('binimg_orange_red_threshold', Image, callback)
     pub = rospy.Publisher('log_polar_transformed', Image)
 
-    r = rospy.Rate(3)
+    r = rospy.Rate(RATE)
 
     while not rospy.is_shutdown():
         global curImg
