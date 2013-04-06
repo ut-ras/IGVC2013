@@ -17,9 +17,16 @@ namespace enc = sensor_msgs::image_encodings;
 using namespace std;
 using namespace cv;
 
+/*
+we get 80
+we measure 66
+exp(c/LOG_SCALE)/PIXELS_PER_METER*66/80
+
+*/
+
 double LOG_SCALE = 20.0,
-       PIXELS_PER_METER = 281.0,
-       DISTANCE_FROM_FRONT = .31,
+       PIXELS_PER_METER = 230,
+       DISTANCE_FROM_FRONT = 0.0,
        RAY_THICKNESS = 1;
 
 ros::Publisher scan_pub;
@@ -33,15 +40,17 @@ void processsImage(Mat img) {
     unsigned int num_readings = 1 + img_size.height/RAY_THICKNESS,
                  max_dist = img_size.width;
 
-    double angle_width = M_PI/(double)num_readings;
+    double angle_width = M_PI/(double)(num_readings - 1);
 
     double ranges[num_readings];
 
     uint8_t* pixelPtr = (uint8_t*)img.data;
 
     for (int i = 0; i < num_readings - 1; i++) {
-        unsigned int row = (num_readings - 1 - i)*RAY_THICKNESS,
+        unsigned int row = i*RAY_THICKNESS,
                      c = 0;
+
+        
 
         for (c = 0; c < max_dist; c++) {
             bool flag = false;
@@ -57,8 +66,13 @@ void processsImage(Mat img) {
                 break;
             }
         }
+        
+        double distance = exp(c/LOG_SCALE)/PIXELS_PER_METER + DISTANCE_FROM_FRONT;
+        ranges[num_readings - 1 - i] = distance;
 
-        ranges[i] = exp(c/LOG_SCALE)/PIXELS_PER_METER + DISTANCE_FROM_FRONT;
+        if (i == num_readings/2) {
+            cout << "distance to center: " << (distance*39.37) << endl;
+        }
     }
     
     ranges[0] = ranges[1];

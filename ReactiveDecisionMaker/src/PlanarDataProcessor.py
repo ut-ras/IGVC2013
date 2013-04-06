@@ -66,7 +66,7 @@ def shortenAndCorrectPlanarData(pdata):
             dist = MAX_VAL
 
         rays[i].dist = dist
-        rays[i].angle = angle - math.pi/2.0
+        rays[i].angle = angle# - math.pi/2.0
 
     return rays
 

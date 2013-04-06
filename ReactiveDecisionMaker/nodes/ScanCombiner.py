@@ -26,21 +26,21 @@ def publish_scans():
 
         if i < sonar_len and j < imgray_len:
             # figure out which has the smaller angle
-            imgray_angle = imgray_scan.range_min + imgray_scan.angle_increment*j
-            sonar_angle = sonar_scan.range_min + sonar_scan.angle_increment*i
+            imgray_angle = imgray_scan.angle_min + imgray_scan.angle_increment*j
+            sonar_angle = sonar_scan.angle_min + sonar_scan.angle_increment*i
 
             if imgray_angle > sonar_angle:
                 add_imgray = False
 
         if add_imgray:
             # add imgray
-            imgray_angle = imgray_scan.range_min + imgray_scan.angle_increment*j
+            imgray_angle = imgray_scan.angle_min + imgray_scan.angle_increment*j
             angles.append(imgray_angle)
             ranges.append(imgray_scan.ranges[j])
             j += 1
         else:
             # add sonar
-            sonar_angle = sonar_scan.range_min + sonar_scan.angle_increment*i
+            sonar_angle = sonar_scan.angle_min + sonar_scan.angle_increment*i
             angles.append(sonar_angle)
             ranges.append(sonar_scan.ranges[i])
             i += 1

@@ -5,7 +5,7 @@ import rospy, sys, cv2, cv
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
-RATE = 10
+RATE = 5
 
 # for conversion of raw image topic data to OpenCV image data
 bridge = CvBridge()

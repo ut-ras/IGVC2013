@@ -78,8 +78,6 @@ class DecisionMaker:
         shortenedLidar = shortenAndCorrectPlanarData(pdata)
 
         directions = calcViableDirs(shortenedLidar)
-        print directions
-
         rotateDirections(directions, heading)
 
         goalHeading = calcGoalHeading(curPos, goalPos)
@@ -102,6 +100,8 @@ class DecisionMaker:
                 goalHeading,
                 heading
             )
+
+            print "best direction: ", bestDirection
 
             if bestDirection != None:
                 msg = getAction(
@@ -160,10 +160,9 @@ def handle_getAction(req):
     curTime = rospy.get_time()
 
     if curTime - latestTime < TIMEOUT:
-        print latestAction
         return GetActionResponse(latestAction)
     else:
-        print 'data became too old!'
+        ros.loginfo("last action stale; GetAction service giving stop action")
         return GetActionResponse(Twist())
 
 if __name__ == "__main__":
