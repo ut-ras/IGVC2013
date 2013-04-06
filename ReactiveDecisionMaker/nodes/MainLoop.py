@@ -33,7 +33,7 @@ class DecisionMaker:
 
         self.turningAround = False
         self.turningDir = 0
-        self.oppositeAngle = None
+        self.oppositeAngle = None # would this be a good name for a band?
 
     def acquireData(self):
         try:
@@ -51,9 +51,6 @@ class DecisionMaker:
         heading = self.heading
         pdata = self.pdata
         goalPos = self.goalPos
-        turningAround = self.turningAround
-        turningDir = self.turningDir
-        oppositeAngle = self.oppositeAngle # would this be a good name for a band?
 
         msg = Twist()
 
@@ -109,32 +106,32 @@ class DecisionMaker:
                     heading
                 )
 
-            turningAround = False
-            oppositeAngle = None
+            self.turningAround = False
+            self.oppositeAngle = None
         else:
             # if there are no viable directions, turn until there are
-            if turningAround:
-                if abs(heading - oppositeAngle) < ANGLE_PRECISION:
-                    turningAround = False
-                    turningDir = 0
-                elif 1 == turningDir:
+            if self.turningAround:
+                if abs(heading - self.oppositeAngle) < ANGLE_PRECISION:
+                    self.turningAround = False
+                    self.turningDir = 0
+                elif 1 == self.turningDir:
                     # turn left
                     msg.angular.z = MAX_ANGULAR
-                elif 2 == turningDir:
+                elif 2 == self.turningDir:
                     # turn right
                     msg.angular.z = -MAX_ANGULAR
             else:
-                turningAround = True
+                self.turningAround = True
 
                 coin = random.random()
                 if coin < .5:
-                    oppositeAngle = boundAngleTo2PI(heading - ANGLE_PRECISION)
-                    turningDir = 1;
+                    self.oppositeAngle = boundAngleTo2PI(heading - ANGLE_PRECISION)
+                    self.turningDir = 1;
                     # turn left
                     msg.angular.z = MAX_ANGULAR
                 elif coin >= .5:
-                    oppositeAngle = boundAngleTo2PI(heading + ANGLE_PRECISION)
-                    turningDir = 2
+                    self.oppositeAngle = boundAngleTo2PI(heading + ANGLE_PRECISION)
+                    self.turningDir = 2
                     # turn right
                     msg.angular.z = -MAX_ANGULAR
 
