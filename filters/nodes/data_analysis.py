@@ -1,34 +1,43 @@
 #!/usr/bin/env python
 import roslib; roslib.load_manifest('filters')
-import rospy
-import tf
+import rospy, tf
 
-from std_msgs.msg import String
-from geometry_msgs.msg import Twist,Point
-from filters.msg import RotatedIMUData,EKFData
+from vn_200_imu.msg import vn_200_accel_gyro_compass
 
-x_count = 0
-x_sum = 0
-x_squared_sum = 0
+class SensorData:
+    def __init__(self, name):
+        self.name = name
+        self.count = 0
+        self.sum = 0
+        self.squared_sum = 0
 
-def oceanserver_imu_callback(data):
-    rospy.loginfo("received imu data!");
-    ax = data.acceleration.x
+    def update(self, val):
+        self.count += 1.0
+        self.sum += val
+        self.squared_sum += val**2
 
-    global x_count, x_sum, x_squared_sum
-    x_count += 1.0
-    x_sum += ax
-    x_squared_sum += ax**2
+        self.mean = self.sum/self.count
+        self.var = self.squared_sum/self.count - self.mean**2
 
-    x_mean = x_sum/x_count
-    x_squared_mean = x_squared_sum/x_count
-    x_var = x_squared_mean - x_mean**2
+    def dispData(self):
+        print self.name, "mean:", self.mean, "var:", self.var
 
-    rospy.loginfo("mean: %f\nvar: %f", x_mean, x_var);
+vn_200_data_accelx = SensorData("accelx");
+vn_200_data_accely = SensorData("accely");
+vn_200_data_accelz = SensorData("accelz");
+
+def vn_200_imu_callback(data):
+    vn_200_data_accelx.update(data.accelerometer.x)
+    vn_200_data_accelx.dispData()
+    vn_200_data_accely.update(data.accelerometer.y)
+    vn_200_data_accely.dispData()
+    vn_200_data_accelz.update(data.accelerometer.z)
+    vn_200_data_accelz.dispData()
+
 
 if __name__ == '__main__':
     rospy.init_node('data_analysis', anonymous=True)
 
-    rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
+    rospy.Subscriber("vn_200_accel_gyro_compass", vn_200_accel_gyro_compass, vn_200_imu_callback)
 
     rospy.spin()
