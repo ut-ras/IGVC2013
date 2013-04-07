@@ -5,8 +5,7 @@ import rospy
 import math
 
 from geometry_msgs.msg import Point
-from GPS_Ublox.msg import GPS_UBlox_raw
-from vn_200_imu.msg import vn_200_gps_soln
+from GPS_Ublox.msg import gps_raw
 
 INITIAL_LONGITUDE = 0.0
 INITIAL_LATITUDE = 0.0
@@ -43,7 +42,7 @@ def coord_from_coord_and_haversine(lon, lat, deltax, deltay) :
 
 def offset_calc(data):
 
-    pub = rospy.Publisher('gps_data', Point)
+    pub = rospy.Publisher('x_y_offseter', Point)
 
     msg = Point()
 
@@ -78,7 +77,7 @@ def listener():
     #rospy.Subscriber('gps_data_raw', GPS_UBlox_raw, offset_calc)
     rospy.loginfo('GPS_offset_calculator node initialized')
 
-    rospy.Subscriber('/vn_200_gps_soln', vn_200_gps_soln, offset_calc)
+    rospy.Subscriber('/gps_data', gps_raw, offset_calc)
     rospy.spin()
 
 if __name__ == '__main__':
