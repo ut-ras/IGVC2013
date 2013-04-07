@@ -7,7 +7,7 @@ pi2 = math.pi*2.0
 MAX_VAL = 1.0 # ranges larger in distance than this are set to this
 CLOSE_ENOUGH_TO_GOAL = .1
 MAX_VAL_PRECISION = 1e-3 # precision around max
-MIN_CLEARANCE_ALLOWED = .8 # set to approximate width of robot
+MIN_CLEARANCE_ALLOWED = 1.0 # set to approximate width of robot
 MIN_EDGE_CLEARANCE = 1.0 # clearance that must be met before added additional directions to a gap
 MIN_VAL = 2e-2 # if ranges are below this, assume they are actually max values
 MAXIMUM_CLEARANCE = MAX_VAL*2.0 # used to normalize clearances
@@ -20,9 +20,9 @@ CLEARANCE_WEIGHT = .3
 CURRENT_HEADING_WEIGHT = .1
 GOAL_HEADING_WEIGHT = .6
 """
-CLEARANCE_WEIGHT = .19
+CLEARANCE_WEIGHT = .29
 CURRENT_HEADING_WEIGHT = .01
-GOAL_HEADING_WEIGHT = .8
+GOAL_HEADING_WEIGHT = .7
 
 # returns angle equivalent to argument, but in range [0, 2*pi]
 def boundAngleTo2PI(angle):

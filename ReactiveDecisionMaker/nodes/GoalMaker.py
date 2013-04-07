@@ -7,7 +7,7 @@ from ReactiveUtils import *
 from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Point
 
-goals = [Point(0, 0, 0), Point(5, 0, 0), Point(0, 0, 0)]
+goals = [Point(0, 0, 0), Point(15, 0, 0), Point(0, 0, 0)]
 curGoalIndex = 0
 
 pub = None

@@ -119,10 +119,6 @@ def publish_gps_data (gps_data) :
         rospy.logwarn("GPS: Solution is has connection to less than 3 satellites. Please move to an open area")
         gps_msg.error_string += "Less than 3 satellites found\n"
 
-    if gps_msg.error_present:
-        gps_pub.publish(gps_msg)
-        return
-
     gps_msg.latitude  = float(gps_data[5])
     gps_msg.longitude = float(gps_data[6])
     gps_msg.altitude  = float(gps_data[7])
@@ -160,7 +156,6 @@ def publish_ins_data (ins_data) :
         rospy.logwarn("INS: Not tracking. Insufficient dynamic motion")
         ins_msg.error_string += "Not tracking. Insufficient dynamic motion\n"
     elif ins_mode == 1:
-        ins_msg.error_present = True
         rospy.logwarn("INS: Sufficient dynamic motion, but solution was not within performence specs.")
         ins_msg.error_string += "Sufficient dynamic motion, but solution was not withing perforemnce specs.\n"
 
@@ -185,10 +180,6 @@ def publish_ins_data (ins_data) :
         ins_msg.error_present = True
         rospy.logwarn("IMU: GPS communication error detected")
         ins_msg.error_string += "GPS communication error detected\n"
-
-    if ins_msg.error_present:
-        ins_pub.publish(ins_msg)
-        return
 
     ins_msg.orientation_euler.yaw   = float(ins_data[4])
     ins_msg.orientation_euler.pitch = float(ins_data[5])

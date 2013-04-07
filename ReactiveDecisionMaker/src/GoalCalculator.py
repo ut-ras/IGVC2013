@@ -29,16 +29,16 @@ def calcViableDir(goalHeading, shortenedLidar, heading, curPos, goalPos):
     ### go left until hitting a bump
     leftIndex = index
     for i in range(index, numVals):
+        leftIndex = i
         if abs(shortenedLidar[i].dist - MAX_VAL) > MAX_VAL_PRECISION:
             break
-        leftIndex = i
 
     ### go right until hitting a bump
     rightIndex = index
     for i in range(index, -1, -1):
+        rightIndex = i
         if abs(shortenedLidar[i].dist - MAX_VAL) > MAX_VAL_PRECISION:
             break
-        rightIndex = i
 
     ### if there was enough clearance in both directions, return the direction
     clearance1 = calcClearance(
