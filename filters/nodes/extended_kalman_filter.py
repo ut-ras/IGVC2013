@@ -360,10 +360,6 @@ def create_msg(belief, covariances):
     return msg
 
 def init_old():
-    rospy.init_node('extended_kalman_filter', anonymous=False)
-
-    kf = create_EKF()
-
     #rospy.Subscriber("um6_imu_data", UM6IMU, um6_imu_callback)
     #rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
     rospy.Subscriber("vn_200_ins_soln", vn_200_ins_soln, vn_200_imu_callback)
@@ -382,10 +378,6 @@ def init_old():
         r.sleep()
 
 def init_new():
-    rospy.init_node('extended_kalman_filter', anonymous=True)
-
-    kf = create_EKF()
-
     subscribe_list = str(rospy.get_param('~topics'))
     topic_name = 'ekf_data'
 
@@ -412,8 +404,24 @@ def init_new():
 
         r.sleep()
 
-if __name__ == '__main__':
-    # init_old()
-    init_new()
+def init():
+    rospy.init_node('extended_kalman_filter', anonymous=False)
 
+    global kf
+    kf = create_EKF()
+
+    subscribe_from_params = False
+    try:
+        subscribe_from_params = bool(rospy.get_param('~custom_subscribers'))
+    except KeyError: pass
+
+    if subscribe_from_params:
+        init_new()
+    else:
+        init_old()
+
+if __name__ == "__main__":
+    try:
+        init()
+    except rospy.ROSInterruptException: pass
 
