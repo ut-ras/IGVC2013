@@ -21,6 +21,10 @@ def publish_scans():
     i = 0
     j = 0
 
+    data.startAngle = min(sonar_scan.angle_min, imgray_scan.angle_min)
+    endAngle = max(sonar_scan.angle_min, imgray_scan.angle_min)
+    data.angleRange = endAngle - data.startAngle
+
     while i < sonar_len or j < imgray_len:
         add_imgray = (j < imgray_len)
 

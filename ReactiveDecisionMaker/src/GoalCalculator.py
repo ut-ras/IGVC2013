@@ -8,7 +8,16 @@ def calcGoalHeading(curPos, goalPos):
     dy = goalPos.y - curPos.y
     return math.atan2(dy, dx)
 
-def calcViableDir(goalHeading, shortenedLidar, heading, curPos, goalPos):
+def calcViableDir(
+        goalHeading,
+        shortenedLidar,
+        heading,
+        curPos,
+        goalPos,
+        startAngle,
+        angleRange
+        ):
+
     goalHeadingTemp = boundAngleToNPItoPI(goalHeading - heading)
 
     # check to see if the goal direction is within lidar view
@@ -18,7 +27,7 @@ def calcViableDir(goalHeading, shortenedLidar, heading, curPos, goalPos):
     # check clearance aroud lidar to see if it fits
     ### figure out which lidarValue index goalHeading best fits
     numVals = len(shortenedLidar)
-    index = int((goalHeadingTemp + math.pi/2.0)/(math.pi)*numVals)
+    index = int((goalHeadingTemp - startAngle)/(angleRange)*numVals)
 
     if index >= numVals:
         index = numVals - 1

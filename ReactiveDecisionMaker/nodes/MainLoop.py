@@ -83,7 +83,9 @@ class DecisionMaker:
             shortenedLidar,
             heading,
             curPos,
-            goalPos
+            goalPos,
+            pdata.startAngle,
+            pdata.angleRange
         )
 
         if goalDirection != None:
@@ -159,7 +161,7 @@ def handle_getAction(req):
     if curTime - latestTime < TIMEOUT:
         return GetActionResponse(latestAction)
     else:
-        ros.loginfo("last action stale; GetAction service giving stop action")
+        rospy.loginfo("last action stale; GetAction service giving stop action")
         return GetActionResponse(Twist())
 
 if __name__ == "__main__":
