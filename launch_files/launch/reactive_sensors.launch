@@ -5,4 +5,10 @@
   <node pkg="ReactiveDecisionMaker" name="DataServiceProvider" type="DataServiceProvider.py"/>
   <node pkg="vn_200_imu" name="vn_200_node" type="vn_200_node.py"/>
   <node pkg="usb_cam" name="usb_cam_node" type="usb_cam_node"/>
+
+  <node pkg="GPS_Ublox" name="GPS_input_selector" type="GPS_input_selector.py">
+    <param name="source" value="ins" type="str"/>
+  </node>
+
+  <include file="$(find launch_files)/launch/gps_nodes.launch"/>
 </launch>

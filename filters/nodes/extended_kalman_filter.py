@@ -52,11 +52,19 @@ def oceanserver_imu_callback(data):
     kf.Step(OCEAN_SERVER_IMU_INDEX, measurement_vector)
 
 def vn_200_imu_callback(data):
+    """
     measurement_vector = numpy.matrix(
                             [ [data.orientation_euler.roll*math.pi/180.0],
                               [data.orientation_euler.pitch*math.pi/180.0],
-                              [-data.orientation_euler.yaw*math.pi/180.0] ] )
-    #kf.Step(VN_200_IMU_INDEX, measurement_vector)
+                              [-(data.orientation_euler.yaw)*math.pi/180.0] ] )
+    kf.Step(VN_200_IMU_INDEX, measurement_vector)
+    """
+    compass_callback(
+            data.orientation_euler.roll*math.pi/180.0,
+            data.orientation_euler.pitch*math.pi/180.0,
+            -(data.orientation_euler.yaw)*math.pi/180.0,
+            VN_200_IMU_INDEX
+            )
 
 """
 This corrects for the case where the state's yaw is
@@ -65,7 +73,7 @@ a sensor is bounded in some other way
 """
 pi2 = math.pi*2
 def compass_callback(roll, pitch, yaw, index):
-    curYaw = kf.GetCurrentState().z
+    curYaw = kf.GetCurrentState()[2,0]
 
     bounded_curYaw = (curYaw%pi2 + pi2)%pi2
     bounded_yaw = (yaw%pi2 + pi2)%pi2
@@ -90,7 +98,7 @@ def encoders_imu_callback(data):
                               [data.angular.z] ] )
     kf.Step(ENCODERS_INDEX, measurement_vector)
 
-def gps_imu_callback(data):
+def gps_callback(data):
     measurement_vector = numpy.matrix(
                             [ [data.x],
                               [data.y] ] )
@@ -309,7 +317,7 @@ def create_EKF():
 
     # os_imu_measurement_covariance = numpy.eye(3)*1e-6
     # um6_imu_measurement_covariance = numpy.eye(3)*1e-6
-    vn_200_imu_measurement_covariance = numpy.eye(3)*1e-6
+    vn_200_imu_measurement_covariance = numpy.eye(3)*.17
     encoders_measurement_covariance = numpy.eye(2)*1e-6
     gps_measurement_covariance = numpy.eye(2)*5.0
 
@@ -351,7 +359,7 @@ def create_msg(belief, covariances):
 
     return msg
 
-if __name__ == '__main__':
+def init_old():
     rospy.init_node('extended_kalman_filter', anonymous=False)
 
     kf = create_EKF()
@@ -360,7 +368,7 @@ if __name__ == '__main__':
     #rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
     rospy.Subscriber("vn_200_ins_soln", vn_200_ins_soln, vn_200_imu_callback)
     rospy.Subscriber("vel_data", Twist, encoders_imu_callback)
-    rospy.Subscriber("gps_offset", Point, gps_imu_callback)
+    rospy.Subscriber("x_y_offseter", Point, gps_callback)
 
     pub = rospy.Publisher('ekf_data', EKFData)
 
@@ -373,5 +381,39 @@ if __name__ == '__main__':
 
         r.sleep()
 
+def init_new():
+    rospy.init_node('extended_kalman_filter', anonymous=True)
+
+    kf = create_EKF()
+
+    subscribe_list = str(rospy.get_param('~topics'))
+    topic_name = 'ekf_data'
+
+    if subscribe_list.find('enc') != -1:
+        rospy.Subscriber("vel_data", Twist, encoders_imu_callback)
+        topic_name += '_enc'
+
+    if subscribe_list.find('yaw') != -1:
+        rospy.Subscriber("vn_200_ins_soln", vn_200_ins_soln, vn_200_imu_callback)
+        topic_name += '_yaw'
+
+    if subscribe_list.find('gps') != -1:
+        rospy.Subscriber("x_y_offseter", Point, gps_callback)
+        topic_name += '_gps'
+
+    pub = rospy.Publisher(topic_name, EKFData)
+
+    r = rospy.Rate(10) # 10hz
+    while not rospy.is_shutdown():
+        # rospy.loginfo("predicting & publishing!")
+
+        kf.Predict()
+        pub.publish(create_msg(kf.GetCurrentState(), kf.GetCurrentCovMatrix()))
+
+        r.sleep()
+
+if __name__ == '__main__':
+    # init_old()
+    init_new()
 
 

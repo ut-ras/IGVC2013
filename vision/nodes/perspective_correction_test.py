@@ -136,6 +136,10 @@ def callback(image_data):
 
 def init():
     rospy.init_node('perspective_correction_test')
+    global CALC_TRANSFORM
+    CALC_TRANSFORM = bool(rospy.get_param('~recalc'))
+    print "recalculating transform?", CALC_TRANSFORM
+
     prev_time = rospy.get_time()
 
     cv2.namedWindow('Plain')
@@ -164,7 +168,6 @@ if __name__ == "__main__":
     except rospy.ROSInterruptException: pass
 
     cv2.destroyAllWindows() # not sure if this does anything
-
 
 
 
