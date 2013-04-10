@@ -11,17 +11,17 @@ import time
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist,Point
 from ocean_server_imu.msg import RawData
-from filters.msg import RotatedIMUData,EKFData
+from filters.msg import EKFData, Orientation
 from um6_imu.msg import UM6IMU
-from vn_200_imu.msg import vn_200_ins_soln
 
 
 USING_TEST1_BAGGED_DATA = False
 USING_TEST2_BAGGED_DATA = False
 
-#OCEAN_SERVER_IMU_INDEX = 0
-#UM6_IMU_INDEX = 0
-VN_200_IMU_INDEX = 0
+# OCEAN_SERVER_IMU_INDEX = 0
+# UM6_IMU_INDEX = 0
+# VN_200_IMU_INDEX = 0
+ORIENTATION_INDEX = 0
 ENCODERS_INDEX = 1
 GPS_INDEX = 2
 
@@ -52,13 +52,6 @@ def oceanserver_imu_callback(data):
     kf.Step(OCEAN_SERVER_IMU_INDEX, measurement_vector)
 
 def vn_200_imu_callback(data):
-    """
-    measurement_vector = numpy.matrix(
-                            [ [data.orientation_euler.roll*math.pi/180.0],
-                              [data.orientation_euler.pitch*math.pi/180.0],
-                              [-(data.orientation_euler.yaw)*math.pi/180.0] ] )
-    kf.Step(VN_200_IMU_INDEX, measurement_vector)
-    """
     compass_callback(
             data.orientation_euler.roll*math.pi/180.0,
             data.orientation_euler.pitch*math.pi/180.0,
@@ -71,23 +64,36 @@ This corrects for the case where the state's yaw is
 bounded from -inf to inf, whereas the update from
 a sensor is bounded in some other way
 """
+def orientation_callback(data):
+    curYaw = kf.GetCurrentState()[2,0]
+    yaw = data.yaw
+
+    yaw = yaw - 2*math.pi*math.floor((yaw - curYaw + math.pi)/(2*math.pi))
+
+    measurement_vector = numpy.matrix(
+                            [[data.roll],
+                             [data.pitch],
+                             [yaw]] )
+    kf.Step(ORIENTATION_INDEX, measurement_vector)
+
+"""
+This corrects for the case where the state's yaw is
+bounded from -inf to inf, whereas the update from
+a sensor is bounded in some other way
+"""
 pi2 = math.pi*2
 def compass_callback(roll, pitch, yaw, index):
     curYaw = kf.GetCurrentState()[2,0]
 
-    bounded_curYaw = (curYaw%pi2 + pi2)%pi2
-    bounded_yaw = (yaw%pi2 + pi2)%pi2
-
-    yaw_r = bounded_yaw - bounded_curYaw
-    yaw_f = curYaw + yaw_r
+    yaw = yaw - 2*math.pi*math.floor((yaw - curYaw + math.pi)/(2*math.pi))
 
     measurement_vector = numpy.matrix(
                             [[roll],
                              [pitch],
-                             [yaw_f]] )
+                             [yaw]] )
     kf.Step(index, measurement_vector)
 
-def encoders_imu_callback(data):
+def encoders_callback(data):
     if USING_TEST1_BAGGED_DATA:
         measurement_vector = numpy.matrix(
                             [ [data.linear.x],
@@ -317,7 +323,7 @@ def create_EKF():
 
     # os_imu_measurement_covariance = numpy.eye(3)*1e-6
     # um6_imu_measurement_covariance = numpy.eye(3)*1e-6
-    vn_200_imu_measurement_covariance = numpy.eye(3)*.17
+    vn_200_imu_measurement_covariance = numpy.eye(3)*1e-4
     encoders_measurement_covariance = numpy.eye(2)*1e-6
     gps_measurement_covariance = numpy.eye(2)*5.0
 
@@ -362,8 +368,8 @@ def create_msg(belief, covariances):
 def init_old():
     #rospy.Subscriber("um6_imu_data", UM6IMU, um6_imu_callback)
     #rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
-    rospy.Subscriber("vn_200_ins_soln", vn_200_ins_soln, vn_200_imu_callback)
-    rospy.Subscriber("vel_data", Twist, encoders_imu_callback)
+    rospy.Subscriber("orientation_data", Orientation, orientation_callback)
+    rospy.Subscriber("vel_data", Twist, encoders_callback)
     rospy.Subscriber("x_y_offseter", Point, gps_callback)
 
     pub = rospy.Publisher('ekf_data', EKFData)
@@ -382,11 +388,11 @@ def init_new():
     topic_name = 'ekf_data'
 
     if subscribe_list.find('enc') != -1:
-        rospy.Subscriber("vel_data", Twist, encoders_imu_callback)
+        rospy.Subscriber("vel_data", Twist, encoders_callback)
         topic_name += '_enc'
 
     if subscribe_list.find('yaw') != -1:
-        rospy.Subscriber("vn_200_ins_soln", vn_200_ins_soln, vn_200_imu_callback)
+        rospy.Subscriber("orientation_data", Orientation, orientation_callback)
         topic_name += '_yaw'
 
     if subscribe_list.find('gps') != -1:
