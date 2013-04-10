@@ -20,7 +20,6 @@ if __name__ == "__main__":
 
         try:
             curAction = getAction().action
-            pub.publish(curAction)
 
             if not beingServiced:
                 print "Publishing data from GetAction service!"
