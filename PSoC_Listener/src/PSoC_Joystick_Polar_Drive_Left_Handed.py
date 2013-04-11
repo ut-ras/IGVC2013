@@ -37,6 +37,10 @@ def output():
       p = Twist()
       p.linear.x = sign(xOut) * xOut * xOut * MAX_X_SPEED / 128 / 128 if right_state else 0
       p.angular.z = sign(wOut)* wOut * wOut * MAX_W_SPEED / 128 / 128 if right_state else 0
+
+      # making it more natural to control
+      p.angular.z = math.sqrt(p.angular.z)
+
       pub.publish(p)
     time.sleep(.1) #run at 10hz
 
