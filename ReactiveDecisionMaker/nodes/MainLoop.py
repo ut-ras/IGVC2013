@@ -4,7 +4,7 @@ import rospy, random, math
 
 from ReactiveUtils import *
 
-from DirectionFinder import calcViableDirs, getEndangles, getEnddists
+from DirectionFinder import calcViableDirs
 from PlanarDataProcessor import shortenAndCorrectPlanarData
 from DirectionChooser import pickBestDirection
 from GoalCalculator import calcGoalHeading, calcViableDir
@@ -31,6 +31,7 @@ class DecisionMaker:
         rospy.wait_for_service('getGoal')
         self.getGoal = rospy.ServiceProxy('getGoal', GetGoal)
 
+        # these three variables are for turning around in case we hit a deadend
         self.turningAround = False
         self.turningDir = 0
         self.oppositeAngle = None # would this be a good name for a band?
@@ -59,17 +60,18 @@ class DecisionMaker:
                   'so um is anything being published to /planar_data?'
             return msg
 
-        if goalPos.z == -10:
-            # this indicates a timeout in the DataServiceProvider
+        if goalPos.z == TIMEOUT_ERROR:
+            # this indicates a goal data timeout in the DataServiceProvider
+            # making us stop if GoalMaker has stopped publishing to /goal
+            rospy.loginfo("stopping because of a goal data timeout")
             return msg
 
         distToGoal = euclidDistPoint(goalPos, curPos)
 
-        print "distance to goal:", distToGoal
+        # print "distance to goal:", distToGoal
 
         if distToGoal < CLOSE_ENOUGH_TO_GOAL:
             rospy.loginfo("stopping because we're close enough to the goal")
-
             return msg
 
         shortenedLidar = shortenAndCorrectPlanarData(pdata)
@@ -79,14 +81,14 @@ class DecisionMaker:
 
         goalHeading = calcGoalHeading(curPos, goalPos)
         goalDirection = calcViableDir(
-            goalHeading,
-            shortenedLidar,
-            heading,
-            curPos,
-            goalPos,
-            pdata.startAngle,
-            pdata.angleRange
-        )
+                goalHeading,
+                shortenedLidar,
+                heading,
+                curPos,
+                goalPos,
+                pdata.startAngle,
+                pdata.angleRange
+                )
 
         if goalDirection != None:
             directions.append(goalDirection)
@@ -95,23 +97,25 @@ class DecisionMaker:
 
         if len(directions) > 0:
             bestDirection = pickBestDirection(
-                directions,
-                goalHeading,
-                heading
-            )
+                    directions,
+                    goalHeading,
+                    heading
+                    )
 
-            print "best direction: ", bestDirection
+            # print "best direction: ", bestDirection
 
             if bestDirection != None:
                 msg = getAction(
-                    bestDirection.direction,
-                    heading
-                )
+                        bestDirection.direction,
+                        heading,
+                        pdata.angleRange
+                        )
 
             self.turningAround = False
             self.oppositeAngle = None
         else:
             # if there are no viable directions, turn until there are
+            ### if we already decided to turn around before, keeping turning
             if self.turningAround:
                 if abs(heading - self.oppositeAngle) < ANGLE_PRECISION:
                     self.turningAround = False
@@ -122,6 +126,7 @@ class DecisionMaker:
                 elif 2 == self.turningDir:
                     # turn right
                     msg.angular.z = -MAX_ANGULAR
+            ### if we're not already turning, decided which direction to go
             else:
                 self.turningAround = True
 
@@ -138,13 +143,11 @@ class DecisionMaker:
                     msg.angular.z = -MAX_ANGULAR
 
         self.graphicsDisplayer.drawEverything(
-            shortenedLidar,
-            heading,
-            directions,
-            getEndangles(),
-            getEnddists(),
-            bestDirection
-        )
+                shortenedLidar,
+                heading,
+                directions,
+                bestDirection
+                )
 
         return msg
 

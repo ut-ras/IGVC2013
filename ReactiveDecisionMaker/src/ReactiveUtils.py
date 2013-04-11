@@ -3,6 +3,8 @@ import math
 # used as a shortcut/optimizer
 pi2 = math.pi*2.0
 
+TIMEOUT_ERROR = -10
+
 # these constants are in meters
 MAX_VAL = 1.0 # ranges larger in distance than this are set to this
 CLOSE_ENOUGH_TO_GOAL = .1
@@ -14,7 +16,7 @@ MAXIMUM_CLEARANCE = MAX_VAL*2.0 # used to normalize clearances
 ANGLE_PRECISION = 1e-1
 
 MAX_V = .5
-MAX_ANGULAR = .2
+MAX_ANGULAR = 1.0
 """
 CLEARANCE_WEIGHT = .3
 CURRENT_HEADING_WEIGHT = .1

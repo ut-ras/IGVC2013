@@ -26,7 +26,7 @@ class GraphicsDisplayer:
         self.background = self.background.convert()
         self.background.fill((0, 0, 0))
 
-    def drawEverything(self, shortenedLidar, heading, viableDirections, endangles, enddists, bestDirection):
+    def drawEverything(self, shortenedLidar, heading, viableDirections, bestDirection):
         self.window.blit(self.background, (0,0))
 
         for i in range(len(shortenedLidar)) :
@@ -40,27 +40,6 @@ class GraphicsDisplayer:
             y = REF_POS[1] + PIXELS_PER_METER*dist*math.sin(angle + heading)
 
             pygame.draw.line(self.window, BEAM_COLOR, REF_POS, (x, SIZEY - y))
-
-        if endangles != None and enddists != None:
-            for i in range(len(endangles)/2):
-                index = i*2
-
-                angle1 = endangles[index]
-                angle2 = endangles[index+1]
-                dist1 = enddists[index]
-                dist2 = enddists[index+1]
-
-                if ROTATE_90:
-                    angle1 += math.pi/2.0
-                    angle2 += math.pi/2.0
-
-                x1 = REF_POS[0] + PIXELS_PER_METER*dist1*math.cos(angle1 + heading)
-                y1 = REF_POS[1] + PIXELS_PER_METER*dist1*math.sin(angle1 + heading)
-                x2 = REF_POS[0] + PIXELS_PER_METER*dist2*math.cos(angle2 + heading)
-                y2 = REF_POS[1] + PIXELS_PER_METER*dist2*math.sin(angle2 + heading)
-
-                pygame.draw.circle(self.window, (0, 0, 255), (int(x1), int(SIZEY - y1)), 5, 5)
-                pygame.draw.circle(self.window, (0, 255, 0), (int(x2), int(SIZEY - y2)), 5, 5)
 
         for i in range(len(viableDirections)):
             direction = viableDirections[i].direction

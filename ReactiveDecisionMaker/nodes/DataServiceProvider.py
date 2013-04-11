@@ -34,7 +34,7 @@ def handle_getGoal(req):
         return GetGoalResponse(goal)
     else:
         rospy.loginfo("goal data is too old!")
-        return GetGoalResponse(Point(0, 0, -10))
+        return GetGoalResponse(Point(0, 0, TIMEOUT_ERROR))
     return
 
 def init_server():

@@ -20,12 +20,12 @@ def calcViableDir(
 
     goalHeadingTemp = boundAngleToNPItoPI(goalHeading - heading)
 
-    # check to see if the goal direction is within lidar view
-    if goalHeadingTemp > math.pi/2.0 or goalHeadingTemp < -math.pi/2.0:
+    # check to make sure the goal direction is within lidar view
+    if goalHeadingTemp > startAngle + angleRange or goalHeadingTemp < startAngle:
         return None
 
-    # check clearance aroud lidar to see if it fits
-    ### figure out which lidarValue index goalHeading best fits
+    # check clearance aroud goal direction to see if it's large enough
+    ### first, figure out which lidarValue index goalHeading best fits
     numVals = len(shortenedLidar)
     index = int((goalHeadingTemp - startAngle)/(angleRange)*numVals)
 
@@ -49,7 +49,7 @@ def calcViableDir(
         if abs(shortenedLidar[i].dist - MAX_VAL) > MAX_VAL_PRECISION:
             break
 
-    ### if there was enough clearance in both directions, return the direction
+    ### calulate the clearances in both directions
     clearance1 = calcClearance(
         shortenedLidar[leftIndex].angle, shortenedLidar[leftIndex].dist,
         shortenedLidar[index].angle, shortenedLidar[index].dist)
@@ -58,6 +58,7 @@ def calcViableDir(
         shortenedLidar[rightIndex].angle, shortenedLidar[rightIndex].dist,
         shortenedLidar[index].angle, shortenedLidar[index].dist)
 
+    ### if there's enough clearance on both sides, return double the lesser one
     if clearance1 > MIN_CLEARANCE_ALLOWED/2.0 and \
        clearance2 > MIN_CLEARANCE_ALLOWED/2.0:
         return Direction(goalHeading, 2.0*min(clearance1, clearance2))
@@ -68,7 +69,7 @@ def calcViableDir(
 
     if min(shortenedLidar[leftIndex].dist,
            shortenedLidar[rightIndex].dist) > goalDistance:
-        return Direction(goalHeading, MIN_CLEARANCE_ALLOWED)
+        return Direction(goalHeading, MIN_CLEARANCE_ALLOWED) # may be unwise to have MIN, not sure
 
     return None
 

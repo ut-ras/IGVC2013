@@ -13,17 +13,6 @@ class Direction:
     def __repr__(self):
         return "(" + str(self.direction) + ", " + str(self.clearance) + ")"
 
-endangles = None
-enddists = None
-
-def getEndangles():
-    global endangles
-    return endangles
-
-def getEnddists():
-    global enddists
-    return enddists
-
 def calcViableDirs(shortenedLidar):
     numRanges = len(shortenedLidar)
     inGap = False
