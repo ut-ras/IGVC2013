@@ -65,6 +65,8 @@ bounded from -inf to inf, whereas the update from
 a sensor is bounded in some other way
 """
 def orientation_callback(data):
+    print "hi?"
+
     curYaw = kf.GetCurrentState()[2,0]
     yaw = data.yaw
 

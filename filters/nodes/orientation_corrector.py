@@ -5,7 +5,10 @@ import rospy, math
 from vn_200_imu.msg import vn_200_ins_soln, vn_200_accel_gyro_compass
 from filters.msg import Orientation
 
-YAW_CORRECTION = -math.pi/3.0
+YAW_CORRECTION = math.pi
+X_OFFSET = 2.45331919332
+Y_OFFSET = 1.564559527120
+Z_OFFSET = 2.0
 
 pub = None
 
@@ -27,10 +30,33 @@ def vn_200_ins_callback(data):
     global pub
     pub.publish(msg)
 
+alphaMag = 0.4
+alphaAccel = 0.4
+
+xMagOld = 0.0
+yMagOld = 0.0
+zMagOld = 0.0
+
+xAccelOld = 0.0
+yAccelOld = 0.0
+zAccelOld = 0.0
+
 def vn_200_imu_callback(data):
-    xMag = data.compass.x
-    yMag = data.compass.y
-    zMag = data.compass.z
+    # read compass data
+    global X_OFFSET, Y_OFFSET, Z_OFFSET
+    xMag = data.compass.x - X_OFFSET
+    yMag = data.compass.y - Y_OFFSET
+    zMag = data.compass.z - Z_OFFSET
+
+    # mag low-pass filter
+    global alphaMag, xMagOld, yMagOld, zMagOld
+    xMag = xMag*alphaMag + xMagOld*(1 - alphaMag)
+    yMag = yMag*alphaMag + yMagOld*(1 - alphaMag)
+    zMag = zMag*alphaMag + zMagOld*(1 - alphaMag)
+
+    xMagOld = xMag
+    yMagOld = yMag
+    zMagOld = zMag
 
     # normalize the mag values
     norm = math.sqrt(xMag**2 + yMag**2 + zMag**2)
@@ -38,29 +64,42 @@ def vn_200_imu_callback(data):
     yMag /= norm
     zMag /= norm
 
+    # read accel data
     xAccel = data.accelerometer.x
     yAccel = data.accelerometer.y
     zAccel = data.accelerometer.z
 
-    # normalize the accel vector
+    # accel low-pass filter
+    global alphaAccel, xAccelOld, yAccelOld, zAccelOld
+    xAccel = xAccel*alphaAccel + xAccelOld*(1 - alphaAccel)
+    yAccel = yAccel*alphaAccel + yAccelOld*(1 - alphaAccel)
+    zAccel = zAccel*alphaAccel + zAccelOld*(1 - alphaAccel)
+
+    xAccelOld = xAccel
+    yAccelOld = yAccel
+    zAccelOld = zAccel
+
+    # normalize the mag values
     norm = math.sqrt(xAccel**2 + yAccel**2 + zAccel**2)
     xAccel /= norm
     yAccel /= norm
     zAccel /= norm
 
+
     # calculate roll & pitch, then yaw
     # src: http://arduino.cc/forum/index.php/topic,8573.0.html
-    roll = math.atan2(xAccel, math.sqrt(xAccel**2 + zAccel**2))  
+    roll = math.atan2(yAccel, math.sqrt(xAccel**2 + zAccel**2))
     pitch = math.atan2(xAccel, math.sqrt(yAccel**2 + zAccel**2))
-    yaw = math.atan2( 
-            -yMag*math.cos(roll) + zMag*math.sin(roll), 
-            xMag*math.cos(pitch) + zMag*math.sin(pitch)*math.sin(roll) + zMag*math.sin(pitch)*math.cos(roll)
+    yaw = math.atan2(
+            -yMag*math.cos(roll) + zMag*math.sin(roll),
+            xMag*math.cos(pitch) + zMag*math.sin(pitch)*math.sin(roll)
+                + zMag*math.sin(pitch)*math.cos(roll)
             )
 
     msg = Orientation()
-    msg.roll = roll
-    msg.pitch = pitch
-    msg.yaw = yaw
+    msg.roll = bound0to2Pi(roll)
+    msg.pitch = bound0to2Pi(pitch)
+    msg.yaw = bound0to2Pi(yaw + YAW_CORRECTION)
 
     global pub
     pub.publish(msg)

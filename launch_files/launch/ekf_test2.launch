@@ -37,5 +37,5 @@
     <param name="topics" value="enc+yaw+gps" type="str"/>
   </node>
 
-  <node pkg="rosbag" type="play" name="rosbag" args="-d 4 /home/granny/ros/ros-bag/intramuralfields_4-8-13.bag --topics /vel_data /usb_cam/image_raw /vn_200_ins_soln /vn_200_gps_soln"/>
+  <node pkg="rosbag" type="play" name="rosbag" args="-d 4 /home/granny/ros/ros-bag/intramuralfields_4-8-13.bag --topics /vel_data /usb_cam/image_raw /vn_200_ins_soln /vn_200_gps_soln /vn_200_accel_gyro_compass"/>
 </launch>
