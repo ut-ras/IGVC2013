@@ -15,8 +15,8 @@ MIN_VAL = 2e-2 # if ranges are below this, assume they are actually max values
 MAXIMUM_CLEARANCE = MAX_VAL*2.0 # used to normalize clearances
 ANGLE_PRECISION = 1e-1
 
-MAX_V = .5
-MAX_ANGULAR = 1.0
+MAX_V = .4
+MAX_ANGULAR = .5
 """
 CLEARANCE_WEIGHT = .3
 CURRENT_HEADING_WEIGHT = .1

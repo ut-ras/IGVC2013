@@ -22,7 +22,7 @@ def publish_scans():
     j = 0
 
     data.startAngle = min(sonar_scan.angle_min, imgray_scan.angle_min)
-    endAngle = max(sonar_scan.angle_min, imgray_scan.angle_min)
+    endAngle = max(sonar_scan.angle_max, imgray_scan.angle_max)
     data.angleRange = endAngle - data.startAngle
 
     while i < sonar_len or j < imgray_len:
@@ -69,7 +69,7 @@ def init_subscriptions():
     pub = rospy.Publisher("planar_data", PlanarData)
 
     sub2 = rospy.Subscriber("image_scan", LaserScan, image_scan_callback)
-    sub2 = rospy.Subscriber("scan", LaserScan, sonar_scan_callback)
+    sub2 = rospy.Subscriber("sonar_scan", LaserScan, sonar_scan_callback)
 
 if __name__ == "__main__":
     rospy.init_node('ScanCombiner')

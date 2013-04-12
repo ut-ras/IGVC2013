@@ -3,6 +3,7 @@ import roslib; roslib.load_manifest('ReactiveDecisionMaker')
 
 import rospy
 
+from ReactiveUtils import *
 from ReactiveDecisionMaker.srv import *
 from ReactiveDecisionMaker.msg import PlanarData
 from filters.msg import EKFData
