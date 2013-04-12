@@ -26,7 +26,7 @@ exp(c/LOG_SCALE)/PIXELS_PER_METER*66/80
 
 double LOG_SCALE = 20.0,
        PIXELS_PER_METER = 230,
-       DISTANCE_FROM_FRONT = 0.0,
+       DISTANCE_FROM_FRONT = 0.5,
        RAY_THICKNESS = 1;
 
 ros::Publisher scan_pub;
@@ -50,8 +50,6 @@ void processsImage(Mat img) {
         unsigned int row = i*RAY_THICKNESS,
                      c = 0;
 
-        
-
         for (c = 0; c < max_dist; c++) {
             bool flag = false;
 
@@ -67,7 +65,7 @@ void processsImage(Mat img) {
             }
         }
         
-        double distance = exp(c/LOG_SCALE)/PIXELS_PER_METER + DISTANCE_FROM_FRONT;
+        double distance = exp(c/LOG_SCALE)/PIXELS_PER_METER
         ranges[num_readings - 1 - i] = distance;
 
         if (i == num_readings/2) {
@@ -87,6 +85,7 @@ void processsImage(Mat img) {
     scan.header.frame_id = "laser_frame";
     scan.angle_increment = angle_width;
     scan.angle_min = -M_PI/2.0;
+    scan.angle_max = M_PI/2.0;
 
     scan.ranges.resize(num_readings);
     for (unsigned int i = 0; i < num_readings; ++i){
