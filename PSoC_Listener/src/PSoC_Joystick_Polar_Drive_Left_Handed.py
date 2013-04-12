@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import roslib; roslib.load_manifest('PSoC_Listener')
-import rospy, sys, time
+import rospy, sys, time, math
 from geometry_msgs.msg import Twist
 from threading import Thread
 from math import pi
@@ -39,7 +39,7 @@ def output():
       p.angular.z = sign(wOut)* wOut * wOut * MAX_W_SPEED / 128 / 128 if right_state else 0
 
       # making it more natural to control
-      p.angular.z = math.sqrt(p.angular.z)
+      p.angular.z = (1 if (p.angular.z > 0) else -1)*math.sqrt(abs(p.angular.z))
 
       pub.publish(p)
     time.sleep(.1) #run at 10hz
