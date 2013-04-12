@@ -146,7 +146,8 @@ def publish_ins_data (ins_data) :
     ins_msg.error_present = False
     ins_msg.error_string = ''
 
-    ins_status = int(ins_data[3], 16) & 0xFFFF # Make sure we have only 16 bits. No python weirdness
+    ins_status = int(ins_data[2], 16) & 0xFFFF # Make sure we have only 16 bits. No python weirdness
+
     ins_mode    = ins_status & 0x0003
     ins_gps_fix = ins_status & 0x0004
     ins_error   = ins_status & 0x0078
@@ -181,21 +182,21 @@ def publish_ins_data (ins_data) :
         rospy.logwarn("IMU: GPS communication error detected")
         ins_msg.error_string += "GPS communication error detected\n"
 
-    ins_msg.orientation_euler.yaw   = float(ins_data[4])
-    ins_msg.orientation_euler.pitch = float(ins_data[5])
-    ins_msg.orientation_euler.roll  = float(ins_data[6])
+    ins_msg.orientation_euler.yaw   = float(ins_data[3])
+    ins_msg.orientation_euler.pitch = float(ins_data[4])
+    ins_msg.orientation_euler.roll  = float(ins_data[5])
 
-    ins_msg.geodetic_latitude   = float(ins_data[7])
-    ins_msg.geodetic_longitude  = float(ins_data[8])
-    ins_msg.altitude            = float(ins_data[9])
+    ins_msg.geodetic_latitude   = float(ins_data[6])
+    ins_msg.geodetic_longitude  = float(ins_data[7])
+    ins_msg.altitude            = float(ins_data[8])
 
-    ins_msg.ned_velocities.x = float(ins_data[10])       # Velocity X
-    ins_msg.ned_velocities.y = float(ins_data[11])       # Velocity Y
-    ins_msg.ned_velocities.z = float(ins_data[12])       # Velocity Z
+    ins_msg.ned_velocities.x = float(ins_data[9])       # Velocity X
+    ins_msg.ned_velocities.y = float(ins_data[10])       # Velocity Y
+    ins_msg.ned_velocities.z = float(ins_data[11])       # Velocity Z
 
-    ins_msg.attitude_uncertainty = float(ins_data[13])   # Altitude Uncertainty
-    ins_msg.position_uncertainty = float(ins_data[14])   # Position Uncertainty
-    ins_msg.velocity_uncertainty = float(ins_data[15])   # Velocity Uncertainty
+    ins_msg.attitude_uncertainty = float(ins_data[12])   # Altitude Uncertainty
+    ins_msg.position_uncertainty = float(ins_data[13])   # Position Uncertainty
+    ins_msg.velocity_uncertainty = float(ins_data[14])   # Velocity Uncertainty
 
     ins_pub.publish(ins_msg)
 
@@ -209,26 +210,27 @@ def process_and_publish(data):
     global INS_SOL_MSG_LEN
     global IMU_MSG_LEN
 
-    if data[7:9] == "54" and data[1:6] == "VNRRG":
+    if data[7:9] == "54" and data[1:6] == "VNRRG":#data[1:6] == "VNIMU":
         imu_data = strip_tag_and_checksum(data)
         # discard the message of if it does not have all the necessaty fields
         if len(imu_data) is not IMU_MSG_LEN:
             rospy.logwarn("ERROR reading IMU message")
-        #    return
+            return
         publish_imu_data(imu_data)
 
-    elif data[7:9] == "58" and data[1:6] == "VNRRG":
+    elif data[7:9] == "58" and data[1:6] == "VNRRG":#data[1:6] == "VNGPE"
         gps_data = strip_tag_and_checksum(data)
         if len(gps_data) is not GPS_SOLN_MSG_LEN:
             rospy.logwarn("ERROR reading GPS message")
-        #    return
+            return
         publish_gps_data(gps_data)
 
-    elif  data[7:9] == "63" and data[1:6] == "VNRRG":
+    elif  data[7:9] == "63" and data[1:6] == "VNRRG":#data[1:6] == "VNINS":
         ins_data = data[7:-4].split(',')
         if len(ins_data) is not INS_SOL_MSG_LEN:
            rospy.logwarn("ERROR reading INS message")
-        #   return
+           return
+        rospy.loginfo('!!!!INS' + data)
         publish_ins_data(ins_data)
 
     else:
@@ -249,14 +251,14 @@ def vn200():
     ser.write(cmd("VNWRG,05,921600"))
     ser.write(cmd("VNWRG,07,50"))
     ser.write(cmd("VNWRG,06,0"))
+    #ser.write(cmd("VNWRG,06,247"))
 
-    r = rospy.Rate(20) # Publish at all messages at 20 hz
+    r = rospy.Rate(20)
 
     while not rospy.is_shutdown():
 
-        # write all read request for GPS_SOLN, INS SOLN and IMU to the serial port
-        for command in READ_CMDS:
-            ser.write(command)
+        for cmds in READ_CMDS:
+            ser.write(cmds)
 
         # read 3 responses
         for i in range(len(READ_CMDS)):
@@ -270,9 +272,7 @@ def vn200():
             else:
                 rospy.logwarn("Checksum incorrect for %s. Dropping packet", data)
 
-        r.sleep()
-
-
+            r.sleep()
 
 if __name__ == "__main__":
     try:
