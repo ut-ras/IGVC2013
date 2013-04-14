@@ -9,7 +9,7 @@
   <node pkg="vn_200_imu" name="vn_200_node" type="vn_200_node.py"/>
   <node pkg="usb_cam" name="usb_cam_node" type="usb_cam_node"/>
 
-  <node pkg="GPS_Ublox" name="GPS_input_selector" type="GPS_input_selector.py">
+  <node pkg="filters" name="GPS_input_selector" type="GPS_input_selector.py">
     <param name="source" value="gps" type="str"/>
   </node>
 

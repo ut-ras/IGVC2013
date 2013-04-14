@@ -2,6 +2,6 @@
     <param name="lat" value="30.313963" type="str"/>
     <param name="lon" value="-97.729878" type="str"/>
 
-    <node pkg="GPS_Ublox" name="GPS_offset_calculator" type="GPS_offset_calculator.py"/>
+    <node pkg="filters" name="GPS_offset_calculator" type="GPS_offset_calculator.py"/>
 
 </launch>
