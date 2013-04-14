@@ -2,7 +2,7 @@
   <node pkg="PSoC_Listener" name="PSoC_Listener" type="PSoC_Listener.py"/>
   <node pkg="PSoC_Listener" name="PSoC_Velocities" type="PSoC_Velocities.py"/>
   <node pkg="SonarArray" name="SonarArray" type="SonarArray.py"/>
-  <node pkg="SonarProc" name="SonarProc" type="SonarProc.py"/>
+  <node pkg="SonarArray" name="SonarProc" type="SonarProc.py"/>
 
   <node pkg="ReactiveDecisionMaker" name="ScanCombiner" type="ScanCombiner.py"/>
   <node pkg="ReactiveDecisionMaker" name="DataServiceProvider" type="DataServiceProvider.py"/>
