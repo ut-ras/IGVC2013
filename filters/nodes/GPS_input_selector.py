@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import roslib; roslib.load_manifest('GPS_Ublox')
+import roslib; roslib.load_manifest('filters')
 import rospy
 
 from GPS_Ublox.msg  import gps_raw
