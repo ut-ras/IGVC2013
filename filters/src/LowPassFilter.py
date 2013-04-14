@@ -4,6 +4,6 @@ class LowPassFilter:
         self.val = initval
 
     def update(self, newval):
-        res = alpha*newval + (1 - alpha)*self.val
+        res = self.alpha*newval + (1 - self.alpha)*self.val
         self.val = res
         return res

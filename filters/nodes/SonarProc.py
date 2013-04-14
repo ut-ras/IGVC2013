@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import roslib; roslib.load_manifest('SonarArray')
+import roslib; roslib.load_manifest('filters')
 import rospy
 from sensor_msgs.msg import LaserScan
 from LowPassFilter import LowPassFilter

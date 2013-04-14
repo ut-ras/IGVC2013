@@ -7,7 +7,7 @@ from geometry_msgs.msg import Twist
 
 if __name__ == "__main__":
     rospy.init_node('ActionPublisher')
-    pub = rospy.Publisher('/vel_cmd', Twist)
+    pub = rospy.Publisher('/vel_cmd_tbf', Twist)
 
     rospy.wait_for_service('getAction')
     getAction = rospy.ServiceProxy('getAction', GetAction)
