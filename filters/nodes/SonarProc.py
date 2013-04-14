@@ -2,17 +2,15 @@
 import roslib; roslib.load_manifest('SonarArray')
 import rospy
 from sensor_msgs.msg import LaserScan
+from LowPassFilter import LowPassFilter
 
 pub = rospy.Publisher('sonar_scan', LaserScan)
 
 SONAR_ARRAY_RADIUS = .279
 
-oldRanges = [0]*12
-alpha = .6
+lowPasses = [LowPassFilter(0.6, 0.0) for i in range(12)]
 
 def callback(data):
-    global oldRanges, alpha, SONAR_ARRAY_RADIUS, pub
-
     scan = LaserScan()
     scan.header.stamp = data.header.stamp
     scan.header.frame_id = data.header.frame_id
@@ -23,11 +21,11 @@ def callback(data):
     scan.scan_time = data.scan_time
     scan.ranges = [0]*12
 
-    # low-pass filter
-    for i in range(len(data.ranges)):
-        scan.ranges[i] = alpha*data.ranges[i] + (1 - alpha)*oldRanges[i]
-        oldRanges[i] = scan.ranges[i]
+    global lowPasses, SONAR_ARRAY_RADIUS, pub
 
+    # filter out high frequencies and add sonar array's radius
+    for i in range(len(data.ranges)):
+        scan.ranges[i] = lowPasses[i].update(data.ranges[i])
         scan.ranges[i] += SONAR_ARRAY_RADIUS
 
     pub.publish(scan)
