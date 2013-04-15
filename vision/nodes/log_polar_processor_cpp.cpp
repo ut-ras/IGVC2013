@@ -54,7 +54,7 @@ void processsImage(Mat img) {
             bool flag = false;
 
             for (unsigned int r = row; r < row + RAY_THICKNESS; r++) {
-                if (pixelPtr[r*max_dist + c] > 0) {
+                if (pixelPtr[r*max_dist + c] == 255) {
                     flag = true;
                     break;
                 }
@@ -65,12 +65,8 @@ void processsImage(Mat img) {
             }
         }
         
-        double distance = exp(c/LOG_SCALE)/PIXELS_PER_METER
+        double distance = exp(c/LOG_SCALE)/(double)PIXELS_PER_METER;
         ranges[num_readings - 1 - i] = distance;
-
-        if (i == num_readings/2) {
-            cout << "distance to center: " << (distance*39.37) << endl;
-        }
     }
     
     ranges[0] = ranges[1];

@@ -76,7 +76,8 @@ def callback(image_data):
 def init():
     rospy.init_node('log_polar_transformer')
 
-    sub = rospy.Subscriber('binimg_orange_red_threshold', Image, callback)
+    # sub = rospy.Subscriber('binimg_orange_red_threshold', Image, callback)
+    sub = rospy.Subscriber('vision/out', Image, callback)
     pub = rospy.Publisher('log_polar_transformed', Image)
 
     r = rospy.Rate(RATE)

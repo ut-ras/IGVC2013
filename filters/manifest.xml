@@ -15,6 +15,7 @@
   <depend package="ocean_server_imu"/>
   <depend package="um6_imu"/>
   <depend package="vn_200_imu"/>
+  <depend package="ReactiveDecisionMaker"/>
 
 </package>
 

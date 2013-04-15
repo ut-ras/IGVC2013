@@ -8,7 +8,7 @@ from ocean_server_imu.msg import RawData
 from filters.msg import EKFData, Orientation
 from um6_imu.msg import UM6IMU
 
-from EKF import ExtendedKalmanFilter, accel_observation_funct, accel_jacobian_funct, rpy_observation_funct, rpy_jacobian_funct, encoders_observation_funct, encoders_jacobian_funct, gps_observation_funct, gps_jacobian_funct
+from EKF import ExtendedKalmanFilter, accel_observation_funct, accel_jacobian_funct, rpy_observation_funct, rpy_jacobian_funct, encoders_observation_funct, encoders_jacobian_funct, gps_observation_funct, gps_jacobian_funct, transition_funct, transition_jacobian_funct
 
 
 # OCEAN_SERVER_IMU_INDEX = 0
@@ -80,14 +80,9 @@ def compass_callback(roll, pitch, yaw, index):
     kf.Step(index, measurement_vector)
 
 def encoders_callback(data):
-    if USING_TEST1_BAGGED_DATA:
-        measurement_vector = numpy.matrix(
-                            [ [data.linear.x],
-                              [-data.angular.z] ] )
-    else:
-        measurement_vector = numpy.matrix(
-                            [ [data.linear.x],
-                              [data.angular.z] ] )
+    measurement_vector = numpy.matrix(
+            [ [data.linear.x],
+              [data.angular.z] ] )
     kf.Step(ENCODERS_INDEX, measurement_vector)
 
 def gps_callback(data):
