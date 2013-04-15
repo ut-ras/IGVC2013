@@ -31,7 +31,7 @@ def output():
   global xOut
   global wOut
   global right_state
-  pub = rospy.Publisher('vel_cmd',Twist)
+  pub = rospy.Publisher('vel_cmd_tbf',Twist)
   while not rospy.is_shutdown():
     if right_state:
       p = Twist()
