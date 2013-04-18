@@ -146,9 +146,10 @@ public:
 
 
 
-        //Hough detector
+
         Mat HLines = src;
-        DetectLanes(cannyEdges, HLines, 1, 100);
+        //TEST LINES FUNCTION: NO IDEA WTF IS GOING ON HELP MEEE
+        DetectLanes(cannyEdges, HLines, 1, 90);
 
         imshow("HoughLines",HLines);
         waitKey(30);
@@ -211,9 +212,9 @@ public:
             Point pt1(cvRound(x0 + 1500*(-b)), cvRound(dstBGR.rows/4 + y0 + 1500*(a)));
             Point pt2(cvRound(x0 - 1500*(-b)), cvRound(dstBGR.rows/4 + y0 - 1500*(a)));
 
-            clipLine(dstBGR.size(), pt1, pt2);
+            clipLine(srcGray.size(), pt1, pt2);
 
-            line( dstBGR, pt1, pt2, cvScalar(0,0,255), 3, CV_AA);
+            line( dstBGR, pt1, pt2, cvScalar(0,0,255), resolution, 8);
         }
     }
 

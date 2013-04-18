@@ -26,10 +26,10 @@ def output():
   while not rospy.is_shutdown():
     if left_state and right_state:
       p = String()
-      p.data = ">SPLM:"+str(leftOut * leftOut / 128 if left_state and right_state else 0)
+      p.data = ">SPLM:"+str((leftOut * leftOut / 128 if left_state and right_state else 0) * (1 if leftOut > 0 else -1))
       pub.publish(p)
       p = String()
-      p.data = ">SPRM:"+str(rightOut * rightOut / 128 if left_state and right_state else 0)
+      p.data = ">SPRM:"+str((rightOut * rightOut / 128 if left_state and right_state else 0) * (1 if rightOut > 0 else -1))
       pub.publish(p)
     time.sleep(.1)
 
