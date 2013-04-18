@@ -9,7 +9,7 @@ from ReactiveDecisionMaker.msg import PlanarData
 
 # bottom part of camera is 18 inches away from the focal point of the sonar array
 # 18 inches ~= .46 meters
-DISTANCE = .46
+DISTANCE = .21
 pub = None
 
 def bound0to2Pi(angle):

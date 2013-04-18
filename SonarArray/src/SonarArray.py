@@ -7,6 +7,8 @@ import string
 from math import pi
 import time
 
+port = '/dev/ttyACM1'
+
 
 MAX_VALUE = float(4.5)
 def Process(inp):
@@ -18,7 +20,6 @@ def Process(inp):
         except ValueError as e:
             return MAX_VALUE
 
-port = '/dev/ttyACM0'
 def sonar():
     global port
     rospy.init_node('Sonar_Array')

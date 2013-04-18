@@ -61,9 +61,11 @@ def shortenAndCorrectPlanarData(pdata):
         Anyway, thanks for indulging me.
 
         -R08Z
+
+        PS. Turns out they actually can mess with the vision scan. Sorryz.
         """
-        if dist < MIN_VAL:
-            dist = MAX_VAL
+        # if dist < MIN_VAL:
+        #     dist = MAX_VAL
 
         rays[i].dist = dist
         rays[i].angle = angle

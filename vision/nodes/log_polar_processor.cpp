@@ -25,7 +25,7 @@ exp(c/LOG_SCALE)/PIXELS_PER_METER*66/80
 */
 
 double LOG_SCALE = 20.0,
-       PIXELS_PER_METER = 230,
+       PIXELS_PER_METER = 210,
        DISTANCE_FROM_FRONT = 0.5,
        RAY_THICKNESS = 1;
 

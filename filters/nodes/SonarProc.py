@@ -8,7 +8,7 @@ pub = rospy.Publisher('sonar_scan', LaserScan)
 
 SONAR_ARRAY_RADIUS = .279
 
-lowPasses = [LowPassFilter(0.6, 0.0) for i in range(12)]
+lowPasses = [LowPassFilter(0.3, 0.0) for i in range(12)]
 
 def callback(data):
     scan = LaserScan()

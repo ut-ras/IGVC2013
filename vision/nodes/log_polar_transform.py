@@ -76,8 +76,15 @@ def callback(image_data):
 def init():
     rospy.init_node('log_polar_transformer')
 
-    # sub = rospy.Subscriber('binimg_orange_red_threshold', Image, callback)
-    sub = rospy.Subscriber('vision/out', Image, callback)
+    try:
+        subtopic = str(rospy.get_param('~subtopic'))
+    except KeyError:
+        rospy.logerr("yo we need the topic name broski")
+        return
+
+    rospy.loginfo("listening to " + subtopic)
+
+    sub = rospy.Subscriber(subtopic, Image, callback)
     pub = rospy.Publisher('log_polar_transformed', Image)
 
     r = rospy.Rate(RATE)
