@@ -177,43 +177,56 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
-# Target rules for targets named decision
+# Target rules for targets named grayscaler
 
 # Build rule for target.
-decision: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 decision
-.PHONY : decision
+grayscaler: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 grayscaler
+.PHONY : grayscaler
 
 # fast build rule for target.
-decision/fast:
-	$(MAKE) -f CMakeFiles/decision.dir/build.make CMakeFiles/decision.dir/build
-.PHONY : decision/fast
+grayscaler/fast:
+	$(MAKE) -f CMakeFiles/grayscaler.dir/build.make CMakeFiles/grayscaler.dir/build
+.PHONY : grayscaler/fast
 
 #=============================================================================
-# Target rules for targets named log_polar_processor_cpp
+# Target rules for targets named lane_detector
 
 # Build rule for target.
-log_polar_processor_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 log_polar_processor_cpp
-.PHONY : log_polar_processor_cpp
+lane_detector: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lane_detector
+.PHONY : lane_detector
 
 # fast build rule for target.
-log_polar_processor_cpp/fast:
-	$(MAKE) -f CMakeFiles/log_polar_processor_cpp.dir/build.make CMakeFiles/log_polar_processor_cpp.dir/build
-.PHONY : log_polar_processor_cpp/fast
+lane_detector/fast:
+	$(MAKE) -f CMakeFiles/lane_detector.dir/build.make CMakeFiles/lane_detector.dir/build
+.PHONY : lane_detector/fast
 
 #=============================================================================
-# Target rules for targets named opencv_cuda_test
+# Target rules for targets named log_polar_processor
 
 # Build rule for target.
-opencv_cuda_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 opencv_cuda_test
-.PHONY : opencv_cuda_test
+log_polar_processor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 log_polar_processor
+.PHONY : log_polar_processor
 
 # fast build rule for target.
-opencv_cuda_test/fast:
-	$(MAKE) -f CMakeFiles/opencv_cuda_test.dir/build.make CMakeFiles/opencv_cuda_test.dir/build
-.PHONY : opencv_cuda_test/fast
+log_polar_processor/fast:
+	$(MAKE) -f CMakeFiles/log_polar_processor.dir/build.make CMakeFiles/log_polar_processor.dir/build
+.PHONY : log_polar_processor/fast
+
+#=============================================================================
+# Target rules for targets named lounge
+
+# Build rule for target.
+lounge: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lounge
+.PHONY : lounge
+
+# fast build rule for target.
+lounge/fast:
+	$(MAKE) -f CMakeFiles/lounge.dir/build.make CMakeFiles/lounge.dir/build
+.PHONY : lounge/fast
 
 #=============================================================================
 # Target rules for targets named rosbuild_precompile
@@ -345,106 +358,65 @@ tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
-#=============================================================================
-# Target rules for targets named vision
-
-# Build rule for target.
-vision: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 vision
-.PHONY : vision
-
-# fast build rule for target.
-vision/fast:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/build
-.PHONY : vision/fast
-
-#=============================================================================
-# Target rules for targets named visualization
-
-# Build rule for target.
-visualization: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 visualization
-.PHONY : visualization
-
-# fast build rule for target.
-visualization/fast:
-	$(MAKE) -f CMakeFiles/visualization.dir/build.make CMakeFiles/visualization.dir/build
-.PHONY : visualization/fast
-
 # target to build an object file
-nodes/log_polar_processor_cpp.o:
-	$(MAKE) -f CMakeFiles/log_polar_processor_cpp.dir/build.make CMakeFiles/log_polar_processor_cpp.dir/nodes/log_polar_processor_cpp.o
-.PHONY : nodes/log_polar_processor_cpp.o
+nodes/grayscaler.o:
+	$(MAKE) -f CMakeFiles/grayscaler.dir/build.make CMakeFiles/grayscaler.dir/nodes/grayscaler.o
+.PHONY : nodes/grayscaler.o
 
 # target to preprocess a source file
-nodes/log_polar_processor_cpp.i:
-	$(MAKE) -f CMakeFiles/log_polar_processor_cpp.dir/build.make CMakeFiles/log_polar_processor_cpp.dir/nodes/log_polar_processor_cpp.i
-.PHONY : nodes/log_polar_processor_cpp.i
+nodes/grayscaler.i:
+	$(MAKE) -f CMakeFiles/grayscaler.dir/build.make CMakeFiles/grayscaler.dir/nodes/grayscaler.i
+.PHONY : nodes/grayscaler.i
 
 # target to generate assembly for a file
-nodes/log_polar_processor_cpp.s:
-	$(MAKE) -f CMakeFiles/log_polar_processor_cpp.dir/build.make CMakeFiles/log_polar_processor_cpp.dir/nodes/log_polar_processor_cpp.s
-.PHONY : nodes/log_polar_processor_cpp.s
+nodes/grayscaler.s:
+	$(MAKE) -f CMakeFiles/grayscaler.dir/build.make CMakeFiles/grayscaler.dir/nodes/grayscaler.s
+.PHONY : nodes/grayscaler.s
 
 # target to build an object file
-src/opencv_cuda_test.o:
-	$(MAKE) -f CMakeFiles/opencv_cuda_test.dir/build.make CMakeFiles/opencv_cuda_test.dir/src/opencv_cuda_test.o
-.PHONY : src/opencv_cuda_test.o
+nodes/lane_detector.o:
+	$(MAKE) -f CMakeFiles/lane_detector.dir/build.make CMakeFiles/lane_detector.dir/nodes/lane_detector.o
+.PHONY : nodes/lane_detector.o
 
 # target to preprocess a source file
-src/opencv_cuda_test.i:
-	$(MAKE) -f CMakeFiles/opencv_cuda_test.dir/build.make CMakeFiles/opencv_cuda_test.dir/src/opencv_cuda_test.i
-.PHONY : src/opencv_cuda_test.i
+nodes/lane_detector.i:
+	$(MAKE) -f CMakeFiles/lane_detector.dir/build.make CMakeFiles/lane_detector.dir/nodes/lane_detector.i
+.PHONY : nodes/lane_detector.i
 
 # target to generate assembly for a file
-src/opencv_cuda_test.s:
-	$(MAKE) -f CMakeFiles/opencv_cuda_test.dir/build.make CMakeFiles/opencv_cuda_test.dir/src/opencv_cuda_test.s
-.PHONY : src/opencv_cuda_test.s
+nodes/lane_detector.s:
+	$(MAKE) -f CMakeFiles/lane_detector.dir/build.make CMakeFiles/lane_detector.dir/nodes/lane_detector.s
+.PHONY : nodes/lane_detector.s
 
 # target to build an object file
-src/vision_decision.o:
-	$(MAKE) -f CMakeFiles/decision.dir/build.make CMakeFiles/decision.dir/src/vision_decision.o
-.PHONY : src/vision_decision.o
+nodes/log_polar_processor.o:
+	$(MAKE) -f CMakeFiles/log_polar_processor.dir/build.make CMakeFiles/log_polar_processor.dir/nodes/log_polar_processor.o
+.PHONY : nodes/log_polar_processor.o
 
 # target to preprocess a source file
-src/vision_decision.i:
-	$(MAKE) -f CMakeFiles/decision.dir/build.make CMakeFiles/decision.dir/src/vision_decision.i
-.PHONY : src/vision_decision.i
+nodes/log_polar_processor.i:
+	$(MAKE) -f CMakeFiles/log_polar_processor.dir/build.make CMakeFiles/log_polar_processor.dir/nodes/log_polar_processor.i
+.PHONY : nodes/log_polar_processor.i
 
 # target to generate assembly for a file
-src/vision_decision.s:
-	$(MAKE) -f CMakeFiles/decision.dir/build.make CMakeFiles/decision.dir/src/vision_decision.s
-.PHONY : src/vision_decision.s
+nodes/log_polar_processor.s:
+	$(MAKE) -f CMakeFiles/log_polar_processor.dir/build.make CMakeFiles/log_polar_processor.dir/nodes/log_polar_processor.s
+.PHONY : nodes/log_polar_processor.s
 
 # target to build an object file
-src/vision_test.o:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.o
-.PHONY : src/vision_test.o
+src/vision_lounge.o:
+	$(MAKE) -f CMakeFiles/lounge.dir/build.make CMakeFiles/lounge.dir/src/vision_lounge.o
+.PHONY : src/vision_lounge.o
 
 # target to preprocess a source file
-src/vision_test.i:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.i
-.PHONY : src/vision_test.i
+src/vision_lounge.i:
+	$(MAKE) -f CMakeFiles/lounge.dir/build.make CMakeFiles/lounge.dir/src/vision_lounge.i
+.PHONY : src/vision_lounge.i
 
 # target to generate assembly for a file
-src/vision_test.s:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.s
-.PHONY : src/vision_test.s
-
-# target to build an object file
-src/visualizer.o:
-	$(MAKE) -f CMakeFiles/visualization.dir/build.make CMakeFiles/visualization.dir/src/visualizer.o
-.PHONY : src/visualizer.o
-
-# target to preprocess a source file
-src/visualizer.i:
-	$(MAKE) -f CMakeFiles/visualization.dir/build.make CMakeFiles/visualization.dir/src/visualizer.i
-.PHONY : src/visualizer.i
-
-# target to generate assembly for a file
-src/visualizer.s:
-	$(MAKE) -f CMakeFiles/visualization.dir/build.make CMakeFiles/visualization.dir/src/visualizer.s
-.PHONY : src/visualizer.s
+src/vision_lounge.s:
+	$(MAKE) -f CMakeFiles/lounge.dir/build.make CMakeFiles/lounge.dir/src/vision_lounge.s
+.PHONY : src/vision_lounge.s
 
 # Help Target
 help:
@@ -458,10 +430,11 @@ help:
 	@echo "... ROSBUILD_gensrv_cpp"
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... clean-test-results"
-	@echo "... decision"
 	@echo "... edit_cache"
-	@echo "... log_polar_processor_cpp"
-	@echo "... opencv_cuda_test"
+	@echo "... grayscaler"
+	@echo "... lane_detector"
+	@echo "... log_polar_processor"
+	@echo "... lounge"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
@@ -473,23 +446,18 @@ help:
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
-	@echo "... vision"
-	@echo "... visualization"
-	@echo "... nodes/log_polar_processor_cpp.o"
-	@echo "... nodes/log_polar_processor_cpp.i"
-	@echo "... nodes/log_polar_processor_cpp.s"
-	@echo "... src/opencv_cuda_test.o"
-	@echo "... src/opencv_cuda_test.i"
-	@echo "... src/opencv_cuda_test.s"
-	@echo "... src/vision_decision.o"
-	@echo "... src/vision_decision.i"
-	@echo "... src/vision_decision.s"
-	@echo "... src/vision_test.o"
-	@echo "... src/vision_test.i"
-	@echo "... src/vision_test.s"
-	@echo "... src/visualizer.o"
-	@echo "... src/visualizer.i"
-	@echo "... src/visualizer.s"
+	@echo "... nodes/grayscaler.o"
+	@echo "... nodes/grayscaler.i"
+	@echo "... nodes/grayscaler.s"
+	@echo "... nodes/lane_detector.o"
+	@echo "... nodes/lane_detector.i"
+	@echo "... nodes/lane_detector.s"
+	@echo "... nodes/log_polar_processor.o"
+	@echo "... nodes/log_polar_processor.i"
+	@echo "... nodes/log_polar_processor.s"
+	@echo "... src/vision_lounge.o"
+	@echo "... src/vision_lounge.i"
+	@echo "... src/vision_lounge.s"
 .PHONY : help
 
 
