@@ -44,14 +44,21 @@ def read_data() :
     return data
 
 def validate_checksum(msg):
-    xor = 0
-    chksum = int(msg[-3:-1], 16)
-    data = msg[1:-4].upper()
+    try:
+        xor = 0
+        msg = msg.strip()
+        #rospy.loginfo("~~~~~~~" + msg + "~~~~~~");
+        #rospy.loginfo("~~~~~~~" + str(msg[-2]) + str(msg[-1])+ "!~~~~~~~~");
+        chksum = int(str(msg[-2]) + str(msg[-1]), 16)
+        #chksum = int(str(msg[-3]) +str([-2]), 16)
+        data = msg[1:-3].upper()
 
-    for char in data:
-        xor = xor ^ ord(char)
-
-    return xor == chksum
+        for char in data:
+            xor = xor ^ ord(char)
+        #rospy.loginfo(">>>>>" + str(xor) + ">>>>>>>>" + str(chksum))
+        return xor == chksum
+    except ValueError:
+        return False
 
 def cmd(string):
     xor = 0
