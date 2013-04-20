@@ -10,7 +10,10 @@
  * ========================================
 */
 
-int8 GetADC(void);
+int16 GetADC(void);
+int16 GetMV(void);
+int32 GetUV(void);
+int32 GetUVTriggered(void);
 void InitializeADC(void);
-
+void InitializeADCTriggered(void);
 //[] END OF FILE

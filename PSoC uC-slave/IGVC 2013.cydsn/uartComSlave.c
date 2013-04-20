@@ -139,7 +139,6 @@ void sendCommMessage(void){
 		GetRightEncoder(), 
 		GetV(), 
 		GetW(), 
-		GetADC(),
 		GetTime(),GetMS(),
 		GetMessageRate() );
 		//UARTprintf("^.- ROLL %d PTCH %d YAWW %d -.^\r\n", roll, pitch, yaw );
@@ -163,7 +162,7 @@ void InitializeUCSlave(void){
 	InitializeServo();
 	InitializeWatchdog();
 	InitializeVelocityControl();
-	InitializeADC();
+	//InitializeADCTriggered();
 	//InitializeIMU();
 	EnableSensorFeedbackMessages = 0;
 }

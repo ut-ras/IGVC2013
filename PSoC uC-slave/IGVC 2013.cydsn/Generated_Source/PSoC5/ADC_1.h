@@ -141,11 +141,11 @@ CY_ISR_PROTO( ADC_1_ISR );
 **************************************/
 
 /* Default config values from user parameters */
-#define ADC_1_DEFAULT_RESOLUTION     (8)   /* ADC resolution selected with parameters.*/
-#define ADC_1_DEFAULT_CONV_MODE      (0)   /* Default conversion method */
+#define ADC_1_DEFAULT_RESOLUTION     (12)   /* ADC resolution selected with parameters.*/
+#define ADC_1_DEFAULT_CONV_MODE      (1)   /* Default conversion method */
 #define ADC_1_DEFAULT_INTERNAL_CLK   (1)        /* Default clock selection */
 #define ADC_1_DEFAULT_REFERENCE      (0)    /* Default reference */
-#define ADC_1_DEFAULT_RANGE          (0)  /* ADC Input Range selection. */
+#define ADC_1_DEFAULT_RANGE          (1)  /* ADC Input Range selection. */
 
 /* Use VDDA voltage define directly from cyfitter.h when VDDA reference has been used */
 #define ADC_1_DEFAULT_REF_VOLTAGE (((ADC_1_DEFAULT_REFERENCE != ADC_1__EXT_REF) && \
@@ -154,14 +154,14 @@ CY_ISR_PROTO( ADC_1_ISR );
                                         (CYDEV_VDDA / 2) : \
                                         ((ADC_1_DEFAULT_REFERENCE != ADC_1__EXT_REF) && \
                                         (ADC_1_DEFAULT_RANGE == ADC_1__VNEG_VDDA_2_DIFF)) ? \
-                                        CYDEV_VDDA : (1.024))      /* ADC reference voltage. */
+                                        CYDEV_VDDA : (2.5))      /* ADC reference voltage. */
 #define ADC_1_DEFAULT_REF_VOLTAGE_MV (((ADC_1_DEFAULT_REFERENCE != ADC_1__EXT_REF) &&\
                                         ((ADC_1_DEFAULT_RANGE == ADC_1__VSSA_TO_VDDA) || \
                                         (ADC_1_DEFAULT_RANGE == ADC_1__VNEG_VDDA_2_DIFF))) ? \
                                         (CYDEV_VDDA_MV / 2) : \
                                         ((ADC_1_DEFAULT_REFERENCE != ADC_1__EXT_REF) && \
                                         (ADC_1_DEFAULT_RANGE == ADC_1__VNEG_VDDA_2_DIFF)) ? \
-                                        CYDEV_VDDA_MV : (1024))   /* ADC reference voltage in mV */
+                                        CYDEV_VDDA_MV : (2500))   /* ADC reference voltage in mV */
 /* The power is set to normal power, ½, 1/3, ¼ power depending on the clock setting. */
 #define ADC_1_DEFAULT_POWER  ((1 != ADC_1__INTERNAL) ? ADC_1__HIGHPOWER : \
                       (1216000 > (ADC_1_MAX_FREQUENCY / 2)) ? ADC_1__HIGHPOWER : \

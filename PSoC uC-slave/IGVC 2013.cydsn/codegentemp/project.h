@@ -17,7 +17,6 @@
 #include <cydevice.h>
 #include <cydevice_trm.h>
 #include <cyfitter.h>
-#include <ADC_In_aliases.h>
 #include <Err_LED_1_aliases.h>
 #include <Err_LED_1.h>
 #include <SDA_1_aliases.h>
@@ -33,7 +32,6 @@
 #include <Right_Motor_aliases.h>
 #include <Right_Motor.h>
 #include <MainTimeISR.h>
-#include <ADC_1.h>
 #include <Servo_Out_aliases.h>
 #include <Servo_Out.h>
 #include <Err_LED_2_aliases.h>
@@ -54,11 +52,8 @@
 #include <Clock_2.h>
 #include <Left_Encoder_Interrupt.h>
 #include <Right_Encoder_Interrupt.h>
-#include <IMU.h>
-#include <IMU_Interrupt.h>
 #include <Soft_Kill_aliases.h>
 #include <Soft_Kill.h>
-#include <ADC_1_theACLK.h>
 #include <USBUART_Dm_aliases.h>
 #include <USBUART_Dp_aliases.h>
 #include <USBUART_Dp.h>
