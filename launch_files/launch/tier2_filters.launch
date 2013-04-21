@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="filters" name="vel_cmd_filter" type="vel_cmd_filter.py"/>
+  <node pkg="filters" name="SonarProc" type="SonarProc.py"/>
+<!--
+  <node pkg="filters" name="orientation_corrector" type="orientation_corrector.py"/>
+  <node pkg="filters" name="GPS_input_selector" type="GPS_input_selector.py">
+    <param name="source" value="gps" type="str"/>
+  </node>
+  <include file="$(find launch_files)/launch/gps_nodes.launch"/>
+-->
+  <node pkg="ReactiveDecisionMaker" name="ScanCombiner" type="ScanCombiner.py"/>
+  <node pkg="ReactiveDecisionMaker" name="DataServiceProvider" type="DataServiceProvider.py"/>
+</launch>

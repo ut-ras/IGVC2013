@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find launch_files)/launch/tier1_drivers.launch"/>
+  <include file="$(find launch_files)/launch/tier2_filters.launch"/>
+  <include file="$(find launch_files)/launch/tier3_vision.launch"/>
+  <include file="$(find launch_files)/launch/tier4_deciders.launch"/>
+</launch>

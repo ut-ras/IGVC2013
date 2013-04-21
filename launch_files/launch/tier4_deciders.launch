@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="filters" name="extended_kalman_filter" type="extended_kalman_filter.py"/>
+  <node pkg="ReactiveDecisionMaker" name="GoalMaker" type="GoalMaker.py"/>
+  <node pkg="ReactiveDecisionMaker" name="MainLoop" type="MainLoop.py"/>
+</launch>
