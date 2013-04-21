@@ -1,0 +1,153 @@
+
+----------------------------------------------------------------------
+
+Verifying bitstream.
+
+-----------------------------------------------------------------------
+
+
+---------Mapping jacks.---------
+
+
+---------Processing bitstream.---------
+
+Utilized "udb_hv_b@[UDB Pair=(1,0)]"
+Utilized "udb_hc@[UDB Pair=(1,0)]"
+Utilized "udb_hc@[UDB Pair=(1,1)]"
+Utilized "dsi_hc@[DSI=(1,0)][side=bottom]"
+Utilized "dsi_hv_a@[DSI=(1,0)][side=bottom]"
+Utilized "dsi_hv_a@[DSI=(0,1)][side=top]"
+Utilized "dsi_hv_b@[DSI=(1,1)][side=bottom]"
+Utilized "dsi_hc@[DSI=(0,2)][side=top]"
+Utilized "dsi_hc@[DSI=(1,5)][side=bottom]"
+
+---------Propagating signals.---------
+
+Found signal "Net_117" on jack "pld1:out0[UDB=(2,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(31)]"
+    
+    
+
+Found signal "\Timer_1:TimerUDB:status_tc\" on jack "pld1:out3[UDB=(2,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in0[UDB=(2,1)]"
+    
+    
+
+Found signal "\Timer_1:TimerUDB:control_7\" on jack "statctrl:out7[UDB=(2,0)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "pld1:in8[UDB=(2,0)]"
+    
+    2. Connected jack name: "dp:in3[UDB=(2,1)]"
+    
+    3. Connected jack name: "dp:in3[UDB=(3,1)]"
+    
+    4. Connected jack name: "dp:in3[UDB=(2,0)]"
+    
+    5. Connected jack name: "dp:in3[UDB=(3,0)]"
+    
+    
+
+Found signal "\Timer_1:TimerUDB:status_2\" on jack "dp:out0[UDB=(2,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in2[UDB=(2,1)]"
+    
+    
+
+Found signal "\Timer_1:TimerUDB:status_3\" on jack "dp:out1[UDB=(2,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in3[UDB=(2,1)]"
+    
+    
+
+Found signal "\Timer_1:TimerUDB:per_zero\" on jack "dp:out5[UDB=(2,1)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "pld1:in4[UDB=(2,0)]"
+    
+    2. Connected jack name: "dp:in4[UDB=(2,0)]"
+    
+    3. Connected jack name: "dp:in4[UDB=(3,0)]"
+    
+    4. Connected jack name: "dp:in4[UDB=(2,1)]"
+    
+    5. Connected jack name: "dp:in4[UDB=(3,1)]"
+    
+    
+
+Found signal "Net_91" on jack "interrupt[FFB(PICU,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(6)]"
+    
+    
+
+Found signal "Net_90" on jack "interrupt[FFB(PICU,5)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(9)]"
+    
+    
+
+Found signal "\USBUART:Net_623\" on jack "interrupt[FFB(PICU,8)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(12)]"
+    
+    
+
+Found signal "\USBUART:Net_79\" on jack "arb_int[FFB(USB,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(22)]"
+    
+    
+
+Found signal "\USBUART:ept_int_0\" on jack "ept_int[0][FFB(USB,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(24)]"
+    
+    
+
+Found signal "\USBUART:ept_int_1\" on jack "ept_int[1][FFB(USB,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(0)]"
+    
+    
+
+Found signal "Net_2" on jack "sof_int[FFB(USB,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(21)]"
+    
+    
+
+Found signal "\USBUART:Net_81\" on jack "usb_int[FFB(USB,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[IntrHod=(0)][IntrId=(23)]"
+    
+    
+
+
+---------Verifying signals (routing).---------
+
+
+---------Verifying configuration.---------
+
+
+
+----------------------------------------------------------------------
+
+Bitstream verification passed.
+
+-----------------------------------------------------------------------
+

@@ -25,7 +25,7 @@ typedef struct{
 	int initialized;
 	int acc[PID_ACC_BUFFER_SIZE];
 	int* ptr;
-	long sum;
+	signed long long int sum;
 }RunningAccumulator;
 void initRunningAcc(RunningAccumulator ra){
 	int i;
@@ -84,15 +84,15 @@ void SetAccelDivisor(int in) { accelDivisor = in; }
 #define rP 256
 #define rPdiv 20
 #define rD 256
-#define rDdiv 10
+#define rDdiv 4
 #define rI 256
-#define rIdiv 1000
+#define rIdiv 16000
 int8 RightMotorPID(int reset){
-	static int16 prevError = 0;
-	static int8 prevOutput = 0;
+	static int32 prevError = 0;
+	static int16 prevOutput = 0;
 	static RunningAccumulator accError;
-	int16 curError;
-	int16 output = 0;
+	int32 curError;
+	int32 output = 0;
 	if(reset){
 		initRunningAcc(accError);
 		prevError = 0;
@@ -117,14 +117,14 @@ int8 RightMotorPID(int reset){
 #define lP 256
 #define lPdiv 20
 #define lD 256
-#define lDdiv 10
+#define lDdiv 4
 #define lI 256
-#define lIdiv 1000
+#define lIdiv 16000
 int8 LeftMotorPID(int reset){
-	static int16 prevError = 0;
-	static int8 prevOutput = 0;
+	static int32 prevError = 0;
+	static int16 prevOutput = 0;
 	static RunningAccumulator accError;
-	int16 curError;
+	int32 curError;
 	int32 output = 0;
 	if(reset){
 		initRunningAcc(accError);
@@ -179,7 +179,7 @@ void InitializeVelocityControl(void){
 	//These two need to happen if they haven't already
 	/*InitializeWatchdog(); 
 	InitializeTime();*/
-	InitializeEncodersInvert(-1,1);
+	InitializeEncodersInvert(-1,-1);
 	linearX = 0;
 	angularZ = 0;
 	rightMotor = 0;

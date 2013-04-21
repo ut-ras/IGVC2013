@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
+  <block name="Timer_ISR" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Echo_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Timer_1" BASE="0x0" SIZE="0x0" desc="" visible="true">
+    <block name="VirtualMux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="OneTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="TimerUDB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="Timer_1_COUNTER" address="0x6504" bitWidth="32" desc="UDB.A0 - Current Down Counter Value" />
+    <register name="Timer_1_PERIOD" address="0x6524" bitWidth="32" desc="UDB.D0 - Assigned Period" />
+    <register name="Timer_1_STATUS_MASK" address="0x6587" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register" />
+    <register name="Timer_1_STATUS_AUX_CTRL" address="0x6597" bitWidth="8" desc="UDB Auxilliary Control Register" />
+  </block>
+  <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="timer_clock" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Trigger" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="USBUART" BASE="0x0" SIZE="0x0" desc="USBFS" visible="true">
+    <block name="arb_int" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="bus_reset" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="USB" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="sof_int" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ep_0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Dp" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="dp_int" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="ep_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <block name="Dm" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+    <register name="USBUART_EP0_DR0_REG" address="0x6000" bitWidth="8" desc="bmRequestType" />
+    <register name="USBUART_EP0_DR1_REG" address="0x6001" bitWidth="8" desc="bRequest" />
+    <register name="USBUART_EP0_DR2_REG" address="0x6002" bitWidth="8" desc="wValueLo" />
+    <register name="USBUART_EP0_DR3_REG" address="0x6003" bitWidth="8" desc="wValueHi" />
+    <register name="USBUART_EP0_DR4_REG" address="0x6004" bitWidth="8" desc="wIndexLo" />
+    <register name="USBUART_EP0_DR5_REG" address="0x6005" bitWidth="8" desc="wIndexHi" />
+    <register name="USBUART_EP0_DR6_REG" address="0x6006" bitWidth="8" desc="lengthLo" />
+    <register name="USBUART_EP0_DR7_REG" address="0x6007" bitWidth="8" desc="lengthHi" />
+    <register name="USBUART_SIE_EP1_CR0_REG" address="0x600E" bitWidth="8" desc="The Endpoint1 Control Register" />
+    <register name="USBUART_SIE_EP2_CR0_REG" address="0x601E" bitWidth="8" desc="The Endpoint2 Control Register" />
+    <register name="USBUART_SIE_EP3_CR0_REG" address="0x602E" bitWidth="8" desc="The Endpoint3 Control Register" />
+    <register name="USBUART_SIE_EP4_CR0_REG" address="0x603E" bitWidth="8" desc="The Endpoint4 Control Register" />
+    <register name="USBUART_SIE_EP5_CR0_REG" address="0x604E" bitWidth="8" desc="The Endpoint5 Control Register" />
+    <register name="USBUART_SIE_EP6_CR0_REG" address="0x605E" bitWidth="8" desc="The Endpoint6 Control Register" />
+    <register name="USBUART_SIE_EP7_CR0_REG" address="0x606E" bitWidth="8" desc="The Endpoint7 Control Register" />
+    <register name="USBUART_SIE_EP8_CR0_REG" address="0x607E" bitWidth="8" desc="The Endpoint8 Control Register" />
+  </block>
+  <block name="Echo_0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Echo_ISR_0" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="Echo_ISR_1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+</blockRegMap>

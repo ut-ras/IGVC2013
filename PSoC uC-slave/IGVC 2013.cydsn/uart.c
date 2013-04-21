@@ -83,8 +83,8 @@ void UARTputc(const char ch){
 }
 
 void InitializeUART(void){
-	 /* Start USBFS Operation with 3V operation */
-    USBUART_Start(0, USBUART_3V_OPERATION);
+	 /* Start USBFS Operation with 5V operation */
+    USBUART_Start(0, USBUART_5V_OPERATION);
     while(!USBUART_GetConfiguration());
 	USBUART_CDC_Init();
 }

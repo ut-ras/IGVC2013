@@ -52,8 +52,8 @@ void HokuyoTiltStep(void){
 	else if(step == HOKUYO_TILT_BOTTOM_BOUND) direction = 1;
 	SetHokuyoServo(step);
 }
-uint16 GetHokuyoServo(void){
-	return Servo_1_ReadCompare();
+int16 GetHokuyoServo(void){
+	return Servo_1_ReadCompare() - SERVO_COMPARE_CENTER;
 }
 void SetHokuyoServo(int8 out){
 	Servo_1_WriteCompare(SERVO_COMPARE_CENTER + ((SERVO_COMPARE_DEVIATION * (int16)out) >> 7));

@@ -66,7 +66,6 @@ void MainTimeISRHandler(void){
 	}
 	if(time >= SEC_PER_DAY) time = 0;
 	if(WatchdogRunning && !WatchdogOverflow && (WatchdogTime <= ms)) WatchdogTimeout();
-	if((ms % TelemetryFeedbackRate) == 0) sendCommMessage();
 	if((ms % VelCtrlRate) == 0){
 		UpdateVelocity();
 		if(VelCtrlRunning) RunVelocityControl();
@@ -74,6 +73,7 @@ void MainTimeISRHandler(void){
 	if((ms % HokuyoTiltRate) == 0){
 		if(HokuyoTiltRunning) HokuyoTiltStep();
 	}
+	if((ms % TelemetryFeedbackRate) == 0) sendCommMessage();
 }
 
 void ResetWatchdog(void){
@@ -82,7 +82,7 @@ void ResetWatchdog(void){
 	Err_LED_1_Write(0);
 }
 
-#define DEFAULT_VEL_CTRL_RATE 1
+#define DEFAULT_VEL_CTRL_RATE 20
 #define DEFAULT_TELEMENTRY_RATE 20
 void InitializeWatchdog(void){
 	WatchdogRunning = 1;
