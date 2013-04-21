@@ -16,7 +16,7 @@
   <depend package="um6_imu"/>
   <depend package="vn_200_imu"/>
   <depend package="ReactiveDecisionMaker"/>
-
+  <depend package="GPS_Ublox"/>
 
 </package>
 
