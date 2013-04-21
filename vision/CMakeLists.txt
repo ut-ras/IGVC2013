@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.4.6)
 include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 
 FIND_PACKAGE(CUDA)
+FIND_PACKAGE(OpenCV REQUIRED)
+
 # Set the build type.  Options are:
 #  Coverage       : w/ debug symbols, w/o optimization, w/ code-coverage
 #  Debug          : w/ debug symbols, w/o optimization
@@ -28,14 +30,17 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_boost_directories()
 #rosbuild_link_boost(${PROJECT_NAME} thread)
 #rosbuild_add_executable(example examples/example.cpp)
-#target_link_libraries(example ${PROJECT_NAME})
 
 #rosbuild_add_executable(vision src/vision_test.cpp)
-rosbuild_add_executable(lounge src/vision_lounge.cpp)
 #rosbuild_add_executable(decision src/vision_decision.cpp)
 #rosbuild_add_executable(opencv_cuda_test src/opencv_cuda_test.cpp)
 #rosbuild_add_executable(visualization src/visualizer.cpp)
 
+rosbuild_add_executable(lounge src/vision_lounge.cpp)
 rosbuild_add_executable(log_polar_processor nodes/log_polar_processor.cpp)
 rosbuild_add_executable(grayscaler nodes/grayscaler.cpp)
 rosbuild_add_executable(lane_detector nodes/lane_detector.cpp)
+target_link_libraries(lane_detector ${OpenCV_LIBRARIES})
+target_link_libraries(log_polar_processor ${OpenCV_LIBRARIES})
+target_link_libraries(grayscaler ${OpenCV_LIBRARIES})
+target_link_libraries(lounge ${OpenCV_LIBRARIES})
