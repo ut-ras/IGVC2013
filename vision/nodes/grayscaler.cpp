@@ -20,12 +20,9 @@ class Grayscaler {
         Grayscaler () : it_(nh_) {
             image_pub_ = it_.advertise("image_gray", 1);
             image_sub_ = it_.subscribe("usb_cam/image_raw", 1, &Grayscaler::imageCb, this);
-            
-            cv::namedWindow(WINDOW);
         }
 
         ~Grayscaler() {
-            cv::destroyWindow(WINDOW);
         }
 
         void imageCb (const sensor_msgs::ImageConstPtr& msg) {
