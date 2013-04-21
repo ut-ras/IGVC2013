@@ -6,10 +6,14 @@ from vn_200_imu.msg import vn_200_ins_soln, vn_200_accel_gyro_compass
 from filters.msg import Orientation
 
 YAW_CORRECTION = math.pi
+"""
 X_OFFSET = 2.45331919332
 Y_OFFSET = 1.564559527120
 Z_OFFSET = 2.0
-
+"""
+X_OFFSET = 0.0
+Y_OFFSET = 0.0
+Z_OFFSET = 0.0
 pub = None
 
 def bound0to2Pi(angle):
@@ -21,6 +25,7 @@ def vn_200_ins_callback(data):
     yaw = -data.orientation_euler.yaw*math.pi/180.0
 
     yaw = bound0to2Pi(yaw + YAW_CORRECTION)
+    yaw = math.pi*2 - yaw
 
     msg = Orientation()
     msg.roll = roll
@@ -100,6 +105,7 @@ def vn_200_imu_callback(data):
     msg.roll = bound0to2Pi(roll)
     msg.pitch = bound0to2Pi(pitch)
     msg.yaw = bound0to2Pi(yaw + YAW_CORRECTION)
+    msg.yaw = math.pi*2 - yaw
 
     global pub
     pub.publish(msg)
@@ -109,11 +115,19 @@ def init():
 
     global pub
     pub = rospy.Publisher('orientation_data', Orientation)
+
     rospy.Subscriber(
             "vn_200_accel_gyro_compass",
             vn_200_accel_gyro_compass,
             vn_200_imu_callback
             )
+    """
+    rospy.Subscriber(
+            "vn_200_ins_soln",
+            vn_200_ins_soln,
+            vn_200_ins_callback
+            )
+    """
 
     rospy.loginfo("subscribed to ins messages!")
     rospy.spin()

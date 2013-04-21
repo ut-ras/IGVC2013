@@ -7,7 +7,7 @@ import string
 from math import pi
 import time
 
-port = '/dev/ttyACM1'
+port = '/dev/ArduinoMEGA'
 
 
 MAX_VALUE = float(4.5)

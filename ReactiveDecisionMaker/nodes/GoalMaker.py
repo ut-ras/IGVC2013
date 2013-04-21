@@ -7,7 +7,16 @@ from ReactiveUtils import *
 from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Point
 
-goals = [Point(0, 0, 0), Point(8, 0, 0), Point(0, 0, 0)]
+goals = [Point(15, 0, 0), Point(0, 0, 0)]
+
+"""
+Intramural fields
+[Point(-22.941460455271443, -1.544497530891049, 0), \
+Point(-5.663373082599206, -12.663990195321006, 0),\
+Point(-21.98156671340644, -31.56712772497045, 0)]
+"""
+
+
 curGoalIndex = 0
 
 pub = None

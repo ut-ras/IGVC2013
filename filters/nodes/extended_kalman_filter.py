@@ -17,7 +17,7 @@ from EKF import ExtendedKalmanFilter, accel_observation_funct, accel_jacobian_fu
 ORIENTATION_INDEX = 0
 ENCODERS_INDEX = 1
 # UBLOX_GPS_INDEX = 2
-VN_200_GPS_INDEX = 2
+GPS_INDEX = 2
 
 
 kf = None
@@ -140,9 +140,9 @@ def create_msg(belief, covariances):
 def init_old():
     #rospy.Subscriber("um6_imu_data", UM6IMU, um6_imu_callback)
     #rospy.Subscriber("imu_rotated_data", RotatedIMUData, oceanserver_imu_callback)
-    #rospy.Subscriber("orientation_data", Orientation, orientation_callback)
+    rospy.Subscriber("orientation_data", Orientation, orientation_callback)
     rospy.Subscriber("vel_data", Twist, encoders_callback)
-    #rospy.Subscriber("x_y_offseter", Point, gps_callback)
+    rospy.Subscriber("x_y_offseter", Point, gps_callback)
 
     pub = rospy.Publisher('ekf_data', EKFData)
 
