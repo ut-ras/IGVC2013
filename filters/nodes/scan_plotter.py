@@ -4,7 +4,7 @@ import rospy, pygame, math
 
 from sensor_msgs.msg import LaserScan
 from ReactiveDecisionMaker.msg import PlanarData
-from Plotter.py import Graphics
+from Plotter import Graphics
 
 graphics = None
 

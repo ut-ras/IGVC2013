@@ -6,10 +6,10 @@ pi2 = math.pi*2.0
 TIMEOUT_ERROR = -10
 
 # these constants are in meters
-MAX_VAL = 1.5 # ranges larger in distance than this are set to this
+MAX_VAL = 1.0 # ranges larger in distance than this are set to this
 CLOSE_ENOUGH_TO_GOAL = .5
 MAX_VAL_PRECISION = 1e-3 # precision around max
-MIN_CLEARANCE_ALLOWED = 1.5 # set to approximate width of robot
+MIN_CLEARANCE_ALLOWED = 1.0 # set to approximate width of robot
 MIN_EDGE_CLEARANCE = 1.5 # clearance that must be met before added additional directions to a gap
 MIN_VAL = 2e-2 # if ranges are below this, assume they are actually max values
 MAXIMUM_CLEARANCE = MAX_VAL*2.0 # used to normalize clearances

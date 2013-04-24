@@ -22,6 +22,7 @@
   <depend package="ocean_server_imu"/>
   <depend package="hokuyo_node"/>
   <depend package="um6_imu"/>
+  <depend package="vn_200_imu"/>
 </package>
 
 

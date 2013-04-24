@@ -26,21 +26,43 @@ image_transport::ImageTransport it_;
 image_transport::Subscriber image_sub_;
 image_transport::Publisher image_pub_;
 
+bool USE_CVWINDOW;
+
 public:
     ImageConverter() : it_(nh_)
     {
         image_pub_ = it_.advertise("vision/out", 1);
         image_sub_ = it_.subscribe("usb_cam/image_raw", 1, &ImageConverter::imageCb, this);
 
+        USE_CVWINDOW = false;
+
         namedWindow("Input Video");
         namedWindow("Processed Video");
+        namedWindow("Binary Object Map");
+    }
+
+    ImageConverter(bool w) : it_(nh_)
+    {
+        image_pub_ = it_.advertise("vision/out", 1);
+        image_sub_ = it_.subscribe("usb_cam/image_raw", 1, &ImageConverter::imageCb, this);
+
+        USE_CVWINDOW = w;
+
+        namedWindow("Input Video");
+        namedWindow("Blur Video");
+        namedWindow("Hue Video");
+        namedWindow("Canny Video");
+        namedWindow("Luminosity Video");
         namedWindow("Binary Object Map");
     }
 
     ~ImageConverter()
     {
         destroyWindow("Input Video");
-        destroyWindow("Processed Video");
+        destroyWindow("Blur Video");
+        destroyWindow("Hue Video");
+        destroyWindow("Canny Video");
+        destroyWindow("Luminosity Video");
         destroyWindow("Binary Object Map");
     }
 
@@ -62,19 +84,32 @@ public:
             return;
         }
 
+        
+
         gpu::GpuMat gSrc = (gpu::GpuMat) src;
         gpu::GpuMat gGray;
         gpu::GpuMat gblur_image;
         gpu::GpuMat gproc_image;
+        gpu::GpuMat ghsv_image;
 
 
-        imshow("Input Video",(Mat)gSrc);
-        waitKey(30);
-
-        gpu::GaussianBlur(gSrc, gblur_image, Size(13,13), 5, 5);
-        gpu::cvtColor(gblur_image, gproc_image, CV_BGR2HLS);
+        //cv::Rect ROI = cv::Rect(0, 0, gSrc.cols, (gSrc.rows)*6/7);
+        //gSrc = gpu::GpuMat(gSrc, ROI);
 
         
+
+        if (USE_CVWINDOW) {
+        imshow("Input Video",(Mat)gSrc);
+        waitKey(30); }
+
+        gpu::GaussianBlur(gSrc, gblur_image, Size(11,11), 5, 5);
+        gpu::cvtColor(gblur_image, gproc_image, CV_BGR2HLS);
+        gpu::cvtColor(gblur_image, ghsv_image, CV_BGR2HSV);
+        gpu::cvtColor(gblur_image, gGray, CV_BGR2GRAY);
+
+        if (USE_CVWINDOW) {
+        imshow("Blur Video",(Mat)gblur_image);
+        waitKey(30); }
 
 /*
         //PROCESSING TIME!! YAAAY~~~
@@ -149,17 +184,74 @@ public:
         gpu::split(gproc_image, gsplit_image);
         gpu::GpuMat gthresh_0, gthresh_1, gthresh_2, gthresh_3;
 
-        gpu::threshold(gsplit_image[1], gthresh_0, 75, 230, THRESH_BINARY);
-        gpu::threshold(gsplit_image[2], gthresh_3, 60, 255, THRESH_BINARY);
-        gpu::threshold(gsplit_image[0], gthresh_1, 90, 135, THRESH_BINARY);
 
+        gpu::threshold(gsplit_image[0], gthresh_1, 90, 135, THRESH_BINARY);
+        gpu::threshold(gsplit_image[1], gthresh_0, 55, 255, THRESH_BINARY); //Sat normally 75 low
+        gpu::threshold(gsplit_image[2], gthresh_3, 30, 255, THRESH_BINARY);
+        
+
+        if (USE_CVWINDOW) {
+        imshow("Hue Video",(Mat)gthresh_1);
+        waitKey(30); }
+
+        
+
+        if (USE_CVWINDOW) {
+        imshow("Luminosity Video",(Mat)gthresh_3);
+        waitKey(30); }
 
         gpu::add(gthresh_1, gthresh_0, gcarpetcolor);
         gpu::add(gthresh_3, gcarpetcolor, gcarpetcolor);
+        //gpu::bitwise_and(gthresh_3, gcarpetcolor, gcarpetcolor);
         gpu::bitwise_and(gcarpetcolor, gthresh_0, gcarpetcolor);
         bitwise_not(gcarpetcolor, gcarpetcolor);
+
+
+        gpu::split(ghsv_image, gsplit_image);
+        gpu::GpuMat gred_orange;
+
+        gpu::threshold(gsplit_image[2], gthresh_3, 210, 255, THRESH_BINARY);
+        gpu::threshold(gsplit_image[1], gthresh_0, 80, 255, THRESH_BINARY);
+        gpu::threshold(gsplit_image[0], gthresh_1, 210, 255, THRESH_BINARY);
+        gpu::threshold(gsplit_image[0], gthresh_2,  40, 255, THRESH_BINARY_INV);
+
+        gpu::add(gthresh_1, gthresh_2, gred_orange);
+        gpu::add(gred_orange, gthresh_3, gred_orange);
+        gpu::bitwise_and(gred_orange, gthresh_0, gred_orange);
+
+        gpu::add(gred_orange, gcarpetcolor, gcarpetcolor);
+
+        ///////////////////////////////////////
+        gpu::GpuMat cannyEdges;
+        gpu::GpuMat dilated;
+        gpu::Canny( gGray, cannyEdges, 17, 17*3, 3 );
+    
+        gpu::dilate(cannyEdges, dilated, Mat::ones(3, 3, CV_8U));
+
+        if (USE_CVWINDOW) {
+        imshow("Canny Video",(Mat)dilated);
+        waitKey(30); }
+
+        gpu::add(dilated, gcarpetcolor, gcarpetcolor);
+        ///////////////////////////////////////
+
+
+        Mat mask = (Mat) gcarpetcolor;
+
+        rectangle( mask,
+           Point( mask.cols/3.0, mask.rows/**(14.0/15)*/ ),
+           Point( mask.cols*2.0/3.0, mask.cols),
+           Scalar( 0, 0, 0 ), CV_FILLED );
+
+        gcarpetcolor = (gpu::GpuMat) mask;
+
+        gpu::threshold(gcarpetcolor, gcarpetcolor, 100,255, THRESH_BINARY);
+
+       
+
+        if (USE_CVWINDOW) {
         imshow("Binary Object Map", (Mat) gcarpetcolor);
-        waitKey(30);
+        waitKey(30); }
 
 
         //Publish image results
@@ -179,7 +271,18 @@ int main(int argc, char* argv[])
 {
     ros::init(argc, argv, "image_converter");
 
-    ImageConverter ic;
+    /*if (argc == 1)
+    {
+        if (strcmp(argv[0],"-w") == 0)
+            ImageConverter ic(true);
+    }
+    
+    else {
+        ImageConverter ic(false);
+    }*/
+
+    ImageConverter ic(true);
+
     ros::spin();
 
     return 0;

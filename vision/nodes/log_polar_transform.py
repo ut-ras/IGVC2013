@@ -101,7 +101,7 @@ def init():
             pub.publish(bridge.cv_to_imgmsg(log_polar, encoding="passthrough"))
 
             # display(homography, log_polar)
-            # cv2.waitKey(30)
+            cv2.waitKey(30)
 
         r.sleep()
 

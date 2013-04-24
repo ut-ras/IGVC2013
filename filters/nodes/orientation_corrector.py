@@ -5,7 +5,7 @@ import rospy, math
 from vn_200_imu.msg import vn_200_ins_soln, vn_200_accel_gyro_compass
 from filters.msg import Orientation
 
-YAW_CORRECTION = math.pi
+YAW_CORRECTION = -math.pi/2
 """
 X_OFFSET = 2.45331919332
 Y_OFFSET = 1.564559527120
@@ -35,8 +35,8 @@ def vn_200_ins_callback(data):
     global pub
     pub.publish(msg)
 
-alphaMag = 0.4
-alphaAccel = 0.4
+alphaMag = 0.2
+alphaAccel = 0.2
 
 xMagOld = 0.0
 yMagOld = 0.0
@@ -104,8 +104,7 @@ def vn_200_imu_callback(data):
     msg = Orientation()
     msg.roll = bound0to2Pi(roll)
     msg.pitch = bound0to2Pi(pitch)
-    msg.yaw = bound0to2Pi(yaw + YAW_CORRECTION)
-    msg.yaw = math.pi*2 - yaw
+    msg.yaw = bound0to2Pi(math.pi*2 - yaw + YAW_CORRECTION)
 
     global pub
     pub.publish(msg)

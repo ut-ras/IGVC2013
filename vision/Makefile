@@ -358,6 +358,19 @@ tests/fast:
 	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
+#=============================================================================
+# Target rules for targets named vision
+
+# Build rule for target.
+vision: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vision
+.PHONY : vision
+
+# fast build rule for target.
+vision/fast:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/build
+.PHONY : vision/fast
+
 # target to build an object file
 nodes/grayscaler.o:
 	$(MAKE) -f CMakeFiles/grayscaler.dir/build.make CMakeFiles/grayscaler.dir/nodes/grayscaler.o
@@ -418,6 +431,21 @@ src/vision_lounge.s:
 	$(MAKE) -f CMakeFiles/lounge.dir/build.make CMakeFiles/lounge.dir/src/vision_lounge.s
 .PHONY : src/vision_lounge.s
 
+# target to build an object file
+src/vision_test.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.o
+.PHONY : src/vision_test.o
+
+# target to preprocess a source file
+src/vision_test.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.i
+.PHONY : src/vision_test.i
+
+# target to generate assembly for a file
+src/vision_test.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.s
+.PHONY : src/vision_test.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -446,6 +474,7 @@ help:
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
+	@echo "... vision"
 	@echo "... nodes/grayscaler.o"
 	@echo "... nodes/grayscaler.i"
 	@echo "... nodes/grayscaler.s"
@@ -458,6 +487,9 @@ help:
 	@echo "... src/vision_lounge.o"
 	@echo "... src/vision_lounge.i"
 	@echo "... src/vision_lounge.s"
+	@echo "... src/vision_test.o"
+	@echo "... src/vision_test.i"
+	@echo "... src/vision_test.s"
 .PHONY : help
 
 

@@ -75,52 +75,54 @@ public:
 
         //Set ROI to chop out the top of the image because that's the sky and ain't nobody got time for that
         //Maybe cut out the top quarter of the image? TODO: Test that value
-        cv::Rect ROI = cv::Rect(0, (gSrc.rows)/4, gSrc.cols, gSrc.rows*3/4);
-        gSrc = gpu::GpuMat(gSrc, ROI);
+        //cv::Rect ROI = cv::Rect(0, (gSrc.rows)/4, gSrc.cols, gSrc.rows*3/4);
+        //gSrc = gpu::GpuMat(gSrc, ROI);
 
         //PROCESSING TIME!! YAAAY~~~
         //Following Frank's steps so far (this is his ported code)
         //EDITED: Cut blur from 7 to 5 to prevent grass from bleeding over thin white lines
-        gpu::GaussianBlur(gSrc, gblur_image, Size(5,5), 1.5, 1.5);
+        gpu::GaussianBlur(gSrc, gblur_image, Size(5,5), 5, 5);
         gpu::cvtColor(gblur_image, gproc_image, CV_BGR2HSV);
 
         gpu::cvtColor(gSrc, gGray, CV_BGR2GRAY);
 
         //Split into HSV channels and RGB channels too
-        //Using Frank names and prepending g to all gpu mats
-
-        vector<gpu::GpuMat> gsplit_bgr;
-        gpu::split(gblur_image, gsplit_bgr);        
+        //Using Frank names and prepending g to all gpu mats      
 
         vector<gpu::GpuMat> gsplit_image;
         gpu::split(gproc_image, gsplit_image);
         gpu::GpuMat gthresh_0, gthresh_1, gthresh_2;
-        gpu::GpuMat gred_orange;
+        gpu::GpuMat gred_orange, closed;
 
         gpu::threshold(gsplit_image[1], gthresh_0, 128, 255, THRESH_BINARY);// >50% saturation
-        gpu::threshold(gsplit_image[0], gthresh_1, 220, 255, THRESH_BINARY);// > purple
-        gpu::threshold(gsplit_image[0], gthresh_2,  10, 255, THRESH_BINARY_INV);//<Yellow-Orange
+        gpu::threshold(gsplit_image[0], gthresh_1, 210, 255, THRESH_BINARY);// > purple
+        gpu::threshold(gsplit_image[0], gthresh_2,  20, 255, THRESH_BINARY_INV);//<Yellow-Orange
 
         gpu::add(gthresh_1, gthresh_2, gred_orange);
         gpu::bitwise_and(gred_orange, gthresh_0, gred_orange);
 
+        gpu::erode(gred_orange, closed, Mat::ones(7, 7, CV_8U));
+        gpu::dilate(closed, gred_orange, Mat::ones(7, 7, CV_8U));
 
         gOut = gred_orange;
+
+        imshow("Red-Orange and White Video", (Mat) gred_orange);
+        waitKey(30);
 
         //imshow("Red-Orange Video", (Mat)gred_orange);
         //waitKey(30);
 
         ///Begin white detection
 
-        gpu::cvtColor(gblur_image, gproc_image, CV_BGR2HLS);
-        gpu::split(gproc_image, gsplit_image);
+        //gpu::cvtColor(gblur_image, gproc_image, CV_BGR2HLS);
+        //gpu::split(gproc_image, gsplit_image);
 
         //Greater than 80% luminence
         //EDITED: Will cut down to 70%
         //TODO: Modular luminance based on max brightness in image
         //gpu::GpuMat normalized;
         //gpu::normalize(gsplit_image[1], normalized, 1, 0);
-        double min = 0;
+        /*double min = 0;
         double max = 0;
         gpu::minMax(gsplit_image[1], &min, &max);
         
@@ -130,16 +132,16 @@ public:
 
         //Fiddle around with the shape of the kernels to make it detect vertical white lines well
         //gpu::erode(gthresh_0, closed, Mat::ones(3, 3, CV_8U));
-        //gpu::dilate(closed, gthresh_0, Mat::ones(3, 3, CV_8U));
+        //gpu::dilate(closed, gthresh_0, Mat::ones(3, 3, CV_8U));*/
 
 
                 
         //CANNY DETECTION
         
-        gpu::GaussianBlur(gGray, gGray, Size(9,9), 1.5, 1.5);
+        gpu::GaussianBlur(gGray, gGray, Size(11,11), 5, 5);
 
         gpu::GpuMat cannyEdges;
-        gpu::Canny( gGray, cannyEdges, 50, 50*3, 3 );
+        gpu::Canny( gGray, cannyEdges, 28, 28*3, 3 );
     
         imshow("Canny", (Mat) cannyEdges);
         waitKey(30);
@@ -148,7 +150,7 @@ public:
 
         //Hough detector
         Mat HLines = src;
-        DetectLanes(cannyEdges, HLines, 1, 100);
+        DetectLanes(cannyEdges, HLines, 1, 120);
 
         imshow("HoughLines",HLines);
         waitKey(30);
@@ -159,19 +161,18 @@ public:
 
         ///End white detection
 
-        gpu::bitwise_or(gred_orange, gthresh_0, gthresh_0);
-        imshow("Red-Orange and White Video", (Mat) gthresh_0);
-        waitKey(30);
+        //gpu::bitwise_or(gred_orange, gthresh_0, gthresh_0);
+        
 
         //Experimental Histogram Equalization in three color channels
         //Update: Do not equalize HSV unless you like bad acid trips; it equalized the hue band. 
-        gpu::GpuMat gEqB, gEqG, gEqR, gTotalBGR;
+        /*gpu::GpuMat gEqB, gEqG, gEqR, gTotalBGR;
         gpu::equalizeHist(gsplit_bgr[0], gEqB);
         gpu::equalizeHist(gsplit_bgr[1], gEqG);
         gpu::equalizeHist(gsplit_bgr[2], gEqR);
         gpu::GpuMat gEqualizedBGR[3] = {gEqB, gEqG, gEqR};
 
-        gpu::merge(gEqualizedBGR, 3, gTotalBGR);
+        gpu::merge(gEqualizedBGR, 3, gTotalBGR);*/
 
         //imshow("Equalized BGR", (Mat) gTotalBGR);
         //waitKey(30);
@@ -179,7 +180,7 @@ public:
         
 
         //Publish image results
-        Mat outMat = (Mat)gthresh_0;
+        Mat outMat = (Mat)gOut;
         cv_bridge::CvImage out_msg;
         out_msg.header   = msg->header;
         out_msg.encoding = enc::MONO8;
@@ -208,8 +209,8 @@ public:
             double x0 = a*rho;
             double y0 = b*rho;
 
-            Point pt1(cvRound(x0 + 1500*(-b)), cvRound(dstBGR.rows/4 + y0 + 1500*(a)));
-            Point pt2(cvRound(x0 - 1500*(-b)), cvRound(dstBGR.rows/4 + y0 - 1500*(a)));
+            Point pt1(cvRound(x0 + 1500*(-b)), cvRound(y0 + 1500*(a)));
+            Point pt2(cvRound(x0 - 1500*(-b)), cvRound(y0 - 1500*(a)));
 
             clipLine(dstBGR.size(), pt1, pt2);
 

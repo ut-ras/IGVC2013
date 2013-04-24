@@ -11,7 +11,7 @@
 #include "opencv2/gpu/gpu.hpp"
 #include "opencv2/opencv.hpp"
 
-#define DEBUG_LANES 0
+#define DEBUG_LANES 1
 
 using namespace cv;
 
@@ -70,23 +70,26 @@ class LaneDetector {
 
                 //get grascale image
                 gpu::cvtColor(imageFromCam, gray, CV_BGR2GRAY);
+                /*
                 if (DEBUG_LANES) {
                     imshow(WINDOW_GRAY, (Mat)gray);
                     waitKey(30);
                 }
-
+                */
                 //convert out BGR image to HSV
                 gpu::cvtColor(imageFromCam, hsv, CV_BGR2HSV);
                 //split into hsv channels
                 gpu::split(hsv, hsv_split);
 
                 //filter all pixels with saturation more than 10
-                gpu::threshold(hsv_split[1], sat,   10, 255, THRESH_BINARY_INV);
+                //gpu::threshold(hsv_split[1], sat,   10, 255, THRESH_BINARY_INV);
+                //imshow("sat", (Mat)sat);
                 //filter all pixels with value more than 230
                 gpu::threshold(hsv_split[2], val,  230, 255, THRESH_BINARY);
 
                 //and the saturation and value filtered images
-                gpu::bitwise_and(sat, val, white);
+                //gpu::bitwise_and(sat, val, white);
+                //imshow("white", (Mat)white);
 
                 /*
                    This at present seems like a hack. I am dialating the
@@ -96,14 +99,19 @@ class LaneDetector {
                    restrictive cut-offs so that when we and it with canny we do
                    no end up loosing the edges of the white lines.
                  */
-                gpu::dilate(white, dilated, Mat::ones(7, 7, CV_8U));
+                gpu::dilate(val, dilated, Mat::ones(7, 7, CV_8U));
+                if (DEBUG_LANES)
+                    imshow(WINDOW_WHTE, (Mat)dilated);
                 
                 //blur the gray scale image
                 gpu::GaussianBlur(gray, blur, blurSize, sigma1, sigma2);
+                imshow("val", (Mat)val);
+                /*
                 if (DEBUG_LANES) {
                     imshow(WINDOW_BLUR, (Mat)blur);
                     waitKey(30);
                 }
+                */
                 //perform canny edge detection on the blurred image
                 gpu::Canny(blur, canny, lowThreshold, lowThreshold*ratio, kernal_size);
                 if (DEBUG_LANES) {
@@ -118,10 +126,6 @@ class LaneDetector {
                     imshow(WINDOW_LAST, (Mat)final);
                     waitKey(30);
                 }
-                if (DEBUG_LANES) {
-                    imshow(WINDOW_WHTE, (Mat)final);
-                }    waitKey(30);
-
                 //comment next few lines if using gpu houghlines function
 
                 //vector that stores the lines from the HoughTransfrom function
