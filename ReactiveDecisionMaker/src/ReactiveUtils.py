@@ -26,6 +26,8 @@ CLEARANCE_WEIGHT = .29
 CURRENT_HEADING_WEIGHT = .01
 GOAL_HEADING_WEIGHT = .7
 
+ROBOT_WIDTH = 1.0
+
 # returns angle equivalent to argument, but in range [0, 2*pi]
 def boundAngleTo2PI(angle):
     return (angle%pi2 + pi2)%pi2;
