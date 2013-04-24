@@ -2,6 +2,7 @@
 import roslib; roslib.load_manifest('ReactiveDecisionMaker')
 import rospy, math, pygame
 from ReactiveUtils import *
+from ClearanceCalculator import calcClearancesAux
 
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Point
@@ -44,6 +45,8 @@ def calcViableDirs(shortenedLidar):
 
     directions = []
 
+    gapClearances = calcClearancesAux(shortenedLidar, gapIndexes)
+
     for i in range(len(gapIndexes)/2):
         i *= 2
 
@@ -53,7 +56,8 @@ def calcViableDirs(shortenedLidar):
         dist2 = shortenedLidar[gapIndexes[i + 1]].dist
 
         angle = (angle1 + angle2)/2.0
-        clearance = calcClearance(angle1, dist1, angle2, dist2)
+        # clearance = calcClearance(angle1, dist1, angle2, dist2)
+
 
         if clearance >= MIN_CLEARANCE_ALLOWED:
             directions.append(Direction(angle, clearance))
