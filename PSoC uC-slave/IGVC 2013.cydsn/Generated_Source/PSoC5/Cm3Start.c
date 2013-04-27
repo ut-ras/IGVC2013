@@ -108,11 +108,11 @@ const cyisraddress RomVectors[NUM_VECTORS] =
 {
     (cyisraddress)(uint32)&Image$$ARM_LIB_STACK$$ZI$$Limit,             /* The initial stack pointer  0 */
     (cyisraddress)Reset,                                                /* The reset handler          1 */
-    (cyisraddress)Reset,                                                  /* The NMI handler            2 */
-    (cyisraddress)Reset,                                                  /* The hard fault handler     3 */
-    (cyisraddress)Reset,                                                  /* The MPU fault handler      4 */
-    (cyisraddress)Reset,                                                  /* The bus fault handler      5 */
-    (cyisraddress)Reset,                                                  /* The usage fault handler    6 */
+    IntDefaultHandler,                                                  /* The NMI handler            2 */
+    IntDefaultHandler,                                                  /* The hard fault handler     3 */
+    IntDefaultHandler,                                                  /* The MPU fault handler      4 */
+    IntDefaultHandler,                                                  /* The bus fault handler      5 */
+    IntDefaultHandler,                                                  /* The usage fault handler    6 */
     IntDefaultHandler,                                                  /* Reserved                   7 */
     IntDefaultHandler,                                                  /* Reserved                   8 */
     IntDefaultHandler,                                                  /* Reserved                   9 */
