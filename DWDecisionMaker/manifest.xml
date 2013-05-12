@@ -1,0 +1,15 @@
+<package>
+  <description brief="DWDecisionMaker">
+
+     DWDecisionMaker
+
+  </description>
+  <author>Granny</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/DWDecisionMaker</url>
+  <depend package="ReactiveDecisionMaker"/>
+
+</package>
+
+

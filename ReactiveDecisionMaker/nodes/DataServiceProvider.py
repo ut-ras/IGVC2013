@@ -8,7 +8,7 @@ from ReactiveDecisionMaker.srv import *
 from ReactiveDecisionMaker.msg import PlanarData
 from filters.msg import EKFData
 from sensor_msgs.msg import LaserScan
-from geometry_msgs.msg import Point
+from geometry_msgs.msg import Point, Twist
 
 GOAL_TIMEOUT = .5
 
@@ -16,6 +16,7 @@ pos = Point(0, 0, 0)
 heading = 0
 pdata = None
 goal = Point(0, 0, 0)
+twist = Twist()
 
 def handle_getPos(req):
     return GetPosResponse(pos)
@@ -38,18 +39,25 @@ def handle_getGoal(req):
         return GetGoalResponse(Point(0, 0, TIMEOUT_ERROR))
     return
 
+def handle_getTwist(req):
+    return GetTwistResponse(twist)
+
+
 def init_server():
     rospy.init_node('DataServiceProvider')
     serv1 = rospy.Service('getPos', GetPos, handle_getPos)
     serv2 = rospy.Service('getHeading', GetHeading, handle_getHeading)
     serv3 = rospy.Service('getPlanarData', GetPlanarData, handle_getPlanarData)
     serv4 = rospy.Service('getGoal', GetGoal, handle_getGoal)
+    serv5 = rospy.Service('getTwist', GetTwist, handle_getTwist)
 
 def ekf_callback(data):
     global pos, heading
     pos.x = data.x_pos
     pos.y = data.y_pos
     heading = data.yaw
+    twist.linear.x = data.linear_velocity
+    twist.angular.z = data.yaw_rate
 
 def pdata_callback(data):
     global pdata
