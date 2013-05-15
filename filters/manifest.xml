@@ -15,8 +15,11 @@
   <depend package="ocean_server_imu"/>
   <depend package="um6_imu"/>
   <depend package="vn_200_imu"/>
-  <depend package="ReactiveDecisionMaker"/>
   <depend package="GPS_Ublox"/>
+<!--
+Move things that depend on this into tests_igvc
+  <depend package="ReactiveDecisionMaker"/>
+-->
 
 </package>
 

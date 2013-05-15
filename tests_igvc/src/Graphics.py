@@ -10,7 +10,9 @@ class Graphics:
             POINT_RADIUS=1,
             POINT_WIDTH=1,
             XAXIS_LENGTH=3,
-            YAXIS_LENGTH=3
+            YAXIS_LENGTH=3,
+            ORIGIN_X=200,
+            ORIGIN_Y=200
             ):
         pygame.init()
 
@@ -24,12 +26,14 @@ class Graphics:
         self.POINT_RADIUS = POINT_RADIUS
         self.POINT_WIDTH = POINT_WIDTH
 
-        self.XSCALE = SIZEX/float(XAXIS_LENGTH)
-        self.YSCALE = SIZEY/float(YAXIS_LENGTH)
+        self.XSCALE = 2*SIZEX/float(XAXIS_LENGTH)
+        self.YSCALE = 2*SIZEY/float(YAXIS_LENGTH)
         self.XAXIS_LENGTH = XAXIS_LENGTH
         self.YAXIS_LENGTH = YAXIS_LENGTH
 
         self.AXIS_RGB = AXIS_RGB
+        self.ORIGIN_X = ORIGIN_X
+        self.ORIGIN_Y = ORIGIN_Y
 
     def draw_axis(self):
         #
@@ -38,16 +42,16 @@ class Graphics:
         pygame.draw.line(
             self.window,
             self.AXIS_RGB,
-            (self.SIZEX/2, 0),
-            (self.SIZEX/2, self.SIZEY),
+            (self.ORIGIN_X-5, 0),
+            (self.ORIGIN_X-5, self.ORIGIN_Y),
             2
             )
 
         pygame.draw.line(
             self.window,
             self.AXIS_RGB,
-            (0, self.SIZEY/2),
-            (self.SIZEX, self.SIZEY/2),
+            (0, self.ORIGIN_Y),
+            (self.ORIGIN_X, self.ORIGIN_Y),
             2
             )
 
@@ -55,28 +59,28 @@ class Graphics:
         # Draw tick marks on each axis
         #
         for y in range(self.YAXIS_LENGTH + 1):
-            y = self.coordsToPixels(self.SIZEX/2, y - self.YAXIS_LENGTH/2)[1]
+            y = self.coordsToPixels(self.ORIGIN_X, y - self.YAXIS_LENGTH/2)[1]
             pygame.draw.line(
                 self.window,
                 self.AXIS_RGB,
-                (self.SIZEX/2, y),
-                (self.SIZEX/2 + 5, y),
+                (self.ORIGIN_X, y),
+                (self.ORIGIN_X + 5, y),
                 2
                 )
 
         for x in range(self.XAXIS_LENGTH + 1):
-            x = self.coordsToPixels(x - self.XAXIS_LENGTH/2, self.SIZEY/2)[0]
+            x = self.coordsToPixels(x - self.XAXIS_LENGTH/2, self.ORIGIN_Y)[0]
             pygame.draw.line(
                 self.window,
                 self.AXIS_RGB,
-                (x, self.SIZEY/2 - 5),
-                (x, self.SIZEY/2),
+                (x, self.ORIGIN_Y - 5),
+                (x, self.ORIGIN_Y),
                 2
                 )
 
     def coordsToPixels(self, x, y):
-        x = x*self.XSCALE + self.SIZEX/2
-        y = y*self.YSCALE + self.SIZEY/2
+        x = x*self.XSCALE + self.ORIGIN_X
+        y = y*self.YSCALE + self.ORIGIN_Y
         return (x, y)
 
     def plot(self, x, y, rgb_color=(0,0,255)):
