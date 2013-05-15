@@ -79,7 +79,7 @@ def init():
     try:
         subtopic = str(rospy.get_param('~subtopic'))
     except KeyError:
-        rospy.logerr("yo we need the topic name broski")
+        rospy.logerr("yo we need the topic name broski: subtopic")
         return
 
     rospy.loginfo("listening to " + subtopic)
