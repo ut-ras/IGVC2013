@@ -10,10 +10,12 @@ from ClearanceCalculator import CLib
 from Plotter import Plotter
 from DynamicWindow import calcDynamicWindow
 
-import roslib; roslib.load_manifest('DynamicWindow')
+import roslib; roslib.load_manifest('DWDecisionMaker')
 
 from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Twist, Point
+
+DRAW = True
 
 NUM_OBSTACLES = 200
 
@@ -69,7 +71,7 @@ class DecisionMaker:
         # move goal to our reference frame
         x = self.goalPos.x - self.curPos.x
         y = self.goalPos.y - self.curPos.y
-        t = self.heading
+        t = -self.heading
         (self.goalPos.x, self.goalPos.y) = (
             x*math.cos(t) - y*math.sin(t),
             x*math.sin(t) + y*math.cos(t)
@@ -87,7 +89,7 @@ class DecisionMaker:
             dist = self.pdata.ranges[i]
             angle = self.pdata.angles[i]
 
-            if dist < CLEARANCE_MAX:
+            if dist < CLEARANCE_MAX and dist > SIZE_RADIUS:
                 self.cloud.append(CloudPoint(
                     dist*math.cos(angle),
                     dist*math.sin(angle),
@@ -95,6 +97,8 @@ class DecisionMaker:
                     ))
 
     def iterate(self):
+        global plotter
+
         curPos = self.curPos
         heading = self.heading
         cloud = self.cloud
@@ -103,7 +107,7 @@ class DecisionMaker:
 
         msg = Twist()
 
-        if len(cloud) == 0:
+        if len(self.pdata.ranges) == 0:
             print 'got invalid data from GetPlanarData service...',\
                   'so um is anything being published to /planar_data?'
             return msg
@@ -116,13 +120,23 @@ class DecisionMaker:
 
         distToGoal = GLib.euclid(goalPos.x, goalPos.y, curPos.x, curPos.y)
 
-        # print "distance to goal:", distToGoal
+        print "distance to goal:", distToGoal
 
         if distToGoal < CLOSE_ENOUGH_TO_GOAL:
             rospy.loginfo("stopping because we're close enough to the goal")
             return msg
 
-        (msg.linear.x, msg.angular.z) = calcDynamicWindow(
+        if plotter:
+            plotEverything(
+                curPos.x,
+                curPos.y,
+                heading,
+                goalPos.x,
+                goalPos.y,
+                cloud
+                )
+
+        (msg.angular.z, msg.linear.x) = calcDynamicWindow(
             curPos.x,
             curPos.y,
             heading,
@@ -133,15 +147,6 @@ class DecisionMaker:
             goalPos.y,
             1/RATE,
             plotter
-            )
-
-        plotEverything(
-            curPos.x,
-            curPos.y,
-            heading,
-            goalPos.x,
-            goalPos.y,
-            cloud
             )
 
         return msg
@@ -180,9 +185,12 @@ def handle_getAction(req):
         return GetActionResponse(Twist())
 
 if __name__ == "__main__":
-    pygame.init()
-    window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-    plotter = Plotter(window, WINDOW_WIDTH, WINDOW_HEIGHT, .5, .5, 50, 50)
+    if DRAW:
+        pygame.init()
+        window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+        plotter = Plotter(window, WINDOW_WIDTH, WINDOW_HEIGHT, .5, .5, 50, 50)
+    else:
+        plotter = False
 
     rospy.init_node('DWMainLoop')
 
@@ -197,8 +205,6 @@ if __name__ == "__main__":
         r.sleep()
 
         success = decisionMaker.acquireData()
-
-        print success
 
         if success:
             decisionMaker.processData()

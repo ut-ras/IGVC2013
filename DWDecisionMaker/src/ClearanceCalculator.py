@@ -1,5 +1,5 @@
 import math
-#from Geometry import GLib
+from Geometry import GLib
 
 LARGE_DISTANCE = 1e6
 SMALL_ENOUGH = 1e-6

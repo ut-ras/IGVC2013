@@ -87,11 +87,26 @@ def calcDynamicWindow(
             linearNorm = linear/LINEAR_MAX
 
             #
+            # compute the long-term goal proximity weight
+            #
+            if res.traj.type == "vector":
+                goaldist = abs(goal_y)
+            elif res.traj.type == "circle":
+                gd = GLib.euclid(goal_x, goal_y, res.traj.x, res.traj.y)
+                goaldist = abs(gd - res.traj.r)
+            elif res.traj.type == "point":
+                goaldist = GLib.euclid(goal_x, goal_y, cur_x, cur_y)
+
+            goaldist = GOAL_DIST_MAX if goaldist > GOAL_DIST_MAX else goaldist
+            goalDistNorm = goaldist/GOAL_DIST_MAX
+
+            #
             # get the final weight, compare it with what we've seen so far
             #
             weight = clearanceNorm*CLEARANCE_WEIGHT + \
                          goalDirDifNorm*GOAL_DIR_WEIGHT + \
-                         linearNorm*LINEAR_WEIGHT
+                         linearNorm*LINEAR_WEIGHT + \
+                         goalDistNorm*GOAL_DIST_WEIGHT
 
             if weight > best_weight:
                 best_weight = weight
@@ -110,6 +125,8 @@ def calcDynamicWindow(
                     plotter.plotCircle(res.traj.x, res.traj.y, res.traj.r, color)
                 elif res.traj.type == "vector":
                     plotter.plotVector(res.traj.x, res.traj.y, res.traj.dir, color)
+
+                plotter.display()
 
     if not best_found or (abs(best_linear) <= 1e-6 and abs(best_angular) <= 1e-6):
         return DO_NOTHING
