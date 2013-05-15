@@ -3,9 +3,8 @@ import roslib; roslib.load_manifest('filters')
 import rospy, math
 
 from vn_200_imu.msg import vn_200_ins_soln, vn_200_accel_gyro_compass
-from filters.msg import Orientation
+from filters.msg import Orientation, PlanarData
 from sensor_msgs.msg import LaserScan
-from ReactiveDecisionMaker.msg import PlanarData
 
 # bottom part of camera is 18 inches away from the focal point of the sonar array
 # 18 inches ~= .46 meters

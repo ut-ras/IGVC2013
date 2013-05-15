@@ -7,7 +7,18 @@ from ReactiveUtils import *
 from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Point
 
-goals = [Point(5, 0, 0), Point(0, 0, 0)]
+goals = [
+    Point(8, 0, 0),
+    Point(0, 0, 0),
+    Point(8, 0, 0),
+    Point(0, 0, 0),
+    Point(8, 0, 0),
+    Point(0, 0, 0),
+    Point(8, 0, 0),
+    Point(0, 0, 0),
+    Point(8, 0, 0),
+    Point(0, 0, 0)
+    ]
 
 """
 Intramural fields
