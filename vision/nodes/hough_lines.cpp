@@ -46,7 +46,7 @@ class LaneDetector {
     public:
         LaneDetector (ros::NodeHandle nh, int* param_list, bool testing) : nh_(nh), it_(nh_), DISPLAY_OUTPUT(testing) {
             image_pub_ = it_.advertise("/vision/hough_lines", 1);
-            image_sub_ = it_.subscribe("/vision/thresholder_lane", 1, &LaneDetector::laneDetectorCallback, this);
+            image_sub_ = it_.subscribe("/vision/thresholder_planks", 1, &LaneDetector::laneDetectorCallback, this);
            
             for(int i = 0; i < 4; i++) {
                 params[i] = param_list[i];

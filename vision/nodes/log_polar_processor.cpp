@@ -82,6 +82,7 @@ void processsImage(Mat img) {
     scan.angle_increment = angle_width;
     scan.angle_min = -M_PI/2.0;
     scan.angle_max = M_PI/2.0;
+    scan.range_max = exp(max_dist/LOG_SCALE)/(double)PIXELS_PER_METER;
 
     scan.ranges.resize(num_readings);
     for (unsigned int i = 0; i < num_readings; ++i){
@@ -109,7 +110,7 @@ void callback(const sensor_msgs::ImageConstPtr& msg) {
 
 int main(int argc, char* argv[])
 {
-    ros::init(argc, argv, "vision_decision");
+    ros::init(argc, argv, "log_polar_processor");
 
     namedWindow("Input from log polar");
 
@@ -118,14 +119,14 @@ int main(int argc, char* argv[])
     scan_pub = nh.advertise<sensor_msgs::LaserScan>(
         "/image_scan", 
         1 // outgoing buffer size
-    );
+        );
     
     image_transport::ImageTransport it(nh);
     image_transport::Subscriber image_sub = it.subscribe(
         "/log_polar_transformed", 
         1, // incoming buffer size
         &callback
-    );
+        );
 
     ros::spin();
 

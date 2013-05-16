@@ -35,10 +35,11 @@ public:
         image_sub_ = it_.subscribe("usb_cam/image_raw", 1, &ImageConverter::imageCb, this);
 
         USE_CVWINDOW = false;
-
+        if (USE_CVWINDOW) {
         namedWindow("Input Video");
         namedWindow("Processed Video");
         namedWindow("Binary Object Map");
+        }
     }
 
     ImageConverter(bool w) : it_(nh_)
@@ -47,23 +48,26 @@ public:
         image_sub_ = it_.subscribe("usb_cam/image_raw", 1, &ImageConverter::imageCb, this);
 
         USE_CVWINDOW = w;
-
+        if (USE_CVWINDOW) {
         namedWindow("Input Video");
         namedWindow("Blur Video");
         namedWindow("Hue Video");
         namedWindow("Canny Video");
         namedWindow("Luminosity Video");
         namedWindow("Binary Object Map");
+        }
     }
 
     ~ImageConverter()
     {
+        if (USE_CVWINDOW) {
         destroyWindow("Input Video");
         destroyWindow("Blur Video");
         destroyWindow("Hue Video");
         destroyWindow("Canny Video");
         destroyWindow("Luminosity Video");
         destroyWindow("Binary Object Map");
+        }
     }
 
     void imageCb(const sensor_msgs::ImageConstPtr& msg)
@@ -196,8 +200,9 @@ public:
 
         
 
+        imshow("Luminosity Video",(Mat)gthresh_0);
         if (USE_CVWINDOW) {
-        imshow("Luminosity Video",(Mat)gthresh_3);
+        imshow("Luminosity Video",(Mat)gthresh_0);
         waitKey(30); }
 
         gpu::add(gthresh_1, gthresh_0, gcarpetcolor);
@@ -218,6 +223,9 @@ public:
         gpu::add(gthresh_1, gthresh_2, gred_orange);
         gpu::add(gred_orange, gthresh_3, gred_orange);
         gpu::bitwise_and(gred_orange, gthresh_0, gred_orange);
+
+        imshow("orange red", (Mat)gred_orange);
+        waitKey(30);
 
         gpu::add(gred_orange, gcarpetcolor, gcarpetcolor);
 
@@ -281,7 +289,7 @@ int main(int argc, char* argv[])
         ImageConverter ic(false);
     }*/
 
-    ImageConverter ic(true);
+    ImageConverter ic(false);
 
     ros::spin();
 

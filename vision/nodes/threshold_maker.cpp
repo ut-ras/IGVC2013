@@ -45,8 +45,12 @@ public:
     
     Thresholder(bool show, bool maker, int* input_thresholds, string name) : it_(nh_)
     {
+        Thresholder(show,maker,input_thresholds,name,"usb_cam/image_raw");
+    }
+                                                                             Thresholder(bool show, bool maker, int* input_thresholds, string name, string input) : it_(nh_)
+    {
         image_pub_ = it_.advertise("vision/thresholder_"+name, 1);
-        image_sub_ = it_.subscribe("usb_cam/image_raw", 1, &Thresholder::process, this);
+        image_sub_ = it_.subscribe(input , 1, &Thresholder::process, this);
         SHOW_IMAGES = show;
         SHOW_MAKER = maker;
         
@@ -181,11 +185,12 @@ int main(int argc, char* argv[])
 {
     ros::init(argc, argv, ("thresholder"));
     ros::NodeHandle nh("~");
-    string name;
+    string name, input;
     bool images, maker;
-    nh.param<std::string>("threshold",name,"maker");
+    nh.param<string>("threshold",name,"maker");
     nh.param<bool>("images",images,false);
     nh.param<bool>("maker",maker,(name=="maker"));
+    nh.param<string>("input",input,"usb_cam/image_raw");
     int thresh[18] = DEFAULT_THRESHOLDS;
 
     if(name!="maker")
@@ -211,7 +216,7 @@ int main(int argc, char* argv[])
         file.close();
     }
     else cout << "Running threshold maker" << endl;
-    Thresholder t(images,maker,thresh, name);
+    Thresholder t(images,maker,thresh, name, input);
     ros::spin();
 
     return 0;
