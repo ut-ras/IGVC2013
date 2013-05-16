@@ -18,6 +18,21 @@ pdata = None
 goal = Point(0, 0, 0)
 twist = Twist()
 
+def handle_getAllData(req):
+    curTime = rospy.get_time()
+
+    if curTime - latestGoalTime < GOAL_TIMEOUT:
+        return GetAllDataResponse(goal, heading, pdata, pos, twist)
+    else:
+        rospy.loginfo("goal data is too old!")
+        return GetAllDataResponse(
+                Point(0, 0, TIMEOUT_ERROR),
+                heading,
+                pdata,
+                pos,
+                twist
+                )
+
 def handle_getPos(req):
     return GetPosResponse(pos)
 
@@ -50,6 +65,7 @@ def init_server():
     serv3 = rospy.Service('getPlanarData', GetPlanarData, handle_getPlanarData)
     serv4 = rospy.Service('getGoal', GetGoal, handle_getGoal)
     serv5 = rospy.Service('getTwist', GetTwist, handle_getTwist)
+    serv6 = rospy.Service('getAllData', GetAllData, handle_getAllData)
 
 def ekf_callback(data):
     global pos, heading

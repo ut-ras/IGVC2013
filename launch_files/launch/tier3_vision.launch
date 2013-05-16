@@ -1,6 +1,6 @@
 <launch>
   <node pkg="vision" name="thresholder" type="thresholder">
-    <param name="threshold" value="lane" type="str"/>
+    <param name="threshold" value="planks" type="str"/>
   </node>
   <node pkg="vision" name="hough_lines" type="hough_lines">
     <param name="test" value="false" type="str"/>
