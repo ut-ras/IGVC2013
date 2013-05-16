@@ -9,6 +9,6 @@
   <node pkg="vision" name="log_polar_transform" type="log_polar_transform.py">
     <param name="subtopic" value="/vision/hough_lines" type="str"/>
   </node>
-  <node pkg="vision" name="log_polar_processor_cpp" type="log_polar_processor_cpp"/>
+  <node pkg="vision" name="log_polar_processor" type="log_polar_processor"/>
   <node pkg="filters" name="image_scan_transform" type="image_scan_transform.py"/>
 </launch>

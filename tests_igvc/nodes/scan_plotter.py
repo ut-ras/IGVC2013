@@ -116,7 +116,7 @@ def init():
     rospy.init_node('scan_plotter', anonymous=True)
 
     global graphics
-    graphics = Graphics(XAXIS_LENGTH=20, YAXIS_LENGTH=20)
+    graphics = Graphics(XAXIS_LENGTH=8, YAXIS_LENGTH=8)
     graphics.clear()
     graphics.display()
 
@@ -124,7 +124,7 @@ def init():
         TopicInfo("/sonar_data", True),
         TopicInfo("/sonar_scan", True),
         TopicInfo("/image_scan", True),
-        TopicInfo("/image_scan_transformed", False),
+        # TopicInfo("/image_scan_transformed", False),
         TopicInfo("/scan", True, True),
         TopicInfo("/planar_data", False),
         ]

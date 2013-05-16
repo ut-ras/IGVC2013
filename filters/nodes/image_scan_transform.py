@@ -22,10 +22,18 @@ def image_scan_callback(scan):
     rts = []
 
     for i in range(len(scan.ranges)):
+        dist = scan.ranges[i]
+
+        #
+        # skip the scan point if it was at maximum distance
+        #
+        if dist + 1e-6 >= scan.range_max:
+            continue
+
         angle = scan.angle_min + scan.angle_increment*i
 
-        px = scan.ranges[i]*math.cos(angle) + DISTANCE
-        py = scan.ranges[i]*math.sin(angle)
+        px = dist*math.cos(angle) + DISTANCE
+        py = dist*math.sin(angle)
         radius = math.sqrt(py**2 + px**2)
         theta = math.atan2(py, px)
         rts.append((radius, theta))
