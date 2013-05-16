@@ -13,9 +13,11 @@
 #include <cstring>
 #include <fstream>
 
-#define SVBGR_MAX 255
-#define H_MAX 240
-#define DEFAULT_THRESHOLDS {H_MAX, 0, SVBGR_MAX, 0, SVBGR_MAX, 0, SVBGR_MAX, 0, SVBGR_MAX, 0, SVBGR_MAX, 0}
+#define MAX_VAL 255
+#define SVBGR_MAX 256
+#define H_MAX 180
+#define BOOL 1
+#define DEFAULT_THRESHOLDS {H_MAX, 0, 0, SVBGR_MAX, 0, 0, SVBGR_MAX, 0,0, SVBGR_MAX, 0, 0, SVBGR_MAX, 0, 0, SVBGR_MAX, 0, 0}
 #define THRESHOLD_PATH "/home/granny/ros/ros-pkg/IGVC2013/vision/thresholds/"
 
 namespace enc = sensor_msgs::image_encodings;
@@ -30,7 +32,7 @@ image_transport::Publisher image_pub_;
 image_transport::Subscriber image_sub_;
 bool SHOW_IMAGES;
 bool SHOW_MAKER;
-int thresholds[12];
+int thresholds[18];
 public:
     Thresholder(ros::NodeHandle nh_) : it_(nh_){
         Thresholder(false, true);
@@ -48,21 +50,27 @@ public:
         SHOW_IMAGES = show;
         SHOW_MAKER = maker;
         
-        for(int i = 0; i < 12; i++) thresholds[i] = input_thresholds[i];
+        for(int i = 0; i < 18; i++) thresholds[i] = input_thresholds[i];
         if(SHOW_MAKER){
             namedWindow("Thresholder");
             createTrackbar("H+","Thresholder",&thresholds[0], H_MAX);
             createTrackbar("H-","Thresholder",&thresholds[1], H_MAX);
-            createTrackbar("S+","Thresholder",&thresholds[2], SVBGR_MAX);
-            createTrackbar("S-","Thresholder",&thresholds[3], SVBGR_MAX);
-            createTrackbar("V+","Thresholder",&thresholds[4], SVBGR_MAX);
-            createTrackbar("V-","Thresholder",&thresholds[5], SVBGR_MAX);
-            createTrackbar("B+","Thresholder",&thresholds[6], SVBGR_MAX);
-            createTrackbar("B-","Thresholder",&thresholds[7], SVBGR_MAX);
-            createTrackbar("G+","Thresholder",&thresholds[8], SVBGR_MAX);
-            createTrackbar("G-","Thresholder",&thresholds[9], SVBGR_MAX);
-            createTrackbar("R+","Thresholder",&thresholds[10], SVBGR_MAX);
-            createTrackbar("R-","Thresholder",&thresholds[11], SVBGR_MAX);
+            createTrackbar("H~","Thresholder",&thresholds[2], BOOL);
+            createTrackbar("S+","Thresholder",&thresholds[3], SVBGR_MAX);
+            createTrackbar("S-","Thresholder",&thresholds[4], SVBGR_MAX);
+            createTrackbar("S~","Thresholder",&thresholds[5], BOOL);
+            createTrackbar("V+","Thresholder",&thresholds[6], SVBGR_MAX);
+            createTrackbar("V-","Thresholder",&thresholds[7], SVBGR_MAX);
+            createTrackbar("V~","Thresholder",&thresholds[8], BOOL);
+            createTrackbar("B+","Thresholder",&thresholds[9], SVBGR_MAX);
+            createTrackbar("B-","Thresholder",&thresholds[10], SVBGR_MAX);
+            createTrackbar("B~","Thresholder",&thresholds[11], BOOL);
+            createTrackbar("G+","Thresholder",&thresholds[12], SVBGR_MAX);
+            createTrackbar("G-","Thresholder",&thresholds[13], SVBGR_MAX);
+            createTrackbar("G~","Thresholder",&thresholds[14], BOOL);
+            createTrackbar("R+","Thresholder",&thresholds[15], SVBGR_MAX);
+            createTrackbar("R-","Thresholder",&thresholds[16], SVBGR_MAX);
+            createTrackbar("R~","Thresholder",&thresholds[17], BOOL);
         }
         if (SHOW_IMAGES) {
             namedWindow("Input Video");
@@ -104,7 +112,7 @@ public:
         
         if(SHOW_MAKER){
             printf("Thresholds: ");
-            for(int i = 0; i<12;i++){
+            for(int i = 0; i<18;i++){
                 printf("%d ", thresholds[i]);
             }
             printf("\r");
@@ -128,22 +136,42 @@ public:
     Mat processImageGPU(Mat src)
     {
         gpu::GpuMat gSrc = (gpu::GpuMat) src;
-        gpu::GpuMat gHSV, gProc, gOut;
+        gpu::GpuMat gHSV, gProc, gProc2, gOut;
         vector<gpu::GpuMat> gBGR_split, gHSV_split;
+        
         gpu::cvtColor(gSrc, gHSV, CV_BGR2HSV);
         gpu::split(gSrc,gBGR_split);
         gpu::split(gHSV,gHSV_split);
-        gpu::threshold(gHSV_split[0], gOut, thresholds[1], thresholds[0] , THRESH_BINARY);
-        gpu::threshold(gHSV_split[1], gProc, thresholds[3], thresholds[2] , THRESH_BINARY);
+        
+        gpu::threshold(gHSV_split[0], gOut, thresholds[0], MAX_VAL, (!thresholds[2])?THRESH_BINARY_INV:THRESH_BINARY);
+        gpu::threshold(gHSV_split[0], gProc, thresholds[1], MAX_VAL , thresholds[2]?THRESH_BINARY_INV:THRESH_BINARY);
+        if(thresholds[2]) gpu::bitwise_or(gOut, gProc, gOut); else gpu::bitwise_and(gOut, gProc, gOut);
+        
+        gpu::threshold(gHSV_split[1], gProc, thresholds[3], MAX_VAL , (!thresholds[5])?THRESH_BINARY_INV:THRESH_BINARY);
+        gpu::threshold(gHSV_split[1], gProc2, thresholds[4], MAX_VAL , thresholds[5]?THRESH_BINARY_INV:THRESH_BINARY);
+        if(thresholds[5]) gpu::bitwise_or(gProc, gProc2, gProc); else gpu::bitwise_and(gProc, gProc2, gProc);
         gpu::bitwise_and(gOut, gProc, gOut);
-        gpu::threshold(gHSV_split[2], gProc, thresholds[5], thresholds[4] , THRESH_BINARY);
+        
+        gpu::threshold(gHSV_split[2], gProc, thresholds[6],  MAX_VAL , (!thresholds[8])?THRESH_BINARY_INV:THRESH_BINARY);
+        gpu::threshold(gHSV_split[2], gProc2, thresholds[7],  MAX_VAL , thresholds[8]?THRESH_BINARY_INV:THRESH_BINARY);
+        if(thresholds[8]) gpu::bitwise_or(gProc, gProc2, gProc); else gpu::bitwise_and(gProc, gProc2, gProc);
         gpu::bitwise_and(gOut, gProc, gOut);
-        gpu::threshold(gBGR_split[0], gProc, thresholds[7], thresholds[6] , THRESH_BINARY);
+        
+        gpu::threshold(gBGR_split[0], gProc, thresholds[9], MAX_VAL , (!thresholds[11])?THRESH_BINARY_INV:THRESH_BINARY);
+        gpu::threshold(gBGR_split[0], gProc2, thresholds[10], MAX_VAL , thresholds[11]?THRESH_BINARY_INV:THRESH_BINARY);
+        if(thresholds[11]) gpu::bitwise_or(gProc, gProc2, gProc); else gpu::bitwise_and(gProc, gProc2, gProc);
         gpu::bitwise_and(gOut, gProc, gOut);
-        gpu::threshold(gBGR_split[1], gProc, thresholds[9], thresholds[8] , THRESH_BINARY);
+        
+        gpu::threshold(gBGR_split[1], gProc, thresholds[12], MAX_VAL, (!thresholds[14])?THRESH_BINARY_INV:THRESH_BINARY);
+        gpu::threshold(gBGR_split[1], gProc2, thresholds[13], MAX_VAL , thresholds[14]?THRESH_BINARY_INV:THRESH_BINARY);
+        if(thresholds[14]) gpu::bitwise_or(gProc, gProc2, gProc); else gpu::bitwise_and(gProc, gProc2, gProc);
         gpu::bitwise_and(gOut, gProc, gOut);
-        gpu::threshold(gBGR_split[2], gProc, thresholds[11], thresholds[10] , THRESH_BINARY);
+        
+        gpu::threshold(gBGR_split[2], gProc, thresholds[15], MAX_VAL , (!thresholds[17])?THRESH_BINARY_INV:THRESH_BINARY);
+        gpu::threshold(gBGR_split[2], gProc2, thresholds[16], MAX_VAL , thresholds[17]?THRESH_BINARY_INV:THRESH_BINARY);
+        if(thresholds[17]) gpu::bitwise_or(gProc, gProc2, gProc); else gpu::bitwise_and(gProc, gProc2, gProc);
         gpu::bitwise_and(gOut, gProc, gOut);
+        
         return (Mat)gOut;
     }
     
@@ -158,7 +186,7 @@ int main(int argc, char* argv[])
     nh.param<std::string>("threshold",name,"maker");
     nh.param<bool>("images",images,false);
     nh.param<bool>("maker",maker,(name=="maker"));
-    int thresh[12] = DEFAULT_THRESHOLDS;
+    int thresh[18] = DEFAULT_THRESHOLDS;
 
     if(name!="maker")
     {
@@ -170,7 +198,7 @@ int main(int argc, char* argv[])
             getline (file,line);
             cout << "Running thresholder with custom thresholds: "<< endl << line << endl;
             istringstream iss(line);
-            for(int i = 0; i<12; i++){
+            for(int i = 0; i<18; i++){
                 string token;
                 getline (iss, token, ' ');
                 thresh[i] = atoi(token.c_str());
