@@ -7,25 +7,12 @@ from ReactiveUtils import *
 from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Point
 
+WAYPOINT_FILENAME = '/home/ras/ros/ros-pkg/IGVC2013/GPS_Ublox/offsets'
+
 goals = [
-    Point(8, 0, 0),
-    Point(0, 0, 0),
-    Point(8, 0, 0),
-    Point(0, 0, 0),
-    Point(8, 0, 0),
-    Point(0, 0, 0),
-    Point(8, 0, 0),
-    Point(0, 0, 0),
-    Point(8, 0, 0),
+    Point(20, 0, 0),
     Point(0, 0, 0)
     ]
-"""
-# Intramural fields
-[Point(-22.941460455271443, -1.544497530891049, 0), \
-Point(-5.663373082599206, -12.663990195321006, 0),\
-Point(-21.98156671340644, -31.56712772497045, 0)]
-"""
-
 
 curGoalIndex = 0
 
@@ -49,7 +36,37 @@ def processPos(pos):
             print "publishing goal ", goals[curGoalIndex]
             pub.publish(goals[curGoalIndex])
 
+def readWaypoints(filename):
+    print 'reading waypoints'
+
+    try:
+        f = open(filename, 'r')
+    except:
+        print 'no file found named ' + filename
+        return
+
+    list = []
+
+    for line in f:
+        s = line.split()
+
+        try:
+            x = float(s[0])
+            y = float(s[1])
+        except:
+            print 'error converting to floats: ' + line
+            return
+
+        list.append(Point(x, y, 0));
+
+    return list
+
 if __name__ == "__main__":
+    try:
+        if bool(rospy.get_param('GoalMaker/usefile', False)):
+            goals = readWaypoints(WAYPOINT_FILENAME);
+    except: pass
+
     rospy.init_node('GoalMaker')
     pub = rospy.Publisher('goal', Point)
 

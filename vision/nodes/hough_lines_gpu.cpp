@@ -8,6 +8,7 @@
 #include <opencv2/gpu/gpu.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include "opencv2/core/core.hpp"
 #include "opencv2/gpu/gpu.hpp"
 #include "opencv2/opencv.hpp"
 
@@ -16,16 +17,18 @@
 #include <cstring>
 #include <fstream>
 
-#define DEBUG_LANES     1
+#define DEBUG_LANES     0
 #define HOUGH_PARAM     "Hough Parameter Adjustment Window"
 #define RHO             10
 #define THRESHOLD       35
-#define MAX_LINE_NUM    1
-#define DEFAULT_PARAMS  {RHO, THRESHOLD, MAX_LINE_NUM}
-#define PARAMS_PATH     "/home/granny/ros/ros-pkg/IGVC2013/vision/thresholds/hough"
+#define MAX_LINE_LEN    25
+#define MAX_LINE_GAP    20
+#define DEFAULT_PARAMS  {RHO, THRESHOLD, MAX_LINE_LEN, MAX_LINE_GAP}
+#define PARAMS_PATH     "/home/ras/ros/ros-pkg/IGVC2013/vision/thresholds/hough"
 
-using namespace cv;
 using namespace std;
+using namespace cv;
+using namespace cv::gpu;
 
 namespace enc = sensor_msgs::image_encodings;
 
@@ -39,54 +42,28 @@ class LaneDetector {
     image_transport::ImageTransport it_;
     image_transport::Subscriber image_sub_;
     image_transport::Publisher image_pub_;
-    int params[3];
+    int params[4];
     bool DISPLAY_OUTPUT;
 
     public:
         LaneDetector (ros::NodeHandle nh, int* param_list, bool testing) : nh_(nh), it_(nh_), DISPLAY_OUTPUT(testing) {
             image_pub_ = it_.advertise("/vision/hough_lines", 1);
-            image_sub_ = it_.subscribe("/vision/thresholder_lane", 1, &LaneDetector::laneDetectorCallback, this);
+            image_sub_ = it_.subscribe("/vision/thresholder_planks", 1, &LaneDetector::laneDetectorCallback, this);
            
-            for(int i = 0; i < 3; i++) {
+            for(int i = 0; i < 4; i++) {
                 params[i] = param_list[i];
             }
 
             if (DISPLAY_OUTPUT) {
                 namedWindow(HOUGH_PARAM);
                 createTrackbar("Rho"       , HOUGH_PARAM, &params[0], 60);
-                createTrackbar("threshold" , HOUGH_PARAM, &params[1], 100);
-                createTrackbar("Num Lines" , HOUGH_PARAM, &params[2], 10);
+                createTrackbar("Threshold" , HOUGH_PARAM, &params[1], 100);
+                createTrackbar("Max Line Length" , HOUGH_PARAM, &params[2], 200);
+                createTrackbar("Max Line Gap" , HOUGH_PARAM, &params[3], 200);
             }
         }
         
         ~LaneDetector () {
-        }
-
-        void getHoughLines (const gpu::GpuMat& image, vector<Vec2f>& lines_gpu) {
-            gpu::GpuMat d_lines;
-            gpu::HoughLines(image, d_lines, params[0]/2.0f, theta, params[1], true, params[2]);
-
-            if (!d_lines.empty()) {
-                //lines_gpu.resize(d_lines.cols);
-                //Mat h_lines(1, d_lines.cols, CV_32SC4, &lines_gpu[0]);
-                gpu::HoughLinesDownload(d_lines, lines_gpu);
-            }
-        }
-
-        void drawLines (Mat& image, vector<Vec2f>& lines_gpu) {
-            for (size_t i = 0; i < lines_gpu.size(); ++i) {
-                float r = lines_gpu[i][0];
-                float t = lines_gpu[i][1];
-                Point pt1, pt2;
-                double a = cos(t), b = sin(t);
-                double x0 = a*r, y0 = b*r;
-                pt1.x = cvRound(x0 + 1000 * (-b));
-                pt1.y = cvRound(y0 + 1000 * (a));
-                pt2.x = cvRound(x0 - 1000 * (-b));
-                pt2.y = cvRound(y0 - 1000 * (a));
-
-                line(image, pt1, pt2, Scalar(255), 3, CV_AA);
-            }
         }
 
         void laneDetectorCallback (const sensor_msgs::ImageConstPtr& msg) {
@@ -99,39 +76,27 @@ class LaneDetector {
 
                 //initialize all gpu matrices
 
-                Mat dst(imageFromCam.rows, imageFromCam.cols, CV_8UC3, Scalar(0, 0, 0));
+                gpu::GpuMat d_lines;//dst(imageFromCam.rows, imageFromCam.cols, CV_8UC3, Scalar(0, 0, 0));
+                HoughLinesBuf d_buf;
 
-                /*
+                gpu::HoughLinesP(imageFromCam, d_lines, d_buf, params[0]/2.0f, theta, params[1], params[3]);
+
                 vector<Vec4i> lines;
-                HoughLinesP((Mat)imageFromCam, lines, params[0]/2.0f, theta, params[1], params[2], params[3]);
+                if (!d_lines.empty()) {
+                    lines.resize(d_lines.cols);
+                    Mat h_lines(1, d_lines.cols, CV32C4, &lines[0]);
+                    d_lines.download(h_lines);
+                }
+
                 for (size_t i = 0; i < lines.size(); ++i) {
                     Vec4i l = lines[i];
                     line(dst, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(255, 255, 255), 3, CV_AA);
                 }
-                */
                 
-                vector<Vec2f> lines_gpu_left;
-                vector<Vec2f> lines_gpu_right;
-
-                Range all_rows  (0, imageFromCam.rows - 1);
-                Range left_cols (0, (imageFromCam.cols/2));
-                Range right_cols((imageFromCam.cols/2) + 1, imageFromCam.cols - 1);
-
-                gpu::GpuMat left (imageFromCam, all_rows, left_cols);
-                gpu::GpuMat right(imageFromCam, all_rows, right_cols);
-
-                Mat final_left (imageFromCam.rows, imageFromCam.cols/2, CV_8UC1);
-                Mat final_right(imageFromCam.rows, imageFromCam.cols/2, CV_8UC1);
-
-                getHoughLines(left, lines_gpu_left);
-                drawLines(final_left, lines_gpu_left);
-
-                getHoughLines(right, lines_gpu_right);
-                drawLines(final_right, lines_gpu_right);
-
+                
                 if (DISPLAY_OUTPUT) {
                     cout << "Thresholds: ";
-                    for(int i = 0; i < 3; i++){
+                    for(int i = 0; i < 4; i++){
                         cout << params[i] << " ";
                     }
                     cout << "\r";
@@ -141,8 +106,6 @@ class LaneDetector {
                 if (DEBUG_LANES) {
                     imshow("Lines", dst);
                     imshow("Original", (Mat)imageFromCam);
-                    imshow("Left",  (Mat)final_left);
-                    imshow("Right", (Mat)final_right);
                     waitKey(30);
                 }
 
@@ -163,7 +126,7 @@ int main(int argc, char** argv) {
     ros::NodeHandle nh("~");
     bool is_testing;
     nh.param<bool>("test", is_testing, false);
-    int thresh[3] = DEFAULT_PARAMS;
+    int thresh[4] = DEFAULT_PARAMS;
 
     if (!is_testing) {
         string line;
@@ -174,7 +137,7 @@ int main(int argc, char** argv) {
             getline (file,line);
             cout << "Running Hough Lines with custom Params: "<< endl << line << endl;
             istringstream iss(line);
-            for(int i = 0; i < 3; i++){
+            for(int i = 0; i < 4; i++){
                 string token;
                 getline (iss, token, ' ');
                 thresh[i] = atoi(token.c_str());

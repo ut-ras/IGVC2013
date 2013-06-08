@@ -1,6 +1,6 @@
 <launch>
-    <param name="lat" value="30.31616389" type="str"/>
-    <param name="lon" value="-97.728611" type="str"/>
+    <param name="lat" value="42.6781105" type="str"/>
+    <param name="lon" value="-83.1955214" type="str"/>
 
     <node pkg="filters" name="GPS_offset_calculator" type="GPS_offset_calculator.py"/>
 

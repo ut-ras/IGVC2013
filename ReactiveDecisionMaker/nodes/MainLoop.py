@@ -19,6 +19,7 @@ class DecisionMaker:
         self.graphicsDisplayer = GraphicsDisplayer()
 
     def initServices(self):
+        """
         rospy.wait_for_service('getPos')
         self.getPos = rospy.ServiceProxy('getPos', GetPos)
 
@@ -30,6 +31,9 @@ class DecisionMaker:
 
         rospy.wait_for_service('getGoal')
         self.getGoal = rospy.ServiceProxy('getGoal', GetGoal)
+        """
+        rospy.wait_for_service('getAllData')
+        self.getAllData = rospy.ServiceProxy('getAllData', GetAllData)
 
         # these three variables are for turning around in case we hit a deadend
         self.turningAround = False
@@ -38,10 +42,17 @@ class DecisionMaker:
 
     def acquireData(self):
         try:
+            """
             self.curPos = self.getPos().pos
             self.heading = self.getHeading().heading
             self.pdata = self.getPlanarData().pdata
             self.goalPos = self.getGoal().goal
+            """
+            data = self.getAllData()
+            self.curPos = data.pos
+            self.heading = data.heading
+            self.pdata = data.pdata
+            self.goalPos = data.goal
             return True
         except rospy.ServiceException, e:
             print "Service call failed: %s"%e

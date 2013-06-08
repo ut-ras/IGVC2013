@@ -1,6 +1,10 @@
 <launch>
   <node pkg="filters" name="extended_kalman_filter" type="extended_kalman_filter.py"/>
   <node pkg="ReactiveDecisionMaker" name="GoalMaker" type="GoalMaker.py"/>
+
+  <node pkg="filters" name="ScanCombiner" type="ScanCombiner.py"/>
+  <node pkg="ReactiveDecisionMaker" name="DataServiceProvider" type="DataServiceProvider.py"/>
+
 <!--
   <node pkg="DWDecisionMaker" name="DWDecisionMaker" type="DWMainLoop.py"/>
 -->

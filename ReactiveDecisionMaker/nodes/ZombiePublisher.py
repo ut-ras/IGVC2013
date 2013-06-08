@@ -8,10 +8,10 @@ if __name__ == "__main__":
     rospy.init_node('ZombiePublisher')
     pub = rospy.Publisher('/vel_cmd', Twist)
 
-    r = rospy.Rate(10)
+    r = rospy.Rate(20)
 
     action = Twist()
-    action.angular.z = .1
+    action.angular.z = .2
 
     rospy.loginfo("publishing from zombie action!")
 

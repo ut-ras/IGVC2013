@@ -7,6 +7,7 @@ import string
 from math import pi
 import time
 
+VERBOSE = False
 port = '/dev/ArduinoMEGA'
 
 
@@ -30,14 +31,18 @@ def sonar():
         try:
             with serial.Serial(port = port, baudrate = 115200) as ser:
                 while not rospy.is_shutdown():
-                    print "Starting..."
+                    if VERBOSE:
+                        print "Starting..."
                     ser.flushInput()
                     line = ser.readline()
-                    print "Got line! ", line
+                    if VERBOSE:
+                        print "Got line! ", line
                     tokens = line.split()
-                    print "Number of tokens: ", len(tokens)
+                    if VERBOSE:
+                        print "Number of tokens: ", len(tokens)
                     if len(tokens) is 13:
-                        print '-'+tokens[0]+'-'
+                        if VERBOSE:
+                            print '-'+tokens[0]+'-'
                         if(tokens[0] == 'Sonars:'):
                             p = LaserScan()
                             p.header.stamp = rospy.get_rostime()

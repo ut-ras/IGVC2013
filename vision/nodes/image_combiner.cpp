@@ -26,12 +26,16 @@ using namespace cv;
 
 class Thresholder
 {
+
+gpu::GpuMat hough_lines;
 ros::NodeHandle nh_;
 image_transport::ImageTransport it_;
 image_transport::Publisher image_pub_;
 image_transport::Subscriber image_sub_;
+image_transport::Subscriber image_sub2_;
 bool SHOW_IMAGES;
 bool SHOW_MAKER;
+bool hough_lines_seen;
 int thresholds[13];
 public:
     Thresholder(ros::NodeHandle nh_) : it_(nh_){
@@ -51,9 +55,11 @@ public:
     {
         image_pub_ = it_.advertise("vision/thresholder_"+name, 1);
         image_sub_ = it_.subscribe(input , 1, &Thresholder::process, this);
+        image_sub2_ = it_.subscribe("vision/hough_lines" , 1, &Thresholder::houghLinesProcess, this);
         SHOW_IMAGES = show;
         SHOW_MAKER = maker;
-        
+        hough_lines_seen = false;
+
         for(int i = 0; i < 13; i++) thresholds[i] = input_thresholds[i];
         if(SHOW_MAKER){
             namedWindow("Thresholder");
@@ -88,10 +94,32 @@ public:
             destroyWindow("Output Video");
         }
     }
-    
+
+    void houghLinesProcess(const sensor_msgs::ImageConstPtr& msg)
+    {
+        gpu::GpuMat lines;
+        try
+        {
+           lines = (gpu::GpuMat) cv_bridge::toCvCopy(msg, enc::BGR8)->image;
+        }
+        catch (cv_bridge::Exception& e)
+        {
+            ROS_ERROR("cv_bridge exception: %s", e.what());
+            return;
+        }
+
+        vector<gpu::GpuMat> channel_split;
+        gpu::split(lines, channel_split);
+        hough_lines = channel_split[0];
+        hough_lines_seen = true;
+    }
+
     void process(const sensor_msgs::ImageConstPtr& msg)
     {
-        Mat src, dest;
+        Mat src;
+        gpu::GpuMat dest;
+
+        cout << "HI!!!" << endl;
         try
         {
             src = cv_bridge::toCvCopy(msg, enc::BGR8)->image;
@@ -108,6 +136,9 @@ public:
         }
         
         dest = processImageGPU(src);
+        if (hough_lines_seen) {
+            gpu::bitwise_or(dest, hough_lines, dest);
+        }
         
         if(SHOW_MAKER){
             printf("Thresholds: ");
@@ -127,12 +158,12 @@ public:
         cv_bridge::CvImage out_msg;
         out_msg.header = msg->header;
         out_msg.encoding = enc::TYPE_8UC1;
-        out_msg.image = dest;
+        out_msg.image = (Mat)dest;
 
         image_pub_.publish(out_msg.toImageMsg());
     }
     
-    Mat processImageGPU(Mat src)
+    gpu::GpuMat processImageGPU(Mat src)
     {
         gpu::GpuMat gSrc = (gpu::GpuMat) src;
         gpu::GpuMat gHSV, gProc, gProc2, gOut;
@@ -171,14 +202,15 @@ public:
         gpu::bitwise_and(gProc, gProc2, gProc);
         gpu::bitwise_and(gOut, gProc, gOut);
         
-        return (Mat)gOut;
+        return gOut;
     }
     
 };
 
 int main(int argc, char* argv[])
 {
-    ros::init(argc, argv, ("thresholder"));
+
+    ros::init(argc, argv, ("image_combinber"));
     ros::NodeHandle nh("~");
     string name, input;
     bool images, maker;

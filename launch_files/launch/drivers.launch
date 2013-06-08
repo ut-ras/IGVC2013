@@ -3,7 +3,8 @@
   <node pkg="PSoC_Listener" name="PSoC_Velocities" type="PSoC_Velocities.py"/>
   <node pkg="SonarArray" name="SonarArray" type="SonarArray.py"/>
   <node pkg="vn_200_imu" name="vn_200_node" type="vn_200_node.py"/>
-  <node pkg="usb_cam" name="usb_cam_node" type="usb_cam_node">
+  <node pkg="usb_cam" name="usb_cam" type="usb_cam_node">
        <param name="camera_frame_id" value="usb_cam" />
   </node>
+
 </launch>

@@ -6,7 +6,7 @@ import numpy as np
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
-RATE = 5
+RATE = 10
 
 # for conversion of raw image topic data to OpenCV image data
 bridge = CvBridge()

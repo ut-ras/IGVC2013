@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-import roslib; roslib.load_manifest('filters')
+import roslib; roslib.load_manifest('tests_igvc')
 import rospy, pygame, math
 
-from filters.msg import Orientation
 from Plotter import Graphics
+from filters.msg import Orientation
 
 graphics = None
 x = 0

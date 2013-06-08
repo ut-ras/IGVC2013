@@ -5,7 +5,7 @@ import rospy
 
 from ReactiveUtils import *
 from ReactiveDecisionMaker.srv import *
-from ReactiveDecisionMaker.msg import PlanarData
+from filters.msg import PlanarData
 from filters.msg import EKFData
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Point, Twist

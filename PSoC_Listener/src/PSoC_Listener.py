@@ -58,7 +58,7 @@ def psoc():
                         p.time = long(tokens[5])
                         p.rate = int(tokens[6])
                         pub.publish(p)
-                        rospy.loginfo('Telemetry message: '+line)
+                        #rospy.loginfo('Telemetry message: '+line)
                     except rospy.exceptions.ROSSerializationException as e:
                         rospy.logwarn('PSoC Listener fucked up.')
                         rospy.logwarn(e.message)

@@ -27,8 +27,8 @@ def image_scan_callback(scan):
         #
         # skip the scan point if it was at maximum distance
         #
-        if dist + 1e-6 >= scan.range_max:
-            continue
+        # if dist + 1e-6 >= scan.range_max:
+        #    continue
 
         angle = scan.angle_min + scan.angle_increment*i
 
