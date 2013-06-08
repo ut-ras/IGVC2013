@@ -31,6 +31,8 @@ lat_long = [(42.67847595, -83.1955698361),
 lat_long = []
 sub = None
 
+DIST = 1
+
 def degree_to_radians(degrees):
     return math.pi * float(degrees)/180
 
@@ -87,6 +89,7 @@ def gps_callback(data):
     global INITIAL_LATITUDE
     global COUNT
     global NUM_TO_BE_AVERAGED
+    global DIST
 
     lat = data.latitude
     lon = data.longitude
@@ -104,14 +107,26 @@ def gps_callback(data):
 
         #print str(INITIAL_LATITUDE), ', ', str(INITIAL_LONGITUDE)
 
+        ref_coords = open('/home/ras/ros/ros-pkg/IGVC2013/GPS_Ublox/ref_coords', 'w')
+        ref_coords.write(str(INITIAL_LATITUDE) + ' ' + str(INITIAL_LONGITUDE))
+        ref_coords.close()
+
         out = open('/home/ras/ros/ros-pkg/IGVC2013/GPS_Ublox/offsets', 'w')
+
+        dance = bool(rospy.get_param('~do_dance'))
 
         for (lati, longi) in lat_long:
             x, y = offset_calc(lati, longi)
-            out.write(str(x) + ' ' + str(y) + '\n')
+            if dance:
+                out.write(str(x+DIST) + ' ' + str(y+DIST) + ' D\n')
+                out.write(str(x+DIST) + ' ' + str(y-DIST) + ' D\n')
+                out.write(str(x-DIST) + ' ' + str(y-DIST) + ' D\n')
+                out.write(str(x-DIST) + ' ' + str(y+DIST) + ' D\n')
+            else:
+                out.write(str(x) + ' ' + str(y) + ' G\n')
 
         out.close()
-        rospy.loginfo('Done')
+        rospy.logwarn('Done')
         #print offset_calc(lati, longi)
         #print "DONE"
 

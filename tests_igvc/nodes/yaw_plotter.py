@@ -24,11 +24,13 @@ def init():
     graphics.display()
 
     rospy.Subscriber("orientation_data", Orientation, orient_callback)
+    graphics.draw_axis()
 
     r = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
-        graphics.clear()
-        graphics.plot_line(0, 0, x, y)
+        # graphics.clear()
+        graphics.plot(x, y)
+        #graphics.plot_line(0, 0, x, y)
         graphics.display()
         r.sleep()
 

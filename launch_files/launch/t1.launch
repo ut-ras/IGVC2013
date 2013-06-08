@@ -14,21 +14,20 @@
 
   <node pkg="filters" name="ScanCombiner" type="ScanCombiner.py"/>
   <node pkg="filters" name="orientation_corrector" type="orientation_corrector.py"/>
-
-  <node pkg="filters" name="GPS_input_selector" type="GPS_input_selector.py">
-    <param name="source" value="gps" type="str"/>
-  </node>
   <include file="$(find launch_files)/launch/gps_nodes.launch"/>
   <include file="$(find launch_files)/launch/usb_cam.launch"/>
 
 
-  <node pkg="ReactiveDecisionMaker" name="GoalMaker" type="GoalMaker.py"/>
+  <node pkg="ReactiveDecisionMaker" name="GoalMaker" type="GoalMaker.py">
+    <param name="usefile" value="true" type="boolean"/>
+  </node>
+
   <node pkg="ReactiveDecisionMaker" name="DataServiceProvider" type="DataServiceProvider.py"/>
   <node pkg="ReactiveDecisionMaker" name="MainLoop" type="MainLoop.py"/>
   <node pkg="ReactiveDecisionMaker" name="ActionPublisher" type="ActionPublisher.py"/>
 
   <include file="$(find launch_files)/launch/tier3_vision.launch"/>
 
-
   <node pkg="filters" name="vel_cmd_filter" type="vel_cmd_filter.py"/>
+  <node pkg="filters" name="extended_kalman_filter" type="extended_kalman_filter.py"/>
 </launch>

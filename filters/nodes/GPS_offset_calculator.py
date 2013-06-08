@@ -7,6 +7,8 @@ import math
 from geometry_msgs.msg import Point
 from GPS_Ublox.msg import gps_raw
 
+FILE_NAME = "/home/ras/ros/ros-pkg/IGVC2013/GPS_Ublox/ref_coords"
+
 INITIAL_LONGITUDE = 0.0
 INITIAL_LATITUDE = 0.0
 
@@ -80,9 +82,35 @@ def listener():
     rospy.Subscriber('/gps_data', gps_raw, offset_calc)
     rospy.spin()
 
-if __name__ == '__main__':
+def readInitialLatLon():
+    global INITIAL_LONGITUDE, INITIAL_LATITUDE
 
     try:
-        set_initial_lat_lon(float(rospy.get_param('/lon')), float(rospy.get_param('/lat')))
-        listener()
-    except rospy.ROSInterruptException: pass
+        f = open(FILE_NAME, 'r')
+    except:
+        print 'no file found named '+ FILE_NAME
+        return False
+
+    try:
+        s = f.readline().split()
+        INITIAL_LONGITUDE = float(s[1])
+        INITIAL_LATITUDE = float(s[0])
+    except:
+        print 'couldnt read file'
+        return False
+
+    print 'read log,lat: '+str(INITIAL_LONGITUDE)+","+str(INITIAL_LATITUDE)
+
+    return True
+
+if __name__ == '__main__':
+    sucess = readInitialLatLon()
+    if not sucess:
+        print 'failed to read file, quiting'
+
+    if sucess:
+        try:
+            # set_initial_lat_lon(float(rospy.get_param('/lon')), float(rospy.get_param('/lat')))
+            listener()
+        except rospy.ROSInterruptException: pass
+

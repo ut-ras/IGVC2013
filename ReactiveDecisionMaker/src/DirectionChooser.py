@@ -1,6 +1,6 @@
 import math
 from ReactiveUtils import *
-    
+
 def pickBestDirection(directions, goalHeading, heading):
     bestIndex = -1
     bestScore = -1
@@ -8,11 +8,11 @@ def pickBestDirection(directions, goalHeading, heading):
     # loop through directions, pick best one
     for i in range(len(directions)):
         # normalize each value
-        norm_clearance = directions[i].clearance/MAXIMUM_CLEARANCE
+        norm_clearance = min(MAXIMUM_CLEARANCE, directions[i].clearance)/MAXIMUM_CLEARANCE
         norm_cur_heading = 1 - abs(angleDif(directions[i].direction, heading))/math.pi
         norm_goal_heading = 1 - abs(angleDif(directions[i].direction, goalHeading))/math.pi
-        
-        # print directions[i].direction, norm_clearance, norm_cur_heading, norm_goal_heading
+
+        print directions[i].direction, directions[i].clearance, norm_clearance, norm_cur_heading, norm_goal_heading
 
         # multiple times weights & sum
         score = norm_clearance*CLEARANCE_WEIGHT\
@@ -25,6 +25,10 @@ def pickBestDirection(directions, goalHeading, heading):
             bestIndex = i
 
     if bestIndex != -1:
+        print directions[bestIndex].direction
+        print ""
         return directions[bestIndex]
     else:
+        print ""
         return None
+

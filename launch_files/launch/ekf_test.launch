@@ -1,27 +1,28 @@
 <launch>
-  <node pkg="rosbag" type="play" name="rosbag" args="/home/granny/ros/ros-bag/enssidewalk_4-6-13_1.bag --topics /vel_data /usb_cam/image_raw /vn_200_ins_soln /vn_200_gps_soln"/>
-
+  <node pkg="rosbag" type="play" name="rosbag" args="/home/ras/ros/rosbag/gps_pushed_6-8-13.bag --topics /vel_data /usb_cam/image_raw /vn_200_accel_gyro_compass /vn_200_gps_soln"/>
+<!--
   <node pkg="GPS_Ublox" name="GPS_input_selector" type="GPS_input_selector.py">
     <param name="source" value="ins" type="str"/>
   </node>
-
+-->
   <include file="$(find launch_files)/launch/gps_nodes.launch"/>
+  <node pkg="filters" name="orientation_corrector" type="orientation_corrector.py"/>
 
   <node pkg="filters" name="ekf_gps" type="extended_kalman_filter.py">
     <param name="custom_subscribers" value="True" type="bool"/>
     <param name="topics" value="gps" type="str"/>
   </node>
-
+<!--
   <node pkg="filters" name="ekf_enc_gps" type="extended_kalman_filter.py">
     <param name="custom_subscribers" value="True" type="bool"/>
     <param name="topics" value="enc+gps" type="str"/>
   </node>
-
+-->
   <node pkg="filters" name="ekf_yaw_gps" type="extended_kalman_filter.py">
     <param name="custom_subscribers" value="True" type="bool"/>
     <param name="topics" value="yaw+gps" type="str"/>
   </node>
-
+<!--
   <node pkg="filters" name="ekf_enc" type="extended_kalman_filter.py">
     <param name="custom_subscribers" value="True" type="bool"/>
     <param name="topics" value="enc" type="str"/>
@@ -36,5 +37,5 @@
     <param name="custom_subscribers" value="True" type="bool"/>
     <param name="topics" value="enc+yaw+gps" type="str"/>
   </node>
-
+-->
 </launch>

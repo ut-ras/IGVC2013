@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="vn_200_imu" name="vn_200_node" type="vn_200_node.py"/>
+   1 <node pkg="GPS_Ublox" name="GPS_Ublox_waypoint_calc" type="GPS_waypoint_calc.py">
+        <param name="do_dance" value="False" type="boolean"/>
+    </node>
+</launch>

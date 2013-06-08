@@ -9,14 +9,24 @@ from geometry_msgs.msg import Point
 
 WAYPOINT_FILENAME = '/home/ras/ros/ros-pkg/IGVC2013/GPS_Ublox/offsets'
 
-goals = [
-    Point(20, 0, 0),
-    Point(0, 0, 0)
-    ]
-
 curGoalIndex = 0
 
 pub = None
+
+GUIDANCE_ACCURACY = 2.0
+
+class Waypoint:
+    def __init__(self, point, accur):
+        self.point = point
+        self.accur = accur
+
+    def __str__(self):
+        return str(self.point) + ":" + str(self.accur)
+
+goals = [
+    Waypoint(Point(20, 0, 0), CLOSE_ENOUGH_TO_GOAL),
+    Waypoint(Point(0, 0, 0), CLOSE_ENOUGH_TO_GOAL)
+    ]
 
 def processPos(pos):
     global curGoalIndex
@@ -24,17 +34,17 @@ def processPos(pos):
     if curGoalIndex < len(goals):
         pos = Point(pos.x, pos.y, 0)
 
-        distToGoal = euclidDistPoint(pos, goals[curGoalIndex])
+        distToGoal = euclidDistPoint(pos, goals[curGoalIndex].point)
 
-        if distToGoal < CLOSE_ENOUGH_TO_GOAL:
-            print "close enough to ", goals[curGoalIndex].x, ",", goals[curGoalIndex].y
+        if distToGoal < goals[curGoalIndex].accur:
+            print "close enough to ", goals[curGoalIndex].point.x, ",", goals[curGoalIndex].point.y
             curGoalIndex += 1
             if curGoalIndex < len(goals):
-                print "setting new goal to ", goals[curGoalIndex].x, ",", goals[curGoalIndex].y
+                print "setting new goal to ", goals[curGoalIndex].point.x, ",", goals[curGoalIndex].point.y
 
         if curGoalIndex < len(goals):
             print "publishing goal ", goals[curGoalIndex]
-            pub.publish(goals[curGoalIndex])
+            pub.publish(goals[curGoalIndex].point)
 
 def readWaypoints(filename):
     print 'reading waypoints'
@@ -53,11 +63,19 @@ def readWaypoints(filename):
         try:
             x = float(s[0])
             y = float(s[1])
+            # D for dance, G for guidance
+            if s[2] == 'D':
+                accur = CLOSE_ENOUGH_TO_GOAL
+            elif s[2] == 'G':
+                accur = GUIDANCE_ACCURACY
+            else:
+                print 'error: do not recognize waypoint description:' + line
+                return
         except:
-            print 'error converting to floats: ' + line
+            print 'error processing line: ' + line
             return
 
-        list.append(Point(x, y, 0));
+        list.append(Waypoint(Point(x, y, 0), accur));
 
     return list
 
@@ -65,6 +83,8 @@ if __name__ == "__main__":
     try:
         if bool(rospy.get_param('GoalMaker/usefile', False)):
             goals = readWaypoints(WAYPOINT_FILENAME);
+            if not goals:
+                sys.exit()
     except: pass
 
     rospy.init_node('GoalMaker')
