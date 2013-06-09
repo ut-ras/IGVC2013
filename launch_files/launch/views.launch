@@ -1,0 +1,21 @@
+<launch>
+  <node pkg="image_view" name="image_view1" type="image_view">
+    <remap from="image" to="/usb_cam/image_raw"/>
+  </node>
+
+  <node pkg="image_view" name="image_view2" type="image_view">
+    <remap from="image" to="/vision/hough_lines"/>
+  </node>
+
+  <node pkg="image_view" name="image_view3" type="image_view">
+    <remap from="image" to="/vision/thresholder_heat2_red"/>
+  </node>
+
+  <node pkg="image_view" name="image_view4" type="image_view">
+    <remap from="image" to="/vision/thresholder_lane"/>
+  </node>
+
+  <node pkg="image_view" name="image_view5" type="image_view">
+    <remap from="image" to="/log_polar_transformed"/>
+  </node>
+</launch>

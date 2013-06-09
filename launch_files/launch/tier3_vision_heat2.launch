@@ -1,0 +1,21 @@
+<launch>
+  <node pkg="vision" name="thresholder" type="thresholder">
+    <param name="threshold" value="lane" type="str"/>
+    <param name="maker" value="false" type="boolean"/>
+  </node>
+  <node pkg="vision" name="hough_lines" type="hough_lines">
+    <param name="test" value="false" type="str"/>
+    <param name="topic" value="lane" type="str"/>
+    <param name="filename" value="hough" type="str"/>
+  </node>
+  <node pkg="vision" name="image_combiner" type="image_combiner">
+    <param name="maker" value="false" type="boolean"/>
+    <param name="threshold" value="heat2_red" type="str"/>
+  </node>
+
+  <node pkg="vision" name="log_polar_transform" type="log_polar_transform.py">
+    <param name="subtopic" value="/vision/thresholder_heat2_red" type="str"/>
+  </node>
+  <node pkg="vision" name="log_polar_processor" type="log_polar_processor"/>
+  <node pkg="filters" name="image_scan_transform" type="image_scan_transform"/>
+</launch>

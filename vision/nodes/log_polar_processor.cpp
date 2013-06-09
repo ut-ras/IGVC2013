@@ -25,8 +25,8 @@ exp(c/LOG_SCALE)/PIXELS_PER_METER*66/80
 */
 
 double LOG_SCALE = 20.0,
-       PIXELS_PER_METER = 210,
-       DISTANCE_FROM_FRONT = 0.5,
+       PIXELS_PER_METER = 402,
+       DISTANCE_FROM_FRONT = 0.2,
        RAY_THICKNESS = 1;
 
 ros::Publisher scan_pub;

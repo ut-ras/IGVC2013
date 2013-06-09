@@ -1,0 +1,6 @@
+<launch>
+   <include file="$(find launch_files)/launch/usb_cam_right.launch"/>
+   <include file="$(find launch_files)/launch/usb_cam_left.launch"/>
+   <node pkg="topic_tools" name="cam_right_throttle" type="throttle" args="messages cam_right/usb_cam/image_raw 10.0 usb_cam/image_raw" />
+   <node pkg="topic_tools" name="cam_left_throttle" type="throttle" args="messages cam_left/usb_cam/image_raw 10.0 usb_cam/image_raw" />
+</launch>

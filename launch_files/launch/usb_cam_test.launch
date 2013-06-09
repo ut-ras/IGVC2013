@@ -1,0 +1,20 @@
+<launch>
+   <include file="$(find launch_files)/launch/usb_cam_all.launch"/>
+   <node pkg="image_view" name="image_view_center" type="image_view">
+      <remap from="image" to="/cam_center/usb_cam/image_raw"/>
+   </node>
+
+  <node pkg="image_view" name="image_view_right" type="image_view">
+      <remap from="image" to="/cam_right/usb_cam/image_raw"/>
+   </node>
+
+  <node pkg="image_view" name="image_view_left" type="image_view">
+      <remap from="image" to="/cam_left/usb_cam/image_raw"/>
+   </node>
+
+  <node pkg="image_view" name="image_view" type="image_view">
+      <remap from="image" to="/usb_cam/image_raw"/>
+   </node>
+
+
+</launch>

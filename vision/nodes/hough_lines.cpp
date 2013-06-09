@@ -23,7 +23,7 @@
 #define MAX_LINE_LEN    25
 #define MAX_LINE_GAP    20
 #define DEFAULT_PARAMS  {RHO, THRESHOLD, MAX_LINE_LEN, MAX_LINE_GAP}
-#define PARAMS_PATH     "/home/ras/ros/ros-pkg/IGVC2013/vision/thresholds/hough"
+#define PARAMS_PATH     "/home/ras/ros/ros-pkg/IGVC2013/vision/thresholds/"
 
 using namespace cv;
 using namespace std;
@@ -44,9 +44,11 @@ class LaneDetector {
     bool DISPLAY_OUTPUT;
 
     public:
-        LaneDetector (ros::NodeHandle nh, int* param_list, bool testing) : nh_(nh), it_(nh_), DISPLAY_OUTPUT(testing) {
+        LaneDetector (ros::NodeHandle nh, int* param_list, bool testing, string thresh) : nh_(nh), it_(nh_), DISPLAY_OUTPUT(testing) {
             image_pub_ = it_.advertise("/vision/hough_lines", 1);
-            image_sub_ = it_.subscribe("/vision/thresholder_lane", 1, &LaneDetector::laneDetectorCallback, this);
+            image_sub_ = it_.subscribe("/vision/thresholder_"+thresh, 1, &LaneDetector::laneDetectorCallback, this);
+
+            std::cout << "/vision/thresholder_"+thresh << endl;
            
             for(int i = 0; i < 4; i++) {
                 params[i] = param_list[i];
@@ -115,12 +117,16 @@ int main(int argc, char** argv) {
     ros::init(argc, argv, "hough_lines");
     ros::NodeHandle nh("~");
     bool is_testing;
+    string usethresh;
+    string filename;
     nh.param<bool>("test", is_testing, false);
+    nh.param<string>("topic", usethresh,"lane");
+    nh.param<string>("filename", filename,"hough");
     int thresh[4] = DEFAULT_PARAMS;
 
     if (!is_testing) {
         string line;
-        string file_path = PARAMS_PATH;
+        string file_path = PARAMS_PATH + filename;
         ifstream file;
         file.open (file_path.c_str());
         if(file.is_open()){
@@ -139,7 +145,7 @@ int main(int argc, char** argv) {
        cout << "Running param selector" << endl;
     }
 
-    LaneDetector ld(nh, thresh, is_testing);
+    LaneDetector ld(nh, thresh, is_testing, usethresh);
     ros::spin();
     return 0;
 }

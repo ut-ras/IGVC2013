@@ -4,9 +4,7 @@ import rospy, pylab, math, random, numpy, time
 
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist,Point
-from ocean_server_imu.msg import RawData
 from filters.msg import EKFData, Orientation
-from um6_imu.msg import UM6IMU
 
 from EKF import ExtendedKalmanFilter, accel_observation_funct, accel_jacobian_funct, rpy_observation_funct, rpy_jacobian_funct, encoders_observation_funct, encoders_jacobian_funct, gps_observation_funct, gps_jacobian_funct, transition_funct, transition_jacobian_funct
 
