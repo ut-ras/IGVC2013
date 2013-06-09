@@ -275,7 +275,10 @@ def vn200():
             if validate_checksum(data):
                 # check if data was an IMU, INS SOLN or GPS SOLN reply,
                 # process accordingly and then publish the appropriate message
-                process_and_publish(data)
+                try:
+                    process_and_publish(data)
+                except:
+                    rospy.logwarn("vn_200_imu data dropped")
             else:
                 rospy.logwarn("Checksum incorrect for %s. Dropping packet", data)
 

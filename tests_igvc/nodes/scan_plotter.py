@@ -124,7 +124,7 @@ def init():
         TopicInfo("/sonar_data", True),
         TopicInfo("/sonar_scan", True),
         TopicInfo("/image_scan", True),
-        # TopicInfo("/image_scan_transformed", False),
+        TopicInfo("/image_scan_transformed", False),
         TopicInfo("/scan", True, True),
         TopicInfo("/planar_data", False),
         ]

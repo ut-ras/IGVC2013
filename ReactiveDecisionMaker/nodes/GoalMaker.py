@@ -7,6 +7,8 @@ from ReactiveUtils import *
 from ReactiveDecisionMaker.srv import *
 from geometry_msgs.msg import Point
 
+import sys
+
 WAYPOINT_FILENAME = '/home/ras/ros/ros-pkg/IGVC2013/GPS_Ublox/offsets'
 
 curGoalIndex = 0
@@ -52,7 +54,7 @@ def readWaypoints(filename):
     try:
         f = open(filename, 'r')
     except:
-        print 'no file found named ' + filename
+        rospy.logwarn('no file found named %s', filename)
         return
 
     list = []
@@ -69,10 +71,10 @@ def readWaypoints(filename):
             elif s[2] == 'G':
                 accur = GUIDANCE_ACCURACY
             else:
-                print 'error: do not recognize waypoint description:' + line
+                rospy.logwarn('error: do not recognize waypoint description: %s', line)
                 return
         except:
-            print 'error processing line: ' + line
+            rospy.logwarn('error processing line: %s', line)
             return
 
         list.append(Waypoint(Point(x, y, 0), accur));
@@ -81,11 +83,14 @@ def readWaypoints(filename):
 
 if __name__ == "__main__":
     try:
-        if bool(rospy.get_param('GoalMaker/usefile', False)):
+        if bool(rospy.get_param('GoalMaker/usefile')):
             goals = readWaypoints(WAYPOINT_FILENAME);
             if not goals:
                 sys.exit()
-    except: pass
+    except:
+        rospy.logwarn('GoalMaker exiting: error reading parameter or file')
+        sys.exit()
+
 
     rospy.init_node('GoalMaker')
     pub = rospy.Publisher('goal', Point)

@@ -125,6 +125,8 @@ def gps_callback(data):
             else:
                 out.write(str(x) + ' ' + str(y) + ' G\n')
 
+        out.write('0.0 0.0 G\n')
+
         out.close()
         rospy.logwarn('Done')
         #print offset_calc(lati, longi)

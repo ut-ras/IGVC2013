@@ -1,22 +1,13 @@
 <launch>
-  <node pkg="PSoC_Listener" name="PSoC_Listener" type="PSoC_Listener.py"/>
-  <node pkg="PSoC_Listener" name="PSoC_Velocities" type="PSoC_Velocities.py"/>
-
-<!--
-  <node pkg="SonarArray" name="SonarArray" type="SonarArray.py"/>
-  <node pkg="filters" name="SonarProc" type="SonarProc.py"/>
--->
-
-  <node pkg="vn_200_imu" name="vn_200_node" type="vn_200_node.py"/>
-
   <node pkg="image_view" name="image_view" type="image_view">
     <remap from="image" to="/usb_cam/image_raw"/>
   </node>
 
+
   <node pkg="filters" name="ScanCombiner" type="ScanCombiner.py"/>
   <node pkg="filters" name="orientation_corrector" type="orientation_corrector.py"/>
   <include file="$(find launch_files)/launch/gps_nodes.launch"/>
-  <include file="$(find launch_files)/launch/usb_cam.launch"/>
+
 
   <node pkg="ReactiveDecisionMaker" name="GoalMaker" type="GoalMaker.py">
     <param name="usefile" value="true" type="boolean"/>
