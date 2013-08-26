@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/granny/ros/ros-pkg/IGVC2013/vision
+CMAKE_SOURCE_DIR = /home/ras/ros/ros-pkg/IGVC2013/vision
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/granny/ros/ros-pkg/IGVC2013/vision
+CMAKE_BINARY_DIR = /home/ras/ros/ros-pkg/IGVC2013/vision
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/granny/ros/ros-pkg/IGVC2013/vision/CMakeFiles /home/granny/ros/ros-pkg/IGVC2013/vision/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ras/ros/ros-pkg/IGVC2013/vision/CMakeFiles /home/ras/ros/ros-pkg/IGVC2013/vision/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/granny/ros/ros-pkg/IGVC2013/vision/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ras/ros/ros-pkg/IGVC2013/vision/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,30 +177,30 @@ clean-test-results/fast:
 .PHONY : clean-test-results/fast
 
 #=============================================================================
-# Target rules for targets named grayscaler
+# Target rules for targets named hough_lines
 
 # Build rule for target.
-grayscaler: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 grayscaler
-.PHONY : grayscaler
+hough_lines: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hough_lines
+.PHONY : hough_lines
 
 # fast build rule for target.
-grayscaler/fast:
-	$(MAKE) -f CMakeFiles/grayscaler.dir/build.make CMakeFiles/grayscaler.dir/build
-.PHONY : grayscaler/fast
+hough_lines/fast:
+	$(MAKE) -f CMakeFiles/hough_lines.dir/build.make CMakeFiles/hough_lines.dir/build
+.PHONY : hough_lines/fast
 
 #=============================================================================
-# Target rules for targets named lane_detector
+# Target rules for targets named image_combiner
 
 # Build rule for target.
-lane_detector: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lane_detector
-.PHONY : lane_detector
+image_combiner: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 image_combiner
+.PHONY : image_combiner
 
 # fast build rule for target.
-lane_detector/fast:
-	$(MAKE) -f CMakeFiles/lane_detector.dir/build.make CMakeFiles/lane_detector.dir/build
-.PHONY : lane_detector/fast
+image_combiner/fast:
+	$(MAKE) -f CMakeFiles/image_combiner.dir/build.make CMakeFiles/image_combiner.dir/build
+.PHONY : image_combiner/fast
 
 #=============================================================================
 # Target rules for targets named log_polar_processor
@@ -214,19 +214,6 @@ log_polar_processor: cmake_check_build_system
 log_polar_processor/fast:
 	$(MAKE) -f CMakeFiles/log_polar_processor.dir/build.make CMakeFiles/log_polar_processor.dir/build
 .PHONY : log_polar_processor/fast
-
-#=============================================================================
-# Target rules for targets named lounge
-
-# Build rule for target.
-lounge: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lounge
-.PHONY : lounge
-
-# fast build rule for target.
-lounge/fast:
-	$(MAKE) -f CMakeFiles/lounge.dir/build.make CMakeFiles/lounge.dir/build
-.PHONY : lounge/fast
 
 #=============================================================================
 # Target rules for targets named rosbuild_precompile
@@ -359,47 +346,47 @@ tests/fast:
 .PHONY : tests/fast
 
 #=============================================================================
-# Target rules for targets named vision
+# Target rules for targets named thresholder
 
 # Build rule for target.
-vision: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 vision
-.PHONY : vision
+thresholder: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 thresholder
+.PHONY : thresholder
 
 # fast build rule for target.
-vision/fast:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/build
-.PHONY : vision/fast
+thresholder/fast:
+	$(MAKE) -f CMakeFiles/thresholder.dir/build.make CMakeFiles/thresholder.dir/build
+.PHONY : thresholder/fast
 
 # target to build an object file
-nodes/grayscaler.o:
-	$(MAKE) -f CMakeFiles/grayscaler.dir/build.make CMakeFiles/grayscaler.dir/nodes/grayscaler.o
-.PHONY : nodes/grayscaler.o
+nodes/hough_lines.o:
+	$(MAKE) -f CMakeFiles/hough_lines.dir/build.make CMakeFiles/hough_lines.dir/nodes/hough_lines.o
+.PHONY : nodes/hough_lines.o
 
 # target to preprocess a source file
-nodes/grayscaler.i:
-	$(MAKE) -f CMakeFiles/grayscaler.dir/build.make CMakeFiles/grayscaler.dir/nodes/grayscaler.i
-.PHONY : nodes/grayscaler.i
+nodes/hough_lines.i:
+	$(MAKE) -f CMakeFiles/hough_lines.dir/build.make CMakeFiles/hough_lines.dir/nodes/hough_lines.i
+.PHONY : nodes/hough_lines.i
 
 # target to generate assembly for a file
-nodes/grayscaler.s:
-	$(MAKE) -f CMakeFiles/grayscaler.dir/build.make CMakeFiles/grayscaler.dir/nodes/grayscaler.s
-.PHONY : nodes/grayscaler.s
+nodes/hough_lines.s:
+	$(MAKE) -f CMakeFiles/hough_lines.dir/build.make CMakeFiles/hough_lines.dir/nodes/hough_lines.s
+.PHONY : nodes/hough_lines.s
 
 # target to build an object file
-nodes/lane_detector.o:
-	$(MAKE) -f CMakeFiles/lane_detector.dir/build.make CMakeFiles/lane_detector.dir/nodes/lane_detector.o
-.PHONY : nodes/lane_detector.o
+nodes/image_combiner.o:
+	$(MAKE) -f CMakeFiles/image_combiner.dir/build.make CMakeFiles/image_combiner.dir/nodes/image_combiner.o
+.PHONY : nodes/image_combiner.o
 
 # target to preprocess a source file
-nodes/lane_detector.i:
-	$(MAKE) -f CMakeFiles/lane_detector.dir/build.make CMakeFiles/lane_detector.dir/nodes/lane_detector.i
-.PHONY : nodes/lane_detector.i
+nodes/image_combiner.i:
+	$(MAKE) -f CMakeFiles/image_combiner.dir/build.make CMakeFiles/image_combiner.dir/nodes/image_combiner.i
+.PHONY : nodes/image_combiner.i
 
 # target to generate assembly for a file
-nodes/lane_detector.s:
-	$(MAKE) -f CMakeFiles/lane_detector.dir/build.make CMakeFiles/lane_detector.dir/nodes/lane_detector.s
-.PHONY : nodes/lane_detector.s
+nodes/image_combiner.s:
+	$(MAKE) -f CMakeFiles/image_combiner.dir/build.make CMakeFiles/image_combiner.dir/nodes/image_combiner.s
+.PHONY : nodes/image_combiner.s
 
 # target to build an object file
 nodes/log_polar_processor.o:
@@ -417,34 +404,19 @@ nodes/log_polar_processor.s:
 .PHONY : nodes/log_polar_processor.s
 
 # target to build an object file
-src/vision_lounge.o:
-	$(MAKE) -f CMakeFiles/lounge.dir/build.make CMakeFiles/lounge.dir/src/vision_lounge.o
-.PHONY : src/vision_lounge.o
+nodes/threshold_maker.o:
+	$(MAKE) -f CMakeFiles/thresholder.dir/build.make CMakeFiles/thresholder.dir/nodes/threshold_maker.o
+.PHONY : nodes/threshold_maker.o
 
 # target to preprocess a source file
-src/vision_lounge.i:
-	$(MAKE) -f CMakeFiles/lounge.dir/build.make CMakeFiles/lounge.dir/src/vision_lounge.i
-.PHONY : src/vision_lounge.i
+nodes/threshold_maker.i:
+	$(MAKE) -f CMakeFiles/thresholder.dir/build.make CMakeFiles/thresholder.dir/nodes/threshold_maker.i
+.PHONY : nodes/threshold_maker.i
 
 # target to generate assembly for a file
-src/vision_lounge.s:
-	$(MAKE) -f CMakeFiles/lounge.dir/build.make CMakeFiles/lounge.dir/src/vision_lounge.s
-.PHONY : src/vision_lounge.s
-
-# target to build an object file
-src/vision_test.o:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.o
-.PHONY : src/vision_test.o
-
-# target to preprocess a source file
-src/vision_test.i:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.i
-.PHONY : src/vision_test.i
-
-# target to generate assembly for a file
-src/vision_test.s:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/src/vision_test.s
-.PHONY : src/vision_test.s
+nodes/threshold_maker.s:
+	$(MAKE) -f CMakeFiles/thresholder.dir/build.make CMakeFiles/thresholder.dir/nodes/threshold_maker.s
+.PHONY : nodes/threshold_maker.s
 
 # Help Target
 help:
@@ -459,10 +431,9 @@ help:
 	@echo "... ROSBUILD_gensrv_lisp"
 	@echo "... clean-test-results"
 	@echo "... edit_cache"
-	@echo "... grayscaler"
-	@echo "... lane_detector"
+	@echo "... hough_lines"
+	@echo "... image_combiner"
 	@echo "... log_polar_processor"
-	@echo "... lounge"
 	@echo "... rebuild_cache"
 	@echo "... rosbuild_precompile"
 	@echo "... rosbuild_premsgsrvgen"
@@ -474,22 +445,19 @@ help:
 	@echo "... test-results"
 	@echo "... test-results-run"
 	@echo "... tests"
-	@echo "... vision"
-	@echo "... nodes/grayscaler.o"
-	@echo "... nodes/grayscaler.i"
-	@echo "... nodes/grayscaler.s"
-	@echo "... nodes/lane_detector.o"
-	@echo "... nodes/lane_detector.i"
-	@echo "... nodes/lane_detector.s"
+	@echo "... thresholder"
+	@echo "... nodes/hough_lines.o"
+	@echo "... nodes/hough_lines.i"
+	@echo "... nodes/hough_lines.s"
+	@echo "... nodes/image_combiner.o"
+	@echo "... nodes/image_combiner.i"
+	@echo "... nodes/image_combiner.s"
 	@echo "... nodes/log_polar_processor.o"
 	@echo "... nodes/log_polar_processor.i"
 	@echo "... nodes/log_polar_processor.s"
-	@echo "... src/vision_lounge.o"
-	@echo "... src/vision_lounge.i"
-	@echo "... src/vision_lounge.s"
-	@echo "... src/vision_test.o"
-	@echo "... src/vision_test.i"
-	@echo "... src/vision_test.s"
+	@echo "... nodes/threshold_maker.o"
+	@echo "... nodes/threshold_maker.i"
+	@echo "... nodes/threshold_maker.s"
 .PHONY : help
 
 
